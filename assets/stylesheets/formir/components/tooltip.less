@@ -1,0 +1,94 @@
+.tooltip {
+  background: @tooltip-background;
+  padding: @tooltip-padding;
+  color: @tooltip-text-color;
+  max-width: @tootltip-max-width;
+  min-width: @tootltip-min-width;
+  border-radius: @tootltip-border-radius;
+  bottom: 100%;
+  left: 0;
+  position: absolute;
+  margin-bottom: @tootltip-arrow-height;
+  &:before {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    content: "";
+    width: 0; 
+    height: 0; 
+    border-left: @tootltip-arrow-height solid transparent;
+    border-right: @tootltip-arrow-height solid transparent;
+    border-top: @tootltip-arrow-height solid @tooltip-background;
+    margin-left: @tootltip-arrow-height + 5px;
+  }
+  &.tooltip-bottom {
+    bottom: unset;
+    top: 100%;
+    margin-top: @tootltip-arrow-height;
+    &:before {
+      position: absolute;
+      bottom: initial;
+      top: 100%;
+      left: 0;
+      content: "";
+      width: 0; 
+      height: 0;
+      border-top: initial;
+      border-bottom: @tootltip-arrow-height solid @tooltip-background;
+      margin-left: @tootltip-arrow-height + 5px;
+    }
+  }
+}
+
+
+
+.has-tooltip {
+  position: relative;
+  &.is-absolute {
+    position: absolute;
+  }
+  &.is-fixed {
+    position: fixed;
+  }
+  &:hover, &[tabindex]:focus {
+    &.tooltip-bottom {
+      &:after {
+        bottom: initial;
+        top: 100%;
+        margin-top: @tootltip-arrow-height;
+      }
+      &:before {
+        position: absolute;
+        bottom: initial;
+        top: 100%;
+        left: 0;
+        content: "";
+        width: 0; 
+        height: 0;
+        border-top: initial;
+        border-bottom: @tootltip-arrow-height solid @tooltip-background;
+        margin-left: @tootltip-arrow-height + 5px;
+      }
+    }
+  }
+  
+  &:hover, &[tabindex]:focus {
+    &:after {
+      .tooltip();
+      content: attr(data-tooltip);
+      display: block;
+    }
+    &:before {
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      content: "";
+      width: 0; 
+      height: 0; 
+      border-left: @tootltip-arrow-height solid transparent;
+      border-right: @tootltip-arrow-height solid transparent;
+      border-top: @tootltip-arrow-height solid @tooltip-background;
+      margin-left: @tootltip-arrow-height + 5px;
+    }
+  }
+}
