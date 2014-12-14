@@ -11,7 +11,7 @@
   margin-bottom: @tootltip-arrow-height;
   &:before {
     position: absolute;
-    bottom: 100%;
+    bottom: -@tootltip-arrow-height;
     left: 0;
     content: "";
     width: 0; 
@@ -28,7 +28,7 @@
     &:before {
       position: absolute;
       bottom: initial;
-      top: 100%;
+      top: -@tootltip-arrow-height;
       left: 0;
       content: "";
       width: 0; 
@@ -42,7 +42,7 @@
 
 
 
-.has-tooltip {
+.has-tooltip[data-tooltip] {
   position: relative;
   &.is-absolute {
     position: absolute;
@@ -90,5 +90,27 @@
       border-top: @tootltip-arrow-height solid @tooltip-background;
       margin-left: @tootltip-arrow-height + 5px;
     }
+    
   }
 }
+
+.has-tooltip {
+  position: relative;
+  
+  &.is-absolute {
+    position: absolute;
+  }
+  &.is-fixed {
+    position: fixed;
+  }
+  > .tooltip {
+    display: none;
+  }
+  
+  &:hover, &[tabindex]:focus {
+    > .tooltip {
+      display: block;
+    }
+  }
+}
+

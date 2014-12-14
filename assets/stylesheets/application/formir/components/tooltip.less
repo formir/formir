@@ -4,7 +4,8 @@
 
 .has-tooltip {
   cursor: help;
-  &[tabindex] {
-    border-bottom: 1px dotted #222;
+  border-bottom: 1px dotted #222;
+  &[tabindex]:focus {
+    border-bottom: 1px solid #222;
   }
 }
