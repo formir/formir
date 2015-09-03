@@ -1,0 +1,26 @@
+.dropdown-show {
+  display: block;
+}
+
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+  > input {
+    display: none;
+    &:checked {
+      ~ .dropdown-content {
+        .dropdown-show;
+      }
+    }
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    bottom: auto;
+    margin-top: 5px;
+  }
+}
+
+
