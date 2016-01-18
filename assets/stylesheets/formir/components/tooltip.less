@@ -1,3 +1,36 @@
+.tooltip-arrow-top {
+  position: absolute;
+  top: -@tootltip-arrow-height;
+  left: 0;
+  content: "";
+  width: 0; 
+  height: 0; 
+  border-left: @tootltip-arrow-height solid transparent;
+  border-right: @tootltip-arrow-height solid transparent;
+  border-top: @tootltip-arrow-height solid @tooltip-background;
+  margin-left: @tootltip-arrow-height + @tootltip-arrow-offset;
+}
+
+.tooltip-arrow-bottom {
+  position: absolute;
+  bottom: -@tootltip-arrow-height;
+  top: auto;
+  left: 0;
+  content: "";
+  width: 0; 
+  height: 0;
+  border-top: @tootltip-arrow-height solid transparent;
+  border-bottom: @tootltip-arrow-height solid @tooltip-background;
+  margin-left: @tootltip-arrow-height + @tootltip-arrow-offset;
+}
+
+.tooltip-arrow-center {
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .tooltip {
   background: @tooltip-background;
   padding: @tooltip-padding;
@@ -10,37 +43,32 @@
   position: absolute;
   margin-bottom: @tootltip-arrow-height;
   &:before {
-    position: absolute;
-    bottom: -@tootltip-arrow-height;
-    left: 0;
-    content: "";
-    width: 0; 
-    height: 0; 
-    border-left: @tootltip-arrow-height solid transparent;
-    border-right: @tootltip-arrow-height solid transparent;
-    border-top: @tootltip-arrow-height solid @tooltip-background;
-    margin-left: @tootltip-arrow-height + 5px;
+    .tooltip-arrow-top;
   }
   &.tooltip-bottom {
-    bottom: unset;
+    bottom: auto;
     top: 100%;
     margin-top: @tootltip-arrow-height;
     &:before {
-      position: absolute;
-      bottom: initial;
-      top: -@tootltip-arrow-height;
-      left: 0;
-      content: "";
-      width: 0; 
-      height: 0;
-      border-top: initial;
-      border-bottom: @tootltip-arrow-height solid @tooltip-background;
-      margin-left: @tootltip-arrow-height + 5px;
+      .tooltip-arrow-bottom;
+    }
+  }
+  
+  &.tooltip-center {
+    left: 50%;
+    transform: translate(-50%, 0px);
+    &:before {
+      .tooltip-arrow-center;
+    }
+  }
+  &.tooltip-right {
+    left: auto;
+    right: 0;
+    &:before {
+      .tooltip-arrow-center;
     }
   }
 }
-
-
 
 .has-tooltip[data-tooltip] {
   position: relative;
@@ -51,46 +79,33 @@
     position: fixed;
   }
   &:hover, &[tabindex]:focus {
-    &.tooltip-bottom {
-      &:after {
-        bottom: initial;
-        top: 100%;
-        margin-top: @tootltip-arrow-height;
-      }
-      &:before {
-        position: absolute;
-        bottom: initial;
-        top: 100%;
-        left: 0;
-        content: "";
-        width: 0; 
-        height: 0;
-        border-top: initial;
-        border-bottom: @tootltip-arrow-height solid @tooltip-background;
-        margin-left: @tootltip-arrow-height + 5px;
-      }
-    }
-  }
-  
-  &:hover, &[tabindex]:focus {
     &:after {
-      .tooltip();
+      .tooltip;
       content: attr(data-tooltip);
       display: block;
     }
     &:before {
-      position: absolute;
-      bottom: 100%;
-      left: 0;
-      content: "";
-      width: 0; 
-      height: 0; 
-      border-left: @tootltip-arrow-height solid transparent;
-      border-right: @tootltip-arrow-height solid transparent;
-      border-top: @tootltip-arrow-height solid @tooltip-background;
-      margin-left: @tootltip-arrow-height + 5px;
+      .tooltip-arrow-top;
     }
-    
+    &.tooltip-bottom {
+      &:after {
+        bottom: auto;
+        top: 100%;
+        margin-top: @tootltip-arrow-height;
+      }
+      &:before {
+        .tooltip-arrow-bottom;
+      }
+    }
+    &.tooltip-center {
+      &:after {
+        left: 50%;
+        transform: translate(-50%, 0px);
+      }
+      &:before {
+        .tooltip-arrow-center;
+      }
+    }
   }
 }
 
@@ -105,6 +120,19 @@
   }
   > .tooltip {
     display: none;
+    &:before {
+      top: 100%;
+      bottom: auto;
+      margin-bottom: -@tootltip-arrow-height;
+    }
+    &.tooltip-bottom {
+      &:before {
+        top: auto;
+        bottom: 100%;
+        margin-top: -@tootltip-arrow-height;
+        margin-bottom: auto;
+      }
+    }
   }
   
   &:hover, &[tabindex]:focus {

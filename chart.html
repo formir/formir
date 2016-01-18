@@ -30,30 +30,27 @@
         relativeUrls : false,
         rootpath : ""
       };
-      $(document).on("click", function(e) {
-        if (!$(e.target).closest('.dropdown').length) $('.dropdown input').get(0).checked=false
-      });
     </script>
   </head>
 
-  <body>
-    <div style="margin: 50px;">
-      <div class="fm dropdown" tabindex="-1">
-        <input id="dropdown-1" type="checkbox" autocomplete="off">
-        <label class="dropdown-btn" for="dropdown-1" tabindex="-1">Toggle dropdown</label>
-        <ul class="dropdown-content">
-          <li>
-            <a href="#url">Go to url</a>
-          </li>
-          <li>
-            <a href="#url2">Go to url 2</a>
-          </li>
-          <li>
-            <a href="#url3">Go to url 3</a>
-          </li>
-        </ul>
-        
+  <body style="background: #fff;">
+    <div style="background: #fff;">
+      <div class="chart value ring">
+        <div></div>
       </div>
     </div>
+    <div  style="background: #fff;">
+      <input type="number" class="chart-control" autocomplete="off" onChange="this.setAttribute('value', this.value)">
+      <div class="chart value ring">
+        <div></div>
+      </div>
+    </div>
+    <div  style="background: #fff;">
+      <input class="chart-control" type="range" autocomplete="off" min="0" max="100" step="1" onChange="this.setAttribute('value', this.value)" />
+      <div class="chart value ring value-colored">
+        <div></div>
+      </div>
+    </div>
+    
   </body>
 </html>
