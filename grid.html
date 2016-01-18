@@ -33,12 +33,23 @@
     </script>
   </head>
 
-  <body>
-    <div style="width: 100%;">
-      <div class="grid-10 gutter-5 space-2" style="">
-        <div style="background-color: red" class="cell-1"></div>
-        <div style="background-color: blue" class="cell-8"></div>
+  <body style="overflow-x: hidden;">
+    <br/>
+    <div style="width: 100%;border-top: 1px solid;border-bottom: 1px solid">
+      <div class="grid-10 gutter-5 space-2" style="height: 400px;">
+        <div style="background-color: red" class="cell-1 t-under-10"></div>
+        <div style="background-color: blue" class="cell-8 t-under-8 t-under-offset-1"></div>
         <div style="background-color: green" class="cell-1"></div>
+      </div>
+    </div>
+    <br/>
+    <div style="width: 100%;border-top: 1px solid;border-bottom: 1px solid">
+      <div class="grid-10 gutter-5 space-2" style="height: 400px;">
+        <div class="row">
+          <div style="background-color: red" class="cell-1"></div>
+          <div style="background-color: blue" class="cell-8 t-6"></div>
+          <div style="background-color: green" class="cell-1 t-offset-1"></div>
+        </div>
         <div class="row">
           <div style="background-color: red" class="cell-1"></div>
           <div style="background-color: blue" class="cell-6"></div>
@@ -47,20 +58,67 @@
       </div>
     </div>
     <br/>
-    <div style="width: 100%;">
+    <div style="width: 100%;border-top: 1px solid;border-bottom: 1px solid">
+      <div class="grid-10 gutter-5 space-2 column" style="height: 400px;">
+        <div class="row">
+          <div style="background-color: red" class="cell-1"></div>
+          <div style="background-color: blue" class="cell-8"></div>
+          <div style="background-color: green" class="cell-1"></div>
+        </div>
+        <div class="row">
+          <div style="background-color: red" class="cell-1"></div>
+          <div style="background-color: blue" class="cell-6"></div>
+          <div style="background-color: green" class="cell-3"></div>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <div style="width: 100%;border-top: 1px solid;border-bottom: 1px solid">
+      <div class="grid-10 gutter-5 space-2 column-wrap" style="height: 400px;">
+        <div class="row width-2">
+          <div style="background-color: red" class="cell-1"></div>
+          <div style="background-color: blue" class="cell-8"></div>
+          <div style="background-color: green" class="cell-1"></div>
+        </div>
+        <div class="row width-8">
+          <div style="background-color: red" class="cell-1"></div>
+          <div style="background-color: blue" class="cell-6"></div>
+          <div style="background-color: green" class="cell-3"></div>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <div style="width: 100%;border-top: 1px solid;border-bottom: 1px solid">
+      <div class="grid-10 gutter-5 space-2 column-wrap" style="height: 400px;">
+        <div class="row width-2">
+          <div style="background-color: red" class="cell-1"></div>
+          <div style="background-color: blue" class="cell-8"></div>
+          <div style="background-color: green" class="cell-1"></div>
+        </div>
+        <div class="row offset-7 width-1">
+          <div style="background-color: red" class="cell-1"></div>
+          <div style="background-color: blue" class="cell-6"></div>
+          <div style="background-color: green" class="cell-3"></div>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <div style="width: 100%;border-top: 1px solid;border-bottom: 1px solid">
       <table class="grid-10 gutter-5 space-2" style="">
         <tr class="row">
           <td style="background-color: red" class="cell-1">a</td>
-          <td style="background-color: blue" class="cell-8">a</td>
-          <td style="background-color: green" class="cell-1">a</td>
+          <td style="background-color: blue" class="cell-7">a</td>
+          <td style="background-color: green" class="cell-2">a</td>
         </tr>
         
         <tr class="row">
-          <td rowspan="2" style="background-color: red" class="cell-1">a</td>
-          <td colspan="2" style="background-color: blue" class="cell-9">a</td>
+          <td  style="background-color: red" class="cell-1">a</td>
+          <td  style="background-color: blue" class="cell-8">a</td>
+          <td  style="background-color: blue" class="cell-1">a</td>
         <tr class="row">
-          <td style="background-color: blue" class="cell-6">a</td>
-          <td style="background-color: green" class="cell-3">a</td>
+          <td  style="background-color: red" class="cell-1">a</td>
+          <td style="background-color: blue" class="cell-8">a</td>
+          <td style="background-color: green" class="cell-1">a</td>
         </tr>
       </table>
     </div>
