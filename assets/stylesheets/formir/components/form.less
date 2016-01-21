@@ -1,0 +1,19 @@
+.input-style {
+  border: 1px solid #ccc;
+  padding: @input-padding-vertical @input-padding-horizontal;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+form, .form {
+  input {
+    &[type="text"], &[type="password"], &[type="email"], &[type="number"], &[type="date"] {
+      .input-style;
+    }
+  }
+  textarea, select {
+    .input-style;
+  }
+}
