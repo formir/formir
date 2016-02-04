@@ -1,12 +1,12 @@
-label[for*="modal-close"] {
+label[for*="@{modal}-close"] {
   
 }
 
 input {
-  &.modal-open, &.modal-close {
+  &.@{modal}-open, &.@{modal}-close {
     display: none;
   }
-  &.modal-close:not(:checked) {
+  &.@{modal}-close:not(:checked) {
     ~ .body {
       height: 100vh;
       overflow-y: hidden;
@@ -14,13 +14,13 @@ input {
   }
 }
 
-body.modal-opened {
+body.@{modal}-opened {
   overflow-y: hidden;
 }
 
 
 
-.modal {
+.@{modal} {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -30,10 +30,10 @@ body.modal-opened {
   overflow-y: auto;
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
-  &.modal-align-middle {
+  &.align-middle {
     vertical-align: middle;
     text-align: center;
-    .modal-wrapper {
+    .@{modal}-wrapper {
       display: inline;
       text-align: left;
       &:before {
@@ -44,14 +44,14 @@ body.modal-opened {
         margin-left: -5px;
         width: 0;
       }
-      .modal-window {
+      .@{modal}-window {
         display: inline-block;
         margin-top: 0;
       }
     }
   }
   
-  &.modal-animated {
+  &.animated {
     opacity: 0;
     display: block;
     transition: background-color 0.5s ease;
@@ -65,7 +65,7 @@ body.modal-opened {
     }
   }
   
-  label.modal-backdrop[for*="modal-close"] {
+  label.@{modal}-backdrop[for*="modal-close"] {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -73,7 +73,7 @@ body.modal-opened {
     right: 17px;
     z-index: @modal-zindex - 1;
   }
-  .modal-window {
+  .@{modal}-window {
     width: @modal-width;
     min-height: @modal-min-height;
     max-width: @modal-max-width;
@@ -86,29 +86,29 @@ body.modal-opened {
     border: @modal-border;
   }
   
-  .modal-close {
+  .@{modal}-close {
     cursor: pointer;
   }
 }
 
-input.modal-open[type="radio"] {
+input.@{modal}-open[type="radio"] {
   &:checked {
-    + .modal {
+    + .@{modal} {
       display: block;
-      &.modal-animated {
+      &.animated {
         opacity: 1;
         pointer-events: auto;
         transition: background-color 0.5s ease;
         background-color: rgba(0, 0, 0, 0.5);
         visibility: visible;
-        &.modal-align-middle {
-          .modal-wrapper:before {
+        &.align-middle {
+          .@{modal}-wrapper:before {
             transition: height 0.5s ease;
           }
         }
       }
-      &.modal-align-middle {
-        .modal-wrapper {
+      &.align-middle {
+        .@{modal}-wrapper {
           &:before {
             height: 50%;
           }

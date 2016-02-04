@@ -1,4 +1,4 @@
-div[class*="grid-"] {
+div[class*="@{grid}"] {
   &[class*="gutter-"]:not([class*="column"]) {
     [class*="cell"] {
       min-height: 50px;
@@ -11,7 +11,7 @@ div[class*="grid-"] {
   }
 }
 
-[class*="grid-"] {
+[class*="@{grid}"] {
   &[class*="gutter-"] {
     [class*="cell"] {
       background-clip: content-box;

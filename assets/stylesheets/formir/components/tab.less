@@ -31,14 +31,8 @@
   .tab-nav(@n, (@i + 1));
 }
 
-.tab-nav-active {
-  background: @tab-nav-active-background;
-  border: @tab-nav-active-border;
-  color: @tab-nav-active-color;
-  box-shadow: @tab-nav-active-shadow;
-}
 
-.tabs {
+.@{tabs} {
   > input[type="radio"] {
     display: none;
     &:checked {
@@ -47,31 +41,52 @@
     }
   }
   
-  .tab-navs {
+  .@{tab}-navs {
     font-size: 0;
     > label[for] {
       display: inline-block;
       font-size: @body-font-size;
     }  
   }
-  .tab-pages {
+  .@{tab}-pages {
     > div {
       display: none;
     }
   }
   
-  &.tabs-as-table {
-    .tab-navs {
+  .@{tab}-navs {
+    &.table {
       display: table;
       width: 100%;
       > label[for] {
         display: table-cell;
         text-align: center;
       }
+      ~ .@{tab}-pages {
+        display: block;
+      }
     }
-    
-    .tab-pages {
-      display: block;
+    &.flex {
+      display: flex;
+      flex-wrap: nowrap;
+      width: 100%;
+      &.space-around {
+        justify-content: space-around;
+      }
+      &.space-between {
+        justify-content: space-between;
+      }
+      &:not([class*="space-"]) {
+        > label[for] {
+          flex: 1 1 auto;
+        }
+      }
+      > label[for] {
+        text-align: center;
+      }
+      ~ .@{tab}-pages {
+        display: block;
+      }
     }
   }
 }

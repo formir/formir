@@ -1,4 +1,4 @@
-.tooltip-arrow-top {
+.tooltip-arrow-top() {
   position: absolute;
   top: -@tootltip-arrow-height;
   left: 0;
@@ -11,7 +11,7 @@
   margin-left: @tootltip-arrow-height + @tootltip-arrow-offset;
 }
 
-.tooltip-arrow-bottom {
+.tooltip-arrow-bottom() {
   position: absolute;
   bottom: -@tootltip-arrow-height;
   top: auto;
@@ -24,14 +24,14 @@
   margin-left: @tootltip-arrow-height + @tootltip-arrow-offset;
 }
 
-.tooltip-arrow-center {
+.tooltip-arrow-center() {
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
 }
 
-.tooltip {
+.tooltip-core() {
   background: @tooltip-background;
   padding: @tooltip-padding;
   color: @tooltip-text-color;
@@ -45,7 +45,7 @@
   &:before {
     .tooltip-arrow-top;
   }
-  &.tooltip-bottom {
+  &.@{tooltip}-bottom {
     bottom: auto;
     top: 100%;
     margin-top: @tootltip-arrow-height;
@@ -54,14 +54,14 @@
     }
   }
   
-  &.tooltip-center {
+  &.@{tooltip}-center {
     left: 50%;
     transform: translate(-50%, 0px);
     &:before {
       .tooltip-arrow-center;
     }
   }
-  &.tooltip-right {
+  &.@{tooltip}-right {
     left: auto;
     right: 0;
     &:before {
@@ -70,7 +70,11 @@
   }
 }
 
-.has-tooltip[data-tooltip] {
+.@{tooltip} {
+  .tooltip-core;
+}
+
+.has-@{tooltip}[data-tooltip] {
   position: relative;
   &.is-absolute {
     position: absolute;
@@ -80,14 +84,14 @@
   }
   &:hover, &[tabindex]:focus {
     &:after {
-      .tooltip;
+      .tooltip-core;
       content: attr(data-tooltip);
       display: block;
     }
     &:before {
       .tooltip-arrow-top;
     }
-    &.tooltip-bottom {
+    &.@{tooltip}-bottom {
       &:after {
         bottom: auto;
         top: 100%;
@@ -97,7 +101,7 @@
         .tooltip-arrow-bottom;
       }
     }
-    &.tooltip-center {
+    &.@{tooltip}-center {
       &:after {
         left: 50%;
         transform: translate(-50%, 0px);
@@ -109,7 +113,7 @@
   }
 }
 
-.has-tooltip {
+.has-@{tooltip} {
   position: relative;
   
   &.is-absolute {
@@ -118,14 +122,14 @@
   &.is-fixed {
     position: fixed;
   }
-  > .tooltip {
+  > .@{tooltip} {
     display: none;
     &:before {
       top: 100%;
       bottom: auto;
       margin-bottom: -@tootltip-arrow-height;
     }
-    &.tooltip-bottom {
+    &.@{tooltip}-bottom {
       &:before {
         top: auto;
         bottom: 100%;
@@ -136,7 +140,7 @@
   }
   
   &:hover, &[tabindex]:focus {
-    > .tooltip {
+    > .@{tooltip} {
       display: block;
     }
   }

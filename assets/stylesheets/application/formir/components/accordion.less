@@ -1,0 +1,18 @@
+.accordion-label-active() {
+  background: @tab-nav-active-background;
+  border: @tab-nav-active-border;
+  color: @tab-nav-active-color;
+  box-shadow: @tab-nav-active-shadow;
+}
+
+.@{accordion} {
+  > label, .@{accordion-label} {
+    display: block;
+    line-height: 2.5 * @body-font-size;
+    padding: 0 1.1em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+  }
+}

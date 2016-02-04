@@ -1,13 +1,23 @@
-.dropdown-show {
+.dropdown-show() {
   display: block;
 }
 
 
-.dropdown {
+.@{dropdown} {
   display: inline-block;
   position: relative;
+  &.focusable {
+    > input {
+      &:focus {
+        ~ .dropdown-content {
+          .dropdown-show;
+        }
+      }
+    }
+  }
   > input {
-    display: none;
+    left: -10000px;
+    position: fixed;
     &:checked {
       ~ .dropdown-content {
         .dropdown-show;

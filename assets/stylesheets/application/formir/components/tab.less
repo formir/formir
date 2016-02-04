@@ -1,5 +1,12 @@
-.tabs {
-  .tab-navs {
+.tab-nav-active() {
+  background: @tab-nav-active-background;
+  border: @tab-nav-active-border;
+  color: @tab-nav-active-color;
+  box-shadow: @tab-nav-active-shadow;
+}
+
+.@{tabs} {
+  .@{tab}-navs {
     label[for] {
       line-height: 2.5 * @body-font-size;
       padding: 0 1.1em;
@@ -9,8 +16,8 @@
       cursor: pointer;
     }  
   }
-  &.tabs-as-table {
-    .tab-navs {
+  &.@{tabs}-as-table {
+    .@{tab}-navs {
       table-layout: fixed;
     }
   }

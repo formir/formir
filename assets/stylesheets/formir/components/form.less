@@ -1,4 +1,4 @@
-.input-style {
+.input-style() {
   border: 1px solid #ccc;
   padding: @input-padding-vertical @input-padding-horizontal;
   -webkit-box-sizing: border-box;
@@ -7,7 +7,7 @@
 }
 
 
-form, .form {
+form, .@{form} {
   input {
     &[type="text"], &[type="password"], &[type="email"], &[type="number"], &[type="date"] {
       .input-style;
