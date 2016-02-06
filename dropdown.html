@@ -31,7 +31,7 @@
         rootpath : ""
       };
       $(document).on("click", function(e) {
-        if (!$(e.target).closest('.dropdown').length) $('.dropdown input').get(0).checked=false
+        if (!$(e.target).closest('.dropdown').length) $('.dropdown input:checked').each(function(){this.checked=false});
       });
     </script>
   </head>

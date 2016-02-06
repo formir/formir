@@ -1,0 +1,233 @@
+.side-margin(@n, @i: 1) when (@i =< @n) {
+  &.@{width}-@{i} {
+    &.left {
+      ~ .@{body-content} {
+        margin-left: unit(((@content-max-width/@base-steps)*@i), px);
+      }
+    }
+    &.right {
+      ~ .@{body-content} {
+        margin-right: unit(((@content-max-width/@base-steps)*@i), px);
+      }
+    }
+  }
+  &.@{height}-@{i} {
+    &.top {
+      ~ .@{body-content} {
+        margin-top: unit(((@content-max-height/@base-steps)*@i), px);
+      }
+    }
+    &.bottom {
+      ~ .@{body-content} {
+        margin-bottom: unit(((@content-max-height/@base-steps)*@i), px);
+      }
+    }
+  }
+  .side-margin(@n, (@i + 1));
+}
+
+.@{side-collapse} {
+  &:checked {
+    + .@{side} {
+      .side-collapse();
+      &.@{side-animated} {
+        &.left, &.right {
+          transition: width @side-animate-time;
+        }
+        &.top, &.bottom {
+          transition: height @side-animate-time;
+        }
+        
+        ~ .@{body-content} {
+          transition: margin @side-animate-time;
+        }
+      }
+      
+      &.left {
+        ~ .@{body-content} {
+          margin-left: @side-collapse-width;
+        }
+      }
+      &.right {
+        ~ .@{body-content} {
+          margin-right: @side-collapse-width;
+        }
+      }
+      &.top {
+        ~ .@{body-content} {
+          margin-top: @side-collapse-height;
+        }
+      }
+      &.bottom {
+        ~ .@{body-content} {
+          margin-bottom: @side-collapse-height;
+        }
+      }
+
+      &.left, &.right {
+        width: @side-collapse-width;
+      }
+      
+      &.top, &.bottom {
+        height: @side-collapse-height;
+      }
+      &.@{side-hoverable}:hover, &.@{side-focusable}:focus {
+        .side-opened();
+        &.left, &.right {
+          .and-width(@base-steps);
+        }
+        
+        &.top, &.bottom {
+          .and-height(@base-steps);
+        }
+      }
+    }
+  }
+}
+
+.@{side-hide} {
+  &:checked {
+    + .@{side}.@{side-hoverable} {
+      display: block;
+      &:not(:hover) {
+        &.left, &.right {
+          width: @side-hoverable-offset;
+          opacity: 0;
+          overflow-x: hidden;
+        }
+        &.top, &.bottom {
+          height: @side-hoverable-offset;
+          opacity: 0;
+          overflow-y: hidden;
+        }
+      }
+      &:hover {
+        .side-opened();
+      }
+    }
+    + .@{side}:not(.@{side-hoverable}):not(:hover) {
+      display: none;
+      &.@{side-animated} {
+        display: block;
+        &.left, &.right {
+          width: 0;
+          overflow-x: hidden;
+        }
+        &.top, &.bottom {
+          height: 0;
+          overflow-y: hidden;
+        }
+      }
+    }
+    + .@{side} {
+      &[class*="width-"] {
+        &.left {
+          ~ .@{body-content} {
+            margin-left: 0;
+          }
+        }
+        &.right {
+          ~ .@{body-content} {
+            margin-right: 0;
+          }
+        }
+      }
+      
+      &[class*="height-"] {
+        &.top {
+          ~ .@{body-content} {
+            margin-top: 0;
+          }
+        }
+        &.bottom {
+          ~ .@{body-content} {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+.@{side-collapse}, .@{side-hide} {
+  display: none; 
+}
+
+.@{side} {
+  position: fixed;
+  z-index: @side-index;
+  &.@{side-uncover}.@{side-hoverable}:hover, &.@{side-uncover}.@{side-focusable}:focus, & {
+    .side-margin(@base-steps);
+  }
+  &.@{side-overflow} {
+    &:hover, &:focus {
+      overflow-y: auto;
+    }
+    overflow-y: hidden;
+  }
+  &.@{side-animated} {
+    &.left, &.right {
+      transition: width @side-animate-time;
+    }
+    &.top, &.bottom {
+      transition: height @side-animate-time;
+    }
+    ~ .@{body-content} {
+      transition: margin @side-animate-time;
+    }
+  }
+  &.@{side-absolute} {
+    &.left, &.right {
+      > * {
+        position: relative;
+        z-index: 1;
+      }
+      position: absolute;
+      top: 0;
+      bottom: auto;
+      height: auto;
+      max-height: none;
+      &:before {
+        background: inherit;
+        position: fixed;
+        z-index: 0;
+        width: inherit;
+        bottom: 0;
+        top: 0;
+        content: "";
+      }
+    }
+  }
+  &.left, &.right {
+    top: 0;
+    bottom: 0;
+    max-height: 100%;
+    height: 100%;
+    will-change: width;
+  }
+  &.left {
+    left: 0;
+    right: auto;
+  }
+  
+  &.right {
+    right: 0;
+    left: auto;
+  }
+  
+  &.top, &.bottom {
+    left: 0;
+    right: 0;
+    width: 100%;
+    will-change: height;
+  }
+  
+  &.top {
+    top: 0;
+    bottom: auto;
+  }
+  
+  &.bottom {
+    bottom: 0;
+    top: auto;
+  }
+}

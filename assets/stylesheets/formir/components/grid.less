@@ -12,7 +12,7 @@
     table& {
       width: calc(100% ~" + " unit(@value, @unit));
     }
-    &.content-holder {
+    &.@{content-holder} {
       @margin: (@content-min-margin * 2);
       @gutter: unit(@value, @unit);
       width: calc(@content-max-width ~" + @{gutter}");
@@ -171,56 +171,56 @@
       width: auto;
       flex: 1 1 unit((100 / @n) * @i, %);
     }
-    .width-@{i} {
+    .@{width}-@{i} {
       width: unit((100 / @n) * @i, %);
     }
   }
   
   @media (min-width: 0) and (max-width: @mobile-portrait-max-width) {
     .mp-@{i}, .mp-under-@{i} {
-      &[class*="@{cell}"], &[class*="width-"] {
+      &[class*="@{cell}"], &[class*="@{width}-"] {
         width: unit((100 / @n) * @i, %);
       }
     }
   }
   @media (min-width: @mobile-portrait-max-width) and (max-width: @mobile-max-width) {
     .m-@{i} {
-      &[class*="@{cell}"], &[class*="width-"] {
+      &[class*="@{cell}"], &[class*="@{width}-"] {
         width: unit((100 / @n) * @i, %);
       }
     }
   }
   @media (min-width: 0) and (max-width: @mobile-max-width) {
     .m-under-@{i} {
-      &[class*="@{cell}"], &[class*="width-"] {
+      &[class*="@{cell}"], &[class*="@{width}-"] {
         width: unit((100 / @n) * @i, %);
       }
     }
   }
   @media (min-width: @mobile-max-width) and (max-width: @tablet-portrait-max-width) {
     .tp-@{i} {
-      &[class*="@{cell}"], &[class*="width-"] {
+      &[class*="@{cell}"], &[class*="@{width}-"] {
         width: unit((100 / @n) * @i, %);
       }
     }
   }
   @media (min-width: 0) and (max-width: @tablet-portrait-max-width) {
     .tp-under-@{i} {
-      &[class*="@{cell}"], &[class*="width-"] {
+      &[class*="@{cell}"], &[class*="@{width}-"] {
         width: unit((100 / @n) * @i, %);
       }
     }
   }
   @media (min-width: @tablet-portrait-max-width) and (max-width: @tablet-max-width) {
     .t-@{i} {
-      &[class*="@{cell}"], &[class*="width-"] {
+      &[class*="@{cell}"], &[class*="@{width}-"] {
         width: unit((100 / @n) * @i, %);
       }
     }
   }
   @media (min-width: 0) and (max-width: @tablet-max-width) {
     .t-under-@{i} {
-      &[class*="@{cell}"], &[class*="width-"] {
+      &[class*="@{cell}"], &[class*="@{width}-"] {
         width: unit((100 / @n) * @i, %);
       }
     }
@@ -247,7 +247,7 @@
   }
   @media (min-width: 0) and (max-width: @mobile-portrait-max-width) {
     .mp-offset-@{i}, .mp-offset-left-@{i}, .mp-under-offset-@{i}, .mp-under-offset-left-@{i} {
-      &[class*="@{cell}"], &[class*="width-"] {
+      &[class*="@{cell}"], &[class*="@{width}-"] {
         margin-left: unit((100 / @n) * @i, %);
       }
     }
@@ -257,7 +257,7 @@
       }
     }
     .mp-offset-right-@{i}, .mp-under-offset-right-@{i} {
-      &[class*="@{cell}"], &[class*="width-"] {
+      &[class*="@{cell}"], &[class*="@{width}-"] {
         margin-right: unit((100 / @n) * @i, %);
       }
     }
@@ -269,7 +269,7 @@
   }
   @media (min-width: @mobile-portrait-max-width) and (max-width: @mobile-max-width) {
     .m-offset-@{i}, .m-offset-left-@{i} {
-      &[class*="@{cell}"], &[class*="width-"] {
+      &[class*="@{cell}"], &[class*="@{width}-"] {
         margin-left: unit((100 / @n) * @i, %);
       }
     }
@@ -279,7 +279,7 @@
       }
     }
     .m-offset-right-@{i} {
-      &[class*="@{cell}"], &[class*="width-"]  {
+      &[class*="@{cell}"], &[class*="@{width}-"]  {
         margin-right: unit((100 / @n) * @i, %);
       }
     }
@@ -291,7 +291,7 @@
   }
   @media (min-width: 0) and (max-width: @mobile-max-width) {
     .m-under-offset-@{i}, .m-under-offset-left-@{i} {
-      &[class*="@{cell}"], &[class*="width-"] {
+      &[class*="@{cell}"], &[class*="@{width}-"] {
         margin-left: unit((100 / @n) * @i, %);
       }
     }
@@ -301,7 +301,7 @@
       }
     }
     .m-under-offset-right-@{i} {
-      &[class*="@{cell}"], &[class*="width-"]  {
+      &[class*="@{cell}"], &[class*="@{width}-"]  {
         margin-right: unit((100 / @n) * @i, %);
       }
     }
@@ -313,7 +313,7 @@
   }
   @media (min-width: @mobile-max-width) and (max-width: @tablet-portrait-max-width) {
     .tp-offset-@{i}, .tp-offset-left-@{i} {
-      &[class*="@{cell}"], &[class*="width-"] {
+      &[class*="@{cell}"], &[class*="@{width}-"] {
         margin-left: unit((100 / @n) * @i, %);
       }
     }
@@ -323,7 +323,7 @@
       }
     }
     .tp-offset-right-@{i} {
-      &[class*="@{cell}"], &[class*="width-"] {
+      &[class*="@{cell}"], &[class*="@{width}-"] {
         margin-right: unit((100 / @n) * @i, %);
       }
     }
@@ -335,7 +335,7 @@
   }
   @media (min-width: 0) and (max-width: @tablet-portrait-max-width) {
     .tp-under-offset-@{i}, .tp-under-offset-left-@{i} {
-      &[class*="@{cell}"], &[class*="width-"] {
+      &[class*="@{cell}"], &[class*="@{width}-"] {
         margin-left: unit((100 / @n) * @i, %);
       }
     }
@@ -345,7 +345,7 @@
       }
     }
     .tp-under-offset-right-@{i} {
-      &[class*="@{cell}"], &[class*="width-"]  {
+      &[class*="@{cell}"], &[class*="@{width}-"]  {
         margin-right: unit((100 / @n) * @i, %);
       }
     }
@@ -357,7 +357,7 @@
   }
   @media (min-width: @tablet-portrait-max-width) and (max-width: @tablet-max-width) {
     .t-offset-@{i}, .t-offset-left-@{i} {
-      &[class*="@{cell}"], &[class*="width-"] {
+      &[class*="@{cell}"], &[class*="@{width}-"] {
         margin-left: unit((100 / @n) * @i, %);
       }
     }
@@ -367,7 +367,7 @@
       }
     }
     .t-offset-right-@{i} {
-      &[class*="@{cell}"], &[class*="width-"] {
+      &[class*="@{cell}"], &[class*="@{width}-"] {
         margin-right: unit((100 / @n) * @i, %);
       }
     }
@@ -379,7 +379,7 @@
   }
   @media (min-width: 0) and (max-width: @tablet-max-width) {
     .t-under-offset-@{i}, .t-under-offset-left-@{i} {
-      &[class*="@{cell}"], &[class*="width-"] {
+      &[class*="@{cell}"], &[class*="@{width}-"] {
         margin-left: unit((100 / @n) * @i, %);
       }
     }
@@ -389,7 +389,7 @@
       }
     }
     .t-under-offset-right-@{i} {
-      &[class*="@{cell}"], &[class*="width-"] {
+      &[class*="@{cell}"], &[class*="@{width}-"] {
         margin-right: unit((100 / @n) * @i, %);
       }
     }
@@ -419,7 +419,7 @@
   .@{cell} {
     flex: 1 1 auto;
   }
-  &.content-holder {
+  &.@{content-holder} {
     margin-left: auto;
     margin-right: auto;
     width: @content-max-width;

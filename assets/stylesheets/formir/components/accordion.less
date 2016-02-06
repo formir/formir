@@ -30,13 +30,52 @@
   max-width: 0;
 }
 
+.@{accordions} {
+  position: relative;
+}
+
+.@{accordion-collapsible} {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 0;
+  
+  &:checked {
+    pointer-events: none;
+  }
+  ~ .@{accordion} {
+    > input {
+      ~ label, ~ .@{accordion-label} {
+         z-index: 1;
+         position: relative;
+      }
+      ~ .@{accordion-content} {
+        z-index: 1;
+        position: relative;
+      }
+    }
+    > input:checked  {
+      ~ label, ~ .@{accordion-label} {
+        pointer-events: none;
+      }
+    }
+  }
+}
+
 .@{accordion} {
-  &.horizontal {
+  &.@{accordion-horizontal} {
     align-items: stretch;
     display: flex;
     flex-flow: nowrap;
   }
-  &.hoverable {
+  &.@{accordion-hoverable} {
     &:hover {
       > .@{accordion-content} {
         display: block;
@@ -44,13 +83,13 @@
       > label, .@{accordion-label} {
         .accordion-label-active;
       }
-      &.label-hide {
+      &.@{accordion-label-hide} {
         > label, .@{accordion-label} {
           display: none;
         }
       }
     }
-    &.animated:not(.horizontal) {
+    &.@{accordion-animated}:not(.horizontal) {
       > .@{accordion-content} {
         .accordion-not-active;
       }
@@ -60,7 +99,7 @@
         }
       }
     }
-    &.animated.horizontal {
+    &.@{accordion-animated}.@{accordion-horizontal} {
       > .@{accordion-content} {
         .accordion-horizontal-not-active;
       }
@@ -71,7 +110,7 @@
       }
     }
   }
-  &.focusable {
+  &.@{accordion-focusable} {
     > label, .@{accordion-label} {
       &:focus {
         .accordion-label-active;
@@ -88,7 +127,7 @@
         ~ .@{accordion-content} {
           display: block;
         }
-        &.label-hide {
+        &.@{accordion-label-hide} {
           ~ label, ~ .@{accordion-label} {
             display: none;
           }
@@ -102,13 +141,13 @@
       > label, .@{accordion-label} {
         .accordion-label-active;
       }
-      &.label-hide {
+      &.@{accordion-label-hide} {
         > label, .@{accordion-label} {
           display: none;
         }
       }
     }
-    &.animated:not(.horizontal) {
+    &.@{accordion-animated}:not(.@{accordion-horizontal}) {
       &:focus {
         .@{accordion-content} {
           .accordion-active;
@@ -132,7 +171,7 @@
         .accordion-not-active;
       }
     }
-    &.animated.horizontal {
+    &.@{accordion-animated}.@{accordion-horizontal} {
       &:focus {
         .@{accordion-content} {
           .accordion-horizontal-active;
@@ -157,7 +196,7 @@
       }
     }
   }
-  &.animated:not(.horizontal) {
+  &.@{accordion-animated}:not(.@{accordion-horizontal}) {
     > input {
       &:not(:checked) {
         ~ .@{accordion-content} {
@@ -177,7 +216,7 @@
     }
   }
   
-  &.animated.horizontal {
+  &.@{accordion-animated}.@{accordion-horizontal} {
     > input {
       &:not(:checked) {
         ~ .@{accordion-content} {
@@ -197,7 +236,7 @@
     }
   }
   
-  &.label-hide {
+  &.@{accordion-label-hide} {
     > input {
       &:checked {
         ~ label, ~ .@{accordion-label} {
@@ -221,6 +260,11 @@
   }
   .@{accordion-content} {
     display: none;
+  }
+  > label, .@{accordion-label} {
+    .@{accordion-arrow} {
+      .accordion-arrow-down;
+    }
   }
   &.active {
     > label, .@{accordion-label} {

@@ -1,6 +1,37 @@
-.content-holder {
+.width(@n, @i: 1) when (@i =< @n) {
+  .@{width}-@{i} {
+    width: unit(((@content-max-width/@base-steps)*@i), px);
+  }
+  .width(@n, (@i + 1));
+}
+
+.height(@n, @i: 1) when (@i =< @n) {
+  .@{height}-@{i} {
+    height: unit(((@content-max-height/@base-steps)*@i), px);
+  }
+  .height(@n, (@i + 1));
+}
+
+.and-width(@n, @i: 1) when (@i =< @n) {
+  &.@{width}-@{i} {
+    width: unit(((@content-max-width/@base-steps)*@i), px);
+  }
+  .and-width(@n, (@i + 1));
+}
+
+.and-height(@n, @i: 1) when (@i =< @n) {
+  &.@{height}-@{i} {
+    height: unit(((@content-max-height/@base-steps)*@i), px);
+  }
+  .and-height(@n, (@i + 1));
+}
+
+.@{content-holder} {
   margin-left: auto;
   margin-right: auto;
   width: @content-max-width;
   max-width: calc(100% ~" - " 2 * @content-min-margin);
 }
+
+.width(@base-steps);
+.height(@base-steps);
