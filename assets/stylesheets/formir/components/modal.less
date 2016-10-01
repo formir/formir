@@ -1,12 +1,35 @@
-label[for*="@{modal}-close"] {
-  
+label[for*="@{modal-close}"] {
+  float: right;
+}
+
+.modal-show() {
+  display: block;
+  &.@{modal-animated} {
+    opacity: 1;
+    pointer-events: auto;
+    transition: background-color 0.5s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: visible;
+    &.align-middle {
+      .@{modal-wrapper}:before {
+        transition: height 0.5s ease;
+      }
+    }
+  }
+  &.align-middle {
+    .@{modal-wrapper} {
+      &:before {
+        height: 50%;
+      }
+    }
+  }
 }
 
 input {
-  &.@{modal}-open, &.@{modal}-close {
+  &.@{modal-open}, &.@{modal-close} {
     display: none;
   }
-  &.@{modal}-close:not(:checked) {
+  &.@{modal-close}:not(:checked) {
     ~ .body {
       height: 100vh;
       overflow-y: hidden;
@@ -14,11 +37,9 @@ input {
   }
 }
 
-body.@{modal}-opened {
+body.@{modal-opened} {
   overflow-y: hidden;
 }
-
-
 
 .@{modal} {
   position: fixed;
@@ -30,10 +51,13 @@ body.@{modal}-opened {
   overflow-y: auto;
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
-  &.align-middle {
+  &.@{active} {
+    .modal-show;
+  }
+  &.@{modal-centered} {
     vertical-align: middle;
     text-align: center;
-    .@{modal}-wrapper {
+    .@{modal-wrapper} {
       display: inline;
       text-align: left;
       &:before {
@@ -44,14 +68,14 @@ body.@{modal}-opened {
         margin-left: -5px;
         width: 0;
       }
-      .@{modal}-window {
+      .@{modal-window} {
         display: inline-block;
         margin-top: 0;
       }
     }
   }
   
-  &.animated {
+  &.@{modal-animated} {
     opacity: 0;
     display: block;
     transition: background-color 0.5s ease;
@@ -65,7 +89,7 @@ body.@{modal}-opened {
     }
   }
   
-  label.@{modal}-backdrop[for*="modal-close"] {
+  .@{modal-backdrop} {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -73,7 +97,7 @@ body.@{modal}-opened {
     right: 17px;
     z-index: @modal-zindex - 1;
   }
-  .@{modal}-window {
+  .@{modal-window} {
     width: @modal-width;
     min-height: @modal-min-height;
     max-width: @modal-max-width;
@@ -86,34 +110,15 @@ body.@{modal}-opened {
     border: @modal-border;
   }
   
-  .@{modal}-close {
+  .@{modal-close} {
     cursor: pointer;
   }
 }
 
-input.@{modal}-open[type="radio"] {
+input.@{modal-open} {
   &:checked {
     + .@{modal} {
-      display: block;
-      &.animated {
-        opacity: 1;
-        pointer-events: auto;
-        transition: background-color 0.5s ease;
-        background-color: rgba(0, 0, 0, 0.5);
-        visibility: visible;
-        &.align-middle {
-          .@{modal}-wrapper:before {
-            transition: height 0.5s ease;
-          }
-        }
-      }
-      &.align-middle {
-        .@{modal}-wrapper {
-          &:before {
-            height: 50%;
-          }
-        }
-      }
+      .modal-show;
     }
   }
 }

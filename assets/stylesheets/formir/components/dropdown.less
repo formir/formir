@@ -2,14 +2,18 @@
   display: block;
 }
 
-
 .@{dropdown} {
   display: inline-block;
   position: relative;
-  &.focusable {
+  &.@{active} {
+    .@{dropdown-content} {
+      .dropdown-show;
+    }
+  }
+  &.@{dropdown-focusable} {
     > input {
       &:focus {
-        ~ .dropdown-content {
+        ~ .@{dropdown-content} {
           .dropdown-show;
         }
       }
@@ -19,12 +23,30 @@
     left: -10000px;
     position: fixed;
     &:checked {
-      ~ .dropdown-content {
+      ~ .@{dropdown-content} {
         .dropdown-show;
       }
     }
   }
-  .dropdown-content {
+  &.@{dropdown-top} {
+    .@{dropdown-content} {
+      bottom: 100%;
+      top: auto;
+    }
+  }
+  &.@{dropdown-right} {
+    .@{dropdown-content} {
+      right: 0;
+      left: auto;
+    }
+  }
+  &.@{dropdown-left} {
+    .@{dropdown-content} {
+      left: 0;
+      right: auto;
+    }
+  }
+  .@{dropdown-content} {
     display: none;
     position: absolute;
     top: 100%;

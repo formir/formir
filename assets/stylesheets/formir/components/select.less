@@ -1,0 +1,127 @@
+.select {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  outline: 0 none;
+  &.disabled {
+    pointer-events: none;
+    .select-content {
+      &:after {
+        opacity: 0.55;
+      }
+      > * {
+        opacity: 0.5;
+      }
+    }
+  }
+  input {
+    position: fixed;
+    left: -100000px;
+  }
+  &.focus {
+    overflow: visible;
+    .select-content {
+      z-index: 10000;
+      max-height: 50vh;
+      overflow-y: auto;
+      .placeholder {
+        display: none;
+      }
+      label {
+        display: block;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      &:after {
+        display: none;
+      }
+    }
+  }
+  &:not(.focus) {
+    input {
+      &:checked {
+        ~ .placeholder {
+          display: none;
+        }
+        ~ input:checked {
+          &.select-all + label {
+            display: none;
+          }
+        }
+        + label {
+          order: -1;
+          width: auto;
+          padding: 0 5px;
+          display: block;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+  .select-all + label {
+    .order(-1);
+  }
+  .placeholder {
+    .order(-1);
+    &:after {
+      content: attr(data-placeholder);
+    }
+  }
+  
+  .select-content {
+    background-color: #fff;
+    .display-flex;
+    .flex-direction(row);
+    .flex-wrap(wrap);
+    > * {
+      display: block;
+      white-space: nowrap;
+      text-align: left;
+      width: 100%;
+      text-overflow: ellipsis;
+      .box-sizing(border-box);
+    }
+    label {
+      cursor: pointer;
+      display: none;
+    }
+  }
+  &.more-selected {
+    counter-reset: selected;
+    &:not(.focus) {
+      .select-content {
+        label[for] {
+          display: none;
+        }
+      }
+      input:not(.select-all) {
+        &:checked {
+          counter-increment: selected;
+          ~ input:checked {
+            ~ .placeholder {
+              display: block;
+              &:after {
+                content: counter(selected) " " attr(data-selected);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.all-selected {
+    &:not(.focus) {
+      .select-content {
+        input:not(.select-all) + label[for] {
+          display: none;
+        }
+        input.select-all + label[for] {
+          display: block;
+        }
+        .placeholder {
+          display: none !important;
+        }
+      }
+    }
+  }
+}

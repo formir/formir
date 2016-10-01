@@ -1,15 +1,15 @@
-.width(@n, @i: 1) when (@i =< @n) {
+.width-repeat(@n, @i: 1) when (@i =< @n) {
   .@{width}-@{i} {
     width: unit(((@content-max-width/@base-steps)*@i), px);
   }
-  .width(@n, (@i + 1));
+  .width-repeat(@n, (@i + 1));
 }
 
-.height(@n, @i: 1) when (@i =< @n) {
+.height-repeat(@n, @i: 1) when (@i =< @n) {
   .@{height}-@{i} {
     height: unit(((@content-max-height/@base-steps)*@i), px);
   }
-  .height(@n, (@i + 1));
+  .height-repeat(@n, (@i + 1));
 }
 
 .and-width(@n, @i: 1) when (@i =< @n) {
@@ -33,5 +33,5 @@
   max-width: calc(100% ~" - " 2 * @content-min-margin);
 }
 
-.width(@base-steps);
-.height(@base-steps);
+.width-repeat(@base-steps);
+.height-repeat(@base-steps);

@@ -1,11 +1,11 @@
 div[class*="@{grid}"] {
   &[class*="gutter-"]:not([class*="column"]) {
-    [class*="cell"] {
+    [class*="@{cell}"] {
       min-height: 50px;
     }
   }
   &[class*="gutter-"] {
-    [class*="cell"] {
+    [class*="@{cell}"] {
       background-clip: content-box;
     }
   }
@@ -13,7 +13,7 @@ div[class*="@{grid}"] {
 
 [class*="@{grid}"] {
   &[class*="gutter-"] {
-    [class*="cell"] {
+    [class*="@{cell}"] {
       background-clip: content-box;
     }
   }

@@ -3,13 +3,72 @@
 // Grid:
 @grid: grid;
 @cell: cell;
+
 @row: row;
+@column: column;  // set cell as column
+@column-force: column-force;  // force set all child cell as column
+@column-wrap: column-wrap; // set row and cell as column - stay width
+
+@reverse: reverse; // reverce order
+@release: release;
+
+@gutter: gutter; // horizontal space between cell
+@gutter-margin: gutter-margin;
+@space: space; // vertical space between cell
+@space-margin: space-margin;
+@around: around; //set space/gutter also in first and last cell/row 
+
+@nowrap: nowrap;
+@floating: floating;
+
+
+@justify-center: justify-center;
+@justify-around: justify-around;
+@justify-between: justify-beteen;
+@justify-start: justify-start;
+@justify-end: justify-end;
+
+@vertical-center: vertical-center;
+@vertical-start: vertical-start;
+@vertical-end: vertical-end;
+
+@vertical-items-center: vertical-items-center;
+@vertical-items-streach: vertical-items-streach;
+@vertical-items-start: vertical-items-start;
+@vertical-items-end: vertical-items-end;
+
+@items-center: items-center;
+@items-streach:items-streach;
+@items-start: items-start;
+@items-end: items-end;
+
+@text-center: text-center;
+@text-right: text-right;
+@text-left: text-left;
+
+@m: m;
+@mp: mp;
+@t: t;
+@tp: tp;
+
+@offset: offset;
+@offset-left: offset-left;
+@offset-right: offset-right;
+@under: under;
+
 
 @width: width;
 @height: height;
 
+@active: active;
+
 @chart: chart;
 @dropdown: dropdown;
+@dropdown-content: dropdown-content;
+@dropdown-focusable: focusable;
+@dropdown-top: top;
+@dropdown-left: left;
+@dropdown-right: right;
 
 // Forms:
 @form: form;
@@ -18,12 +77,30 @@
 @info: info;
 
 @table: table;
+@flex: flex;
 
 @modal: modal;
+@modal-wrapper: modal-wrapper;
+@modal-window: modal-window;
+@modal-footer: modal-footer;
+@modal-header: modal-header;
+@modal-content: modal-content;
+@modal-close: modal-close;
+@modal-backdrop: modal-backdrop;
+@modal-animated: animated;
+@modal-open: modal-open;
+@modal-opened: modal-opened;
+@modal-centered: centered;
 
 // Tabs:
 @tabs: tabs;
 @tab: tab;
+@tab-navs: tab-navs;
+@tab-pages: tab-pages;
+@tab-space: space;
+@tab-space-around: space-around;
+@tab-space-between: space-between;
+@tabs-as-table: as-table;
 
 //Accordion:
 @accordions: accordions;
@@ -39,17 +116,48 @@
 @accordion-arrow: arrow;
 
 @tooltip: tooltip;
+@has-tooltip: has-tooltip;
+@tooltip-bottom: bottom;
+@tooltip-bottom-right: bottom-right;
+@tooltip-bottom-center: bottom-center;
+@tooltip-top: top;
+@tooltip-top-right: right;
+@tooltip-center: center;
+@tooltip-right: right;
+@tooltip-right-middle: right-middle;
+@tooltip-left-middle: left-middle;
+@tooltip-right-top: right-top;
+@tooltip-right-bottom: right-bottom;
+@tooltip-left-top: left-top;
+@tooltip-left-bottom: left-bottom;
+@tooltip-absolute: absolute;
+@tooltip-fixed: fixed;
+
+@popup: popup;
+@has-popup: has-popup;
+@popup-bottom: bottom;
+@popup-center: center;
+@popup-right: right;
+@popup-absolute: absolute;
+@popup-fixed: fixed;
 
 
 @side: side;
 @side-collapse: side-collapse;
+@side-backdrop: side-backdrop;
 @side-hide: side-hide;
 @side-animated: animated;
 @side-hoverable: hoverable;
+@side-hover-backgrop: hover-backdrop;
 @side-focusable: focusable;
-@side-uncover: uncover;
+@side-focus-backgrop: focus-backdrop;
+@side-cover: cover;
+@side-uncover-hover: uncover-hover;
+@side-uncover-focus: uncover-focus;
 @side-overflow: overflow;
 @side-absolute: absolute;
+@side-relative: relative;
+@side-full-height: side-full-height;
 
 @content-holder: content-holder;
 @body-content: body-content;

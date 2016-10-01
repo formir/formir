@@ -81,6 +81,40 @@
           .and-height(@base-steps);
         }
       }
+      &.@{side-focusable}.@{side-focus-backgrop}:focus {
+        + .@{side-backdrop} {
+          display: block;
+        }
+      }
+      &.@{side-hoverable}.@{side-hover-backgrop}:hover {
+        + .@{side-backdrop} {
+          display: block;
+        }
+      }
+    }
+  }
+  + .@{side} {
+    &.@{side-cover} {
+      &.left {
+        ~ .@{body-content} {
+          margin-left: @side-collapse-width;
+        }
+      }
+      &.right {
+        ~ .@{body-content} {
+          margin-right: @side-collapse-width;
+        }
+      }
+      &.top {
+        ~ .@{body-content} {
+          margin-top: @side-collapse-height;
+        }
+      }
+      &.bottom {
+        ~ .@{body-content} {
+          margin-bottom: @side-collapse-height;
+        }
+      }
     }
   }
 }
@@ -148,14 +182,43 @@
     }
   }
 }
+
 .@{side-collapse}, .@{side-hide} {
-  display: none; 
+  display: none;
+  &:checked {
+    + .@{side} + .@{side-backdrop} {
+      display: none;
+    }
+  }
+}
+
+.@{side-full-height} {
+  position: relative;
 }
 
 .@{side} {
   position: fixed;
   z-index: @side-index;
-  &.@{side-uncover}.@{side-hoverable}:hover, &.@{side-uncover}.@{side-focusable}:focus, & {
+  + .@{side-backdrop} {
+    position: fixed;
+    background-color: @side-backdrop-color;
+    opacity: @side-backdrop-opacity;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: @side-index - 1;
+  }
+  &:not(.@{side-cover}) {
+    .side-margin(@base-steps);
+  }
+  
+  &.@{side-uncover-hover}.@{side-hoverable}:hover {
+    .side-margin(@base-steps);
+  }
+  &.@{side-uncover-focus}.@{side-focusable}:focus {
     .side-margin(@base-steps);
   }
   &.@{side-overflow} {
@@ -177,24 +240,25 @@
   }
   &.@{side-absolute} {
     &.left, &.right {
-      > * {
-        position: relative;
-        z-index: 1;
-      }
       position: absolute;
       top: 0;
       bottom: auto;
       height: auto;
-      max-height: none;
-      &:before {
-        background: inherit;
-        position: fixed;
-        z-index: 0;
-        width: inherit;
-        bottom: 0;
-        top: 0;
-        content: "";
-      }
+      min-height: 100%;
+      max-height: 100%;
+    }
+  }
+  &.@{side-relative} {
+    &.right {
+      float: right;
+    }
+    &.left {
+      float: left;
+    }
+  }
+  &.@{side-relative} {
+    &.left, &.right {
+      position: relative;
     }
   }
   &.left, &.right {

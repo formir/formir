@@ -1,0 +1,109 @@
+.popup-arrow-top() {
+  position: absolute;
+  top: -@popup-arrow-height;
+  left: 0;
+  content: "";
+  width: 0; 
+  height: 0; 
+  border-left: @popup-arrow-height solid transparent;
+  border-right: @popup-arrow-height solid transparent;
+  border-top: @popup-arrow-height solid @popup-background;
+  margin-left: @popup-arrow-height + @popup-arrow-offset;
+}
+
+.popup-arrow-bottom() {
+  position: absolute;
+  bottom: -@popup-arrow-height;
+  top: auto;
+  left: 0;
+  content: "";
+  width: 0; 
+  height: 0;
+  border-top: @popup-arrow-height solid transparent;
+  border-bottom: @popup-arrow-height solid @popup-background;
+  margin-left: @popup-arrow-height + @popup-arrow-offset;
+}
+
+.popup-arrow-center() {
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.popup-core() {
+  background: @popup-background;
+  padding: @popup-padding;
+  color: @popup-text-color;
+  max-width: @popup-max-width;
+  min-width: @popup-min-width;
+  border-radius: @popup-border-radius;
+  bottom: 100%;
+  left: 0;
+  position: absolute;
+  margin-bottom: @popup-arrow-height;
+  &:before {
+    .popup-arrow-top;
+  }
+  &.@{popup-bottom} {
+    bottom: auto;
+    top: 100%;
+    margin-top: @popup-arrow-height;
+    &:before {
+      .popup-arrow-bottom;
+    }
+  }
+  
+  &.@{popup-center} {
+    left: 50%;
+    transform: translate(-50%, 0px);
+    &:before {
+      .popup-arrow-center;
+    }
+  }
+  &.@{popup-right} {
+    left: auto;
+    right: 0;
+    &:before {
+      .popup-arrow-center;
+    }
+  }
+}
+
+.@{popup} {
+  .popup-core;
+}
+
+.@{has-popup} {
+  position: relative;
+  
+  &.@{popup-absolute} {
+    position: absolute;
+  }
+  &.@{popup-fixed} {
+    position: fixed;
+  }
+  > .@{popup} {
+    display: none;
+    &:before {
+      top: 100%;
+      bottom: auto;
+      margin-bottom: -@popup-arrow-height;
+    }
+    &.@{popup-bottom} {
+      &:before {
+        top: auto;
+        bottom: 100%;
+        margin-top: -@popup-arrow-height;
+        margin-bottom: auto;
+      }
+    }
+  }
+  
+  &:hover, &[tabindex]:focus {
+    > .@{popup} {
+      display: block;
+    }
+  }
+}
+

@@ -36,47 +36,47 @@
   > input[type="radio"] {
     display: none;
     &:checked {
-      .tab-page(30);
-      .tab-nav(30);
+      .tab-page(10);
+      .tab-nav(10);
     }
   }
   
-  .@{tab}-navs {
+  .@{tab-navs} {
     font-size: 0;
     > label[for] {
       display: inline-block;
       font-size: @body-font-size;
     }  
   }
-  .@{tab}-pages {
+  .@{tab-pages} {
     > div {
       display: none;
     }
   }
   
-  .@{tab}-navs {
-    &.table {
+  .@{tab-navs} {
+    &.@{table} {
       display: table;
       width: 100%;
       > label[for] {
         display: table-cell;
         text-align: center;
       }
-      ~ .@{tab}-pages {
+      ~ .@{tab-pages} {
         display: block;
       }
     }
-    &.flex {
+    &.@{flex} {
       display: flex;
       flex-wrap: nowrap;
       width: 100%;
-      &.space-around {
+      &.@{tab-space-around} {
         justify-content: space-around;
       }
-      &.space-between {
+      &.@{tab-space-between} {
         justify-content: space-between;
       }
-      &:not([class*="space-"]) {
+      &:not([class*="@{tab-space}-"]) {
         > label[for] {
           flex: 1 1 auto;
         }
@@ -84,7 +84,7 @@
       > label[for] {
         text-align: center;
       }
-      ~ .@{tab}-pages {
+      ~ .@{tab-pages} {
         display: block;
       }
     }
