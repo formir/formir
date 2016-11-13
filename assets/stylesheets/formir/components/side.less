@@ -1,25 +1,25 @@
 .side-margin(@n, @i: 1) when (@i =< @n) {
   &.@{width}-@{i} {
-    &.left {
+    &.@{side-left} {
       ~ .@{body-content} {
-        margin-left: unit(((@content-max-width/@base-steps)*@i), px);
+        margin-left: unit(((@layout-width/@layout-steps)*@i), px);
       }
     }
-    &.right {
+    &.@{side-right} {
       ~ .@{body-content} {
-        margin-right: unit(((@content-max-width/@base-steps)*@i), px);
+        margin-right: unit(((@layout-width/@layout-steps)*@i), px);
       }
     }
   }
   &.@{height}-@{i} {
-    &.top {
+    &.@{side-top} {
       ~ .@{body-content} {
-        margin-top: unit(((@content-max-height/@base-steps)*@i), px);
+        margin-top: unit(((@layout-height/@layout-steps)*@i), px);
       }
     }
-    &.bottom {
+    &.@{side-bottom} {
       ~ .@{body-content} {
-        margin-bottom: unit(((@content-max-height/@base-steps)*@i), px);
+        margin-bottom: unit(((@layout-height/@layout-steps)*@i), px);
       }
     }
   }
@@ -31,10 +31,10 @@
     + .@{side} {
       .side-collapse();
       &.@{side-animated} {
-        &.left, &.right {
+        &.@{side-left}, &.@{side-right} {
           transition: width @side-animate-time;
         }
-        &.top, &.bottom {
+        &.@{side-top}, &.@{side-bottom} {
           transition: height @side-animate-time;
         }
         
@@ -42,43 +42,44 @@
           transition: margin @side-animate-time;
         }
       }
-      
-      &.left {
-        ~ .@{body-content} {
-          margin-left: @side-collapse-width;
+      &:not(@{side-cover}) {
+        &.@{side-left} {
+          ~ .@{body-content} {
+            margin-left: @side-collapse-width;
+          }
         }
-      }
-      &.right {
-        ~ .@{body-content} {
-          margin-right: @side-collapse-width;
+        &.@{side-right} {
+          ~ .@{body-content} {
+            margin-right: @side-collapse-width;
+          }
         }
-      }
-      &.top {
-        ~ .@{body-content} {
-          margin-top: @side-collapse-height;
+        &.@{side-top} {
+          ~ .@{body-content} {
+            margin-top: @side-collapse-height;
+          }
         }
-      }
-      &.bottom {
-        ~ .@{body-content} {
-          margin-bottom: @side-collapse-height;
+        &.@{side-bottom} {
+          ~ .@{body-content} {
+            margin-bottom: @side-collapse-height;
+          }
         }
       }
 
-      &.left, &.right {
+      &.@{side-left}, &.@{side-right} {
         width: @side-collapse-width;
       }
       
-      &.top, &.bottom {
+      &.@{side-top}, &.@{side-bottom} {
         height: @side-collapse-height;
       }
       &.@{side-hoverable}:hover, &.@{side-focusable}:focus {
         .side-opened();
-        &.left, &.right {
-          .and-width(@base-steps);
+        &.@{side-left}, &.@{side-right} {
+          .and-width(@layout-steps);
         }
         
-        &.top, &.bottom {
-          .and-height(@base-steps);
+        &.@{side-top}, &.@{side-bottom} {
+          .and-height(@layout-steps);
         }
       }
       &.@{side-focusable}.@{side-focus-backgrop}:focus {
@@ -95,22 +96,22 @@
   }
   + .@{side} {
     &.@{side-cover} {
-      &.left {
+      &.@{side-left} {
         ~ .@{body-content} {
           margin-left: @side-collapse-width;
         }
       }
-      &.right {
+      &.@{side-right} {
         ~ .@{body-content} {
           margin-right: @side-collapse-width;
         }
       }
-      &.top {
+      &.@{side-top} {
         ~ .@{body-content} {
           margin-top: @side-collapse-height;
         }
       }
-      &.bottom {
+      &.@{side-bottom} {
         ~ .@{body-content} {
           margin-bottom: @side-collapse-height;
         }
@@ -124,12 +125,12 @@
     + .@{side}.@{side-hoverable} {
       display: block;
       &:not(:hover) {
-        &.left, &.right {
+        &.@{side-left}, &.@{side-right} {
           width: @side-hoverable-offset;
           opacity: 0;
           overflow-x: hidden;
         }
-        &.top, &.bottom {
+        &.@{side-top}, &.@{side-bottom} {
           height: @side-hoverable-offset;
           opacity: 0;
           overflow-y: hidden;
@@ -143,11 +144,11 @@
       display: none;
       &.@{side-animated} {
         display: block;
-        &.left, &.right {
+        &.@{side-left}, &.@{side-right} {
           width: 0;
           overflow-x: hidden;
         }
-        &.top, &.bottom {
+        &.@{side-top}, &.@{side-bottom} {
           height: 0;
           overflow-y: hidden;
         }
@@ -155,12 +156,12 @@
     }
     + .@{side} {
       &[class*="width-"] {
-        &.left {
+        &.@{side-left} {
           ~ .@{body-content} {
             margin-left: 0;
           }
         }
-        &.right {
+        &.@{side-right} {
           ~ .@{body-content} {
             margin-right: 0;
           }
@@ -168,12 +169,12 @@
       }
       
       &[class*="height-"] {
-        &.top {
+        &.@{side-top} {
           ~ .@{body-content} {
             margin-top: 0;
           }
         }
-        &.bottom {
+        &.@{side-bottom} {
           ~ .@{body-content} {
             margin-bottom: 0;
           }
@@ -212,14 +213,14 @@
     z-index: @side-index - 1;
   }
   &:not(.@{side-cover}) {
-    .side-margin(@base-steps);
+    .side-margin(@layout-steps);
   }
   
   &.@{side-uncover-hover}.@{side-hoverable}:hover {
-    .side-margin(@base-steps);
+    .side-margin(@layout-steps);
   }
   &.@{side-uncover-focus}.@{side-focusable}:focus {
-    .side-margin(@base-steps);
+    .side-margin(@layout-steps);
   }
   &.@{side-overflow} {
     &:hover, &:focus {
@@ -228,10 +229,10 @@
     overflow-y: hidden;
   }
   &.@{side-animated} {
-    &.left, &.right {
+    &.@{side-left}, &.@{side-right} {
       transition: width @side-animate-time;
     }
-    &.top, &.bottom {
+    &.@{side-top}, &.@{side-bottom} {
       transition: height @side-animate-time;
     }
     ~ .@{body-content} {
@@ -239,7 +240,7 @@
     }
   }
   &.@{side-absolute} {
-    &.left, &.right {
+    &.@{side-left}, &.@{side-right} {
       position: absolute;
       top: 0;
       bottom: auto;
@@ -248,49 +249,55 @@
       max-height: 100%;
     }
   }
-  &.@{side-relative} {
-    &.right {
+  &.@{side-float} {
+    &.@{side-right} {
       float: right;
     }
-    &.left {
+    &.@{side-left} {
       float: left;
     }
   }
   &.@{side-relative} {
-    &.left, &.right {
+    &.@{side-left}, &.@{side-right} {
       position: relative;
     }
+    &.@{side-right} {
+      float: right;
+    }
+    &.@{side-left} {
+      float: left;
+    }
   }
-  &.left, &.right {
+  &.@{side-left}, &.@{side-right} {
     top: 0;
     bottom: 0;
     max-height: 100%;
     height: 100%;
     will-change: width;
   }
-  &.left {
+  &.@{side-left} {
     left: 0;
     right: auto;
   }
   
-  &.right {
+  &.@{side-right} {
     right: 0;
     left: auto;
   }
   
-  &.top, &.bottom {
+  &.@{side-top}, &.@{side-bottom} {
     left: 0;
     right: 0;
     width: 100%;
     will-change: height;
   }
   
-  &.top {
+  &.@{side-top} {
     top: 0;
     bottom: auto;
   }
   
-  &.bottom {
+  &.@{side-bottom} {
     bottom: 0;
     top: auto;
   }

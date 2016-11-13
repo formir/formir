@@ -2,8 +2,22 @@
 @body-font-size: 13px;
 @font-family: "Roboto";
 
+@content-max-width: unit(1128, @layout-unit);
+@content-min-margin: unit(10, @layout-unit);
+@content-max-height: unit(600, @layout-unit);
+
 @base-unit: rem;
 @base-steps: 16;
+@base-geometric-step: 3;
+
+@layout-unit: px;
+@layout-steps: 10;
+@layout-factor: 0.3;
+@layout-geometric-step: @base-geometric-step;
+@layout-width: @content-max-width;
+@layout-height: @content-max-height;
+
+
 
 // Modals
 @modal-zindex: 10000;
@@ -81,12 +95,6 @@
 @grid-space-max: 10;
 @grid-space-unit: @base-unit;
 @grid-space-step: 0.1;
-
-
-@content-max-width: 1128px;
-@content-min-margin: 10px;
-
-@content-max-height: 600px;
 
 @desctop-max-width: 1280px;
 @tablet-max-width: 1024px;
