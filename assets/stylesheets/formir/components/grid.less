@@ -1,10 +1,13 @@
 .grid-gutter-repeat(@n, @grid-steps, @unit, @start, @step, @i: 1) when (@i =< @n) {
   @value: (@start * @step) + @i * @step;
-  &.@{gutter}-@{i}-@{around} {
-    padding-left: unit(@value/2, @unit);
-    padding-right: unit(@value/2, @unit);
-    box-sizing: padding-box;
+  & when (@grid-around = true) {
+    &.@{gutter}-@{i}-@{around} {
+      padding-left: unit(@value/2, @unit);
+      padding-right: unit(@value/2, @unit);
+      box-sizing: padding-box;
+    }
   }
+  
   &.@{gutter}-@{i} {
     margin-left: unit(-@value/2, @unit);
     margin-right: unit(-@value/2, @unit);
@@ -51,13 +54,15 @@
       padding-right: unit(@value/2, @unit);
     }
   }
-  &.@{gutter}-@{i}-@{around} {
-    > [class*="@{grid}"].@{row} {
-      margin-left: unit(-@value, @unit);
-      margin-right: unit(-@value, @unit);
-      &[class*="@{gutter}-"][class*="-@{around}"] {
-        margin-left: unit(-@value/2, @unit);
-        margin-right: unit(-@value/2, @unit);
+  & when (@grid-around = true) {
+    &.@{gutter}-@{i}-@{around} {
+      > [class*="@{grid}"].@{row} {
+        margin-left: unit(-@value, @unit);
+        margin-right: unit(-@value, @unit);
+        &[class*="@{gutter}-"][class*="-@{around}"] {
+          margin-left: unit(-@value/2, @unit);
+          margin-right: unit(-@value/2, @unit);
+        }
       }
     }
   }
@@ -91,13 +96,15 @@
 
 .grid-space-repeat(@n, @grid-steps, @unit, @start, @step, @i: 1) when (@i =< @n) {
   @value: (@start * @step) + @i * @step;
-  &.@{space}-@{i}-@{around} {
-    padding-top: unit(@value/2, @unit);
-    padding-bottom: unit(@value/2, @unit);
-    box-sizing: padding-box;
-    table& {
-      margin-top: 0;
-      margin-bottom: 0;
+  & when (@grid-around = true) {
+    &.@{space}-@{i}-@{around} {
+      padding-top: unit(@value/2, @unit);
+      padding-bottom: unit(@value/2, @unit);
+      box-sizing: padding-box;
+      table& {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
     }
   }
   &.@{space}-@{i} {
@@ -131,13 +138,15 @@
       padding-bottom: unit(@value/2, @unit);
     }
   }
-  &.@{space}-@{i}-@{around} {
-    > [class*="@{grid}"].@{row} {
-      margin-top: unit(-@value, @unit);
-      margin-bottom: unit(-@value, @unit);
-      &[class*="@{space}-"][class*="-@{around}"] {
-        margin-top: unit(-@value/2, @unit);
-        margin-bottom: unit(-@value/2, @unit);
+  & when (@grid-around = true) {
+    &.@{space}-@{i}-@{around} {
+      > [class*="@{grid}"].@{row} {
+        margin-top: unit(-@value, @unit);
+        margin-bottom: unit(-@value, @unit);
+        &[class*="@{space}-"][class*="-@{around}"] {
+          margin-top: unit(-@value/2, @unit);
+          margin-bottom: unit(-@value/2, @unit);
+        }
       }
     }
   }
@@ -161,33 +170,36 @@
   .@{cell}-@{i} {
     width: unit((100 / @n) * @i, %);
   }
-  .@{cell}-@{i}-9 {
-    width: unit((100 / @n) * @i + (100 / @n / (10/9)), %);
+  & when (@grid-step-fractions = true) {
+    .@{cell}-@{i}-9 {
+      width: unit((100 / @n) * @i + (100 / @n / (10/9)), %);
+    }
+    .@{cell}-@{i}-8 {
+      width: unit((100 / @n) * @i + (100 / @n / (10/8)), %);
+    }
+    .@{cell}-@{i}-7 {
+      width: unit((100 / @n) * @i + (100 / @n / (10/7)), %);
+    }
+    .@{cell}-@{i}-6 {
+      width: unit((100 / @n) * @i + (100 / @n / (10/6)), %);
+    }
+    .@{cell}-@{i}-5 {
+      width: unit((100 / @n) * @i + (100 / @n / (10/5)), %);
+    }
+    .@{cell}-@{i}-4 {
+      width: unit((100 / @n) * @i + (100 / @n / (10/3)), %);
+    }
+    .@{cell}-@{i}-3 {
+      width: unit((100 / @n) * @i + (100 / @n / (10/3)), %);
+    }
+    .@{cell}-@{i}-2 {
+      width: unit((100 / @n) * @i + (100 / @n / (10/2)), %);
+    }
+    .@{cell}-@{i}-1 {
+      width: unit((100 / @n) * @i + (100 / @n / (10/1)), %);
+    }
   }
-  .@{cell}-@{i}-8 {
-    width: unit((100 / @n) * @i + (100 / @n / (10/8)), %);
-  }
-  .@{cell}-@{i}-7 {
-    width: unit((100 / @n) * @i + (100 / @n / (10/7)), %);
-  }
-  .@{cell}-@{i}-6 {
-    width: unit((100 / @n) * @i + (100 / @n / (10/6)), %);
-  }
-  .@{cell}-@{i}-5 {
-    width: unit((100 / @n) * @i + (100 / @n / (10/5)), %);
-  }
-  .@{cell}-@{i}-4 {
-    width: unit((100 / @n) * @i + (100 / @n / (10/3)), %);
-  }
-  .@{cell}-@{i}-3 {
-    width: unit((100 / @n) * @i + (100 / @n / (10/3)), %);
-  }
-  .@{cell}-@{i}-2 {
-    width: unit((100 / @n) * @i + (100 / @n / (10/2)), %);
-  }
-  .@{cell}-@{i}-1 {
-    width: unit((100 / @n) * @i + (100 / @n / (10/1)), %);
-  }
+  
   table& .@{cell}-@{i} {
     min-width: unit((100 / @n) * @i, %);
     max-width: unit((100 / @n) * @i, %);
