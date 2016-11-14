@@ -60,17 +60,19 @@ body.@{modal-opened} {
     .@{modal-wrapper} {
       display: inline;
       text-align: left;
+      vertical-align: middle;
       &:before {
         content: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
         display: inline-block;
         height: 0%;
-        vertical-align: middle;
+        vertical-align: text-bottom;
         margin-left: -5px;
         width: 0;
       }
       .@{modal-window} {
         display: inline-block;
-        margin-top: 0;
+        vertical-align: middle;
+        margin-top: auto;
       }
     }
   }
