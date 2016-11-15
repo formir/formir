@@ -57,6 +57,8 @@ body.@{modal-opened} {
   &.@{modal-centered} {
     vertical-align: middle;
     text-align: center;
+    font-size: 0;
+    letter-spacing: 0;
     .@{modal-wrapper} {
       display: inline;
       text-align: left;
@@ -66,13 +68,13 @@ body.@{modal-opened} {
         display: inline-block;
         height: 0%;
         vertical-align: text-bottom;
-        margin-left: -5px;
         width: 0;
       }
       .@{modal-window} {
         display: inline-block;
         vertical-align: middle;
-        margin-top: auto;
+        font-size: 1rem;
+        letter-spacing: normal;
       }
     }
   }
@@ -106,7 +108,7 @@ body.@{modal-opened} {
     position: relative;
     left: 0;
     right: 0;
-    margin: @modal-top auto auto;
+    margin: @modal-margin auto;
     background-color: @modal-background-color;
     z-index: @modal-zindex + 2;
     border: @modal-border;

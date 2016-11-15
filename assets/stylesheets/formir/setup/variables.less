@@ -21,8 +21,8 @@
 
 // Modals
 @modal-zindex: 10000;
-@modal-width: 90%;
-@modal-top: 8%;
+@modal-width: calc(100% ~"-" @content-min-margin * 2);
+@modal-margin: 5vh;
 @modal-min-height: 300px;
 @modal-max-width: 650px;
 @modal-background-color: #fff;
