@@ -47,6 +47,7 @@ body.@{modal-opened} {
   bottom: 0;
   left: 0;
   right: 0;
+  height: 100%;
   z-index: @modal-zindex;
   overflow-y: auto;
   background-color: rgba(0, 0, 0, 0.5);
@@ -108,7 +109,7 @@ body.@{modal-opened} {
     position: relative;
     left: 0;
     right: 0;
-    margin: auto;
+    margin: @modal-margin auto;
     background-color: @modal-background-color;
     z-index: @modal-zindex + 2;
     border: @modal-border;
