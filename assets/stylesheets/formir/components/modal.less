@@ -11,13 +11,8 @@ label[for*="@{modal-close}"] {
     transition: background-color 0.5s ease;
     background-color: rgba(0, 0, 0, 0.5);
     visibility: visible;
-    &.align-middle {
-      .@{modal-wrapper}:before {
-        transition: height 0.5s ease;
-      }
-    }
   }
-  &.align-middle {
+  &.@{modal-centered} {
     .@{modal-wrapper} {
       &:before {
         height: 50%;
@@ -109,7 +104,7 @@ body.@{modal-opened} {
     position: relative;
     left: 0;
     right: 0;
-    margin: auto;
+    margin: @modal-margin auto;
     background-color: @modal-background-color;
     z-index: @modal-zindex + 2;
     border: @modal-border;
