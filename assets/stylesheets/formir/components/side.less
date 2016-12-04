@@ -1,4 +1,4 @@
-.side-margin(@n, @i: 1) when (@i =< @n) {
+.side-margin-repeat(@n, @i: 1) when (@i =< @n) {
   &.@{width}-@{i} {
     &.@{side-left} {
       ~ .@{body-content} {
@@ -23,12 +23,46 @@
       }
     }
   }
-  .side-margin(@n, (@i + 1));
+  .side-margin-repeat(@n, (@i + 1));
 }
 
 .@{side-collapse} {
+  + @{side} {
+    &:not([class*="width-"]) {
+      &.@{side-left}, &.@{side-right} {
+        width: @side-width-default;
+      }
+    }
+    &:not([class*="height-"]) {
+      &.@{side-top}, &.@{side-bottom} {
+        width: @side-height-default;
+      }
+    }
+    &.@{side-cover} {
+      &.@{side-left} {
+        ~ .@{body-content} {
+          margin-left: @side-collapse-width;
+        }
+      }
+      &.@{side-right} {
+        ~ .@{body-content} {
+          margin-right: @side-collapse-width;
+        }
+      }
+      &.@{side-top} {
+        ~ .@{body-content} {
+          margin-top: @side-collapse-height;
+        }
+      }
+      &.@{side-bottom} {
+        ~ .@{body-content} {
+          margin-bottom: @side-collapse-height;
+        }
+      }
+    }
+  }
   &:checked {
-    + .@{side} {
+    + @{side} {
       .side-collapse();
       &.@{side-animated} {
         &.@{side-left}, &.@{side-right} {
@@ -94,35 +128,11 @@
       }
     }
   }
-  + .@{side} {
-    &.@{side-cover} {
-      &.@{side-left} {
-        ~ .@{body-content} {
-          margin-left: @side-collapse-width;
-        }
-      }
-      &.@{side-right} {
-        ~ .@{body-content} {
-          margin-right: @side-collapse-width;
-        }
-      }
-      &.@{side-top} {
-        ~ .@{body-content} {
-          margin-top: @side-collapse-height;
-        }
-      }
-      &.@{side-bottom} {
-        ~ .@{body-content} {
-          margin-bottom: @side-collapse-height;
-        }
-      }
-    }
-  }
 }
 
 .@{side-hide} {
   &:checked {
-    + .@{side}.@{side-hoverable} {
+    + @{side}.@{side-hoverable} {
       display: block;
       &:not(:hover) {
         &.@{side-left}, &.@{side-right} {
@@ -140,7 +150,7 @@
         .side-opened();
       }
     }
-    + .@{side}:not(.@{side-hoverable}):not(:hover) {
+    + @{side}:not(.@{side-hoverable}):not(:hover) {
       display: none;
       &.@{side-animated} {
         display: block;
@@ -154,7 +164,12 @@
         }
       }
     }
-    + .@{side} {
+    + @{side} {
+      &:not([class*="width-"]) {
+        &.@{side-left}, &.@{side-right} {
+          width: @side-width-default;
+        }
+      }
       &[class*="width-"] {
         &.@{side-left} {
           ~ .@{body-content} {
@@ -167,7 +182,11 @@
           }
         }
       }
-      
+      &:not([class*="height-"]) {
+        &.@{side-top}, &.@{side-bottom} {
+          width: @side-height-default;
+        }
+      }
       &[class*="height-"] {
         &.@{side-top} {
           ~ .@{body-content} {
@@ -187,7 +206,7 @@
 .@{side-collapse}, .@{side-hide} {
   display: none;
   &:checked {
-    + .@{side} + .@{side-backdrop} {
+    + @{side} + .@{side-backdrop} {
       display: none;
     }
   }
@@ -197,7 +216,7 @@
   position: relative;
 }
 
-.@{side} {
+@{side} {
   position: fixed;
   z-index: @side-index;
   + .@{side-backdrop} {
@@ -212,15 +231,32 @@
     height: 100%;
     z-index: @side-index - 1;
   }
-  &:not(.@{side-cover}) {
-    .side-margin(@layout-steps);
-  }
-  
-  &.@{side-uncover-hover}.@{side-hoverable}:hover {
-    .side-margin(@layout-steps);
-  }
-  &.@{side-uncover-focus}.@{side-focusable}:focus {
-    .side-margin(@layout-steps);
+  &.@{side-uncover-hover}.@{side-hoverable}:hover, &:not(.@{side-cover}), &.@{side-uncover-focus}.@{side-focusable}:focus {
+    .side-margin-repeat(@layout-steps);
+    &:not([class*="width-"]) {
+      &.@{side-left} {
+        ~ .@{body-content} {
+          margin-left: @side-width-default;
+        }
+      }
+      &.@{side-right} {
+        ~ .@{body-content} {
+          margin-right: @side-width-default;
+        }
+      }
+    }
+    &:not([class*="height-"]) {
+      &.@{side-top} {
+        ~ .@{body-content} {
+          margin-top: @side-height-default;
+        }
+      }
+      &.@{side-bottom} {
+        ~ .@{body-content} {
+          margin-bottom: @side-height-default;
+        }
+      }
+    }
   }
   &.@{side-overflow} {
     &:hover, &:focus {

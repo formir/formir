@@ -75,6 +75,8 @@
 @side-index: 10000;
 @side-backdrop-color: rgba(0, 0, 0, 1);
 @side-backdrop-opacity: 0.5;
+@side-width-default: 200px;
+@side-height-default: 150px;
 
 @chart-height: 100px;
 @chart-ring-width: 10px;
@@ -87,6 +89,9 @@
 @grid-steps: @base-steps;
 @grid-step-fractions: true;  // set true if you will be useing fractions of grid step otherwise false to reduce weight
 @grid-around: true; // set true if you will be useing grid with space/gutter around distance otherwise false to reduce weight
+@grid-gutter: true; // set true if you will be useing grid gutter otherwise false to reduce weight
+@grid-space: true; // set true if you will be useing grid space otherwise false to reduce weight
+@grid-offset: true; // set true if you will be useing grid offset otherwise false to reduce weight
 @grid-gutter-start: 2;
 @grid-gutter-max: 10;
 @grid-gutter-unit: @base-unit;
@@ -107,3 +112,8 @@
 
 @side-collapse-width: @content-max-width/@base-steps;
 @side-collapse-height: @content-max-height/@base-steps;
+
+@dd-gutter: 20px;
+@dd-space-default: 20px;
+@dd-title-space-default: 5px;
+@dl-size-default: 3;

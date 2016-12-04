@@ -1,3 +1,10 @@
+.grid-table-cell-repeat(@n, @i: 1) when (@i =< @n) {
+  &:first-child:nth-last-child(@{i}), &:first-child:nth-last-child(@{i}) ~ *:not([class*="@{cell}-"]):not([colspan]) {
+    width: 100% / @i;
+  }
+  .grid-table-cell-repeat(@n, (@i + 1));
+}
+
 .grid-gutter-repeat(@n, @grid-steps, @unit, @start, @step, @i: 1) when (@i =< @n) {
   @value: (@start * @step) + @i * @step;
   & when (@grid-around = true) {
@@ -11,7 +18,7 @@
   &.@{gutter}-@{i} {
     margin-left: unit(-@value/2, @unit);
     margin-right: unit(-@value/2, @unit);
-    &:not([class*="cell-"]) {
+    &:not([class*="cell-"]):not(table) {
       width: auto;
     }
     table& {
@@ -429,9 +436,15 @@
 
 .@{grid} {
   .grid-cell(@grid-steps);
-  .grid-offset(@grid-steps);
-  .grid-gutter-repeat(@grid-gutter-max, @grid-steps, @grid-gutter-unit, @grid-gutter-start, @grid-gutter-step);
-  .grid-space-repeat(@grid-space-max, @grid-steps, @grid-space-unit, @grid-space-start, @grid-space-step);
+  & when (@grid-offset = true) {
+    .grid-offset(@grid-steps);
+  }
+  & when (@grid-gutter = true) {
+    .grid-gutter-repeat(@grid-gutter-max, @grid-steps, @grid-gutter-unit, @grid-gutter-start, @grid-gutter-step);
+  }
+  & when (@grid-space = true) {
+    .grid-space-repeat(@grid-space-max, @grid-steps, @grid-space-unit, @grid-space-start, @grid-space-step);
+  }
 }
 
 
@@ -454,6 +467,13 @@
     }
     > .@{cell}.@{grid}.@{column}, > .@{row} > .@{cell}.@{grid}.@{column} {
       .flex(1 0 100%);
+    }
+    table& {
+      td, th {
+        &:not([class*="@{cell}-"]):not([colspan]) {
+          .grid-table-cell-repeat(@grid-steps);
+        }
+      }
     }
   }
   &.@{reverse} {
