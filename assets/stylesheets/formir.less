@@ -3,33 +3,43 @@
  *  MIT License
  */
 
+// SETUP
 @import "formir/setup/classes";
 @import "formir/setup/variables";
-@import "formir/mixins/display";
-@import "formir/mixins/flex";
 
-@import "formir/components/clear";
+// CORE
+//// MIXINS
+@import "formir/core/mixins/display";
+@import "formir/core/mixins/flex";
 
-@import "formir/components/grid";
-@import "formir/components/layout";
+//// LAYOUTS
+@import "formir/core/layouts/clear";
+@import "formir/core/layouts/grid";
+@import "formir/core/layouts/layout";
+@import "formir/core/layouts/side";
 
-@import "formir/components/side";
-
-@import "formir/components/modal";
-@import "formir/components/tab";
-@import "formir/components/accordion";
-@import "formir/components/tooltip";
-@import "formir/components/popup";
-@import "formir/components/dropdown";
-
-@import "formir/components/button";
-@import "formir/components/chart";
-
-@import "formir/components/form";
-//@import "formir/components/room"; uncomplete
-@import "formir/components/description-list";
-
-
+//// COMPONENTS
+@import "formir/core/components/form";
+@import "formir/core/components/modal";
+@import "formir/core/components/tab";
+@import "formir/core/components/accordion";
+@import "formir/core/components/tooltip";
+@import "formir/core/components/popup";
+@import "formir/core/components/dropdown";
+@import "formir/core/components/button";
+@import "formir/core/components/chart";
+@import "formir/core/components/description-list";
 
 
+// THEMES
+//// DEFAULT
+////// LAYOUTS
+@import "formir/themes/default/layouts/side";
 
+////// COMPONETS
+@import "formir/themes/default/components/modal";
+@import "formir/themes/default/components/tab";
+@import "formir/themes/default/components/tooltip";
+@import "formir/themes/default/components/dropdown";
+@import "formir/themes/default/components/chart";
+@import "formir/themes/default/components/accordion";
