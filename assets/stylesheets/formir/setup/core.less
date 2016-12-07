@@ -1,0 +1,50 @@
+// Base Unit
+@base-unit: rem;
+@base-steps: 16;
+@base-geometric-step: 3;
+
+// Layout Unit
+@layout-unit: px;
+@layout-steps: 10;
+@layout-factor: 0.3;
+@layout-geometric-step: @base-geometric-step;
+@layout-width: @content-max-width;
+@layout-height: @content-max-height;
+
+// Rensponsive Web Design
+@desctop-max-width: 1280px;
+@tablet-max-width: 1024px;
+@tablet-portrait-max-width: 768px;
+@mobile-max-width: 568px;
+@mobile-portrait-max-width: 320px;
+
+// Z-index
+  //// Modals
+  @modal-zindex: 10000;
+  //// Tooltips
+  @tooltip-zindex: 100000;
+  @tooltip-arrow-zindex: 1;
+  /// Popups
+  @popup-zindex: 10000;
+  @popup-arrow-zindex: 1;
+
+// Content
+@content-max-width: unit(1128, @layout-unit);
+@content-min-margin: unit(10, @layout-unit);
+@content-max-height: unit(600, @layout-unit);
+
+// Grid
+@grid-steps: @base-steps;
+@grid-step-fractions: true;  // set true if you will be useing fractions of grid step otherwise false to reduce weight
+@grid-around: true; // set true if you will be useing grid with space/gutter around distance otherwise false to reduce weight
+@grid-gutter: true; // set true if you will be useing grid gutter otherwise false to reduce weight
+@grid-space: true; // set true if you will be useing grid space otherwise false to reduce weight
+@grid-offset: true; // set true if you will be useing grid offset otherwise false to reduce weight
+@grid-gutter-start: 2;
+@grid-gutter-max: 10;
+@grid-gutter-unit: @base-unit;
+@grid-gutter-step: 0.1;
+@grid-space-start: 2;
+@grid-space-max: 10;
+@grid-space-unit: @base-unit;
+@grid-space-step: 0.1;

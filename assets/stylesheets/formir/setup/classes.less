@@ -98,6 +98,7 @@
 @table: table;
 @flex: flex;
 
+// Modal:
 @modal: modal;
 @modal-wrapper: modal-wrapper;
 @modal-window: modal-window;
@@ -121,7 +122,7 @@
 @tab-space-between: space-between;
 @tabs-as-table: as-table;
 
-//Accordion:
+// Accordion:
 @accordions: accordions;
 @accordion: accordion;
 @accordion-label: label;
@@ -134,6 +135,7 @@
 @accordion-hoverable: hoverable;
 @accordion-arrow: arrow;
 
+// Tooltip:
 @tooltip: tooltip;
 @has-tooltip: has-tooltip;
 @tooltip-bottom: bottom;
@@ -149,20 +151,38 @@
 @tooltip-right-bottom: right-bottom;
 @tooltip-left-top: left-top;
 @tooltip-left-bottom: left-bottom;
-@tooltip-hoverable: hoverable;
+@tooltip-hoverable: hoverable; // tooltip not hide when try hover on it (arrow will be not work with data-tooltip)
+@tooltip-hovered: hovered; // simulate :hover state to active tooltip manualy
 @tooltip-absolute: absolute;
 @tooltip-fixed: fixed;
 
+// Popup:
 @popup: popup;
 @has-popup: has-popup;
 @popup-bottom: bottom;
+@popup-bottom-right: bottom-right;
+@popup-bottom-center: bottom-center;
+@popup-top: top;
+@popup-top-right: right;
 @popup-center: center;
 @popup-right: right;
+@popup-right-middle: right-middle;
+@popup-left-middle: left-middle;
+@popup-right-top: right-top;
+@popup-right-bottom: right-bottom;
+@popup-left-top: left-top;
+@popup-left-bottom: left-bottom;
+@popup-hoverable: hoverable; 
+@popup-active: active;
 @popup-absolute: absolute;
 @popup-fixed: fixed;
+@popup-manual: manual;
+@popup-header: popup-header;
+@popup-footer: popup-footer;
+@popup-content: popup-content;
 
-
-@side: .side; // tag 'aside' or class
+// Side:
+@side: .side; // tag 'aside' or class or both
 @side-top: top;
 @side-bottom: bottom;
 @side-left: left;
@@ -184,15 +204,23 @@
 @side-float: float;
 @side-full-height: side-full-height;
 
+// Layout
 @content-holder: content-holder;
 @body-content: body-content;
 
 @center-vertically: center-vertically;
 @horizontally: horizontally;
 
-@dd: dd; // tag 'dd' or class
-@dt: dt; // tag 'dt' or class
-@dl: dl; // tag 'dl' or class
+// Layout Header:
+@header: header; // tag 'header' or class or both
+
+// Layout Footer:
+@footer: footer; // tag 'header' or class or both
+
+// Description list:
+@dd: dd; // tag 'dd' or class or both
+@dt: dt; // tag 'dt' or class or both
+@dl: dl; // tag 'dl' or class or both
 
 @dl-horizontally: horizontally;
 @dl-horizontally-collapse: collapse;

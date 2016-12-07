@@ -5,41 +5,47 @@
 
 // SETUP
 @import "formir/setup/classes";
+@import "formir/setup/core";
 @import "formir/setup/variables";
 
+  //// THEME SETUP
+  @import "formir/themes/default/setup/classes";
+  @import "formir/themes/default/setup/core";
+  @import "formir/themes/default/setup/variables";
+
 // CORE
-//// MIXINS
-@import "formir/core/mixins/display";
-@import "formir/core/mixins/flex";
+  //// MIXINS
+  @import "formir/core/mixins/display";
+  @import "formir/core/mixins/flex";
 
-//// LAYOUTS
-@import "formir/core/layouts/clear";
-@import "formir/core/layouts/grid";
-@import "formir/core/layouts/layout";
-@import "formir/core/layouts/side";
-
-//// COMPONENTS
-@import "formir/core/components/form";
-@import "formir/core/components/modal";
-@import "formir/core/components/tab";
-@import "formir/core/components/accordion";
-@import "formir/core/components/tooltip";
-@import "formir/core/components/popup";
-@import "formir/core/components/dropdown";
-@import "formir/core/components/button";
-@import "formir/core/components/chart";
-@import "formir/core/components/description-list";
+  //// LAYOUTS
+  @import "formir/core/layouts/clear";
+  @import "formir/core/layouts/grid";
+  @import "formir/core/layouts/layout";
+  @import "formir/core/layouts/side";
+  
+  //// COMPONENTS
+  @import "formir/core/components/form";
+  @import "formir/core/components/modal";
+  @import "formir/core/components/tab";
+  @import "formir/core/components/accordion";
+  @import "formir/core/components/tooltip";
+  @import "formir/core/components/popup";
+  @import "formir/core/components/dropdown";
+  @import "formir/core/components/button";
+  @import "formir/core/components/chart";
+  @import "formir/core/components/description-list";
 
 
 // THEMES
-//// DEFAULT
-////// LAYOUTS
-@import "formir/themes/default/layouts/side";
-
-////// COMPONETS
-@import "formir/themes/default/components/modal";
-@import "formir/themes/default/components/tab";
-@import "formir/themes/default/components/tooltip";
-@import "formir/themes/default/components/dropdown";
-@import "formir/themes/default/components/chart";
-@import "formir/themes/default/components/accordion";
+  //// DEFAULT
+    ////// LAYOUTS
+    @import "formir/themes/default/layouts/side";
+    
+    ////// COMPONETS
+    @import "formir/themes/default/components/modal";
+    @import "formir/themes/default/components/tab";
+    @import "formir/themes/default/components/tooltip";
+    @import "formir/themes/default/components/dropdown";
+    @import "formir/themes/default/components/chart";
+    @import "formir/themes/default/components/accordion";

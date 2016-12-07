@@ -1,26 +1,9 @@
+// Body
 @body-font-family: "Arial";
 @body-font-size: 13px;
 @font-family: "Roboto";
 
-@content-max-width: unit(1128, @layout-unit);
-@content-min-margin: unit(10, @layout-unit);
-@content-max-height: unit(600, @layout-unit);
-
-@base-unit: rem;
-@base-steps: 16;
-@base-geometric-step: 3;
-
-@layout-unit: px;
-@layout-steps: 10;
-@layout-factor: 0.3;
-@layout-geometric-step: @base-geometric-step;
-@layout-width: @content-max-width;
-@layout-height: @content-max-height;
-
-
-
 // Modals
-@modal-zindex: 10000;
 @modal-width: calc(100% ~"-" @content-min-margin * 2);
 @modal-margin: 5vh;
 @modal-min-height: 300px;
@@ -30,18 +13,18 @@
 @modal-border: 1px solid @modal-border-color;
 @modal-header-background: @modal-border-color;
 
-
+// Buttons
 @button-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 @button-padding: 2px 5px;
 @button-font: @body-font-family @body-font-size;
 
+// Tabs
 @tab-nav-active-background: #222;
 @tab-nav-active-color: #fff;
 @tab-nav-active-border: 0 none;
 @tab-nav-active-shadow: none;
 
-@tooltip-zindex: 100000;
-@tooltip-arrow-zindex: 1;
+// Tooltips
 @tooltip-background: rgba(0, 0, 0, 1);
 @tooltip-border-width: 3px;
 @tooltip-border-color: rgba(60, 60, 60, 1);
@@ -58,18 +41,38 @@
 @tooltip-offset: @tooltip-arrow-offset;
 @tooltip-distance: 10px;
 
-@popup-background: rgba(0, 0, 0, 0.8);
-@popup-text-color: #fff;
-@popup-padding: 3px 5px;
-@popup-max-width: 300px;
-@popup-min-width: 150%;
-@popup-border-radius: 3px;
-@popup-arrow-height: 5px;
-@popup-arrow-offset: 5px;
+// Popups
+@popup-background: rgba(255, 255, 255, 1);
+@popup-border-width: 0;
+@popup-border-color: rgba(60, 60, 60, 1);
+@popup-border: @popup-border-width solid @popup-border-color;
+@popup-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+@popup-text-color: #000;
+@popup-padding: 0;
+@popup-max-width: calc(100vh ~"-" 2 * @content-min-margin);
+@popup-min-width: 250px;
+@popup-width: auto;
+@popup-border-radius: 0;
+@popup-arrow-color: #000;
+@popup-arrow-height: 0;
+@popup-arrow-width: @popup-arrow-height;
+@popup-arrow-offset: 20px;
+@popup-offset: 0;
+@popup-distance: 0px;
+//// Popup inner
+@popup-content-padding: 15px 20px;
+@popup-footer-padding: @popup-content-padding;
+@popup-header-padding: @popup-footer-padding;
+@popup-header-bg: #000;
+@popup-header-text-color: #fff;
+@popup-footer-bg: transparent;
+@popup-footer-text-color: inherit;
 
+// Accordion
 @accordion-animated-max-height: 200vh;
 @accordion-animated-time: 1s;
 
+// Side
 @side-animate-time: 1s;
 @side-hoverable-offset: 5px;
 @side-index: 10000;
@@ -77,7 +80,10 @@
 @side-backdrop-opacity: 0.5;
 @side-width-default: 200px;
 @side-height-default: 150px;
+@side-collapse-width: @content-max-width/@base-steps;
+@side-collapse-height: @content-max-height/@base-steps;
 
+// Chart
 @chart-height: 100px;
 @chart-ring-width: 10px;
 @chart-color: green;
@@ -86,33 +92,11 @@
 @chart-value-color: @chart-background;
 @chart-parent-background: inherit;
 
-@grid-steps: @base-steps;
-@grid-step-fractions: true;  // set true if you will be useing fractions of grid step otherwise false to reduce weight
-@grid-around: true; // set true if you will be useing grid with space/gutter around distance otherwise false to reduce weight
-@grid-gutter: true; // set true if you will be useing grid gutter otherwise false to reduce weight
-@grid-space: true; // set true if you will be useing grid space otherwise false to reduce weight
-@grid-offset: true; // set true if you will be useing grid offset otherwise false to reduce weight
-@grid-gutter-start: 2;
-@grid-gutter-max: 10;
-@grid-gutter-unit: @base-unit;
-@grid-gutter-step: 0.1;
-@grid-space-start: 2;
-@grid-space-max: 10;
-@grid-space-unit: @base-unit;
-@grid-space-step: 0.1;
-
-@desctop-max-width: 1280px;
-@tablet-max-width: 1024px;
-@tablet-portrait-max-width: 768px;
-@mobile-max-width: 568px;
-@mobile-portrait-max-width: 320px;
-
+// Form
 @input-padding-vertical: 0.35em;
 @input-padding-horizontal: 0.5em;
 
-@side-collapse-width: @content-max-width/@base-steps;
-@side-collapse-height: @content-max-height/@base-steps;
-
+// Description List
 @dd-gutter: 20px;
 @dd-space-default: 20px;
 @dd-title-space-default: 5px;
