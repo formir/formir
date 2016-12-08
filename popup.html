@@ -37,8 +37,8 @@
     <div style="margin: 50px;">
       Lorem ipsum dolor sit amet, consectetur 
       <span class="has-popup">
-        top left
-        <input type="checkbox"/>
+      	<input type="checkbox"/>
+        <a class="button">Toggle popup</a>
         <div class="popup left bottom hoverable">
         	<div class="popup-header">Title of popup</div>
         	<div class="popup-content">
@@ -66,16 +66,30 @@
     </div>
     <div style="margin: 50px;">
       Lorem ipsum dolor sit amet, consectetur 
-      <span class="has-popup manual">
+      <span class="has-popup">
         bottom left
         <input type="checkbox"/>
-        <div class="popup bottom">
-        	<div class="popup-header">Title of popup</div>
-        	<div class="popup-content">
-        		Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p>
-        	</div>
-        	<div class="popup-footer">footer of popup</div>
-        </div>
+        <div class="popup bottom tabs">
+	      <input type="radio" name="tab-3" id="tab-3-1" checked="true"/>
+	      <input type="radio" name="tab-3" id="tab-3-2"/>
+	      <input type="radio" name="tab-3" id="tab-3-3"/>
+	      <input type="radio" name="tab-3" id="tab-3-4"/>
+	      <input type="radio" name="tab-3" id="tab-3-5"/>
+	      <div class="popup-header tab-navs flex">
+	        <label for="tab-3-1" onClick="window.location.href='#'+this.attributes.for.value">Tab 1</label>
+	        <label for="tab-3-2" onClick="window.location.href='#'+this.attributes.for.value">Tab 2</label>
+	        <label for="tab-3-3" onClick="window.location.href='#'+this.attributes.for.value">Tab 3</label>
+	        <label for="tab-3-4" onClick="window.location.href='#'+this.attributes.for.value">Tab 4</label>
+	        <label for="tab-3-5" onClick="window.location.href='#'+this.attributes.for.value">Tab 5</label>
+	      </div>
+	      <div class="popup-content tab-pages">
+	        <div>1</div>
+	        <div>2</div>
+	        <div>3</div>
+	        <div>4</div>
+	        <div>5</div>
+	      </div>
+	    </div>
       </span>
       , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit Excepteur 
       <span class="has-popup" tabindex="-1" >

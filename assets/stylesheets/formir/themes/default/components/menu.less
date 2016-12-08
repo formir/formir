@@ -1,0 +1,32 @@
+@{menu} {
+  @{menu-item} {
+    color: @menu-item-color;
+    padding: @menu-item-padding;
+    @{menu-item-anchor} {
+      color: inherit;
+      padding: @menu-item-anchor-padding;
+      border-bottom: @menu-item-anchor-border;
+      text-decoration: none;
+    }
+  }
+  @{menu-inside} {
+    @{menu-item} {
+      @{menu-item-anchor} {
+        padding: @menu-inside-item-anchor-padding;
+      }
+    }
+  }
+}
+
+
+@{side} {
+  @{menu} {
+    @{menu-item} {
+      color: @side-menu-item-color;
+      @{menu-item-anchor} {
+        color: inherit;
+        border-bottom: @side-menu-item-anchor-border;
+      }
+    }
+  }
+}

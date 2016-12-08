@@ -35,19 +35,29 @@
 
   <body style="height: 100%;">
     <input type="checkbox" id="aside-left" name="aside" class="side-collapse"/>
-      <aside tabindex="-1" class="side left float overflow  height-5 width-2 menu">
+      <aside tabindex="-1" class="side left float overflow  height-5 width-2">
         <label for="aside-left">collapse</label>
-        <p class="item"><a target="body" href="welcome.html">Welcome</a></p>
-        <p class="item"><a target="body" href="accordion.html">Accordion</a></p>
-        <p class="item"><a target="body" href="chart.html">Chart</a></p>
-        <p class="item"><a target="body" href="dropdown.html">Dropdown</a></p>
-        <p class="item"><a target="body" href="grid.html">Grid</a></p>
-        <p class="item"><a target="body" href="layout.html">Layout</a></p>
-        <p class="item"><a target="body" href="modals.html">Modals</a></p>
-        <p class="item"><a target="body" href="side.html">Side</a></p>
-        <p class="item"><a target="body" href="tabs.html">Tabs</a></p>
-        <p class="item"><a target="body" href="tooltip.html">Tooltip</a></p>
-        <p class="item"><a target="body" href="description-list.html">Description list</a></p>
+        <ul class="menu items">
+        	<li class="item">
+        		<a target="body" href="welcome.html">Welcome</a>
+        		<ul class="items">
+        			<li class="item"><a target="body" href="accordion.html">One</a></li>
+			        <li class="item"><a target="body" href="chart.html">Two</a></li>
+			        <li class="item"><a target="body" href="grid.html">Three</a></li>
+			        <li class="item"><a target="body" href="layout.html">Four</a></li>
+    			</ul>
+            </li>
+	        <li class="item"><a target="body" href="accordion.html">Accordion</a></li>
+	        <li class="item"><a target="body" href="chart.html">Chart</a></li>
+	        <li class="item"><a target="body" href="grid.html">Grid</a></li>
+	        <li class="item"><a target="body" href="layout.html">Layout</a></li>
+	        <li class="item"><a target="body" href="modals.html">Modals</a></li>
+	        <li class="item"><a target="body" href="side.html">Side</a></li>
+	        <li class="item"><a target="body" href="tabs.html">Tabs</a></li>
+	        <li class="item"><a target="body" href="tooltip.html">Tooltip</a></li>
+	        <li class="item"><a target="body" href="popup.html">Popup</a></li>
+	        <li class="item"><a target="body" href="description-list.html">Description list</a></li>
+        </ul>
       </aside>
        <div class="body-content" style="height: 100%;">
        	<iframe src="welcome.html" name="body" style="width: 100%; height: 99%; border: 0">

@@ -1,0 +1,29 @@
+@{menu} {
+  list-style: none;
+  display: block;
+  @{menu-inside} {
+    list-style: none;
+    display: none;
+  }
+  @{menu-item-anchor} {
+    &:hover {
+      ~ @{menu-inside} {
+        display: block;
+      }
+    }
+    ~ @{menu-inside} {
+      &:hover {
+        display: block;
+      }
+    }
+  }
+  @{menu-item} {
+    display: block;
+    &:last-child {
+      border-bottom: 0;
+    }
+    @{menu-item-anchor} {
+      display: block;
+    }
+  }
+}

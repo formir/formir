@@ -1,0 +1,36 @@
+.@{content-holder} {
+  margin-left: auto;
+  margin-right: auto;
+  width: @content-max-width;
+  max-width: calc(100% ~" - " 2 * @content-min-margin);
+}
+
+.@{center-vertically} {
+  vertical-align: middle;
+  font-size: 0;
+  letter-spacing: 0;
+  height: 100%;
+  &.@{horizontally} {
+    text-align: center;
+  }
+  > * {
+    display: inline;
+    text-align: left;
+    vertical-align: middle;
+    &:before {
+      content: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
+      display: inline-block;
+      height: 0%;
+      vertical-align: text-bottom;
+      width: 0;
+      height: 50%;
+    }
+    > * {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 1rem;
+      letter-spacing: normal;
+    }
+  }
+}
+
