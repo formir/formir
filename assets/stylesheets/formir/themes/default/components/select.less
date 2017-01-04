@@ -1,105 +1,54 @@
+.select-open-content() {
+}
+
+.select-close-content() {
+  label, .placeholder {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+.select-multi-selected-item() {
+  border: 1px solid gray;
+  border-radius: 3px;
+}
+.select-option-selected() {
+  background-color: black;
+  color: white;
+}
+.select-option-selected-hovered() {
+  background-color: navy;
+  color: white;
+}
+.select-option() {
+  background-color: white;
+  color: black;
+}
+.select-option-hovered() {
+  background-color: blue;
+  color: white;
+}
 .select {
-  border-radius: 5px;
-  width: 100%;
-  z-index: 1;
-  &.focus {
-    z-index: 3;
-    height: 50px;
-  }
-  &:not(.focus) {
-    .select-content {
-      padding: 0 25px 0 7px;
-      label, .placeholder {
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-      }
-      
-    }
-  }
+  max-width: 550px;
+  min-height: 1em;
   .select-content {
     display: inline-block;
     background-color: #fff;
-    line-height: 53px;
-    border-radius: 5px;
     &:after {
       content: "";
       border: 8px solid transparent;
       border-top-color: #ccc;
       border-top-width: 10px;
       position: absolute;
-      top: 25px;
-      margin-top: -5px;
+      top: 0.8rem;
       width: 0;
       height: 0;
       right: 12px;
+      pointer-events: none;
     }
     > * {
-      padding: 0 0 0 10px;
       .box-sizing(border-box);
-    }
-    label {
-      &[for] {
-        &:before {
-          display: inline-block;
-          content: "";
-          width: 30px;
-          height: 30px;
-          vertical-align: middle;
-          margin-right: 7px;
-          background-size: cover;
-          background-size: 34px 34px;
-          background-position: -2px -2px;
-        }
-      }
-    }
-  }
-  &.focus {
-    .select-content {
-      input.select-all {
-        &:checked {
-          + label {
-            background-color: transparent;
-            color: inherit;
-            &:before {
-              background-image: image-url("icons/checkmark-30-px.svg");
-              background-size: 30px 30px;
-              background-position: 0 0;
-            }
-          }
-        }
-      }
-      label {
-        background-color: transparent;
-        &:hover {
-          background-color: transparent;
-          color: inherit;
-          &:before {
-            background-image: image-url("icons/checkmark-30-px.svg") !important;
-            background-size: 30px 30px !important;
-            background-position: 0 0 !important;
-            opacity: 0.5;
-          }
-        }
-      }
-    }
-  }
-  &.focus:not(.all-selected) {
-    .select-content {
-      input {
-        &:checked {
-          + label {
-            background-color: transparent;
-            color: inherit;
-            &:before {
-              background-image: image-url("icons/checkmark-30-px.svg");
-              background-size: 30px 30px;
-              background-position: 0 0;
-            }
-          }
-        }
-      }
     }
   }
 }
-

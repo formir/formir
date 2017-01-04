@@ -1,8 +1,113 @@
+.select-open-content-core() {
+  z-index: 10000;
+  max-height: 50vh;
+  overflow-y: auto;
+  position: absolute;
+  .display-flex;
+  .placeholder {
+    display: none;
+  }
+  label {
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    .select-option;
+    &:hover {
+      .select-option-hovered;
+    }
+  }
+  &:after {
+    display: none;
+  }
+  input {
+    &:checked {
+      + label {
+        .select-option-selected;
+        &:hover {
+          .select-option-selected-hovered;
+        }
+      }
+    }
+  }
+}
+.select-close-content-core() {
+  display: inherit;
+  padding: @input-padding-vertical @input-padding-horizontal;
+  input {
+    &[type="checkbox"] {
+      + label {
+        .select-multi-selected-item;
+        &:after {
+          content: "×";
+          font-size: 0.8em;
+          margin-left: 0.3em;
+          pointer-events: auto;
+          vertical-align: text-top;
+        }
+      }
+    }
+    &:checked {
+      ~ .placeholder {
+        display: none;
+      }
+      ~ input:checked {
+        &.select-all + label {
+          display: none;
+        }
+      }
+      + label {
+        order: -1;
+        width: auto;
+        padding: 0 5px;
+        display: inline-block;
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.select-close-count() {
+  label[for] {
+    display: none;
+  }
+  input {
+    &:checked {
+      counter-increment: selected;
+      ~ input:checked {
+        ~ .placeholder {
+          display: block;
+          &:after {
+            content: counter(selected) " " attr(data-selected);
+          }
+        }
+      }
+    }
+  }
+}
 .select {
   display: block;
   position: relative;
   text-decoration: none;
   outline: 0 none;
+  position: relative;
+  > input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    + .select-content {
+      label {
+        &:after {
+          z-index: 1;
+          position: relative;
+        }
+      }
+    }
+  }
   &.disabled {
     pointer-events: none;
     .select-content {
@@ -14,48 +119,23 @@
       }
     }
   }
-  input {
-    position: fixed;
-    left: -100000px;
-  }
-  &.focus {
-    overflow: visible;
-    .select-content {
-      z-index: 10000;
-      max-height: 50vh;
-      overflow-y: auto;
-      .placeholder {
-        display: none;
-      }
-      label {
-        display: block;
-        text-overflow: ellipsis;
-        overflow: hidden;
-      }
-      &:after {
-        display: none;
-      }
+  .select-content {
+    input {
+      position: fixed;
+      left: -100000px;
     }
   }
-  &:not(.focus) {
-    input {
-      &:checked {
-        ~ .placeholder {
-          display: none;
-        }
-        ~ input:checked {
-          &.select-all + label {
-            display: none;
-          }
-        }
-        + label {
-          order: -1;
-          width: auto;
-          padding: 0 5px;
-          display: block;
-          pointer-events: none;
-        }
-      }
+
+  &.hoverable:not(:hover), &:not(.hoverable):not(.active):not([tabindex]):not(:focus), &[tabindex]:not(:focus) {
+    .select-content:only-child {
+      .select-close-content;
+      .select-close-content-core;
+    }
+  }
+  > input:not(:checked) {
+    + .select-content {
+      .select-close-content;
+      .select-close-content-core;
     }
   }
   .select-all + label {
@@ -67,59 +147,87 @@
       content: attr(data-placeholder);
     }
   }
-  
+
   .select-content {
     background-color: #fff;
-    .display-flex;
     .flex-direction(row);
     .flex-wrap(wrap);
-    > * {
+    .input-style;
+    padding: 0;
+    > label {
       display: block;
       white-space: nowrap;
       text-align: left;
       width: 100%;
       text-overflow: ellipsis;
       .box-sizing(border-box);
+      padding: @input-padding-vertical @input-padding-horizontal;
     }
     label {
       cursor: pointer;
       display: none;
     }
   }
-  &.more-selected {
+  &.count-selected {
     counter-reset: selected;
-    &:not(.focus) {
-      .select-content {
-        label[for] {
-          display: none;
-        }
+    &.hoverable:not(:hover), &:not(.hoverable):not(.active), &[tabindex]:not(:focus) {
+      .select-content:only-child {
+        .select-close-count;
       }
-      input:not(.select-all) {
-        &:checked {
-          counter-increment: selected;
-          ~ input:checked {
-            ~ .placeholder {
-              display: block;
-              &:after {
-                content: counter(selected) " " attr(data-selected);
-              }
+    }
+    > input:not(:checked) {
+      + .select-content {
+        .select-close-count;
+      }
+    }
+  }
+
+  &.hoverable:hover, &.active, &[tabindex]:focus {
+    &.hide-selected {
+      .select-content {
+        input {
+          &:checked {
+            + label {
+              display: none;
             }
           }
         }
       }
     }
+    .select-content {
+      .select-open-content;
+      .select-open-content-core;
+    }
   }
-  &.all-selected {
-    &:not(.focus) {
-      .select-content {
-        input:not(.select-all) + label[for] {
-          display: none;
+  &.hide-selected {
+     > input:checked  + .select-content {
+      input {
+        &:checked {
+          + label {
+            display: none;
+          }
         }
-        input.select-all + label[for] {
-          display: block;
-        }
-        .placeholder {
-          display: none !important;
+      }
+    }
+  }
+  > input:checked {
+    position: fixed !important;
+    z-index: 0;
+    + .select-content {
+      z-index: 1;
+      .select-open-content;
+      .select-open-content-core;
+    }
+  }
+  &[tabindex], &.hoverable {
+    .select-content {
+      input {
+        &[type="checkbox"] {
+          + label {
+            &:after {
+              display: none;
+            }
+          }
         }
       }
     }
