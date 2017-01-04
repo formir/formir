@@ -4,7 +4,7 @@
   overflow-y: auto;
   position: absolute;
   .display-flex;
-  .placeholder {
+  .@{select-placeholder} {
     display: none;
   }
   label {
@@ -38,16 +38,13 @@
       + label {
         .select-multi-selected-item;
         &:after {
-          content: "×";
-          font-size: 0.8em;
-          margin-left: 0.3em;
+          .select-multi-selected-item-close;
           pointer-events: auto;
-          vertical-align: text-top;
         }
       }
     }
     &:checked {
-      ~ .placeholder {
+      ~ .@{select-placeholder} {
         display: none;
       }
       ~ input:checked {
@@ -74,7 +71,7 @@
     &:checked {
       counter-increment: selected;
       ~ input:checked {
-        ~ .placeholder {
+        ~ .@{select-placeholder} {
           display: block;
           &:after {
             content: counter(selected) " " attr(data-selected);
@@ -84,7 +81,7 @@
     }
   }
 }
-.select {
+.@{select} {
   display: block;
   position: relative;
   text-decoration: none;
@@ -99,7 +96,7 @@
     top: 0;
     bottom: 0;
     opacity: 0;
-    + .select-content {
+    + .@{select-content} {
       label {
         &:after {
           z-index: 1;
@@ -108,47 +105,45 @@
       }
     }
   }
-  &.disabled {
+  &.@{select-disabled} {
     pointer-events: none;
-    .select-content {
-      &:after {
-        opacity: 0.55;
-      }
-      > * {
-        opacity: 0.5;
-      }
+    .@{select-content} {
+      .select-disabled-content;
     }
   }
-  .select-content {
+  &.@{select-readonly} {
+    pointer-events: none;
+    .@{select-content} {
+      .select-readonly-content;
+    }
+  }
+  .@{select-content} {
     input {
       position: fixed;
       left: -100000px;
     }
   }
 
-  &.hoverable:not(:hover), &:not(.hoverable):not(.active):not([tabindex]):not(:focus), &[tabindex]:not(:focus) {
-    .select-content:only-child {
+  &.@{select-hoverable}:not(:hover), &:not(.@{select-hoverable}):not(.@{select-active}):not([tabindex]):not(:focus), &[tabindex]:not(:focus) {
+    .@{select-content}:only-child {
       .select-close-content;
       .select-close-content-core;
     }
   }
   > input:not(:checked) {
-    + .select-content {
+    + .@{select-content} {
       .select-close-content;
       .select-close-content-core;
     }
   }
-  .select-all + label {
-    .order(-1);
-  }
-  .placeholder {
+  .@{select-placeholder} {
     .order(-1);
     &:after {
       content: attr(data-placeholder);
     }
   }
 
-  .select-content {
+  .@{select-content} {
     background-color: #fff;
     .flex-direction(row);
     .flex-wrap(wrap);
@@ -170,21 +165,21 @@
   }
   &.count-selected {
     counter-reset: selected;
-    &.hoverable:not(:hover), &:not(.hoverable):not(.active), &[tabindex]:not(:focus) {
-      .select-content:only-child {
+    &.@{select-hoverable}:not(:hover), &:not(.@{select-hoverable}):not(.@{select-active}), &[tabindex]:not(:focus) {
+      .@{select-content}:only-child {
         .select-close-count;
       }
     }
     > input:not(:checked) {
-      + .select-content {
+      + .@{select-content} {
         .select-close-count;
       }
     }
   }
 
-  &.hoverable:hover, &.active, &[tabindex]:focus {
-    &.hide-selected {
-      .select-content {
+  &.@{select-hoverable}:hover, &.@{select-active}, &[tabindex]:focus {
+    &.@{select-hide-selected} {
+      .@{select-content} {
         input {
           &:checked {
             + label {
@@ -194,13 +189,13 @@
         }
       }
     }
-    .select-content {
+    .@{select-content} {
       .select-open-content;
       .select-open-content-core;
     }
   }
   &.hide-selected {
-     > input:checked  + .select-content {
+     > input:checked  + .@{select-content} {
       input {
         &:checked {
           + label {
@@ -213,13 +208,13 @@
   > input:checked {
     position: fixed !important;
     z-index: 0;
-    + .select-content {
+    + .@{select-content} {
       z-index: 1;
       .select-open-content;
       .select-open-content-core;
     }
   }
-  &[tabindex], &.hoverable {
+  &[tabindex], &.@{select-hoverable} {
     .select-content {
       input {
         &[type="checkbox"] {
