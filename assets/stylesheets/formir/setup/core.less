@@ -29,9 +29,16 @@
 @mobile-max-width: 568px;
 @mobile-portrait-max-width: 320px;
 
+@device-width-side-collapse: @tablet-portrait-max-width; // in that device width sidebar will be automatic collapsed, set 0 to off
+@device-width-side-hide: @mobile-max-width; // in that device width sidebar (side-hide) will automatic hide, set 0 to off
+@device-width-side-show-full: @device-width-side-hide;
+
 // Z-index
   //// Modals
   @modal-zindex: 10000;
+
+  //// Side
+  @side-zindex: 10000;
   //// Tooltips
   @tooltip-zindex: 100000;
   @tooltip-arrow-zindex: 1;
