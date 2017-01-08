@@ -45,8 +45,16 @@
 }
 
 .height-repeat(@n, @i: 1) when (@i =< @n) {
+  @height: unit(((@layout-height/@layout-steps)*@i), @layout-unit);
   .@{height}-@{i} {
-    height: unit(((@layout-height/@layout-steps)*@i), @layout-unit);
+    height: @height;
+    @{header}& {
+      &.@{header-fixed} {
+        + * {
+          margin-top: @height;
+        }
+      }
+    }
   }
   .height-repeat(@n, (@i + 1));
 }
@@ -61,8 +69,16 @@
 
 .height-geo-repeat(@n, @i: 1) when (@i =< @n + 1) {
   @j: @i - 1;
+  @height: unit(((((1-(@layout-steps - @i)/((@layout-steps - @i) + @layout-geometric-step)))*@layout-height)-(((1-(@layout-steps - 1)/((@layout-steps - 1) + @layout-geometric-step)))*@layout-height))*@layout-factor, @layout-unit);
   .@{height-geo}-@{j} {
-    height: unit(((((1-(@layout-steps - @i)/((@layout-steps - @i) + @layout-geometric-step)))*@layout-height)-(((1-(@layout-steps - 1)/((@layout-steps - 1) + @layout-geometric-step)))*@layout-height))*@layout-factor, @layout-unit);
+    height: @height;
+    @{header}& {
+      &.@{header-fixed} {
+        + * {
+          margin-top: @height;
+        }
+      }
+    }
   }
   .height-geo-repeat(@n, (@i + 1));
 }

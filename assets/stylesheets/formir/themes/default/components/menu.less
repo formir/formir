@@ -1,3 +1,12 @@
+.menu-inside-hover() {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.menu-item-anchor-hover() {
+  ~ @{menu-inside} {
+    .menu-inside-hover();
+  }
+}
+
 @{menu} {
   @{menu-item} {
     color: @menu-item-color;

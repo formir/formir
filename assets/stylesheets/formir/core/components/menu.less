@@ -4,9 +4,13 @@
   @{menu-inside} {
     list-style: none;
     display: none;
+    &:hover {
+      .menu-inside-hover();
+    }
   }
   @{menu-item-anchor} {
     &:hover {
+      .menu-item-anchor-hover();
       ~ @{menu-inside} {
         display: block;
       }
