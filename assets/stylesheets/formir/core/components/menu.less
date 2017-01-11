@@ -1,6 +1,25 @@
 @{menu} {
   list-style: none;
   display: block;
+  &.@{menu-inside-absolute}, &.@{menu-inside-fixed} {
+    @{menu-item} {
+      position: relative;
+    }
+    @{menu-inside} {
+      z-index: 1;
+    }
+  }
+  &.@{menu-inside-absolute} {
+    @{menu-inside} {
+      position: absolute;
+      left: 0;
+    }
+  }
+  &.@{menu-inside-fixed} {
+    @{menu-inside} {
+      position: fixed;
+    }
+  }
   @{menu-inside} {
     list-style: none;
     display: none;
@@ -28,6 +47,22 @@
     }
     @{menu-item-anchor} {
       display: block;
+    }
+  }
+}
+
+@{side} {
+  @{menu} {
+    &.@{menu-inside-fixed} {
+      width: inherit;
+      @{menu-inside}, @{menu-item} {
+        width: inherit;
+      }
+    }
+    &.@{menu-inside-absolute} {
+      @{menu-inside} {
+        right: 0;
+      }
     }
   }
 }

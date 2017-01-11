@@ -1,3 +1,13 @@
+.header-height(@height) {
+  @{header}& {
+    &.@{header-fixed} {
+      + * {
+        margin-top: @height;
+      }
+    }
+  }
+}
+
 @{header} {
   &.@{header-fixed} {
     position: fixed;
