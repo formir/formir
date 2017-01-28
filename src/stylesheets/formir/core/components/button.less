@@ -1,0 +1,151 @@
+.@{button} {
+  @i: default;
+  font-size: ~"@{button-@{i}-font-size}";
+  line-height: ~"@{button-@{i}-line-height}";
+  padding: ~"@{button-@{i}-padding}";
+  border-radius: ~"@{button-@{i}-border-radius}";
+  border: ~"@{button-@{i}-border}";
+  outline: ~"@{button-@{i}-outline}";
+  box-shadow: ~"@{button-@{i}-shadow}";
+  color: ~"@{button-@{i}-text}";
+  background: ~"@{button-@{i}-background}";
+  border: ~"@{button-@{i}-border}";
+}
+
+.@{button}, [class^="@{button}-"], [class*=" @{button}-"] {
+  .inline-block;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  border: ~"@{button-default-border}";
+  outline: ~"@{button-default-outline}";
+  box-shadow: ~"@{button-default-shadow}";
+  color: ~"@{button-default-text}";
+  background: ~"@{button-default-background}";
+  border: ~"@{button-default-border}";
+  &:focus, &.@{button-focus} {
+    border: @button-focus-border;
+    outline: @button-focus-outline;
+    box-shadow: @button-focus-shadow;
+    .button-focus;
+  }
+  &:active, &.@{button-active} {
+    border: @button-active-border;
+    outline: @button-active-outline;
+    box-shadow: @button-active-shadow;
+    .button-active;
+  }
+  &:hover, &.@{button-hover} {
+    border: @button-hover-border;
+    outline: @button-hover-outline;
+    box-shadow: @button-hover-shadow;
+    .button-hover;
+  }
+  &:disabled, &.@{button-disabled} {
+    pointer-events: none;
+    cursor: normal;
+    .button-disabled;
+  }
+  &.@{button-inactive} {
+    cursor: normal;
+    .button-inactive;
+  }
+  &.@{button-ellipsis} {
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-wrap: normal;
+    button& {
+      > * {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow-wrap: normal;
+        word-wrap: normal;
+      }
+    }
+  }
+  &.@{button-circle} {
+    border-radius: 1000px;
+  }
+  &.@{button-block} {
+    display: block;
+  }
+  &.@{button-inverse} {
+    border: @button-inverse-border;
+    outline: @button-inverse-outline;
+    box-shadow: @button-inverse-shadow;
+    &:focus, &.@{button-focus} {
+      border: @button-inverse-focus-border;
+      outline: @button-inverse-focus-outline;
+      box-shadow: @button-inverse-focus-shadow;
+    }
+    &:active, &.@{button-active} {
+      border: @button-inverse-active-border;
+      outline: @button-inverse-active-outline;
+      box-shadow: @button-inverse-active-shadow;
+    }
+    &:hover, &.@{button-hover} {
+      border: @button-inverse-hover-border;
+      outline: @button-inverse-hover-outline;
+      box-shadow: @button-inverse-hover-shadow;
+    }
+    .button-inverse;
+  }
+  input& {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .button-common;
+}
+
+
+.button-repeat(@n, @i: 1) when (@i =< @n) {
+  .@{button}-@{i} {
+    font-size: ~"@{button-@{i}-font-size}";
+    line-height: ~"@{button-@{i}-line-height}";
+    padding: ~"@{button-@{i}-padding}";
+    border-radius: ~"@{button-@{i}-border-radius}";
+    border-width: ~"@{button-@{i}-border-width}";
+    outline-width: ~"@{button-@{i}-outline-width}";
+    box-shadow: ~"@{button-@{i}-shadow}";
+  } 
+  .button-repeat(@n, (@i + 1));
+}
+
+.@{button} {
+  .for(@colors); .-each(@name) {
+    &-@{name} {
+      background: ~"@{button-color-@{name}}";
+      color: ~"@{color-@{name}-contrast}";
+      border-color: ~"@{color-@{name}-contrast}";
+      &, &:focus, &:active, &:hover, &.@{button-focus}, &.@{button-active}, &.@{button-hover} {
+        border-width: @button-color-border-width;
+        border-style: @button-color-border-style;
+        & when (@button-color-border-color = transparent) {
+          border-color: @button-color-border-color;
+        }
+      }
+      &:hover {
+        background: ~"@{button-color-hover-@{name}}";
+      }
+      &:active {
+        background: ~"@{button-color-active-@{name}}";
+      }
+      &.@{button-inverse} {
+        background: ~"@{color-@{name}-contrast}";
+        color: ~"@{button-color-@{name}}";
+        border-color: ~"@{button-color-@{name}}";
+        outline-color: ~"@{button-color-@{name}}";
+        &:hover {
+          color: ~"@{button-color-hover-@{name}}";
+        }
+        &:active {
+          color: ~"@{button-color-active-@{name}}";
+        }
+      }
+    }
+  }
+}
+
+
+.button-repeat(@button-steps);

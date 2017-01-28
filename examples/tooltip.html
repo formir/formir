@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+    Remove this if you use the .htaccess -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>index</title>
+    <meta name="description" content="" />
+    <meta name="author" content="Konrad" />
+
+    <meta name="viewport" content="width=device-width; initial-scale=1.0" />
+    <link rel="stylesheet/less" type="text/css" href="../src/stylesheets/application.less" />
+    <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../src/javascripts/less.min.js"></script>
+    
+    <script>
+      less = {
+        env : "development",
+        async : false,
+        fileAsync : false,
+        poll : 1000,
+        functions : {},
+        dumpLineNumbers : "comments",
+        relativeUrls : false,
+        rootpath : ""
+      };
+    </script>
+  </head>
+
+  <body>
+    <div style="margin: 50px;">
+      Lorem ipsum dolor sit amet, consectetur <span tabindex="-1" class="has-tooltip" data-tooltip="Lorem ipsum dolor sit amet">top-left</span>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat <span class="has-tooltip center" data-tooltip="Lorem ipsum dolor sit amet">top-center</span>. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <span class="has-tooltip right" data-tooltip="Lorem ipsum dolor sit amet">top-right</span>.
+    </div>
+    <div style="margin: 50px;">
+      Lorem ipsum dolor sit amet, consectetur <span tabindex="-1" class="has-tooltip bottom" data-tooltip="Lorem ipsum dolor sit amet">bottom-left</span>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat <span class="has-tooltip bottom-center" data-tooltip="Lorem ipsum dolor sit amet">bottom-center</span>. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <span class="has-tooltip bottom-right" data-tooltip="Lorem ipsum dolor sit amet">bottom-right</span>.
+    </div>
+    <div style="margin: 50px;">
+      Lorem ipsum dolor sit amet, consectetur <span tabindex="-1" class="has-tooltip right-middle" data-tooltip="Lorem ipsum dolor sit amet">right-middle</span>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat <span class="has-tooltip left-middle" data-tooltip="Lorem ipsum dolor sit amet">left-middle</span>. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+    <div style="margin: 50px;">
+      Lorem ipsum dolor sit amet, consectetur <span tabindex="-1" class="has-tooltip bottom-right" data-tooltip="Lorem ipsum dolor sit amet">bottom-right</span>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat <span class="has-tooltip center" data-tooltip="Lorem ipsum dolor sit amet">top-center</span>. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+    <div style="margin: 50px;">
+      Lorem ipsum dolor sit amet, consectetur <span tabindex="-1" class="has-tooltip right-top" data-tooltip="Lorem ipsum dolor sit amet">right-top</span>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat <span class="has-tooltip right-bottom" data-tooltip="Lorem ipsum dolor sit amet">right-bottom</span>. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+    <div style="margin: 50px;">
+      Lorem ipsum dolor sit amet, consectetur <span tabindex="-1" class="has-tooltip left-top" data-tooltip="Lorem ipsum dolor sit amet">left-top</span>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat <span class="has-tooltip left-bottom" data-tooltip="Lorem ipsum dolor sit amet">left-bottom</span>. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+
+    <hr/>
+    <div style="margin: 50px;">
+      Lorem ipsum dolor sit amet, consectetur 
+      <span class="has-tooltip">
+        top left
+        <span class="tooltip left hoverable">Lorem ipsum <b>dolor sit </b>amet, consectetur</span>
+      </span>
+      , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit Excepteur 
+      <span class="has-tooltip" tabindex="-1" >
+        top center
+        <span class="tooltip center">Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p></span>
+      </span>
+      sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <span class="has-tooltip" tabindex="-1" >
+        top right
+        <span class="tooltip right hoverable">Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p></span>
+      </span>
+    </div>
+    <div style="margin: 50px;">
+      Lorem ipsum dolor sit amet, consectetur 
+      <span class="has-tooltip">
+        bottom left
+        <span class="tooltip bottom hoverable">Lorem ipsum <b>dolor sit </b>amet, consectetur</span>
+      </span>
+      , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit Excepteur 
+      <span class="has-tooltip" tabindex="-1" >
+        bottom center
+        <span class="tooltip bottom-center">Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p></span>
+      </span>
+      sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <span class="has-tooltip" tabindex="-1" >
+        bottom right
+        <span class="tooltip bottom-right hoverable">Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p></span>
+      </span>
+    </div>
+    <div style="margin: 50px;">
+      Lorem ipsum dolor sit amet, consectetur 
+      <span class="has-tooltip">
+        left middle
+        <span class="tooltip left-middle">Lorem ipsum <b>dolor sit </b>amet, consectetur</span>
+      </span>
+      , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit Excepteur 
+      <span class="has-tooltip" tabindex="-1" >
+        rigth middle
+        <span class="tooltip right-middle hoverable">Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p></span>
+      </span>
+      sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <span class="has-tooltip" tabindex="-1" >
+        top right
+        <span class="tooltip right">Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p></span>
+      </span>
+    </div>
+    <div style="margin: 50px;">
+      Lorem ipsum dolor sit amet, consectetur 
+      <span class="has-tooltip">
+        right top
+        <span class="tooltip right-top">Lorem ipsum <b>dolor sit </b>amet, consectetur</span>
+      </span>
+      , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit Excepteur 
+      <span class="has-tooltip" tabindex="-1" >
+        right bottom
+        <span class="tooltip right-bottom hoverable">Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p></span>
+      </span>
+      sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <span class="has-tooltip" tabindex="-1" >
+        right top
+        <span class="tooltip right-top hoverable">Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p></span>
+      </span>
+    </div>
+    <div style="margin: 50px;">
+      Lorem ipsum dolor sit amet, consectetur 
+      <span class="has-tooltip">
+        left top
+        <span class="tooltip left-top hoverable">Lorem ipsum <b>dolor sit </b>amet, consectetur</span>
+      </span>
+      , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit Excepteur 
+      <span class="has-tooltip" tabindex="-1" >
+        left bottom
+        <span class="tooltip left-bottom hoverable">Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p></span>
+      </span>
+      sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <span class="has-tooltip" tabindex="-1" >
+        left middle
+        <span class="tooltip left-middle">Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p></span>
+      </span>
+    </div>
+    
+  </body>
+</html>

@@ -1,0 +1,427 @@
+// Body
+@body-font-family: "Roboto";
+@body-font-size: 14px;
+@body-line-height: 1.35em;
+@font-family: "Roboto", Arial;
+
+// Modals
+@modal-width: calc(100% ~"-" @content-min-margin * 2);
+@modal-margin: 5vh;
+@modal-min-height: 300px;
+@modal-max-width: 650px;
+@modal-background-color: #fff;
+@modal-border-color: #222;
+@modal-border: 1px solid @modal-border-color;
+@modal-header-background: @modal-border-color;
+
+// Tabs
+@tab-nav-active-background: #222;
+@tab-nav-active-color: #fff;
+@tab-nav-active-border: 0 none;
+@tab-nav-active-shadow: none;
+
+// Tooltips
+@tooltip-background: rgba(0, 0, 0, 1);
+@tooltip-border-width: 3px;
+@tooltip-border-color: rgba(60, 60, 60, 1);
+@tooltip-border: @tooltip-border-width solid @tooltip-border-color;
+@tooltip-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+@tooltip-text-color: #fff;
+@tooltip-padding: 18px 20px;
+@tooltip-max-width: 300px;
+@tooltip-min-width: 150%;
+@tooltip-border-radius: 10px;
+@tooltip-arrow-height: 10px;
+@tooltip-arrow-width: @tooltip-arrow-height;
+@tooltip-arrow-offset: 20px;
+@tooltip-offset: @tooltip-arrow-offset;
+@tooltip-distance: 10px;
+
+// Popups
+@popup-background: rgba(255, 255, 255, 1);
+@popup-border-width: 0;
+@popup-border-color: rgba(60, 60, 60, 1);
+@popup-border: @popup-border-width solid @popup-border-color;
+@popup-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+@popup-text-color: #000;
+@popup-padding: 0;
+@popup-max-width: calc(100vh ~"-" 2 * @content-min-margin);
+@popup-min-width: 250px;
+@popup-width: auto;
+@popup-border-radius: 0;
+@popup-arrow-color: #000;
+@popup-arrow-height: 0;
+@popup-arrow-width: @popup-arrow-height;
+@popup-arrow-offset: 20px;
+@popup-offset: 0;
+@popup-distance: 0px;
+//// Popup inner
+@popup-content-padding: 15px 20px;
+@popup-footer-padding: @popup-content-padding;
+@popup-header-padding: @popup-footer-padding;
+@popup-header-bg: #000;
+@popup-header-text-color: #fff;
+@popup-footer-bg: transparent;
+@popup-footer-text-color: inherit;
+
+// Accordion
+@accordion-animated-max-height: 200vh;
+@accordion-animated-time: 1s;
+
+// Side
+@side-full-width: 90%;
+@side-animate-time: 1s;
+@side-hoverable-offset: 5px;
+@side-backdrop-color: rgba(0, 0, 0, 1);
+@side-backdrop-opacity: 0.5;
+@side-width-default: 200px;
+@side-height-default: 150px;
+@side-collapse-width: @content-max-width/@base-steps;
+@side-collapse-height: @content-max-height/@base-steps;
+
+// Chart
+@chart-height: 100px;
+@chart-ring-width: 10px;
+@chart-color: green;
+@chart-background: red;
+@chart-value-font-size: 20px;
+@chart-value-color: @chart-background;
+@chart-parent-background: inherit;
+
+// Form
+@input-padding-vertical: 0.35em;
+@input-padding-horizontal: 0.5em;
+
+// Description List
+@dd-gutter: 20px;
+@dd-space-default: 20px;
+@dd-title-space-default: 5px;
+@dl-size-default: 3;
+
+// Menu
+@side-menu-item-color: #fff;
+@side-menu-item-anchor-border: 1px solid rgba(255, 255, 255, 0.1);
+@menu-item-color: #000;
+@menu-item-padding: 0;
+@menu-item-anchor-padding: 5px 10px;
+@menu-item-anchor-border: 1px solid rgba(0, 0, 0, 0.1);
+@menu-inside-item-anchor-padding: 5px 10px 5px 10px;
+
+// Typography
+//// Heading
+@h-font-weight: 500;
+@h-margin: 2rem 0;
+@p-margin: 2rem 0;
+
+@h1-font-size: @typography-font-size-1;
+@h1-line-height: @typography-line-height-1;
+@h1-font-weight: @h-font-weight;
+@h1-margin: @h-margin;
+
+@h2-font-size: @typography-font-size-2;
+@h2-line-height: @typography-line-height-2;
+@h2-font-weight: @h-font-weight;
+@h2-margin: @h-margin;
+
+@h3-font-size: @typography-font-size-3;
+@h3-line-height: @typography-line-height-3;
+@h3-font-weight: @h-font-weight;
+@h3-margin: @h-margin;
+
+@h4-font-size: @typography-font-size-4;
+@h4-line-height: @typography-line-height-4;
+@h4-font-weight: @h-font-weight;
+@h4-margin: @h-margin;
+
+@h5-font-size: @typography-font-size-5;
+@h5-line-height: @typography-line-height-5;
+@h5-font-weight: @h-font-weight;
+@h5-margin: @h-margin;
+
+@h6-font-size: @typography-font-size-6;
+@h6-line-height: @typography-line-height-6;
+@h6-font-weight: @h-font-weight;
+@h6-margin: @h-margin;
+
+@article-p-margin: @p-margin;
+@list-margin: 0 0 0 1rem;
+
+@color-primary: #37465D;
+@color-alternative: #49F28E;
+@color-link: #5D769D;
+@color-mute: #575757;
+@color-cancel: #aaaaaa;
+@color-success: #9DC02E;
+@color-info: #027493;
+@color-warning: #E6AC26;
+@color-danger: #932524;
+@color-white: #fff;
+@color-color-1: #000;
+@color-color-2: #000;
+@color-color-3: #000;
+
+@color-primary-contrast: #ffffff;
+@color-alternative-contrast: #111111;
+@color-link-contrast: #ffffff;
+@color-mute-contrast: #ffffff;
+@color-cancel-contrast: #111111;
+@color-success-contrast: #ffffff;
+@color-info-contrast: #ffffff;
+@color-warning-contrast: #111111;
+@color-danger-contrast: #ffffff;
+@color-white-contrast: #111111;
+@color-color-1-contrast: #fff;
+@color-color-2-contrast: #fff;
+@color-color-3-contrast: #fff;
+
+@color-hover-lighten: 20%;
+
+@color-hover-primary: lighten(@color-primary, @color-hover-lighten);
+@color-hover-alternative: lighten(@color-alternative, @color-hover-lighten);
+@color-hover-link: lighten(@color-link, @color-hover-lighten);
+@color-hover-mute: lighten(@color-mute, @color-hover-lighten);
+@color-hover-cancel: lighten(@color-cancel, @color-hover-lighten);
+@color-hover-success: lighten(@color-success, @color-hover-lighten);
+@color-hover-info: lighten(@color-info, @color-hover-lighten);
+@color-hover-warning: lighten(@color-warning, @color-hover-lighten);
+@color-hover-danger: lighten(@color-danger, @color-hover-lighten);
+@color-hover-color-1: lighten(@color-color-1, @color-hover-lighten);
+@color-hover-color-2: lighten(@color-color-2, @color-hover-lighten);
+@color-hover-color-3: lighten(@color-color-3, @color-hover-lighten);
+
+@background-lighten: 50%;
+@text-darken: 10%;
+@border-darken: 0%;
+
+@background-color-primary: lighten(@color-primary, @background-lighten);
+@background-color-alternative: lighten(@color-alternative, @background-lighten);
+@background-color-link: lighten(@color-link, @background-lighten);
+@background-color-mute: lighten(@color-mute, @background-lighten);
+@background-color-cancel: lighten(@color-cancel, @background-lighten);
+@background-color-success: lighten(@color-success, @background-lighten);
+@background-color-info: lighten(@color-info, @background-lighten);
+@background-color-warning: lighten(@color-warning, @background-lighten);
+@background-color-danger: lighten(@color-danger, @background-lighten);
+
+@background-color-hover-primary: lighten(@background-color-primary, @color-hover-lighten);
+@background-color-hover-alternative: lighten(@background-color-alternative, @color-hover-lighten);
+@background-color-hover-link: lighten(@background-color-link, @color-hover-lighten);
+@background-color-hover-mute: lighten(@background-color-mute, @color-hover-lighten);
+@background-color-hover-cancel: lighten(@background-color-cancel, @color-hover-lighten);
+@background-color-hover-success: lighten(@background-color-success, @color-hover-lighten);
+@background-color-hover-info: lighten(@background-color-info, @color-hover-lighten);
+@background-color-hover-warning: lighten(@background-color-warning, @color-hover-lighten);
+@background-color-hover-danger: lighten(@background-color-danger, @color-hover-lighten);
+
+@text-color-primary: darken(@color-primary, @text-darken);
+@text-color-alternative: darken(@color-alternative, @text-darken);
+@text-color-link: darken(@color-link, @text-darken);
+@text-color-mute: darken(@color-mute, @text-darken);
+@text-color-cancel: darken(@color-cancel, @text-darken);
+@text-color-success: darken(@color-success, @text-darken);
+@text-color-info: darken(@color-info, @text-darken);
+@text-color-warning: darken(@color-warning, @text-darken);
+@text-color-danger: darken(@color-danger, @text-darken);
+
+@border-color-primary: darken(@color-primary, @border-darken);
+@border-color-alternative: darken(@color-alternative, @border-darken);
+@border-color-link: darken(@color-link, @border-darken);
+@border-color-mute: darken(@color-mute, @border-darken);
+@border-color-cancel: darken(@color-cancel, @border-darken);
+@border-color-success: darken(@color-success, @border-darken);
+@border-color-info: darken(@color-info, @border-darken);
+@border-color-warning: darken(@color-warning, @border-darken);
+@border-color-danger: darken(@color-danger, @border-darken);
+
+
+// Links
+@link-color: @color-link;
+@link-hover-color: @color-hover-link;
+@link-decoration: none;
+@link-hover-decoration: underline;
+
+// Buttons
+@button-border-style: solid;
+@button-text-align: center;
+@button-cursor: pointer;
+@button-lighten: 0%;
+@button-lighten-2: 0%;
+
+@button-hover-lighten: 10%;
+@button-hover-lighten-2: 15%;
+
+@button-active-lighten: 8%;
+@button-active-lighten-2: 7%;
+
+
+@button-steps: 6;
+
+@button-default-text: @color-white-contrast;
+@button-default-background: @color-white;
+
+@button-default-font-size: 1rem;
+@button-default-line-height: @body-line-height;
+@button-default-padding: 0.2em 0.5em;
+@button-default-border-radius: 3px;
+@button-default-border: 0.15em solid;
+@button-default-outline: none;
+@button-default-shadow: none;
+
+@button-hover-border: @button-default-border;
+@button-hover-outline: @button-default-outline;
+@button-hover-shadow: @button-default-shadow;
+
+@button-active-border: @button-default-border;
+@button-active-outline: @button-default-outline;
+@button-active-shadow: @button-default-shadow;
+
+@button-focus-border: @button-default-border;
+@button-focus-outline: @button-default-outline;
+@button-focus-shadow: @button-default-shadow;
+
+@button-inverse-border: 0.15em solid;
+@button-inverse-outline: @button-default-outline;
+@button-inverse-shadow: @button-default-shadow;
+
+@button-inverse-hover-border: @button-inverse-border;
+@button-inverse-hover-outline: @button-inverse-outline;
+@button-inverse-hover-shadow: @button-inverse-shadow;
+
+@button-inverse-active-border: @button-inverse-border;
+@button-inverse-active-outline: @button-inverse-outline;
+@button-inverse-active-shadow: @button-inverse-shadow;
+
+@button-inverse-focus-border: @button-inverse-border;
+@button-inverse-focus-outline: @button-inverse-outline;
+@button-inverse-focus-shadow: @button-inverse-shadow;
+
+@button-1-font-size: @button-default-font-size - 0.4rem;
+@button-1-line-height: @button-default-line-height;
+@button-1-padding: 0.2em 0.5em;
+@button-1-border-radius: @button-default-border-radius - 1px;
+@button-1-border-width: none;
+@button-1-outline-width: none;
+@button-1-shadow: none;
+
+@button-2-font-size: @button-default-font-size - 0.15rem;
+@button-2-line-height: @button-default-line-height;
+@button-2-padding: 0.2em 0.5em;
+@button-2-border-radius: @button-default-border-radius - 1px;
+@button-2-border-width: none;
+@button-2-outline-width: none;
+@button-2-shadow: none;
+
+@button-3-font-size: @button-default-font-size + 0.15rem;
+@button-3-line-height: @button-default-line-height;
+@button-3-padding: 0.2em 0.5em;
+@button-3-border-radius: @button-default-border-radius + 2px;
+@button-3-border-width: none;
+@button-3-outline-width: none;
+@button-3-shadow: none;
+
+@button-4-font-size: @button-default-font-size + 0.3rem;
+@button-4-line-height: @button-default-line-height;
+@button-4-padding: 0.2em 0.5em;
+@button-4-border-radius: @button-default-border-radius + 1px;
+@button-4-border-width: none;
+@button-4-outline-width: none;
+@button-4-shadow: none;
+
+@button-5-font-size: @button-default-font-size + 0.5rem;
+@button-5-line-height: @button-default-line-height;
+@button-5-padding: 0.2em 0.5em;
+@button-5-border-radius: @button-default-border-radius + 2px;
+@button-5-border-width: none;
+@button-5-outline-width: none;
+@button-5-shadow: none;
+
+@button-6-font-size: @button-default-font-size + 1rem;
+@button-6-line-height: @button-default-line-height;
+@button-6-padding: 0.2em 0.5em;
+@button-6-border-radius: @button-default-border-radius + 3px;
+@button-6-border-width: none;
+@button-6-outline-width: none;
+@button-6-shadow: none;
+
+@button-color-border-style: solid;
+@button-color-border-width: 0.15em;
+@button-color-border-color: transparent;
+
+@button-color-primary: lighten(@color-primary, @button-lighten);
+@button-color-alternative: lighten(@color-alternative, @button-lighten);
+@button-color-link: lighten(@color-link, @button-lighten);
+@button-color-mute: lighten(@color-mute, @button-lighten);
+@button-color-cancel: lighten(@color-cancel, @button-lighten);
+@button-color-success: lighten(@color-success, @button-lighten);
+@button-color-info: lighten(@color-info, @button-lighten);
+@button-color-warning: lighten(@color-warning, @button-lighten);
+@button-color-danger: lighten(@color-danger, @button-lighten);
+@button-color-color-1: lighten(@color-color-1, @button-lighten);
+@button-color-color-2: lighten(@color-color-2, @button-lighten);
+@button-color-color-3: lighten(@color-color-3, @button-lighten);
+
+@button-color-2-primary: lighten(@color-primary, @button-lighten-2);
+@button-color-2-alternative: lighten(@color-alternative, @button-lighten-2);
+@button-color-2-link: lighten(@color-link, @button-lighten-2);
+@button-color-2-mute: lighten(@color-mute, @button-lighten-2);
+@button-color-2-cancel: lighten(@color-cancel, @button-lighten-2);
+@button-color-2-success: lighten(@color-success, @button-lighten-2);
+@button-color-2-info: lighten(@color-info, @button-lighten-2);
+@button-color-2-warning: lighten(@color-warning, @button-lighten-2);
+@button-color-2-danger: lighten(@color-danger, @button-lighten-2);
+@button-color-2-color-1: lighten(@color-color-1, @button-lighten-2);
+@button-color-2-color-2: lighten(@color-color-2, @button-lighten-2);
+@button-color-2-color-3: lighten(@color-color-3, @button-lighten-2);
+
+@button-color-hover-primary: lighten(@button-color-primary, @button-hover-lighten);
+@button-color-hover-alternative: lighten(@button-color-alternative, @button-hover-lighten);
+@button-color-hover-link: lighten(@button-color-link, @button-hover-lighten);
+@button-color-hover-mute: lighten(@button-color-mute, @button-hover-lighten);
+@button-color-hover-cancel: lighten(@button-color-cancel, @button-hover-lighten);
+@button-color-hover-success: lighten(@button-color-success, @button-hover-lighten);
+@button-color-hover-info: lighten(@button-color-info, @button-hover-lighten);
+@button-color-hover-warning: lighten(@button-color-warning, @button-hover-lighten);
+@button-color-hover-danger: lighten(@button-color-danger, @button-hover-lighten);
+@button-color-hover-color-1: lighten(@button-color-color-1, @button-hover-lighten);
+@button-color-hover-color-2: lighten(@button-color-color-2, @button-hover-lighten);
+@button-color-hover-color-3: lighten(@button-color-color-3, @button-hover-lighten);
+
+
+@button-color-2-hover-primary: lighten(@button-color-2-primary, @button-hover-lighten-2);
+@button-color-2-hover-alternative: lighten(@button-color-2-alternative, @button-hover-lighten-2);
+@button-color-2-hover-link: lighten(@button-color-2-link, @button-hover-lighten-2);
+@button-color-2-hover-mute: lighten(@button-color-2-mute, @button-hover-lighten-2);
+@button-color-2-hover-cancel: lighten(@button-color-2-cancel, @button-hover-lighten-2);
+@button-color-2-hover-success: lighten(@button-color-2-success, @button-hover-lighten-2);
+@button-color-2-hover-info: lighten(@button-color-2-info, @button-hover-lighten-2);
+@button-color-2-hover-warning: lighten(@button-color-2-warning, @button-hover-lighten-2);
+@button-color-2-hover-danger: lighten(@button-color-2-danger, @button-hover-lighten-2);
+@button-color-2-hover-color-1: lighten(@button-color-2-color-1, @button-hover-lighten-2);
+@button-color-2-hover-color-2: lighten(@button-color-2-color-2, @button-hover-lighten-2);
+@button-color-2-hover-color-3: lighten(@button-color-2-color-3, @button-hover-lighten-2);
+
+@button-color-active-primary: lighten(@button-color-primary, @button-active-lighten);
+@button-color-active-alternative: lighten(@button-color-alternative, @button-active-lighten);
+@button-color-active-link: lighten(@button-color-link, @button-active-lighten);
+@button-color-active-mute: lighten(@button-color-mute, @button-active-lighten);
+@button-color-active-cancel: lighten(@button-color-cancel, @button-active-lighten);
+@button-color-active-success: lighten(@button-color-success, @button-active-lighten);
+@button-color-active-info: lighten(@button-color-info, @button-active-lighten);
+@button-color-active-warning: lighten(@button-color-warning, @button-active-lighten);
+@button-color-active-danger: lighten(@button-color-danger, @button-active-lighten);
+@button-color-active-color-1: lighten(@button-color-color-1, @button-active-lighten);
+@button-color-active-color-2: lighten(@button-color-color-2, @button-active-lighten);
+@button-color-active-color-3: lighten(@button-color-color-3, @button-active-lighten);
+
+@button-color-2-active-primary: lighten(@button-color-2-primary, @button-active-lighten-2);
+@button-color-2-active-alternative: lighten(@button-color-2-alternative, @button-active-lighten-2);
+@button-color-2-active-link: lighten(@button-color-2-link, @button-active-lighten-2);
+@button-color-2-active-mute: lighten(@button-color-2-mute, @button-active-lighten-2);
+@button-color-2-active-cancel: lighten(@button-color-2-cancel, @button-active-lighten-2);
+@button-color-2-active-success: lighten(@button-color-2-success, @button-active-lighten-2);
+@button-color-2-active-info: lighten(@button-color-2-info, @button-active-lighten-2);
+@button-color-2-active-warning: lighten(@button-color-2-warning, @button-active-lighten-2);
+@button-color-2-active-danger: lighten(@button-color-2-danger, @button-active-lighten-2);
+@button-color-2-active-color-1: lighten(@button-color-2-color-1, @button-active-lighten-2);
+@button-color-2-active-color-2: lighten(@button-color-2-color-2, @button-active-lighten-2);
+@button-color-2-active-color-3: lighten(@button-color-2-color-3, @button-active-lighten-2);

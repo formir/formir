@@ -1,0 +1,25 @@
+.inline-block() {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow;
+  -moz-box-shadow: @shadow;
+  box-shadow: @shadow;
+}
+
+.box-sizing(@box-sizing) {
+  -webkit-box-sizing: @box-sizing;
+  -moz-box-sizing: @box-sizing;
+  box-sizing: @box-sizing;
+}
+
+.gradient-vertical(@start, @end) {
+  background: @start;
+  background: -moz-linear-gradient(top,  @start 0%, @end 100%);
+  background: -webkit-linear-gradient(top,  @start 0%,@end 100%);
+  background: linear-gradient(to bottom,  @start 0%,@end 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= ~"@{start}", endColorstr=~"@{end}",GradientType=0 );
+}

@@ -1,0 +1,8 @@
+@{section} {
+  .for(@colors); .-each(@name) {
+    &.@{name} {
+      background: ~"@{color-@{name}}";
+      color: ~"@{color-@{name}-contrast}";
+    }
+  }
+}

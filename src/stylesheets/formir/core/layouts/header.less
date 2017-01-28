@@ -1,0 +1,43 @@
+/// NO NOT change this ///
+@include-core-layout-header: true;
+
+.header-height(@height) {
+  @{header}& {
+    &.@{header-fixed} {
+      + * {
+        margin-top: @height;
+      }
+    }
+  }
+}
+
+.header-position(@left: false; @right: false; @top: false; @bottom: false) {
+  @{header} {
+    &.@{header-fixed} {
+      & when not(@left = false) {
+        left: @left;
+      }
+      & when not(@right = false) {
+        right: @right;
+      }
+      & when not(@top = false) {
+        top: @top;
+      }
+      & when not(@bottom = false) {
+        bottom: @bottom;
+      }
+    }
+  }
+}
+
+@{header} {
+  &.@{header-fixed} {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+  .@{header-content} {
+    
+  }
+}

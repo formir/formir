@@ -1,0 +1,30 @@
+.side-collapsed() {
+  label {
+    font-size: 9px;
+  }
+}
+
+.side-expanded() {
+}
+
+.side-expanded-full() {
+}
+
+.side-hovered() {
+}
+
+.side-focused() {
+
+}
+
+& when(@include-core-layout-side = true) {
+  .@{side-backdrop} {
+    background-color: @side-backdrop-color;
+    opacity: @side-backdrop-opacity;
+  }
+  
+  @{side} {
+    background-color: #000;
+    color: #fff;
+  }
+}

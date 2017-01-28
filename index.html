@@ -12,12 +12,9 @@
     <meta name="author" content="Konrad" />
 
     <meta name="viewport" content="width=device-width; initial-scale=1.0" />
-    <link rel="stylesheet/less" type="text/css" href="assets/stylesheets/application.less" />
-    <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="stylesheet/less" type="text/css" href="src/stylesheets/application.less" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="assets/javascripts/less.min.js"></script>
+    <script src="src/javascripts/less.min.js"></script>
 
     <script>
       less = {
@@ -35,38 +32,39 @@
 
   <body style="height: 100%;">
     <input type="checkbox" id="aside-left" name="aside" class="side-collapse"/>
-      <aside tabindex="-1" class="side left float overflow height-5 width-2">
+      <aside tabindex="-1" class="side left float overflow height-5">
         <div class="image logo padding-horizontal-4 padding-vertical-2 center">
-          <img class="expanded-show collapsed-hide" src="assets/images/logo/formir-logo-smaller-bw-inverse.png"/>
-          <img class="collapsed-show expanded-hide" src="assets/images/logo/formir.png"/>
+          <img class="expanded-show collapsed-hide" src="src/images/logo/formir-logo-smaller-bw-inverse.png"/>
+          <img class="collapsed-show expanded-hide" src="src/images/logo/formir.png"/>
         </div>
         <label for="aside-left"><i class="icon-collapse"></i></label>
         <ul class="menu items">
         	<li class="item">
-        		<a target="body" href="welcome.html">Welcome</a>
+        		<a target="body" href="examples/welcome.html">Welcome</a>
         		<ul class="items">
-        			<li class="item"><a target="body" href="accordion.html">One</a></li>
-			        <li class="item"><a target="body" href="chart.html">Two</a></li>
-			        <li class="item"><a target="body" href="grid.html">Three</a></li>
-			        <li class="item"><a target="body" href="layout.html">Four</a></li>
+        			<li class="item"><a target="body" href="examples/accordion.html">One</a></li>
+			        <li class="item"><a target="body" href="examples/chart.html">Two</a></li>
+			        <li class="item"><a target="body" href="examples/grid.html">Three</a></li>
+			        <li class="item"><a target="body" href="examples/layout.html">Four</a></li>
     			  </ul>
           </li>
-	        <li class="item"><a target="body" href="accordion.html">Accordion</a></li>
-	        <li class="item"><a target="body" href="chart.html">Chart</a></li>
-	        <li class="item"><a target="body" href="grid.html">Grid</a></li>
-	        <li class="item"><a target="body" href="layout.html">Layout</a></li>
-	        <li class="item"><a target="body" href="modals.html">Modals</a></li>
-	        <li class="item"><a target="body" href="side.html">Side</a></li>
-	        <li class="item"><a target="body" href="tabs.html">Tabs</a></li>
-	        <li class="item"><a target="body" href="tooltip.html">Tooltip</a></li>
-	        <li class="item"><a target="body" href="popup.html">Popup</a></li>
-          <li class="item"><a target="body" href="select.html">Select Dropdown &copy;</a></li>
-	        <li class="item"><a target="body" href="description-list.html">Description list</a></li>
-	        <li class="item"><a target="body" href="typography.html">Typography</a></li>
+	        <li class="item"><a target="body" href="examples/accordion.html">Accordion</a></li>
+	        <li class="item"><a target="body" href="examples/chart.html">Chart</a></li>
+	        <li class="item"><a target="body" href="examples/grid.html">Grid</a></li>
+	        <li class="item"><a target="body" href="examples/layout.html">Layout</a></li>
+	        <li class="item"><a target="body" href="examples/modals.html">Modals</a></li>
+	        <li class="item"><a target="body" href="examples/side.html">Side</a></li>
+	        <li class="item"><a target="body" href="examples/tabs.html">Tabs</a></li>
+	        <li class="item"><a target="body" href="examples/tooltip.html">Tooltip</a></li>
+	        <li class="item"><a target="body" href="examples/popup.html">Popup</a></li>
+          <li class="item"><a target="body" href="examples/select.html">Select Dropdown &copy;</a></li>
+	        <li class="item"><a target="body" href="examples/description-list.html">Description list</a></li>
+	        <li class="item"><a target="body" href="examples/typography.html">Typography</a></li>
+	        <li class="item"><a target="body" href="examples/buttons.html">Buttons</a></li>
         </ul>
       </aside>
       <label for="aside-left" class="side-backdrop"></label>
-       <div class="body-content" style="height: 100%;">
+       <div class="body-content grid column-force">
        	<header class="header fixed height-geo-5" style="pointer-events: none;">
        		<div class="header-content padding-1">
        			<p class="tp-under-show">
@@ -75,7 +73,7 @@
        		</div>
        		
        	</header>
-       	<iframe src="welcome.html" name="body" style="width: 100%; height: calc(99% - 32px); border: 0">
+       	<iframe src="examples/welcome.html" name="body" style="width: 100%; height: 100%; border: 0; margin: 0">
 
        	</iframe>
 
