@@ -3882,22 +3882,14 @@ form.has-warning .control-group.select-arrow select + span:after,
   overflow-y: auto;
   position: absolute;
   width: 100%;
-  -ms-flex-wrap: none;
-  -webkit-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  -moz-box-orient: vertical;
-  -webkit-box-orient: vertical;
-  -ms-flex-direction: column;
-  -webkit-flex-direction: column;
-  flex-direction: column;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -ms-flex-align: stretch;
-  -webkit-align-items: stretch;
-  align-items: stretch;
 }
 .select.hoverable:hover .select-content .placeholder,
 .select.active .select-content .placeholder,
@@ -3910,11 +3902,11 @@ form.has-warning .control-group.select-arrow select + span:after,
   display: block;
   text-overflow: ellipsis;
   overflow: hidden;
-  -webkit-box-flex: 0 0 auto;
-  -moz-box-flex: 0 0 auto;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  -webkit-box-flex: 1 1 100%;
+  -moz-box-flex: 1 1 100%;
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
   background-color: white;
   color: black;
 }
@@ -3955,22 +3947,14 @@ form.has-warning .control-group.select-arrow select + span:after,
   overflow-y: auto;
   position: absolute;
   width: 100%;
-  -ms-flex-wrap: none;
-  -webkit-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  -moz-box-orient: vertical;
-  -webkit-box-orient: vertical;
-  -ms-flex-direction: column;
-  -webkit-flex-direction: column;
-  flex-direction: column;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -ms-flex-align: stretch;
-  -webkit-align-items: stretch;
-  align-items: stretch;
 }
 .select > input:checked + .select-content .placeholder {
   display: none;
@@ -3979,11 +3963,11 @@ form.has-warning .control-group.select-arrow select + span:after,
   display: block;
   text-overflow: ellipsis;
   overflow: hidden;
-  -webkit-box-flex: 0 0 auto;
-  -moz-box-flex: 0 0 auto;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  -webkit-box-flex: 1 1 100%;
+  -moz-box-flex: 1 1 100%;
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
   background-color: white;
   color: black;
 }

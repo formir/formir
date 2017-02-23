@@ -4,10 +4,8 @@
   overflow-y: auto;
   position: absolute;
   width: 100%;
-  .flex-wrap(nowrap);
-  .flex-direction(column);
+  .flex-wrap(wrap);
   .display-flex;
-  .align-items(stretch);
   .@{select-placeholder} {
     display: none;
   }
@@ -15,7 +13,7 @@
     display: block;
     text-overflow: ellipsis;
     overflow: hidden;
-    .flex(0 0 auto);
+    .flex(1 1 100%);
     .select-option;
     &:hover {
       .select-option-hovered;
