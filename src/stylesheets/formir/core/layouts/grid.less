@@ -7,21 +7,6 @@
 
 .grid-gutter-repeat(@n, @grid-steps, @unit, @start, @step, @i: 1) when (@i =< @n) {
   @value: (@start * @step) + @i * @step;
-  & when (@grid-around = true) {
-    &.@{gutter}-@{i}-@{around} {
-      padding-left: unit(@value/2, @unit);
-      padding-right: unit(@value/2, @unit);
-      box-sizing: padding-box;
-      > [class*="@{grid}"].@{row} {
-        margin-left: unit(-@value, @unit);
-        margin-right: unit(-@value, @unit);
-        &[class*="@{gutter}-"][class*="-@{around}"] {
-          margin-left: unit(-@value/2, @unit);
-          margin-right: unit(-@value/2, @unit);
-        }
-      }
-    }
-  }
   &.@{gutter}-@{i} {
     margin-left: unit(-@value/2, @unit);
     margin-right: unit(-@value/2, @unit);
@@ -95,17 +80,6 @@
 
 .grid-space-repeat(@n, @grid-steps, @unit, @start, @step, @i: 1) when (@i =< @n) {
   @value: (@start * @step) + @i * @step;
-  & when (@grid-around = true) {
-    &.@{space}-@{i}-@{around} {
-      padding-top: unit(@value/2, @unit);
-      padding-bottom: unit(@value/2, @unit);
-      box-sizing: padding-box;
-      table& {
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-    }
-  }
   &.@{space}-@{i} {
     margin-top: unit(-@value/2, @unit);
     margin-bottom: unit(-@value/2, @unit);
@@ -131,18 +105,6 @@
     > [class*="@{grid}"].@{row} {
       padding-top: unit(@value/2, @unit);
       padding-bottom: unit(@value/2, @unit);
-    }
-  }
-  & when (@grid-around = true) {
-    &.@{space}-@{i}-@{around} {
-      > [class*="@{grid}"].@{row} {
-        margin-top: unit(-@value, @unit);
-        margin-bottom: unit(-@value, @unit);
-        &[class*="@{space}-"][class*="-@{around}"] {
-          margin-top: unit(-@value/2, @unit);
-          margin-bottom: unit(-@value/2, @unit);
-        }
-      }
     }
   }
   .grid-space(@grid-steps, @i, @value, @unit);
@@ -195,6 +157,56 @@
     }
   }
   
+  .grid-cell(@n, (@i + 1));
+}
+
+.grid-cell-mobile(@n, @i: 1) when (@i =< @n) {
+  @media (min-width: 0) and (max-width: @mobile-portrait-max-width) {
+    .@{mp}-@{cell}-@{i}, .@{mp}-@{under}-@{cell}-@{i} {
+      width: unit((100 / @n) * @i, %);
+      .flex(0 0 auto) !important;
+    }
+  }
+  @media (min-width: @mobile-portrait-max-width) and (max-width: @mobile-max-width) {
+    .@{m}-@{cell}-@{i} {
+      width: unit((100 / @n) * @i, %);
+      .flex(0 0 auto) !important;
+    }
+  }
+  @media (min-width: 0) and (max-width: @mobile-max-width) {
+    .@{m}-@{under}-@{cell}-@{i} {
+      width: unit((100 / @n) * @i, %);
+      .flex(0 0 auto) !important;
+    }
+  }
+  @media (min-width: @mobile-max-width) and (max-width: @tablet-portrait-max-width) {
+    .@{tp}-@{cell}-@{i} {
+      width: unit((100 / @n) * @i, %);
+      .flex(0 0 auto) !important;
+    }
+  }
+  @media (min-width: 0) and (max-width: @tablet-portrait-max-width) {
+    .@{tp}-@{under}-@{cell}-@{i} {
+      width: unit((100 / @n) * @i, %);
+      .flex(0 0 auto) !important;
+    }
+  }
+  @media (min-width: @tablet-portrait-max-width) and (max-width: @tablet-max-width) {
+    .@{t}-@{cell}-@{i} {
+      width: unit((100 / @n) * @i, %);
+      .flex(0 0 auto) !important;
+    }
+  }
+  @media (min-width: 0) and (max-width: @tablet-max-width) {
+    .@{t}-@{under}-@{cell}-@{i} {
+      width: unit((100 / @n) * @i, %);
+      .flex(0 0 auto) !important;
+    }
+  }
+  .grid-cell-mobile(@n, (@i + 1));
+}
+
+.grid-cell-extend(@n, @i: 1) when (@i =< @n) {
   table& .@{cell}-@{i} {
     min-width: unit((100 / @n) * @i, %);
     max-width: unit((100 / @n) * @i, %);
@@ -209,51 +221,17 @@
       width: unit((100 / @n) * @i, %);
     }
   }
-  
-  @media (min-width: 0) and (max-width: @mobile-portrait-max-width) {
-    .@{mp}-@{cell}-@{i}, .@{mp}-@{under}-@{cell}-@{i} {
-      width: unit((100 / @n) * @i, %);
-    }
-  }
-  @media (min-width: @mobile-portrait-max-width) and (max-width: @mobile-max-width) {
-    .@{m}-@{cell}-@{i} {
-      width: unit((100 / @n) * @i, %);
-    }
-  }
-  @media (min-width: 0) and (max-width: @mobile-max-width) {
-    .@{m}-@{under}-@{cell}-@{i} {
-      width: unit((100 / @n) * @i, %);
-    }
-  }
-  @media (min-width: @mobile-max-width) and (max-width: @tablet-portrait-max-width) {
-    .@{tp}-@{cell}-@{i} {
-      width: unit((100 / @n) * @i, %);
-    }
-  }
-  @media (min-width: 0) and (max-width: @tablet-portrait-max-width) {
-    .@{tp}-@{under}-@{cell}-@{i} {
-      width: unit((100 / @n) * @i, %);
-    }
-  }
-  @media (min-width: @tablet-portrait-max-width) and (max-width: @tablet-max-width) {
-    .@{t}-@{cell}-@{i} {
-      width: unit((100 / @n) * @i, %);
-    }
-  }
-  @media (min-width: 0) and (max-width: @tablet-max-width) {
-    .@{t}-@{under}-@{cell}-@{i} {
-      width: unit((100 / @n) * @i, %);
-    }
-  }
-  .grid-cell(@n, (@i + 1));
+  .grid-cell-extend(@n, (@i + 1));
 }
 
 .grid-offset(@n, @i: 0) when (@i < @n) {
-  .@{offset-left}-@{i}, .@{offset}-@{i} {
-    margin-left: unit((100 / @n) * @i, %);
-  }
-  .@{offset-right}-@{i} {
-    margin-right: unit((100 / @n) * @i, %);
+  [class*="@{cell}"], &[class*="@{width}-"] {
+    &.@{offset-left}-@{i}, &.@{offset}-@{i} {
+      margin-left: unit((100 / @n) * @i, %) !important;
+    }
+    &.@{offset-right}-@{i} {
+      margin-right: unit((100 / @n) * @i, %) !important;
+    }
   }
   &.@{offset-left}-@{i}, &.@{offset}-@{i}, .@{row}.@{offset-left}-@{i}, .@{row}.@{offset}-@{i} {
     [class*="@{cell}"]:first-child {
@@ -265,120 +243,125 @@
       margin-right: unit((100 / @n) * @i, %);
     }
   }
+  .grid-offset(@n, (@i + 1));
+}
+
+.grid-offset-mobile(@n, @i: 0) when (@i < @n) {
+  
   @media (min-width: 0) and (max-width: @mobile-portrait-max-width) {
     .@{mp}-@{offset}-@{i}, .@{mp}-@{offset-left}-@{i}, .@{mp}-@{under}-@{offset}-@{i}, .@{mp}-@{under}-@{offset-left}-@{i} {
       &[class*="@{cell}"], &[class*="@{width}-"] {
-        margin-left: unit((100 / @n) * @i, %);
+        margin-left: unit((100 / @n) * @i, %) !important;
       }
     }
     &.@{mp}-@{offset}-@{i}, &.@{mp}-@{offset-left}-@{i}, &.@{mp}-@{under}-@{offset}-@{i}, &.@{mp}-@{under}-@{offset-left}-@{i} {
       [class*="@{cell}"]:first-child {
-        margin-left: unit((100 / @n) * @i, %) !important;
+        margin-left: unit((100 / @n) * @i, %);
       }
     }
     .@{mp}-@{offset-right}-@{i}, .@{mp}-@{under}-@{offset-right}-@{i} {
       &[class*="@{cell}"], &[class*="@{width}-"] {
-        margin-right: unit((100 / @n) * @i, %);
+        margin-right: unit((100 / @n) * @i, %) !important;
       }
     }
     &.@{mp}-@{offset-right}-@{i}, &.@{mp}-@{under}-@{offset-right}-@{i} {
       [class*="@{cell}"]:last-child {
-        margin-right: unit((100 / @n) * @i, %) !important;
+        margin-right: unit((100 / @n) * @i, %);
       }
     }
   }
   @media (min-width: @mobile-portrait-max-width) and (max-width: @mobile-max-width) {
     .@{m}-@{offset}-@{i}, .@{m}-@{offset-left}-@{i} {
       &[class*="@{cell}"], &[class*="@{width}-"] {
-        margin-left: unit((100 / @n) * @i, %);
+        margin-left: unit((100 / @n) * @i, %) !important;
       }
     }
     &.@{m}-@{offset}-@{i}, &.@{m}-@{offset-left}-@{i} {
       [class*="@{cell}"]:first-child {
-        margin-left: unit((100 / @n) * @i, %) !important;
+        margin-left: unit((100 / @n) * @i, %);
       }
     }
     .@{m}-@{offset-right}-@{i} {
       &[class*="@{cell}"], &[class*="@{width}-"]  {
-        margin-right: unit((100 / @n) * @i, %);
+        margin-right: unit((100 / @n) * @i, %) !important;
       }
     }
     &.@{m}-@{offset-right}-@{i} {
       [class*="@{cell}"]:last-child {
-        margin-right: unit((100 / @n) * @i, %) !important;
+        margin-right: unit((100 / @n) * @i, %);
       }
     }
   }
   @media (min-width: 0) and (max-width: @mobile-max-width) {
     .@{m}-@{under}-@{offset}-@{i}, .@{m}-@{under}-@{offset-left}-@{i} {
       &[class*="@{cell}"], &[class*="@{width}-"] {
-        margin-left: unit((100 / @n) * @i, %);
+        margin-left: unit((100 / @n) * @i, %) !important;
       }
     }
     &.@{m}-@{under}-@{offset}-@{i}, &.@{m}-@{under}-@{offset-left}-@{i} {
       [class*="@{cell}"]:first-child {
-        margin-left: unit((100 / @n) * @i, %) !important;
+        margin-left: unit((100 / @n) * @i, %);
       }
     }
     .@{m}-@{under}-@{offset-right}-@{i} {
       &[class*="@{cell}"], &[class*="@{width}-"]  {
-        margin-right: unit((100 / @n) * @i, %);
+        margin-right: unit((100 / @n) * @i, %) !important;
       }
     }
     &.@{m}-@{under}-@{offset-right}-@{i} {
       [class*="@{cell}"]:last-child  {
-        margin-right: unit((100 / @n) * @i, %) !important;
+        margin-right: unit((100 / @n) * @i, %);
       }
     }
   }
   @media (min-width: @mobile-max-width) and (max-width: @tablet-portrait-max-width) {
     .@{tp}-@{offset}-@{i}, .@{tp}-@{offset-left}-@{i} {
       &[class*="@{cell}"], &[class*="@{width}-"] {
-        margin-left: unit((100 / @n) * @i, %);
+        margin-left: unit((100 / @n) * @i, %) !important;
       }
     }
     &.@{tp}-@{offset}-@{i}, &.@{tp}-@{offset-left}-@{i} {
       [class*="@{cell}"]:first-child {
-        margin-left: unit((100 / @n) * @i, %) !important;
+        margin-left: unit((100 / @n) * @i, %);
       }
     }
     .@{tp}-@{offset-right}-@{i} {
       &[class*="@{cell}"], &[class*="@{width}-"] {
-        margin-right: unit((100 / @n) * @i, %);
+        margin-right: unit((100 / @n) * @i, %) !important;
       }
     }
     &.@{tp}-@{offset-right}-@{i} {
       [class*="@{cell}"]:last-child {
-        margin-right: unit((100 / @n) * @i, %) !important;
+        margin-right: unit((100 / @n) * @i, %);
       }
     }
   }
   @media (min-width: 0) and (max-width: @tablet-portrait-max-width) {
     .@{tp}-@{under}-@{offset}-@{i}, .@{tp}-@{under}-@{offset-left}-@{i} {
       &[class*="@{cell}"], &[class*="@{width}-"] {
-        margin-left: unit((100 / @n) * @i, %);
+        margin-left: unit((100 / @n) * @i, %) !important;
       }
     }
     &.@{tp}-@{under}-@{offset}-@{i}, &.@{tp}-@{under}-@{offset-left}-@{i} {
       [class*="@{cell}"]:first-child {
-        margin-left: unit((100 / @n) * @i, %) !important;
+        margin-left: unit((100 / @n) * @i, %);
       }
     }
     .@{tp}-@{under}-@{offset-right}-@{i} {
       &[class*="@{cell}"], &[class*="@{width}-"]  {
-        margin-right: unit((100 / @n) * @i, %);
+        margin-right: unit((100 / @n) * @i, %) !important;
       }
     }
     &.@{tp}-@{under}-@{offset-right}-@{i} {
       [class*="@{cell}"]:last-child  {
-        margin-right: unit((100 / @n) * @i, %) !important;
+        margin-right: unit((100 / @n) * @i, %);
       }
     }
   }
   @media (min-width: @tablet-portrait-max-width) and (max-width: @tablet-max-width) {
     .@{t}-@{offset}-@{i}, .@{t}-@{offset-left}-@{i} {
       &[class*="@{cell}"], &[class*="@{width}-"] {
-        margin-left: unit((100 / @n) * @i, %);
+        margin-left: unit((100 / @n) * @i, %) !important;
       }
     }
     &.@{t}-@{offset}-@{i}, &.@{t}-@{offset-left}-@{i} {
@@ -388,44 +371,48 @@
     }
     .@{t}-@{offset-right}-@{i} {
       &[class*="@{cell}"], &[class*="@{width}-"] {
-        margin-right: unit((100 / @n) * @i, %);
+        margin-right: unit((100 / @n) * @i, %) !important;
       }
     }
     &.@{t}-@{offset-right}-@{i} {
       [class*="@{cell}"]:last-child {
-        margin-right: unit((100 / @n) * @i, %) !important;
+        margin-right: unit((100 / @n) * @i, %);
       }
     }
   }
   @media (min-width: 0) and (max-width: @tablet-max-width) {
     .@{t}-@{under}-@{offset}-@{i}, .@{t}-@{under}-@{offset-left}-@{i} {
       &[class*="@{cell}"], &[class*="@{width}-"] {
-        margin-left: unit((100 / @n) * @i, %);
+        margin-left: unit((100 / @n) * @i, %) !important;
       }
     }
     &.@{t}-@{under}-@{offset}-@{i}, &.@{t}-@{under}-@{offset-left}-@{i} {
       [class*="@{cell}"]:first-child {
-        margin-left: unit((100 / @n) * @i, %) !important;
+        margin-left: unit((100 / @n) * @i, %);
       }
     }
     .@{t}-@{under}-@{offset-right}-@{i} {
       &[class*="@{cell}"], &[class*="@{width}-"] {
-        margin-right: unit((100 / @n) * @i, %);
+        margin-right: unit((100 / @n) * @i, %) !important;
       }
     }
     &.@{t}-@{under}-@{offset-right}-@{i} {
       [class*="@{cell}"]:last-child {
-        margin-right: unit((100 / @n) * @i, %) !important;
+        margin-right: unit((100 / @n) * @i, %);
       }
     }
   }
-  .grid-offset(@n, (@i + 1));
+  .grid-offset-mobile(@n, (@i + 1));
 }
 
+.grid-cell(@grid-steps);
+.grid-cell-mobile(@grid-steps);
+
 .@{grid} {
-  .grid-cell(@grid-steps);
+  .grid-cell-extend(@grid-steps);
   & when (@grid-offset = true) {
     .grid-offset(@grid-steps);
+    .grid-offset-mobile(@grid-steps);
   }
   & when (@grid-gutter = true) {
     .grid-gutter-repeat(@grid-gutter-steps, @grid-steps, @grid-gutter-unit, @grid-gutter-start, @grid-gutter-step);
@@ -550,73 +537,7 @@
       }
     }
   }
-  [class^="@{cell}"], [class*=" @{cell}"] {
-    .box-sizing(border-box);
-    min-width: 0;
-    &.@{vertical-center} {
-      .align-self(center);
-    }
-    &.@{vertical-items-center} {
-      .display-flex;
-      .align-items(center);
-    }
-    &.@{vertical-items-streach} {
-      .display-flex;
-      .align-items(stretch);
-    }
-    &.@{vertical-items-end} {
-      .display-flex;
-      .align-items(flex-end);
-    }
-    &.@{vertical-items-start} {
-      .display-flex;
-      .align-items(flex-start);
-    }
-    &.@{items-center} {
-      .display-flex;
-      .justify-content(center);
-    }
-    &.@{items-streach} {
-      .display-flex;
-      .justify-content(streach);
-    }
-    &.@{items-end} {
-      .display-flex;
-      .justify-content(flex-end);
-    }
-    &.@{items-start} {
-      .display-flex;
-      .justify-content(flex-start);
-    }
-  }
-  .@{row} {
-    .flex(1 1 100%);
-    .display-flex;
-    .flex-wrap(inherit);
-    &:not([class*="@{grid}"]) {
-      .flex-direction(inherit);
-    }
-    &.@{vertical-center} {
-      [class^="@{cell}"], [class*=" @{cell}"] {
-        .align-self(center);
-      }
-    }
-    &.@{text-center} {
-      [class^="@{cell}"], [class*=" @{cell}"] {
-        text-align: center;
-      }
-    }
-    &.@{text-right} {
-      [class^="@{cell}"], [class*=" @{cell}"] {
-        text-align: right;
-      }
-    }
-    &.@{text-left} {
-      [class^="@{cell}"], [class*=" @{cell}"] {
-        text-align: left;
-      }
-    }
-  }
+  
   table&, &.@{table} {
     display: table;
     border: 0;
@@ -673,17 +594,17 @@
       }
     }
     
-    &.@{info}-center, .@{row}.@{info}-center {
+    &.@{hint}-center, .@{row}.@{hint}-center {
       .@{control}[class*="@{cell}"] {
         .align-self(center);
       }
     }
-    &.@{info}-right, .@{row}.@{info}-right {
+    &.@{hint}-right, .@{row}.@{hint}-right {
       .@{control}[class*="@{cell}"] {
         .justify-content(flex-end);
       }
     }
-    &.@{info}-left, .@{row}.@{info}-left {
+    &.@{hint}-left, .@{row}.@{hint}-left {
       .@{control}[class*="@{cell}"] {
         .justify-content(flex-start);
       }
@@ -691,27 +612,27 @@
     
     &.@{text-center}, .@{row}.@{text-center} {
       [class*="@{cell}"] {
-        &:not(.@{release}) {
+        &.@{keep-flex} {
           .justify-content(center);
         }
       }
     }
     &.@{text-right}, .@{row}.@{text-right} {
       [class*="@{cell}"] {
-        &:not(.@{release}) {
+        &.@{keep-flex} {
           .justify-content(flex-end);
         }
       }
     }
     &.@{text-left}, .@{row}.@{text-left} {
       [class*="@{cell}"] {
-        &:not(.@{release}) {
+        &.@{keep-flex} {
           .justify-content(flex-start);
         }
       }
     }
-    &:not(.@{release}) [class*="@{cell}"] {
-      &:not(.@{release}) {
+    &.@{keep-flex} [class*="@{cell}"] {
+      &.@{keep-flex} {
         .display-flex;
         textarea {
           .flex(1 1 100%);
@@ -736,7 +657,7 @@
           .box-sizing(border-box);
         }
       }
-      select, textarea {
+      select, textarea, .@{select} {
         width: 100%;
         max-width: 100%;
         min-width: 100%;
@@ -835,6 +756,75 @@
         width: 100% !important;
         .flex(~"0 0 auto !important");
       }
+    }
+  }
+}
+
+[class^="@{cell}-"], [class*=" @{cell}-"], .@{cell} {
+  .box-sizing(border-box);
+  min-width: 0;
+  &.@{vertical-center} {
+    .align-self(center);
+  }
+  &.@{vertical-items-center} {
+    .display-flex;
+    .align-items(center);
+  }
+  &.@{vertical-items-streach} {
+    .display-flex;
+    .align-items(stretch);
+  }
+  &.@{vertical-items-end} {
+    .display-flex;
+    .align-items(flex-end);
+  }
+  &.@{vertical-items-start} {
+    .display-flex;
+    .align-items(flex-start);
+  }
+  &.@{items-center} {
+    .display-flex;
+    .justify-content(center);
+  }
+  &.@{items-streach} {
+    .display-flex;
+    .justify-content(streach);
+  }
+  &.@{items-end} {
+    .display-flex;
+    .justify-content(flex-end);
+  }
+  &.@{items-start} {
+    .display-flex;
+    .justify-content(flex-start);
+  }
+}
+
+.@{row} {
+  .flex(1 1 100%);
+  .display-flex;
+  .flex-wrap(inherit);
+  &:not([class*="@{grid}"]) {
+    .flex-direction(inherit);
+  }
+  &.@{vertical-center} {
+    [class^="@{cell}"], [class*=" @{cell}"] {
+      .align-self(center);
+    }
+  }
+  &.@{text-center} {
+    [class^="@{cell}"], [class*=" @{cell}"] {
+      text-align: center;
+    }
+  }
+  &.@{text-right} {
+    [class^="@{cell}"], [class*=" @{cell}"] {
+      text-align: right;
+    }
+  }
+  &.@{text-left} {
+    [class^="@{cell}"], [class*=" @{cell}"] {
+      text-align: left;
     }
   }
 }

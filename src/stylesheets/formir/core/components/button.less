@@ -1,44 +1,40 @@
 .@{button} {
-  @i: default;
-  font-size: ~"@{button-@{i}-font-size}";
-  line-height: ~"@{button-@{i}-line-height}";
-  padding: ~"@{button-@{i}-padding}";
-  border-radius: ~"@{button-@{i}-border-radius}";
-  border: ~"@{button-@{i}-border}";
-  outline: ~"@{button-@{i}-outline}";
-  box-shadow: ~"@{button-@{i}-shadow}";
-  color: ~"@{button-@{i}-text}";
-  background: ~"@{button-@{i}-background}";
-  border: ~"@{button-@{i}-border}";
-}
+  @name: default;
+  font-size: ~"@{button-@{name}-font-size}";
+  line-height: ~"@{button-@{name}-line-height}";
+  padding: ~"@{button-@{name}-padding}";
+  border-radius: ~"@{button-@{name}-border-radius}";
+  border: ~"@{button-@{name}-border}";
+  outline: ~"@{button-@{name}-outline}";
+  box-shadow: ~"@{button-@{name}-shadow}";
+  color: ~"@{button-@{name}-text}";
+  & when not (@button-set-transparent = true) {
+    background: ~"@{button-@{name}-background}";
+  }
+  border: ~"@{button-@{name}-border}";
 
-.@{button}, [class^="@{button}-"], [class*=" @{button}-"] {
   .inline-block;
   overflow-wrap: break-word;
   word-wrap: break-word;
-  border: ~"@{button-default-border}";
-  outline: ~"@{button-default-outline}";
-  box-shadow: ~"@{button-default-shadow}";
-  color: ~"@{button-default-text}";
-  background: ~"@{button-default-background}";
-  border: ~"@{button-default-border}";
-  &:focus, &.@{button-focus} {
-    border: @button-focus-border;
-    outline: @button-focus-outline;
-    box-shadow: @button-focus-shadow;
-    .button-focus;
+  &:hover, &.@{button-hover} {
+    border: @button-hover-border;
+    outline: @button-hover-outline;
+    box-shadow: @button-hover-shadow;
+    .button-hover;
+  }
+  & when (@button-set-focus = true) {
+    &:focus, &.@{button-focus} {
+      border: @button-focus-border;
+      outline: @button-focus-outline;
+      box-shadow: @button-focus-shadow;
+      .button-focus;
+    }
   }
   &:active, &.@{button-active} {
     border: @button-active-border;
     outline: @button-active-outline;
     box-shadow: @button-active-shadow;
     .button-active;
-  }
-  &:hover, &.@{button-hover} {
-    border: @button-hover-border;
-    outline: @button-hover-outline;
-    box-shadow: @button-hover-shadow;
-    .button-hover;
   }
   &:disabled, &.@{button-disabled} {
     pointer-events: none;
@@ -70,25 +66,51 @@
   &.@{button-block} {
     display: block;
   }
+  & when not (@button-set-transparent = true) {
+    &.@{button-transparent} {
+      background-color: transparent !important;
+    }
+  }
+  & when (@button-set-transparent = true) {
+    background-color: transparent;
+  }
+  &.@{button-as-link} {
+    border-color: transparent;
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    color: @color-link;
+    &:hover {
+      color: @color-hover-link;
+      text-decoration: underline;
+      border-color: transparent;
+      background: transparent;
+      outline: none;
+      box-shadow: none;
+    }
+  }
   &.@{button-inverse} {
     border: @button-inverse-border;
     outline: @button-inverse-outline;
     box-shadow: @button-inverse-shadow;
-    &:focus, &.@{button-focus} {
-      border: @button-inverse-focus-border;
-      outline: @button-inverse-focus-outline;
-      box-shadow: @button-inverse-focus-shadow;
+    &:hover, &.@{button-hover} {
+      border: @button-inverse-hover-border;
+      outline: @button-inverse-hover-outline;
+      box-shadow: @button-inverse-hover-shadow;
+    }
+    & when (@button-set-focus = true) {
+      &:focus, &.@{button-focus} {
+        border: @button-inverse-focus-border;
+        outline: @button-inverse-focus-outline;
+        box-shadow: @button-inverse-focus-shadow;
+      }
     }
     &:active, &.@{button-active} {
       border: @button-inverse-active-border;
       outline: @button-inverse-active-outline;
       box-shadow: @button-inverse-active-shadow;
     }
-    &:hover, &.@{button-hover} {
-      border: @button-inverse-hover-border;
-      outline: @button-inverse-hover-outline;
-      box-shadow: @button-inverse-hover-shadow;
-    }
+   
     .button-inverse;
   }
   input& {
@@ -98,54 +120,235 @@
   .button-common;
 }
 
-
-.button-repeat(@n, @i: 1) when (@i =< @n) {
-  .@{button}-@{i} {
-    font-size: ~"@{button-@{i}-font-size}";
-    line-height: ~"@{button-@{i}-line-height}";
-    padding: ~"@{button-@{i}-padding}";
-    border-radius: ~"@{button-@{i}-border-radius}";
-    border-width: ~"@{button-@{i}-border-width}";
-    outline-width: ~"@{button-@{i}-outline-width}";
-    box-shadow: ~"@{button-@{i}-shadow}";
-  } 
-  .button-repeat(@n, (@i + 1));
+.@{button} {
+  .for(@sizes); .-each(@name) {
+    &-@{name} {
+      font-size: ~"@{button-@{name}-font-size}";
+      line-height: ~"@{button-@{name}-line-height}";
+      padding: ~"@{button-@{name}-padding}";
+      border-radius: ~"@{button-@{name}-border-radius}";
+      border-width: ~"@{button-@{name}-border-width}";
+      outline-width: ~"@{button-@{name}-outline-width}";
+      box-shadow: ~"@{button-@{name}-shadow}";
+    }
+  }
 }
 
-.@{button} {
+.@{buttons} {
+  .for(@sizes); .-each(@name) {
+    &-@{name} {
+      .@{button} {
+        font-size: ~"@{button-@{name}-font-size}";
+        line-height: ~"@{button-@{name}-line-height}";
+        padding: ~"@{button-@{name}-padding}";
+        border-radius: ~"@{button-@{name}-border-radius}";
+        border-width: ~"@{button-@{name}-border-width}";
+        outline-width: ~"@{button-@{name}-outline-width}";
+        box-shadow: ~"@{button-@{name}-shadow}";
+      }
+    }
+  }
+}
+
+.@{button} { 
   .for(@colors); .-each(@name) {
     &-@{name} {
-      background: ~"@{button-color-@{name}}";
-      color: ~"@{color-@{name}-contrast}";
-      border-color: ~"@{color-@{name}-contrast}";
-      &, &:focus, &:active, &:hover, &.@{button-focus}, &.@{button-active}, &.@{button-hover} {
-        border-width: @button-color-border-width;
-        border-style: @button-color-border-style;
-        & when (@button-color-border-color = transparent) {
-          border-color: @button-color-border-color;
+      & when not (@button-set-inverse = true) {
+        & when not (@button-set-transparent = true) {
+          background: ~"@{button-color-@{name}}";
+        }
+        color: ~"@{color-@{name}-contrast}";
+        border-color: ~"@{button-color-@{name}}";
+        & when (@button-set-gradient = true) {
+          &.@{button-gradient} {
+            .gradient(~"@{button-color-@{name}}", ~"@{button-color-2-@{name}}");
+          }
+        }
+        & when (@button-set-gradient = default) {
+          .gradient(~"@{button-color-@{name}}", ~"@{button-color-2-@{name}}");
+        }
+        &:hover, &.@{button-hover} {
+          & when not (@button-set-transparent = true) {
+            background: ~"@{button-color-hover-@{name}}";
+          }
+          border-color: ~"@{button-color-hover-@{name}}";
+          & when (@button-set-gradient = true) {
+            &.@{button-gradient} {
+              .gradient(~"@{button-color-hover-@{name}}", ~"@{button-color-2-hover-@{name}}");
+            }
+          }
+          & when (@button-set-gradient = default) {
+            .gradient(~"@{button-color-hover-@{name}}", ~"@{button-color-2-hover-@{name}}");
+          }
+        }
+        & when (@button-set-color-focus = true) {
+          &:focus, &.@{button-focus} {
+            & when not (@button-set-transparent = true) {
+              background: ~"@{button-color-focus-@{name}}";
+            }
+            border-color: ~"@{button-color-focus-@{name}}";
+            & when (@button-gradient = true) {
+              &.@{button-set-gradient} {
+                .gradient(~"@{button-color-focus-@{name}}", ~"@{button-color-2-focus-@{name}}");
+              }
+            }
+            & when (@button-set-gradient = default) {
+              .gradient(~"@{button-color-focus-@{name}}", ~"@{button-color-2-focus-@{name}}");
+            }
+          }
+        }
+        &:active, &.@{button-active} {
+          & when not (@button-set-transparent = true) {
+            background: ~"@{button-color-active-@{name}}";
+          }
+          border-color: ~"@{button-color-active-@{name}}";
+          & when (@button-set-gradient = true) {
+            &.@{button-gradient} {
+              .gradient(~"@{button-color-active-@{name}}", ~"@{button-color-2-active-@{name}}");
+            }
+          }
+          & when (@button-set-gradient = default) {
+            .gradient(~"@{button-color-active-@{name}}", ~"@{button-color-2-active-@{name}}");
+          }
+        }
+        &.@{button-inverse} {
+          & when not (@button-set-transparent = true) {
+            background: ~"@{color-@{name}-contrast}";
+          }
+          color: ~"@{button-color-@{name}}";
+          border-color: ~"@{button-color-@{name}}";
+          outline-color: ~"@{button-color-@{name}}";
+          &:hover, &.@{button-hover} {
+            color: ~"@{button-color-hover-@{name}}";
+          }
+          & when (@button-set-color-focus = true) {
+            &:focus, &.@{button-focus} {
+              color: ~"@{button-color-focus-@{name}}";
+            }
+          }
+          &:active, &.@{button-active} {
+            color: ~"@{button-color-active-@{name}}";
+          }
         }
       }
-      &:hover {
-        background: ~"@{button-color-hover-@{name}}";
-      }
-      &:active {
-        background: ~"@{button-color-active-@{name}}";
-      }
-      &.@{button-inverse} {
-        background: ~"@{color-@{name}-contrast}";
+      & when (@button-set-inverse = true) {
+        & when not (@button-set-transparent = true) {
+          background: ~"@{color-@{name}-contrast}";
+        }
         color: ~"@{button-color-@{name}}";
         border-color: ~"@{button-color-@{name}}";
         outline-color: ~"@{button-color-@{name}}";
-        &:hover {
+        &:hover, &.@{button-hover} {
           color: ~"@{button-color-hover-@{name}}";
         }
-        &:active {
+        & when (@button-set-color-focus = true) {
+          &:focus, &.@{button-focus} {
+            color: ~"@{button-color-focus-@{name}}";
+          }
+        }
+        &:active, &.@{button-active} {
           color: ~"@{button-color-active-@{name}}";
+        }
+        &.@{button-inverse} {
+          background: ~"@{button-color-@{name}}";
+          color: ~"@{color-@{name}-contrast}";
+          &:hover, &.@{button-hover} {
+            background: ~"@{button-color-hover-@{name}}";
+            border-color: ~"@{button-color-hover-@{name}}";
+            & when (@button-set-gradient = true) {
+              &.@{button-gradient} {
+                .gradient(~"@{button-color-hover-@{name}}", ~"@{button-color-2-hover-@{name}}");
+              }
+            }
+            & when (@button-set-gradient = default) {
+              .gradient(~"@{button-color-hover-@{name}}", ~"@{button-color-2-hover-@{name}}");
+            }
+          }
+          & when (@button-set-color-focus = true) {
+            &:focus, &.@{button-focus} {
+              background: ~"@{button-color-focus-@{name}}";
+              border-color: ~"@{button-color-focus-@{name}}";
+              & when (@button-gradient = true) {
+                &.@{button-set-gradient} {
+                  .gradient(~"@{button-color-focus-@{name}}", ~"@{button-color-2-focus-@{name}}");
+                }
+              }
+              & when (@button-set-gradient = default) {
+                .gradient(~"@{button-color-focus-@{name}}", ~"@{button-color-2-focus-@{name}}");
+              }
+            }
+          }
+          &:active, &.@{button-active} {
+            background: ~"@{button-color-active-@{name}}";
+            border-color: ~"@{button-color-active-@{name}}";
+            & when (@button-set-gradient = true) {
+              &.@{button-gradient} {
+                .gradient(~"@{button-color-active-@{name}}", ~"@{button-color-2-active-@{name}}");
+              }
+            }
+            & when (@button-set-gradient = default) {
+              .gradient(~"@{button-color-active-@{name}}", ~"@{button-color-2-active-@{name}}");
+            }
+          }
+        }
+      }
+      &.@{button-border-contrast} {
+        &, &:focus, &:hover, &:active, &.@{button-hover},  &.@{button-active}, &.@{button-focus} {
+          border-color: ~"@{color-@{name}-contrast}";
         }
       }
     }
   }
 }
 
+.@{button-group} {
+  .display-inline-flex;
+  .flex-wrap(nowrap);
+  &.@{button-reverse} {
+    .flex-direction(row-reverse);
+  }
+  .@{button} {
+    ~ * {
+      &, &:hover, &:focus, &:active, &.@{button-hover}, &.@{button-focus}, &.@{button-active} {
+        border-left: 0 none;
+      }
+    }
+    &:first-child, &:first-of-type {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      ~ *:not(:last-child):not(:last-of-type) {
+        border-radius: 0;
+      }
+    }
+    &:last-child, &:last-of-type {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+}
 
-.button-repeat(@button-steps);
+.@{button-group-horizontal} {
+  .display-inline-flex;
+  .flex-direction(column);
+  &.@{button-reverse} {
+    .flex-direction(column-reverse);
+  }
+  .@{button} {
+    ~ * {
+      &, &:hover, &:focus, &:active, &.@{button-hover}, &.@{button-focus}, &.@{button-active} {
+        border-top: 0 none;
+      }
+    }
+    &:first-child, &:first-of-type {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      ~ *:not(:last-child):not(:last-of-type) {
+        border-radius: 0;
+      }
+    }
+    &:last-child, &:last-of-type {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+}

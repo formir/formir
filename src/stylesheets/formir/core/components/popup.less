@@ -145,6 +145,22 @@
   color: @popup-text-color;
   max-width: @popup-max-width;
   min-width: @popup-min-width;
+  & when (@popup-min-width = max-content) {
+    min-width: -webkit-max-conent;
+    min-width: -moz-max-content;
+  }
+  & when (@popup-min-width = min-content) {
+    min-width: -webkit-min-conent;
+    min-width: -moz-min-content;
+  }
+  & when (@popup-max-width = max-content) {
+    max-width: -webkit-max-conent;
+    max-width: -moz-max-content;
+  }
+  & when (@popup-max-width = min-content) {
+    max-width: -webkit-min-conent;
+    max-width: -moz-min-content;
+  }
   border-radius: @popup-border-radius;
   & when (@popup-distance > 0) {
     bottom: calc(100% ~"+" @popup-distance);
@@ -525,6 +541,7 @@
 
 .@{has-popup} {
   position: relative;
+  display: inline-block;
   &.@{popup-absolute} {
     position: absolute;
   }

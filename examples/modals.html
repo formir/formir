@@ -36,6 +36,7 @@
   <body>
     <input type="radio" name="modal" id="modal-close" class="modal-close" value="off" autocomplete="off" checked="true"/>
     <input type="radio" name="modal-2" id="modal-close-2" class="modal-close" value="off" autocomplete="off"  checked="true"/> <!-- User the same name attribute to prevent open many modals from group name -->
+    
     <div class="body">
       <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
       <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
@@ -49,20 +50,22 @@
         </label>
         <p>
           <a href="/">Home</a>
+          <label class="button button-info" for="modal-2-1"> Open modal 2-1</label>
         </p>
         <p>
           <a href="/contact">Contact</a>
+          <label class="button button-primary has-tooltip" for="modal-3" data-tooltip="For input checkbox modal"> Open modal 3</label>
         </p>
       </nav>
       <input type="radio" name="modal" id="modal" class="modal-open" value="on" autocomplete="off"/>
       <div class="modal centered animated">
         <div class="modal-wrapper">
-          <div class="modal-window">
-            <div class="modal-header">
+          <div class="modal-window window">
+            <div class="window-header">
               Modal header
-              <label class="modal-close" for="modal-close">x</label>
+              <label class="modal-close" for="modal-close"><i class="icon-window-close"></i></label>
             </div>
-            <div class="modal-content">
+            <div class="window-content">
             	<p>aaaaa</p>
             	<p>aaaaa</p>
             	<p>aaaaa</p>
@@ -75,9 +78,9 @@
             	<p>aaaaa</p>
             	<p>aaaaa</p>
             	<p>aaaaa</p>
-  
-            	
             </div>
+            <div
+            <div class="window-footer"></div>
           </div>
         </div>
         <label class="modal-backdrop" for="modal-close"></label>
@@ -89,7 +92,7 @@
           <div class="modal-window">
             <div class="modal-header">
               Modal header 2
-              <label class="modal-close" for="modal-close-2">x</label>
+              <label class="modal-close" for="modal-close-2"><i class="icon-window-close"></i></label>
             </div>
             <div class="modal-content">
               <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
@@ -100,6 +103,91 @@
           </div>
         </div>
         <label class="modal-backdrop" for="modal-close-2"></label>
+      </div>
+      
+      <input type="radio" name="modal-2" id="modal-2-1" class="modal-open" value="on" autocomplete="off"/>
+      <div class="modal centered animated">
+        <div class="modal-wrapper">
+          <div class="modal-window">
+            <div class="modal-header">
+              Modal one
+              <label class="modal-close" for="modal-close-2"><i class="icon-window-close"></i></label>
+            </div>
+            <div class="modal-content">
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<label class="button button-success" for="modal-2-2"> Open modal 2-2</label>
+            </div>
+          </div>
+        </div>
+        <label class="modal-backdrop" for="modal-close-2"></label>
+      </div>
+      
+      <input type="radio" name="modal-2" id="modal-2-2" class="modal-open" value="on" autocomplete="off"/>
+      <div class="modal centered animated">
+        <div class="modal-wrapper">
+          <div class="modal-window">
+            <div class="modal-header">
+              Modal two
+              <label class="modal-close" for="modal-close-2"><i class="icon-window-close"></i></label>
+            </div>
+            <div class="modal-content">
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<label class="button button-danger" for="modal-close-2">Close</label>
+            </div>
+          </div>
+        </div>
+        <label class="modal-backdrop" for="modal-close-2"></label>
+      </div>
+      
+      
+      <input type="checkbox" name="modal-3" id="modal-3" class="modal-open" value="on" autocomplete="off"/>
+      <div class="modal centered animated">
+        <div class="modal-wrapper">
+          <div class="modal-window">
+            <div class="modal-header">
+              Modal two
+              <label class="modal-close" for="modal-3"><i class="icon-window-close"></i></label>
+            </div>
+            <div class="modal-content">
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<p>aaaaa</p>
+            	<label class="button button-danger" for="modal-3">Close</label>
+            </div>
+          </div>
+        </div>
+        <label class="modal-backdrop" for="modal-3"></label>
       </div>
       
       <div>

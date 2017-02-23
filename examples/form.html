@@ -13,11 +13,8 @@
 
     <meta name="viewport" content="width=device-width; initial-scale=1.0" />
     <link rel="stylesheet/less" type="text/css" href="../src/stylesheets/application.less" />
-    <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="../src/javascripts/less.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     
     <script>
       less = {
@@ -34,6 +31,126 @@
   </head>
 
   <body>
+  	<fieldset><legend>Form with grid</legend>
+  		<form class="grid gutter-1 space-3 offset-right-5 offset-left-2 t-under-offset-left-0 t-under-offset-right-0">
+	    	<div class="row">
+	    		<div class="cell m-under-cell-16"><label>Label for input:</label></div>
+	    		<div class="cell m-under-cell-16"><input type="text"/></div>
+	    	</div>
+	    	<div class="row">
+	    		<div class="cell m-under-cell-16"><label>Label for input:</label></div>
+	    		<div class="cell m-under-cell-16"><input type="text"/></div>
+	    	</div>
+	    	<div class="row">
+	    		<div class="cell m-under-cell-16"><label>Label for input:</label></div>
+	    		<div class="cell m-under-cell-16"><input type="text"/></div>
+	    		<div class="cell m-under-cell-16"><select><option>1 23</option></select></div>
+	    	</div>
+	    </form>
+  	</fieldset>
+  	
+  	<fieldset><legend>Form with grid and label</legend>
+  		<form class="grid gutter-1 space-3 offset-right-5 offset-left-2 t-under-offset-left-0 t-under-offset-right-0">
+	    	<div class="row">
+	    		<div class="cell m-under-cell-16"><label>Label for input:</label><input type="text"/></div>
+	    	</div>
+	    	<div class="row">
+	    		<div class="cell m-under-cell-16"><label>Label for input:</label><input type="text"/></div>
+	    	</div>
+	    	<div class="row">
+	    		<div class="cell m-under-cell-16">
+	    			<label>Label for input:</label>
+	    			<div class="control icon-home left-icon" data-addon="USD"><input type="text"/></div>
+	    			<div class="hint text-right"> help</div>
+    			</div>
+	    		<div class="cell select-arrow m-under-cell-16">
+	    			<label></label>
+	    			<select><option>1 23</option></select>
+	    			<span></span>
+	    	</div>
+	    	</div>
+	    	<div class="row">
+	    		<div class="cell">
+	    			<label>Styled select</label>
+	    			<span class="select" tabindex="1">
+				      <div class="select-content">
+				        <input id="b0" type="radio" name="c">
+				        <label for="b0"><i class="icon-home"></i>Option 0</label>
+				        <input id="b1" type="radio" name="c">
+				        <label for="b1">Option 1</label>
+				        <input id="b2" type="radio" name="c">
+				        <label for="b2">Option 2</label>
+				        <input id="b3" type="radio" name="c">
+				        <label for="b3">Option 3</label>
+				        <input id="b4" type="radio" name="c">
+				        <label for="b4">Option 4</label>
+				        <input id="b5" type="radio" name="c">
+				        <label for="b5">Option 5</label>
+				        <input id="b6" type="radio" name="c">
+				        <label for="b6">Option 6</label>
+				        <input id="b7" type="radio" name="c">
+				        <label for="b7">Option 7</label>
+				        <input id="b8" type="radio" name="c">
+				        <label for="b8">Option 8</label>
+				        <input id="b9" type="radio" name="c">
+				        <label for="b9">Option 9</label>
+				        <input id="b10" type="radio" name="c">
+				        <label for="b10">Option 10</label>
+				        <input id="b11" type="radio" name="c">
+				        <label for="b11">Option 11</label>
+				        <input id="b12" type="radio" name="c">
+				        <label for="b12">Option 12</label>
+				        <input id="b13" type="radio" name="c">
+				        <label for="b13">Option 13</label>
+				        <input id="b14" type="radio" name="c">
+				        <label for="b14">Option 14</label>
+				        <input id="b15" type="radio" name="c">
+				        <label for="b15">Option 15</label>
+				        <input id="b16" type="radio" name="c">
+				        <label for="b16">Option 16</label>
+				        <input id="b17" type="radio" name="c">
+				        <label  for="b17">Option 17</label>
+				        <input id="b18" type="radio">
+				        <label for="b18">Option 18</label>
+				        <div class="placeholder" data-selected="Selected" data-placeholder="Select any"></div>
+				      </div>
+				    </span>
+				    <div class="hint text-right"> help</div>
+	    		</div>
+	    		
+	    	</div>
+	    </form>
+  	</fieldset>
+    
+    
+    <fieldset><legend>Form with validation</legend>
+  		<form class="grid validate gutter-1 space-3 offset-right-5 offset-left-2 t-under-offset-left-0 t-under-offset-right-0">
+	    	<div class="row">
+	    		<div class="cell m-under-cell-16"><label>Label for input:</label><input type="text" required/></div>
+	    	</div>
+	    	<div class="row">
+	    		<div class="cell m-under-cell-16"><label>Label for input:</label><input type="text"/></div>
+	    	</div>
+	    	<div class="row">
+	    		<div class="cell m-under-cell-16">
+	    			<label>Label for input:</label>
+	    			<div class="control"><input type="text" required/><span></span></div>
+	    			<div class="hint text-right"> help</div>
+    			</div>
+	    		<div class="cell select-arrow m-under-cell-16">
+	    			<label></label>
+	    			<select><option>1 23</option></select>
+	    			<span></span>
+	    			<div class="hint text-right"> help</div>
+	    	</div>
+	    	</div>
+	    </form>
+	    <script>
+	    	$("form.validate :input").on('focus', function() {
+	    		$(this).addClass('focused');
+	    	});
+	    </script>
+  	</fieldset>
     
   </body>
 </html>

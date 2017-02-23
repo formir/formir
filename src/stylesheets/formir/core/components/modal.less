@@ -1,6 +1,5 @@
-label[for*="@{modal-close}"] {
-  float: right;
-}
+/// DO NO NOT change this ///
+@include-core-component-modal: true;
 
 .modal-show() {
   display: block;
@@ -8,15 +7,20 @@ label[for*="@{modal-close}"] {
   &.@{modal-animated} {
     opacity: 1;
     pointer-events: auto;
-    transition: background-color 0.5s ease;
+    transition: background-color @modal-animate-function;
     background-color: rgba(0, 0, 0, 0.5);
     visibility: visible;
+    .@{modal-window} {
+      .transform(0, 0);
+      transition: transform @modal-animate-function;
+    }
   }
   &.@{modal-centered} {
     .@{modal-wrapper} {
       &:before {
         height: 50%;
         content: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
+        transition: height @modal-animate-function;
       }
     }
   }
@@ -78,41 +82,41 @@ body.@{modal-opened} {
   &.@{modal-animated} {
     opacity: 0;
     display: block;
-    transition: background-color 0.5s ease;
+    transition: background-color @modal-animate-function;
     background-color: rgba(0, 0, 0, 0);
     pointer-events: none;
     visibility: hidden;
-    &.modal-align-middle {
-      .modal-wrapper:before {
-        transition: height 0.5s ease;
-      }
+    .@{modal-window} {
+      .transform(@modal-animate-transform-x, @modal-animate-transform-y);
+      transition: transform @modal-animate-function;
     }
   }
-  
-  .@{modal-backdrop} {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 17px;
-    z-index: @modal-zindex - 1;
-  }
-  .@{modal-window} {
-    width: @modal-width;
-    min-height: @modal-min-height;
-    max-width: @modal-max-width;
-    position: relative;
-    left: 0;
-    right: 0;
-    margin: @modal-margin auto;
-    background-color: @modal-background-color;
-    z-index: @modal-zindex + 2;
-    border: @modal-border;
-  }
-  
-  .@{modal-close} {
-    cursor: pointer;
-  }
+}
+
+.@{modal-window} {
+  width: @modal-width;
+  min-height: @modal-min-height;
+  max-width: @modal-max-width;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: @modal-margin auto;
+  background-color: @modal-background-color;
+  z-index: @modal-zindex + 2;
+  border: @modal-border;
+}
+
+.@{modal-backdrop} {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 17px;
+  z-index: @modal-zindex - 1;
+}
+
+.@{modal-close} {
+  cursor: pointer;
 }
 
 input.@{modal-open} {

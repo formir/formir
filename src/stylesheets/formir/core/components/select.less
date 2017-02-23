@@ -1,9 +1,13 @@
 .select-open-content-core() {
-  z-index: 10000;
-  max-height: 50vh;
+  z-index: @select-zindex;
+  max-height: @select-max-height;
   overflow-y: auto;
   position: absolute;
+  width: 100%;
+  .flex-wrap(nowrap);
+  .flex-direction(column);
   .display-flex;
+  .align-items(stretch);
   .@{select-placeholder} {
     display: none;
   }
@@ -11,6 +15,7 @@
     display: block;
     text-overflow: ellipsis;
     overflow: hidden;
+    .flex(0 0 auto);
     .select-option;
     &:hover {
       .select-option-hovered;
@@ -30,12 +35,15 @@
     }
   }
 }
+
 .select-close-content-core() {
-  display: inherit;
-  padding: @input-padding-vertical @input-padding-horizontal;
+  .display-flex;
+  min-height: calc( @input-line-height ~"+" @input-padding-vertical * 2 ~"+" @input-border-width * 2 );
+  padding-right: @input-padding-horizontal;
   input {
     &[type="checkbox"] {
       + label {
+        margin: calc(@input-padding-vertical ~"-" @input-border-width) 0 calc(@input-padding-vertical ~"-" @input-border-width) calc(@input-padding-horizontal ~"-" @input-border-width);
         .select-multi-selected-item;
         &:after {
           .select-multi-selected-item-close;
@@ -53,13 +61,15 @@
         }
       }
       + label {
-        order: -1;
+        .order(-1);
         width: auto;
-        padding: 0 5px;
         display: inline-block;
         pointer-events: none;
       }
     }
+  }
+  .placeholder {
+    margin: calc(@input-padding-vertical) calc(@input-padding-horizontal);
   }
 }
 
@@ -70,6 +80,12 @@
   input {
     &:checked {
       counter-increment: selected;
+      ~ .@{select-placeholder} {
+        display: block;
+        &:after {
+          content: "1 " attr(data-selected);
+        }
+      }
       ~ input:checked {
         ~ .@{select-placeholder} {
           display: block;
@@ -81,12 +97,14 @@
     }
   }
 }
+
 .@{select} {
   display: block;
   position: relative;
   text-decoration: none;
   outline: 0 none;
   position: relative;
+  min-height: calc( @input-line-height ~"+" @input-padding-vertical * 2 ~"+" @input-border-width * 2 );
   > input {
     position: absolute;
     width: 100%;
@@ -96,6 +114,7 @@
     top: 0;
     bottom: 0;
     opacity: 0;
+    margin: 0;
     + .@{select-content} {
       label {
         &:after {
@@ -121,6 +140,10 @@
     input {
       position: fixed;
       left: -100000px;
+    }
+    &:after {
+      .select-arrow;
+      right: @input-font-size/1.2;
     }
   }
 
@@ -163,7 +186,7 @@
       display: none;
     }
   }
-  &.count-selected {
+  &.@{select-count-selected} {
     counter-reset: selected;
     &.@{select-hoverable}:not(:hover), &:not(.@{select-hoverable}):not(.@{select-active}), &[tabindex]:not(:focus) {
       .@{select-content}:only-child {
@@ -215,7 +238,7 @@
     }
   }
   &[tabindex], &.@{select-hoverable} {
-    .select-content {
+    .@{select-content} {
       input {
         &[type="checkbox"] {
           + label {

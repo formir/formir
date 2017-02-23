@@ -16,6 +16,16 @@
   box-sizing: @box-sizing;
 }
 
+.clearfix {
+  &:after {
+     content: " ";
+     visibility: hidden;
+     display: block;
+     height: 0;
+     clear: both;
+   }
+}
+
 .gradient-vertical(@start, @end) {
   background: @start;
   background: -moz-linear-gradient(top,  @start 0%, @end 100%);

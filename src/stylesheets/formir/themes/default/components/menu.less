@@ -15,7 +15,10 @@
       color: inherit;
       padding: @menu-item-anchor-padding;
       border-bottom: @menu-item-anchor-border;
-      text-decoration: none;
+      text-decoration: @menu-item-anchor-decoration;
+      &:hover {
+        text-decoration: @menu-item-anchor-decoration-hover;
+      }
     }
   }
   @{menu-inside} {
@@ -35,6 +38,9 @@
       @{menu-item-anchor} {
         color: inherit;
         border-bottom: @side-menu-item-anchor-border;
+        &:hover {
+          background: @side-menu-item-anchor-background-hover;
+        }
       }
     }
   }

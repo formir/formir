@@ -22,8 +22,9 @@
 }
 
 .select-multi-selected-item() {
-  border: 1px solid gray;
-  border-radius: 3px;
+  border: @input-border-width solid gray;
+  border-radius: @input-border-radius - 2px;
+  padding: 0 0.3em;
 }
 
 .select-multi-selected-item-close() {
@@ -55,22 +56,9 @@
 
 .@{select} {
   max-width: 550px;
-  min-height: 1em;
   .@{select-content} {
     display: inline-block;
     background-color: #fff;
-    &:after {
-      content: "";
-      border: 8px solid transparent;
-      border-top-color: #ccc;
-      border-top-width: 10px;
-      position: absolute;
-      top: 0.8rem;
-      width: 0;
-      height: 0;
-      right: 12px;
-      pointer-events: none;
-    }
     > * {
       .box-sizing(border-box);
     }

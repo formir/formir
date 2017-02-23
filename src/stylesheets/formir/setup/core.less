@@ -15,6 +15,22 @@
 @base-geometric-step: 3;
 @colors: primary, alternative, link, mute, cancel, success, info, warning, danger, color-1, color-2, color-3;
 
+
+// Forms
+
+@form-states: has-success, has-info, has-error, has-warning;
+@form-state-invalid: has-error;
+@form-state-valid: has-success;
+
+@form-state-change-label: false;
+@form-state-change-text-color: true;
+@form-state-change-border: true;
+@form-state-change-background: true;
+@form-state-change-hint: true;
+
+
+@sizes: 1, 2, 3, 4, 5, 6; // can be set for ex. xs, s, m, l etc.. change name of variables for buttons input etc.
+
 // Layout Unit
 @layout-unit: px;
 @layout-steps: 8;
@@ -46,6 +62,8 @@
   //// Popups
   @popup-zindex: 10000;
   @popup-arrow-zindex: 1;
+  //// Select
+  @select-zindex: 10000;
 
 // Content
 @content-max-width: unit(1128, @layout-unit);
@@ -55,18 +73,17 @@
 // Grid
 @grid-steps: 16;
 @grid-step-fractions: true;  // set true if you will be useing fractions of grid step otherwise false to reduce weight
-@grid-around: true; // set true if you will be useing grid with space/gutter around distance otherwise false to reduce weight
 @grid-gutter: true; // set true if you will be useing grid gutter otherwise false to reduce weight
 @grid-space: true; // set true if you will be useing grid space otherwise false to reduce weight
 @grid-offset: true; // set true if you will be useing grid offset otherwise false to reduce weight
 @grid-gutter-start: 2;
-@grid-gutter-steps: @layout-steps;
+@grid-gutter-steps: @layout-steps/2;
 @grid-gutter-unit: @base-unit;
-@grid-gutter-step: 0.1;
+@grid-gutter-step: 0.3;
 @grid-space-start: 2;
-@grid-space-steps: @layout-steps;
+@grid-space-steps: @layout-steps/2;
 @grid-space-unit: @base-unit;
-@grid-space-step: 0.1;
+@grid-space-step: 0.3;
 
 // Typography
 @typography-unit: @base-unit;
@@ -88,7 +105,16 @@
 @typography-font-size-6: unit(0.8, @typography-unit);
 @typography-line-height-6: unit(1, @typography-unit);
 
+// Buttons
+@button-set-gradient: default; // 'default' to use gradient button as default, true like option, false not use
+@button-set-focus: false; // true if you will be use focus state on any buttons
+@button-set-color-focus: false; // true to use focus state on color change
+@button-set-inverse: false;  // true to set buttons inverse as default
+@button-set-transparent: false; // true to set buttons background transparent as default
+
 
 //// Includes variables do not change this - just commnet include on formir.less file //// 
 @include-core-layout-header: null;
 @include-core-layout-side: null;
+
+@include-core-component-modal: null;

@@ -144,6 +144,22 @@
   color: @tooltip-text-color;
   max-width: @tooltip-max-width;
   min-width: @tooltip-min-width;
+  & when (@tooltip-min-width = max-content) {
+    min-width: -webkit-max-conent;
+    min-width: -moz-max-content;
+  }
+  & when (@tooltip-min-width = min-content) {
+    min-width: -webkit-min-conent;
+    min-width: -moz-min-content;
+  }
+  & when (@tooltip-max-width = max-content) {
+    max-width: -webkit-max-conent;
+    max-width: -moz-max-content;
+  }
+  & when (@tooltip-max-width = min-content) {
+    max-width: -webkit-min-conent;
+    max-width: -moz-min-content;
+  }
   border-radius: @tooltip-border-radius;
   & when (@tooltip-distance > 0) {
     bottom: calc(100% ~"+" @tooltip-distance);
@@ -157,6 +173,9 @@
   margin-bottom: @tooltip-arrow-height;
   border: @tooltip-border;
   box-shadow: @tooltip-shadow;
+  text-align: left;
+  line-height: @tooltip-line-height;
+  font-size: @tooltip-font-size;
   &.@{tooltip-hoverable} {
     &:before {
       content: "";
@@ -251,6 +270,7 @@
   &.@{tooltip-center} {
     left: 50%;
     transform: translate(-50%, 0);
+    text-align: center;
     & when (@tooltip-arrow-height > 0) {
       &:after {
         .tooltip-arrow-center;
@@ -328,6 +348,7 @@
     bottom: auto;
     top: calc(100% ~"+" @tooltip-distance);
     margin-top: @tooltip-arrow-height;
+    text-align: center;
     & when (@tooltip-arrow-height > 0) {
       &:after {
         .tooltip-arrow-bottom-center;
@@ -353,6 +374,7 @@
     left: calc(100% ~"+" @tooltip-distance);
     transform: translate(0, -50%);
     margin-left: @tooltip-arrow-height;
+    text-align: right;
     & when (@tooltip-arrow-height > 0) {
       &:after {
         .tooltip-arrow-right-middle;
@@ -396,6 +418,7 @@
     bottom: auto;
     left: calc(100% ~"+" @tooltip-distance);
     margin-left: @tooltip-arrow-height;
+    text-align: right;
     & when (@tooltip-arrow-height > 0) {
       &:after {
         .tooltip-arrow-right-middle;
@@ -419,6 +442,7 @@
     left: calc(100% ~"+" @tooltip-distance);
     margin-left: @tooltip-arrow-height;
     margin-bottom: 0;
+    text-align: right;
     & when (@tooltip-arrow-height > 0) {
       &:after {
         .tooltip-arrow-right-middle;
@@ -524,6 +548,7 @@
         left: auto;
         right: -@tooltip-offset;
         bottom: calc(100% ~"+" @tooltip-distance);
+        text-align: right;
       }
       & when (@tooltip-arrow-height > 0) {
         &:before {
@@ -551,6 +576,7 @@
         bottom: auto;
         top: calc(100% ~"+" @tooltip-distance);
         margin-top: @tooltip-arrow-height;
+        text-align: right;
       }
       & when (@tooltip-arrow-height > 0) {
         &:before {
@@ -563,6 +589,7 @@
         left: auto;
         right: -@tooltip-offset;
         bottom: calc(100% ~"+" @tooltip-distance);
+        text-align: right;
       }
       & when (@tooltip-arrow-height > 0) {
         &:before {
@@ -575,6 +602,7 @@
         left: 50%;
         transform: translate(-50%, 0px);
         bottom: calc(100% ~"+" @tooltip-distance);
+        text-align: center;
       }
       & when (@tooltip-arrow-height > 0) {
         &:before {
@@ -589,6 +617,7 @@
         bottom: auto;
         top: calc(100% ~"+" @tooltip-distance);
         margin-top: @tooltip-arrow-height;
+        text-align: center;
       }
       & when (@tooltip-arrow-height > 0) {
         &:before {
@@ -602,6 +631,7 @@
         bottom: auto;
         left: calc(100% ~"+" @tooltip-arrow-height ~"+" @tooltip-distance);
         transform: translate(0, -50%);
+        text-align: right;
       }
       & when (@tooltip-arrow-height > 0) {
         &:before {
@@ -632,6 +662,7 @@
         top: -@tooltip-offset - @tooltip-arrow-height/2;
         bottom: auto;
         left: calc(100% ~"+" @tooltip-arrow-height ~"+" @tooltip-distance);
+        text-align: right;
       }
       & when (@tooltip-arrow-height > 0) {
         &:before {
@@ -648,6 +679,7 @@
         top: auto;
         bottom: -@tooltip-arrow-height - @tooltip-arrow-height/2 - @tooltip-offset;
         left: calc(100% ~"+" @tooltip-arrow-height ~"+" @tooltip-distance);
+        text-align: right;
       }
       & when (@tooltip-arrow-height > 0) {
         &:before {

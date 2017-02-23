@@ -1,13 +1,23 @@
 @button: button;
+@buttons: buttons;
 @button-focus: focus;
 @button-active: active;
 @button-hover: hover;
 @button-disabled: disabled;
 @button-circle: circle;
 @button-inverse: inverse;
+@button-as-link: as-link;
 @button-inactive: inactive;
 @button-ellipsis: ellipsis;
 @button-block: block;
+@button-border-contrast: border-contrast;
+@button-transparent: transparent;
+
+@button-group: button-group;
+@button-group-horizontal: button-group-horizontal;
+@button-reverse: reverse;
+@button-gradient: gradient;
+
 
 // Helper visible
 @display-none: display-none;
@@ -36,14 +46,23 @@
 @tv-hide: tv-hide;
 @tv-show: tv-show;
 
+@right: right;
+@left: left;
+
+@addon-left: left-addon;
+@icon-left: left-icon;
+
+@select-arrow: select-arrow;
+
 
 // Helper align
 @text-center: text-center;
 @text-right: text-right;
 @text-left: text-left;
+@text-justify: text-justify;
 
-@float-right: text-right;
-@float-left: text-left;
+@float-right: float-right;
+@float-left: float-left;
 
 // Grid:
 @grid: grid;
@@ -56,12 +75,12 @@
 
 @reverse: reverse; // reverce order
 @release: release;
+@keep-flex: keep-flex;
 
 @gutter: gutter; // horizontal space between cell
 @gutter-margin: gutter-margin;
 @space: space; // vertical space between cell
 @space-margin: space-margin;
-@around: around; //set space/gutter also in first and last cell/row
 
 @start-before: start-before;
 @end-before: end-before;
@@ -139,7 +158,18 @@
 @form: form;
 @label: label;
 @control: control;
-@info: info;
+@control-group: control-group; // in grid use cell classes
+@hint: hint;
+
+@form-validate: validate;
+@form-input-focused: focused;
+
+@input: input;
+@inputs: inputs;
+@input-inverse: inverse;
+@input-transparent: transparent;
+@input-hover: hover;
+@input-focus: focus;
 
 @table: table;
 @flex: flex;
@@ -282,6 +312,11 @@
 @dl-size: size;
 @dl-space: space;
 
+// Layout Window
+@window: window;
+@window-content: window-content;
+@window-header: window-header;
+
 // Menu
 @menu: ul.menu; // tag 'ul' or class or both
 @menu-inside: ul;
@@ -293,6 +328,9 @@
 // Icons
 @icon: icon;
 @icon-position: before; // before or after
+
+// Form
+@addon-position: after;
 
 // Typography
 //// Heading
@@ -379,6 +417,7 @@
 @select-active: active;
 @select-disabled: disabled;
 @select-readonly: readonly;
+@select-count-selected: count-selected;
 
 // Link
 @link: a[href];
