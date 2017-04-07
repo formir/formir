@@ -169,7 +169,6 @@
   }
   left: -@tooltip-offset;
   position: absolute;
-  z-index: @tooltip-zindex;
   margin-bottom: @tooltip-arrow-height;
   border: @tooltip-border;
   box-shadow: @tooltip-shadow;
@@ -229,7 +228,7 @@
     & when (@tooltip-arrow-height > 0) {
       &:after {
         .tooltip-arrow-top-left;
-        left: 0; 
+        left: 0;
         bottom: auto;
         top: 100%;
         margin-bottom: auto;
@@ -238,7 +237,7 @@
     & when (@tooltip-border-width > 0) {
       &:before {
         .tooltip-arrow-top-left(@tooltip-border-color);
-        left: 0; 
+        left: 0;
         bottom: auto;
         top: calc(100% ~"+" @tooltip-border-width);
         margin-bottom: auto;
@@ -341,7 +340,7 @@
       }
     }
   }
-  
+
   &.@{tooltip-bottom-center} {
     left: 50%;
     transform: translate(-50%, 0);
@@ -412,7 +411,7 @@
       }
     }
   }
-  
+
   &.@{tooltip-right-top} {
     top: -@tooltip-offset - @tooltip-arrow-height/2;
     bottom: auto;
@@ -519,6 +518,7 @@
 
 .@{has-tooltip}[data-tooltip] {
   position: relative;
+  z-index: @tooltip-zindex;
   &.@{tooltip-absolute} {
     position: absolute;
   }
@@ -730,7 +730,7 @@
 
 .@{has-tooltip} {
   position: relative;
-  
+  z-index: @tooltip-zindex;
   &.@{tooltip-absolute} {
     position: absolute;
   }
@@ -740,11 +740,10 @@
   > .@{tooltip} {
     display: none;
   }
-  
+
   &:hover, &[tabindex]:focus, &.@{tooltip-hovered} {
     > .@{tooltip} {
       display: block;
     }
   }
 }
-
