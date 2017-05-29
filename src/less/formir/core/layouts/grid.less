@@ -10,7 +10,7 @@
   &.@{gutter}-@{i} {
     margin-left: unit(-@value/2, @unit);
     margin-right: unit(-@value/2, @unit);
-    &:not([class*="cell-"]):not(table) {
+    &:not([class*="cell-"]):not(table):not(.@{content-holder}) {
       width: auto;
     }
     table& {
@@ -352,10 +352,7 @@
   .grid-offset-mobile(@n, (@i + 1));
 }
 
-.grid-cell(@grid-steps);
-.grid-cell-mobile(@grid-steps);
-
-.@{cell}-full {
+.@{cell}-fill {
   .flex(1 1 auto);
   width: auto;
 }
@@ -364,6 +361,65 @@
   .flex(0 0 auto);
   width: auto;
 }
+
+@media (min-width: @desktop-min-width) {
+  .@{d}-@{cell}-fill {
+    .flex(1 1 auto);
+    width: auto;
+  }
+
+  .@{d}-@{cell}-auto {
+    .flex(0 0 auto);
+    width: auto;
+  }
+}
+@media (max-width: @tablet-max-width) {
+  .@{t}-@{cell}-fill {
+    .flex(1 1 auto);
+    width: auto;
+  }
+
+  .@{t}-@{cell}-auto {
+    .flex(0 0 auto);
+    width: auto;
+  }
+}
+@media (max-width: @tablet-portrait-max-width) {
+  .@{tp}-@{cell}-fill {
+    .flex(1 1 auto);
+    width: auto;
+  }
+
+  .@{tp}-@{cell}-auto {
+    .flex(0 0 auto);
+    width: auto;
+  }
+}
+@media (max-width: @mobile-max-width) {
+  .@{m}-@{cell}-fill {
+    .flex(1 1 auto);
+    width: auto;
+  }
+
+  .@{m}-@{cell}-auto {
+    .flex(0 0 auto);
+    width: auto;
+  }
+}
+@media (max-width: @mobile-portrait-max-width) {
+  .@{mp}-@{cell}-fill {
+    .flex(1 1 auto);
+    width: auto;
+  }
+
+  .@{mp}-@{cell}-auto {
+    .flex(0 0 auto);
+    width: auto;
+  }
+}
+
+.grid-cell(@grid-steps);
+.grid-cell-mobile(@grid-steps);
 
 .@{grid} {
   .grid-cell-extend(@grid-steps);
