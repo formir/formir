@@ -256,7 +256,7 @@
     & when (@popup-arrow-height > 0) {
       &:after {
         .popup-arrow-top-left;
-        left: 0; 
+        left: 0;
         bottom: auto;
         top: 100%;
         margin-bottom: auto;
@@ -265,7 +265,7 @@
     & when (@popup-border-width > 0) {
       &:before {
         .popup-arrow-top-left(@popup-border-color);
-        left: 0; 
+        left: 0;
         bottom: auto;
         top: calc(100% ~"+" @popup-border-width);
         margin-bottom: auto;
@@ -367,7 +367,7 @@
       }
     }
   }
-  
+
   &.@{popup-bottom-center} {
     left: 50%;
     transform: translate(-50%, 0);
@@ -436,7 +436,7 @@
       }
     }
   }
-  
+
   &.@{popup-right-top} {
     top: -@popup-offset - @popup-arrow-height/2;
     bottom: auto;
@@ -557,7 +557,7 @@
       .popup-active-on;
     }
   }
-  
+
   &.@{popup-hoverable} {
     &:hover {
       .popup-active;
@@ -566,14 +566,14 @@
       }
     }
   }
-  
+
   &[tabindex]:focus {
     .popup-active;
     > .@{popup} {
       .popup-active-on;
     }
   }
-  
+
   &:not(.@{popup-manual}) {
     > input[type="checkbox"] {
       &:checked {
@@ -598,4 +598,3 @@
     }
   }
 }
-

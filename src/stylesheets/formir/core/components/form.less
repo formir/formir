@@ -11,7 +11,7 @@
   margin: auto;
   color: @input-border-color;
   z-index: 2;
-  events-pointer: none;
+  pointer-events: none;
   text-align: right;
   vertical-align: middle;
   width: @input-font-size;
@@ -128,7 +128,7 @@ select {
     min-height: @label-line-height;
     display: block;
   }
-  
+
   .@{hint} {
     text-transform: @hint-text-transform;
     font-size: @hint-font-size;
@@ -136,7 +136,7 @@ select {
     font-weight: @hint-font-weight;
     color: @hint-text-color;
   }
-  
+
   .@{control}, [class*="@{cell}"], .@{control-group} {
     &.@{input-inverse} {
       input, select, textarea {
@@ -263,7 +263,7 @@ select {
       }
     }
   }
-  
+
   &.@{form-validate} {
     input, select, textarea {
       &:not(:focus).@{form-input-focused} {
@@ -289,7 +289,7 @@ select {
             }
           }
         }
-      } 
+      }
     }
   }
 }

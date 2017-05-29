@@ -34,11 +34,10 @@
   </head>
 
   <body>
-    <input id="exit" type="checkbox" name="exit"/>
-    <input id="zoom" type="radio" name="zoom"/>
-    <input id="zoom-out" checked="checked" type="radio" name="zoom"/>
+    <!-- <input id="room-exit" type="checkbox" name="exit"/>
+    <input id="room-zoom" type="checkbox" name="zoom"/> -->
     <div class="body-room">
-      <input id="wall-1" type="radio" name="animate" checked="checked"/>
+      <!-- <input id="wall-1" type="radio" name="animate" checked="checked"/>
       <input id="wall-2" type="radio" name="animate"/>
       <input id="wall-3" type="radio" name="animate"/>
       <input id="wall-4" type="radio" name="animate"/>
@@ -49,13 +48,27 @@
       <input id="wall-9" type="radio" name="animate"/>
       <input id="wall-10" type="radio" name="animate"/>
       <input id="wall-11" type="radio" name="animate"/>
-      <input id="wall-12" type="radio" name="animate"/>
-      <div class="room" id="container">
-        <div id="cube" class="animate">
-          <div class="slide slide-4">
-            <div class="item item-1">
+      <input id="wall-12" type="radio" name="animate"/> -->
+      <a href="#1" id="wall-1" type="radio" name="animate" checked="checked">
+      	<img src="assets/images/1600x800-nizej.jpg"/>
+      </a>
+      <a href="#2" id="wall-2" type="radio" name="animate">2</a>
+      <a href="#3" id="wall-3" type="radio" name="animate">3</a>
+      <a href="#4" id="wall-4" type="radio" name="animate">4</a>
+      <a href="#5" id="wall-5" type="radio" name="animate">5</a>
+      <a href="#6" id="wall-6" type="radio" name="animate">6</a>
+      <a href="#7" id="wall-7" type="radio" name="animate">7</a>
+      <a href="#8" id="wall-8" type="radio" name="animate">8</a>
+      <a href="#9" id="wall-9" type="radio" name="animate">9</a>
+      <a href="#10" id="wall-10" type="radio" name="animate">10</a>
+      <a href="#11" id="wall-11" type="radio" name="animate">11</a>
+      <a href="#12" id="wall-12" type="radio" name="animate">12</a>
+      <div class="room-arena">
+        <div class="walls">
+          <div class="wall">
+            <div class="item">
               <div class="canvas">
-                <img src="../src/images/kamil/1.jpg" />
+                <img src="assets/images/room/JPEG/1.jpg" />
                 <p>
                   Przy błyskawicy i płatku śniegu:
                   <br/>
@@ -63,9 +76,9 @@
                 </p>
               </div>
             </div>
-            <div class="item item-5">
+            <div class="item">
               <div class="canvas">
-                <img src="../src/images/kamil/5.jpg" />
+                <img src="assets/images/room/JPEG/5.jpg" />
                 <p>
                   Przy ćmie i ptaku:
                   <br/>
@@ -73,9 +86,9 @@
                 </p>
               </div>
             </div>
-            <div class="item item-9">
+            <div class="item">
               <div class="canvas vertical">
-                <img src="../src/images/kamil/9.jpg" />
+                <img src="assets/images/room/JPEG/9.jpg" />
                 <p>
                   Przy skale i drzewie:
                   <br/>
@@ -83,12 +96,12 @@
                 </p>
               </div>
             </div>
-            <label class="button zoom" for="zoom">kliknij by podejść bliżej</label>
+            <label class="button zoom" for="room-zoom">kliknij by podejść bliżej</label>
           </div>
-          <div class="slide slide-3">
-            <div class="item item-4">
+          <div class="wall">
+            <div class="item">
               <div class="canvas vertical">
-                <img src="../src/images/kamil/4.jpg" />
+                <img src="assets/images/room/JPEG/4.jpg" />
                 <p>
                   Przy kłosie zboża i łanach:
                   <br/>
@@ -96,9 +109,9 @@
                 </p>
               </div>
             </div>
-            <div class="item item-8">
+            <div class="item">
               <div class="canvas">
-                <img src="../src/images/kamil/6.jpg" />
+                <img src="assets/images/room/JPEG/6.jpg" />
                 <p>
                   Przy śniegu:
                   <br/>
@@ -106,9 +119,9 @@
                 </p>
               </div>
             </div>
-            <div class="item item-12">
+            <div class="item">
               <div class="canvas vertical">
-                <img src="../src/images/kamil/12.jpg" />
+                <img src="assets/images/room/JPEG/12.jpg" />
                 <p>
                   Przy schodach i ścieżce w lesie:
                   <br/>
@@ -116,12 +129,12 @@
                 </p>
               </div>
             </div>
-            <label class="button zoom" for="zoom">kliknij by podejść bliżej</label>
+            <label class="button zoom" for="room-zoom">kliknij by podejść bliżej</label>
           </div>
-          <div class="slide slide-2">
-            <div class="item item-3">
+          <div class="wall">
+            <div class="item">
               <div class="canvas vertical">
-                <img src="../src/images/kamil/3.jpg" />
+                <img src="assets/images/room/JPEG/3.jpg" />
                 <p>
                   Przy kłosie zboża i łanach:
                   <br/>
@@ -129,9 +142,9 @@
                 </p>
               </div>
             </div>
-            <div class="item item-7">
+            <div class="item">
               <div class="canvas">
-                <img src="../src/images/kamil/7.jpg" />
+                <img src="assets/images/room/JPEG/7.jpg" />
                 <p>
                   Przy śniegu:
                   <br/>
@@ -139,9 +152,9 @@
                 </p>
               </div>
             </div>
-            <div class="item item-11">
+            <div class="item">
               <div class="canvas vertical">
-                <img src="../src/images/kamil/11.jpg" />
+                <img src="assets/images/room/JPEG/11.jpg" />
                 <p>
                   Przy schodach i ścieżce w lesie:
                   <br/>
@@ -149,12 +162,12 @@
                 </p>
               </div>
             </div>
-            <label class="button zoom" for="zoom">kliknij by podejść bliżej</label>
+            <label class="button zoom" for="room-zoom">kliknij by podejść bliżej</label>
           </div>
-          <div class="slide slide-1">
-            <div class="item item-2">
+          <div class="wall">
+            <div class="item">
               <div class="canvas">
-                <img src="../src/images/kamil/2.jpg" />
+                <img src="assets/images/room/JPEG/2.jpg" />
                 <p>
                   Przy błyskawicy i płatku śniegu:
                   <br/>
@@ -162,9 +175,9 @@
                 </p>
               </div>
             </div>
-            <div class="item item-6">
+            <div class="item">
               <div class="canvas">
-                <img src="../src/images/kamil/8.jpg" />
+                <img src="assets/images/room/JPEG/8.jpg" />
                 <p>
                   Przy ćmie i ptaku:
                   <br/>
@@ -172,9 +185,9 @@
                 </p>
               </div>
             </div>
-            <div class="item item-10">
+            <div class="item">
               <div class="canvas vertical">
-                <img src="../src/images/kamil/10.jpg" />
+                <img src="assets/images/room/JPEG/10.jpg" />
                 <p>
                   Przy skale i drzewie:
                   <br/>
@@ -182,13 +195,13 @@
                 </p>
               </div>
             </div>
-            <label class="button zoom" for="zoom">kliknij by podejść bliżej</label>
+            <label class="button zoom" for="room-zoom">kliknij by podejść bliżej</label>
           </div>
-          <div></div>
-          <div></div>
+          <div class="ceil"></div>
+          <div class="floor"></div>
         </div>
       </div>
-      <label for="zoom-out" class="zoom-out">
+      <label for="room-zoom" class="zoom-out">
         kliknij gdzie kolwiek by wróci
       </label>
       <div class="buttons">

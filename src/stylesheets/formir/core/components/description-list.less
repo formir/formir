@@ -1,10 +1,10 @@
 .dl-horizontally-collapse {
   display: block;
-  @{dd} { 
+  @{dd} {
     width: auto;
     margin-left: 0;
   }
-  @{dt} { 
+  @{dt} {
     width: auto;
     margin-bottom: @dd-title-space-default;
   }
@@ -78,38 +78,28 @@
     &.@{dl-horizontally-collapse} {
       .dl-horizontally-collapse;
     }
-    @media (min-width: 0) and (max-width: @mobile-portrait-max-width) {
-      &.@{mp}-@{dl-horizontally-collapse}, &.@{mp}-@{under}-@{dl-horizontally-collapse} {
+    @media (min-width: @desktop-min-width)  {
+      &.@{d}-@{dl-horizontally-collapse} {
         .dl-horizontally-collapse;
       }
     }
-    @media (min-width: @mobile-portrait-max-width) and (max-width: @mobile-max-width) {
-      &.@{m}-@{dl-horizontally-collapse} {
+    @media (max-width: @tablet-max-width) {
+      &.@{t}-@{dl-horizontally-collapse} {
         .dl-horizontally-collapse;
       }
     }
-    @media (min-width: 0) and (max-width: @mobile-max-width) {
-      &.@{m}-@{under}-@{dl-horizontally-collapse} {
-        .dl-horizontally-collapse;
-      }
-    }
-    @media (min-width: @mobile-max-width) and (max-width: @tablet-portrait-max-width) {
+    @media (max-width: @tablet-portrait-max-width) {
       &.@{tp}-@{dl-horizontally-collapse} {
         .dl-horizontally-collapse;
       }
     }
-    @media (min-width: 0) and (max-width: @tablet-portrait-max-width) {
-      &.@{tp}-@{under}-@{dl-horizontally-collapse} {
+    @media (max-width: @mobile-max-width) {
+      &.@{m}-@{dl-horizontally-collapse} {
         .dl-horizontally-collapse;
       }
     }
-    @media (min-width: @tablet-portrait-max-width) and (max-width: @tablet-max-width) {
-      &.@{t}-@{dl-horizontally-collapse} {
-        .dl-horizontally-collapse;
-      }
-    }
-    @media (min-width: 0) and (max-width: @tablet-max-width) {
-      &.@{t}-@{dl-horizontally-collapse} {
+    @media (max-width: @mobile-portrait-max-width) {
+      &.@{mp}-@{dl-horizontally-collapse} {
         .dl-horizontally-collapse;
       }
     }
