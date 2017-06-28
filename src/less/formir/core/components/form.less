@@ -14,10 +14,10 @@
   pointer-events: none;
   text-align: right;
   vertical-align: middle;
-  width: @input-font-size;
-  font-size: @input-font-size;
-  height: @input-font-size;
-  line-height: @input-font-size;
+  width: @input-default-font-size;
+  font-size: @input-default-font-size;
+  height: @input-default-font-size;
+  line-height: @input-default-font-size;
 }
 
 .input-invalid() {
@@ -47,26 +47,25 @@
 .input-style() {
   border-color: @input-border-color;
   border-style: @input-border-style;
-  border-width: @input-border-width;
-  border-radius: @input-border-radius;
-  padding: @input-padding-vertical @input-padding-horizontal;
+  border-width: @input-default-border-width;
+  border-radius: @input-default-border-radius;
+  padding: @input-default-padding-vertical @input-default-padding-horizontal;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-appearance: none;
   text-overflow: ellipsis;
-  font-size: @input-font-size;
-  line-height: @input-line-height;
+  font-size: @input-default-font-size;
+  line-height: @input-default-line-height;
   font-weight: @input-font-weight;
   color: @input-text-color;
   background-color: @input-background-color;
-  outline: @input-outline;
-  box-shadow: @input-shadow;
+  outline: @input-default-outline;
+  box-shadow: @input-default-shadow;
   text-overflow: ellipsis;
   &:hover, &.@{input-hover} {
     border-color: @input-hover-border-color;
     border-style: @input-hover-border-style;
-    border-width: @input-hover-border-width;
     outline: @input-hover-outline;
     box-shadow: @input-hover-shadow;
     background-color: @input-hover-background-color;
@@ -74,7 +73,6 @@
   &:focus, &.@{input-focus} {
     border-color: @input-focus-border-color;
     border-style: @input-focus-border-style;
-    border-width: @input-focus-border-width;
     outline: @input-focus-outline;
     box-shadow: @input-focus-shadow;
     background-color: @input-focus-background-color;
@@ -95,11 +93,9 @@
 }
 
 .select-style() {
-  height: calc( @input-line-height ~"+" @input-padding-vertical * 2 ~"+" @input-border-width * 2 );
-
   option {
-    height: @input-line-height;
-    padding: @input-padding-vertical @input-padding-horizontal;
+    height: @input-default-line-height;
+    padding: @input-default-padding-vertical @input-default-padding-horizontal;
     border: none;
   }
 }
@@ -110,12 +106,98 @@ input {
   }
 }
 
-textarea, select {
+textarea, select, .@{input} {
   .input-style;
 }
 
 select {
+  &:not([multiple]) {
+    height: calc( @input-default-line-height ~"+" @input-default-padding-vertical * 2 ~"+" @input-default-border-width * 2 );
+  }
   .select-style;
+}
+
+input, select, textarea {
+  &.@{input} {
+    .for(@input-sizes); .-each(@name) {
+      &-@{name} {
+        font-size: ~"@{input-@{name}-font-size}";
+        line-height: ~"@{input-@{name}-line-height}";
+        padding: ~"@{input-@{name}-padding-vertical}" ~"@{input-@{name}-padding-horizontal}";
+        border-radius: ~"@{input-@{name}-border-radius}";
+        border-width: ~"@{input-@{name}-border-width}";
+        outline-width: ~"@{input-@{name}-outline}";
+        box-shadow: ~"@{input-@{name}-shadow}";
+      }
+    }
+  }
+}
+.@{select} {
+  &.@{input} {
+    .for(@input-sizes); .-each(@name) {
+      &-@{name} {
+        min-height: calc( ~"@{input-@{name}-line-height}" ~"+" ~"@{input-@{name}-padding-vertical} * 2" ~" +" ~"@{input-@{name}-border-width} * 2" );
+        .@{select-content} {
+          border-radius: ~"@{input-@{name}-border-radius}";
+          border-width: ~"@{input-@{name}-border-width}";
+          outline-width: ~"@{input-@{name}-outline}";
+          box-shadow: ~"@{input-@{name}-shadow}";
+          > label, .@{select-placeholder} {
+            font-size: ~"@{input-@{name}-font-size}";
+            line-height: ~"@{input-@{name}-line-height}";
+            padding: ~"@{input-@{name}-padding-vertical}" ~"@{input-@{name}-padding-horizontal}";
+          }
+        }
+      }
+    }
+  }
+}
+select:not([multiple]) {
+  &.@{input} {
+    .for(@input-sizes); .-each(@name) {
+      &-@{name} {
+        height: calc( ~"@{input-@{name}-line-height}" ~"+" ~"@{input-@{name}-padding-vertical} * 2" ~" +" ~"@{input-@{name}-border-width} * 2" );
+        option {
+          line-height: ~"@{input-@{name}-line-height}";
+          padding: ~"@{input-@{name}-padding-vertical}" ~"@{input-@{name}-padding-horizontal}";
+        }
+      }
+    }
+  }
+}
+
+.@{inputs}, .@{size} {
+  .for(@input-sizes); .-each(@name) {
+    &-@{name} {
+      &, &[class*="@{cell}"] {
+        .@{input}, input, select, textarea {
+          font-size: ~"@{input-@{name}-font-size}";
+          line-height: ~"@{input-@{name}-line-height}";
+          padding: ~"@{input-@{name}-padding-vertical}" ~"@{input-@{name}-padding-horizontal}";
+          border-radius: ~"@{input-@{name}-border-radius}";
+          border-width: ~"@{input-@{name}-border-width}";
+          outline: ~"@{input-@{name}-outline}";
+          box-shadow: ~"@{input-@{name}-shadow}";
+        }
+        .@{select} {
+          min-height: calc( ~"@{input-@{name}-line-height}" ~"+" ~"@{input-@{name}-padding-vertical} * 2" ~" +" ~"@{input-@{name}-border-width} * 2" );
+        }
+        .@{select-content} {
+          border-radius: ~"@{input-@{name}-border-radius}";
+          border-width: ~"@{input-@{name}-border-width}";
+          outline: ~"@{input-@{name}-outline}";
+          box-shadow: ~"@{input-@{name}-shadow}";
+        }
+        select:not([multiple]) {
+          height: calc( ~"@{input-@{name}-line-height}" ~"+" ~"@{input-@{name}-padding-vertical} * 2" ~" +" ~"@{input-@{name}-border-width} * 2" );
+          option {
+            line-height: ~"@{input-@{name}-line-height}";
+            padding: ~"@{input-@{name}-padding-vertical}" ~"@{input-@{name}-padding-horizontal}";
+          }
+        }
+      }
+    }
+  }
 }
 
 @{form} {
@@ -135,133 +217,6 @@ select {
     line-height: @hint-line-height;
     font-weight: @hint-font-weight;
     color: @hint-text-color;
-  }
-
-  .@{control}, [class*="@{cell}"], .@{control-group} {
-    &.@{input-inverse} {
-      input, select, textarea {
-        background-color: @input-border-color;
-        border-color: @input-background-color;
-        color: @input-background-color;
-      }
-    }
-    &.@{input-transparent} {
-      input, select, textarea {
-        background-color: transparent;
-      }
-    }
-    &[class*="@{icon}-"] {
-      position: relative;
-      &.@{icon-left} {
-        &:before {
-          left: @input-icon-font-size/2 + @input-padding-horizontal;
-          right: auto;
-        }
-        input , select, textarea {
-          padding-left: @input-icon-font-size*2 + @input-padding-horizontal;
-        }
-      }
-      &.@{input-inverse} {
-        &:before {
-          color: @input-background-color;
-        }
-      }
-      &:before {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        font-size: @input-icon-font-size;
-        right: @input-icon-font-size/2 + @input-padding-horizontal;
-        color: @input-icon-text-color;
-        z-index: 2;
-        events-pointer: none;
-        height: 1em;
-      }
-      input , select, textarea {
-        padding-right: @input-icon-font-size*2 + @input-padding-horizontal;
-      }
-      select {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-      }
-    }
-    &.@{select-arrow} {
-      position: relative;
-      select {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        padding-right: @input-icon-font-size*2 + @input-padding-horizontal;
-        &.@{input-inverse} {
-          + span:after {
-            color: @input-background-color;
-          }
-        }
-        + span:after {
-          .select-arrow;
-          right: @input-font-size/1.2 + @input-padding-horizontal;
-        }
-        &:focus {
-          + span:after {
-            content: @select-arrow-icon-up;
-            color: @input-focus-border-color;
-          }
-        }
-        &:hover {
-          + span:after {
-            color: @input-hover-border-color;
-          }
-        }
-      }
-      &.@{input-inverse} {
-        select {
-          + span:after {
-            color: @input-background-color;
-          }
-        }
-      }
-    }
-    &[data-addon] {
-      position: relative;
-      &.@{addon-left} {
-        &:after {
-          left: @input-icon-font-size/2 + @input-padding-horizontal;
-          right: auto;
-          text-align: left;
-        }
-        input, select, textarea {
-          padding-left: @input-icon-font-size*3 + @input-padding-horizontal;
-          padding-right: @input-padding-horizontal;
-        }
-      }
-      &.@{input-inverse} {
-        &:after {
-          color: @input-background-color;
-        }
-      }
-      &:after {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        font-size: @input-addon-font-size;
-        text-transform: @input-addon-font-weight;
-        right: @input-icon-font-size/2 + @input-padding-horizontal;
-        color: @input-addon-text-color;
-        text-transform: @input-addon-text-transform;
-        z-index: 2;
-        content: attr(data-addon);
-        events-pointer: none;
-        height: @input-line-height;
-        white-space: nowrap;
-        text-align: right;
-      }
-      input, select, textarea {
-        padding-right: @input-icon-font-size*3 + @input-padding-horizontal;
-      }
-    }
   }
 
   &.@{form-validate} {
@@ -290,6 +245,133 @@ select {
           }
         }
       }
+    }
+  }
+}
+
+.@{control}, [class*="@{cell}"], .@{control-group} {
+  &.@{input-inverse} {
+    input, select, textarea {
+      background-color: @input-border-color;
+      border-color: @input-background-color;
+      color: @input-background-color;
+    }
+  }
+  &.@{input-transparent} {
+    input, select, textarea {
+      background-color: transparent;
+    }
+  }
+  &[class*="@{icon}-"] {
+    position: relative;
+    &.@{icon-left} {
+      &:before {
+        left: @input-icon-font-size/2 + @input-default-padding-horizontal;
+        right: auto;
+      }
+      input , select, textarea {
+        padding-left: @input-icon-font-size*2 + @input-default-padding-horizontal;
+      }
+    }
+    &.@{input-inverse} {
+      &:before {
+        color: @input-background-color;
+      }
+    }
+    &:before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      font-size: @input-icon-font-size;
+      right: @input-icon-font-size/2 + @input-default-padding-horizontal;
+      color: @input-icon-text-color;
+      z-index: 2;
+      pointer-events: none;
+      height: 1em;
+    }
+    input , select, textarea {
+      padding-right: @input-icon-font-size*2 + @input-default-padding-horizontal;
+    }
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+  }
+  &.@{select-arrow} {
+    position: relative;
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      padding-right: @input-icon-font-size*2 + @input-default-padding-horizontal;
+      &.@{input-inverse} {
+        + span:after {
+          color: @input-background-color;
+        }
+      }
+      + span:after {
+        .select-arrow;
+        right: @input-default-font-size/1.2 + @input-default-padding-horizontal;
+      }
+      &:focus {
+        + span:after {
+          content: @select-arrow-icon-up;
+          color: @input-focus-border-color;
+        }
+      }
+      &:hover {
+        + span:after {
+          color: @input-hover-border-color;
+        }
+      }
+    }
+    &.@{input-inverse} {
+      select {
+        + span:after {
+          color: @input-background-color;
+        }
+      }
+    }
+  }
+  &[data-addon] {
+    position: relative;
+    &.@{addon-left} {
+      &:after {
+        left: @input-icon-font-size/2 + @input-default-padding-horizontal;
+        right: auto;
+        text-align: left;
+      }
+      input, select, textarea {
+        padding-left: @input-icon-font-size*3 + @input-default-padding-horizontal;
+        padding-right: @input-default-padding-horizontal;
+      }
+    }
+    &.@{input-inverse} {
+      &:after {
+        color: @input-background-color;
+      }
+    }
+    &:after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      font-size: @input-addon-font-size;
+      text-transform: @input-addon-font-weight;
+      right: @input-icon-font-size/2 + @input-default-padding-horizontal;
+      color: @input-addon-text-color;
+      text-transform: @input-addon-text-transform;
+      z-index: 2;
+      content: attr(data-addon);
+      pointer-events: none;
+      height: @input-default-line-height;
+      white-space: nowrap;
+      text-align: right;
+    }
+    input, select, textarea {
+      padding-right: @input-icon-font-size*3 + @input-default-padding-horizontal;
     }
   }
 }
@@ -370,6 +452,22 @@ select {
             color: ~"@{input-color-@{name}}";
           }
         }
+      }
+    }
+  }
+}
+
+.@{inputs}, .@{size} {
+  .for(@input-sizes); .-each(@name) {
+    &-@{name} {
+      @{label}, .@{select} .@{select-content} > label, .@{select} .@{select-placeholder} {
+        font-size: ~"@{input-@{name}-font-size}";
+        line-height: ~"@{input-@{name}-line-height}";
+        padding-top: ~"@{input-@{name}-padding-vertical}";
+        padding-bottom: ~"@{input-@{name}-padding-vertical}";
+      }
+      @{label}, &.@{control}[class*="@{icon}-"]:before, .@{control}[class*="@{icon}-"]:before, &[data-addon]:after, [data-addon]:after, &.@{select-arrow} select + span:after {
+        font-size: ~"@{input-@{name}-font-size}";
       }
     }
   }

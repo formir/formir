@@ -445,7 +445,7 @@
   }
   &:not(.@{column}) {
     > .@{cell}:not(.@{grid}):not(.@{column}), > .@{row} > .@{cell}:not(.@{grid}):not(.@{column}) {
-      .flex(1 0 0px);
+      .flex(~"1 0 0px");
       &:only-child {
         width: 100%;
       }
@@ -653,14 +653,14 @@
           max-width: 100%;
           min-width: 100%;
           &[rows="1"] {
-            height: calc(1.7em ~" + " (@input-padding-vertical * 2 ));
+            height: calc(1.7em ~" + " (@input-default-padding-vertical * 2 ));
           }
         }
       }
     }
     [class*=" @{cell}"], [class^="@{cell}"] {
       textarea {
-        min-height: calc(1.7em ~" + " (@input-padding-vertical * 2 ));
+        min-height: calc(1.7em ~" + " (@input-default-padding-vertical * 2 ));
       }
       input {
         &[type="date"], &[type="datetime-local"], &[type="email"], &[type="number"], &[type="password"], &[type="search"], &[type="tel"], &[type="time"], &[type="text"], &[type="url"] {

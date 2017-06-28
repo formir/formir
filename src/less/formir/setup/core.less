@@ -15,7 +15,6 @@
 @base-geometric-step: 3;
 @colors: primary, alternative, link, mute, cancel, success, info, warning, danger, color-1, color-2, color-3;
 
-
 // Forms
 
 @form-states: has-success, has-info, has-error, has-warning;
@@ -29,7 +28,16 @@
 @form-state-change-hint: true;
 
 
-@sizes: 1, 2, 3, 4, 5, 6; // can be set for ex. xs, s, m, l etc.. change name of variables for buttons input etc.
+@sizes: xs, s, m, l, xl, xxl; // can be set for ex. xs, s, m, l etc.. change name of variables for buttons input etc.
+@size-xs: 0.6;
+@size-s: 0.85;
+@size-m: 1.15;
+@size-l: 1.5;
+@size-xl: 2;
+@size-xxl: 2.2;
+@input-sizes: s, m, l;
+
+
 
 // Layout Unit
 @layout-unit: px;
@@ -107,7 +115,7 @@
 
 // Buttons
 @button-set-gradient: default; // 'default' to use gradient button as default, true like option, false not use
-@button-set-focus: false; // true if you will be use focus state on any buttons
+@button-set-focus: true; // true if you will be use focus state on any buttons
 @button-set-color-focus: false; // true to use focus state on color change
 @button-set-inverse: false;  // true to set buttons inverse as default
 @button-set-transparent: false; // true to set buttons background transparent as default

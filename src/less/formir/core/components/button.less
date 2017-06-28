@@ -2,7 +2,7 @@
   @name: default;
   font-size: ~"@{button-@{name}-font-size}";
   line-height: ~"@{button-@{name}-line-height}";
-  padding: ~"@{button-@{name}-padding}";
+  padding: ~"@{button-@{name}-padding-vertical} @{button-@{name}-padding-horizontal}";
   border-radius: ~"@{button-@{name}-border-radius}";
   border: ~"@{button-@{name}-border}";
   outline: ~"@{button-@{name}-outline}";
@@ -110,7 +110,7 @@
       outline: @button-inverse-active-outline;
       box-shadow: @button-inverse-active-shadow;
     }
-   
+
     .button-inverse;
   }
   input& {
@@ -134,7 +134,7 @@
   }
 }
 
-.@{buttons} {
+.@{buttons}, .@{size} {
   .for(@sizes); .-each(@name) {
     &-@{name} {
       .@{button} {
@@ -150,7 +150,7 @@
   }
 }
 
-.@{button} { 
+.@{button} {
   .for(@colors); .-each(@name) {
     &-@{name} {
       & when not (@button-set-inverse = true) {

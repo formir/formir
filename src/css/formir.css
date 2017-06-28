@@ -23,8 +23,8 @@ input[type="url"] {
   border-color: #ccc;
   border-style: solid;
   border-width: 1px;
-  border-radius: 4px;
-  padding: 0.35em 0.5em;
+  border-radius: 3px;
+  padding: 0.35rem 0.5rem;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -60,7 +60,6 @@ input[type="text"].hover,
 input[type="url"].hover {
   border-color: #ccc;
   border-style: solid;
-  border-width: 1px;
   outline: none;
   box-shadow: none;
   background-color: #fff;
@@ -87,7 +86,6 @@ input[type="text"].focus,
 input[type="url"].focus {
   border-color: #ccc;
   border-style: solid;
-  border-width: 1px;
   outline: none;
   box-shadow: none;
   background-color: #fff;
@@ -143,12 +141,13 @@ input[type="url"].transparent {
   background-color: transparent;
 }
 textarea,
-select {
+select,
+.input {
   border-color: #ccc;
   border-style: solid;
   border-width: 1px;
-  border-radius: 4px;
-  padding: 0.35em 0.5em;
+  border-radius: 3px;
+  padding: 0.35rem 0.5rem;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -164,51 +163,312 @@ select {
 }
 textarea:hover,
 select:hover,
+.input:hover,
 textarea.hover,
-select.hover {
+select.hover,
+.input.hover {
   border-color: #ccc;
   border-style: solid;
-  border-width: 1px;
   outline: none;
   box-shadow: none;
   background-color: #fff;
 }
 textarea:focus,
 select:focus,
+.input:focus,
 textarea.focus,
-select.focus {
+select.focus,
+.input.focus {
   border-color: #ccc;
   border-style: solid;
-  border-width: 1px;
   outline: none;
   box-shadow: none;
   background-color: #fff;
 }
 textarea:disabled,
 select:disabled,
+.input:disabled,
 textarea[disabled],
-select[disabled] {
+select[disabled],
+.input[disabled] {
   pointer-events: none;
   cursor: normal;
   opacity: 0.7;
 }
 textarea.inverse,
-select.inverse {
+select.inverse,
+.input.inverse {
   background-color: #ccc;
   border-color: #fff;
   color: #fff;
 }
 textarea.transparent,
-select.transparent {
+select.transparent,
+.input.transparent {
   background-color: transparent;
 }
-select {
-  height: calc(1.35rem + 0.7em + 2px);
+select:not([multiple]) {
+  height: calc(1.35rem + 0.7rem + 2px);
 }
 select option {
   height: 1.35rem;
-  padding: 0.35em 0.5em;
+  padding: 0.35rem 0.5rem;
   border: none;
+}
+input.input-s,
+select.input-s,
+textarea.input-s {
+  font-size: 0.85rem;
+  line-height: 1.1475rem;
+  padding: 0.2975rem 0.425rem;
+  border-radius: 2px;
+  border-width: 1px;
+  outline-width: none;
+  box-shadow: none;
+}
+input.input-m,
+select.input-m,
+textarea.input-m {
+  font-size: 1.15rem;
+  line-height: 1.5525rem;
+  padding: 0.40249999999999997rem 0.575rem;
+  border-radius: 5px;
+  border-width: 1px;
+  outline-width: none;
+  box-shadow: none;
+}
+input.input-l,
+select.input-l,
+textarea.input-l {
+  font-size: 1.5rem;
+  line-height: 2.0250000000000004rem;
+  padding: 0.5249999999999999rem 0.75rem;
+  border-radius: 4px;
+  border-width: 1px;
+  outline-width: none;
+  box-shadow: none;
+}
+.select.input-s {
+  min-height: calc(1.1475rem + 0.2975rem * 2  + 1px * 2);
+}
+.select.input-s .select-content {
+  border-radius: 2px;
+  border-width: 1px;
+  outline-width: none;
+  box-shadow: none;
+}
+.select.input-s .select-content > label,
+.select.input-s .select-content .placeholder {
+  font-size: 0.85rem;
+  line-height: 1.1475rem;
+  padding: 0.2975rem 0.425rem;
+}
+.select.input-m {
+  min-height: calc(1.5525rem + 0.40249999999999997rem * 2  + 1px * 2);
+}
+.select.input-m .select-content {
+  border-radius: 5px;
+  border-width: 1px;
+  outline-width: none;
+  box-shadow: none;
+}
+.select.input-m .select-content > label,
+.select.input-m .select-content .placeholder {
+  font-size: 1.15rem;
+  line-height: 1.5525rem;
+  padding: 0.40249999999999997rem 0.575rem;
+}
+.select.input-l {
+  min-height: calc(2.0250000000000004rem + 0.5249999999999999rem * 2  + 1px * 2);
+}
+.select.input-l .select-content {
+  border-radius: 4px;
+  border-width: 1px;
+  outline-width: none;
+  box-shadow: none;
+}
+.select.input-l .select-content > label,
+.select.input-l .select-content .placeholder {
+  font-size: 1.5rem;
+  line-height: 2.0250000000000004rem;
+  padding: 0.5249999999999999rem 0.75rem;
+}
+select:not([multiple]).input-s {
+  height: calc(1.1475rem + 0.2975rem * 2  + 1px * 2);
+}
+select:not([multiple]).input-s option {
+  line-height: 1.1475rem;
+  padding: 0.2975rem 0.425rem;
+}
+select:not([multiple]).input-m {
+  height: calc(1.5525rem + 0.40249999999999997rem * 2  + 1px * 2);
+}
+select:not([multiple]).input-m option {
+  line-height: 1.5525rem;
+  padding: 0.40249999999999997rem 0.575rem;
+}
+select:not([multiple]).input-l {
+  height: calc(2.0250000000000004rem + 0.5249999999999999rem * 2  + 1px * 2);
+}
+select:not([multiple]).input-l option {
+  line-height: 2.0250000000000004rem;
+  padding: 0.5249999999999999rem 0.75rem;
+}
+.inputs-s .input,
+.size-s .input,
+.inputs-s[class*="cell"] .input,
+.size-s[class*="cell"] .input,
+.inputs-s input,
+.size-s input,
+.inputs-s[class*="cell"] input,
+.size-s[class*="cell"] input,
+.inputs-s select,
+.size-s select,
+.inputs-s[class*="cell"] select,
+.size-s[class*="cell"] select,
+.inputs-s textarea,
+.size-s textarea,
+.inputs-s[class*="cell"] textarea,
+.size-s[class*="cell"] textarea {
+  font-size: 0.85rem;
+  line-height: 1.1475rem;
+  padding: 0.2975rem 0.425rem;
+  border-radius: 2px;
+  border-width: 1px;
+  outline: none;
+  box-shadow: none;
+}
+.inputs-s .select,
+.size-s .select,
+.inputs-s[class*="cell"] .select,
+.size-s[class*="cell"] .select {
+  min-height: calc(1.1475rem + 0.2975rem * 2  + 1px * 2);
+}
+.inputs-s .select-content,
+.size-s .select-content,
+.inputs-s[class*="cell"] .select-content,
+.size-s[class*="cell"] .select-content {
+  border-radius: 2px;
+  border-width: 1px;
+  outline: none;
+  box-shadow: none;
+}
+.inputs-s select:not([multiple]),
+.size-s select:not([multiple]),
+.inputs-s[class*="cell"] select:not([multiple]),
+.size-s[class*="cell"] select:not([multiple]) {
+  height: calc(1.1475rem + 0.2975rem * 2  + 1px * 2);
+}
+.inputs-s select:not([multiple]) option,
+.size-s select:not([multiple]) option,
+.inputs-s[class*="cell"] select:not([multiple]) option,
+.size-s[class*="cell"] select:not([multiple]) option {
+  line-height: 1.1475rem;
+  padding: 0.2975rem 0.425rem;
+}
+.inputs-m .input,
+.size-m .input,
+.inputs-m[class*="cell"] .input,
+.size-m[class*="cell"] .input,
+.inputs-m input,
+.size-m input,
+.inputs-m[class*="cell"] input,
+.size-m[class*="cell"] input,
+.inputs-m select,
+.size-m select,
+.inputs-m[class*="cell"] select,
+.size-m[class*="cell"] select,
+.inputs-m textarea,
+.size-m textarea,
+.inputs-m[class*="cell"] textarea,
+.size-m[class*="cell"] textarea {
+  font-size: 1.15rem;
+  line-height: 1.5525rem;
+  padding: 0.40249999999999997rem 0.575rem;
+  border-radius: 5px;
+  border-width: 1px;
+  outline: none;
+  box-shadow: none;
+}
+.inputs-m .select,
+.size-m .select,
+.inputs-m[class*="cell"] .select,
+.size-m[class*="cell"] .select {
+  min-height: calc(1.5525rem + 0.40249999999999997rem * 2  + 1px * 2);
+}
+.inputs-m .select-content,
+.size-m .select-content,
+.inputs-m[class*="cell"] .select-content,
+.size-m[class*="cell"] .select-content {
+  border-radius: 5px;
+  border-width: 1px;
+  outline: none;
+  box-shadow: none;
+}
+.inputs-m select:not([multiple]),
+.size-m select:not([multiple]),
+.inputs-m[class*="cell"] select:not([multiple]),
+.size-m[class*="cell"] select:not([multiple]) {
+  height: calc(1.5525rem + 0.40249999999999997rem * 2  + 1px * 2);
+}
+.inputs-m select:not([multiple]) option,
+.size-m select:not([multiple]) option,
+.inputs-m[class*="cell"] select:not([multiple]) option,
+.size-m[class*="cell"] select:not([multiple]) option {
+  line-height: 1.5525rem;
+  padding: 0.40249999999999997rem 0.575rem;
+}
+.inputs-l .input,
+.size-l .input,
+.inputs-l[class*="cell"] .input,
+.size-l[class*="cell"] .input,
+.inputs-l input,
+.size-l input,
+.inputs-l[class*="cell"] input,
+.size-l[class*="cell"] input,
+.inputs-l select,
+.size-l select,
+.inputs-l[class*="cell"] select,
+.size-l[class*="cell"] select,
+.inputs-l textarea,
+.size-l textarea,
+.inputs-l[class*="cell"] textarea,
+.size-l[class*="cell"] textarea {
+  font-size: 1.5rem;
+  line-height: 2.0250000000000004rem;
+  padding: 0.5249999999999999rem 0.75rem;
+  border-radius: 4px;
+  border-width: 1px;
+  outline: none;
+  box-shadow: none;
+}
+.inputs-l .select,
+.size-l .select,
+.inputs-l[class*="cell"] .select,
+.size-l[class*="cell"] .select {
+  min-height: calc(2.0250000000000004rem + 0.5249999999999999rem * 2  + 1px * 2);
+}
+.inputs-l .select-content,
+.size-l .select-content,
+.inputs-l[class*="cell"] .select-content,
+.size-l[class*="cell"] .select-content {
+  border-radius: 4px;
+  border-width: 1px;
+  outline: none;
+  box-shadow: none;
+}
+.inputs-l select:not([multiple]),
+.size-l select:not([multiple]),
+.inputs-l[class*="cell"] select:not([multiple]),
+.size-l[class*="cell"] select:not([multiple]) {
+  height: calc(2.0250000000000004rem + 0.5249999999999999rem * 2  + 1px * 2);
+}
+.inputs-l select:not([multiple]) option,
+.size-l select:not([multiple]) option,
+.inputs-l[class*="cell"] select:not([multiple]) option,
+.size-l[class*="cell"] select:not([multiple]) option {
+  line-height: 2.0250000000000004rem;
+  padding: 0.5249999999999999rem 0.75rem;
 }
 form label {
   text-transform: none;
@@ -226,60 +486,90 @@ form .hint {
   font-weight: normal;
   color: #000;
 }
-form .control.inverse input,
-form [class*="cell"].inverse input,
-form .control-group.inverse input,
-form .control.inverse select,
-form [class*="cell"].inverse select,
-form .control-group.inverse select,
-form .control.inverse textarea,
-form [class*="cell"].inverse textarea,
-form .control-group.inverse textarea {
+form.validate input:not(:focus).focused[pattern]:invalid,
+form.validate select:not(:focus).focused[pattern]:invalid,
+form.validate textarea:not(:focus).focused[pattern]:invalid,
+form.validate input:not(:focus).focused[required]:invalid,
+form.validate select:not(:focus).focused[required]:invalid,
+form.validate textarea:not(:focus).focused[required]:invalid {
+  color: #932524;
+  background-color: #ffffff;
+  border-color: #932524;
+}
+form.validate input:not(:focus).focused[pattern]:valid,
+form.validate select:not(:focus).focused[pattern]:valid,
+form.validate textarea:not(:focus).focused[pattern]:valid,
+form.validate input:not(:focus).focused[required]:valid,
+form.validate select:not(:focus).focused[required]:valid,
+form.validate textarea:not(:focus).focused[required]:valid {
+  color: #9dc02e;
+  background-color: #ffffff;
+  border-color: #9dc02e;
+}
+form.validate .control.select-arrow select:not(:focus).focused:invalid + span:after,
+form.validate [class*="cell"].select-arrow select:not(:focus).focused:invalid + span:after,
+form.validate .control-group.select-arrow select:not(:focus).focused:invalid + span:after {
+  color: #932524;
+}
+form.validate .control.select-arrow select:not(:focus).focused:valid + span:after,
+form.validate [class*="cell"].select-arrow select:not(:focus).focused:valid + span:after,
+form.validate .control-group.select-arrow select:not(:focus).focused:valid + span:after {
+  color: #9dc02e;
+}
+.control.inverse input,
+[class*="cell"].inverse input,
+.control-group.inverse input,
+.control.inverse select,
+[class*="cell"].inverse select,
+.control-group.inverse select,
+.control.inverse textarea,
+[class*="cell"].inverse textarea,
+.control-group.inverse textarea {
   background-color: #ccc;
   border-color: #fff;
   color: #fff;
 }
-form .control.transparent input,
-form [class*="cell"].transparent input,
-form .control-group.transparent input,
-form .control.transparent select,
-form [class*="cell"].transparent select,
-form .control-group.transparent select,
-form .control.transparent textarea,
-form [class*="cell"].transparent textarea,
-form .control-group.transparent textarea {
+.control.transparent input,
+[class*="cell"].transparent input,
+.control-group.transparent input,
+.control.transparent select,
+[class*="cell"].transparent select,
+.control-group.transparent select,
+.control.transparent textarea,
+[class*="cell"].transparent textarea,
+.control-group.transparent textarea {
   background-color: transparent;
 }
-form .control[class*="icon-"],
-form [class*="cell"][class*="icon-"],
-form .control-group[class*="icon-"] {
+.control[class*="icon-"],
+[class*="cell"][class*="icon-"],
+.control-group[class*="icon-"] {
   position: relative;
 }
-form .control[class*="icon-"].left-icon:before,
-form [class*="cell"][class*="icon-"].left-icon:before,
-form .control-group[class*="icon-"].left-icon:before {
+.control[class*="icon-"].left-icon:before,
+[class*="cell"][class*="icon-"].left-icon:before,
+.control-group[class*="icon-"].left-icon:before {
   left: 1em;
   right: auto;
 }
-form .control[class*="icon-"].left-icon input,
-form [class*="cell"][class*="icon-"].left-icon input,
-form .control-group[class*="icon-"].left-icon input,
-form .control[class*="icon-"].left-icon select,
-form [class*="cell"][class*="icon-"].left-icon select,
-form .control-group[class*="icon-"].left-icon select,
-form .control[class*="icon-"].left-icon textarea,
-form [class*="cell"][class*="icon-"].left-icon textarea,
-form .control-group[class*="icon-"].left-icon textarea {
+.control[class*="icon-"].left-icon input,
+[class*="cell"][class*="icon-"].left-icon input,
+.control-group[class*="icon-"].left-icon input,
+.control[class*="icon-"].left-icon select,
+[class*="cell"][class*="icon-"].left-icon select,
+.control-group[class*="icon-"].left-icon select,
+.control[class*="icon-"].left-icon textarea,
+[class*="cell"][class*="icon-"].left-icon textarea,
+.control-group[class*="icon-"].left-icon textarea {
   padding-left: 2.5em;
 }
-form .control[class*="icon-"].inverse:before,
-form [class*="cell"][class*="icon-"].inverse:before,
-form .control-group[class*="icon-"].inverse:before {
+.control[class*="icon-"].inverse:before,
+[class*="cell"][class*="icon-"].inverse:before,
+.control-group[class*="icon-"].inverse:before {
   color: #fff;
 }
-form .control[class*="icon-"]:before,
-form [class*="cell"][class*="icon-"]:before,
-form .control-group[class*="icon-"]:before {
+.control[class*="icon-"]:before,
+[class*="cell"][class*="icon-"]:before,
+.control-group[class*="icon-"]:before {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -288,48 +578,48 @@ form .control-group[class*="icon-"]:before {
   right: 1em;
   color: #000;
   z-index: 2;
-  events-pointer: none;
+  pointer-events: none;
   height: 1em;
 }
-form .control[class*="icon-"] input,
-form [class*="cell"][class*="icon-"] input,
-form .control-group[class*="icon-"] input,
-form .control[class*="icon-"] select,
-form [class*="cell"][class*="icon-"] select,
-form .control-group[class*="icon-"] select,
-form .control[class*="icon-"] textarea,
-form [class*="cell"][class*="icon-"] textarea,
-form .control-group[class*="icon-"] textarea {
+.control[class*="icon-"] input,
+[class*="cell"][class*="icon-"] input,
+.control-group[class*="icon-"] input,
+.control[class*="icon-"] select,
+[class*="cell"][class*="icon-"] select,
+.control-group[class*="icon-"] select,
+.control[class*="icon-"] textarea,
+[class*="cell"][class*="icon-"] textarea,
+.control-group[class*="icon-"] textarea {
   padding-right: 2.5em;
 }
-form .control[class*="icon-"] select,
-form [class*="cell"][class*="icon-"] select,
-form .control-group[class*="icon-"] select {
+.control[class*="icon-"] select,
+[class*="cell"][class*="icon-"] select,
+.control-group[class*="icon-"] select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
-form .control.select-arrow,
-form [class*="cell"].select-arrow,
-form .control-group.select-arrow {
+.control.select-arrow,
+[class*="cell"].select-arrow,
+.control-group.select-arrow {
   position: relative;
 }
-form .control.select-arrow select,
-form [class*="cell"].select-arrow select,
-form .control-group.select-arrow select {
+.control.select-arrow select,
+[class*="cell"].select-arrow select,
+.control-group.select-arrow select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   padding-right: 2.5em;
 }
-form .control.select-arrow select.inverse + span:after,
-form [class*="cell"].select-arrow select.inverse + span:after,
-form .control-group.select-arrow select.inverse + span:after {
+.control.select-arrow select.inverse + span:after,
+[class*="cell"].select-arrow select.inverse + span:after,
+.control-group.select-arrow select.inverse + span:after {
   color: #fff;
 }
-form .control.select-arrow select + span:after,
-form [class*="cell"].select-arrow select + span:after,
-form .control-group.select-arrow select + span:after {
+.control.select-arrow select + span:after,
+[class*="cell"].select-arrow select + span:after,
+.control-group.select-arrow select + span:after {
   font-family: 'icons';
   font-style: normal;
   font-weight: normal;
@@ -361,54 +651,54 @@ form .control-group.select-arrow select + span:after {
   line-height: 1rem;
   right: 1.33333333rem;
 }
-form .control.select-arrow select:focus + span:after,
-form [class*="cell"].select-arrow select:focus + span:after,
-form .control-group.select-arrow select:focus + span:after {
+.control.select-arrow select:focus + span:after,
+[class*="cell"].select-arrow select:focus + span:after,
+.control-group.select-arrow select:focus + span:after {
   content: '\e856';
   color: #ccc;
 }
-form .control.select-arrow select:hover + span:after,
-form [class*="cell"].select-arrow select:hover + span:after,
-form .control-group.select-arrow select:hover + span:after {
+.control.select-arrow select:hover + span:after,
+[class*="cell"].select-arrow select:hover + span:after,
+.control-group.select-arrow select:hover + span:after {
   color: #ccc;
 }
-form .control.select-arrow.inverse select + span:after,
-form [class*="cell"].select-arrow.inverse select + span:after,
-form .control-group.select-arrow.inverse select + span:after {
+.control.select-arrow.inverse select + span:after,
+[class*="cell"].select-arrow.inverse select + span:after,
+.control-group.select-arrow.inverse select + span:after {
   color: #fff;
 }
-form .control[data-addon],
-form [class*="cell"][data-addon],
-form .control-group[data-addon] {
+.control[data-addon],
+[class*="cell"][data-addon],
+.control-group[data-addon] {
   position: relative;
 }
-form .control[data-addon].left-addon:after,
-form [class*="cell"][data-addon].left-addon:after,
-form .control-group[data-addon].left-addon:after {
+.control[data-addon].left-addon:after,
+[class*="cell"][data-addon].left-addon:after,
+.control-group[data-addon].left-addon:after {
   left: 1em;
   right: auto;
   text-align: left;
 }
-form .control[data-addon].left-addon input,
-form [class*="cell"][data-addon].left-addon input,
-form .control-group[data-addon].left-addon input,
-form .control[data-addon].left-addon select,
-form [class*="cell"][data-addon].left-addon select,
-form .control-group[data-addon].left-addon select,
-form .control[data-addon].left-addon textarea,
-form [class*="cell"][data-addon].left-addon textarea,
-form .control-group[data-addon].left-addon textarea {
+.control[data-addon].left-addon input,
+[class*="cell"][data-addon].left-addon input,
+.control-group[data-addon].left-addon input,
+.control[data-addon].left-addon select,
+[class*="cell"][data-addon].left-addon select,
+.control-group[data-addon].left-addon select,
+.control[data-addon].left-addon textarea,
+[class*="cell"][data-addon].left-addon textarea,
+.control-group[data-addon].left-addon textarea {
   padding-left: 3.5em;
-  padding-right: 0.5em;
+  padding-right: 0.5rem;
 }
-form .control[data-addon].inverse:after,
-form [class*="cell"][data-addon].inverse:after,
-form .control-group[data-addon].inverse:after {
+.control[data-addon].inverse:after,
+[class*="cell"][data-addon].inverse:after,
+.control-group[data-addon].inverse:after {
   color: #fff;
 }
-form .control[data-addon]:after,
-form [class*="cell"][data-addon]:after,
-form .control-group[data-addon]:after {
+.control[data-addon]:after,
+[class*="cell"][data-addon]:after,
+.control-group[data-addon]:after {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -420,51 +710,21 @@ form .control-group[data-addon]:after {
   text-transform: uppercase;
   z-index: 2;
   content: attr(data-addon);
-  events-pointer: none;
+  pointer-events: none;
   height: 1.35rem;
   white-space: nowrap;
   text-align: right;
 }
-form .control[data-addon] input,
-form [class*="cell"][data-addon] input,
-form .control-group[data-addon] input,
-form .control[data-addon] select,
-form [class*="cell"][data-addon] select,
-form .control-group[data-addon] select,
-form .control[data-addon] textarea,
-form [class*="cell"][data-addon] textarea,
-form .control-group[data-addon] textarea {
+.control[data-addon] input,
+[class*="cell"][data-addon] input,
+.control-group[data-addon] input,
+.control[data-addon] select,
+[class*="cell"][data-addon] select,
+.control-group[data-addon] select,
+.control[data-addon] textarea,
+[class*="cell"][data-addon] textarea,
+.control-group[data-addon] textarea {
   padding-right: 3.5em;
-}
-form.validate input:not(:focus).focused[pattern]:invalid,
-form.validate select:not(:focus).focused[pattern]:invalid,
-form.validate textarea:not(:focus).focused[pattern]:invalid,
-form.validate input:not(:focus).focused[required]:invalid,
-form.validate select:not(:focus).focused[required]:invalid,
-form.validate textarea:not(:focus).focused[required]:invalid {
-  color: #932524;
-  background-color: #ffffff;
-  border-color: #932524;
-}
-form.validate input:not(:focus).focused[pattern]:valid,
-form.validate select:not(:focus).focused[pattern]:valid,
-form.validate textarea:not(:focus).focused[pattern]:valid,
-form.validate input:not(:focus).focused[required]:valid,
-form.validate select:not(:focus).focused[required]:valid,
-form.validate textarea:not(:focus).focused[required]:valid {
-  color: #9dc02e;
-  background-color: #ffffff;
-  border-color: #9dc02e;
-}
-form.validate .control.select-arrow select:not(:focus).focused:invalid + span:after,
-form.validate [class*="cell"].select-arrow select:not(:focus).focused:invalid + span:after,
-form.validate .control-group.select-arrow select:not(:focus).focused:invalid + span:after {
-  color: #932524;
-}
-form.validate .control.select-arrow select:not(:focus).focused:valid + span:after,
-form.validate [class*="cell"].select-arrow select:not(:focus).focused:valid + span:after,
-form.validate .control-group.select-arrow select:not(:focus).focused:valid + span:after {
-  color: #9dc02e;
 }
 form.has-success.inverse.transparent[class*="icon-"]:before,
 .control.has-success.inverse.transparent[class*="icon-"]:before,
@@ -3554,12 +3814,87 @@ form.has-warning .control-group.select-arrow select + span:after,
 .control-group.has-warning .control-group.select-arrow select + span:after {
   color: #e6ac26;
 }
+.inputs-s label,
+.size-s label,
+.inputs-s .select .select-content > label,
+.size-s .select .select-content > label,
+.inputs-s .select .placeholder,
+.size-s .select .placeholder {
+  font-size: 0.85rem;
+  line-height: 1.1475rem;
+  padding-top: 0.2975rem;
+  padding-bottom: 0.2975rem;
+}
+.inputs-s label,
+.size-s label,
+.inputs-s.control[class*="icon-"]:before,
+.size-s.control[class*="icon-"]:before,
+.inputs-s .control[class*="icon-"]:before,
+.size-s .control[class*="icon-"]:before,
+.inputs-s[data-addon]:after,
+.size-s[data-addon]:after,
+.inputs-s [data-addon]:after,
+.size-s [data-addon]:after,
+.inputs-s.select-arrow select + span:after,
+.size-s.select-arrow select + span:after {
+  font-size: 0.85rem;
+}
+.inputs-m label,
+.size-m label,
+.inputs-m .select .select-content > label,
+.size-m .select .select-content > label,
+.inputs-m .select .placeholder,
+.size-m .select .placeholder {
+  font-size: 1.15rem;
+  line-height: 1.5525rem;
+  padding-top: 0.40249999999999997rem;
+  padding-bottom: 0.40249999999999997rem;
+}
+.inputs-m label,
+.size-m label,
+.inputs-m.control[class*="icon-"]:before,
+.size-m.control[class*="icon-"]:before,
+.inputs-m .control[class*="icon-"]:before,
+.size-m .control[class*="icon-"]:before,
+.inputs-m[data-addon]:after,
+.size-m[data-addon]:after,
+.inputs-m [data-addon]:after,
+.size-m [data-addon]:after,
+.inputs-m.select-arrow select + span:after,
+.size-m.select-arrow select + span:after {
+  font-size: 1.15rem;
+}
+.inputs-l label,
+.size-l label,
+.inputs-l .select .select-content > label,
+.size-l .select .select-content > label,
+.inputs-l .select .placeholder,
+.size-l .select .placeholder {
+  font-size: 1.5rem;
+  line-height: 2.0250000000000004rem;
+  padding-top: 0.5249999999999999rem;
+  padding-bottom: 0.5249999999999999rem;
+}
+.inputs-l label,
+.size-l label,
+.inputs-l.control[class*="icon-"]:before,
+.size-l.control[class*="icon-"]:before,
+.inputs-l .control[class*="icon-"]:before,
+.size-l .control[class*="icon-"]:before,
+.inputs-l[data-addon]:after,
+.size-l[data-addon]:after,
+.inputs-l [data-addon]:after,
+.size-l [data-addon]:after,
+.inputs-l.select-arrow select + span:after,
+.size-l.select-arrow select + span:after {
+  font-size: 1.5rem;
+}
 .select {
   display: block;
   text-decoration: none;
   outline: 0 none;
   position: relative;
-  min-height: calc(1.35rem + 0.7em + 2px);
+  min-height: calc(1.35rem + 0.7rem + 2px);
 }
 .select > input {
   position: absolute;
@@ -3632,8 +3967,8 @@ form.has-warning .control-group.select-arrow select + span:after,
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  min-height: calc(1.35rem + 0.7em + 2px);
-  padding-right: 0.5em;
+  min-height: calc(1.35rem + 0.7rem + 2px);
+  padding-right: 0.5rem;
 }
 .select.hoverable:not(:hover) .select-content:only-child label,
 .select:not(.hoverable):not(.active):not([tabindex]):not(:focus) .select-content:only-child label,
@@ -3648,9 +3983,9 @@ form.has-warning .control-group.select-arrow select + span:after,
 .select.hoverable:not(:hover) .select-content:only-child input[type="checkbox"] + label,
 .select:not(.hoverable):not(.active):not([tabindex]):not(:focus) .select-content:only-child input[type="checkbox"] + label,
 .select[tabindex]:not(:focus) .select-content:only-child input[type="checkbox"] + label {
-  margin: calc(0.35em - 1px) 0 calc(0.35em - 1px) calc(0.5em - 1px);
+  margin: calc(0.35rem - 1px) 0 calc(0.35rem - 1px) calc(0.5rem - 1px);
   border: 1px solid gray;
-  border-radius: 2px;
+  border-radius: 1px;
   padding: 0 0.3em;
 }
 .select.hoverable:not(:hover) .select-content:only-child input[type="checkbox"] + label:after,
@@ -3686,7 +4021,7 @@ form.has-warning .control-group.select-arrow select + span:after,
 .select.hoverable:not(:hover) .select-content:only-child .placeholder,
 .select:not(.hoverable):not(.active):not([tabindex]):not(:focus) .select-content:only-child .placeholder,
 .select[tabindex]:not(:focus) .select-content:only-child .placeholder {
-  margin: calc(0.35em) calc(0.5em);
+  margin: calc(0.35rem) calc(0.5rem);
 }
 .select > input:not(:checked) + .select-content {
   display: -webkit-box;
@@ -3694,8 +4029,8 @@ form.has-warning .control-group.select-arrow select + span:after,
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  min-height: calc(1.35rem + 0.7em + 2px);
-  padding-right: 0.5em;
+  min-height: calc(1.35rem + 0.7rem + 2px);
+  padding-right: 0.5rem;
 }
 .select > input:not(:checked) + .select-content label,
 .select > input:not(:checked) + .select-content .placeholder {
@@ -3704,9 +4039,9 @@ form.has-warning .control-group.select-arrow select + span:after,
   overflow: hidden;
 }
 .select > input:not(:checked) + .select-content input[type="checkbox"] + label {
-  margin: calc(0.35em - 1px) 0 calc(0.35em - 1px) calc(0.5em - 1px);
+  margin: calc(0.35rem - 1px) 0 calc(0.35rem - 1px) calc(0.5rem - 1px);
   border: 1px solid gray;
-  border-radius: 2px;
+  border-radius: 1px;
   padding: 0 0.3em;
 }
 .select > input:not(:checked) + .select-content input[type="checkbox"] + label:after {
@@ -3732,7 +4067,7 @@ form.has-warning .control-group.select-arrow select + span:after,
   pointer-events: none;
 }
 .select > input:not(:checked) + .select-content .placeholder {
-  margin: calc(0.35em) calc(0.5em);
+  margin: calc(0.35rem) calc(0.5rem);
 }
 .select .placeholder {
   -ms-flex-order: -1;
@@ -3755,8 +4090,8 @@ form.has-warning .control-group.select-arrow select + span:after,
   border-color: #ccc;
   border-style: solid;
   border-width: 1px;
-  border-radius: 4px;
-  padding: 0.35em 0.5em;
+  border-radius: 3px;
+  padding: 0.35rem 0.5rem;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -3775,7 +4110,6 @@ form.has-warning .control-group.select-arrow select + span:after,
 .select .select-content.hover {
   border-color: #ccc;
   border-style: solid;
-  border-width: 1px;
   outline: none;
   box-shadow: none;
   background-color: #fff;
@@ -3784,7 +4118,6 @@ form.has-warning .control-group.select-arrow select + span:after,
 .select .select-content.focus {
   border-color: #ccc;
   border-style: solid;
-  border-width: 1px;
   outline: none;
   box-shadow: none;
   background-color: #fff;
@@ -3812,7 +4145,8 @@ form.has-warning .control-group.select-arrow select + span:after,
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 0.35em 0.5em;
+  line-height: 1.35rem;
+  padding: 0.35rem 0.5rem;
 }
 .select .select-content label {
   cursor: pointer;
@@ -5623,8 +5957,8 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
 }
 .button {
   font-size: 1rem;
-  line-height: 1.35em;
-  padding: 0.2em 0.5em;
+  line-height: 1.35rem;
+  padding: 0.35rem 0.7rem;
   border-radius: 3px;
   outline: none;
   box-shadow: none;
@@ -5645,6 +5979,12 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   border: 1px solid;
   outline: none;
   box-shadow: none;
+}
+.button:focus,
+.button.focus {
+  border: 1px solid;
+  outline: none;
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
 }
 .button:active,
 .button.active {
@@ -5710,6 +6050,12 @@ button.button.ellipsis > * {
   outline: none;
   box-shadow: none;
 }
+.button.inverse:focus,
+.button.inverse.focus {
+  border: 1px solid;
+  outline: none;
+  box-shadow: none;
+}
 .button.inverse:active,
 .button.inverse.active {
   border: 1px solid;
@@ -5720,109 +6066,115 @@ input.button {
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.button-1 {
+.button-xs {
   font-size: 0.6rem;
-  line-height: 1.35em;
-  padding: 0.2em 0.5em;
+  line-height: 0.81rem;
+  padding: 0.21rem 0.42rem;
   border-radius: 2px;
   border-width: none;
   outline-width: none;
   box-shadow: none;
 }
-.button-2 {
+.button-s {
   font-size: 0.85rem;
-  line-height: 1.35em;
-  padding: 0.2em 0.5em;
+  line-height: 1.1475rem;
+  padding: 0.2975rem 0.595rem;
   border-radius: 2px;
   border-width: none;
   outline-width: none;
   box-shadow: none;
 }
-.button-3 {
+.button-m {
   font-size: 1.15rem;
-  line-height: 1.35em;
-  padding: 0.2em 0.5em;
+  line-height: 1.5525rem;
+  padding: 0.40249999999999997rem 0.8049999999999999rem;
   border-radius: 5px;
   border-width: none;
   outline-width: none;
   box-shadow: none;
 }
-.button-4 {
-  font-size: 1.3rem;
-  line-height: 1.35em;
-  padding: 0.2em 0.5em;
+.button-l {
+  font-size: 1.5rem;
+  line-height: 2.0250000000000004rem;
+  padding: 0.5249999999999999rem 1.0499999999999998rem;
   border-radius: 4px;
   border-width: none;
   outline-width: none;
   box-shadow: none;
 }
-.button-5 {
-  font-size: 1.5rem;
-  line-height: 1.35em;
-  padding: 0.2em 0.5em;
+.button-xl {
+  font-size: 2rem;
+  line-height: 2.7rem;
+  padding: 0.7rem 1.4rem;
   border-radius: 5px;
   border-width: none;
   outline-width: none;
   box-shadow: none;
 }
-.button-6 {
-  font-size: 2rem;
-  line-height: 1.35em;
-  padding: 0.2em 0.5em;
+.button-xxl {
+  font-size: 2.2rem;
+  line-height: 2.9700000000000006rem;
+  padding: 0.77rem 1.54rem;
   border-radius: 6px;
   border-width: none;
   outline-width: none;
   box-shadow: none;
 }
-.buttons-1 .button {
+.buttons-xs .button,
+.size-xs .button {
   font-size: 0.6rem;
-  line-height: 1.35em;
-  padding: 0.2em 0.5em;
+  line-height: 0.81rem;
+  padding: 0.21rem 0.42rem;
   border-radius: 2px;
   border-width: none;
   outline-width: none;
   box-shadow: none;
 }
-.buttons-2 .button {
+.buttons-s .button,
+.size-s .button {
   font-size: 0.85rem;
-  line-height: 1.35em;
-  padding: 0.2em 0.5em;
+  line-height: 1.1475rem;
+  padding: 0.2975rem 0.595rem;
   border-radius: 2px;
   border-width: none;
   outline-width: none;
   box-shadow: none;
 }
-.buttons-3 .button {
+.buttons-m .button,
+.size-m .button {
   font-size: 1.15rem;
-  line-height: 1.35em;
-  padding: 0.2em 0.5em;
+  line-height: 1.5525rem;
+  padding: 0.40249999999999997rem 0.8049999999999999rem;
   border-radius: 5px;
   border-width: none;
   outline-width: none;
   box-shadow: none;
 }
-.buttons-4 .button {
-  font-size: 1.3rem;
-  line-height: 1.35em;
-  padding: 0.2em 0.5em;
+.buttons-l .button,
+.size-l .button {
+  font-size: 1.5rem;
+  line-height: 2.0250000000000004rem;
+  padding: 0.5249999999999999rem 1.0499999999999998rem;
   border-radius: 4px;
   border-width: none;
   outline-width: none;
   box-shadow: none;
 }
-.buttons-5 .button {
-  font-size: 1.5rem;
-  line-height: 1.35em;
-  padding: 0.2em 0.5em;
+.buttons-xl .button,
+.size-xl .button {
+  font-size: 2rem;
+  line-height: 2.7rem;
+  padding: 0.7rem 1.4rem;
   border-radius: 5px;
   border-width: none;
   outline-width: none;
   box-shadow: none;
 }
-.buttons-6 .button {
-  font-size: 2rem;
-  line-height: 1.35em;
-  padding: 0.2em 0.5em;
+.buttons-xxl .button,
+.size-xxl .button {
+  font-size: 2.2rem;
+  line-height: 2.9700000000000006rem;
+  padding: 0.77rem 1.54rem;
   border-radius: 6px;
   border-width: none;
   outline-width: none;
@@ -18247,13 +18599,13 @@ form.grid.keep-flex [class*="cell"].keep-flex textarea,
 }
 form.grid.keep-flex [class*="cell"].keep-flex textarea[rows="1"],
 .grid.form.keep-flex [class*="cell"].keep-flex textarea[rows="1"] {
-  height: calc(1.7em  +  0.7em);
+  height: calc(1.7em  +  0.7rem);
 }
 form.grid [class*=" cell"] textarea,
 .grid.form [class*=" cell"] textarea,
 form.grid [class^="cell"] textarea,
 .grid.form [class^="cell"] textarea {
-  min-height: calc(1.7em  +  0.7em);
+  min-height: calc(1.7em  +  0.7rem);
 }
 form.grid [class*=" cell"] input[type="date"],
 .grid.form [class*=" cell"] input[type="date"],
@@ -22071,4 +22423,35 @@ ul.menu ul li a {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+fieldset {
+  border: 0;
+  display: block;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+fieldset .legend {
+  width: 100%;
+  font-size: 1.3rem;
+  line-height: normal;
+  margin: 0 0 1rem;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+fieldset .legend:after {
+  -webkit-box-flex: 1 1 0;
+  -moz-box-flex: 1 1 0;
+  -webkit-flex: 1 1 0;
+  -ms-flex: 1 1 0;
+  flex: 1 1 0;
+  content: "";
+  height: 0;
+  margin-left: 10px;
+  border-bottom: 1px solid;
 }

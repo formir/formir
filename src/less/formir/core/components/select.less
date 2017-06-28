@@ -36,12 +36,12 @@
 
 .select-close-content-core() {
   .display-flex;
-  min-height: calc( @input-line-height ~"+" @input-padding-vertical * 2 ~"+" @input-border-width * 2 );
-  padding-right: @input-padding-horizontal;
+  min-height: calc( @input-default-line-height ~"+" @input-default-padding-vertical * 2 ~"+" @input-default-border-width * 2 );
+  padding-right: @input-default-padding-horizontal;
   input {
     &[type="checkbox"] {
       + label {
-        margin: calc(@input-padding-vertical ~"-" @input-border-width) 0 calc(@input-padding-vertical ~"-" @input-border-width) calc(@input-padding-horizontal ~"-" @input-border-width);
+        margin: calc(@input-default-padding-vertical ~"-" @input-default-border-width) 0 calc(@input-default-padding-vertical ~"-" @input-default-border-width) calc(@input-default-padding-horizontal ~"-" @input-default-border-width);
         .select-multi-selected-item;
         &:after {
           .select-multi-selected-item-close;
@@ -67,7 +67,7 @@
     }
   }
   .placeholder {
-    margin: calc(@input-padding-vertical) calc(@input-padding-horizontal);
+    margin: calc(@input-default-padding-vertical) calc(@input-default-padding-horizontal);
   }
 }
 
@@ -102,7 +102,7 @@
   text-decoration: none;
   outline: 0 none;
   position: relative;
-  min-height: calc( @input-line-height ~"+" @input-padding-vertical * 2 ~"+" @input-border-width * 2 );
+  min-height: calc( @input-default-line-height ~"+" @input-default-padding-vertical * 2 ~"+" @input-default-border-width * 2 );
   > input {
     position: absolute;
     width: 100%;
@@ -141,7 +141,7 @@
     }
     &:after {
       .select-arrow;
-      right: @input-font-size/1.2;
+      right: @input-default-font-size/1.2;
     }
   }
 
@@ -177,7 +177,8 @@
       width: 100%;
       text-overflow: ellipsis;
       .box-sizing(border-box);
-      padding: @input-padding-vertical @input-padding-horizontal;
+      line-height: @input-default-line-height;
+      padding: @input-default-padding-vertical @input-default-padding-horizontal;
     }
     label {
       cursor: pointer;
