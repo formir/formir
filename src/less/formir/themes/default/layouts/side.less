@@ -4,6 +4,7 @@
       display: none;
     }
   }
+  overflow-y: hidden;
 }
 
 .side-expanded() {
@@ -31,7 +32,7 @@
   }
 
   @{side} {
-    background-color: #08233e;
+    background-color: darken(@color-primary, 40);
     color: #fff;
     @{menu-item} {
       i {

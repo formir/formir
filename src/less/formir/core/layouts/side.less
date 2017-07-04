@@ -512,21 +512,13 @@
     }
   }
 
-  &.@{side-overflow} {
-    &.@{side-left}, &.@{side-right} {
-      &:hover, &:focus {
-        overflow-y: auto;
-        overflow-x: hidden;
-      }
-      overflow-y: hidden;
-    }
-    &.@{side-top}, &.@{side-bottom} {
-      &:hover, &:focus {
-        overflow-x: auto;
-        overflow-y: hidden;
-      }
-      overflow-x: hidden;
-    }
+  &.@{side-left}, &.@{side-right} {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  &.@{side-top}, &.@{side-bottom} {
+    overflow-x: auto;
+    overflow-y: hidden;
   }
 
   &.@{side-animated} {
