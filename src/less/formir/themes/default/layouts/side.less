@@ -1,6 +1,8 @@
 .side-collapsed() {
-  label {
-    font-size: 9px;
+  @{menu-item} {
+    i + span {
+      display: none;
+    }
   }
 }
 
@@ -22,9 +24,20 @@
     background-color: @side-backdrop-color;
     opacity: @side-backdrop-opacity;
   }
-  
+  .@{side-close} {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+
   @{side} {
-    background-color: #000;
+    background-color: #08233e;
     color: #fff;
+    @{menu-item} {
+      i {
+        font-size: 1.2rem;
+        margin-right: 0.5em;
+      }
+    }
   }
 }

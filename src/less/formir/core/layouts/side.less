@@ -511,14 +511,24 @@
       }
     }
   }
-  
+
   &.@{side-overflow} {
-    &:hover, &:focus {
-      overflow-y: auto;
+    &.@{side-left}, &.@{side-right} {
+      &:hover, &:focus {
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+      overflow-y: hidden;
     }
-    overflow-y: hidden;
+    &.@{side-top}, &.@{side-bottom} {
+      &:hover, &:focus {
+        overflow-x: auto;
+        overflow-y: hidden;
+      }
+      overflow-x: hidden;
+    }
   }
-  
+
   &.@{side-animated} {
     &.@{side-left}, &.@{side-right} {
       transition: width @side-animate-time;
@@ -530,7 +540,7 @@
       transition: margin @side-animate-time;
     }
   }
-  
+
   &.@{side-absolute} {
     &.@{side-left}, &.@{side-right} {
       position: absolute;
@@ -541,7 +551,7 @@
       max-height: 100%;
     }
   }
-  
+
   &.@{side-float} {
     &.@{side-right} {
       float: right;
@@ -550,7 +560,7 @@
       float: left;
     }
   }
-  
+
   &.@{side-relative} {
     &.@{side-left}, &.@{side-right} {
       position: relative;
@@ -562,7 +572,7 @@
       float: left;
     }
   }
-  
+
   &.@{side-left}, &.@{side-right} {
     top: 0;
     bottom: 0;
@@ -570,7 +580,7 @@
     height: 100%;
     will-change: width;
   }
-  
+
   &.@{side-left} {
     left: 0;
     right: auto;

@@ -20,6 +20,9 @@
         text-decoration: @menu-item-anchor-decoration-hover;
       }
     }
+    &.@{active}, @{menu-item-anchor}.@{active} {
+      .box-shadow(0 -2px 0 rgba(46, 143, 239, 0.5) inset);
+    }
   }
   @{menu-inside} {
     @{menu-item} {
