@@ -1,10 +1,16 @@
 .width-repeat(@n, @i: 1) when (@i =< @n) {
+  @width-repeat: unit(((@layout-width/@layout-steps)*@i), @layout-unit);
   .@{width}-@{i} {
-    @width-repeat: unit(((@layout-width/@layout-steps)*@i), @layout-unit);
     width: @width-repeat;
     & when(@include-core-layout-side = true) {
       .side-width(@width-repeat);
     }
+  }
+  .max-@{width}-@{i} {
+    max-width: @width-repeat;
+  }
+  .min-@{width}-@{i} {
+    min-width: @width-repeat;
   }
   .width-repeat(@n, (@i + 1));
 }

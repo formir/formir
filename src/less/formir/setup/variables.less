@@ -16,6 +16,13 @@
 @modal-animate-transform-x: 0;
 @modal-animate-transform-y: -100vh; // x, y
 
+// Header
+@header-height: 65px;
+@header-background: darken(@color-primary, 10);
+@header-color: @color-primary-contrast;
+@header-vertical-padding: @content-min-margin;
+@header-horizontal-padding: 0;
+
 // Tabs
 @tab-nav-active-background: #222;
 @tab-nav-active-color: #fff;
@@ -198,7 +205,7 @@
 // Menu
 @side-menu-item-color: #fff;
 @side-menu-item-anchor-border: 0 none;
-@side-menu-item-anchor-background-hover: darken(@color-primary, 50);
+@side-menu-item-anchor-background-hover: darken(@color-primary, 15);
 @menu-item-color: #000;
 @menu-item-padding: 0;
 @menu-item-anchor-decoration: none;
@@ -246,22 +253,22 @@
 @article-p-margin: @p-margin;
 @list-margin: 0 0 0 1rem;
 
-@color-primary: #2e8fef;
-@color-alternative: #49F28E;
+@color-primary: #443349;
+@color-alternative: #209ead;
 @color-link: #5D769D;
 @color-mute: #575757;
 @color-cancel: #aaaaaa;
-@color-success: #9DC02E;
-@color-info: #027493;
-@color-warning: #E6AC26;
-@color-danger: #932524;
+@color-success: #C4FF5B;
+@color-info: #4FF6FF;
+@color-warning: #E8AE47;
+@color-danger: #FF5B60;
 @color-white: #fff;
 @color-color-1: #000;
 @color-color-2: #000;
 @color-color-3: #000;
 
 @color-primary-contrast: #ffffff;
-@color-alternative-contrast: #111111;
+@color-alternative-contrast: #ffffff;
 @color-link-contrast: #ffffff;
 @color-mute-contrast: #ffffff;
 @color-cancel-contrast: #111111;
@@ -290,6 +297,7 @@
 @color-hover-color-3: lighten(@color-color-3, @color-hover-lighten);
 
 @background-lighten: 50%;
+@background-dark: 30%;
 @text-darken: 10%;
 @border-darken: 0%;
 
@@ -302,6 +310,22 @@
 @background-color-info: lighten(@color-info, @background-lighten);
 @background-color-warning: lighten(@color-warning, @background-lighten);
 @background-color-danger: lighten(@color-danger, @background-lighten);
+@background-color-color-1: lighten(@color-color-1, @background-lighten);
+@background-color-color-2: lighten(@color-color-2, @background-lighten);
+@background-color-color-3: lighten(@color-color-3, @background-lighten);
+
+@background-dark-color-primary: darken(@color-primary, @background-dark);
+@background-dark-color-alternative: darken(@color-alternative, @background-dark);
+@background-dark-color-link: darken(@color-link, @background-dark);
+@background-dark-color-mute: darken(@color-mute, @background-dark);
+@background-dark-color-cancel: darken(@color-cancel, @background-dark);
+@background-dark-color-success: darken(@color-success, @background-dark);
+@background-dark-color-info: darken(@color-info, @background-dark);
+@background-dark-color-warning: darken(@color-warning, @background-dark);
+@background-dark-color-danger: darken(@color-danger, @background-dark);
+@background-dark-color-color-1: darken(@color-color-1, @background-dark);
+@background-dark-color-color-2: darken(@color-color-2, @background-dark);
+@background-dark-color-color-3: darken(@color-color-3, @background-dark);
 
 @background-color-hover-primary: lighten(@background-color-primary, @color-hover-lighten);
 @background-color-hover-alternative: lighten(@background-color-alternative, @color-hover-lighten);
