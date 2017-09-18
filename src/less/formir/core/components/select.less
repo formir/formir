@@ -36,7 +36,7 @@
 
 .select-close-content-core() {
   .display-flex;
-  min-height: calc( @input-default-line-height ~"+" @input-default-padding-vertical * 2 ~"+" @input-default-border-width * 2 );
+  min-height: calc( @input-default-line-height ~"+" @input-default-padding-vertical * 2 ~"-" @input-default-border-width * 2 );
   padding-right: @input-default-padding-horizontal;
   input {
     &[type="checkbox"] {
@@ -66,7 +66,7 @@
       }
     }
   }
-  [type="checkbox"] ~ .placeholder {
+  .placeholder {
     margin: calc(@input-default-padding-vertical) calc(@input-default-padding-horizontal);
   }
 }
@@ -102,7 +102,7 @@
   text-decoration: none;
   outline: 0 none;
   position: relative;
-  min-height: calc( @input-default-line-height ~"+" @input-default-padding-vertical * 2 ~"+" @input-default-border-width * 2 );
+  min-height: calc( @input-default-line-height ~"+" @input-default-padding-vertical * 2 ~"-" @input-default-border-width * 2 );
   > input {
     position: absolute;
     width: 100%;

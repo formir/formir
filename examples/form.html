@@ -188,20 +188,23 @@
 	    	<div class="row">
 	    		<div class="cell m-cell-16 has-info"><label>Label for input:</label><input type="text"/></div>
 	    	</div>
-	    	<div class="row">
+        <div class="row">
 	    		<div class="cell m-cell-16 has-warning">
 	    			<label>Label for input:</label>
-	    			<div class="control"><input type="text" required/><span></span></div>
+	    			<div class="control has-tooltip">
+              <input type="text" required/><span></span>
+              <div class="tooltip">warning message</div>
+            </div>
 	    			<div class="hint text-right"> help</div>
     			</div>
-	    		<div class="cell select-arrow m-cell-16  has-success">
+	    		<div class="cell select-arrow m-cell-16  has-error">
             <label></label>
             <div class="control">
               <select><option>1 23</option></select>
   	    			<span></span>
             </div>
-	    			<div class="hint text-right"> help</div>
-	    	</div>
+	    			<div class="hint text-right has-tooltip"><div class="tooltip">error message</div></div>
+	    	  </div>
 	    	</div>
 	    </form>
   	</fieldset>

@@ -486,15 +486,25 @@ form .hint {
   font-weight: normal;
   color: #000;
 }
+form .hint.has-tooltip {
+  min-height: calc(0.45rem * 2 + 1.35rem);
+}
+form .hint.has-tooltip .tooltip {
+  display: block;
+}
+form .hint .tooltip {
+  top: 5px !important;
+  right: 0 !important;
+}
 form.validate input:not(:focus).focused[pattern]:invalid,
 form.validate select:not(:focus).focused[pattern]:invalid,
 form.validate textarea:not(:focus).focused[pattern]:invalid,
 form.validate input:not(:focus).focused[required]:invalid,
 form.validate select:not(:focus).focused[required]:invalid,
 form.validate textarea:not(:focus).focused[required]:invalid {
-  color: #ff5b60;
+  color: #cf4040;
   background-color: #ffffff;
-  border-color: #ff5b60;
+  border-color: #cf4040;
 }
 form.validate input:not(:focus).focused[pattern]:valid,
 form.validate select:not(:focus).focused[pattern]:valid,
@@ -502,19 +512,45 @@ form.validate textarea:not(:focus).focused[pattern]:valid,
 form.validate input:not(:focus).focused[required]:valid,
 form.validate select:not(:focus).focused[required]:valid,
 form.validate textarea:not(:focus).focused[required]:valid {
-  color: #c4ff5b;
+  color: #84b500;
   background-color: #ffffff;
-  border-color: #c4ff5b;
+  border-color: #84b500;
 }
 form.validate .control.select-arrow select:not(:focus).focused:invalid + span:after,
 form.validate [class*="cell"].select-arrow select:not(:focus).focused:invalid + span:after,
 form.validate .control-group.select-arrow select:not(:focus).focused:invalid + span:after {
-  color: #ff5b60;
+  color: #cf4040;
 }
 form.validate .control.select-arrow select:not(:focus).focused:valid + span:after,
 form.validate [class*="cell"].select-arrow select:not(:focus).focused:valid + span:after,
 form.validate .control-group.select-arrow select:not(:focus).focused:valid + span:after {
-  color: #c4ff5b;
+  color: #84b500;
+}
+.control,
+[class*="cell"],
+.control-group {
+  position: relative;
+}
+.control.has-tooltip:hover .tooltip,
+[class*="cell"].has-tooltip:hover .tooltip,
+.control-group.has-tooltip:hover .tooltip {
+  display: none;
+}
+.control.has-tooltip input:focus ~ .tooltip,
+[class*="cell"].has-tooltip input:focus ~ .tooltip,
+.control-group.has-tooltip input:focus ~ .tooltip,
+.control.has-tooltip select:focus ~ .tooltip,
+[class*="cell"].has-tooltip select:focus ~ .tooltip,
+.control-group.has-tooltip select:focus ~ .tooltip,
+.control.has-tooltip textarea:focus ~ .tooltip,
+[class*="cell"].has-tooltip textarea:focus ~ .tooltip,
+.control-group.has-tooltip textarea:focus ~ .tooltip {
+  display: block;
+}
+.control .tooltip,
+[class*="cell"] .tooltip,
+.control-group .tooltip {
+  right: 0 !important;
 }
 .control.inverse input,
 [class*="cell"].inverse input,
@@ -774,7 +810,7 @@ form.has-success .control-group.inverse.transparent.select-arrow select + span:a
 .control.has-success .control-group.inverse.transparent.select-arrow select + span:after,
 [class*="cell"].has-success .control-group.inverse.transparent.select-arrow select + span:after,
 .control-group.has-success .control-group.inverse.transparent.select-arrow select + span:after {
-  color: #c4ff5b;
+  color: #84b500;
 }
 form.has-success input[type="date"],
 .control.has-success input[type="date"],
@@ -1096,9 +1132,9 @@ form.has-success .control-group.inverse.transparent input[type="url"],
 .control.has-success .control-group.inverse.transparent input[type="url"],
 [class*="cell"].has-success .control-group.inverse.transparent input[type="url"],
 .control-group.has-success .control-group.inverse.transparent input[type="url"] {
-  color: #c4ff5b;
+  color: #84b500;
   background-color: #ffffff;
-  border-color: #c4ff5b;
+  border-color: #84b500;
 }
 form.has-success select,
 .control.has-success select,
@@ -1164,9 +1200,9 @@ form.has-success .control-group.inverse.transparent textarea,
 .control.has-success .control-group.inverse.transparent textarea,
 [class*="cell"].has-success .control-group.inverse.transparent textarea,
 .control-group.has-success .control-group.inverse.transparent textarea {
-  color: #c4ff5b;
+  color: #84b500;
   background-color: #ffffff;
-  border-color: #c4ff5b;
+  border-color: #84b500;
 }
 form.has-success .hint,
 .control.has-success .hint,
@@ -1200,7 +1236,95 @@ form.has-success .control-group.inverse.transparent .hint,
 .control.has-success .control-group.inverse.transparent .hint,
 [class*="cell"].has-success .control-group.inverse.transparent .hint,
 .control-group.has-success .control-group.inverse.transparent .hint {
-  color: #c4ff5b;
+  color: #84b500;
+}
+form.has-success .tooltip,
+.control.has-success .tooltip,
+[class*="cell"].has-success .tooltip,
+.control-group.has-success .tooltip,
+form.has-success .control .tooltip,
+.control.has-success .control .tooltip,
+[class*="cell"].has-success .control .tooltip,
+.control-group.has-success .control .tooltip,
+form.has-success [class*="cell"] .tooltip,
+.control.has-success [class*="cell"] .tooltip,
+[class*="cell"].has-success [class*="cell"] .tooltip,
+.control-group.has-success [class*="cell"] .tooltip,
+form.has-success .control-group .tooltip,
+.control.has-success .control-group .tooltip,
+[class*="cell"].has-success .control-group .tooltip,
+.control-group.has-success .control-group .tooltip,
+form.has-success.inverse.transparent .tooltip,
+.control.has-success.inverse.transparent .tooltip,
+[class*="cell"].has-success.inverse.transparent .tooltip,
+.control-group.has-success.inverse.transparent .tooltip,
+form.has-success .control.inverse.transparent .tooltip,
+.control.has-success .control.inverse.transparent .tooltip,
+[class*="cell"].has-success .control.inverse.transparent .tooltip,
+.control-group.has-success .control.inverse.transparent .tooltip,
+form.has-success [class*="cell"].inverse.transparent .tooltip,
+.control.has-success [class*="cell"].inverse.transparent .tooltip,
+[class*="cell"].has-success [class*="cell"].inverse.transparent .tooltip,
+.control-group.has-success [class*="cell"].inverse.transparent .tooltip,
+form.has-success .control-group.inverse.transparent .tooltip,
+.control.has-success .control-group.inverse.transparent .tooltip,
+[class*="cell"].has-success .control-group.inverse.transparent .tooltip,
+.control-group.has-success .control-group.inverse.transparent .tooltip {
+  background-color: #84b500;
+  bottom: auto;
+  top: calc(100% + 5px);
+  right: -10px;
+  left: auto;
+  margin-top: 5px;
+}
+form.has-success .tooltip:after,
+.control.has-success .tooltip:after,
+[class*="cell"].has-success .tooltip:after,
+.control-group.has-success .tooltip:after,
+form.has-success .control .tooltip:after,
+.control.has-success .control .tooltip:after,
+[class*="cell"].has-success .control .tooltip:after,
+.control-group.has-success .control .tooltip:after,
+form.has-success [class*="cell"] .tooltip:after,
+.control.has-success [class*="cell"] .tooltip:after,
+[class*="cell"].has-success [class*="cell"] .tooltip:after,
+.control-group.has-success [class*="cell"] .tooltip:after,
+form.has-success .control-group .tooltip:after,
+.control.has-success .control-group .tooltip:after,
+[class*="cell"].has-success .control-group .tooltip:after,
+.control-group.has-success .control-group .tooltip:after,
+form.has-success.inverse.transparent .tooltip:after,
+.control.has-success.inverse.transparent .tooltip:after,
+[class*="cell"].has-success.inverse.transparent .tooltip:after,
+.control-group.has-success.inverse.transparent .tooltip:after,
+form.has-success .control.inverse.transparent .tooltip:after,
+.control.has-success .control.inverse.transparent .tooltip:after,
+[class*="cell"].has-success .control.inverse.transparent .tooltip:after,
+.control-group.has-success .control.inverse.transparent .tooltip:after,
+form.has-success [class*="cell"].inverse.transparent .tooltip:after,
+.control.has-success [class*="cell"].inverse.transparent .tooltip:after,
+[class*="cell"].has-success [class*="cell"].inverse.transparent .tooltip:after,
+.control-group.has-success [class*="cell"].inverse.transparent .tooltip:after,
+form.has-success .control-group.inverse.transparent .tooltip:after,
+.control.has-success .control-group.inverse.transparent .tooltip:after,
+[class*="cell"].has-success .control-group.inverse.transparent .tooltip:after,
+.control-group.has-success .control-group.inverse.transparent .tooltip:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  z-index: 1;
+  bottom: -10px;
+  right: -10px;
+  left: auto;
+  border-top: 0;
+  border-bottom: 5px solid #84b500;
+  margin-right: 10px;
+  top: auto;
+  bottom: 100%;
+  right: 0;
+  margin-top: -5px;
+  margin-bottom: auto;
 }
 form.has-success.inverse select,
 .control.has-success.inverse select,
@@ -1250,7 +1374,7 @@ form.has-success .control-group.inverse input,
 .control.has-success .control-group.inverse input,
 [class*="cell"].has-success .control-group.inverse input,
 .control-group.has-success .control-group.inverse input {
-  background-color: #c4ff5b;
+  background-color: #84b500;
   border-color: #ffffff;
   color: #ffffff;
 }
@@ -1496,7 +1620,7 @@ form.has-success .control-group.select-arrow select + span:after,
 .control.has-success .control-group.select-arrow select + span:after,
 [class*="cell"].has-success .control-group.select-arrow select + span:after,
 .control-group.has-success .control-group.select-arrow select + span:after {
-  color: #c4ff5b;
+  color: #84b500;
 }
 form.has-info.inverse.transparent[class*="icon-"]:before,
 .control.has-info.inverse.transparent[class*="icon-"]:before,
@@ -1546,7 +1670,7 @@ form.has-info .control-group.inverse.transparent.select-arrow select + span:afte
 .control.has-info .control-group.inverse.transparent.select-arrow select + span:after,
 [class*="cell"].has-info .control-group.inverse.transparent.select-arrow select + span:after,
 .control-group.has-info .control-group.inverse.transparent.select-arrow select + span:after {
-  color: #4ff6ff;
+  color: #00abc4;
 }
 form.has-info input[type="date"],
 .control.has-info input[type="date"],
@@ -1868,9 +1992,9 @@ form.has-info .control-group.inverse.transparent input[type="url"],
 .control.has-info .control-group.inverse.transparent input[type="url"],
 [class*="cell"].has-info .control-group.inverse.transparent input[type="url"],
 .control-group.has-info .control-group.inverse.transparent input[type="url"] {
-  color: #4ff6ff;
+  color: #00abc4;
   background-color: #ffffff;
-  border-color: #4ff6ff;
+  border-color: #00abc4;
 }
 form.has-info select,
 .control.has-info select,
@@ -1936,9 +2060,9 @@ form.has-info .control-group.inverse.transparent textarea,
 .control.has-info .control-group.inverse.transparent textarea,
 [class*="cell"].has-info .control-group.inverse.transparent textarea,
 .control-group.has-info .control-group.inverse.transparent textarea {
-  color: #4ff6ff;
+  color: #00abc4;
   background-color: #ffffff;
-  border-color: #4ff6ff;
+  border-color: #00abc4;
 }
 form.has-info .hint,
 .control.has-info .hint,
@@ -1972,7 +2096,95 @@ form.has-info .control-group.inverse.transparent .hint,
 .control.has-info .control-group.inverse.transparent .hint,
 [class*="cell"].has-info .control-group.inverse.transparent .hint,
 .control-group.has-info .control-group.inverse.transparent .hint {
-  color: #4ff6ff;
+  color: #00abc4;
+}
+form.has-info .tooltip,
+.control.has-info .tooltip,
+[class*="cell"].has-info .tooltip,
+.control-group.has-info .tooltip,
+form.has-info .control .tooltip,
+.control.has-info .control .tooltip,
+[class*="cell"].has-info .control .tooltip,
+.control-group.has-info .control .tooltip,
+form.has-info [class*="cell"] .tooltip,
+.control.has-info [class*="cell"] .tooltip,
+[class*="cell"].has-info [class*="cell"] .tooltip,
+.control-group.has-info [class*="cell"] .tooltip,
+form.has-info .control-group .tooltip,
+.control.has-info .control-group .tooltip,
+[class*="cell"].has-info .control-group .tooltip,
+.control-group.has-info .control-group .tooltip,
+form.has-info.inverse.transparent .tooltip,
+.control.has-info.inverse.transparent .tooltip,
+[class*="cell"].has-info.inverse.transparent .tooltip,
+.control-group.has-info.inverse.transparent .tooltip,
+form.has-info .control.inverse.transparent .tooltip,
+.control.has-info .control.inverse.transparent .tooltip,
+[class*="cell"].has-info .control.inverse.transparent .tooltip,
+.control-group.has-info .control.inverse.transparent .tooltip,
+form.has-info [class*="cell"].inverse.transparent .tooltip,
+.control.has-info [class*="cell"].inverse.transparent .tooltip,
+[class*="cell"].has-info [class*="cell"].inverse.transparent .tooltip,
+.control-group.has-info [class*="cell"].inverse.transparent .tooltip,
+form.has-info .control-group.inverse.transparent .tooltip,
+.control.has-info .control-group.inverse.transparent .tooltip,
+[class*="cell"].has-info .control-group.inverse.transparent .tooltip,
+.control-group.has-info .control-group.inverse.transparent .tooltip {
+  background-color: #00abc4;
+  bottom: auto;
+  top: calc(100% + 5px);
+  right: -10px;
+  left: auto;
+  margin-top: 5px;
+}
+form.has-info .tooltip:after,
+.control.has-info .tooltip:after,
+[class*="cell"].has-info .tooltip:after,
+.control-group.has-info .tooltip:after,
+form.has-info .control .tooltip:after,
+.control.has-info .control .tooltip:after,
+[class*="cell"].has-info .control .tooltip:after,
+.control-group.has-info .control .tooltip:after,
+form.has-info [class*="cell"] .tooltip:after,
+.control.has-info [class*="cell"] .tooltip:after,
+[class*="cell"].has-info [class*="cell"] .tooltip:after,
+.control-group.has-info [class*="cell"] .tooltip:after,
+form.has-info .control-group .tooltip:after,
+.control.has-info .control-group .tooltip:after,
+[class*="cell"].has-info .control-group .tooltip:after,
+.control-group.has-info .control-group .tooltip:after,
+form.has-info.inverse.transparent .tooltip:after,
+.control.has-info.inverse.transparent .tooltip:after,
+[class*="cell"].has-info.inverse.transparent .tooltip:after,
+.control-group.has-info.inverse.transparent .tooltip:after,
+form.has-info .control.inverse.transparent .tooltip:after,
+.control.has-info .control.inverse.transparent .tooltip:after,
+[class*="cell"].has-info .control.inverse.transparent .tooltip:after,
+.control-group.has-info .control.inverse.transparent .tooltip:after,
+form.has-info [class*="cell"].inverse.transparent .tooltip:after,
+.control.has-info [class*="cell"].inverse.transparent .tooltip:after,
+[class*="cell"].has-info [class*="cell"].inverse.transparent .tooltip:after,
+.control-group.has-info [class*="cell"].inverse.transparent .tooltip:after,
+form.has-info .control-group.inverse.transparent .tooltip:after,
+.control.has-info .control-group.inverse.transparent .tooltip:after,
+[class*="cell"].has-info .control-group.inverse.transparent .tooltip:after,
+.control-group.has-info .control-group.inverse.transparent .tooltip:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  z-index: 1;
+  bottom: -10px;
+  right: -10px;
+  left: auto;
+  border-top: 0;
+  border-bottom: 5px solid #00abc4;
+  margin-right: 10px;
+  top: auto;
+  bottom: 100%;
+  right: 0;
+  margin-top: -5px;
+  margin-bottom: auto;
 }
 form.has-info.inverse select,
 .control.has-info.inverse select,
@@ -2022,7 +2234,7 @@ form.has-info .control-group.inverse input,
 .control.has-info .control-group.inverse input,
 [class*="cell"].has-info .control-group.inverse input,
 .control-group.has-info .control-group.inverse input {
-  background-color: #4ff6ff;
+  background-color: #00abc4;
   border-color: #ffffff;
   color: #ffffff;
 }
@@ -2268,7 +2480,7 @@ form.has-info .control-group.select-arrow select + span:after,
 .control.has-info .control-group.select-arrow select + span:after,
 [class*="cell"].has-info .control-group.select-arrow select + span:after,
 .control-group.has-info .control-group.select-arrow select + span:after {
-  color: #4ff6ff;
+  color: #00abc4;
 }
 form.has-error.inverse.transparent[class*="icon-"]:before,
 .control.has-error.inverse.transparent[class*="icon-"]:before,
@@ -2318,7 +2530,7 @@ form.has-error .control-group.inverse.transparent.select-arrow select + span:aft
 .control.has-error .control-group.inverse.transparent.select-arrow select + span:after,
 [class*="cell"].has-error .control-group.inverse.transparent.select-arrow select + span:after,
 .control-group.has-error .control-group.inverse.transparent.select-arrow select + span:after {
-  color: #ff5b60;
+  color: #cf4040;
 }
 form.has-error input[type="date"],
 .control.has-error input[type="date"],
@@ -2640,9 +2852,9 @@ form.has-error .control-group.inverse.transparent input[type="url"],
 .control.has-error .control-group.inverse.transparent input[type="url"],
 [class*="cell"].has-error .control-group.inverse.transparent input[type="url"],
 .control-group.has-error .control-group.inverse.transparent input[type="url"] {
-  color: #ff5b60;
+  color: #cf4040;
   background-color: #ffffff;
-  border-color: #ff5b60;
+  border-color: #cf4040;
 }
 form.has-error select,
 .control.has-error select,
@@ -2708,9 +2920,9 @@ form.has-error .control-group.inverse.transparent textarea,
 .control.has-error .control-group.inverse.transparent textarea,
 [class*="cell"].has-error .control-group.inverse.transparent textarea,
 .control-group.has-error .control-group.inverse.transparent textarea {
-  color: #ff5b60;
+  color: #cf4040;
   background-color: #ffffff;
-  border-color: #ff5b60;
+  border-color: #cf4040;
 }
 form.has-error .hint,
 .control.has-error .hint,
@@ -2744,7 +2956,95 @@ form.has-error .control-group.inverse.transparent .hint,
 .control.has-error .control-group.inverse.transparent .hint,
 [class*="cell"].has-error .control-group.inverse.transparent .hint,
 .control-group.has-error .control-group.inverse.transparent .hint {
-  color: #ff5b60;
+  color: #cf4040;
+}
+form.has-error .tooltip,
+.control.has-error .tooltip,
+[class*="cell"].has-error .tooltip,
+.control-group.has-error .tooltip,
+form.has-error .control .tooltip,
+.control.has-error .control .tooltip,
+[class*="cell"].has-error .control .tooltip,
+.control-group.has-error .control .tooltip,
+form.has-error [class*="cell"] .tooltip,
+.control.has-error [class*="cell"] .tooltip,
+[class*="cell"].has-error [class*="cell"] .tooltip,
+.control-group.has-error [class*="cell"] .tooltip,
+form.has-error .control-group .tooltip,
+.control.has-error .control-group .tooltip,
+[class*="cell"].has-error .control-group .tooltip,
+.control-group.has-error .control-group .tooltip,
+form.has-error.inverse.transparent .tooltip,
+.control.has-error.inverse.transparent .tooltip,
+[class*="cell"].has-error.inverse.transparent .tooltip,
+.control-group.has-error.inverse.transparent .tooltip,
+form.has-error .control.inverse.transparent .tooltip,
+.control.has-error .control.inverse.transparent .tooltip,
+[class*="cell"].has-error .control.inverse.transparent .tooltip,
+.control-group.has-error .control.inverse.transparent .tooltip,
+form.has-error [class*="cell"].inverse.transparent .tooltip,
+.control.has-error [class*="cell"].inverse.transparent .tooltip,
+[class*="cell"].has-error [class*="cell"].inverse.transparent .tooltip,
+.control-group.has-error [class*="cell"].inverse.transparent .tooltip,
+form.has-error .control-group.inverse.transparent .tooltip,
+.control.has-error .control-group.inverse.transparent .tooltip,
+[class*="cell"].has-error .control-group.inverse.transparent .tooltip,
+.control-group.has-error .control-group.inverse.transparent .tooltip {
+  background-color: #cf4040;
+  bottom: auto;
+  top: calc(100% + 5px);
+  right: -10px;
+  left: auto;
+  margin-top: 5px;
+}
+form.has-error .tooltip:after,
+.control.has-error .tooltip:after,
+[class*="cell"].has-error .tooltip:after,
+.control-group.has-error .tooltip:after,
+form.has-error .control .tooltip:after,
+.control.has-error .control .tooltip:after,
+[class*="cell"].has-error .control .tooltip:after,
+.control-group.has-error .control .tooltip:after,
+form.has-error [class*="cell"] .tooltip:after,
+.control.has-error [class*="cell"] .tooltip:after,
+[class*="cell"].has-error [class*="cell"] .tooltip:after,
+.control-group.has-error [class*="cell"] .tooltip:after,
+form.has-error .control-group .tooltip:after,
+.control.has-error .control-group .tooltip:after,
+[class*="cell"].has-error .control-group .tooltip:after,
+.control-group.has-error .control-group .tooltip:after,
+form.has-error.inverse.transparent .tooltip:after,
+.control.has-error.inverse.transparent .tooltip:after,
+[class*="cell"].has-error.inverse.transparent .tooltip:after,
+.control-group.has-error.inverse.transparent .tooltip:after,
+form.has-error .control.inverse.transparent .tooltip:after,
+.control.has-error .control.inverse.transparent .tooltip:after,
+[class*="cell"].has-error .control.inverse.transparent .tooltip:after,
+.control-group.has-error .control.inverse.transparent .tooltip:after,
+form.has-error [class*="cell"].inverse.transparent .tooltip:after,
+.control.has-error [class*="cell"].inverse.transparent .tooltip:after,
+[class*="cell"].has-error [class*="cell"].inverse.transparent .tooltip:after,
+.control-group.has-error [class*="cell"].inverse.transparent .tooltip:after,
+form.has-error .control-group.inverse.transparent .tooltip:after,
+.control.has-error .control-group.inverse.transparent .tooltip:after,
+[class*="cell"].has-error .control-group.inverse.transparent .tooltip:after,
+.control-group.has-error .control-group.inverse.transparent .tooltip:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  z-index: 1;
+  bottom: -10px;
+  right: -10px;
+  left: auto;
+  border-top: 0;
+  border-bottom: 5px solid #cf4040;
+  margin-right: 10px;
+  top: auto;
+  bottom: 100%;
+  right: 0;
+  margin-top: -5px;
+  margin-bottom: auto;
 }
 form.has-error.inverse select,
 .control.has-error.inverse select,
@@ -2794,7 +3094,7 @@ form.has-error .control-group.inverse input,
 .control.has-error .control-group.inverse input,
 [class*="cell"].has-error .control-group.inverse input,
 .control-group.has-error .control-group.inverse input {
-  background-color: #ff5b60;
+  background-color: #cf4040;
   border-color: #ffffff;
   color: #ffffff;
 }
@@ -3040,7 +3340,7 @@ form.has-error .control-group.select-arrow select + span:after,
 .control.has-error .control-group.select-arrow select + span:after,
 [class*="cell"].has-error .control-group.select-arrow select + span:after,
 .control-group.has-error .control-group.select-arrow select + span:after {
-  color: #ff5b60;
+  color: #cf4040;
 }
 form.has-warning.inverse.transparent[class*="icon-"]:before,
 .control.has-warning.inverse.transparent[class*="icon-"]:before,
@@ -3090,7 +3390,7 @@ form.has-warning .control-group.inverse.transparent.select-arrow select + span:a
 .control.has-warning .control-group.inverse.transparent.select-arrow select + span:after,
 [class*="cell"].has-warning .control-group.inverse.transparent.select-arrow select + span:after,
 .control-group.has-warning .control-group.inverse.transparent.select-arrow select + span:after {
-  color: #e8ae47;
+  color: #ea8432;
 }
 form.has-warning input[type="date"],
 .control.has-warning input[type="date"],
@@ -3412,9 +3712,9 @@ form.has-warning .control-group.inverse.transparent input[type="url"],
 .control.has-warning .control-group.inverse.transparent input[type="url"],
 [class*="cell"].has-warning .control-group.inverse.transparent input[type="url"],
 .control-group.has-warning .control-group.inverse.transparent input[type="url"] {
-  color: #e8ae47;
+  color: #ea8432;
   background-color: #ffffff;
-  border-color: #e8ae47;
+  border-color: #ea8432;
 }
 form.has-warning select,
 .control.has-warning select,
@@ -3480,9 +3780,9 @@ form.has-warning .control-group.inverse.transparent textarea,
 .control.has-warning .control-group.inverse.transparent textarea,
 [class*="cell"].has-warning .control-group.inverse.transparent textarea,
 .control-group.has-warning .control-group.inverse.transparent textarea {
-  color: #e8ae47;
+  color: #ea8432;
   background-color: #ffffff;
-  border-color: #e8ae47;
+  border-color: #ea8432;
 }
 form.has-warning .hint,
 .control.has-warning .hint,
@@ -3516,7 +3816,95 @@ form.has-warning .control-group.inverse.transparent .hint,
 .control.has-warning .control-group.inverse.transparent .hint,
 [class*="cell"].has-warning .control-group.inverse.transparent .hint,
 .control-group.has-warning .control-group.inverse.transparent .hint {
-  color: #e8ae47;
+  color: #ea8432;
+}
+form.has-warning .tooltip,
+.control.has-warning .tooltip,
+[class*="cell"].has-warning .tooltip,
+.control-group.has-warning .tooltip,
+form.has-warning .control .tooltip,
+.control.has-warning .control .tooltip,
+[class*="cell"].has-warning .control .tooltip,
+.control-group.has-warning .control .tooltip,
+form.has-warning [class*="cell"] .tooltip,
+.control.has-warning [class*="cell"] .tooltip,
+[class*="cell"].has-warning [class*="cell"] .tooltip,
+.control-group.has-warning [class*="cell"] .tooltip,
+form.has-warning .control-group .tooltip,
+.control.has-warning .control-group .tooltip,
+[class*="cell"].has-warning .control-group .tooltip,
+.control-group.has-warning .control-group .tooltip,
+form.has-warning.inverse.transparent .tooltip,
+.control.has-warning.inverse.transparent .tooltip,
+[class*="cell"].has-warning.inverse.transparent .tooltip,
+.control-group.has-warning.inverse.transparent .tooltip,
+form.has-warning .control.inverse.transparent .tooltip,
+.control.has-warning .control.inverse.transparent .tooltip,
+[class*="cell"].has-warning .control.inverse.transparent .tooltip,
+.control-group.has-warning .control.inverse.transparent .tooltip,
+form.has-warning [class*="cell"].inverse.transparent .tooltip,
+.control.has-warning [class*="cell"].inverse.transparent .tooltip,
+[class*="cell"].has-warning [class*="cell"].inverse.transparent .tooltip,
+.control-group.has-warning [class*="cell"].inverse.transparent .tooltip,
+form.has-warning .control-group.inverse.transparent .tooltip,
+.control.has-warning .control-group.inverse.transparent .tooltip,
+[class*="cell"].has-warning .control-group.inverse.transparent .tooltip,
+.control-group.has-warning .control-group.inverse.transparent .tooltip {
+  background-color: #ea8432;
+  bottom: auto;
+  top: calc(100% + 5px);
+  right: -10px;
+  left: auto;
+  margin-top: 5px;
+}
+form.has-warning .tooltip:after,
+.control.has-warning .tooltip:after,
+[class*="cell"].has-warning .tooltip:after,
+.control-group.has-warning .tooltip:after,
+form.has-warning .control .tooltip:after,
+.control.has-warning .control .tooltip:after,
+[class*="cell"].has-warning .control .tooltip:after,
+.control-group.has-warning .control .tooltip:after,
+form.has-warning [class*="cell"] .tooltip:after,
+.control.has-warning [class*="cell"] .tooltip:after,
+[class*="cell"].has-warning [class*="cell"] .tooltip:after,
+.control-group.has-warning [class*="cell"] .tooltip:after,
+form.has-warning .control-group .tooltip:after,
+.control.has-warning .control-group .tooltip:after,
+[class*="cell"].has-warning .control-group .tooltip:after,
+.control-group.has-warning .control-group .tooltip:after,
+form.has-warning.inverse.transparent .tooltip:after,
+.control.has-warning.inverse.transparent .tooltip:after,
+[class*="cell"].has-warning.inverse.transparent .tooltip:after,
+.control-group.has-warning.inverse.transparent .tooltip:after,
+form.has-warning .control.inverse.transparent .tooltip:after,
+.control.has-warning .control.inverse.transparent .tooltip:after,
+[class*="cell"].has-warning .control.inverse.transparent .tooltip:after,
+.control-group.has-warning .control.inverse.transparent .tooltip:after,
+form.has-warning [class*="cell"].inverse.transparent .tooltip:after,
+.control.has-warning [class*="cell"].inverse.transparent .tooltip:after,
+[class*="cell"].has-warning [class*="cell"].inverse.transparent .tooltip:after,
+.control-group.has-warning [class*="cell"].inverse.transparent .tooltip:after,
+form.has-warning .control-group.inverse.transparent .tooltip:after,
+.control.has-warning .control-group.inverse.transparent .tooltip:after,
+[class*="cell"].has-warning .control-group.inverse.transparent .tooltip:after,
+.control-group.has-warning .control-group.inverse.transparent .tooltip:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  z-index: 1;
+  bottom: -10px;
+  right: -10px;
+  left: auto;
+  border-top: 0;
+  border-bottom: 5px solid #ea8432;
+  margin-right: 10px;
+  top: auto;
+  bottom: 100%;
+  right: 0;
+  margin-top: -5px;
+  margin-bottom: auto;
 }
 form.has-warning.inverse select,
 .control.has-warning.inverse select,
@@ -3566,7 +3954,7 @@ form.has-warning .control-group.inverse input,
 .control.has-warning .control-group.inverse input,
 [class*="cell"].has-warning .control-group.inverse input,
 .control-group.has-warning .control-group.inverse input {
-  background-color: #e8ae47;
+  background-color: #ea8432;
   border-color: #ffffff;
   color: #ffffff;
 }
@@ -3812,7 +4200,7 @@ form.has-warning .control-group.select-arrow select + span:after,
 .control.has-warning .control-group.select-arrow select + span:after,
 [class*="cell"].has-warning .control-group.select-arrow select + span:after,
 .control-group.has-warning .control-group.select-arrow select + span:after {
-  color: #e8ae47;
+  color: #ea8432;
 }
 .inputs-s label,
 .size-s label,
@@ -3894,7 +4282,7 @@ form.has-warning .control-group.select-arrow select + span:after,
   text-decoration: none;
   outline: 0 none;
   position: relative;
-  min-height: calc(1.35rem + 0.7rem + 2px);
+  min-height: calc(1.35rem + 0.7rem - 2px);
 }
 .select > input {
   position: absolute;
@@ -3967,7 +4355,7 @@ form.has-warning .control-group.select-arrow select + span:after,
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  min-height: calc(1.35rem + 0.7rem + 2px);
+  min-height: calc(1.35rem + 0.7rem - 2px);
   padding-right: 0.5rem;
 }
 .select.hoverable:not(:hover) .select-content:only-child label,
@@ -4018,9 +4406,9 @@ form.has-warning .control-group.select-arrow select + span:after,
   display: inline-block;
   pointer-events: none;
 }
-.select.hoverable:not(:hover) .select-content:only-child [type="checkbox"] ~ .placeholder,
-.select:not(.hoverable):not(.active):not([tabindex]):not(:focus) .select-content:only-child [type="checkbox"] ~ .placeholder,
-.select[tabindex]:not(:focus) .select-content:only-child [type="checkbox"] ~ .placeholder {
+.select.hoverable:not(:hover) .select-content:only-child .placeholder,
+.select:not(.hoverable):not(.active):not([tabindex]):not(:focus) .select-content:only-child .placeholder,
+.select[tabindex]:not(:focus) .select-content:only-child .placeholder {
   margin: calc(0.35rem) calc(0.5rem);
 }
 .select > input:not(:checked) + .select-content {
@@ -4029,7 +4417,7 @@ form.has-warning .control-group.select-arrow select + span:after,
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  min-height: calc(1.35rem + 0.7rem + 2px);
+  min-height: calc(1.35rem + 0.7rem - 2px);
   padding-right: 0.5rem;
 }
 .select > input:not(:checked) + .select-content label,
@@ -4066,7 +4454,7 @@ form.has-warning .control-group.select-arrow select + span:after,
   display: inline-block;
   pointer-events: none;
 }
-.select > input:not(:checked) + .select-content [type="checkbox"] ~ .placeholder {
+.select > input:not(:checked) + .select-content .placeholder {
   margin: calc(0.35rem) calc(0.5rem);
 }
 .select .placeholder {
@@ -4991,7 +5379,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   border: 0 solid #3c3c3c;
   box-shadow: 0;
   text-align: left;
-  line-height: 1.35em;
+  line-height: 1.35rem;
   font-size: 0.8rem;
 }
 .tooltip.hoverable:before {
@@ -5359,7 +5747,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   border: 0 solid #3c3c3c;
   box-shadow: 0;
   text-align: left;
-  line-height: 1.35em;
+  line-height: 1.35rem;
   font-size: 0.8rem;
   content: attr(data-tooltip);
   display: block;
@@ -6029,10 +6417,10 @@ button.button.ellipsis > * {
   background: transparent;
   outline: none;
   box-shadow: none;
-  color: #5D769D;
+  color: #7e4bbc;
 }
 .button.as-link:hover {
-  color: #9cacc4;
+  color: #b395d8;
   text-decoration: underline;
   border-color: transparent;
   background: transparent;
@@ -6293,51 +6681,51 @@ input.button {
   border-color: #ffffff;
 }
 .button-link {
-  background: #5d769d;
+  background: #7e4bbc;
   color: #ffffff;
-  border-color: #5d769d;
-  background-color: #5d769d;
-  background: -webkit-gradient(linear, left top, left bottom, from(#5d769d), to(#506587));
-  background: -webkit-linear-gradient(top, #5d769d, #506587);
-  background: -moz-linear-gradient(top, #5d769d, #506587);
-  background: -ms-linear-gradient(top, #5d769d, #506587);
-  background: -o-linear-gradient(top, #5d769d, #506587);
+  border-color: #7e4bbc;
+  background-color: #7e4bbc;
+  background: -webkit-gradient(linear, left top, left bottom, from(#7e4bbc), to(#6d3ea6));
+  background: -webkit-linear-gradient(top, #7e4bbc, #6d3ea6);
+  background: -moz-linear-gradient(top, #7e4bbc, #6d3ea6);
+  background: -ms-linear-gradient(top, #7e4bbc, #6d3ea6);
+  background: -o-linear-gradient(top, #7e4bbc, #6d3ea6);
 }
 .button-link:hover,
 .button-link.hover {
-  background: #7c91b1;
-  border-color: #7c91b1;
-  background-color: #7c91b1;
-  background: -webkit-gradient(linear, left top, left bottom, from(#7c91b1), to(#9cacc4));
-  background: -webkit-linear-gradient(top, #7c91b1, #9cacc4);
-  background: -moz-linear-gradient(top, #7c91b1, #9cacc4);
-  background: -ms-linear-gradient(top, #7c91b1, #9cacc4);
-  background: -o-linear-gradient(top, #7c91b1, #9cacc4);
+  background: #9970ca;
+  border-color: #9970ca;
+  background-color: #9970ca;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9970ca), to(#b395d8));
+  background: -webkit-linear-gradient(top, #9970ca, #b395d8);
+  background: -moz-linear-gradient(top, #9970ca, #b395d8);
+  background: -ms-linear-gradient(top, #9970ca, #b395d8);
+  background: -o-linear-gradient(top, #9970ca, #b395d8);
 }
 .button-link:active,
 .button-link.active {
-  background: #758bad;
-  border-color: #758bad;
-  background-color: #758bad;
-  background: -webkit-gradient(linear, left top, left bottom, from(#758bad), to(#95a6c0));
-  background: -webkit-linear-gradient(top, #758bad, #95a6c0);
-  background: -moz-linear-gradient(top, #758bad, #95a6c0);
-  background: -ms-linear-gradient(top, #758bad, #95a6c0);
-  background: -o-linear-gradient(top, #758bad, #95a6c0);
+  background: #9369c7;
+  border-color: #9369c7;
+  background-color: #9369c7;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9369c7), to(#ae8ed5));
+  background: -webkit-linear-gradient(top, #9369c7, #ae8ed5);
+  background: -moz-linear-gradient(top, #9369c7, #ae8ed5);
+  background: -ms-linear-gradient(top, #9369c7, #ae8ed5);
+  background: -o-linear-gradient(top, #9369c7, #ae8ed5);
 }
 .button-link.inverse {
   background: #ffffff;
-  color: #5d769d;
-  border-color: #5d769d;
-  outline-color: #5d769d;
+  color: #7e4bbc;
+  border-color: #7e4bbc;
+  outline-color: #7e4bbc;
 }
 .button-link.inverse:hover,
 .button-link.inverse.hover {
-  color: #7c91b1;
+  color: #9970ca;
 }
 .button-link.inverse:active,
 .button-link.inverse.active {
-  color: #758bad;
+  color: #9369c7;
 }
 .button-link.border-contrast,
 .button-link.border-contrast:focus,
@@ -6461,51 +6849,51 @@ input.button {
   border-color: #111111;
 }
 .button-success {
-  background: #c4ff5b;
+  background: #84b500;
   color: #ffffff;
-  border-color: #c4ff5b;
-  background-color: #c4ff5b;
-  background: -webkit-gradient(linear, left top, left bottom, from(#c4ff5b), to(#b7ff37));
-  background: -webkit-linear-gradient(top, #c4ff5b, #b7ff37);
-  background: -moz-linear-gradient(top, #c4ff5b, #b7ff37);
-  background: -ms-linear-gradient(top, #c4ff5b, #b7ff37);
-  background: -o-linear-gradient(top, #c4ff5b, #b7ff37);
+  border-color: #84b500;
+  background-color: #84b500;
+  background: -webkit-gradient(linear, left top, left bottom, from(#84b500), to(#6a9100));
+  background: -webkit-linear-gradient(top, #84b500, #6a9100);
+  background: -moz-linear-gradient(top, #84b500, #6a9100);
+  background: -ms-linear-gradient(top, #84b500, #6a9100);
+  background: -o-linear-gradient(top, #84b500, #6a9100);
 }
 .button-success:hover,
 .button-success.hover {
-  background: #d6ff8e;
-  border-color: #d6ff8e;
-  background-color: #d6ff8e;
-  background: -webkit-gradient(linear, left top, left bottom, from(#d6ff8e), to(#e9ffc1));
-  background: -webkit-linear-gradient(top, #d6ff8e, #e9ffc1);
-  background: -moz-linear-gradient(top, #d6ff8e, #e9ffc1);
-  background: -ms-linear-gradient(top, #d6ff8e, #e9ffc1);
-  background: -o-linear-gradient(top, #d6ff8e, #e9ffc1);
+  background: #a9e800;
+  border-color: #a9e800;
+  background-color: #a9e800;
+  background: -webkit-gradient(linear, left top, left bottom, from(#a9e800), to(#c2ff1c));
+  background: -webkit-linear-gradient(top, #a9e800, #c2ff1c);
+  background: -moz-linear-gradient(top, #a9e800, #c2ff1c);
+  background: -ms-linear-gradient(top, #a9e800, #c2ff1c);
+  background: -o-linear-gradient(top, #a9e800, #c2ff1c);
 }
 .button-success:active,
 .button-success.active {
-  background: #d3ff84;
-  border-color: #d3ff84;
-  background-color: #d3ff84;
-  background: -webkit-gradient(linear, left top, left bottom, from(#d3ff84), to(#e5ffb7));
-  background: -webkit-linear-gradient(top, #d3ff84, #e5ffb7);
-  background: -moz-linear-gradient(top, #d3ff84, #e5ffb7);
-  background: -ms-linear-gradient(top, #d3ff84, #e5ffb7);
-  background: -o-linear-gradient(top, #d3ff84, #e5ffb7);
+  background: #a2de00;
+  border-color: #a2de00;
+  background-color: #a2de00;
+  background: -webkit-gradient(linear, left top, left bottom, from(#a2de00), to(#bfff12));
+  background: -webkit-linear-gradient(top, #a2de00, #bfff12);
+  background: -moz-linear-gradient(top, #a2de00, #bfff12);
+  background: -ms-linear-gradient(top, #a2de00, #bfff12);
+  background: -o-linear-gradient(top, #a2de00, #bfff12);
 }
 .button-success.inverse {
   background: #ffffff;
-  color: #c4ff5b;
-  border-color: #c4ff5b;
-  outline-color: #c4ff5b;
+  color: #84b500;
+  border-color: #84b500;
+  outline-color: #84b500;
 }
 .button-success.inverse:hover,
 .button-success.inverse.hover {
-  color: #d6ff8e;
+  color: #a9e800;
 }
 .button-success.inverse:active,
 .button-success.inverse.active {
-  color: #d3ff84;
+  color: #a2de00;
 }
 .button-success.border-contrast,
 .button-success.border-contrast:focus,
@@ -6517,51 +6905,51 @@ input.button {
   border-color: #ffffff;
 }
 .button-info {
-  background: #4ff6ff;
+  background: #00abc4;
   color: #ffffff;
-  border-color: #4ff6ff;
-  background-color: #4ff6ff;
-  background: -webkit-gradient(linear, left top, left bottom, from(#4ff6ff), to(#2bf4ff));
-  background: -webkit-linear-gradient(top, #4ff6ff, #2bf4ff);
-  background: -moz-linear-gradient(top, #4ff6ff, #2bf4ff);
-  background: -ms-linear-gradient(top, #4ff6ff, #2bf4ff);
-  background: -o-linear-gradient(top, #4ff6ff, #2bf4ff);
+  border-color: #00abc4;
+  background-color: #00abc4;
+  background: -webkit-gradient(linear, left top, left bottom, from(#00abc4), to(#008ca0));
+  background: -webkit-linear-gradient(top, #00abc4, #008ca0);
+  background: -moz-linear-gradient(top, #00abc4, #008ca0);
+  background: -ms-linear-gradient(top, #00abc4, #008ca0);
+  background: -o-linear-gradient(top, #00abc4, #008ca0);
 }
 .button-info:hover,
 .button-info.hover {
-  background: #82f9ff;
-  border-color: #82f9ff;
-  background-color: #82f9ff;
-  background: -webkit-gradient(linear, left top, left bottom, from(#82f9ff), to(#b5fbff));
-  background: -webkit-linear-gradient(top, #82f9ff, #b5fbff);
-  background: -moz-linear-gradient(top, #82f9ff, #b5fbff);
-  background: -ms-linear-gradient(top, #82f9ff, #b5fbff);
-  background: -o-linear-gradient(top, #82f9ff, #b5fbff);
+  background: #00d7f7;
+  border-color: #00d7f7;
+  background-color: #00d7f7;
+  background: -webkit-gradient(linear, left top, left bottom, from(#00d7f7), to(#2be4ff));
+  background: -webkit-linear-gradient(top, #00d7f7, #2be4ff);
+  background: -moz-linear-gradient(top, #00d7f7, #2be4ff);
+  background: -ms-linear-gradient(top, #00d7f7, #2be4ff);
+  background: -o-linear-gradient(top, #00d7f7, #2be4ff);
 }
 .button-info:active,
 .button-info.active {
-  background: #78f8ff;
-  border-color: #78f8ff;
-  background-color: #78f8ff;
-  background: -webkit-gradient(linear, left top, left bottom, from(#78f8ff), to(#abfbff));
-  background: -webkit-linear-gradient(top, #78f8ff, #abfbff);
-  background: -moz-linear-gradient(top, #78f8ff, #abfbff);
-  background: -ms-linear-gradient(top, #78f8ff, #abfbff);
-  background: -o-linear-gradient(top, #78f8ff, #abfbff);
+  background: #00cfed;
+  border-color: #00cfed;
+  background-color: #00cfed;
+  background: -webkit-gradient(linear, left top, left bottom, from(#00cfed), to(#21e3ff));
+  background: -webkit-linear-gradient(top, #00cfed, #21e3ff);
+  background: -moz-linear-gradient(top, #00cfed, #21e3ff);
+  background: -ms-linear-gradient(top, #00cfed, #21e3ff);
+  background: -o-linear-gradient(top, #00cfed, #21e3ff);
 }
 .button-info.inverse {
   background: #ffffff;
-  color: #4ff6ff;
-  border-color: #4ff6ff;
-  outline-color: #4ff6ff;
+  color: #00abc4;
+  border-color: #00abc4;
+  outline-color: #00abc4;
 }
 .button-info.inverse:hover,
 .button-info.inverse.hover {
-  color: #82f9ff;
+  color: #00d7f7;
 }
 .button-info.inverse:active,
 .button-info.inverse.active {
-  color: #78f8ff;
+  color: #00cfed;
 }
 .button-info.border-contrast,
 .button-info.border-contrast:focus,
@@ -6573,51 +6961,51 @@ input.button {
   border-color: #ffffff;
 }
 .button-warning {
-  background: #e8ae47;
+  background: #ea8432;
   color: #111111;
-  border-color: #e8ae47;
-  background-color: #e8ae47;
-  background: -webkit-gradient(linear, left top, left bottom, from(#e8ae47), to(#e4a027));
-  background: -webkit-linear-gradient(top, #e8ae47, #e4a027);
-  background: -moz-linear-gradient(top, #e8ae47, #e4a027);
-  background: -ms-linear-gradient(top, #e8ae47, #e4a027);
-  background: -o-linear-gradient(top, #e8ae47, #e4a027);
+  border-color: #ea8432;
+  background-color: #ea8432;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ea8432), to(#e17117));
+  background: -webkit-linear-gradient(top, #ea8432, #e17117);
+  background: -moz-linear-gradient(top, #ea8432, #e17117);
+  background: -ms-linear-gradient(top, #ea8432, #e17117);
+  background: -o-linear-gradient(top, #ea8432, #e17117);
 }
 .button-warning:hover,
 .button-warning.hover {
-  background: #eec274;
-  border-color: #eec274;
-  background-color: #eec274;
-  background: -webkit-gradient(linear, left top, left bottom, from(#eec274), to(#f3d6a2));
-  background: -webkit-linear-gradient(top, #eec274, #f3d6a2);
-  background: -moz-linear-gradient(top, #eec274, #f3d6a2);
-  background: -ms-linear-gradient(top, #eec274, #f3d6a2);
-  background: -o-linear-gradient(top, #eec274, #f3d6a2);
+  background: #efa060;
+  border-color: #efa060;
+  background-color: #efa060;
+  background: -webkit-gradient(linear, left top, left bottom, from(#efa060), to(#f3bc8f));
+  background: -webkit-linear-gradient(top, #efa060, #f3bc8f);
+  background: -moz-linear-gradient(top, #efa060, #f3bc8f);
+  background: -ms-linear-gradient(top, #efa060, #f3bc8f);
+  background: -o-linear-gradient(top, #efa060, #f3bc8f);
 }
 .button-warning:active,
 .button-warning.active {
-  background: #edbe6b;
-  border-color: #edbe6b;
-  background-color: #edbe6b;
-  background: -webkit-gradient(linear, left top, left bottom, from(#edbe6b), to(#f2d299));
-  background: -webkit-linear-gradient(top, #edbe6b, #f2d299);
-  background: -moz-linear-gradient(top, #edbe6b, #f2d299);
-  background: -ms-linear-gradient(top, #edbe6b, #f2d299);
-  background: -o-linear-gradient(top, #edbe6b, #f2d299);
+  background: #ee9a57;
+  border-color: #ee9a57;
+  background-color: #ee9a57;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ee9a57), to(#f3b685));
+  background: -webkit-linear-gradient(top, #ee9a57, #f3b685);
+  background: -moz-linear-gradient(top, #ee9a57, #f3b685);
+  background: -ms-linear-gradient(top, #ee9a57, #f3b685);
+  background: -o-linear-gradient(top, #ee9a57, #f3b685);
 }
 .button-warning.inverse {
   background: #111111;
-  color: #e8ae47;
-  border-color: #e8ae47;
-  outline-color: #e8ae47;
+  color: #ea8432;
+  border-color: #ea8432;
+  outline-color: #ea8432;
 }
 .button-warning.inverse:hover,
 .button-warning.inverse.hover {
-  color: #eec274;
+  color: #efa060;
 }
 .button-warning.inverse:active,
 .button-warning.inverse.active {
-  color: #edbe6b;
+  color: #ee9a57;
 }
 .button-warning.border-contrast,
 .button-warning.border-contrast:focus,
@@ -6629,51 +7017,51 @@ input.button {
   border-color: #111111;
 }
 .button-danger {
-  background: #ff5b60;
+  background: #cf4040;
   color: #ffffff;
-  border-color: #ff5b60;
-  background-color: #ff5b60;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff5b60), to(#ff373d));
-  background: -webkit-linear-gradient(top, #ff5b60, #ff373d);
-  background: -moz-linear-gradient(top, #ff5b60, #ff373d);
-  background: -ms-linear-gradient(top, #ff5b60, #ff373d);
-  background: -o-linear-gradient(top, #ff5b60, #ff373d);
+  border-color: #cf4040;
+  background-color: #cf4040;
+  background: -webkit-gradient(linear, left top, left bottom, from(#cf4040), to(#bc2f2f));
+  background: -webkit-linear-gradient(top, #cf4040, #bc2f2f);
+  background: -moz-linear-gradient(top, #cf4040, #bc2f2f);
+  background: -ms-linear-gradient(top, #cf4040, #bc2f2f);
+  background: -o-linear-gradient(top, #cf4040, #bc2f2f);
 }
 .button-danger:hover,
 .button-danger.hover {
-  background: #ff8e91;
-  border-color: #ff8e91;
-  background-color: #ff8e91;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff8e91), to(#ffc1c3));
-  background: -webkit-linear-gradient(top, #ff8e91, #ffc1c3);
-  background: -moz-linear-gradient(top, #ff8e91, #ffc1c3);
-  background: -ms-linear-gradient(top, #ff8e91, #ffc1c3);
-  background: -o-linear-gradient(top, #ff8e91, #ffc1c3);
+  background: #d96969;
+  border-color: #d96969;
+  background-color: #d96969;
+  background: -webkit-gradient(linear, left top, left bottom, from(#d96969), to(#e39292));
+  background: -webkit-linear-gradient(top, #d96969, #e39292);
+  background: -moz-linear-gradient(top, #d96969, #e39292);
+  background: -ms-linear-gradient(top, #d96969, #e39292);
+  background: -o-linear-gradient(top, #d96969, #e39292);
 }
 .button-danger:active,
 .button-danger.active {
-  background: #ff8488;
-  border-color: #ff8488;
-  background-color: #ff8488;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff8488), to(#ffb7b9));
-  background: -webkit-linear-gradient(top, #ff8488, #ffb7b9);
-  background: -moz-linear-gradient(top, #ff8488, #ffb7b9);
-  background: -ms-linear-gradient(top, #ff8488, #ffb7b9);
-  background: -o-linear-gradient(top, #ff8488, #ffb7b9);
+  background: #d76161;
+  border-color: #d76161;
+  background-color: #d76161;
+  background: -webkit-gradient(linear, left top, left bottom, from(#d76161), to(#e18989));
+  background: -webkit-linear-gradient(top, #d76161, #e18989);
+  background: -moz-linear-gradient(top, #d76161, #e18989);
+  background: -ms-linear-gradient(top, #d76161, #e18989);
+  background: -o-linear-gradient(top, #d76161, #e18989);
 }
 .button-danger.inverse {
   background: #ffffff;
-  color: #ff5b60;
-  border-color: #ff5b60;
-  outline-color: #ff5b60;
+  color: #cf4040;
+  border-color: #cf4040;
+  outline-color: #cf4040;
 }
 .button-danger.inverse:hover,
 .button-danger.inverse.hover {
-  color: #ff8e91;
+  color: #d96969;
 }
 .button-danger.inverse:active,
 .button-danger.inverse.active {
-  color: #ff8488;
+  color: #d76161;
 }
 .button-danger.border-contrast,
 .button-danger.border-contrast:focus,
@@ -13228,10 +13616,10 @@ section.alternative-dark {
   color: #ffffff;
 }
 section.link {
-  background: #fcfcfd;
+  background: #ffffff;
 }
 section.link-dark {
-  background: #242e3d;
+  background: #351e50;
   color: #ffffff;
 }
 section.mute {
@@ -13249,31 +13637,31 @@ section.cancel-dark {
   color: #111111;
 }
 section.success {
-  background: #ffffff;
+  background: #ebffb5;
 }
 section.success-dark {
-  background: #7cc100;
+  background: #141c00;
   color: #ffffff;
 }
 section.info {
-  background: #ffffff;
+  background: #c4f7ff;
 }
 section.info-dark {
-  background: #00acb5;
+  background: #00262b;
   color: #ffffff;
 }
 section.warning {
   background: #ffffff;
 }
 section.warning-dark {
-  background: #855b11;
+  background: #773c0c;
   color: #111111;
 }
 section.danger {
   background: #ffffff;
 }
 section.danger-dark {
-  background: #c10006;
+  background: #5e1818;
   color: #ffffff;
 }
 section.color-1 {
@@ -13313,7 +13701,7 @@ section.full-height {
   background-color: #ffffff;
 }
 .background-link {
-  background-color: #fcfcfd;
+  background-color: #ffffff;
 }
 .background-link.hoverable:hover {
   background-color: #ffffff;
@@ -13331,13 +13719,13 @@ section.full-height {
   background-color: #ffffff;
 }
 .background-success {
-  background-color: #ffffff;
+  background-color: #ebffb5;
 }
 .background-success.hoverable:hover {
   background-color: #ffffff;
 }
 .background-info {
-  background-color: #ffffff;
+  background-color: #c4f7ff;
 }
 .background-info.hoverable:hover {
   background-color: #ffffff;
@@ -13361,7 +13749,7 @@ section.full-height {
   color: #187782;
 }
 .text-link {
-  color: #4a5e7d;
+  color: #653a9a;
 }
 .text-mute {
   color: #3e3e3e;
@@ -13370,16 +13758,16 @@ section.full-height {
   color: #919191;
 }
 .text-success {
-  color: #b2ff28;
+  color: #5f8200;
 }
 .text-info {
-  color: #1cf3ff;
+  color: #007f91;
 }
 .text-warning {
-  color: #e0991c;
+  color: #d36a16;
 }
 .text-danger {
-  color: #ff282f;
+  color: #b02c2c;
 }
 .border-primary {
   color: #281e2b;
@@ -13388,7 +13776,7 @@ section.full-height {
   border-color: #209ead;
 }
 .border-link {
-  border-color: #4a5e7d;
+  border-color: #653a9a;
 }
 .border-mute {
   border-color: #575757;
@@ -13397,23 +13785,23 @@ section.full-height {
   border-color: #919191;
 }
 .border-success {
-  border-color: #c4ff5b;
+  border-color: #84b500;
 }
 .border-info {
-  border-color: #4ff6ff;
+  border-color: #00abc4;
 }
 .border-warning {
-  border-color: #e8ae47;
+  border-color: #ea8432;
 }
 .border-danger {
-  border-color: #ff5b60;
+  border-color: #cf4040;
 }
 a.link {
-  color: #5D769D;
+  color: #7e4bbc;
   text-decoration: none;
 }
 a.link:hover {
-  color: #9cacc4;
+  color: #b395d8;
   text-decoration: underline;
 }
 body {
@@ -23185,7 +23573,6 @@ fieldset .legend:after {
 }
 .has-tooltip {
   cursor: help;
-  border-bottom: 1px dotted #222;
 }
 .has-tooltip[tabindex]:focus {
   border-bottom: 1px solid #222;

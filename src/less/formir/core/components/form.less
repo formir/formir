@@ -217,6 +217,23 @@ select:not([multiple]) {
     line-height: @hint-line-height;
     font-weight: @hint-font-weight;
     color: @hint-text-color;
+    & when(@include-core-component-tooltip = true) {
+      &.@{has-tooltip} {
+        min-height: calc(@tooltip-padding-vertical  ~"*" 2  ~"+" @tooltip-line-height);
+        .@{tooltip} {
+          display: block;
+        }
+      }
+      .@{tooltip} {
+        top: @tooltip-distance !important;
+        & when (@form-tooltip-position = left) {
+          left: 0 !important;
+        }
+        & when (@form-tooltip-position = right) {
+          right: 0 !important;
+        }
+      }
+    }
   }
 
   &.@{form-validate} {
@@ -250,6 +267,42 @@ select:not([multiple]) {
 }
 
 .@{control}, [class*="@{cell}"], .@{control-group} {
+  position: relative;
+  & when(@include-core-component-tooltip = true) {
+    &.@{has-tooltip} {
+      & when not (@form-tooltip-input-show-on = hover) {
+        &:hover {
+          .@{tooltip} {
+            display: none;
+          }
+        }
+      }
+      input, select, textarea {
+        & when (@form-tooltip-input-show-on = focus) {
+          &:focus {
+            ~ .@{tooltip} {
+              display: block;
+            }
+          }
+        }
+        & when (@form-tooltip-input-show-on = not_focus) {
+          &:not(:focus) {
+            ~ .@{tooltip} {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+    .@{tooltip} {
+      & when (@form-tooltip-position = left) {
+        left: 0 !important;
+      }
+      & when (@form-tooltip-position = right) {
+        right: 0 !important;
+      }
+    }
+  }
   &.@{input-inverse} {
     input, select, textarea {
       background-color: @input-border-color;
@@ -423,6 +476,22 @@ select:not([multiple]) {
             .@{hint} {
               & when (@form-state-change-text-color = true) {
                 color: ~"@{input-color-@{name}}";
+              }
+            }
+          }
+          & when(@include-core-component-tooltip = true) {
+            & when (@form-state-change-tooltip = true) {
+              .@{tooltip} {
+                background-color: ~"@{input-color-@{name}}";
+                & when (@form-tooltip-position = left) {
+                  .tooltip-bottom(~"@{input-color-@{name}}");
+                }
+                & when (@form-tooltip-position = center) {
+                  .tooltip-bottom-center(~"@{input-color-@{name}}");
+                }
+                & when (@form-tooltip-position = right) {
+                  .tooltip-bottom-right(~"@{input-color-@{name}}");
+                }
               }
             }
           }
