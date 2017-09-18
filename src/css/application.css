@@ -249,7 +249,7 @@ textarea.input-l {
   box-shadow: none;
 }
 .select.input-s {
-  min-height: calc(1.1475rem + 0.2975rem * 2  + 1px * 2);
+  min-height: calc(1.1475rem + 0.2975rem * 2  - 1px * 2);
 }
 .select.input-s .select-content {
   border-radius: 2px;
@@ -264,7 +264,7 @@ textarea.input-l {
   padding: 0.2975rem 0.425rem;
 }
 .select.input-m {
-  min-height: calc(1.5525rem + 0.40249999999999997rem * 2  + 1px * 2);
+  min-height: calc(1.5525rem + 0.40249999999999997rem * 2  - 1px * 2);
 }
 .select.input-m .select-content {
   border-radius: 5px;
@@ -279,7 +279,7 @@ textarea.input-l {
   padding: 0.40249999999999997rem 0.575rem;
 }
 .select.input-l {
-  min-height: calc(2.0250000000000004rem + 0.5249999999999999rem * 2  + 1px * 2);
+  min-height: calc(2.0250000000000004rem + 0.5249999999999999rem * 2  - 1px * 2);
 }
 .select.input-l .select-content {
   border-radius: 4px;
