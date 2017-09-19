@@ -187,6 +187,21 @@
 @input-background-has-warning: lighten(@color-warning, @input-background-lighten);
 @input-background-has-error: lighten(@color-danger, @input-background-lighten);
 
+@input-background-contrast-has-success: @input-text-color;
+@input-background-contrast-has-info: @input-text-color;
+@input-background-contrast-has-warning: @input-text-color;
+@input-background-contrast-has-error: @input-text-color;
+
+@input-tooltip-has-success: @color-success;
+@input-tooltip-has-info: @color-info;
+@input-tooltip-has-warning: @color-warning;
+@input-tooltip-has-error: @color-danger;
+
+@input-tooltip-contrast-has-success: @color-success-contrast;
+@input-tooltip-contrast-has-info: @color-info-contrast;
+@input-tooltip-contrast-has-warning: @color-warning-contrast;
+@input-tooltip-contrast-has-error: @color-danger-contrast;
+
 @input-border-has-success: lighten(@color-success, @input-border-lighten);
 @input-border-has-info: lighten(@color-info, @input-border-lighten);
 @input-border-has-warning: lighten(@color-warning,@input-border-lighten);

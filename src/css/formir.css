@@ -496,59 +496,92 @@ form .hint .tooltip {
   top: 5px !important;
   right: 0 !important;
 }
-form.validate input:not(:focus).focused[pattern]:invalid,
-form.validate select:not(:focus).focused[pattern]:invalid,
-form.validate textarea:not(:focus).focused[pattern]:invalid,
-form.validate input:not(:focus).focused[required]:invalid,
-form.validate select:not(:focus).focused[required]:invalid,
-form.validate textarea:not(:focus).focused[required]:invalid {
+form.validate .has-tooltip input.touched:invalid:focus ~ .tooltip,
+form.validate .has-tooltip select.touched:invalid:focus ~ .tooltip,
+form.validate .has-tooltip textarea.touched:invalid:focus ~ .tooltip,
+form.validate .has-tooltip input.touched.invalid:focus ~ .tooltip,
+form.validate .has-tooltip select.touched.invalid:focus ~ .tooltip,
+form.validate .has-tooltip textarea.touched.invalid:focus ~ .tooltip {
+  display: block !important;
+}
+form.validate .has-tooltip input ~ .tooltip,
+form.validate .has-tooltip select ~ .tooltip,
+form.validate .has-tooltip textarea ~ .tooltip {
+  display: none !important;
+  background-color: #cf4040;
+  color: #ffffff;
+  right: 0 !important;
+  bottom: auto;
+  top: calc(100% + 5px);
+  right: -10px;
+  left: auto;
+  margin-top: 5px;
+}
+form.validate .has-tooltip input ~ .tooltip:after,
+form.validate .has-tooltip select ~ .tooltip:after,
+form.validate .has-tooltip textarea ~ .tooltip:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  z-index: 1;
+  bottom: -10px;
+  right: -10px;
+  left: auto;
+  border-top: 0;
+  border-bottom: 5px solid #cf4040;
+  margin-right: 10px;
+  top: auto;
+  bottom: 100%;
+  right: 0;
+  margin-top: -5px;
+  margin-bottom: auto;
+}
+form.validate input:not(:focus).touched:invalid,
+form.validate select:not(:focus).touched:invalid,
+form.validate textarea:not(:focus).touched:invalid,
+form.validate input:not(:focus).touched.invalid,
+form.validate select:not(:focus).touched.invalid,
+form.validate textarea:not(:focus).touched.invalid {
   color: #cf4040;
   background-color: #ffffff;
   border-color: #cf4040;
 }
-form.validate input:not(:focus).focused[pattern]:valid,
-form.validate select:not(:focus).focused[pattern]:valid,
-form.validate textarea:not(:focus).focused[pattern]:valid,
-form.validate input:not(:focus).focused[required]:valid,
-form.validate select:not(:focus).focused[required]:valid,
-form.validate textarea:not(:focus).focused[required]:valid {
+form.validate input:not(:focus).touched:valid,
+form.validate select:not(:focus).touched:valid,
+form.validate textarea:not(:focus).touched:valid,
+form.validate input:not(:focus).touched.valid,
+form.validate select:not(:focus).touched.valid,
+form.validate textarea:not(:focus).touched.valid {
   color: #84b500;
   background-color: #ffffff;
   border-color: #84b500;
 }
-form.validate .control.select-arrow select:not(:focus).focused:invalid + span:after,
-form.validate [class*="cell"].select-arrow select:not(:focus).focused:invalid + span:after,
-form.validate .control-group.select-arrow select:not(:focus).focused:invalid + span:after {
+form.validate .select-arrow select:not(:focus).touched:invalid + span:after,
+form.validate .select-arrow select:not(:focus).touched.invalid + span:after {
   color: #cf4040;
 }
-form.validate .control.select-arrow select:not(:focus).focused:valid + span:after,
-form.validate [class*="cell"].select-arrow select:not(:focus).focused:valid + span:after,
-form.validate .control-group.select-arrow select:not(:focus).focused:valid + span:after {
+form.validate .select-arrow select:not(:focus).touched:valid + span:after,
+form.validate .select-arrow select:not(:focus).touched.valid + span:after {
   color: #84b500;
 }
 .control,
-[class*="cell"],
 .control-group {
   position: relative;
 }
 .control.has-tooltip:hover .tooltip,
-[class*="cell"].has-tooltip:hover .tooltip,
 .control-group.has-tooltip:hover .tooltip {
   display: none;
 }
 .control.has-tooltip input:focus ~ .tooltip,
-[class*="cell"].has-tooltip input:focus ~ .tooltip,
 .control-group.has-tooltip input:focus ~ .tooltip,
 .control.has-tooltip select:focus ~ .tooltip,
-[class*="cell"].has-tooltip select:focus ~ .tooltip,
 .control-group.has-tooltip select:focus ~ .tooltip,
 .control.has-tooltip textarea:focus ~ .tooltip,
-[class*="cell"].has-tooltip textarea:focus ~ .tooltip,
 .control-group.has-tooltip textarea:focus ~ .tooltip {
   display: block;
 }
 .control .tooltip,
-[class*="cell"] .tooltip,
 .control-group .tooltip {
   right: 0 !important;
 }
@@ -1202,6 +1235,7 @@ form.has-success .control-group.inverse.transparent textarea,
 .control-group.has-success .control-group.inverse.transparent textarea {
   color: #84b500;
   background-color: #ffffff;
+  color: #000;
   border-color: #84b500;
 }
 form.has-success .hint,
@@ -1271,6 +1305,7 @@ form.has-success .control-group.inverse.transparent .tooltip,
 [class*="cell"].has-success .control-group.inverse.transparent .tooltip,
 .control-group.has-success .control-group.inverse.transparent .tooltip {
   background-color: #84b500;
+  color: #ffffff;
   bottom: auto;
   top: calc(100% + 5px);
   right: -10px;
@@ -2062,6 +2097,7 @@ form.has-info .control-group.inverse.transparent textarea,
 .control-group.has-info .control-group.inverse.transparent textarea {
   color: #00abc4;
   background-color: #ffffff;
+  color: #000;
   border-color: #00abc4;
 }
 form.has-info .hint,
@@ -2131,6 +2167,7 @@ form.has-info .control-group.inverse.transparent .tooltip,
 [class*="cell"].has-info .control-group.inverse.transparent .tooltip,
 .control-group.has-info .control-group.inverse.transparent .tooltip {
   background-color: #00abc4;
+  color: #ffffff;
   bottom: auto;
   top: calc(100% + 5px);
   right: -10px;
@@ -2922,6 +2959,7 @@ form.has-error .control-group.inverse.transparent textarea,
 .control-group.has-error .control-group.inverse.transparent textarea {
   color: #cf4040;
   background-color: #ffffff;
+  color: #000;
   border-color: #cf4040;
 }
 form.has-error .hint,
@@ -2991,6 +3029,7 @@ form.has-error .control-group.inverse.transparent .tooltip,
 [class*="cell"].has-error .control-group.inverse.transparent .tooltip,
 .control-group.has-error .control-group.inverse.transparent .tooltip {
   background-color: #cf4040;
+  color: #ffffff;
   bottom: auto;
   top: calc(100% + 5px);
   right: -10px;
@@ -3782,6 +3821,7 @@ form.has-warning .control-group.inverse.transparent textarea,
 .control-group.has-warning .control-group.inverse.transparent textarea {
   color: #ea8432;
   background-color: #ffffff;
+  color: #000;
   border-color: #ea8432;
 }
 form.has-warning .hint,
@@ -3851,6 +3891,7 @@ form.has-warning .control-group.inverse.transparent .tooltip,
 [class*="cell"].has-warning .control-group.inverse.transparent .tooltip,
 .control-group.has-warning .control-group.inverse.transparent .tooltip {
   background-color: #ea8432;
+  color: #111111;
   bottom: auto;
   top: calc(100% + 5px);
   right: -10px;
@@ -4629,14 +4670,14 @@ form.has-warning .control-group.select-arrow select + span:after,
   -webkit-flex: 1 1 100%;
   -ms-flex: 1 1 100%;
   flex: 1 1 100%;
-  background-color: white;
-  color: black;
+  background-color: #fff;
+  color: #111111;
 }
 .select.hoverable:hover .select-content label:hover,
 .select.active .select-content label:hover,
 .select[tabindex]:focus .select-content label:hover {
-  background-color: blue;
-  color: white;
+  background-color: #209ead;
+  color: #ffffff;
 }
 .select.hoverable:hover .select-content:after,
 .select.active .select-content:after,
@@ -4646,14 +4687,14 @@ form.has-warning .control-group.select-arrow select + span:after,
 .select.hoverable:hover .select-content input:checked + label,
 .select.active .select-content input:checked + label,
 .select[tabindex]:focus .select-content input:checked + label {
-  background-color: black;
-  color: white;
+  background-color: #443349;
+  color: #ffffff;
 }
 .select.hoverable:hover .select-content input:checked + label:hover,
 .select.active .select-content input:checked + label:hover,
 .select[tabindex]:focus .select-content input:checked + label:hover {
-  background-color: navy;
-  color: white;
+  background-color: #1a141c;
+  color: #ffffff;
 }
 .select.hide-selected > input:checked + .select-content input:checked + label {
   display: none;
@@ -4690,23 +4731,23 @@ form.has-warning .control-group.select-arrow select + span:after,
   -webkit-flex: 1 1 100%;
   -ms-flex: 1 1 100%;
   flex: 1 1 100%;
-  background-color: white;
-  color: black;
+  background-color: #fff;
+  color: #111111;
 }
 .select > input:checked + .select-content label:hover {
-  background-color: blue;
-  color: white;
+  background-color: #209ead;
+  color: #ffffff;
 }
 .select > input:checked + .select-content:after {
   display: none;
 }
 .select > input:checked + .select-content input:checked + label {
-  background-color: black;
-  color: white;
+  background-color: #443349;
+  color: #ffffff;
 }
 .select > input:checked + .select-content input:checked + label:hover {
-  background-color: navy;
-  color: white;
+  background-color: #1a141c;
+  color: #ffffff;
 }
 .select[tabindex] .select-content input[type="checkbox"] + label:after,
 .select.hoverable .select-content input[type="checkbox"] + label:after {

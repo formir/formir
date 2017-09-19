@@ -237,28 +237,75 @@ select:not([multiple]) {
   }
 
   &.@{form-validate} {
+    .@{has-tooltip} {
+      input, select, textarea {
+        &.@{form-input-touched} {
+          &:invalid, &.@{input-invalid} {
+            & when (@form-tooltip-input-show-on = focus) {
+              &:focus {
+                ~ .@{tooltip} {
+                  display: block !important;
+                }
+              }
+            }
+            & when (@form-tooltip-input-show-on = hover) {
+              &:hover {
+                ~ .@{tooltip} {
+                  display: block !important;
+                }
+              }
+            }
+            & when (@form-tooltip-input-show-on = not_focus) {
+              &:not(:focus) {
+                ~ .@{tooltip} {
+                  display: block !important;
+                }
+              }
+            }
+          }
+        }
+        ~ .@{tooltip} {
+          display: none !important;
+          background-color: ~"@{input-tooltip-has-error}";
+          color: ~"@{input-tooltip-contrast-has-error}";
+          & when (@form-tooltip-position = left) {
+            left: 0 !important;
+          }
+          & when (@form-tooltip-position = right) {
+            right: 0 !important;
+          }
+          & when (@form-tooltip-position = left) {
+            .tooltip-bottom(~"@{input-tooltip-has-error}");
+          }
+          & when (@form-tooltip-position = center) {
+            .tooltip-bottom-center(~"@{input-tooltip-has-error}");
+          }
+          & when (@form-tooltip-position = right) {
+            .tooltip-bottom-right(~"@{input-tooltip-has-error}");
+          }
+        }
+      }
+    }
     input, select, textarea {
-      &:not(:focus).@{form-input-focused} {
-        &[pattern]:invalid, &[required]:invalid {
+      &:not(:focus).@{form-input-touched} {
+        &:invalid, &.@{input-invalid} {
           .input-invalid;
         }
-        &[pattern]:valid, &[required]:valid {
+        &:valid, &.@{input-valid} {
           .input-valid;
         }
       }
     }
-    .@{control}, [class*="@{cell}"], .@{control-group} {
-      &.@{select-arrow} select {
-        &:not(:focus).@{form-input-focused} {
-          &:invalid {
-            + span:after {
-              color: ~"@{input-color-@{form-state-invalid}}";
-            }
+    .@{select-arrow} select {
+      &:not(:focus).@{form-input-touched} {
+        &:invalid, &.@{input-invalid} {
+          + span:after {
+            color: ~"@{input-color-@{form-state-invalid}}";
           }
-          &:valid {
-            + span:after {
-              color: ~"@{input-color-@{form-state-valid}}";
-            }
+        }
+        &:valid, &.@{input-valid} {
+          + span:after {
+            color: ~"@{input-color-@{form-state-valid}}";
           }
         }
       }
@@ -266,7 +313,7 @@ select:not([multiple]) {
   }
 }
 
-.@{control}, [class*="@{cell}"], .@{control-group} {
+.@{control}, .@{control-group} {
   position: relative;
   & when(@include-core-component-tooltip = true) {
     &.@{has-tooltip} {
@@ -303,6 +350,9 @@ select:not([multiple]) {
       }
     }
   }
+}
+
+.@{control}, [class*="@{cell}"], .@{control-group} {
   &.@{input-inverse} {
     input, select, textarea {
       background-color: @input-border-color;
@@ -460,6 +510,7 @@ select:not([multiple]) {
             }
             & when (@form-state-change-background = true) {
               background-color: ~"@{input-background-@{name}}";
+              color: ~"@{input-background-contrast-@{name}}";
             }
             & when (@form-state-change-border = true) {
               border-color: ~"@{input-border-@{name}}";
@@ -482,15 +533,16 @@ select:not([multiple]) {
           & when(@include-core-component-tooltip = true) {
             & when (@form-state-change-tooltip = true) {
               .@{tooltip} {
-                background-color: ~"@{input-color-@{name}}";
+                background-color: ~"@{input-tooltip-@{name}}";
+                color: ~"@{input-tooltip-contrast-@{name}}";
                 & when (@form-tooltip-position = left) {
-                  .tooltip-bottom(~"@{input-color-@{name}}");
+                  .tooltip-bottom(~"@{input-tooltip-@{name}}");
                 }
                 & when (@form-tooltip-position = center) {
-                  .tooltip-bottom-center(~"@{input-color-@{name}}");
+                  .tooltip-bottom-center(~"@{input-tooltip-@{name}}");
                 }
                 & when (@form-tooltip-position = right) {
-                  .tooltip-bottom-right(~"@{input-color-@{name}}");
+                  .tooltip-bottom-right(~"@{input-tooltip-@{name}}");
                 }
               }
             }
