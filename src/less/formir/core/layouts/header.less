@@ -67,4 +67,28 @@
       }
     }
   }
+  & when(@include-core-component-menu = true) {
+    @media (max-width: @mobile-menu-max-width) {
+      .@{menu-mobile} {
+        display: none;
+        position: fixed;
+        top: @header-height;
+        left: 0;
+        right: 0;
+        max-height: calc(100vh ~" - " @header-height);
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+      input {
+        &.@{toggle} {
+          display: none;
+        }
+        &:checked {
+          + .@{menu-mobile} {
+            display: block;
+          }
+        }
+      }
+    }
+  }
 }

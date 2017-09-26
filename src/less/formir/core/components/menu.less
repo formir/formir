@@ -1,9 +1,12 @@
-@{menu} {
-  list-style: none;
+/// DO NO NOT change this ///
+@include-core-component-menu: true;
+
+.menu() {
   display: block;
   &, ul, li {
     margin: 0;
     padding: 0;
+    list-style: none;
   }
   &.@{menu-inside-absolute}, &.@{menu-inside-fixed} {
     @{menu-item} {
@@ -50,6 +53,30 @@
       border-bottom: 0;
     }
     @{menu-item-anchor} {
+      display: block;
+    }
+  }
+}
+
+@{menu} {
+  .menu;
+}
+
+@media (max-width: @mobile-menu-max-width) {
+  .@{menu-mobile} {
+    .menu;
+    .@{button} {
+      border-radius: @mobile-menu-item-button-radius;
+    }
+    &.@{items} {
+      display: block;
+      margin: 0;
+    }
+  }
+  ul.@{items}.@{menu-mobile} {
+    display: block;
+    margin: 0;
+    > li {
       display: block;
     }
   }

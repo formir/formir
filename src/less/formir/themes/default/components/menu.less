@@ -1,23 +1,21 @@
-.menu-inside-hover() {
-  background-color: #1A1A1A;
-}
-.menu-item-anchor-hover() {
-  ~ @{menu-inside} {
-    .menu-inside-hover();
-  }
-}
-
-@{menu} {
+.menu-style() {
   @{menu-item} {
     color: @menu-item-color;
     padding: @menu-item-padding;
+    background-color: @menu-item-background-color;
+    &:hover {
+      color: @menu-item-color-hover;
+      background-color: @menu-item-background-color-hover;
+    }
     @{menu-item-anchor} {
-      color: inherit;
-      padding: @menu-item-anchor-padding;
-      border-bottom: @menu-item-anchor-border;
-      text-decoration: @menu-item-anchor-decoration;
-      &:hover {
-        text-decoration: @menu-item-anchor-decoration-hover;
+      &:not(.@{button}) {
+        color: inherit;
+        padding: @menu-item-anchor-padding;
+        border-bottom: @menu-item-anchor-border;
+        text-decoration: @menu-item-anchor-decoration;
+        &:hover {
+          text-decoration: @menu-item-anchor-decoration-hover;
+        }
       }
     }
   }
@@ -30,20 +28,40 @@
   }
 }
 
+.menu-inside-hover() {
+  background-color: #1A1A1A;
+}
+.menu-item-anchor-hover() {
+  ~ @{menu-inside} {
+    .menu-inside-hover();
+  }
+}
+
+@{menu} {
+  .menu-style();
+}
+
+@media (max-width: @mobile-menu-max-width) {
+  .@{menu-mobile} {
+    .menu-style();
+  }
+}
+
 
 @{side} {
   @{menu} {
     @{menu-item} {
       color: @side-menu-item-color;
-      &.@{active}, @{menu-item-anchor}.@{active} {
+      background-color: @side-menu-item-background-color;
+      &.@{active} {
         background-color: rgba(46, 143, 239, 0.5);
+      }
+      &:hover {
+        background: @side-menu-item-background-color-hover;
       }
       @{menu-item-anchor} {
         color: inherit;
         border-bottom: @side-menu-item-anchor-border;
-        &:hover {
-          background: @side-menu-item-anchor-background-hover;
-        }
       }
     }
   }

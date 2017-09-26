@@ -1,0 +1,104 @@
+input.@{toggle} {
+  position: fixed;
+  left: -1000000px;
+  &:checked {
+    ~ .@{toggle-block}, ~ .@{toggle-show} {
+      display: block;
+    }
+    ~ .@{toggle-flex} {
+      .display-flex;
+    }
+    ~ .@{toggle-inline} {
+      display: inline;
+    }
+    ~ .@{toggle-inline-block} {
+      display: inline-block;
+    }
+    ~ .@{toggle-hide}, ~ .@{toggle-none} {
+      display: none;
+    }
+    ~ .@{toggle-label} {
+      .@{toggle-block}, .@{toggle-show} {
+        display: block;
+      }
+      .@{toggle-flex} {
+        .display-flex;
+      }
+      .@{toggle-inline} {
+        display: inline;
+      }
+      .@{toggle-inline-block} {
+        display: inline-block;
+      }
+      .@{toggle-hide}, .@{toggle-none} {
+        display: none;
+      }
+    }
+  }
+  &:not(:checked) {
+    ~ .@{toggle-block}, ~ .@{toggle-show}, ~ .@{toggle-flex}, ~ .@{toggle-inline}, ~ .@{toggle-inline-block} {
+      display: none;
+    }
+    ~ .@{toggle-hide}, ~ .@{toggle-none} {
+      display: block;
+    }
+    ~ .@{toggle-label} {
+      .@{toggle-block}, .@{toggle-show}, .@{toggle-flex}, .@{toggle-inline}, .@{toggle-inline-block} {
+        display: none;
+      }
+      .@{toggle-hide}, .@{toggle-none} {
+        display: block;
+      }
+    }
+  }
+}
+
+input.@{mobile-toggle} {
+  position: fixed;
+  left: -1000000px;
+}
+
+@media (max-width: @mobile-menu-max-width) {
+  input.@{mobile-toggle} {
+    position: fixed;
+    left: -1000000px;
+    &:checked {
+      ~ .@{mobile-toggle-show} {
+        display: block;
+      }
+      ~ .@{mobile-toggle-hide} {
+        display: none;
+      }
+      ~ .@{mobile-toggle-label} {
+        .@{toggle-show} {
+          display: block;
+        }
+        .@{toggle-hide} {
+          display: none;
+        }
+      }
+    }
+    &:not(:checked) {
+       ~ .@{mobile-toggle-show} {
+        display: none;
+      }
+      ~ .@{mobile-toggle-hide} {
+        display: block;
+      }
+      ~ .@{mobile-toggle-label} {
+        .@{toggle-show} {
+          display: none;
+        }
+        .@{toggle-hide} {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: @mobile-menu-max-width) {
+  input.@{mobile-toggle}, .@{mobile-toggle-label} {
+    display: none;
+  }
+}

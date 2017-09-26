@@ -24,11 +24,20 @@
     <header class="header fixed">
       <div class="header-content">
         <a class="logo logo-s"><img src="src/img/logo/formir-64.png"/><span>formir</span></a>
-        <nav class="items">
-          <!-- <a href="#">Getting started</a> -->
-          <a href="docs.html">Documentations</a>
-          <a class="button button-m button-alternative" href="https://github.com/konrad-k/formir/archive/master.zip">Download</a>
-          <script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Donate - Buy a Caffee', '#934780', 'A77436HN');kofiwidget2.draw();</script>
+        <nav>
+          <input id="nav-mobile" type="checkbox" class="mobile-toggle"/>
+          <label for="nav-mobile" class="mobile-toggle-label">
+            <i class="icon-menu toggle-hide"></i>
+            <i class="icon-cancel toggle-show"></i>
+          </label>
+          <ul class="items menu-mobile mobile-toggle-show">
+            <!-- <a href="#">Getting started</a> -->
+            <li><a href="docs.html">Documentations</a></li>
+            <li><a class="button button-m button-alternative" href="https://github.com/konrad-k/formir/archive/master.zip">Download</a></li>
+            <li>
+              <script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Donate - Buy a Caffee', '#934780', 'A77436HN');kofiwidget2.draw();</script>
+            </li>
+          </ul>
         </nav>
       </div>
     </header>
