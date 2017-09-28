@@ -160,38 +160,24 @@
   .grid-cell(@n, (@i + 1));
 }
 
-.grid-cell-mobile(@n, @i: 1) when (@i =< @n) {
-  @media (min-width: @desktop-min-width) {
-    .@{d}-@{cell}-@{i} {
-      width: unit((100 / @n) * @i, %);
-      .flex(0 0 auto) !important;
+.grid-cell-mobile(@mobile-class, @mobile-name, @n, @i: 1) when (@i =< @n) {
+  & when (@mobile-name = desctop) {
+    @media (min-width: @desktop-min-width) {
+      .@{mobile-class}-@{cell}-@{i} {
+        width: unit((100 / @n) * @i, %);
+        .flex(0 0 auto) !important;
+      }
     }
   }
-  @media (max-width: @tablet-max-width) {
-    .@{t}-@{cell}-@{i} {
-      width: unit((100 / @n) * @i, %);
-      .flex(0 0 auto) !important;
+  & when not (@mobile-name = desctop) {
+    @media (max-width: ~"@{@{mobile-name}-max-width}") {
+      .@{mobile-class}-@{cell}-@{i} {
+        width: unit((100 / @n) * @i, %);
+        .flex(0 0 auto) !important;
+      }
     }
   }
-  @media (max-width: @tablet-portrait-max-width) {
-    .@{tp}-@{cell}-@{i} {
-      width: unit((100 / @n) * @i, %);
-      .flex(0 0 auto) !important;
-    }
-  }
-  @media (max-width: @mobile-max-width) {
-    .@{m}-@{cell}-@{i} {
-      width: unit((100 / @n) * @i, %);
-      .flex(0 0 auto) !important;
-    }
-  }
-  @media (max-width: @mobile-portrait-max-width) {
-    .@{mp}-@{cell}-@{i} {
-      width: unit((100 / @n) * @i, %);
-      .flex(0 0 auto) !important;
-    }
-  }
-  .grid-cell-mobile(@n, (@i + 1));
+  .grid-cell-mobile(@mobile-class, @mobile-name, @n, (@i + 1));
 }
 
 .grid-cell-extend(@n, @i: 1) when (@i =< @n) {
@@ -419,7 +405,11 @@
 }
 
 .grid-cell(@grid-steps);
-.grid-cell-mobile(@grid-steps);
+.grid-cell-mobile(d, desctop, @grid-steps);
+.grid-cell-mobile(t, tablet, @grid-steps);
+.grid-cell-mobile(tp, tablet-portrait, @grid-steps);
+.grid-cell-mobile(m, mobile, @grid-steps);
+.grid-cell-mobile(mp, mobile-portrait, @grid-steps);
 
 .@{grid} {
   .grid-cell-extend(@grid-steps);

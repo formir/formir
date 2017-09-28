@@ -219,6 +219,7 @@ select:not([multiple]) {
     color: @hint-text-color;
     & when(@include-core-component-tooltip = true) {
       &.@{has-tooltip} {
+        z-index: auto;
         min-height: calc(@tooltip-padding-vertical  ~"*" 2  ~"+" @tooltip-line-height);
         .@{tooltip} {
           display: block;
@@ -317,6 +318,7 @@ select:not([multiple]) {
   position: relative;
   & when(@include-core-component-tooltip = true) {
     &.@{has-tooltip} {
+      z-index: auto;
       & when not (@form-tooltip-input-show-on = hover) {
         &:hover {
           .@{tooltip} {

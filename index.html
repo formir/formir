@@ -42,7 +42,7 @@
       </div>
     </header>
     <section class="section welcome full-height primary-dark center-vertically">
-      <div class="content-holder text-center max-width-6">
+      <div class="content-holder text-center width-6">
         <p class="image center padding-horizontal-3">
         	<a class="logo"><img src="src/img/logo/formir-150.png"/><span>formir</span></a>
         </p>
@@ -50,34 +50,67 @@
     	</div>
     </section>
     <section class="section full-height primary center-vertically">
-      <div class="content-holder max-width-6 text-center">
+      <div class="content-holder width-6 text-center">
         <h3>The idea is to minimize the need for JS code and rely on UI elements on pure html based on clean, easy to use and smart CSS code.</h3>
         <p>Build your own template based on included mixing, fast, clean and easy. No more !important.</p>
     	</div>
     </section>
     <section class="section full-height center-vertically">
-      <div class="content-holder max-width-6 text-center">
+      <div class="content-holder width-6 text-center">
         <div class="grids">
-          <h3>Check out our grid system:</h3>
-          <div class="grid gutter-1 space-1">
-            <div class="cell-1">&nbsp;</div>
-            <div class="cell-15">&nbsp;</div>
-            <div class="cell-2">&nbsp;</div>
-            <div class="cell-14">&nbsp;</div>
-            <div class="cell-3">&nbsp;</div>
-            <div class="cell-13">&nbsp;</div>
-            <div class="cell-4">&nbsp;</div>
-            <div class="cell-12">&nbsp;</div>
-            <div class="cell-5">&nbsp;</div>
-            <div class="cell-11">&nbsp;</div>
+          <h2 id="grid-system"><i class="icon-th"></i> Grid system</h2>
+          <div class="grid gutter-1 space-1" id="grid-1" data-class="grid">
+            <div class="cell-1 mp-cell-16 t-cell-2 m-cell-8">&nbsp;</div>
+            <div class="cell-15 mp-cell-16 t-cell-4 m-cell-8">&nbsp;</div>
+            <div class="cell-2 mp-cell-16 t-cell-10 m-cell-8">&nbsp;</div>
+            <div class="cell-14 mp-cell-16 t-cell-4 m-cell-8">&nbsp;</div>
+            <div class="cell-3 mp-cell-16 t-cell-8 m-cell-8">&nbsp;</div>
+            <div class="cell-13 mp-cell-16 t-cell-4 m-cell-8">&nbsp;</div>
+            <div class="cell-4 mp-cell-16 t-cell-2 m-cell-8">&nbsp;</div>
+            <div class="cell-12 mp-cell-16 t-cell-6 m-cell-8">&nbsp;</div>
+            <div class="cell-5 mp-cell-16 t-cell-2 m-cell-8">&nbsp;</div>
+            <div class="cell-11 mp-cell-16 t-cell-6 m-cell-8">&nbsp;</div>
           </div>
-          <p class="padding-top-3">You can easily change the number of columns or spaces between gutter, space and many many more.</p>
+          <h4 class="padding-top-3">You can easily change the number of columns or space between rows & columns,<br/> use row wrapper or not - no matter - always will work great!</h4>
+          <p>So feel free and <label>change your gutter <input id="input-gutter" style="width: 50px;" min="0" max="4" value="1" type="number" onChange="$('#grid-1').removeAttr('class').addClass($('#grid-1').data('class')).addClass('gutter-' + $(this).val()).addClass('space-' + $('#input-space').val())"/></label><label> or space <input id="input-space" style="width: 50px;" min="0" max="4" value="1" class="width-1" type="number"  onChange="$('#grid-1').removeAttr('class').addClass($('#grid-1').data('class')).addClass('space-' + $(this).val()).addClass('gutter-' + $('#input-gutter').val())"/></label></p>
+          <p class="padding-top-1"><small>And one more thing: number of steps and width of each are customizable.</small></p>
         </div>
     	</div>
     </section>
     <section class="section alternative full-height center-vertically">
-      <div class="content-holder max-width-6 text-center">
-          <h3>New idea of coding without JS, look at select-box, pure CSS:</h3>
+      <div class="content-holder width-6">
+          <h2 class="text-center"><i class="icon-check"></i> Forms & select-box</h2>
+          <div class="center-vertically horizontally">
+            <div class="width-3">
+              <form class="grid gutter-1 space-3">
+        	    	<div class="row">
+        	    		<div class="cell m-cell-16"><label>Label for input:</label><input type="text" required/></div>
+        	    	</div>
+        	    	<div class="row">
+        	    		<div class="cell m-cell-16 has-info"><label>Label for input:</label><input type="text"/></div>
+        	    	</div>
+                <div class="row">
+        	    		<div class="cell m-cell-16 has-warning">
+        	    			<label>Label for input:</label>
+        	    			<div class="control has-tooltip">
+                      <input type="text" required/><span></span>
+                      <div class="tooltip">warning message</div>
+                    </div>
+        	    			<div class="hint text-right"> help</div>
+            			</div>
+        	    		<div class="cell select-arrow m-cell-16  has-error">
+                    <label></label>
+                    <div class="control">
+                      <select required><option>1 23</option></select>
+          	    			<span></span>
+                    </div>
+        	    			<div class="hint text-right has-tooltip"><div class="tooltip">error message</div></div>
+        	    	  </div>
+        	    	</div>
+        	    </form>
+            </div>
+          </div>
+          <h3 class="text-center padding-top-2">Look at select-box with pure CSS:</h3>
           <div class="text-center">
             <h4>Simple hover select with icons:</h4>
             <span class="select input-l display-inline-block hoverable min-width-1">
@@ -100,9 +133,9 @@
               </div>
             </span>
           </div>
-          <div>
+          <div class="text-center padding-bottom-3">
             <h4>and even multi-select:</h4>
-            <span class="select  display-inline-block min-width-3">
+            <span class="select  display-inline-block width-3">
               <input type="checkbox"/>
               <div class="select-content">
                 <input id="c0" type="checkbox">
@@ -133,7 +166,16 @@
           </div>
     	</div>
     </section>
-    <section>
+    <section class="text-center padding-bottom-2">
+      <div class="content-holder width-5">
+        <h2>It's just a drop in the sea..</h2>
+        <h4>Check out our other components and helper, like: modals, tooltip, buttons etc.</h4>
+        <p>
+          <a class="button button-l button-primary" href="docs.html">Examples of use</a>
+        </p>
+      </div>
+    </section>
+    <section class="welcome padding-top-1 padding-bottom-1">
       <div class="content-holder">
         <p class="margin-horizontal-3">Work In Progress &copy; by <a class="link" href="mailto:konrad@kubrak.eu">Konrad Kubrak</a>
           <script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Please Support', '#934780', 'A77436HN');kofiwidget2.draw();</script>
