@@ -1,17 +1,21 @@
 @{ol}, @{ul} {
+  padding: 0;
   @{li} {
     margin: @list-margin;
+    + @{li} {
+      margin-top: @list-item-space;
+    }
   }
 }
 
 @{ul} {
   @{li} {
-    
+
   }
 }
 
 @{ol} {
   @{li} {
-    
+
   }
 }

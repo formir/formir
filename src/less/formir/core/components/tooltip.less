@@ -381,24 +381,23 @@
   background: @tooltip-background;
   padding: @tooltip-padding-vertical @tooltip-padding-horizontal;
   color: @tooltip-text-color;
+  & when (@tooltip-width = max-content) {
+    width: -webkit-max-conent;
+    width: -moz-max-content;
+  }
+  & when (@tooltip-width = min-content) {
+    width: -webkit-min-conent;
+    width: -moz-min-content;
+  }
+  & when (@tooltip-width = max-content) {
+    width: -webkit-max-conent;
+    width: -moz-max-content;
+  }
+  & when (@tooltip-width = min-content) {
+    width: -webkit-min-conent;
+    width: -moz-min-content;
+  }
   max-width: @tooltip-max-width;
-  min-width: @tooltip-min-width;
-  & when (@tooltip-min-width = max-content) {
-    min-width: -webkit-max-conent;
-    min-width: -moz-max-content;
-  }
-  & when (@tooltip-min-width = min-content) {
-    min-width: -webkit-min-conent;
-    min-width: -moz-min-content;
-  }
-  & when (@tooltip-max-width = max-content) {
-    max-width: -webkit-max-conent;
-    max-width: -moz-max-content;
-  }
-  & when (@tooltip-max-width = min-content) {
-    max-width: -webkit-min-conent;
-    max-width: -moz-min-content;
-  }
   border-radius: @tooltip-border-radius;
   & when (@tooltip-distance > 0) {
     bottom: calc(100% ~"+" @tooltip-distance);
@@ -407,7 +406,6 @@
     bottom: 100%;
   }
   left: -@tooltip-offset;
-  position: absolute;
   margin-bottom: @tooltip-arrow-height;
   border: @tooltip-border;
   box-shadow: @tooltip-shadow;
@@ -559,12 +557,15 @@
 
 .@{has-tooltip}[data-tooltip] {
   position: relative;
-  z-index: @tooltip-zindex;
   &.@{tooltip-absolute} {
     position: absolute;
   }
   &.@{tooltip-fixed} {
     position: fixed;
+  }
+  &:after {
+    position: absolute;
+    z-index: @tooltip-zindex;
   }
   &:hover, &[tabindex]:focus, &.@{tooltip-hovered} {
     &:after {
@@ -771,7 +772,6 @@
 
 .@{has-tooltip} {
   position: relative;
-  z-index: @tooltip-zindex;
   &.@{tooltip-absolute} {
     position: absolute;
   }
@@ -780,6 +780,8 @@
   }
   > .@{tooltip} {
     display: none;
+    position: absolute;
+    z-index: @tooltip-zindex;
   }
 
   &:hover, &[tabindex]:focus, &.@{tooltip-hovered} {

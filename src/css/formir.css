@@ -488,7 +488,7 @@ form .hint {
 }
 form .hint.has-tooltip {
   z-index: auto;
-  min-height: calc(0.45rem * 2 + 1.35rem);
+  min-height: calc(0.45rem * 2 + 1.35em);
 }
 form .hint.has-tooltip .tooltip {
   display: block;
@@ -4843,7 +4843,7 @@ body.modal-opened {
 .modal-window {
   width: 650px;
   min-height: 300px;
-  max-width: calc(100% - 20px);
+  max-width: calc(100% - 40px);
   position: relative;
   left: 0;
   right: 0;
@@ -5411,22 +5411,20 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   }
 }
 .tooltip {
-  background: #000000;
+  background: #0c090d;
   padding: 0.45rem 0.65rem;
   color: #fff;
-  max-width: 300px;
-  min-width: max-content;
-  min-width: -webkit-max-conent;
-  min-width: -moz-max-content;
+  width: -webkit-max-conent;
+  width: -moz-max-content;
+  max-width: calc(100vw - 1.3rem - 80px);
   border-radius: 5px;
   bottom: calc(100% + 5px);
   left: -10px;
-  position: absolute;
   margin-bottom: 5px;
   border: 0 solid #3c3c3c;
   box-shadow: 0;
   text-align: left;
-  line-height: 1.35rem;
+  line-height: 1.35em;
   font-size: 0.8rem;
 }
 .tooltip.hoverable:before {
@@ -5487,7 +5485,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   left: -10px;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid #000000;
+  border-top: 5px solid #0c090d;
   border-bottom: 0;
   margin-left: 10px;
   left: 0;
@@ -5510,7 +5508,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   left: auto;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid #000000;
+  border-top: 5px solid #0c090d;
   border-bottom: 0;
   margin-right: 10px;
   bottom: auto;
@@ -5535,7 +5533,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   margin-right: auto;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid #000000;
+  border-top: 5px solid #0c090d;
   bottom: auto;
   top: 100%;
   margin-bottom: auto;
@@ -5557,7 +5555,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   border-top: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-bottom: 5px solid #000000;
+  border-bottom: 5px solid #0c090d;
   margin-left: 10px;
   top: auto;
   bottom: 100%;
@@ -5582,7 +5580,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   right: -10px;
   left: auto;
   border-top: 0;
-  border-bottom: 5px solid #000000;
+  border-bottom: 5px solid #0c090d;
   margin-right: 10px;
   top: auto;
   bottom: 100%;
@@ -5612,7 +5610,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-top: 0;
-  border-bottom: 5px solid #000000;
+  border-bottom: 5px solid #0c090d;
   top: auto;
   bottom: 100%;
   margin-top: -5px;
@@ -5636,7 +5634,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   bottom: auto;
   margin: -5px 0 0 0;
   border-bottom: 5px solid transparent;
-  border-right: 5px solid #000000;
+  border-right: 5px solid #0c090d;
   border-top: 5px solid transparent;
   border-left: 0;
   margin-left: -5px;
@@ -5659,7 +5657,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   bottom: auto;
   margin: -5px 0 0 0;
   border-bottom: 5px solid transparent;
-  border-left: 5px solid #000000;
+  border-left: 5px solid #0c090d;
   border-top: 5px solid transparent;
   border-right: 0;
   right: 0;
@@ -5682,7 +5680,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   top: 50%;
   margin: -5px 0 0 0;
   border-bottom: 5px solid transparent;
-  border-right: 5px solid #000000;
+  border-right: 5px solid #0c090d;
   border-top: 5px solid transparent;
   border-left: 0;
   bottom: auto;
@@ -5707,7 +5705,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   bottom: auto;
   margin: -5px 0 0 0;
   border-bottom: 5px solid transparent;
-  border-right: 5px solid #000000;
+  border-right: 5px solid #0c090d;
   border-top: 5px solid transparent;
   border-left: 0;
   bottom: 10px;
@@ -5730,7 +5728,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   top: 50%;
   margin: -5px 0 0 0;
   border-bottom: 5px solid transparent;
-  border-left: 5px solid #000000;
+  border-left: 5px solid #0c090d;
   border-top: 5px solid transparent;
   border-right: 0;
   bottom: auto;
@@ -5757,7 +5755,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   bottom: auto;
   margin: -5px 0 0 0;
   border-bottom: 5px solid transparent;
-  border-left: 5px solid #000000;
+  border-left: 5px solid #0c090d;
   border-top: 5px solid transparent;
   border-right: 0;
   bottom: 10px;
@@ -5768,7 +5766,6 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
 }
 .has-tooltip[data-tooltip] {
   position: relative;
-  z-index: 10000;
 }
 .has-tooltip[data-tooltip].absolute {
   position: absolute;
@@ -5776,25 +5773,27 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
 .has-tooltip[data-tooltip].fixed {
   position: fixed;
 }
+.has-tooltip[data-tooltip]:after {
+  position: absolute;
+  z-index: 10000;
+}
 .has-tooltip[data-tooltip]:hover:after,
 .has-tooltip[data-tooltip][tabindex]:focus:after,
 .has-tooltip[data-tooltip].hovered:after {
-  background: #000000;
+  background: #0c090d;
   padding: 0.45rem 0.65rem;
   color: #fff;
-  max-width: 300px;
-  min-width: max-content;
-  min-width: -webkit-max-conent;
-  min-width: -moz-max-content;
+  width: -webkit-max-conent;
+  width: -moz-max-content;
+  max-width: calc(100vw - 1.3rem - 80px);
   border-radius: 5px;
   bottom: calc(100% + 5px);
   left: -10px;
-  position: absolute;
   margin-bottom: 5px;
   border: 0 solid #3c3c3c;
   box-shadow: 0;
   text-align: left;
-  line-height: 1.35rem;
+  line-height: 1.35em;
   font-size: 0.8rem;
   content: attr(data-tooltip);
   display: block;
@@ -5895,7 +5894,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   left: -10px;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid #000000;
+  border-top: 5px solid #0c090d;
   border-bottom: 0;
   margin-left: 10px;
 }
@@ -5920,7 +5919,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   left: auto;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid #000000;
+  border-top: 5px solid #0c090d;
   border-bottom: 0;
   margin-right: 10px;
 }
@@ -5946,7 +5945,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   border-top: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-bottom: 5px solid #000000;
+  border-bottom: 5px solid #0c090d;
   margin-left: 10px;
 }
 .has-tooltip[data-tooltip]:hover.bottom-right:after,
@@ -5972,7 +5971,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   right: -10px;
   left: auto;
   border-top: 0;
-  border-bottom: 5px solid #000000;
+  border-bottom: 5px solid #0c090d;
   margin-right: 10px;
 }
 .has-tooltip[data-tooltip]:hover.right:after,
@@ -5996,7 +5995,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   left: auto;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid #000000;
+  border-top: 5px solid #0c090d;
   border-bottom: 0;
   margin-right: 10px;
 }
@@ -6022,7 +6021,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   margin-right: auto;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid #000000;
+  border-top: 5px solid #0c090d;
 }
 .has-tooltip[data-tooltip]:hover.bottom-center:after,
 .has-tooltip[data-tooltip][tabindex]:focus.bottom-center:after,
@@ -6051,7 +6050,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-top: 0;
-  border-bottom: 5px solid #000000;
+  border-bottom: 5px solid #0c090d;
 }
 .has-tooltip[data-tooltip]:hover.right-middle:after,
 .has-tooltip[data-tooltip][tabindex]:focus.right-middle:after,
@@ -6074,7 +6073,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   bottom: auto;
   margin: -5px 0 0 0;
   border-bottom: 5px solid transparent;
-  border-right: 5px solid #000000;
+  border-right: 5px solid #0c090d;
   border-top: 5px solid transparent;
   border-left: 0;
   left: calc(100% + 5px);
@@ -6101,7 +6100,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   bottom: auto;
   margin: -5px 0 0 0;
   border-bottom: 5px solid transparent;
-  border-left: 5px solid #000000;
+  border-left: 5px solid #0c090d;
   border-top: 5px solid transparent;
   border-right: 0;
   right: calc(100% + 5px);
@@ -6127,7 +6126,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   bottom: auto;
   margin: -5px 0 0 0;
   border-bottom: 5px solid transparent;
-  border-right: 5px solid #000000;
+  border-right: 5px solid #0c090d;
   border-top: 5px solid transparent;
   border-left: 0;
   left: calc(100% + 5px);
@@ -6155,7 +6154,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   bottom: auto;
   margin: -5px 0 0 0;
   border-bottom: 5px solid transparent;
-  border-right: 5px solid #000000;
+  border-right: 5px solid #0c090d;
   border-top: 5px solid transparent;
   border-left: 0;
   left: calc(100% + 5px);
@@ -6183,7 +6182,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   bottom: auto;
   margin: -5px 0 0 0;
   border-bottom: 5px solid transparent;
-  border-left: 5px solid #000000;
+  border-left: 5px solid #0c090d;
   border-top: 5px solid transparent;
   border-right: 0;
   left: auto;
@@ -6211,7 +6210,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   bottom: auto;
   margin: -5px 0 0 0;
   border-bottom: 5px solid transparent;
-  border-left: 5px solid #000000;
+  border-left: 5px solid #0c090d;
   border-top: 5px solid transparent;
   border-right: 0;
   left: auto;
@@ -6221,7 +6220,6 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
 }
 .has-tooltip {
   position: relative;
-  z-index: 10000;
 }
 .has-tooltip.absolute {
   position: absolute;
@@ -6231,6 +6229,8 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
 }
 .has-tooltip > .tooltip {
   display: none;
+  position: absolute;
+  z-index: 10000;
 }
 .has-tooltip:hover > .tooltip,
 .has-tooltip[tabindex]:focus > .tooltip,
@@ -6241,7 +6241,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   background: #ffffff;
   padding: 0;
   color: #000;
-  max-width: calc(100vh - 20px);
+  max-width: calc(100vh - 40px);
   min-width: 250px;
   border-radius: 0;
   bottom: 100%;
@@ -13140,6 +13140,13 @@ ul.menu li a {
 .float-right {
   float: right;
 }
+.horizostal-center {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  -ms-transform: translate(0, 0) !important;
+  -webkit-transform: translate(0, 0) !important;
+  transform: translate(0, 0) !important;
+}
 .display-none,
 .hide {
   display: none !important;
@@ -13185,6 +13192,15 @@ ul.menu li a {
 }
 .none-events {
   pointer-events: none;
+}
+.opacity-3 {
+  opacity: 0.3;
+}
+.opacity-5 {
+  opacity: 0.5;
+}
+.opacity-7 {
+  opacity: 0.7;
 }
 @media print {
   .print-hide {
@@ -13748,58 +13764,44 @@ html {
 h1,
 .h1 {
   font-size: 2.5rem;
-  line-height: 3rem;
+  line-height: 1.35em;
   font-weight: 500;
-  margin: 2rem 0;
+  margin: 2.2rem 0;
 }
 h2,
 .h2 {
   font-size: 2rem;
-  line-height: 2.5rem;
+  line-height: 1.35em;
   font-weight: 500;
   margin: 2rem 0;
 }
 h3,
 .h3 {
   font-size: 1.7rem;
-  line-height: 2rem;
+  line-height: 1.35em;
   font-weight: 500;
-  margin: 2rem 0;
+  margin: 1.5rem 0;
 }
 h4,
 .h4 {
   font-size: 1.3rem;
-  line-height: 1.7rem;
+  line-height: 1.35em;
   font-weight: 500;
-  margin: 2rem 0;
+  margin: 1.15rem 0;
 }
 h5,
 .h5 {
   font-size: 1rem;
-  line-height: 1.1rem;
+  line-height: 1.35em;
   font-weight: 500;
-  margin: 2rem 0;
+  margin: 0.85rem 0;
 }
 h6,
 .h6 {
   font-size: 0.8rem;
-  line-height: 1rem;
+  line-height: 1.35em;
   font-weight: 500;
-  margin: 2rem 0;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-  margin: 2rem 0;
+  margin: 0.6rem 0;
 }
 h1 .actions,
 h2 .actions,
@@ -13830,9 +13832,17 @@ h6 small,
   opacity: 0.7;
   font-size: 0.7em;
 }
+ol,
+ul {
+  padding: 0;
+}
 ol li,
 ul li {
-  margin: 0 0 0 1rem;
+  margin: 0 0 0 1.5rem;
+}
+ol li + li,
+ul li + li {
+  margin-top: 0.2rem;
 }
 article p {
   margin: 2rem 0;
@@ -17511,7 +17521,7 @@ table.grid.gutter-1 {
 }
 .grid.gutter-1.content-holder {
   width: calc(1128px  + 0.8999999999999999rem);
-  max-width: calc(100%  - ( 20px - 0.8999999999999999rem));
+  max-width: calc(100%  - ( 40px - 0.8999999999999999rem));
 }
 .grid.gutter-1:not(.gutter-margin) > [class*=" cell"],
 .grid.gutter-1:not(.gutter-margin) > [class^="cell"],
@@ -17755,7 +17765,7 @@ table.grid.gutter-2 {
 }
 .grid.gutter-2.content-holder {
   width: calc(1128px  + 1.2rem);
-  max-width: calc(100%  - ( 20px - 1.2rem));
+  max-width: calc(100%  - ( 40px - 1.2rem));
 }
 .grid.gutter-2:not(.gutter-margin) > [class*=" cell"],
 .grid.gutter-2:not(.gutter-margin) > [class^="cell"],
@@ -17999,7 +18009,7 @@ table.grid.gutter-3 {
 }
 .grid.gutter-3.content-holder {
   width: calc(1128px  + 1.5rem);
-  max-width: calc(100%  - ( 20px - 1.5rem));
+  max-width: calc(100%  - ( 40px - 1.5rem));
 }
 .grid.gutter-3:not(.gutter-margin) > [class*=" cell"],
 .grid.gutter-3:not(.gutter-margin) > [class^="cell"],
@@ -18243,7 +18253,7 @@ table.grid.gutter-4 {
 }
 .grid.gutter-4.content-holder {
   width: calc(1128px  + 1.7999999999999998rem);
-  max-width: calc(100%  - ( 20px - 1.7999999999999998rem));
+  max-width: calc(100%  - ( 40px - 1.7999999999999998rem));
 }
 .grid.gutter-4:not(.gutter-margin) > [class*=" cell"],
 .grid.gutter-4:not(.gutter-margin) > [class^="cell"],
@@ -19640,7 +19650,7 @@ form.grid [class^="cell"] .select,
   margin-left: auto;
   margin-right: auto;
   width: 1128px;
-  max-width: calc(100%  -  20px);
+  max-width: calc(100%  -  40px);
 }
 .center-vertically {
   display: -webkit-box;
@@ -19887,6 +19897,9 @@ form.grid [class^="cell"] .select,
 }
 .min-width-8 {
   min-width: 1128px;
+}
+.max-width-100 {
+  max-width: 100%;
 }
 .height-1 {
   height: 75px;
@@ -23034,7 +23047,7 @@ header.header .header-content {
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
-  padding: 0 10px;
+  padding: 0 20px;
 }
 header.header .header-content nav a {
   vertical-align: middle;

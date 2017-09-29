@@ -18,7 +18,7 @@
 
 // Header
 @header-height: 65px;
-@header-background: darken(@color-primary, 10);
+@header-background: darken(@color-primary, 10%);
 @header-color: @color-primary-contrast;
 @header-vertical-padding: @content-min-margin;
 @header-horizontal-padding: 0;
@@ -30,18 +30,18 @@
 @tab-nav-active-shadow: none;
 
 // Tooltips
-@tooltip-background: rgba(0, 0, 0, 1);
+@tooltip-background: darken(@color-primary, 20%);
 @tooltip-border-width: 0;
 @tooltip-border-color: rgba(60, 60, 60, 1);
 @tooltip-border: @tooltip-border-width solid @tooltip-border-color;
 @tooltip-shadow: 0;
 @tooltip-text-color: #fff;
 @tooltip-font-size: 0.8rem;
-@tooltip-line-height: 1.35rem;
+@tooltip-line-height: 1.35em;
 @tooltip-padding-vertical: 0.45rem;
 @tooltip-padding-horizontal: 0.65rem;
-@tooltip-max-width: 300px;
-@tooltip-min-width: max-content;
+@tooltip-max-width: calc(100vw ~"-" @tooltip-padding-horizontal * 2 ~"-" @content-min-margin * 4); // Try not change this configuration
+@tooltip-width: max-content;  // Try not change this configuration
 @tooltip-border-radius: 5px;
 @tooltip-arrow-height: 5px;
 @tooltip-arrow-width: @tooltip-arrow-height;
@@ -240,41 +240,42 @@
 // Typography
 //// Heading
 @h-font-weight: 500;
-@h-margin: 2rem 0;
+@h-margin: 1rem;
 @p-margin: 2rem 0;
 
 @h1-font-size: @typography-font-size-1;
 @h1-line-height: @typography-line-height-1;
 @h1-font-weight: @h-font-weight;
-@h1-margin: @h-margin;
+@h1-margin: @h-margin * @size-xxl 0;
 
 @h2-font-size: @typography-font-size-2;
 @h2-line-height: @typography-line-height-2;
 @h2-font-weight: @h-font-weight;
-@h2-margin: @h-margin;
+@h2-margin: @h-margin * @size-xl 0;
 
 @h3-font-size: @typography-font-size-3;
 @h3-line-height: @typography-line-height-3;
 @h3-font-weight: @h-font-weight;
-@h3-margin: @h-margin;
+@h3-margin: @h-margin * @size-l 0;
 
 @h4-font-size: @typography-font-size-4;
 @h4-line-height: @typography-line-height-4;
 @h4-font-weight: @h-font-weight;
-@h4-margin: @h-margin;
+@h4-margin: @h-margin * @size-m 0;
 
 @h5-font-size: @typography-font-size-5;
 @h5-line-height: @typography-line-height-5;
 @h5-font-weight: @h-font-weight;
-@h5-margin: @h-margin;
+@h5-margin: @h-margin * @size-s 0;
 
 @h6-font-size: @typography-font-size-6;
 @h6-line-height: @typography-line-height-6;
 @h6-font-weight: @h-font-weight;
-@h6-margin: @h-margin;
+@h6-margin: @h-margin * @size-xs 0;
 
 @article-p-margin: @p-margin;
-@list-margin: 0 0 0 1rem;
+@list-margin: 0 0 0 1.5rem;
+@list-item-space: 0.2rem;
 
 @color-primary: #443349;
 @color-alternative: #209ead;
