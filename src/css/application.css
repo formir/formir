@@ -10,16 +10,7 @@
   height: 0;
   clear: both;
 }
-input[type="date"],
-input[type="datetime-local"],
-input[type="email"],
-input[type="number"],
-input[type="password"],
-input[type="search"],
-input[type="tel"],
-input[type="time"],
-input[type="text"],
-input[type="url"] {
+input:not([type="checkbox"]):not([type="radio"]) {
   border-color: #ccc;
   border-style: solid;
   border-width: 1px;
@@ -38,111 +29,41 @@ input[type="url"] {
   box-shadow: none;
   text-overflow: ellipsis;
 }
-input[type="date"]:hover,
-input[type="datetime-local"]:hover,
-input[type="email"]:hover,
-input[type="number"]:hover,
-input[type="password"]:hover,
-input[type="search"]:hover,
-input[type="tel"]:hover,
-input[type="time"]:hover,
-input[type="text"]:hover,
-input[type="url"]:hover,
-input[type="date"].hover,
-input[type="datetime-local"].hover,
-input[type="email"].hover,
-input[type="number"].hover,
-input[type="password"].hover,
-input[type="search"].hover,
-input[type="tel"].hover,
-input[type="time"].hover,
-input[type="text"].hover,
-input[type="url"].hover {
+input:not([type="checkbox"]):not([type="radio"]):hover,
+input:not([type="checkbox"]):not([type="radio"]).hover {
   border-color: #ccc;
   border-style: solid;
   outline: none;
   box-shadow: none;
   background-color: #fff;
 }
-input[type="date"]:focus,
-input[type="datetime-local"]:focus,
-input[type="email"]:focus,
-input[type="number"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="time"]:focus,
-input[type="text"]:focus,
-input[type="url"]:focus,
-input[type="date"].focus,
-input[type="datetime-local"].focus,
-input[type="email"].focus,
-input[type="number"].focus,
-input[type="password"].focus,
-input[type="search"].focus,
-input[type="tel"].focus,
-input[type="time"].focus,
-input[type="text"].focus,
-input[type="url"].focus {
+input:not([type="checkbox"]):not([type="radio"]):focus,
+input:not([type="checkbox"]):not([type="radio"]).focus {
   border-color: #ccc;
   border-style: solid;
   outline: none;
   box-shadow: none;
   background-color: #fff;
 }
-input[type="date"]:disabled,
-input[type="datetime-local"]:disabled,
-input[type="email"]:disabled,
-input[type="number"]:disabled,
-input[type="password"]:disabled,
-input[type="search"]:disabled,
-input[type="tel"]:disabled,
-input[type="time"]:disabled,
-input[type="text"]:disabled,
-input[type="url"]:disabled,
-input[type="date"][disabled],
-input[type="datetime-local"][disabled],
-input[type="email"][disabled],
-input[type="number"][disabled],
-input[type="password"][disabled],
-input[type="search"][disabled],
-input[type="tel"][disabled],
-input[type="time"][disabled],
-input[type="text"][disabled],
-input[type="url"][disabled] {
+input:not([type="checkbox"]):not([type="radio"]):disabled,
+input:not([type="checkbox"]):not([type="radio"])[disabled] {
   pointer-events: none;
   cursor: normal;
   opacity: 0.7;
 }
-input[type="date"].inverse,
-input[type="datetime-local"].inverse,
-input[type="email"].inverse,
-input[type="number"].inverse,
-input[type="password"].inverse,
-input[type="search"].inverse,
-input[type="tel"].inverse,
-input[type="time"].inverse,
-input[type="text"].inverse,
-input[type="url"].inverse {
+input:not([type="checkbox"]):not([type="radio"]).inverse {
   background-color: #ccc;
   border-color: #fff;
   color: #fff;
 }
-input[type="date"].transparent,
-input[type="datetime-local"].transparent,
-input[type="email"].transparent,
-input[type="number"].transparent,
-input[type="password"].transparent,
-input[type="search"].transparent,
-input[type="tel"].transparent,
-input[type="time"].transparent,
-input[type="text"].transparent,
-input[type="url"].transparent {
+input:not([type="checkbox"]):not([type="radio"]).transparent {
   background-color: transparent;
 }
-textarea,
 select,
-.input {
+textarea,
+.input,
+output,
+datalist {
   border-color: #ccc;
   border-style: solid;
   border-width: 1px;
@@ -161,50 +82,66 @@ select,
   box-shadow: none;
   text-overflow: ellipsis;
 }
-textarea:hover,
 select:hover,
+textarea:hover,
 .input:hover,
-textarea.hover,
+output:hover,
+datalist:hover,
 select.hover,
-.input.hover {
+textarea.hover,
+.input.hover,
+output.hover,
+datalist.hover {
   border-color: #ccc;
   border-style: solid;
   outline: none;
   box-shadow: none;
   background-color: #fff;
 }
-textarea:focus,
 select:focus,
+textarea:focus,
 .input:focus,
-textarea.focus,
+output:focus,
+datalist:focus,
 select.focus,
-.input.focus {
+textarea.focus,
+.input.focus,
+output.focus,
+datalist.focus {
   border-color: #ccc;
   border-style: solid;
   outline: none;
   box-shadow: none;
   background-color: #fff;
 }
-textarea:disabled,
 select:disabled,
+textarea:disabled,
 .input:disabled,
-textarea[disabled],
+output:disabled,
+datalist:disabled,
 select[disabled],
-.input[disabled] {
+textarea[disabled],
+.input[disabled],
+output[disabled],
+datalist[disabled] {
   pointer-events: none;
   cursor: normal;
   opacity: 0.7;
 }
-textarea.inverse,
 select.inverse,
-.input.inverse {
+textarea.inverse,
+.input.inverse,
+output.inverse,
+datalist.inverse {
   background-color: #ccc;
   border-color: #fff;
   color: #fff;
 }
-textarea.transparent,
 select.transparent,
-.input.transparent {
+textarea.transparent,
+.input.transparent,
+output.transparent,
+datalist.transparent {
   background-color: transparent;
 }
 select:not([multiple]) {
@@ -753,9 +690,9 @@ form.validate .select-arrow select:not(:focus).touched.valid + span:after {
   right: auto;
   text-align: left;
 }
-.control[data-addon].left-addon input,
-[class*="cell"][data-addon].left-addon input,
-.control-group[data-addon].left-addon input,
+.control[data-addon].left-addon input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"][data-addon].left-addon input:not([type="checkbox"]):not([type="radio"]),
+.control-group[data-addon].left-addon input:not([type="checkbox"]):not([type="radio"]),
 .control[data-addon].left-addon select,
 [class*="cell"][data-addon].left-addon select,
 .control-group[data-addon].left-addon select,
@@ -850,326 +787,38 @@ form.has-success .control-group.inverse.transparent.select-arrow select + span:a
 .control-group.has-success .control-group.inverse.transparent.select-arrow select + span:after {
   color: #84b500;
 }
-form.has-success input[type="date"],
-.control.has-success input[type="date"],
-[class*="cell"].has-success input[type="date"],
-.control-group.has-success input[type="date"],
-form.has-success .control input[type="date"],
-.control.has-success .control input[type="date"],
-[class*="cell"].has-success .control input[type="date"],
-.control-group.has-success .control input[type="date"],
-form.has-success [class*="cell"] input[type="date"],
-.control.has-success [class*="cell"] input[type="date"],
-[class*="cell"].has-success [class*="cell"] input[type="date"],
-.control-group.has-success [class*="cell"] input[type="date"],
-form.has-success .control-group input[type="date"],
-.control.has-success .control-group input[type="date"],
-[class*="cell"].has-success .control-group input[type="date"],
-.control-group.has-success .control-group input[type="date"],
-form.has-success.inverse.transparent input[type="date"],
-.control.has-success.inverse.transparent input[type="date"],
-[class*="cell"].has-success.inverse.transparent input[type="date"],
-.control-group.has-success.inverse.transparent input[type="date"],
-form.has-success .control.inverse.transparent input[type="date"],
-.control.has-success .control.inverse.transparent input[type="date"],
-[class*="cell"].has-success .control.inverse.transparent input[type="date"],
-.control-group.has-success .control.inverse.transparent input[type="date"],
-form.has-success [class*="cell"].inverse.transparent input[type="date"],
-.control.has-success [class*="cell"].inverse.transparent input[type="date"],
-[class*="cell"].has-success [class*="cell"].inverse.transparent input[type="date"],
-.control-group.has-success [class*="cell"].inverse.transparent input[type="date"],
-form.has-success .control-group.inverse.transparent input[type="date"],
-.control.has-success .control-group.inverse.transparent input[type="date"],
-[class*="cell"].has-success .control-group.inverse.transparent input[type="date"],
-.control-group.has-success .control-group.inverse.transparent input[type="date"],
-form.has-success input[type="datetime-local"],
-.control.has-success input[type="datetime-local"],
-[class*="cell"].has-success input[type="datetime-local"],
-.control-group.has-success input[type="datetime-local"],
-form.has-success .control input[type="datetime-local"],
-.control.has-success .control input[type="datetime-local"],
-[class*="cell"].has-success .control input[type="datetime-local"],
-.control-group.has-success .control input[type="datetime-local"],
-form.has-success [class*="cell"] input[type="datetime-local"],
-.control.has-success [class*="cell"] input[type="datetime-local"],
-[class*="cell"].has-success [class*="cell"] input[type="datetime-local"],
-.control-group.has-success [class*="cell"] input[type="datetime-local"],
-form.has-success .control-group input[type="datetime-local"],
-.control.has-success .control-group input[type="datetime-local"],
-[class*="cell"].has-success .control-group input[type="datetime-local"],
-.control-group.has-success .control-group input[type="datetime-local"],
-form.has-success.inverse.transparent input[type="datetime-local"],
-.control.has-success.inverse.transparent input[type="datetime-local"],
-[class*="cell"].has-success.inverse.transparent input[type="datetime-local"],
-.control-group.has-success.inverse.transparent input[type="datetime-local"],
-form.has-success .control.inverse.transparent input[type="datetime-local"],
-.control.has-success .control.inverse.transparent input[type="datetime-local"],
-[class*="cell"].has-success .control.inverse.transparent input[type="datetime-local"],
-.control-group.has-success .control.inverse.transparent input[type="datetime-local"],
-form.has-success [class*="cell"].inverse.transparent input[type="datetime-local"],
-.control.has-success [class*="cell"].inverse.transparent input[type="datetime-local"],
-[class*="cell"].has-success [class*="cell"].inverse.transparent input[type="datetime-local"],
-.control-group.has-success [class*="cell"].inverse.transparent input[type="datetime-local"],
-form.has-success .control-group.inverse.transparent input[type="datetime-local"],
-.control.has-success .control-group.inverse.transparent input[type="datetime-local"],
-[class*="cell"].has-success .control-group.inverse.transparent input[type="datetime-local"],
-.control-group.has-success .control-group.inverse.transparent input[type="datetime-local"],
-form.has-success input[type="email"],
-.control.has-success input[type="email"],
-[class*="cell"].has-success input[type="email"],
-.control-group.has-success input[type="email"],
-form.has-success .control input[type="email"],
-.control.has-success .control input[type="email"],
-[class*="cell"].has-success .control input[type="email"],
-.control-group.has-success .control input[type="email"],
-form.has-success [class*="cell"] input[type="email"],
-.control.has-success [class*="cell"] input[type="email"],
-[class*="cell"].has-success [class*="cell"] input[type="email"],
-.control-group.has-success [class*="cell"] input[type="email"],
-form.has-success .control-group input[type="email"],
-.control.has-success .control-group input[type="email"],
-[class*="cell"].has-success .control-group input[type="email"],
-.control-group.has-success .control-group input[type="email"],
-form.has-success.inverse.transparent input[type="email"],
-.control.has-success.inverse.transparent input[type="email"],
-[class*="cell"].has-success.inverse.transparent input[type="email"],
-.control-group.has-success.inverse.transparent input[type="email"],
-form.has-success .control.inverse.transparent input[type="email"],
-.control.has-success .control.inverse.transparent input[type="email"],
-[class*="cell"].has-success .control.inverse.transparent input[type="email"],
-.control-group.has-success .control.inverse.transparent input[type="email"],
-form.has-success [class*="cell"].inverse.transparent input[type="email"],
-.control.has-success [class*="cell"].inverse.transparent input[type="email"],
-[class*="cell"].has-success [class*="cell"].inverse.transparent input[type="email"],
-.control-group.has-success [class*="cell"].inverse.transparent input[type="email"],
-form.has-success .control-group.inverse.transparent input[type="email"],
-.control.has-success .control-group.inverse.transparent input[type="email"],
-[class*="cell"].has-success .control-group.inverse.transparent input[type="email"],
-.control-group.has-success .control-group.inverse.transparent input[type="email"],
-form.has-success input[type="number"],
-.control.has-success input[type="number"],
-[class*="cell"].has-success input[type="number"],
-.control-group.has-success input[type="number"],
-form.has-success .control input[type="number"],
-.control.has-success .control input[type="number"],
-[class*="cell"].has-success .control input[type="number"],
-.control-group.has-success .control input[type="number"],
-form.has-success [class*="cell"] input[type="number"],
-.control.has-success [class*="cell"] input[type="number"],
-[class*="cell"].has-success [class*="cell"] input[type="number"],
-.control-group.has-success [class*="cell"] input[type="number"],
-form.has-success .control-group input[type="number"],
-.control.has-success .control-group input[type="number"],
-[class*="cell"].has-success .control-group input[type="number"],
-.control-group.has-success .control-group input[type="number"],
-form.has-success.inverse.transparent input[type="number"],
-.control.has-success.inverse.transparent input[type="number"],
-[class*="cell"].has-success.inverse.transparent input[type="number"],
-.control-group.has-success.inverse.transparent input[type="number"],
-form.has-success .control.inverse.transparent input[type="number"],
-.control.has-success .control.inverse.transparent input[type="number"],
-[class*="cell"].has-success .control.inverse.transparent input[type="number"],
-.control-group.has-success .control.inverse.transparent input[type="number"],
-form.has-success [class*="cell"].inverse.transparent input[type="number"],
-.control.has-success [class*="cell"].inverse.transparent input[type="number"],
-[class*="cell"].has-success [class*="cell"].inverse.transparent input[type="number"],
-.control-group.has-success [class*="cell"].inverse.transparent input[type="number"],
-form.has-success .control-group.inverse.transparent input[type="number"],
-.control.has-success .control-group.inverse.transparent input[type="number"],
-[class*="cell"].has-success .control-group.inverse.transparent input[type="number"],
-.control-group.has-success .control-group.inverse.transparent input[type="number"],
-form.has-success input[type="password"],
-.control.has-success input[type="password"],
-[class*="cell"].has-success input[type="password"],
-.control-group.has-success input[type="password"],
-form.has-success .control input[type="password"],
-.control.has-success .control input[type="password"],
-[class*="cell"].has-success .control input[type="password"],
-.control-group.has-success .control input[type="password"],
-form.has-success [class*="cell"] input[type="password"],
-.control.has-success [class*="cell"] input[type="password"],
-[class*="cell"].has-success [class*="cell"] input[type="password"],
-.control-group.has-success [class*="cell"] input[type="password"],
-form.has-success .control-group input[type="password"],
-.control.has-success .control-group input[type="password"],
-[class*="cell"].has-success .control-group input[type="password"],
-.control-group.has-success .control-group input[type="password"],
-form.has-success.inverse.transparent input[type="password"],
-.control.has-success.inverse.transparent input[type="password"],
-[class*="cell"].has-success.inverse.transparent input[type="password"],
-.control-group.has-success.inverse.transparent input[type="password"],
-form.has-success .control.inverse.transparent input[type="password"],
-.control.has-success .control.inverse.transparent input[type="password"],
-[class*="cell"].has-success .control.inverse.transparent input[type="password"],
-.control-group.has-success .control.inverse.transparent input[type="password"],
-form.has-success [class*="cell"].inverse.transparent input[type="password"],
-.control.has-success [class*="cell"].inverse.transparent input[type="password"],
-[class*="cell"].has-success [class*="cell"].inverse.transparent input[type="password"],
-.control-group.has-success [class*="cell"].inverse.transparent input[type="password"],
-form.has-success .control-group.inverse.transparent input[type="password"],
-.control.has-success .control-group.inverse.transparent input[type="password"],
-[class*="cell"].has-success .control-group.inverse.transparent input[type="password"],
-.control-group.has-success .control-group.inverse.transparent input[type="password"],
-form.has-success input[type="search"],
-.control.has-success input[type="search"],
-[class*="cell"].has-success input[type="search"],
-.control-group.has-success input[type="search"],
-form.has-success .control input[type="search"],
-.control.has-success .control input[type="search"],
-[class*="cell"].has-success .control input[type="search"],
-.control-group.has-success .control input[type="search"],
-form.has-success [class*="cell"] input[type="search"],
-.control.has-success [class*="cell"] input[type="search"],
-[class*="cell"].has-success [class*="cell"] input[type="search"],
-.control-group.has-success [class*="cell"] input[type="search"],
-form.has-success .control-group input[type="search"],
-.control.has-success .control-group input[type="search"],
-[class*="cell"].has-success .control-group input[type="search"],
-.control-group.has-success .control-group input[type="search"],
-form.has-success.inverse.transparent input[type="search"],
-.control.has-success.inverse.transparent input[type="search"],
-[class*="cell"].has-success.inverse.transparent input[type="search"],
-.control-group.has-success.inverse.transparent input[type="search"],
-form.has-success .control.inverse.transparent input[type="search"],
-.control.has-success .control.inverse.transparent input[type="search"],
-[class*="cell"].has-success .control.inverse.transparent input[type="search"],
-.control-group.has-success .control.inverse.transparent input[type="search"],
-form.has-success [class*="cell"].inverse.transparent input[type="search"],
-.control.has-success [class*="cell"].inverse.transparent input[type="search"],
-[class*="cell"].has-success [class*="cell"].inverse.transparent input[type="search"],
-.control-group.has-success [class*="cell"].inverse.transparent input[type="search"],
-form.has-success .control-group.inverse.transparent input[type="search"],
-.control.has-success .control-group.inverse.transparent input[type="search"],
-[class*="cell"].has-success .control-group.inverse.transparent input[type="search"],
-.control-group.has-success .control-group.inverse.transparent input[type="search"],
-form.has-success input[type="tel"],
-.control.has-success input[type="tel"],
-[class*="cell"].has-success input[type="tel"],
-.control-group.has-success input[type="tel"],
-form.has-success .control input[type="tel"],
-.control.has-success .control input[type="tel"],
-[class*="cell"].has-success .control input[type="tel"],
-.control-group.has-success .control input[type="tel"],
-form.has-success [class*="cell"] input[type="tel"],
-.control.has-success [class*="cell"] input[type="tel"],
-[class*="cell"].has-success [class*="cell"] input[type="tel"],
-.control-group.has-success [class*="cell"] input[type="tel"],
-form.has-success .control-group input[type="tel"],
-.control.has-success .control-group input[type="tel"],
-[class*="cell"].has-success .control-group input[type="tel"],
-.control-group.has-success .control-group input[type="tel"],
-form.has-success.inverse.transparent input[type="tel"],
-.control.has-success.inverse.transparent input[type="tel"],
-[class*="cell"].has-success.inverse.transparent input[type="tel"],
-.control-group.has-success.inverse.transparent input[type="tel"],
-form.has-success .control.inverse.transparent input[type="tel"],
-.control.has-success .control.inverse.transparent input[type="tel"],
-[class*="cell"].has-success .control.inverse.transparent input[type="tel"],
-.control-group.has-success .control.inverse.transparent input[type="tel"],
-form.has-success [class*="cell"].inverse.transparent input[type="tel"],
-.control.has-success [class*="cell"].inverse.transparent input[type="tel"],
-[class*="cell"].has-success [class*="cell"].inverse.transparent input[type="tel"],
-.control-group.has-success [class*="cell"].inverse.transparent input[type="tel"],
-form.has-success .control-group.inverse.transparent input[type="tel"],
-.control.has-success .control-group.inverse.transparent input[type="tel"],
-[class*="cell"].has-success .control-group.inverse.transparent input[type="tel"],
-.control-group.has-success .control-group.inverse.transparent input[type="tel"],
-form.has-success input[type="time"],
-.control.has-success input[type="time"],
-[class*="cell"].has-success input[type="time"],
-.control-group.has-success input[type="time"],
-form.has-success .control input[type="time"],
-.control.has-success .control input[type="time"],
-[class*="cell"].has-success .control input[type="time"],
-.control-group.has-success .control input[type="time"],
-form.has-success [class*="cell"] input[type="time"],
-.control.has-success [class*="cell"] input[type="time"],
-[class*="cell"].has-success [class*="cell"] input[type="time"],
-.control-group.has-success [class*="cell"] input[type="time"],
-form.has-success .control-group input[type="time"],
-.control.has-success .control-group input[type="time"],
-[class*="cell"].has-success .control-group input[type="time"],
-.control-group.has-success .control-group input[type="time"],
-form.has-success.inverse.transparent input[type="time"],
-.control.has-success.inverse.transparent input[type="time"],
-[class*="cell"].has-success.inverse.transparent input[type="time"],
-.control-group.has-success.inverse.transparent input[type="time"],
-form.has-success .control.inverse.transparent input[type="time"],
-.control.has-success .control.inverse.transparent input[type="time"],
-[class*="cell"].has-success .control.inverse.transparent input[type="time"],
-.control-group.has-success .control.inverse.transparent input[type="time"],
-form.has-success [class*="cell"].inverse.transparent input[type="time"],
-.control.has-success [class*="cell"].inverse.transparent input[type="time"],
-[class*="cell"].has-success [class*="cell"].inverse.transparent input[type="time"],
-.control-group.has-success [class*="cell"].inverse.transparent input[type="time"],
-form.has-success .control-group.inverse.transparent input[type="time"],
-.control.has-success .control-group.inverse.transparent input[type="time"],
-[class*="cell"].has-success .control-group.inverse.transparent input[type="time"],
-.control-group.has-success .control-group.inverse.transparent input[type="time"],
-form.has-success input[type="text"],
-.control.has-success input[type="text"],
-[class*="cell"].has-success input[type="text"],
-.control-group.has-success input[type="text"],
-form.has-success .control input[type="text"],
-.control.has-success .control input[type="text"],
-[class*="cell"].has-success .control input[type="text"],
-.control-group.has-success .control input[type="text"],
-form.has-success [class*="cell"] input[type="text"],
-.control.has-success [class*="cell"] input[type="text"],
-[class*="cell"].has-success [class*="cell"] input[type="text"],
-.control-group.has-success [class*="cell"] input[type="text"],
-form.has-success .control-group input[type="text"],
-.control.has-success .control-group input[type="text"],
-[class*="cell"].has-success .control-group input[type="text"],
-.control-group.has-success .control-group input[type="text"],
-form.has-success.inverse.transparent input[type="text"],
-.control.has-success.inverse.transparent input[type="text"],
-[class*="cell"].has-success.inverse.transparent input[type="text"],
-.control-group.has-success.inverse.transparent input[type="text"],
-form.has-success .control.inverse.transparent input[type="text"],
-.control.has-success .control.inverse.transparent input[type="text"],
-[class*="cell"].has-success .control.inverse.transparent input[type="text"],
-.control-group.has-success .control.inverse.transparent input[type="text"],
-form.has-success [class*="cell"].inverse.transparent input[type="text"],
-.control.has-success [class*="cell"].inverse.transparent input[type="text"],
-[class*="cell"].has-success [class*="cell"].inverse.transparent input[type="text"],
-.control-group.has-success [class*="cell"].inverse.transparent input[type="text"],
-form.has-success .control-group.inverse.transparent input[type="text"],
-.control.has-success .control-group.inverse.transparent input[type="text"],
-[class*="cell"].has-success .control-group.inverse.transparent input[type="text"],
-.control-group.has-success .control-group.inverse.transparent input[type="text"],
-form.has-success input[type="url"],
-.control.has-success input[type="url"],
-[class*="cell"].has-success input[type="url"],
-.control-group.has-success input[type="url"],
-form.has-success .control input[type="url"],
-.control.has-success .control input[type="url"],
-[class*="cell"].has-success .control input[type="url"],
-.control-group.has-success .control input[type="url"],
-form.has-success [class*="cell"] input[type="url"],
-.control.has-success [class*="cell"] input[type="url"],
-[class*="cell"].has-success [class*="cell"] input[type="url"],
-.control-group.has-success [class*="cell"] input[type="url"],
-form.has-success .control-group input[type="url"],
-.control.has-success .control-group input[type="url"],
-[class*="cell"].has-success .control-group input[type="url"],
-.control-group.has-success .control-group input[type="url"],
-form.has-success.inverse.transparent input[type="url"],
-.control.has-success.inverse.transparent input[type="url"],
-[class*="cell"].has-success.inverse.transparent input[type="url"],
-.control-group.has-success.inverse.transparent input[type="url"],
-form.has-success .control.inverse.transparent input[type="url"],
-.control.has-success .control.inverse.transparent input[type="url"],
-[class*="cell"].has-success .control.inverse.transparent input[type="url"],
-.control-group.has-success .control.inverse.transparent input[type="url"],
-form.has-success [class*="cell"].inverse.transparent input[type="url"],
-.control.has-success [class*="cell"].inverse.transparent input[type="url"],
-[class*="cell"].has-success [class*="cell"].inverse.transparent input[type="url"],
-.control-group.has-success [class*="cell"].inverse.transparent input[type="url"],
-form.has-success .control-group.inverse.transparent input[type="url"],
-.control.has-success .control-group.inverse.transparent input[type="url"],
-[class*="cell"].has-success .control-group.inverse.transparent input[type="url"],
-.control-group.has-success .control-group.inverse.transparent input[type="url"] {
+form.has-success input:not([type="checkbox"]):not([type="radio"]),
+.control.has-success input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-success input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-success input:not([type="checkbox"]):not([type="radio"]),
+form.has-success .control input:not([type="checkbox"]):not([type="radio"]),
+.control.has-success .control input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-success .control input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-success .control input:not([type="checkbox"]):not([type="radio"]),
+form.has-success [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
+.control.has-success [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-success [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-success [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
+form.has-success .control-group input:not([type="checkbox"]):not([type="radio"]),
+.control.has-success .control-group input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-success .control-group input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-success .control-group input:not([type="checkbox"]):not([type="radio"]),
+form.has-success.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control.has-success.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-success.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-success.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+form.has-success .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control.has-success .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-success .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-success .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+form.has-success [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control.has-success [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-success [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-success [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+form.has-success .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control.has-success .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-success .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-success .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]) {
   color: #84b500;
   background-color: #ffffff;
   border-color: #84b500;
@@ -1237,7 +886,103 @@ form.has-success [class*="cell"].inverse.transparent textarea,
 form.has-success .control-group.inverse.transparent textarea,
 .control.has-success .control-group.inverse.transparent textarea,
 [class*="cell"].has-success .control-group.inverse.transparent textarea,
-.control-group.has-success .control-group.inverse.transparent textarea {
+.control-group.has-success .control-group.inverse.transparent textarea,
+form.has-success output,
+.control.has-success output,
+[class*="cell"].has-success output,
+.control-group.has-success output,
+form.has-success .control output,
+.control.has-success .control output,
+[class*="cell"].has-success .control output,
+.control-group.has-success .control output,
+form.has-success [class*="cell"] output,
+.control.has-success [class*="cell"] output,
+[class*="cell"].has-success [class*="cell"] output,
+.control-group.has-success [class*="cell"] output,
+form.has-success .control-group output,
+.control.has-success .control-group output,
+[class*="cell"].has-success .control-group output,
+.control-group.has-success .control-group output,
+form.has-success.inverse.transparent output,
+.control.has-success.inverse.transparent output,
+[class*="cell"].has-success.inverse.transparent output,
+.control-group.has-success.inverse.transparent output,
+form.has-success .control.inverse.transparent output,
+.control.has-success .control.inverse.transparent output,
+[class*="cell"].has-success .control.inverse.transparent output,
+.control-group.has-success .control.inverse.transparent output,
+form.has-success [class*="cell"].inverse.transparent output,
+.control.has-success [class*="cell"].inverse.transparent output,
+[class*="cell"].has-success [class*="cell"].inverse.transparent output,
+.control-group.has-success [class*="cell"].inverse.transparent output,
+form.has-success .control-group.inverse.transparent output,
+.control.has-success .control-group.inverse.transparent output,
+[class*="cell"].has-success .control-group.inverse.transparent output,
+.control-group.has-success .control-group.inverse.transparent output,
+form.has-success data-list,
+.control.has-success data-list,
+[class*="cell"].has-success data-list,
+.control-group.has-success data-list,
+form.has-success .control data-list,
+.control.has-success .control data-list,
+[class*="cell"].has-success .control data-list,
+.control-group.has-success .control data-list,
+form.has-success [class*="cell"] data-list,
+.control.has-success [class*="cell"] data-list,
+[class*="cell"].has-success [class*="cell"] data-list,
+.control-group.has-success [class*="cell"] data-list,
+form.has-success .control-group data-list,
+.control.has-success .control-group data-list,
+[class*="cell"].has-success .control-group data-list,
+.control-group.has-success .control-group data-list,
+form.has-success.inverse.transparent data-list,
+.control.has-success.inverse.transparent data-list,
+[class*="cell"].has-success.inverse.transparent data-list,
+.control-group.has-success.inverse.transparent data-list,
+form.has-success .control.inverse.transparent data-list,
+.control.has-success .control.inverse.transparent data-list,
+[class*="cell"].has-success .control.inverse.transparent data-list,
+.control-group.has-success .control.inverse.transparent data-list,
+form.has-success [class*="cell"].inverse.transparent data-list,
+.control.has-success [class*="cell"].inverse.transparent data-list,
+[class*="cell"].has-success [class*="cell"].inverse.transparent data-list,
+.control-group.has-success [class*="cell"].inverse.transparent data-list,
+form.has-success .control-group.inverse.transparent data-list,
+.control.has-success .control-group.inverse.transparent data-list,
+[class*="cell"].has-success .control-group.inverse.transparent data-list,
+.control-group.has-success .control-group.inverse.transparent data-list,
+form.has-success .input,
+.control.has-success .input,
+[class*="cell"].has-success .input,
+.control-group.has-success .input,
+form.has-success .control .input,
+.control.has-success .control .input,
+[class*="cell"].has-success .control .input,
+.control-group.has-success .control .input,
+form.has-success [class*="cell"] .input,
+.control.has-success [class*="cell"] .input,
+[class*="cell"].has-success [class*="cell"] .input,
+.control-group.has-success [class*="cell"] .input,
+form.has-success .control-group .input,
+.control.has-success .control-group .input,
+[class*="cell"].has-success .control-group .input,
+.control-group.has-success .control-group .input,
+form.has-success.inverse.transparent .input,
+.control.has-success.inverse.transparent .input,
+[class*="cell"].has-success.inverse.transparent .input,
+.control-group.has-success.inverse.transparent .input,
+form.has-success .control.inverse.transparent .input,
+.control.has-success .control.inverse.transparent .input,
+[class*="cell"].has-success .control.inverse.transparent .input,
+.control-group.has-success .control.inverse.transparent .input,
+form.has-success [class*="cell"].inverse.transparent .input,
+.control.has-success [class*="cell"].inverse.transparent .input,
+[class*="cell"].has-success [class*="cell"].inverse.transparent .input,
+.control-group.has-success [class*="cell"].inverse.transparent .input,
+form.has-success .control-group.inverse.transparent .input,
+.control.has-success .control-group.inverse.transparent .input,
+[class*="cell"].has-success .control-group.inverse.transparent .input,
+.control-group.has-success .control-group.inverse.transparent .input {
   color: #84b500;
   background-color: #ffffff;
   color: #000;
@@ -1398,6 +1143,54 @@ form.has-success .control-group.inverse textarea,
 .control.has-success .control-group.inverse textarea,
 [class*="cell"].has-success .control-group.inverse textarea,
 .control-group.has-success .control-group.inverse textarea,
+form.has-success.inverse output,
+.control.has-success.inverse output,
+[class*="cell"].has-success.inverse output,
+.control-group.has-success.inverse output,
+form.has-success .control.inverse output,
+.control.has-success .control.inverse output,
+[class*="cell"].has-success .control.inverse output,
+.control-group.has-success .control.inverse output,
+form.has-success [class*="cell"].inverse output,
+.control.has-success [class*="cell"].inverse output,
+[class*="cell"].has-success [class*="cell"].inverse output,
+.control-group.has-success [class*="cell"].inverse output,
+form.has-success .control-group.inverse output,
+.control.has-success .control-group.inverse output,
+[class*="cell"].has-success .control-group.inverse output,
+.control-group.has-success .control-group.inverse output,
+form.has-success.inverse data-list,
+.control.has-success.inverse data-list,
+[class*="cell"].has-success.inverse data-list,
+.control-group.has-success.inverse data-list,
+form.has-success .control.inverse data-list,
+.control.has-success .control.inverse data-list,
+[class*="cell"].has-success .control.inverse data-list,
+.control-group.has-success .control.inverse data-list,
+form.has-success [class*="cell"].inverse data-list,
+.control.has-success [class*="cell"].inverse data-list,
+[class*="cell"].has-success [class*="cell"].inverse data-list,
+.control-group.has-success [class*="cell"].inverse data-list,
+form.has-success .control-group.inverse data-list,
+.control.has-success .control-group.inverse data-list,
+[class*="cell"].has-success .control-group.inverse data-list,
+.control-group.has-success .control-group.inverse data-list,
+form.has-success.inverse .input,
+.control.has-success.inverse .input,
+[class*="cell"].has-success.inverse .input,
+.control-group.has-success.inverse .input,
+form.has-success .control.inverse .input,
+.control.has-success .control.inverse .input,
+[class*="cell"].has-success .control.inverse .input,
+.control-group.has-success .control.inverse .input,
+form.has-success [class*="cell"].inverse .input,
+.control.has-success [class*="cell"].inverse .input,
+[class*="cell"].has-success [class*="cell"].inverse .input,
+.control-group.has-success [class*="cell"].inverse .input,
+form.has-success .control-group.inverse .input,
+.control.has-success .control-group.inverse .input,
+[class*="cell"].has-success .control-group.inverse .input,
+.control-group.has-success .control-group.inverse .input,
 form.has-success.inverse input,
 .control.has-success.inverse input,
 [class*="cell"].has-success.inverse input,
@@ -1712,326 +1505,38 @@ form.has-info .control-group.inverse.transparent.select-arrow select + span:afte
 .control-group.has-info .control-group.inverse.transparent.select-arrow select + span:after {
   color: #00abc4;
 }
-form.has-info input[type="date"],
-.control.has-info input[type="date"],
-[class*="cell"].has-info input[type="date"],
-.control-group.has-info input[type="date"],
-form.has-info .control input[type="date"],
-.control.has-info .control input[type="date"],
-[class*="cell"].has-info .control input[type="date"],
-.control-group.has-info .control input[type="date"],
-form.has-info [class*="cell"] input[type="date"],
-.control.has-info [class*="cell"] input[type="date"],
-[class*="cell"].has-info [class*="cell"] input[type="date"],
-.control-group.has-info [class*="cell"] input[type="date"],
-form.has-info .control-group input[type="date"],
-.control.has-info .control-group input[type="date"],
-[class*="cell"].has-info .control-group input[type="date"],
-.control-group.has-info .control-group input[type="date"],
-form.has-info.inverse.transparent input[type="date"],
-.control.has-info.inverse.transparent input[type="date"],
-[class*="cell"].has-info.inverse.transparent input[type="date"],
-.control-group.has-info.inverse.transparent input[type="date"],
-form.has-info .control.inverse.transparent input[type="date"],
-.control.has-info .control.inverse.transparent input[type="date"],
-[class*="cell"].has-info .control.inverse.transparent input[type="date"],
-.control-group.has-info .control.inverse.transparent input[type="date"],
-form.has-info [class*="cell"].inverse.transparent input[type="date"],
-.control.has-info [class*="cell"].inverse.transparent input[type="date"],
-[class*="cell"].has-info [class*="cell"].inverse.transparent input[type="date"],
-.control-group.has-info [class*="cell"].inverse.transparent input[type="date"],
-form.has-info .control-group.inverse.transparent input[type="date"],
-.control.has-info .control-group.inverse.transparent input[type="date"],
-[class*="cell"].has-info .control-group.inverse.transparent input[type="date"],
-.control-group.has-info .control-group.inverse.transparent input[type="date"],
-form.has-info input[type="datetime-local"],
-.control.has-info input[type="datetime-local"],
-[class*="cell"].has-info input[type="datetime-local"],
-.control-group.has-info input[type="datetime-local"],
-form.has-info .control input[type="datetime-local"],
-.control.has-info .control input[type="datetime-local"],
-[class*="cell"].has-info .control input[type="datetime-local"],
-.control-group.has-info .control input[type="datetime-local"],
-form.has-info [class*="cell"] input[type="datetime-local"],
-.control.has-info [class*="cell"] input[type="datetime-local"],
-[class*="cell"].has-info [class*="cell"] input[type="datetime-local"],
-.control-group.has-info [class*="cell"] input[type="datetime-local"],
-form.has-info .control-group input[type="datetime-local"],
-.control.has-info .control-group input[type="datetime-local"],
-[class*="cell"].has-info .control-group input[type="datetime-local"],
-.control-group.has-info .control-group input[type="datetime-local"],
-form.has-info.inverse.transparent input[type="datetime-local"],
-.control.has-info.inverse.transparent input[type="datetime-local"],
-[class*="cell"].has-info.inverse.transparent input[type="datetime-local"],
-.control-group.has-info.inverse.transparent input[type="datetime-local"],
-form.has-info .control.inverse.transparent input[type="datetime-local"],
-.control.has-info .control.inverse.transparent input[type="datetime-local"],
-[class*="cell"].has-info .control.inverse.transparent input[type="datetime-local"],
-.control-group.has-info .control.inverse.transparent input[type="datetime-local"],
-form.has-info [class*="cell"].inverse.transparent input[type="datetime-local"],
-.control.has-info [class*="cell"].inverse.transparent input[type="datetime-local"],
-[class*="cell"].has-info [class*="cell"].inverse.transparent input[type="datetime-local"],
-.control-group.has-info [class*="cell"].inverse.transparent input[type="datetime-local"],
-form.has-info .control-group.inverse.transparent input[type="datetime-local"],
-.control.has-info .control-group.inverse.transparent input[type="datetime-local"],
-[class*="cell"].has-info .control-group.inverse.transparent input[type="datetime-local"],
-.control-group.has-info .control-group.inverse.transparent input[type="datetime-local"],
-form.has-info input[type="email"],
-.control.has-info input[type="email"],
-[class*="cell"].has-info input[type="email"],
-.control-group.has-info input[type="email"],
-form.has-info .control input[type="email"],
-.control.has-info .control input[type="email"],
-[class*="cell"].has-info .control input[type="email"],
-.control-group.has-info .control input[type="email"],
-form.has-info [class*="cell"] input[type="email"],
-.control.has-info [class*="cell"] input[type="email"],
-[class*="cell"].has-info [class*="cell"] input[type="email"],
-.control-group.has-info [class*="cell"] input[type="email"],
-form.has-info .control-group input[type="email"],
-.control.has-info .control-group input[type="email"],
-[class*="cell"].has-info .control-group input[type="email"],
-.control-group.has-info .control-group input[type="email"],
-form.has-info.inverse.transparent input[type="email"],
-.control.has-info.inverse.transparent input[type="email"],
-[class*="cell"].has-info.inverse.transparent input[type="email"],
-.control-group.has-info.inverse.transparent input[type="email"],
-form.has-info .control.inverse.transparent input[type="email"],
-.control.has-info .control.inverse.transparent input[type="email"],
-[class*="cell"].has-info .control.inverse.transparent input[type="email"],
-.control-group.has-info .control.inverse.transparent input[type="email"],
-form.has-info [class*="cell"].inverse.transparent input[type="email"],
-.control.has-info [class*="cell"].inverse.transparent input[type="email"],
-[class*="cell"].has-info [class*="cell"].inverse.transparent input[type="email"],
-.control-group.has-info [class*="cell"].inverse.transparent input[type="email"],
-form.has-info .control-group.inverse.transparent input[type="email"],
-.control.has-info .control-group.inverse.transparent input[type="email"],
-[class*="cell"].has-info .control-group.inverse.transparent input[type="email"],
-.control-group.has-info .control-group.inverse.transparent input[type="email"],
-form.has-info input[type="number"],
-.control.has-info input[type="number"],
-[class*="cell"].has-info input[type="number"],
-.control-group.has-info input[type="number"],
-form.has-info .control input[type="number"],
-.control.has-info .control input[type="number"],
-[class*="cell"].has-info .control input[type="number"],
-.control-group.has-info .control input[type="number"],
-form.has-info [class*="cell"] input[type="number"],
-.control.has-info [class*="cell"] input[type="number"],
-[class*="cell"].has-info [class*="cell"] input[type="number"],
-.control-group.has-info [class*="cell"] input[type="number"],
-form.has-info .control-group input[type="number"],
-.control.has-info .control-group input[type="number"],
-[class*="cell"].has-info .control-group input[type="number"],
-.control-group.has-info .control-group input[type="number"],
-form.has-info.inverse.transparent input[type="number"],
-.control.has-info.inverse.transparent input[type="number"],
-[class*="cell"].has-info.inverse.transparent input[type="number"],
-.control-group.has-info.inverse.transparent input[type="number"],
-form.has-info .control.inverse.transparent input[type="number"],
-.control.has-info .control.inverse.transparent input[type="number"],
-[class*="cell"].has-info .control.inverse.transparent input[type="number"],
-.control-group.has-info .control.inverse.transparent input[type="number"],
-form.has-info [class*="cell"].inverse.transparent input[type="number"],
-.control.has-info [class*="cell"].inverse.transparent input[type="number"],
-[class*="cell"].has-info [class*="cell"].inverse.transparent input[type="number"],
-.control-group.has-info [class*="cell"].inverse.transparent input[type="number"],
-form.has-info .control-group.inverse.transparent input[type="number"],
-.control.has-info .control-group.inverse.transparent input[type="number"],
-[class*="cell"].has-info .control-group.inverse.transparent input[type="number"],
-.control-group.has-info .control-group.inverse.transparent input[type="number"],
-form.has-info input[type="password"],
-.control.has-info input[type="password"],
-[class*="cell"].has-info input[type="password"],
-.control-group.has-info input[type="password"],
-form.has-info .control input[type="password"],
-.control.has-info .control input[type="password"],
-[class*="cell"].has-info .control input[type="password"],
-.control-group.has-info .control input[type="password"],
-form.has-info [class*="cell"] input[type="password"],
-.control.has-info [class*="cell"] input[type="password"],
-[class*="cell"].has-info [class*="cell"] input[type="password"],
-.control-group.has-info [class*="cell"] input[type="password"],
-form.has-info .control-group input[type="password"],
-.control.has-info .control-group input[type="password"],
-[class*="cell"].has-info .control-group input[type="password"],
-.control-group.has-info .control-group input[type="password"],
-form.has-info.inverse.transparent input[type="password"],
-.control.has-info.inverse.transparent input[type="password"],
-[class*="cell"].has-info.inverse.transparent input[type="password"],
-.control-group.has-info.inverse.transparent input[type="password"],
-form.has-info .control.inverse.transparent input[type="password"],
-.control.has-info .control.inverse.transparent input[type="password"],
-[class*="cell"].has-info .control.inverse.transparent input[type="password"],
-.control-group.has-info .control.inverse.transparent input[type="password"],
-form.has-info [class*="cell"].inverse.transparent input[type="password"],
-.control.has-info [class*="cell"].inverse.transparent input[type="password"],
-[class*="cell"].has-info [class*="cell"].inverse.transparent input[type="password"],
-.control-group.has-info [class*="cell"].inverse.transparent input[type="password"],
-form.has-info .control-group.inverse.transparent input[type="password"],
-.control.has-info .control-group.inverse.transparent input[type="password"],
-[class*="cell"].has-info .control-group.inverse.transparent input[type="password"],
-.control-group.has-info .control-group.inverse.transparent input[type="password"],
-form.has-info input[type="search"],
-.control.has-info input[type="search"],
-[class*="cell"].has-info input[type="search"],
-.control-group.has-info input[type="search"],
-form.has-info .control input[type="search"],
-.control.has-info .control input[type="search"],
-[class*="cell"].has-info .control input[type="search"],
-.control-group.has-info .control input[type="search"],
-form.has-info [class*="cell"] input[type="search"],
-.control.has-info [class*="cell"] input[type="search"],
-[class*="cell"].has-info [class*="cell"] input[type="search"],
-.control-group.has-info [class*="cell"] input[type="search"],
-form.has-info .control-group input[type="search"],
-.control.has-info .control-group input[type="search"],
-[class*="cell"].has-info .control-group input[type="search"],
-.control-group.has-info .control-group input[type="search"],
-form.has-info.inverse.transparent input[type="search"],
-.control.has-info.inverse.transparent input[type="search"],
-[class*="cell"].has-info.inverse.transparent input[type="search"],
-.control-group.has-info.inverse.transparent input[type="search"],
-form.has-info .control.inverse.transparent input[type="search"],
-.control.has-info .control.inverse.transparent input[type="search"],
-[class*="cell"].has-info .control.inverse.transparent input[type="search"],
-.control-group.has-info .control.inverse.transparent input[type="search"],
-form.has-info [class*="cell"].inverse.transparent input[type="search"],
-.control.has-info [class*="cell"].inverse.transparent input[type="search"],
-[class*="cell"].has-info [class*="cell"].inverse.transparent input[type="search"],
-.control-group.has-info [class*="cell"].inverse.transparent input[type="search"],
-form.has-info .control-group.inverse.transparent input[type="search"],
-.control.has-info .control-group.inverse.transparent input[type="search"],
-[class*="cell"].has-info .control-group.inverse.transparent input[type="search"],
-.control-group.has-info .control-group.inverse.transparent input[type="search"],
-form.has-info input[type="tel"],
-.control.has-info input[type="tel"],
-[class*="cell"].has-info input[type="tel"],
-.control-group.has-info input[type="tel"],
-form.has-info .control input[type="tel"],
-.control.has-info .control input[type="tel"],
-[class*="cell"].has-info .control input[type="tel"],
-.control-group.has-info .control input[type="tel"],
-form.has-info [class*="cell"] input[type="tel"],
-.control.has-info [class*="cell"] input[type="tel"],
-[class*="cell"].has-info [class*="cell"] input[type="tel"],
-.control-group.has-info [class*="cell"] input[type="tel"],
-form.has-info .control-group input[type="tel"],
-.control.has-info .control-group input[type="tel"],
-[class*="cell"].has-info .control-group input[type="tel"],
-.control-group.has-info .control-group input[type="tel"],
-form.has-info.inverse.transparent input[type="tel"],
-.control.has-info.inverse.transparent input[type="tel"],
-[class*="cell"].has-info.inverse.transparent input[type="tel"],
-.control-group.has-info.inverse.transparent input[type="tel"],
-form.has-info .control.inverse.transparent input[type="tel"],
-.control.has-info .control.inverse.transparent input[type="tel"],
-[class*="cell"].has-info .control.inverse.transparent input[type="tel"],
-.control-group.has-info .control.inverse.transparent input[type="tel"],
-form.has-info [class*="cell"].inverse.transparent input[type="tel"],
-.control.has-info [class*="cell"].inverse.transparent input[type="tel"],
-[class*="cell"].has-info [class*="cell"].inverse.transparent input[type="tel"],
-.control-group.has-info [class*="cell"].inverse.transparent input[type="tel"],
-form.has-info .control-group.inverse.transparent input[type="tel"],
-.control.has-info .control-group.inverse.transparent input[type="tel"],
-[class*="cell"].has-info .control-group.inverse.transparent input[type="tel"],
-.control-group.has-info .control-group.inverse.transparent input[type="tel"],
-form.has-info input[type="time"],
-.control.has-info input[type="time"],
-[class*="cell"].has-info input[type="time"],
-.control-group.has-info input[type="time"],
-form.has-info .control input[type="time"],
-.control.has-info .control input[type="time"],
-[class*="cell"].has-info .control input[type="time"],
-.control-group.has-info .control input[type="time"],
-form.has-info [class*="cell"] input[type="time"],
-.control.has-info [class*="cell"] input[type="time"],
-[class*="cell"].has-info [class*="cell"] input[type="time"],
-.control-group.has-info [class*="cell"] input[type="time"],
-form.has-info .control-group input[type="time"],
-.control.has-info .control-group input[type="time"],
-[class*="cell"].has-info .control-group input[type="time"],
-.control-group.has-info .control-group input[type="time"],
-form.has-info.inverse.transparent input[type="time"],
-.control.has-info.inverse.transparent input[type="time"],
-[class*="cell"].has-info.inverse.transparent input[type="time"],
-.control-group.has-info.inverse.transparent input[type="time"],
-form.has-info .control.inverse.transparent input[type="time"],
-.control.has-info .control.inverse.transparent input[type="time"],
-[class*="cell"].has-info .control.inverse.transparent input[type="time"],
-.control-group.has-info .control.inverse.transparent input[type="time"],
-form.has-info [class*="cell"].inverse.transparent input[type="time"],
-.control.has-info [class*="cell"].inverse.transparent input[type="time"],
-[class*="cell"].has-info [class*="cell"].inverse.transparent input[type="time"],
-.control-group.has-info [class*="cell"].inverse.transparent input[type="time"],
-form.has-info .control-group.inverse.transparent input[type="time"],
-.control.has-info .control-group.inverse.transparent input[type="time"],
-[class*="cell"].has-info .control-group.inverse.transparent input[type="time"],
-.control-group.has-info .control-group.inverse.transparent input[type="time"],
-form.has-info input[type="text"],
-.control.has-info input[type="text"],
-[class*="cell"].has-info input[type="text"],
-.control-group.has-info input[type="text"],
-form.has-info .control input[type="text"],
-.control.has-info .control input[type="text"],
-[class*="cell"].has-info .control input[type="text"],
-.control-group.has-info .control input[type="text"],
-form.has-info [class*="cell"] input[type="text"],
-.control.has-info [class*="cell"] input[type="text"],
-[class*="cell"].has-info [class*="cell"] input[type="text"],
-.control-group.has-info [class*="cell"] input[type="text"],
-form.has-info .control-group input[type="text"],
-.control.has-info .control-group input[type="text"],
-[class*="cell"].has-info .control-group input[type="text"],
-.control-group.has-info .control-group input[type="text"],
-form.has-info.inverse.transparent input[type="text"],
-.control.has-info.inverse.transparent input[type="text"],
-[class*="cell"].has-info.inverse.transparent input[type="text"],
-.control-group.has-info.inverse.transparent input[type="text"],
-form.has-info .control.inverse.transparent input[type="text"],
-.control.has-info .control.inverse.transparent input[type="text"],
-[class*="cell"].has-info .control.inverse.transparent input[type="text"],
-.control-group.has-info .control.inverse.transparent input[type="text"],
-form.has-info [class*="cell"].inverse.transparent input[type="text"],
-.control.has-info [class*="cell"].inverse.transparent input[type="text"],
-[class*="cell"].has-info [class*="cell"].inverse.transparent input[type="text"],
-.control-group.has-info [class*="cell"].inverse.transparent input[type="text"],
-form.has-info .control-group.inverse.transparent input[type="text"],
-.control.has-info .control-group.inverse.transparent input[type="text"],
-[class*="cell"].has-info .control-group.inverse.transparent input[type="text"],
-.control-group.has-info .control-group.inverse.transparent input[type="text"],
-form.has-info input[type="url"],
-.control.has-info input[type="url"],
-[class*="cell"].has-info input[type="url"],
-.control-group.has-info input[type="url"],
-form.has-info .control input[type="url"],
-.control.has-info .control input[type="url"],
-[class*="cell"].has-info .control input[type="url"],
-.control-group.has-info .control input[type="url"],
-form.has-info [class*="cell"] input[type="url"],
-.control.has-info [class*="cell"] input[type="url"],
-[class*="cell"].has-info [class*="cell"] input[type="url"],
-.control-group.has-info [class*="cell"] input[type="url"],
-form.has-info .control-group input[type="url"],
-.control.has-info .control-group input[type="url"],
-[class*="cell"].has-info .control-group input[type="url"],
-.control-group.has-info .control-group input[type="url"],
-form.has-info.inverse.transparent input[type="url"],
-.control.has-info.inverse.transparent input[type="url"],
-[class*="cell"].has-info.inverse.transparent input[type="url"],
-.control-group.has-info.inverse.transparent input[type="url"],
-form.has-info .control.inverse.transparent input[type="url"],
-.control.has-info .control.inverse.transparent input[type="url"],
-[class*="cell"].has-info .control.inverse.transparent input[type="url"],
-.control-group.has-info .control.inverse.transparent input[type="url"],
-form.has-info [class*="cell"].inverse.transparent input[type="url"],
-.control.has-info [class*="cell"].inverse.transparent input[type="url"],
-[class*="cell"].has-info [class*="cell"].inverse.transparent input[type="url"],
-.control-group.has-info [class*="cell"].inverse.transparent input[type="url"],
-form.has-info .control-group.inverse.transparent input[type="url"],
-.control.has-info .control-group.inverse.transparent input[type="url"],
-[class*="cell"].has-info .control-group.inverse.transparent input[type="url"],
-.control-group.has-info .control-group.inverse.transparent input[type="url"] {
+form.has-info input:not([type="checkbox"]):not([type="radio"]),
+.control.has-info input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-info input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-info input:not([type="checkbox"]):not([type="radio"]),
+form.has-info .control input:not([type="checkbox"]):not([type="radio"]),
+.control.has-info .control input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-info .control input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-info .control input:not([type="checkbox"]):not([type="radio"]),
+form.has-info [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
+.control.has-info [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-info [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-info [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
+form.has-info .control-group input:not([type="checkbox"]):not([type="radio"]),
+.control.has-info .control-group input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-info .control-group input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-info .control-group input:not([type="checkbox"]):not([type="radio"]),
+form.has-info.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control.has-info.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-info.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-info.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+form.has-info .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control.has-info .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-info .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-info .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+form.has-info [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control.has-info [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-info [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-info [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+form.has-info .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control.has-info .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-info .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-info .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]) {
   color: #00abc4;
   background-color: #ffffff;
   border-color: #00abc4;
@@ -2099,7 +1604,103 @@ form.has-info [class*="cell"].inverse.transparent textarea,
 form.has-info .control-group.inverse.transparent textarea,
 .control.has-info .control-group.inverse.transparent textarea,
 [class*="cell"].has-info .control-group.inverse.transparent textarea,
-.control-group.has-info .control-group.inverse.transparent textarea {
+.control-group.has-info .control-group.inverse.transparent textarea,
+form.has-info output,
+.control.has-info output,
+[class*="cell"].has-info output,
+.control-group.has-info output,
+form.has-info .control output,
+.control.has-info .control output,
+[class*="cell"].has-info .control output,
+.control-group.has-info .control output,
+form.has-info [class*="cell"] output,
+.control.has-info [class*="cell"] output,
+[class*="cell"].has-info [class*="cell"] output,
+.control-group.has-info [class*="cell"] output,
+form.has-info .control-group output,
+.control.has-info .control-group output,
+[class*="cell"].has-info .control-group output,
+.control-group.has-info .control-group output,
+form.has-info.inverse.transparent output,
+.control.has-info.inverse.transparent output,
+[class*="cell"].has-info.inverse.transparent output,
+.control-group.has-info.inverse.transparent output,
+form.has-info .control.inverse.transparent output,
+.control.has-info .control.inverse.transparent output,
+[class*="cell"].has-info .control.inverse.transparent output,
+.control-group.has-info .control.inverse.transparent output,
+form.has-info [class*="cell"].inverse.transparent output,
+.control.has-info [class*="cell"].inverse.transparent output,
+[class*="cell"].has-info [class*="cell"].inverse.transparent output,
+.control-group.has-info [class*="cell"].inverse.transparent output,
+form.has-info .control-group.inverse.transparent output,
+.control.has-info .control-group.inverse.transparent output,
+[class*="cell"].has-info .control-group.inverse.transparent output,
+.control-group.has-info .control-group.inverse.transparent output,
+form.has-info data-list,
+.control.has-info data-list,
+[class*="cell"].has-info data-list,
+.control-group.has-info data-list,
+form.has-info .control data-list,
+.control.has-info .control data-list,
+[class*="cell"].has-info .control data-list,
+.control-group.has-info .control data-list,
+form.has-info [class*="cell"] data-list,
+.control.has-info [class*="cell"] data-list,
+[class*="cell"].has-info [class*="cell"] data-list,
+.control-group.has-info [class*="cell"] data-list,
+form.has-info .control-group data-list,
+.control.has-info .control-group data-list,
+[class*="cell"].has-info .control-group data-list,
+.control-group.has-info .control-group data-list,
+form.has-info.inverse.transparent data-list,
+.control.has-info.inverse.transparent data-list,
+[class*="cell"].has-info.inverse.transparent data-list,
+.control-group.has-info.inverse.transparent data-list,
+form.has-info .control.inverse.transparent data-list,
+.control.has-info .control.inverse.transparent data-list,
+[class*="cell"].has-info .control.inverse.transparent data-list,
+.control-group.has-info .control.inverse.transparent data-list,
+form.has-info [class*="cell"].inverse.transparent data-list,
+.control.has-info [class*="cell"].inverse.transparent data-list,
+[class*="cell"].has-info [class*="cell"].inverse.transparent data-list,
+.control-group.has-info [class*="cell"].inverse.transparent data-list,
+form.has-info .control-group.inverse.transparent data-list,
+.control.has-info .control-group.inverse.transparent data-list,
+[class*="cell"].has-info .control-group.inverse.transparent data-list,
+.control-group.has-info .control-group.inverse.transparent data-list,
+form.has-info .input,
+.control.has-info .input,
+[class*="cell"].has-info .input,
+.control-group.has-info .input,
+form.has-info .control .input,
+.control.has-info .control .input,
+[class*="cell"].has-info .control .input,
+.control-group.has-info .control .input,
+form.has-info [class*="cell"] .input,
+.control.has-info [class*="cell"] .input,
+[class*="cell"].has-info [class*="cell"] .input,
+.control-group.has-info [class*="cell"] .input,
+form.has-info .control-group .input,
+.control.has-info .control-group .input,
+[class*="cell"].has-info .control-group .input,
+.control-group.has-info .control-group .input,
+form.has-info.inverse.transparent .input,
+.control.has-info.inverse.transparent .input,
+[class*="cell"].has-info.inverse.transparent .input,
+.control-group.has-info.inverse.transparent .input,
+form.has-info .control.inverse.transparent .input,
+.control.has-info .control.inverse.transparent .input,
+[class*="cell"].has-info .control.inverse.transparent .input,
+.control-group.has-info .control.inverse.transparent .input,
+form.has-info [class*="cell"].inverse.transparent .input,
+.control.has-info [class*="cell"].inverse.transparent .input,
+[class*="cell"].has-info [class*="cell"].inverse.transparent .input,
+.control-group.has-info [class*="cell"].inverse.transparent .input,
+form.has-info .control-group.inverse.transparent .input,
+.control.has-info .control-group.inverse.transparent .input,
+[class*="cell"].has-info .control-group.inverse.transparent .input,
+.control-group.has-info .control-group.inverse.transparent .input {
   color: #00abc4;
   background-color: #ffffff;
   color: #000;
@@ -2260,6 +1861,54 @@ form.has-info .control-group.inverse textarea,
 .control.has-info .control-group.inverse textarea,
 [class*="cell"].has-info .control-group.inverse textarea,
 .control-group.has-info .control-group.inverse textarea,
+form.has-info.inverse output,
+.control.has-info.inverse output,
+[class*="cell"].has-info.inverse output,
+.control-group.has-info.inverse output,
+form.has-info .control.inverse output,
+.control.has-info .control.inverse output,
+[class*="cell"].has-info .control.inverse output,
+.control-group.has-info .control.inverse output,
+form.has-info [class*="cell"].inverse output,
+.control.has-info [class*="cell"].inverse output,
+[class*="cell"].has-info [class*="cell"].inverse output,
+.control-group.has-info [class*="cell"].inverse output,
+form.has-info .control-group.inverse output,
+.control.has-info .control-group.inverse output,
+[class*="cell"].has-info .control-group.inverse output,
+.control-group.has-info .control-group.inverse output,
+form.has-info.inverse data-list,
+.control.has-info.inverse data-list,
+[class*="cell"].has-info.inverse data-list,
+.control-group.has-info.inverse data-list,
+form.has-info .control.inverse data-list,
+.control.has-info .control.inverse data-list,
+[class*="cell"].has-info .control.inverse data-list,
+.control-group.has-info .control.inverse data-list,
+form.has-info [class*="cell"].inverse data-list,
+.control.has-info [class*="cell"].inverse data-list,
+[class*="cell"].has-info [class*="cell"].inverse data-list,
+.control-group.has-info [class*="cell"].inverse data-list,
+form.has-info .control-group.inverse data-list,
+.control.has-info .control-group.inverse data-list,
+[class*="cell"].has-info .control-group.inverse data-list,
+.control-group.has-info .control-group.inverse data-list,
+form.has-info.inverse .input,
+.control.has-info.inverse .input,
+[class*="cell"].has-info.inverse .input,
+.control-group.has-info.inverse .input,
+form.has-info .control.inverse .input,
+.control.has-info .control.inverse .input,
+[class*="cell"].has-info .control.inverse .input,
+.control-group.has-info .control.inverse .input,
+form.has-info [class*="cell"].inverse .input,
+.control.has-info [class*="cell"].inverse .input,
+[class*="cell"].has-info [class*="cell"].inverse .input,
+.control-group.has-info [class*="cell"].inverse .input,
+form.has-info .control-group.inverse .input,
+.control.has-info .control-group.inverse .input,
+[class*="cell"].has-info .control-group.inverse .input,
+.control-group.has-info .control-group.inverse .input,
 form.has-info.inverse input,
 .control.has-info.inverse input,
 [class*="cell"].has-info.inverse input,
@@ -2574,326 +2223,38 @@ form.has-error .control-group.inverse.transparent.select-arrow select + span:aft
 .control-group.has-error .control-group.inverse.transparent.select-arrow select + span:after {
   color: #cf4040;
 }
-form.has-error input[type="date"],
-.control.has-error input[type="date"],
-[class*="cell"].has-error input[type="date"],
-.control-group.has-error input[type="date"],
-form.has-error .control input[type="date"],
-.control.has-error .control input[type="date"],
-[class*="cell"].has-error .control input[type="date"],
-.control-group.has-error .control input[type="date"],
-form.has-error [class*="cell"] input[type="date"],
-.control.has-error [class*="cell"] input[type="date"],
-[class*="cell"].has-error [class*="cell"] input[type="date"],
-.control-group.has-error [class*="cell"] input[type="date"],
-form.has-error .control-group input[type="date"],
-.control.has-error .control-group input[type="date"],
-[class*="cell"].has-error .control-group input[type="date"],
-.control-group.has-error .control-group input[type="date"],
-form.has-error.inverse.transparent input[type="date"],
-.control.has-error.inverse.transparent input[type="date"],
-[class*="cell"].has-error.inverse.transparent input[type="date"],
-.control-group.has-error.inverse.transparent input[type="date"],
-form.has-error .control.inverse.transparent input[type="date"],
-.control.has-error .control.inverse.transparent input[type="date"],
-[class*="cell"].has-error .control.inverse.transparent input[type="date"],
-.control-group.has-error .control.inverse.transparent input[type="date"],
-form.has-error [class*="cell"].inverse.transparent input[type="date"],
-.control.has-error [class*="cell"].inverse.transparent input[type="date"],
-[class*="cell"].has-error [class*="cell"].inverse.transparent input[type="date"],
-.control-group.has-error [class*="cell"].inverse.transparent input[type="date"],
-form.has-error .control-group.inverse.transparent input[type="date"],
-.control.has-error .control-group.inverse.transparent input[type="date"],
-[class*="cell"].has-error .control-group.inverse.transparent input[type="date"],
-.control-group.has-error .control-group.inverse.transparent input[type="date"],
-form.has-error input[type="datetime-local"],
-.control.has-error input[type="datetime-local"],
-[class*="cell"].has-error input[type="datetime-local"],
-.control-group.has-error input[type="datetime-local"],
-form.has-error .control input[type="datetime-local"],
-.control.has-error .control input[type="datetime-local"],
-[class*="cell"].has-error .control input[type="datetime-local"],
-.control-group.has-error .control input[type="datetime-local"],
-form.has-error [class*="cell"] input[type="datetime-local"],
-.control.has-error [class*="cell"] input[type="datetime-local"],
-[class*="cell"].has-error [class*="cell"] input[type="datetime-local"],
-.control-group.has-error [class*="cell"] input[type="datetime-local"],
-form.has-error .control-group input[type="datetime-local"],
-.control.has-error .control-group input[type="datetime-local"],
-[class*="cell"].has-error .control-group input[type="datetime-local"],
-.control-group.has-error .control-group input[type="datetime-local"],
-form.has-error.inverse.transparent input[type="datetime-local"],
-.control.has-error.inverse.transparent input[type="datetime-local"],
-[class*="cell"].has-error.inverse.transparent input[type="datetime-local"],
-.control-group.has-error.inverse.transparent input[type="datetime-local"],
-form.has-error .control.inverse.transparent input[type="datetime-local"],
-.control.has-error .control.inverse.transparent input[type="datetime-local"],
-[class*="cell"].has-error .control.inverse.transparent input[type="datetime-local"],
-.control-group.has-error .control.inverse.transparent input[type="datetime-local"],
-form.has-error [class*="cell"].inverse.transparent input[type="datetime-local"],
-.control.has-error [class*="cell"].inverse.transparent input[type="datetime-local"],
-[class*="cell"].has-error [class*="cell"].inverse.transparent input[type="datetime-local"],
-.control-group.has-error [class*="cell"].inverse.transparent input[type="datetime-local"],
-form.has-error .control-group.inverse.transparent input[type="datetime-local"],
-.control.has-error .control-group.inverse.transparent input[type="datetime-local"],
-[class*="cell"].has-error .control-group.inverse.transparent input[type="datetime-local"],
-.control-group.has-error .control-group.inverse.transparent input[type="datetime-local"],
-form.has-error input[type="email"],
-.control.has-error input[type="email"],
-[class*="cell"].has-error input[type="email"],
-.control-group.has-error input[type="email"],
-form.has-error .control input[type="email"],
-.control.has-error .control input[type="email"],
-[class*="cell"].has-error .control input[type="email"],
-.control-group.has-error .control input[type="email"],
-form.has-error [class*="cell"] input[type="email"],
-.control.has-error [class*="cell"] input[type="email"],
-[class*="cell"].has-error [class*="cell"] input[type="email"],
-.control-group.has-error [class*="cell"] input[type="email"],
-form.has-error .control-group input[type="email"],
-.control.has-error .control-group input[type="email"],
-[class*="cell"].has-error .control-group input[type="email"],
-.control-group.has-error .control-group input[type="email"],
-form.has-error.inverse.transparent input[type="email"],
-.control.has-error.inverse.transparent input[type="email"],
-[class*="cell"].has-error.inverse.transparent input[type="email"],
-.control-group.has-error.inverse.transparent input[type="email"],
-form.has-error .control.inverse.transparent input[type="email"],
-.control.has-error .control.inverse.transparent input[type="email"],
-[class*="cell"].has-error .control.inverse.transparent input[type="email"],
-.control-group.has-error .control.inverse.transparent input[type="email"],
-form.has-error [class*="cell"].inverse.transparent input[type="email"],
-.control.has-error [class*="cell"].inverse.transparent input[type="email"],
-[class*="cell"].has-error [class*="cell"].inverse.transparent input[type="email"],
-.control-group.has-error [class*="cell"].inverse.transparent input[type="email"],
-form.has-error .control-group.inverse.transparent input[type="email"],
-.control.has-error .control-group.inverse.transparent input[type="email"],
-[class*="cell"].has-error .control-group.inverse.transparent input[type="email"],
-.control-group.has-error .control-group.inverse.transparent input[type="email"],
-form.has-error input[type="number"],
-.control.has-error input[type="number"],
-[class*="cell"].has-error input[type="number"],
-.control-group.has-error input[type="number"],
-form.has-error .control input[type="number"],
-.control.has-error .control input[type="number"],
-[class*="cell"].has-error .control input[type="number"],
-.control-group.has-error .control input[type="number"],
-form.has-error [class*="cell"] input[type="number"],
-.control.has-error [class*="cell"] input[type="number"],
-[class*="cell"].has-error [class*="cell"] input[type="number"],
-.control-group.has-error [class*="cell"] input[type="number"],
-form.has-error .control-group input[type="number"],
-.control.has-error .control-group input[type="number"],
-[class*="cell"].has-error .control-group input[type="number"],
-.control-group.has-error .control-group input[type="number"],
-form.has-error.inverse.transparent input[type="number"],
-.control.has-error.inverse.transparent input[type="number"],
-[class*="cell"].has-error.inverse.transparent input[type="number"],
-.control-group.has-error.inverse.transparent input[type="number"],
-form.has-error .control.inverse.transparent input[type="number"],
-.control.has-error .control.inverse.transparent input[type="number"],
-[class*="cell"].has-error .control.inverse.transparent input[type="number"],
-.control-group.has-error .control.inverse.transparent input[type="number"],
-form.has-error [class*="cell"].inverse.transparent input[type="number"],
-.control.has-error [class*="cell"].inverse.transparent input[type="number"],
-[class*="cell"].has-error [class*="cell"].inverse.transparent input[type="number"],
-.control-group.has-error [class*="cell"].inverse.transparent input[type="number"],
-form.has-error .control-group.inverse.transparent input[type="number"],
-.control.has-error .control-group.inverse.transparent input[type="number"],
-[class*="cell"].has-error .control-group.inverse.transparent input[type="number"],
-.control-group.has-error .control-group.inverse.transparent input[type="number"],
-form.has-error input[type="password"],
-.control.has-error input[type="password"],
-[class*="cell"].has-error input[type="password"],
-.control-group.has-error input[type="password"],
-form.has-error .control input[type="password"],
-.control.has-error .control input[type="password"],
-[class*="cell"].has-error .control input[type="password"],
-.control-group.has-error .control input[type="password"],
-form.has-error [class*="cell"] input[type="password"],
-.control.has-error [class*="cell"] input[type="password"],
-[class*="cell"].has-error [class*="cell"] input[type="password"],
-.control-group.has-error [class*="cell"] input[type="password"],
-form.has-error .control-group input[type="password"],
-.control.has-error .control-group input[type="password"],
-[class*="cell"].has-error .control-group input[type="password"],
-.control-group.has-error .control-group input[type="password"],
-form.has-error.inverse.transparent input[type="password"],
-.control.has-error.inverse.transparent input[type="password"],
-[class*="cell"].has-error.inverse.transparent input[type="password"],
-.control-group.has-error.inverse.transparent input[type="password"],
-form.has-error .control.inverse.transparent input[type="password"],
-.control.has-error .control.inverse.transparent input[type="password"],
-[class*="cell"].has-error .control.inverse.transparent input[type="password"],
-.control-group.has-error .control.inverse.transparent input[type="password"],
-form.has-error [class*="cell"].inverse.transparent input[type="password"],
-.control.has-error [class*="cell"].inverse.transparent input[type="password"],
-[class*="cell"].has-error [class*="cell"].inverse.transparent input[type="password"],
-.control-group.has-error [class*="cell"].inverse.transparent input[type="password"],
-form.has-error .control-group.inverse.transparent input[type="password"],
-.control.has-error .control-group.inverse.transparent input[type="password"],
-[class*="cell"].has-error .control-group.inverse.transparent input[type="password"],
-.control-group.has-error .control-group.inverse.transparent input[type="password"],
-form.has-error input[type="search"],
-.control.has-error input[type="search"],
-[class*="cell"].has-error input[type="search"],
-.control-group.has-error input[type="search"],
-form.has-error .control input[type="search"],
-.control.has-error .control input[type="search"],
-[class*="cell"].has-error .control input[type="search"],
-.control-group.has-error .control input[type="search"],
-form.has-error [class*="cell"] input[type="search"],
-.control.has-error [class*="cell"] input[type="search"],
-[class*="cell"].has-error [class*="cell"] input[type="search"],
-.control-group.has-error [class*="cell"] input[type="search"],
-form.has-error .control-group input[type="search"],
-.control.has-error .control-group input[type="search"],
-[class*="cell"].has-error .control-group input[type="search"],
-.control-group.has-error .control-group input[type="search"],
-form.has-error.inverse.transparent input[type="search"],
-.control.has-error.inverse.transparent input[type="search"],
-[class*="cell"].has-error.inverse.transparent input[type="search"],
-.control-group.has-error.inverse.transparent input[type="search"],
-form.has-error .control.inverse.transparent input[type="search"],
-.control.has-error .control.inverse.transparent input[type="search"],
-[class*="cell"].has-error .control.inverse.transparent input[type="search"],
-.control-group.has-error .control.inverse.transparent input[type="search"],
-form.has-error [class*="cell"].inverse.transparent input[type="search"],
-.control.has-error [class*="cell"].inverse.transparent input[type="search"],
-[class*="cell"].has-error [class*="cell"].inverse.transparent input[type="search"],
-.control-group.has-error [class*="cell"].inverse.transparent input[type="search"],
-form.has-error .control-group.inverse.transparent input[type="search"],
-.control.has-error .control-group.inverse.transparent input[type="search"],
-[class*="cell"].has-error .control-group.inverse.transparent input[type="search"],
-.control-group.has-error .control-group.inverse.transparent input[type="search"],
-form.has-error input[type="tel"],
-.control.has-error input[type="tel"],
-[class*="cell"].has-error input[type="tel"],
-.control-group.has-error input[type="tel"],
-form.has-error .control input[type="tel"],
-.control.has-error .control input[type="tel"],
-[class*="cell"].has-error .control input[type="tel"],
-.control-group.has-error .control input[type="tel"],
-form.has-error [class*="cell"] input[type="tel"],
-.control.has-error [class*="cell"] input[type="tel"],
-[class*="cell"].has-error [class*="cell"] input[type="tel"],
-.control-group.has-error [class*="cell"] input[type="tel"],
-form.has-error .control-group input[type="tel"],
-.control.has-error .control-group input[type="tel"],
-[class*="cell"].has-error .control-group input[type="tel"],
-.control-group.has-error .control-group input[type="tel"],
-form.has-error.inverse.transparent input[type="tel"],
-.control.has-error.inverse.transparent input[type="tel"],
-[class*="cell"].has-error.inverse.transparent input[type="tel"],
-.control-group.has-error.inverse.transparent input[type="tel"],
-form.has-error .control.inverse.transparent input[type="tel"],
-.control.has-error .control.inverse.transparent input[type="tel"],
-[class*="cell"].has-error .control.inverse.transparent input[type="tel"],
-.control-group.has-error .control.inverse.transparent input[type="tel"],
-form.has-error [class*="cell"].inverse.transparent input[type="tel"],
-.control.has-error [class*="cell"].inverse.transparent input[type="tel"],
-[class*="cell"].has-error [class*="cell"].inverse.transparent input[type="tel"],
-.control-group.has-error [class*="cell"].inverse.transparent input[type="tel"],
-form.has-error .control-group.inverse.transparent input[type="tel"],
-.control.has-error .control-group.inverse.transparent input[type="tel"],
-[class*="cell"].has-error .control-group.inverse.transparent input[type="tel"],
-.control-group.has-error .control-group.inverse.transparent input[type="tel"],
-form.has-error input[type="time"],
-.control.has-error input[type="time"],
-[class*="cell"].has-error input[type="time"],
-.control-group.has-error input[type="time"],
-form.has-error .control input[type="time"],
-.control.has-error .control input[type="time"],
-[class*="cell"].has-error .control input[type="time"],
-.control-group.has-error .control input[type="time"],
-form.has-error [class*="cell"] input[type="time"],
-.control.has-error [class*="cell"] input[type="time"],
-[class*="cell"].has-error [class*="cell"] input[type="time"],
-.control-group.has-error [class*="cell"] input[type="time"],
-form.has-error .control-group input[type="time"],
-.control.has-error .control-group input[type="time"],
-[class*="cell"].has-error .control-group input[type="time"],
-.control-group.has-error .control-group input[type="time"],
-form.has-error.inverse.transparent input[type="time"],
-.control.has-error.inverse.transparent input[type="time"],
-[class*="cell"].has-error.inverse.transparent input[type="time"],
-.control-group.has-error.inverse.transparent input[type="time"],
-form.has-error .control.inverse.transparent input[type="time"],
-.control.has-error .control.inverse.transparent input[type="time"],
-[class*="cell"].has-error .control.inverse.transparent input[type="time"],
-.control-group.has-error .control.inverse.transparent input[type="time"],
-form.has-error [class*="cell"].inverse.transparent input[type="time"],
-.control.has-error [class*="cell"].inverse.transparent input[type="time"],
-[class*="cell"].has-error [class*="cell"].inverse.transparent input[type="time"],
-.control-group.has-error [class*="cell"].inverse.transparent input[type="time"],
-form.has-error .control-group.inverse.transparent input[type="time"],
-.control.has-error .control-group.inverse.transparent input[type="time"],
-[class*="cell"].has-error .control-group.inverse.transparent input[type="time"],
-.control-group.has-error .control-group.inverse.transparent input[type="time"],
-form.has-error input[type="text"],
-.control.has-error input[type="text"],
-[class*="cell"].has-error input[type="text"],
-.control-group.has-error input[type="text"],
-form.has-error .control input[type="text"],
-.control.has-error .control input[type="text"],
-[class*="cell"].has-error .control input[type="text"],
-.control-group.has-error .control input[type="text"],
-form.has-error [class*="cell"] input[type="text"],
-.control.has-error [class*="cell"] input[type="text"],
-[class*="cell"].has-error [class*="cell"] input[type="text"],
-.control-group.has-error [class*="cell"] input[type="text"],
-form.has-error .control-group input[type="text"],
-.control.has-error .control-group input[type="text"],
-[class*="cell"].has-error .control-group input[type="text"],
-.control-group.has-error .control-group input[type="text"],
-form.has-error.inverse.transparent input[type="text"],
-.control.has-error.inverse.transparent input[type="text"],
-[class*="cell"].has-error.inverse.transparent input[type="text"],
-.control-group.has-error.inverse.transparent input[type="text"],
-form.has-error .control.inverse.transparent input[type="text"],
-.control.has-error .control.inverse.transparent input[type="text"],
-[class*="cell"].has-error .control.inverse.transparent input[type="text"],
-.control-group.has-error .control.inverse.transparent input[type="text"],
-form.has-error [class*="cell"].inverse.transparent input[type="text"],
-.control.has-error [class*="cell"].inverse.transparent input[type="text"],
-[class*="cell"].has-error [class*="cell"].inverse.transparent input[type="text"],
-.control-group.has-error [class*="cell"].inverse.transparent input[type="text"],
-form.has-error .control-group.inverse.transparent input[type="text"],
-.control.has-error .control-group.inverse.transparent input[type="text"],
-[class*="cell"].has-error .control-group.inverse.transparent input[type="text"],
-.control-group.has-error .control-group.inverse.transparent input[type="text"],
-form.has-error input[type="url"],
-.control.has-error input[type="url"],
-[class*="cell"].has-error input[type="url"],
-.control-group.has-error input[type="url"],
-form.has-error .control input[type="url"],
-.control.has-error .control input[type="url"],
-[class*="cell"].has-error .control input[type="url"],
-.control-group.has-error .control input[type="url"],
-form.has-error [class*="cell"] input[type="url"],
-.control.has-error [class*="cell"] input[type="url"],
-[class*="cell"].has-error [class*="cell"] input[type="url"],
-.control-group.has-error [class*="cell"] input[type="url"],
-form.has-error .control-group input[type="url"],
-.control.has-error .control-group input[type="url"],
-[class*="cell"].has-error .control-group input[type="url"],
-.control-group.has-error .control-group input[type="url"],
-form.has-error.inverse.transparent input[type="url"],
-.control.has-error.inverse.transparent input[type="url"],
-[class*="cell"].has-error.inverse.transparent input[type="url"],
-.control-group.has-error.inverse.transparent input[type="url"],
-form.has-error .control.inverse.transparent input[type="url"],
-.control.has-error .control.inverse.transparent input[type="url"],
-[class*="cell"].has-error .control.inverse.transparent input[type="url"],
-.control-group.has-error .control.inverse.transparent input[type="url"],
-form.has-error [class*="cell"].inverse.transparent input[type="url"],
-.control.has-error [class*="cell"].inverse.transparent input[type="url"],
-[class*="cell"].has-error [class*="cell"].inverse.transparent input[type="url"],
-.control-group.has-error [class*="cell"].inverse.transparent input[type="url"],
-form.has-error .control-group.inverse.transparent input[type="url"],
-.control.has-error .control-group.inverse.transparent input[type="url"],
-[class*="cell"].has-error .control-group.inverse.transparent input[type="url"],
-.control-group.has-error .control-group.inverse.transparent input[type="url"] {
+form.has-error input:not([type="checkbox"]):not([type="radio"]),
+.control.has-error input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-error input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-error input:not([type="checkbox"]):not([type="radio"]),
+form.has-error .control input:not([type="checkbox"]):not([type="radio"]),
+.control.has-error .control input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-error .control input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-error .control input:not([type="checkbox"]):not([type="radio"]),
+form.has-error [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
+.control.has-error [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-error [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-error [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
+form.has-error .control-group input:not([type="checkbox"]):not([type="radio"]),
+.control.has-error .control-group input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-error .control-group input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-error .control-group input:not([type="checkbox"]):not([type="radio"]),
+form.has-error.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control.has-error.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-error.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-error.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+form.has-error .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control.has-error .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-error .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-error .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+form.has-error [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control.has-error [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-error [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-error [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+form.has-error .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control.has-error .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-error .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-error .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]) {
   color: #cf4040;
   background-color: #ffffff;
   border-color: #cf4040;
@@ -2961,7 +2322,103 @@ form.has-error [class*="cell"].inverse.transparent textarea,
 form.has-error .control-group.inverse.transparent textarea,
 .control.has-error .control-group.inverse.transparent textarea,
 [class*="cell"].has-error .control-group.inverse.transparent textarea,
-.control-group.has-error .control-group.inverse.transparent textarea {
+.control-group.has-error .control-group.inverse.transparent textarea,
+form.has-error output,
+.control.has-error output,
+[class*="cell"].has-error output,
+.control-group.has-error output,
+form.has-error .control output,
+.control.has-error .control output,
+[class*="cell"].has-error .control output,
+.control-group.has-error .control output,
+form.has-error [class*="cell"] output,
+.control.has-error [class*="cell"] output,
+[class*="cell"].has-error [class*="cell"] output,
+.control-group.has-error [class*="cell"] output,
+form.has-error .control-group output,
+.control.has-error .control-group output,
+[class*="cell"].has-error .control-group output,
+.control-group.has-error .control-group output,
+form.has-error.inverse.transparent output,
+.control.has-error.inverse.transparent output,
+[class*="cell"].has-error.inverse.transparent output,
+.control-group.has-error.inverse.transparent output,
+form.has-error .control.inverse.transparent output,
+.control.has-error .control.inverse.transparent output,
+[class*="cell"].has-error .control.inverse.transparent output,
+.control-group.has-error .control.inverse.transparent output,
+form.has-error [class*="cell"].inverse.transparent output,
+.control.has-error [class*="cell"].inverse.transparent output,
+[class*="cell"].has-error [class*="cell"].inverse.transparent output,
+.control-group.has-error [class*="cell"].inverse.transparent output,
+form.has-error .control-group.inverse.transparent output,
+.control.has-error .control-group.inverse.transparent output,
+[class*="cell"].has-error .control-group.inverse.transparent output,
+.control-group.has-error .control-group.inverse.transparent output,
+form.has-error data-list,
+.control.has-error data-list,
+[class*="cell"].has-error data-list,
+.control-group.has-error data-list,
+form.has-error .control data-list,
+.control.has-error .control data-list,
+[class*="cell"].has-error .control data-list,
+.control-group.has-error .control data-list,
+form.has-error [class*="cell"] data-list,
+.control.has-error [class*="cell"] data-list,
+[class*="cell"].has-error [class*="cell"] data-list,
+.control-group.has-error [class*="cell"] data-list,
+form.has-error .control-group data-list,
+.control.has-error .control-group data-list,
+[class*="cell"].has-error .control-group data-list,
+.control-group.has-error .control-group data-list,
+form.has-error.inverse.transparent data-list,
+.control.has-error.inverse.transparent data-list,
+[class*="cell"].has-error.inverse.transparent data-list,
+.control-group.has-error.inverse.transparent data-list,
+form.has-error .control.inverse.transparent data-list,
+.control.has-error .control.inverse.transparent data-list,
+[class*="cell"].has-error .control.inverse.transparent data-list,
+.control-group.has-error .control.inverse.transparent data-list,
+form.has-error [class*="cell"].inverse.transparent data-list,
+.control.has-error [class*="cell"].inverse.transparent data-list,
+[class*="cell"].has-error [class*="cell"].inverse.transparent data-list,
+.control-group.has-error [class*="cell"].inverse.transparent data-list,
+form.has-error .control-group.inverse.transparent data-list,
+.control.has-error .control-group.inverse.transparent data-list,
+[class*="cell"].has-error .control-group.inverse.transparent data-list,
+.control-group.has-error .control-group.inverse.transparent data-list,
+form.has-error .input,
+.control.has-error .input,
+[class*="cell"].has-error .input,
+.control-group.has-error .input,
+form.has-error .control .input,
+.control.has-error .control .input,
+[class*="cell"].has-error .control .input,
+.control-group.has-error .control .input,
+form.has-error [class*="cell"] .input,
+.control.has-error [class*="cell"] .input,
+[class*="cell"].has-error [class*="cell"] .input,
+.control-group.has-error [class*="cell"] .input,
+form.has-error .control-group .input,
+.control.has-error .control-group .input,
+[class*="cell"].has-error .control-group .input,
+.control-group.has-error .control-group .input,
+form.has-error.inverse.transparent .input,
+.control.has-error.inverse.transparent .input,
+[class*="cell"].has-error.inverse.transparent .input,
+.control-group.has-error.inverse.transparent .input,
+form.has-error .control.inverse.transparent .input,
+.control.has-error .control.inverse.transparent .input,
+[class*="cell"].has-error .control.inverse.transparent .input,
+.control-group.has-error .control.inverse.transparent .input,
+form.has-error [class*="cell"].inverse.transparent .input,
+.control.has-error [class*="cell"].inverse.transparent .input,
+[class*="cell"].has-error [class*="cell"].inverse.transparent .input,
+.control-group.has-error [class*="cell"].inverse.transparent .input,
+form.has-error .control-group.inverse.transparent .input,
+.control.has-error .control-group.inverse.transparent .input,
+[class*="cell"].has-error .control-group.inverse.transparent .input,
+.control-group.has-error .control-group.inverse.transparent .input {
   color: #cf4040;
   background-color: #ffffff;
   color: #000;
@@ -3122,6 +2579,54 @@ form.has-error .control-group.inverse textarea,
 .control.has-error .control-group.inverse textarea,
 [class*="cell"].has-error .control-group.inverse textarea,
 .control-group.has-error .control-group.inverse textarea,
+form.has-error.inverse output,
+.control.has-error.inverse output,
+[class*="cell"].has-error.inverse output,
+.control-group.has-error.inverse output,
+form.has-error .control.inverse output,
+.control.has-error .control.inverse output,
+[class*="cell"].has-error .control.inverse output,
+.control-group.has-error .control.inverse output,
+form.has-error [class*="cell"].inverse output,
+.control.has-error [class*="cell"].inverse output,
+[class*="cell"].has-error [class*="cell"].inverse output,
+.control-group.has-error [class*="cell"].inverse output,
+form.has-error .control-group.inverse output,
+.control.has-error .control-group.inverse output,
+[class*="cell"].has-error .control-group.inverse output,
+.control-group.has-error .control-group.inverse output,
+form.has-error.inverse data-list,
+.control.has-error.inverse data-list,
+[class*="cell"].has-error.inverse data-list,
+.control-group.has-error.inverse data-list,
+form.has-error .control.inverse data-list,
+.control.has-error .control.inverse data-list,
+[class*="cell"].has-error .control.inverse data-list,
+.control-group.has-error .control.inverse data-list,
+form.has-error [class*="cell"].inverse data-list,
+.control.has-error [class*="cell"].inverse data-list,
+[class*="cell"].has-error [class*="cell"].inverse data-list,
+.control-group.has-error [class*="cell"].inverse data-list,
+form.has-error .control-group.inverse data-list,
+.control.has-error .control-group.inverse data-list,
+[class*="cell"].has-error .control-group.inverse data-list,
+.control-group.has-error .control-group.inverse data-list,
+form.has-error.inverse .input,
+.control.has-error.inverse .input,
+[class*="cell"].has-error.inverse .input,
+.control-group.has-error.inverse .input,
+form.has-error .control.inverse .input,
+.control.has-error .control.inverse .input,
+[class*="cell"].has-error .control.inverse .input,
+.control-group.has-error .control.inverse .input,
+form.has-error [class*="cell"].inverse .input,
+.control.has-error [class*="cell"].inverse .input,
+[class*="cell"].has-error [class*="cell"].inverse .input,
+.control-group.has-error [class*="cell"].inverse .input,
+form.has-error .control-group.inverse .input,
+.control.has-error .control-group.inverse .input,
+[class*="cell"].has-error .control-group.inverse .input,
+.control-group.has-error .control-group.inverse .input,
 form.has-error.inverse input,
 .control.has-error.inverse input,
 [class*="cell"].has-error.inverse input,
@@ -3436,326 +2941,38 @@ form.has-warning .control-group.inverse.transparent.select-arrow select + span:a
 .control-group.has-warning .control-group.inverse.transparent.select-arrow select + span:after {
   color: #ea8432;
 }
-form.has-warning input[type="date"],
-.control.has-warning input[type="date"],
-[class*="cell"].has-warning input[type="date"],
-.control-group.has-warning input[type="date"],
-form.has-warning .control input[type="date"],
-.control.has-warning .control input[type="date"],
-[class*="cell"].has-warning .control input[type="date"],
-.control-group.has-warning .control input[type="date"],
-form.has-warning [class*="cell"] input[type="date"],
-.control.has-warning [class*="cell"] input[type="date"],
-[class*="cell"].has-warning [class*="cell"] input[type="date"],
-.control-group.has-warning [class*="cell"] input[type="date"],
-form.has-warning .control-group input[type="date"],
-.control.has-warning .control-group input[type="date"],
-[class*="cell"].has-warning .control-group input[type="date"],
-.control-group.has-warning .control-group input[type="date"],
-form.has-warning.inverse.transparent input[type="date"],
-.control.has-warning.inverse.transparent input[type="date"],
-[class*="cell"].has-warning.inverse.transparent input[type="date"],
-.control-group.has-warning.inverse.transparent input[type="date"],
-form.has-warning .control.inverse.transparent input[type="date"],
-.control.has-warning .control.inverse.transparent input[type="date"],
-[class*="cell"].has-warning .control.inverse.transparent input[type="date"],
-.control-group.has-warning .control.inverse.transparent input[type="date"],
-form.has-warning [class*="cell"].inverse.transparent input[type="date"],
-.control.has-warning [class*="cell"].inverse.transparent input[type="date"],
-[class*="cell"].has-warning [class*="cell"].inverse.transparent input[type="date"],
-.control-group.has-warning [class*="cell"].inverse.transparent input[type="date"],
-form.has-warning .control-group.inverse.transparent input[type="date"],
-.control.has-warning .control-group.inverse.transparent input[type="date"],
-[class*="cell"].has-warning .control-group.inverse.transparent input[type="date"],
-.control-group.has-warning .control-group.inverse.transparent input[type="date"],
-form.has-warning input[type="datetime-local"],
-.control.has-warning input[type="datetime-local"],
-[class*="cell"].has-warning input[type="datetime-local"],
-.control-group.has-warning input[type="datetime-local"],
-form.has-warning .control input[type="datetime-local"],
-.control.has-warning .control input[type="datetime-local"],
-[class*="cell"].has-warning .control input[type="datetime-local"],
-.control-group.has-warning .control input[type="datetime-local"],
-form.has-warning [class*="cell"] input[type="datetime-local"],
-.control.has-warning [class*="cell"] input[type="datetime-local"],
-[class*="cell"].has-warning [class*="cell"] input[type="datetime-local"],
-.control-group.has-warning [class*="cell"] input[type="datetime-local"],
-form.has-warning .control-group input[type="datetime-local"],
-.control.has-warning .control-group input[type="datetime-local"],
-[class*="cell"].has-warning .control-group input[type="datetime-local"],
-.control-group.has-warning .control-group input[type="datetime-local"],
-form.has-warning.inverse.transparent input[type="datetime-local"],
-.control.has-warning.inverse.transparent input[type="datetime-local"],
-[class*="cell"].has-warning.inverse.transparent input[type="datetime-local"],
-.control-group.has-warning.inverse.transparent input[type="datetime-local"],
-form.has-warning .control.inverse.transparent input[type="datetime-local"],
-.control.has-warning .control.inverse.transparent input[type="datetime-local"],
-[class*="cell"].has-warning .control.inverse.transparent input[type="datetime-local"],
-.control-group.has-warning .control.inverse.transparent input[type="datetime-local"],
-form.has-warning [class*="cell"].inverse.transparent input[type="datetime-local"],
-.control.has-warning [class*="cell"].inverse.transparent input[type="datetime-local"],
-[class*="cell"].has-warning [class*="cell"].inverse.transparent input[type="datetime-local"],
-.control-group.has-warning [class*="cell"].inverse.transparent input[type="datetime-local"],
-form.has-warning .control-group.inverse.transparent input[type="datetime-local"],
-.control.has-warning .control-group.inverse.transparent input[type="datetime-local"],
-[class*="cell"].has-warning .control-group.inverse.transparent input[type="datetime-local"],
-.control-group.has-warning .control-group.inverse.transparent input[type="datetime-local"],
-form.has-warning input[type="email"],
-.control.has-warning input[type="email"],
-[class*="cell"].has-warning input[type="email"],
-.control-group.has-warning input[type="email"],
-form.has-warning .control input[type="email"],
-.control.has-warning .control input[type="email"],
-[class*="cell"].has-warning .control input[type="email"],
-.control-group.has-warning .control input[type="email"],
-form.has-warning [class*="cell"] input[type="email"],
-.control.has-warning [class*="cell"] input[type="email"],
-[class*="cell"].has-warning [class*="cell"] input[type="email"],
-.control-group.has-warning [class*="cell"] input[type="email"],
-form.has-warning .control-group input[type="email"],
-.control.has-warning .control-group input[type="email"],
-[class*="cell"].has-warning .control-group input[type="email"],
-.control-group.has-warning .control-group input[type="email"],
-form.has-warning.inverse.transparent input[type="email"],
-.control.has-warning.inverse.transparent input[type="email"],
-[class*="cell"].has-warning.inverse.transparent input[type="email"],
-.control-group.has-warning.inverse.transparent input[type="email"],
-form.has-warning .control.inverse.transparent input[type="email"],
-.control.has-warning .control.inverse.transparent input[type="email"],
-[class*="cell"].has-warning .control.inverse.transparent input[type="email"],
-.control-group.has-warning .control.inverse.transparent input[type="email"],
-form.has-warning [class*="cell"].inverse.transparent input[type="email"],
-.control.has-warning [class*="cell"].inverse.transparent input[type="email"],
-[class*="cell"].has-warning [class*="cell"].inverse.transparent input[type="email"],
-.control-group.has-warning [class*="cell"].inverse.transparent input[type="email"],
-form.has-warning .control-group.inverse.transparent input[type="email"],
-.control.has-warning .control-group.inverse.transparent input[type="email"],
-[class*="cell"].has-warning .control-group.inverse.transparent input[type="email"],
-.control-group.has-warning .control-group.inverse.transparent input[type="email"],
-form.has-warning input[type="number"],
-.control.has-warning input[type="number"],
-[class*="cell"].has-warning input[type="number"],
-.control-group.has-warning input[type="number"],
-form.has-warning .control input[type="number"],
-.control.has-warning .control input[type="number"],
-[class*="cell"].has-warning .control input[type="number"],
-.control-group.has-warning .control input[type="number"],
-form.has-warning [class*="cell"] input[type="number"],
-.control.has-warning [class*="cell"] input[type="number"],
-[class*="cell"].has-warning [class*="cell"] input[type="number"],
-.control-group.has-warning [class*="cell"] input[type="number"],
-form.has-warning .control-group input[type="number"],
-.control.has-warning .control-group input[type="number"],
-[class*="cell"].has-warning .control-group input[type="number"],
-.control-group.has-warning .control-group input[type="number"],
-form.has-warning.inverse.transparent input[type="number"],
-.control.has-warning.inverse.transparent input[type="number"],
-[class*="cell"].has-warning.inverse.transparent input[type="number"],
-.control-group.has-warning.inverse.transparent input[type="number"],
-form.has-warning .control.inverse.transparent input[type="number"],
-.control.has-warning .control.inverse.transparent input[type="number"],
-[class*="cell"].has-warning .control.inverse.transparent input[type="number"],
-.control-group.has-warning .control.inverse.transparent input[type="number"],
-form.has-warning [class*="cell"].inverse.transparent input[type="number"],
-.control.has-warning [class*="cell"].inverse.transparent input[type="number"],
-[class*="cell"].has-warning [class*="cell"].inverse.transparent input[type="number"],
-.control-group.has-warning [class*="cell"].inverse.transparent input[type="number"],
-form.has-warning .control-group.inverse.transparent input[type="number"],
-.control.has-warning .control-group.inverse.transparent input[type="number"],
-[class*="cell"].has-warning .control-group.inverse.transparent input[type="number"],
-.control-group.has-warning .control-group.inverse.transparent input[type="number"],
-form.has-warning input[type="password"],
-.control.has-warning input[type="password"],
-[class*="cell"].has-warning input[type="password"],
-.control-group.has-warning input[type="password"],
-form.has-warning .control input[type="password"],
-.control.has-warning .control input[type="password"],
-[class*="cell"].has-warning .control input[type="password"],
-.control-group.has-warning .control input[type="password"],
-form.has-warning [class*="cell"] input[type="password"],
-.control.has-warning [class*="cell"] input[type="password"],
-[class*="cell"].has-warning [class*="cell"] input[type="password"],
-.control-group.has-warning [class*="cell"] input[type="password"],
-form.has-warning .control-group input[type="password"],
-.control.has-warning .control-group input[type="password"],
-[class*="cell"].has-warning .control-group input[type="password"],
-.control-group.has-warning .control-group input[type="password"],
-form.has-warning.inverse.transparent input[type="password"],
-.control.has-warning.inverse.transparent input[type="password"],
-[class*="cell"].has-warning.inverse.transparent input[type="password"],
-.control-group.has-warning.inverse.transparent input[type="password"],
-form.has-warning .control.inverse.transparent input[type="password"],
-.control.has-warning .control.inverse.transparent input[type="password"],
-[class*="cell"].has-warning .control.inverse.transparent input[type="password"],
-.control-group.has-warning .control.inverse.transparent input[type="password"],
-form.has-warning [class*="cell"].inverse.transparent input[type="password"],
-.control.has-warning [class*="cell"].inverse.transparent input[type="password"],
-[class*="cell"].has-warning [class*="cell"].inverse.transparent input[type="password"],
-.control-group.has-warning [class*="cell"].inverse.transparent input[type="password"],
-form.has-warning .control-group.inverse.transparent input[type="password"],
-.control.has-warning .control-group.inverse.transparent input[type="password"],
-[class*="cell"].has-warning .control-group.inverse.transparent input[type="password"],
-.control-group.has-warning .control-group.inverse.transparent input[type="password"],
-form.has-warning input[type="search"],
-.control.has-warning input[type="search"],
-[class*="cell"].has-warning input[type="search"],
-.control-group.has-warning input[type="search"],
-form.has-warning .control input[type="search"],
-.control.has-warning .control input[type="search"],
-[class*="cell"].has-warning .control input[type="search"],
-.control-group.has-warning .control input[type="search"],
-form.has-warning [class*="cell"] input[type="search"],
-.control.has-warning [class*="cell"] input[type="search"],
-[class*="cell"].has-warning [class*="cell"] input[type="search"],
-.control-group.has-warning [class*="cell"] input[type="search"],
-form.has-warning .control-group input[type="search"],
-.control.has-warning .control-group input[type="search"],
-[class*="cell"].has-warning .control-group input[type="search"],
-.control-group.has-warning .control-group input[type="search"],
-form.has-warning.inverse.transparent input[type="search"],
-.control.has-warning.inverse.transparent input[type="search"],
-[class*="cell"].has-warning.inverse.transparent input[type="search"],
-.control-group.has-warning.inverse.transparent input[type="search"],
-form.has-warning .control.inverse.transparent input[type="search"],
-.control.has-warning .control.inverse.transparent input[type="search"],
-[class*="cell"].has-warning .control.inverse.transparent input[type="search"],
-.control-group.has-warning .control.inverse.transparent input[type="search"],
-form.has-warning [class*="cell"].inverse.transparent input[type="search"],
-.control.has-warning [class*="cell"].inverse.transparent input[type="search"],
-[class*="cell"].has-warning [class*="cell"].inverse.transparent input[type="search"],
-.control-group.has-warning [class*="cell"].inverse.transparent input[type="search"],
-form.has-warning .control-group.inverse.transparent input[type="search"],
-.control.has-warning .control-group.inverse.transparent input[type="search"],
-[class*="cell"].has-warning .control-group.inverse.transparent input[type="search"],
-.control-group.has-warning .control-group.inverse.transparent input[type="search"],
-form.has-warning input[type="tel"],
-.control.has-warning input[type="tel"],
-[class*="cell"].has-warning input[type="tel"],
-.control-group.has-warning input[type="tel"],
-form.has-warning .control input[type="tel"],
-.control.has-warning .control input[type="tel"],
-[class*="cell"].has-warning .control input[type="tel"],
-.control-group.has-warning .control input[type="tel"],
-form.has-warning [class*="cell"] input[type="tel"],
-.control.has-warning [class*="cell"] input[type="tel"],
-[class*="cell"].has-warning [class*="cell"] input[type="tel"],
-.control-group.has-warning [class*="cell"] input[type="tel"],
-form.has-warning .control-group input[type="tel"],
-.control.has-warning .control-group input[type="tel"],
-[class*="cell"].has-warning .control-group input[type="tel"],
-.control-group.has-warning .control-group input[type="tel"],
-form.has-warning.inverse.transparent input[type="tel"],
-.control.has-warning.inverse.transparent input[type="tel"],
-[class*="cell"].has-warning.inverse.transparent input[type="tel"],
-.control-group.has-warning.inverse.transparent input[type="tel"],
-form.has-warning .control.inverse.transparent input[type="tel"],
-.control.has-warning .control.inverse.transparent input[type="tel"],
-[class*="cell"].has-warning .control.inverse.transparent input[type="tel"],
-.control-group.has-warning .control.inverse.transparent input[type="tel"],
-form.has-warning [class*="cell"].inverse.transparent input[type="tel"],
-.control.has-warning [class*="cell"].inverse.transparent input[type="tel"],
-[class*="cell"].has-warning [class*="cell"].inverse.transparent input[type="tel"],
-.control-group.has-warning [class*="cell"].inverse.transparent input[type="tel"],
-form.has-warning .control-group.inverse.transparent input[type="tel"],
-.control.has-warning .control-group.inverse.transparent input[type="tel"],
-[class*="cell"].has-warning .control-group.inverse.transparent input[type="tel"],
-.control-group.has-warning .control-group.inverse.transparent input[type="tel"],
-form.has-warning input[type="time"],
-.control.has-warning input[type="time"],
-[class*="cell"].has-warning input[type="time"],
-.control-group.has-warning input[type="time"],
-form.has-warning .control input[type="time"],
-.control.has-warning .control input[type="time"],
-[class*="cell"].has-warning .control input[type="time"],
-.control-group.has-warning .control input[type="time"],
-form.has-warning [class*="cell"] input[type="time"],
-.control.has-warning [class*="cell"] input[type="time"],
-[class*="cell"].has-warning [class*="cell"] input[type="time"],
-.control-group.has-warning [class*="cell"] input[type="time"],
-form.has-warning .control-group input[type="time"],
-.control.has-warning .control-group input[type="time"],
-[class*="cell"].has-warning .control-group input[type="time"],
-.control-group.has-warning .control-group input[type="time"],
-form.has-warning.inverse.transparent input[type="time"],
-.control.has-warning.inverse.transparent input[type="time"],
-[class*="cell"].has-warning.inverse.transparent input[type="time"],
-.control-group.has-warning.inverse.transparent input[type="time"],
-form.has-warning .control.inverse.transparent input[type="time"],
-.control.has-warning .control.inverse.transparent input[type="time"],
-[class*="cell"].has-warning .control.inverse.transparent input[type="time"],
-.control-group.has-warning .control.inverse.transparent input[type="time"],
-form.has-warning [class*="cell"].inverse.transparent input[type="time"],
-.control.has-warning [class*="cell"].inverse.transparent input[type="time"],
-[class*="cell"].has-warning [class*="cell"].inverse.transparent input[type="time"],
-.control-group.has-warning [class*="cell"].inverse.transparent input[type="time"],
-form.has-warning .control-group.inverse.transparent input[type="time"],
-.control.has-warning .control-group.inverse.transparent input[type="time"],
-[class*="cell"].has-warning .control-group.inverse.transparent input[type="time"],
-.control-group.has-warning .control-group.inverse.transparent input[type="time"],
-form.has-warning input[type="text"],
-.control.has-warning input[type="text"],
-[class*="cell"].has-warning input[type="text"],
-.control-group.has-warning input[type="text"],
-form.has-warning .control input[type="text"],
-.control.has-warning .control input[type="text"],
-[class*="cell"].has-warning .control input[type="text"],
-.control-group.has-warning .control input[type="text"],
-form.has-warning [class*="cell"] input[type="text"],
-.control.has-warning [class*="cell"] input[type="text"],
-[class*="cell"].has-warning [class*="cell"] input[type="text"],
-.control-group.has-warning [class*="cell"] input[type="text"],
-form.has-warning .control-group input[type="text"],
-.control.has-warning .control-group input[type="text"],
-[class*="cell"].has-warning .control-group input[type="text"],
-.control-group.has-warning .control-group input[type="text"],
-form.has-warning.inverse.transparent input[type="text"],
-.control.has-warning.inverse.transparent input[type="text"],
-[class*="cell"].has-warning.inverse.transparent input[type="text"],
-.control-group.has-warning.inverse.transparent input[type="text"],
-form.has-warning .control.inverse.transparent input[type="text"],
-.control.has-warning .control.inverse.transparent input[type="text"],
-[class*="cell"].has-warning .control.inverse.transparent input[type="text"],
-.control-group.has-warning .control.inverse.transparent input[type="text"],
-form.has-warning [class*="cell"].inverse.transparent input[type="text"],
-.control.has-warning [class*="cell"].inverse.transparent input[type="text"],
-[class*="cell"].has-warning [class*="cell"].inverse.transparent input[type="text"],
-.control-group.has-warning [class*="cell"].inverse.transparent input[type="text"],
-form.has-warning .control-group.inverse.transparent input[type="text"],
-.control.has-warning .control-group.inverse.transparent input[type="text"],
-[class*="cell"].has-warning .control-group.inverse.transparent input[type="text"],
-.control-group.has-warning .control-group.inverse.transparent input[type="text"],
-form.has-warning input[type="url"],
-.control.has-warning input[type="url"],
-[class*="cell"].has-warning input[type="url"],
-.control-group.has-warning input[type="url"],
-form.has-warning .control input[type="url"],
-.control.has-warning .control input[type="url"],
-[class*="cell"].has-warning .control input[type="url"],
-.control-group.has-warning .control input[type="url"],
-form.has-warning [class*="cell"] input[type="url"],
-.control.has-warning [class*="cell"] input[type="url"],
-[class*="cell"].has-warning [class*="cell"] input[type="url"],
-.control-group.has-warning [class*="cell"] input[type="url"],
-form.has-warning .control-group input[type="url"],
-.control.has-warning .control-group input[type="url"],
-[class*="cell"].has-warning .control-group input[type="url"],
-.control-group.has-warning .control-group input[type="url"],
-form.has-warning.inverse.transparent input[type="url"],
-.control.has-warning.inverse.transparent input[type="url"],
-[class*="cell"].has-warning.inverse.transparent input[type="url"],
-.control-group.has-warning.inverse.transparent input[type="url"],
-form.has-warning .control.inverse.transparent input[type="url"],
-.control.has-warning .control.inverse.transparent input[type="url"],
-[class*="cell"].has-warning .control.inverse.transparent input[type="url"],
-.control-group.has-warning .control.inverse.transparent input[type="url"],
-form.has-warning [class*="cell"].inverse.transparent input[type="url"],
-.control.has-warning [class*="cell"].inverse.transparent input[type="url"],
-[class*="cell"].has-warning [class*="cell"].inverse.transparent input[type="url"],
-.control-group.has-warning [class*="cell"].inverse.transparent input[type="url"],
-form.has-warning .control-group.inverse.transparent input[type="url"],
-.control.has-warning .control-group.inverse.transparent input[type="url"],
-[class*="cell"].has-warning .control-group.inverse.transparent input[type="url"],
-.control-group.has-warning .control-group.inverse.transparent input[type="url"] {
+form.has-warning input:not([type="checkbox"]):not([type="radio"]),
+.control.has-warning input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-warning input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-warning input:not([type="checkbox"]):not([type="radio"]),
+form.has-warning .control input:not([type="checkbox"]):not([type="radio"]),
+.control.has-warning .control input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-warning .control input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-warning .control input:not([type="checkbox"]):not([type="radio"]),
+form.has-warning [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
+.control.has-warning [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-warning [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-warning [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
+form.has-warning .control-group input:not([type="checkbox"]):not([type="radio"]),
+.control.has-warning .control-group input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-warning .control-group input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-warning .control-group input:not([type="checkbox"]):not([type="radio"]),
+form.has-warning.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control.has-warning.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-warning.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-warning.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+form.has-warning .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control.has-warning .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-warning .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-warning .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+form.has-warning [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control.has-warning [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-warning [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-warning [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+form.has-warning .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control.has-warning .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+[class*="cell"].has-warning .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
+.control-group.has-warning .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]) {
   color: #ea8432;
   background-color: #ffffff;
   border-color: #ea8432;
@@ -3823,7 +3040,103 @@ form.has-warning [class*="cell"].inverse.transparent textarea,
 form.has-warning .control-group.inverse.transparent textarea,
 .control.has-warning .control-group.inverse.transparent textarea,
 [class*="cell"].has-warning .control-group.inverse.transparent textarea,
-.control-group.has-warning .control-group.inverse.transparent textarea {
+.control-group.has-warning .control-group.inverse.transparent textarea,
+form.has-warning output,
+.control.has-warning output,
+[class*="cell"].has-warning output,
+.control-group.has-warning output,
+form.has-warning .control output,
+.control.has-warning .control output,
+[class*="cell"].has-warning .control output,
+.control-group.has-warning .control output,
+form.has-warning [class*="cell"] output,
+.control.has-warning [class*="cell"] output,
+[class*="cell"].has-warning [class*="cell"] output,
+.control-group.has-warning [class*="cell"] output,
+form.has-warning .control-group output,
+.control.has-warning .control-group output,
+[class*="cell"].has-warning .control-group output,
+.control-group.has-warning .control-group output,
+form.has-warning.inverse.transparent output,
+.control.has-warning.inverse.transparent output,
+[class*="cell"].has-warning.inverse.transparent output,
+.control-group.has-warning.inverse.transparent output,
+form.has-warning .control.inverse.transparent output,
+.control.has-warning .control.inverse.transparent output,
+[class*="cell"].has-warning .control.inverse.transparent output,
+.control-group.has-warning .control.inverse.transparent output,
+form.has-warning [class*="cell"].inverse.transparent output,
+.control.has-warning [class*="cell"].inverse.transparent output,
+[class*="cell"].has-warning [class*="cell"].inverse.transparent output,
+.control-group.has-warning [class*="cell"].inverse.transparent output,
+form.has-warning .control-group.inverse.transparent output,
+.control.has-warning .control-group.inverse.transparent output,
+[class*="cell"].has-warning .control-group.inverse.transparent output,
+.control-group.has-warning .control-group.inverse.transparent output,
+form.has-warning data-list,
+.control.has-warning data-list,
+[class*="cell"].has-warning data-list,
+.control-group.has-warning data-list,
+form.has-warning .control data-list,
+.control.has-warning .control data-list,
+[class*="cell"].has-warning .control data-list,
+.control-group.has-warning .control data-list,
+form.has-warning [class*="cell"] data-list,
+.control.has-warning [class*="cell"] data-list,
+[class*="cell"].has-warning [class*="cell"] data-list,
+.control-group.has-warning [class*="cell"] data-list,
+form.has-warning .control-group data-list,
+.control.has-warning .control-group data-list,
+[class*="cell"].has-warning .control-group data-list,
+.control-group.has-warning .control-group data-list,
+form.has-warning.inverse.transparent data-list,
+.control.has-warning.inverse.transparent data-list,
+[class*="cell"].has-warning.inverse.transparent data-list,
+.control-group.has-warning.inverse.transparent data-list,
+form.has-warning .control.inverse.transparent data-list,
+.control.has-warning .control.inverse.transparent data-list,
+[class*="cell"].has-warning .control.inverse.transparent data-list,
+.control-group.has-warning .control.inverse.transparent data-list,
+form.has-warning [class*="cell"].inverse.transparent data-list,
+.control.has-warning [class*="cell"].inverse.transparent data-list,
+[class*="cell"].has-warning [class*="cell"].inverse.transparent data-list,
+.control-group.has-warning [class*="cell"].inverse.transparent data-list,
+form.has-warning .control-group.inverse.transparent data-list,
+.control.has-warning .control-group.inverse.transparent data-list,
+[class*="cell"].has-warning .control-group.inverse.transparent data-list,
+.control-group.has-warning .control-group.inverse.transparent data-list,
+form.has-warning .input,
+.control.has-warning .input,
+[class*="cell"].has-warning .input,
+.control-group.has-warning .input,
+form.has-warning .control .input,
+.control.has-warning .control .input,
+[class*="cell"].has-warning .control .input,
+.control-group.has-warning .control .input,
+form.has-warning [class*="cell"] .input,
+.control.has-warning [class*="cell"] .input,
+[class*="cell"].has-warning [class*="cell"] .input,
+.control-group.has-warning [class*="cell"] .input,
+form.has-warning .control-group .input,
+.control.has-warning .control-group .input,
+[class*="cell"].has-warning .control-group .input,
+.control-group.has-warning .control-group .input,
+form.has-warning.inverse.transparent .input,
+.control.has-warning.inverse.transparent .input,
+[class*="cell"].has-warning.inverse.transparent .input,
+.control-group.has-warning.inverse.transparent .input,
+form.has-warning .control.inverse.transparent .input,
+.control.has-warning .control.inverse.transparent .input,
+[class*="cell"].has-warning .control.inverse.transparent .input,
+.control-group.has-warning .control.inverse.transparent .input,
+form.has-warning [class*="cell"].inverse.transparent .input,
+.control.has-warning [class*="cell"].inverse.transparent .input,
+[class*="cell"].has-warning [class*="cell"].inverse.transparent .input,
+.control-group.has-warning [class*="cell"].inverse.transparent .input,
+form.has-warning .control-group.inverse.transparent .input,
+.control.has-warning .control-group.inverse.transparent .input,
+[class*="cell"].has-warning .control-group.inverse.transparent .input,
+.control-group.has-warning .control-group.inverse.transparent .input {
   color: #ea8432;
   background-color: #ffffff;
   color: #000;
@@ -3984,6 +3297,54 @@ form.has-warning .control-group.inverse textarea,
 .control.has-warning .control-group.inverse textarea,
 [class*="cell"].has-warning .control-group.inverse textarea,
 .control-group.has-warning .control-group.inverse textarea,
+form.has-warning.inverse output,
+.control.has-warning.inverse output,
+[class*="cell"].has-warning.inverse output,
+.control-group.has-warning.inverse output,
+form.has-warning .control.inverse output,
+.control.has-warning .control.inverse output,
+[class*="cell"].has-warning .control.inverse output,
+.control-group.has-warning .control.inverse output,
+form.has-warning [class*="cell"].inverse output,
+.control.has-warning [class*="cell"].inverse output,
+[class*="cell"].has-warning [class*="cell"].inverse output,
+.control-group.has-warning [class*="cell"].inverse output,
+form.has-warning .control-group.inverse output,
+.control.has-warning .control-group.inverse output,
+[class*="cell"].has-warning .control-group.inverse output,
+.control-group.has-warning .control-group.inverse output,
+form.has-warning.inverse data-list,
+.control.has-warning.inverse data-list,
+[class*="cell"].has-warning.inverse data-list,
+.control-group.has-warning.inverse data-list,
+form.has-warning .control.inverse data-list,
+.control.has-warning .control.inverse data-list,
+[class*="cell"].has-warning .control.inverse data-list,
+.control-group.has-warning .control.inverse data-list,
+form.has-warning [class*="cell"].inverse data-list,
+.control.has-warning [class*="cell"].inverse data-list,
+[class*="cell"].has-warning [class*="cell"].inverse data-list,
+.control-group.has-warning [class*="cell"].inverse data-list,
+form.has-warning .control-group.inverse data-list,
+.control.has-warning .control-group.inverse data-list,
+[class*="cell"].has-warning .control-group.inverse data-list,
+.control-group.has-warning .control-group.inverse data-list,
+form.has-warning.inverse .input,
+.control.has-warning.inverse .input,
+[class*="cell"].has-warning.inverse .input,
+.control-group.has-warning.inverse .input,
+form.has-warning .control.inverse .input,
+.control.has-warning .control.inverse .input,
+[class*="cell"].has-warning .control.inverse .input,
+.control-group.has-warning .control.inverse .input,
+form.has-warning [class*="cell"].inverse .input,
+.control.has-warning [class*="cell"].inverse .input,
+[class*="cell"].has-warning [class*="cell"].inverse .input,
+.control-group.has-warning [class*="cell"].inverse .input,
+form.has-warning .control-group.inverse .input,
+.control.has-warning .control-group.inverse .input,
+[class*="cell"].has-warning .control-group.inverse .input,
+.control-group.has-warning .control-group.inverse .input,
 form.has-warning.inverse input,
 .control.has-warning.inverse input,
 [class*="cell"].has-warning.inverse input,
@@ -5414,7 +4775,9 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   background: #0c090d;
   padding: 0.45rem 0.65rem;
   color: #fff;
-  width: -webkit-max-conent;
+  white-space: normal;
+  word-break: break-word;
+  width: -webkit-max-content;
   width: -moz-max-content;
   max-width: calc(100vw - 1.3rem - 80px);
   border-radius: 5px;
@@ -5783,7 +5146,9 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   background: #0c090d;
   padding: 0.45rem 0.65rem;
   color: #fff;
-  width: -webkit-max-conent;
+  white-space: normal;
+  word-break: break-word;
+  width: -webkit-max-content;
   width: -moz-max-content;
   max-width: calc(100vw - 1.3rem - 80px);
   border-radius: 5px;
@@ -17523,234 +16888,145 @@ table.grid.gutter-1 {
   width: calc(1128px  + 0.8999999999999999rem);
   max-width: calc(100%  - ( 40px - 0.8999999999999999rem));
 }
-.grid.gutter-1:not(.gutter-margin) > [class*=" cell"],
-.grid.gutter-1:not(.gutter-margin) > [class^="cell"],
-.grid.gutter-1:not(.gutter-margin) > .row > [class*=" cell"],
-.grid.gutter-1:not(.gutter-margin) > .row > [class^="cell"],
-.grid.gutter-1:not(.gutter-margin) > tbody > tr > td,
-.grid.gutter-1:not(.gutter-margin) > tr > td {
-  padding-left: 0.45rem;
-  padding-right: 0.45rem;
+.grid.gutter-1 > [class*=" cell"],
+.grid.gutter-1 > [class^="cell"],
+.grid.gutter-1 > .row > [class*=" cell"],
+.grid.gutter-1 > .row > [class^="cell"],
+.grid.gutter-1 > tbody > tr > td,
+.grid.gutter-1 > tr > td {
+  border-left: 0.45rem solid transparent;
+  border-right: 0.45rem solid transparent;
 }
-.grid.gutter-1:not(.gutter-margin) > [class*=" cell"].start-before,
-.grid.gutter-1:not(.gutter-margin) > [class^="cell"].start-before,
-.grid.gutter-1:not(.gutter-margin) > .row > [class*=" cell"].start-before,
-.grid.gutter-1:not(.gutter-margin) > .row > [class^="cell"].start-before,
-.grid.gutter-1:not(.gutter-margin) > tbody > tr > td.start-before,
-.grid.gutter-1:not(.gutter-margin) > tr > td.start-before {
+.grid.gutter-1 > [class*=" cell"].start-before,
+.grid.gutter-1 > [class^="cell"].start-before,
+.grid.gutter-1 > .row > [class*=" cell"].start-before,
+.grid.gutter-1 > .row > [class^="cell"].start-before,
+.grid.gutter-1 > tbody > tr > td.start-before,
+.grid.gutter-1 > tr > td.start-before {
   margin-left: -0.9rem;
 }
-.grid.gutter-1:not(.gutter-margin) > [class*=" cell"].end-before,
-.grid.gutter-1:not(.gutter-margin) > [class^="cell"].end-before,
-.grid.gutter-1:not(.gutter-margin) > .row > [class*=" cell"].end-before,
-.grid.gutter-1:not(.gutter-margin) > .row > [class^="cell"].end-before,
-.grid.gutter-1:not(.gutter-margin) > tbody > tr > td.end-before,
-.grid.gutter-1:not(.gutter-margin) > tr > td.end-before {
+.grid.gutter-1 > [class*=" cell"].end-before,
+.grid.gutter-1 > [class^="cell"].end-before,
+.grid.gutter-1 > .row > [class*=" cell"].end-before,
+.grid.gutter-1 > .row > [class^="cell"].end-before,
+.grid.gutter-1 > tbody > tr > td.end-before,
+.grid.gutter-1 > tr > td.end-before {
   margin-right: -0.9rem;
-}
-table.grid.gutter-1.gutter-margin {
-  margin-left: -0.9rem;
-  margin-right: -0.9rem;
-}
-table.grid.gutter-1.gutter-margin > tbody > tr > td,
-table.grid.gutter-1.gutter-margin > tr > td {
-  border-left: 0.9rem solid transparent;
-  border-right: 0.9rem solid transparent;
 }
 .grid.gutter-1 > [class*="grid"].row {
-  padding-left: 0.45rem;
-  padding-right: 0.45rem;
+  border-left: 0.45rem solid transparent;
+  border-right: 0.45rem solid transparent;
 }
-.grid.gutter-1.gutter-margin .cell-1 {
-  margin-left: 0.45rem;
-  margin-right: 0.45rem;
-  width: calc(6.25%  -  0.9rem);
-}
-.grid.gutter-1:not(.gutter-margin) .cell-1.start-before,
-.grid.gutter-1:not(.gutter-margin) .cell-1.end-before {
+.grid.gutter-1 .cell-1.start-before,
+.grid.gutter-1 .cell-1.end-before {
   width: calc(6.25%  +  0.9rem);
 }
-.grid.gutter-1:not(.gutter-margin) .cell-1.start-before.end-before {
+.grid.gutter-1 .cell-1.start-before.end-before {
   width: calc(6.25%  +  1.8rem);
 }
-.grid.gutter-1.gutter-margin .cell-2 {
-  margin-left: 0.45rem;
-  margin-right: 0.45rem;
-  width: calc(12.5%  -  0.9rem);
-}
-.grid.gutter-1:not(.gutter-margin) .cell-2.start-before,
-.grid.gutter-1:not(.gutter-margin) .cell-2.end-before {
+.grid.gutter-1 .cell-2.start-before,
+.grid.gutter-1 .cell-2.end-before {
   width: calc(12.5%  +  0.9rem);
 }
-.grid.gutter-1:not(.gutter-margin) .cell-2.start-before.end-before {
+.grid.gutter-1 .cell-2.start-before.end-before {
   width: calc(12.5%  +  1.8rem);
 }
-.grid.gutter-1.gutter-margin .cell-3 {
-  margin-left: 0.45rem;
-  margin-right: 0.45rem;
-  width: calc(18.75%  -  0.9rem);
-}
-.grid.gutter-1:not(.gutter-margin) .cell-3.start-before,
-.grid.gutter-1:not(.gutter-margin) .cell-3.end-before {
+.grid.gutter-1 .cell-3.start-before,
+.grid.gutter-1 .cell-3.end-before {
   width: calc(18.75%  +  0.9rem);
 }
-.grid.gutter-1:not(.gutter-margin) .cell-3.start-before.end-before {
+.grid.gutter-1 .cell-3.start-before.end-before {
   width: calc(18.75%  +  1.8rem);
 }
-.grid.gutter-1.gutter-margin .cell-4 {
-  margin-left: 0.45rem;
-  margin-right: 0.45rem;
-  width: calc(25%  -  0.9rem);
-}
-.grid.gutter-1:not(.gutter-margin) .cell-4.start-before,
-.grid.gutter-1:not(.gutter-margin) .cell-4.end-before {
+.grid.gutter-1 .cell-4.start-before,
+.grid.gutter-1 .cell-4.end-before {
   width: calc(25%  +  0.9rem);
 }
-.grid.gutter-1:not(.gutter-margin) .cell-4.start-before.end-before {
+.grid.gutter-1 .cell-4.start-before.end-before {
   width: calc(25%  +  1.8rem);
 }
-.grid.gutter-1.gutter-margin .cell-5 {
-  margin-left: 0.45rem;
-  margin-right: 0.45rem;
-  width: calc(31.25%  -  0.9rem);
-}
-.grid.gutter-1:not(.gutter-margin) .cell-5.start-before,
-.grid.gutter-1:not(.gutter-margin) .cell-5.end-before {
+.grid.gutter-1 .cell-5.start-before,
+.grid.gutter-1 .cell-5.end-before {
   width: calc(31.25%  +  0.9rem);
 }
-.grid.gutter-1:not(.gutter-margin) .cell-5.start-before.end-before {
+.grid.gutter-1 .cell-5.start-before.end-before {
   width: calc(31.25%  +  1.8rem);
 }
-.grid.gutter-1.gutter-margin .cell-6 {
-  margin-left: 0.45rem;
-  margin-right: 0.45rem;
-  width: calc(37.5%  -  0.9rem);
-}
-.grid.gutter-1:not(.gutter-margin) .cell-6.start-before,
-.grid.gutter-1:not(.gutter-margin) .cell-6.end-before {
+.grid.gutter-1 .cell-6.start-before,
+.grid.gutter-1 .cell-6.end-before {
   width: calc(37.5%  +  0.9rem);
 }
-.grid.gutter-1:not(.gutter-margin) .cell-6.start-before.end-before {
+.grid.gutter-1 .cell-6.start-before.end-before {
   width: calc(37.5%  +  1.8rem);
 }
-.grid.gutter-1.gutter-margin .cell-7 {
-  margin-left: 0.45rem;
-  margin-right: 0.45rem;
-  width: calc(43.75%  -  0.9rem);
-}
-.grid.gutter-1:not(.gutter-margin) .cell-7.start-before,
-.grid.gutter-1:not(.gutter-margin) .cell-7.end-before {
+.grid.gutter-1 .cell-7.start-before,
+.grid.gutter-1 .cell-7.end-before {
   width: calc(43.75%  +  0.9rem);
 }
-.grid.gutter-1:not(.gutter-margin) .cell-7.start-before.end-before {
+.grid.gutter-1 .cell-7.start-before.end-before {
   width: calc(43.75%  +  1.8rem);
 }
-.grid.gutter-1.gutter-margin .cell-8 {
-  margin-left: 0.45rem;
-  margin-right: 0.45rem;
-  width: calc(50%  -  0.9rem);
-}
-.grid.gutter-1:not(.gutter-margin) .cell-8.start-before,
-.grid.gutter-1:not(.gutter-margin) .cell-8.end-before {
+.grid.gutter-1 .cell-8.start-before,
+.grid.gutter-1 .cell-8.end-before {
   width: calc(50%  +  0.9rem);
 }
-.grid.gutter-1:not(.gutter-margin) .cell-8.start-before.end-before {
+.grid.gutter-1 .cell-8.start-before.end-before {
   width: calc(50%  +  1.8rem);
 }
-.grid.gutter-1.gutter-margin .cell-9 {
-  margin-left: 0.45rem;
-  margin-right: 0.45rem;
-  width: calc(56.25%  -  0.9rem);
-}
-.grid.gutter-1:not(.gutter-margin) .cell-9.start-before,
-.grid.gutter-1:not(.gutter-margin) .cell-9.end-before {
+.grid.gutter-1 .cell-9.start-before,
+.grid.gutter-1 .cell-9.end-before {
   width: calc(56.25%  +  0.9rem);
 }
-.grid.gutter-1:not(.gutter-margin) .cell-9.start-before.end-before {
+.grid.gutter-1 .cell-9.start-before.end-before {
   width: calc(56.25%  +  1.8rem);
 }
-.grid.gutter-1.gutter-margin .cell-10 {
-  margin-left: 0.45rem;
-  margin-right: 0.45rem;
-  width: calc(62.5%  -  0.9rem);
-}
-.grid.gutter-1:not(.gutter-margin) .cell-10.start-before,
-.grid.gutter-1:not(.gutter-margin) .cell-10.end-before {
+.grid.gutter-1 .cell-10.start-before,
+.grid.gutter-1 .cell-10.end-before {
   width: calc(62.5%  +  0.9rem);
 }
-.grid.gutter-1:not(.gutter-margin) .cell-10.start-before.end-before {
+.grid.gutter-1 .cell-10.start-before.end-before {
   width: calc(62.5%  +  1.8rem);
 }
-.grid.gutter-1.gutter-margin .cell-11 {
-  margin-left: 0.45rem;
-  margin-right: 0.45rem;
-  width: calc(68.75%  -  0.9rem);
-}
-.grid.gutter-1:not(.gutter-margin) .cell-11.start-before,
-.grid.gutter-1:not(.gutter-margin) .cell-11.end-before {
+.grid.gutter-1 .cell-11.start-before,
+.grid.gutter-1 .cell-11.end-before {
   width: calc(68.75%  +  0.9rem);
 }
-.grid.gutter-1:not(.gutter-margin) .cell-11.start-before.end-before {
+.grid.gutter-1 .cell-11.start-before.end-before {
   width: calc(68.75%  +  1.8rem);
 }
-.grid.gutter-1.gutter-margin .cell-12 {
-  margin-left: 0.45rem;
-  margin-right: 0.45rem;
-  width: calc(75%  -  0.9rem);
-}
-.grid.gutter-1:not(.gutter-margin) .cell-12.start-before,
-.grid.gutter-1:not(.gutter-margin) .cell-12.end-before {
+.grid.gutter-1 .cell-12.start-before,
+.grid.gutter-1 .cell-12.end-before {
   width: calc(75%  +  0.9rem);
 }
-.grid.gutter-1:not(.gutter-margin) .cell-12.start-before.end-before {
+.grid.gutter-1 .cell-12.start-before.end-before {
   width: calc(75%  +  1.8rem);
 }
-.grid.gutter-1.gutter-margin .cell-13 {
-  margin-left: 0.45rem;
-  margin-right: 0.45rem;
-  width: calc(81.25%  -  0.9rem);
-}
-.grid.gutter-1:not(.gutter-margin) .cell-13.start-before,
-.grid.gutter-1:not(.gutter-margin) .cell-13.end-before {
+.grid.gutter-1 .cell-13.start-before,
+.grid.gutter-1 .cell-13.end-before {
   width: calc(81.25%  +  0.9rem);
 }
-.grid.gutter-1:not(.gutter-margin) .cell-13.start-before.end-before {
+.grid.gutter-1 .cell-13.start-before.end-before {
   width: calc(81.25%  +  1.8rem);
 }
-.grid.gutter-1.gutter-margin .cell-14 {
-  margin-left: 0.45rem;
-  margin-right: 0.45rem;
-  width: calc(87.5%  -  0.9rem);
-}
-.grid.gutter-1:not(.gutter-margin) .cell-14.start-before,
-.grid.gutter-1:not(.gutter-margin) .cell-14.end-before {
+.grid.gutter-1 .cell-14.start-before,
+.grid.gutter-1 .cell-14.end-before {
   width: calc(87.5%  +  0.9rem);
 }
-.grid.gutter-1:not(.gutter-margin) .cell-14.start-before.end-before {
+.grid.gutter-1 .cell-14.start-before.end-before {
   width: calc(87.5%  +  1.8rem);
 }
-.grid.gutter-1.gutter-margin .cell-15 {
-  margin-left: 0.45rem;
-  margin-right: 0.45rem;
-  width: calc(93.75%  -  0.9rem);
-}
-.grid.gutter-1:not(.gutter-margin) .cell-15.start-before,
-.grid.gutter-1:not(.gutter-margin) .cell-15.end-before {
+.grid.gutter-1 .cell-15.start-before,
+.grid.gutter-1 .cell-15.end-before {
   width: calc(93.75%  +  0.9rem);
 }
-.grid.gutter-1:not(.gutter-margin) .cell-15.start-before.end-before {
+.grid.gutter-1 .cell-15.start-before.end-before {
   width: calc(93.75%  +  1.8rem);
 }
-.grid.gutter-1.gutter-margin .cell-16 {
-  margin-left: 0.45rem;
-  margin-right: 0.45rem;
-  width: calc(100%  -  0.9rem);
-}
-.grid.gutter-1:not(.gutter-margin) .cell-16.start-before,
-.grid.gutter-1:not(.gutter-margin) .cell-16.end-before {
+.grid.gutter-1 .cell-16.start-before,
+.grid.gutter-1 .cell-16.end-before {
   width: calc(100%  +  0.9rem);
 }
-.grid.gutter-1:not(.gutter-margin) .cell-16.start-before.end-before {
+.grid.gutter-1 .cell-16.start-before.end-before {
   width: calc(100%  +  1.8rem);
 }
 .grid.gutter-2 {
@@ -17767,234 +17043,145 @@ table.grid.gutter-2 {
   width: calc(1128px  + 1.2rem);
   max-width: calc(100%  - ( 40px - 1.2rem));
 }
-.grid.gutter-2:not(.gutter-margin) > [class*=" cell"],
-.grid.gutter-2:not(.gutter-margin) > [class^="cell"],
-.grid.gutter-2:not(.gutter-margin) > .row > [class*=" cell"],
-.grid.gutter-2:not(.gutter-margin) > .row > [class^="cell"],
-.grid.gutter-2:not(.gutter-margin) > tbody > tr > td,
-.grid.gutter-2:not(.gutter-margin) > tr > td {
-  padding-left: 0.6rem;
-  padding-right: 0.6rem;
+.grid.gutter-2 > [class*=" cell"],
+.grid.gutter-2 > [class^="cell"],
+.grid.gutter-2 > .row > [class*=" cell"],
+.grid.gutter-2 > .row > [class^="cell"],
+.grid.gutter-2 > tbody > tr > td,
+.grid.gutter-2 > tr > td {
+  border-left: 0.6rem solid transparent;
+  border-right: 0.6rem solid transparent;
 }
-.grid.gutter-2:not(.gutter-margin) > [class*=" cell"].start-before,
-.grid.gutter-2:not(.gutter-margin) > [class^="cell"].start-before,
-.grid.gutter-2:not(.gutter-margin) > .row > [class*=" cell"].start-before,
-.grid.gutter-2:not(.gutter-margin) > .row > [class^="cell"].start-before,
-.grid.gutter-2:not(.gutter-margin) > tbody > tr > td.start-before,
-.grid.gutter-2:not(.gutter-margin) > tr > td.start-before {
+.grid.gutter-2 > [class*=" cell"].start-before,
+.grid.gutter-2 > [class^="cell"].start-before,
+.grid.gutter-2 > .row > [class*=" cell"].start-before,
+.grid.gutter-2 > .row > [class^="cell"].start-before,
+.grid.gutter-2 > tbody > tr > td.start-before,
+.grid.gutter-2 > tr > td.start-before {
   margin-left: -1.2rem;
 }
-.grid.gutter-2:not(.gutter-margin) > [class*=" cell"].end-before,
-.grid.gutter-2:not(.gutter-margin) > [class^="cell"].end-before,
-.grid.gutter-2:not(.gutter-margin) > .row > [class*=" cell"].end-before,
-.grid.gutter-2:not(.gutter-margin) > .row > [class^="cell"].end-before,
-.grid.gutter-2:not(.gutter-margin) > tbody > tr > td.end-before,
-.grid.gutter-2:not(.gutter-margin) > tr > td.end-before {
+.grid.gutter-2 > [class*=" cell"].end-before,
+.grid.gutter-2 > [class^="cell"].end-before,
+.grid.gutter-2 > .row > [class*=" cell"].end-before,
+.grid.gutter-2 > .row > [class^="cell"].end-before,
+.grid.gutter-2 > tbody > tr > td.end-before,
+.grid.gutter-2 > tr > td.end-before {
   margin-right: -1.2rem;
-}
-table.grid.gutter-2.gutter-margin {
-  margin-left: -1.2rem;
-  margin-right: -1.2rem;
-}
-table.grid.gutter-2.gutter-margin > tbody > tr > td,
-table.grid.gutter-2.gutter-margin > tr > td {
-  border-left: 1.2rem solid transparent;
-  border-right: 1.2rem solid transparent;
 }
 .grid.gutter-2 > [class*="grid"].row {
-  padding-left: 0.6rem;
-  padding-right: 0.6rem;
+  border-left: 0.6rem solid transparent;
+  border-right: 0.6rem solid transparent;
 }
-.grid.gutter-2.gutter-margin .cell-1 {
-  margin-left: 0.6rem;
-  margin-right: 0.6rem;
-  width: calc(6.25%  -  1.2rem);
-}
-.grid.gutter-2:not(.gutter-margin) .cell-1.start-before,
-.grid.gutter-2:not(.gutter-margin) .cell-1.end-before {
+.grid.gutter-2 .cell-1.start-before,
+.grid.gutter-2 .cell-1.end-before {
   width: calc(6.25%  +  1.2rem);
 }
-.grid.gutter-2:not(.gutter-margin) .cell-1.start-before.end-before {
+.grid.gutter-2 .cell-1.start-before.end-before {
   width: calc(6.25%  +  2.4rem);
 }
-.grid.gutter-2.gutter-margin .cell-2 {
-  margin-left: 0.6rem;
-  margin-right: 0.6rem;
-  width: calc(12.5%  -  1.2rem);
-}
-.grid.gutter-2:not(.gutter-margin) .cell-2.start-before,
-.grid.gutter-2:not(.gutter-margin) .cell-2.end-before {
+.grid.gutter-2 .cell-2.start-before,
+.grid.gutter-2 .cell-2.end-before {
   width: calc(12.5%  +  1.2rem);
 }
-.grid.gutter-2:not(.gutter-margin) .cell-2.start-before.end-before {
+.grid.gutter-2 .cell-2.start-before.end-before {
   width: calc(12.5%  +  2.4rem);
 }
-.grid.gutter-2.gutter-margin .cell-3 {
-  margin-left: 0.6rem;
-  margin-right: 0.6rem;
-  width: calc(18.75%  -  1.2rem);
-}
-.grid.gutter-2:not(.gutter-margin) .cell-3.start-before,
-.grid.gutter-2:not(.gutter-margin) .cell-3.end-before {
+.grid.gutter-2 .cell-3.start-before,
+.grid.gutter-2 .cell-3.end-before {
   width: calc(18.75%  +  1.2rem);
 }
-.grid.gutter-2:not(.gutter-margin) .cell-3.start-before.end-before {
+.grid.gutter-2 .cell-3.start-before.end-before {
   width: calc(18.75%  +  2.4rem);
 }
-.grid.gutter-2.gutter-margin .cell-4 {
-  margin-left: 0.6rem;
-  margin-right: 0.6rem;
-  width: calc(25%  -  1.2rem);
-}
-.grid.gutter-2:not(.gutter-margin) .cell-4.start-before,
-.grid.gutter-2:not(.gutter-margin) .cell-4.end-before {
+.grid.gutter-2 .cell-4.start-before,
+.grid.gutter-2 .cell-4.end-before {
   width: calc(25%  +  1.2rem);
 }
-.grid.gutter-2:not(.gutter-margin) .cell-4.start-before.end-before {
+.grid.gutter-2 .cell-4.start-before.end-before {
   width: calc(25%  +  2.4rem);
 }
-.grid.gutter-2.gutter-margin .cell-5 {
-  margin-left: 0.6rem;
-  margin-right: 0.6rem;
-  width: calc(31.25%  -  1.2rem);
-}
-.grid.gutter-2:not(.gutter-margin) .cell-5.start-before,
-.grid.gutter-2:not(.gutter-margin) .cell-5.end-before {
+.grid.gutter-2 .cell-5.start-before,
+.grid.gutter-2 .cell-5.end-before {
   width: calc(31.25%  +  1.2rem);
 }
-.grid.gutter-2:not(.gutter-margin) .cell-5.start-before.end-before {
+.grid.gutter-2 .cell-5.start-before.end-before {
   width: calc(31.25%  +  2.4rem);
 }
-.grid.gutter-2.gutter-margin .cell-6 {
-  margin-left: 0.6rem;
-  margin-right: 0.6rem;
-  width: calc(37.5%  -  1.2rem);
-}
-.grid.gutter-2:not(.gutter-margin) .cell-6.start-before,
-.grid.gutter-2:not(.gutter-margin) .cell-6.end-before {
+.grid.gutter-2 .cell-6.start-before,
+.grid.gutter-2 .cell-6.end-before {
   width: calc(37.5%  +  1.2rem);
 }
-.grid.gutter-2:not(.gutter-margin) .cell-6.start-before.end-before {
+.grid.gutter-2 .cell-6.start-before.end-before {
   width: calc(37.5%  +  2.4rem);
 }
-.grid.gutter-2.gutter-margin .cell-7 {
-  margin-left: 0.6rem;
-  margin-right: 0.6rem;
-  width: calc(43.75%  -  1.2rem);
-}
-.grid.gutter-2:not(.gutter-margin) .cell-7.start-before,
-.grid.gutter-2:not(.gutter-margin) .cell-7.end-before {
+.grid.gutter-2 .cell-7.start-before,
+.grid.gutter-2 .cell-7.end-before {
   width: calc(43.75%  +  1.2rem);
 }
-.grid.gutter-2:not(.gutter-margin) .cell-7.start-before.end-before {
+.grid.gutter-2 .cell-7.start-before.end-before {
   width: calc(43.75%  +  2.4rem);
 }
-.grid.gutter-2.gutter-margin .cell-8 {
-  margin-left: 0.6rem;
-  margin-right: 0.6rem;
-  width: calc(50%  -  1.2rem);
-}
-.grid.gutter-2:not(.gutter-margin) .cell-8.start-before,
-.grid.gutter-2:not(.gutter-margin) .cell-8.end-before {
+.grid.gutter-2 .cell-8.start-before,
+.grid.gutter-2 .cell-8.end-before {
   width: calc(50%  +  1.2rem);
 }
-.grid.gutter-2:not(.gutter-margin) .cell-8.start-before.end-before {
+.grid.gutter-2 .cell-8.start-before.end-before {
   width: calc(50%  +  2.4rem);
 }
-.grid.gutter-2.gutter-margin .cell-9 {
-  margin-left: 0.6rem;
-  margin-right: 0.6rem;
-  width: calc(56.25%  -  1.2rem);
-}
-.grid.gutter-2:not(.gutter-margin) .cell-9.start-before,
-.grid.gutter-2:not(.gutter-margin) .cell-9.end-before {
+.grid.gutter-2 .cell-9.start-before,
+.grid.gutter-2 .cell-9.end-before {
   width: calc(56.25%  +  1.2rem);
 }
-.grid.gutter-2:not(.gutter-margin) .cell-9.start-before.end-before {
+.grid.gutter-2 .cell-9.start-before.end-before {
   width: calc(56.25%  +  2.4rem);
 }
-.grid.gutter-2.gutter-margin .cell-10 {
-  margin-left: 0.6rem;
-  margin-right: 0.6rem;
-  width: calc(62.5%  -  1.2rem);
-}
-.grid.gutter-2:not(.gutter-margin) .cell-10.start-before,
-.grid.gutter-2:not(.gutter-margin) .cell-10.end-before {
+.grid.gutter-2 .cell-10.start-before,
+.grid.gutter-2 .cell-10.end-before {
   width: calc(62.5%  +  1.2rem);
 }
-.grid.gutter-2:not(.gutter-margin) .cell-10.start-before.end-before {
+.grid.gutter-2 .cell-10.start-before.end-before {
   width: calc(62.5%  +  2.4rem);
 }
-.grid.gutter-2.gutter-margin .cell-11 {
-  margin-left: 0.6rem;
-  margin-right: 0.6rem;
-  width: calc(68.75%  -  1.2rem);
-}
-.grid.gutter-2:not(.gutter-margin) .cell-11.start-before,
-.grid.gutter-2:not(.gutter-margin) .cell-11.end-before {
+.grid.gutter-2 .cell-11.start-before,
+.grid.gutter-2 .cell-11.end-before {
   width: calc(68.75%  +  1.2rem);
 }
-.grid.gutter-2:not(.gutter-margin) .cell-11.start-before.end-before {
+.grid.gutter-2 .cell-11.start-before.end-before {
   width: calc(68.75%  +  2.4rem);
 }
-.grid.gutter-2.gutter-margin .cell-12 {
-  margin-left: 0.6rem;
-  margin-right: 0.6rem;
-  width: calc(75%  -  1.2rem);
-}
-.grid.gutter-2:not(.gutter-margin) .cell-12.start-before,
-.grid.gutter-2:not(.gutter-margin) .cell-12.end-before {
+.grid.gutter-2 .cell-12.start-before,
+.grid.gutter-2 .cell-12.end-before {
   width: calc(75%  +  1.2rem);
 }
-.grid.gutter-2:not(.gutter-margin) .cell-12.start-before.end-before {
+.grid.gutter-2 .cell-12.start-before.end-before {
   width: calc(75%  +  2.4rem);
 }
-.grid.gutter-2.gutter-margin .cell-13 {
-  margin-left: 0.6rem;
-  margin-right: 0.6rem;
-  width: calc(81.25%  -  1.2rem);
-}
-.grid.gutter-2:not(.gutter-margin) .cell-13.start-before,
-.grid.gutter-2:not(.gutter-margin) .cell-13.end-before {
+.grid.gutter-2 .cell-13.start-before,
+.grid.gutter-2 .cell-13.end-before {
   width: calc(81.25%  +  1.2rem);
 }
-.grid.gutter-2:not(.gutter-margin) .cell-13.start-before.end-before {
+.grid.gutter-2 .cell-13.start-before.end-before {
   width: calc(81.25%  +  2.4rem);
 }
-.grid.gutter-2.gutter-margin .cell-14 {
-  margin-left: 0.6rem;
-  margin-right: 0.6rem;
-  width: calc(87.5%  -  1.2rem);
-}
-.grid.gutter-2:not(.gutter-margin) .cell-14.start-before,
-.grid.gutter-2:not(.gutter-margin) .cell-14.end-before {
+.grid.gutter-2 .cell-14.start-before,
+.grid.gutter-2 .cell-14.end-before {
   width: calc(87.5%  +  1.2rem);
 }
-.grid.gutter-2:not(.gutter-margin) .cell-14.start-before.end-before {
+.grid.gutter-2 .cell-14.start-before.end-before {
   width: calc(87.5%  +  2.4rem);
 }
-.grid.gutter-2.gutter-margin .cell-15 {
-  margin-left: 0.6rem;
-  margin-right: 0.6rem;
-  width: calc(93.75%  -  1.2rem);
-}
-.grid.gutter-2:not(.gutter-margin) .cell-15.start-before,
-.grid.gutter-2:not(.gutter-margin) .cell-15.end-before {
+.grid.gutter-2 .cell-15.start-before,
+.grid.gutter-2 .cell-15.end-before {
   width: calc(93.75%  +  1.2rem);
 }
-.grid.gutter-2:not(.gutter-margin) .cell-15.start-before.end-before {
+.grid.gutter-2 .cell-15.start-before.end-before {
   width: calc(93.75%  +  2.4rem);
 }
-.grid.gutter-2.gutter-margin .cell-16 {
-  margin-left: 0.6rem;
-  margin-right: 0.6rem;
-  width: calc(100%  -  1.2rem);
-}
-.grid.gutter-2:not(.gutter-margin) .cell-16.start-before,
-.grid.gutter-2:not(.gutter-margin) .cell-16.end-before {
+.grid.gutter-2 .cell-16.start-before,
+.grid.gutter-2 .cell-16.end-before {
   width: calc(100%  +  1.2rem);
 }
-.grid.gutter-2:not(.gutter-margin) .cell-16.start-before.end-before {
+.grid.gutter-2 .cell-16.start-before.end-before {
   width: calc(100%  +  2.4rem);
 }
 .grid.gutter-3 {
@@ -18011,234 +17198,145 @@ table.grid.gutter-3 {
   width: calc(1128px  + 1.5rem);
   max-width: calc(100%  - ( 40px - 1.5rem));
 }
-.grid.gutter-3:not(.gutter-margin) > [class*=" cell"],
-.grid.gutter-3:not(.gutter-margin) > [class^="cell"],
-.grid.gutter-3:not(.gutter-margin) > .row > [class*=" cell"],
-.grid.gutter-3:not(.gutter-margin) > .row > [class^="cell"],
-.grid.gutter-3:not(.gutter-margin) > tbody > tr > td,
-.grid.gutter-3:not(.gutter-margin) > tr > td {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+.grid.gutter-3 > [class*=" cell"],
+.grid.gutter-3 > [class^="cell"],
+.grid.gutter-3 > .row > [class*=" cell"],
+.grid.gutter-3 > .row > [class^="cell"],
+.grid.gutter-3 > tbody > tr > td,
+.grid.gutter-3 > tr > td {
+  border-left: 0.75rem solid transparent;
+  border-right: 0.75rem solid transparent;
 }
-.grid.gutter-3:not(.gutter-margin) > [class*=" cell"].start-before,
-.grid.gutter-3:not(.gutter-margin) > [class^="cell"].start-before,
-.grid.gutter-3:not(.gutter-margin) > .row > [class*=" cell"].start-before,
-.grid.gutter-3:not(.gutter-margin) > .row > [class^="cell"].start-before,
-.grid.gutter-3:not(.gutter-margin) > tbody > tr > td.start-before,
-.grid.gutter-3:not(.gutter-margin) > tr > td.start-before {
+.grid.gutter-3 > [class*=" cell"].start-before,
+.grid.gutter-3 > [class^="cell"].start-before,
+.grid.gutter-3 > .row > [class*=" cell"].start-before,
+.grid.gutter-3 > .row > [class^="cell"].start-before,
+.grid.gutter-3 > tbody > tr > td.start-before,
+.grid.gutter-3 > tr > td.start-before {
   margin-left: -1.5rem;
 }
-.grid.gutter-3:not(.gutter-margin) > [class*=" cell"].end-before,
-.grid.gutter-3:not(.gutter-margin) > [class^="cell"].end-before,
-.grid.gutter-3:not(.gutter-margin) > .row > [class*=" cell"].end-before,
-.grid.gutter-3:not(.gutter-margin) > .row > [class^="cell"].end-before,
-.grid.gutter-3:not(.gutter-margin) > tbody > tr > td.end-before,
-.grid.gutter-3:not(.gutter-margin) > tr > td.end-before {
+.grid.gutter-3 > [class*=" cell"].end-before,
+.grid.gutter-3 > [class^="cell"].end-before,
+.grid.gutter-3 > .row > [class*=" cell"].end-before,
+.grid.gutter-3 > .row > [class^="cell"].end-before,
+.grid.gutter-3 > tbody > tr > td.end-before,
+.grid.gutter-3 > tr > td.end-before {
   margin-right: -1.5rem;
-}
-table.grid.gutter-3.gutter-margin {
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
-}
-table.grid.gutter-3.gutter-margin > tbody > tr > td,
-table.grid.gutter-3.gutter-margin > tr > td {
-  border-left: 1.5rem solid transparent;
-  border-right: 1.5rem solid transparent;
 }
 .grid.gutter-3 > [class*="grid"].row {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  border-left: 0.75rem solid transparent;
+  border-right: 0.75rem solid transparent;
 }
-.grid.gutter-3.gutter-margin .cell-1 {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
-  width: calc(6.25%  -  1.5rem);
-}
-.grid.gutter-3:not(.gutter-margin) .cell-1.start-before,
-.grid.gutter-3:not(.gutter-margin) .cell-1.end-before {
+.grid.gutter-3 .cell-1.start-before,
+.grid.gutter-3 .cell-1.end-before {
   width: calc(6.25%  +  1.5rem);
 }
-.grid.gutter-3:not(.gutter-margin) .cell-1.start-before.end-before {
+.grid.gutter-3 .cell-1.start-before.end-before {
   width: calc(6.25%  +  3rem);
 }
-.grid.gutter-3.gutter-margin .cell-2 {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
-  width: calc(12.5%  -  1.5rem);
-}
-.grid.gutter-3:not(.gutter-margin) .cell-2.start-before,
-.grid.gutter-3:not(.gutter-margin) .cell-2.end-before {
+.grid.gutter-3 .cell-2.start-before,
+.grid.gutter-3 .cell-2.end-before {
   width: calc(12.5%  +  1.5rem);
 }
-.grid.gutter-3:not(.gutter-margin) .cell-2.start-before.end-before {
+.grid.gutter-3 .cell-2.start-before.end-before {
   width: calc(12.5%  +  3rem);
 }
-.grid.gutter-3.gutter-margin .cell-3 {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
-  width: calc(18.75%  -  1.5rem);
-}
-.grid.gutter-3:not(.gutter-margin) .cell-3.start-before,
-.grid.gutter-3:not(.gutter-margin) .cell-3.end-before {
+.grid.gutter-3 .cell-3.start-before,
+.grid.gutter-3 .cell-3.end-before {
   width: calc(18.75%  +  1.5rem);
 }
-.grid.gutter-3:not(.gutter-margin) .cell-3.start-before.end-before {
+.grid.gutter-3 .cell-3.start-before.end-before {
   width: calc(18.75%  +  3rem);
 }
-.grid.gutter-3.gutter-margin .cell-4 {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
-  width: calc(25%  -  1.5rem);
-}
-.grid.gutter-3:not(.gutter-margin) .cell-4.start-before,
-.grid.gutter-3:not(.gutter-margin) .cell-4.end-before {
+.grid.gutter-3 .cell-4.start-before,
+.grid.gutter-3 .cell-4.end-before {
   width: calc(25%  +  1.5rem);
 }
-.grid.gutter-3:not(.gutter-margin) .cell-4.start-before.end-before {
+.grid.gutter-3 .cell-4.start-before.end-before {
   width: calc(25%  +  3rem);
 }
-.grid.gutter-3.gutter-margin .cell-5 {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
-  width: calc(31.25%  -  1.5rem);
-}
-.grid.gutter-3:not(.gutter-margin) .cell-5.start-before,
-.grid.gutter-3:not(.gutter-margin) .cell-5.end-before {
+.grid.gutter-3 .cell-5.start-before,
+.grid.gutter-3 .cell-5.end-before {
   width: calc(31.25%  +  1.5rem);
 }
-.grid.gutter-3:not(.gutter-margin) .cell-5.start-before.end-before {
+.grid.gutter-3 .cell-5.start-before.end-before {
   width: calc(31.25%  +  3rem);
 }
-.grid.gutter-3.gutter-margin .cell-6 {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
-  width: calc(37.5%  -  1.5rem);
-}
-.grid.gutter-3:not(.gutter-margin) .cell-6.start-before,
-.grid.gutter-3:not(.gutter-margin) .cell-6.end-before {
+.grid.gutter-3 .cell-6.start-before,
+.grid.gutter-3 .cell-6.end-before {
   width: calc(37.5%  +  1.5rem);
 }
-.grid.gutter-3:not(.gutter-margin) .cell-6.start-before.end-before {
+.grid.gutter-3 .cell-6.start-before.end-before {
   width: calc(37.5%  +  3rem);
 }
-.grid.gutter-3.gutter-margin .cell-7 {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
-  width: calc(43.75%  -  1.5rem);
-}
-.grid.gutter-3:not(.gutter-margin) .cell-7.start-before,
-.grid.gutter-3:not(.gutter-margin) .cell-7.end-before {
+.grid.gutter-3 .cell-7.start-before,
+.grid.gutter-3 .cell-7.end-before {
   width: calc(43.75%  +  1.5rem);
 }
-.grid.gutter-3:not(.gutter-margin) .cell-7.start-before.end-before {
+.grid.gutter-3 .cell-7.start-before.end-before {
   width: calc(43.75%  +  3rem);
 }
-.grid.gutter-3.gutter-margin .cell-8 {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
-  width: calc(50%  -  1.5rem);
-}
-.grid.gutter-3:not(.gutter-margin) .cell-8.start-before,
-.grid.gutter-3:not(.gutter-margin) .cell-8.end-before {
+.grid.gutter-3 .cell-8.start-before,
+.grid.gutter-3 .cell-8.end-before {
   width: calc(50%  +  1.5rem);
 }
-.grid.gutter-3:not(.gutter-margin) .cell-8.start-before.end-before {
+.grid.gutter-3 .cell-8.start-before.end-before {
   width: calc(50%  +  3rem);
 }
-.grid.gutter-3.gutter-margin .cell-9 {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
-  width: calc(56.25%  -  1.5rem);
-}
-.grid.gutter-3:not(.gutter-margin) .cell-9.start-before,
-.grid.gutter-3:not(.gutter-margin) .cell-9.end-before {
+.grid.gutter-3 .cell-9.start-before,
+.grid.gutter-3 .cell-9.end-before {
   width: calc(56.25%  +  1.5rem);
 }
-.grid.gutter-3:not(.gutter-margin) .cell-9.start-before.end-before {
+.grid.gutter-3 .cell-9.start-before.end-before {
   width: calc(56.25%  +  3rem);
 }
-.grid.gutter-3.gutter-margin .cell-10 {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
-  width: calc(62.5%  -  1.5rem);
-}
-.grid.gutter-3:not(.gutter-margin) .cell-10.start-before,
-.grid.gutter-3:not(.gutter-margin) .cell-10.end-before {
+.grid.gutter-3 .cell-10.start-before,
+.grid.gutter-3 .cell-10.end-before {
   width: calc(62.5%  +  1.5rem);
 }
-.grid.gutter-3:not(.gutter-margin) .cell-10.start-before.end-before {
+.grid.gutter-3 .cell-10.start-before.end-before {
   width: calc(62.5%  +  3rem);
 }
-.grid.gutter-3.gutter-margin .cell-11 {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
-  width: calc(68.75%  -  1.5rem);
-}
-.grid.gutter-3:not(.gutter-margin) .cell-11.start-before,
-.grid.gutter-3:not(.gutter-margin) .cell-11.end-before {
+.grid.gutter-3 .cell-11.start-before,
+.grid.gutter-3 .cell-11.end-before {
   width: calc(68.75%  +  1.5rem);
 }
-.grid.gutter-3:not(.gutter-margin) .cell-11.start-before.end-before {
+.grid.gutter-3 .cell-11.start-before.end-before {
   width: calc(68.75%  +  3rem);
 }
-.grid.gutter-3.gutter-margin .cell-12 {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
-  width: calc(75%  -  1.5rem);
-}
-.grid.gutter-3:not(.gutter-margin) .cell-12.start-before,
-.grid.gutter-3:not(.gutter-margin) .cell-12.end-before {
+.grid.gutter-3 .cell-12.start-before,
+.grid.gutter-3 .cell-12.end-before {
   width: calc(75%  +  1.5rem);
 }
-.grid.gutter-3:not(.gutter-margin) .cell-12.start-before.end-before {
+.grid.gutter-3 .cell-12.start-before.end-before {
   width: calc(75%  +  3rem);
 }
-.grid.gutter-3.gutter-margin .cell-13 {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
-  width: calc(81.25%  -  1.5rem);
-}
-.grid.gutter-3:not(.gutter-margin) .cell-13.start-before,
-.grid.gutter-3:not(.gutter-margin) .cell-13.end-before {
+.grid.gutter-3 .cell-13.start-before,
+.grid.gutter-3 .cell-13.end-before {
   width: calc(81.25%  +  1.5rem);
 }
-.grid.gutter-3:not(.gutter-margin) .cell-13.start-before.end-before {
+.grid.gutter-3 .cell-13.start-before.end-before {
   width: calc(81.25%  +  3rem);
 }
-.grid.gutter-3.gutter-margin .cell-14 {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
-  width: calc(87.5%  -  1.5rem);
-}
-.grid.gutter-3:not(.gutter-margin) .cell-14.start-before,
-.grid.gutter-3:not(.gutter-margin) .cell-14.end-before {
+.grid.gutter-3 .cell-14.start-before,
+.grid.gutter-3 .cell-14.end-before {
   width: calc(87.5%  +  1.5rem);
 }
-.grid.gutter-3:not(.gutter-margin) .cell-14.start-before.end-before {
+.grid.gutter-3 .cell-14.start-before.end-before {
   width: calc(87.5%  +  3rem);
 }
-.grid.gutter-3.gutter-margin .cell-15 {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
-  width: calc(93.75%  -  1.5rem);
-}
-.grid.gutter-3:not(.gutter-margin) .cell-15.start-before,
-.grid.gutter-3:not(.gutter-margin) .cell-15.end-before {
+.grid.gutter-3 .cell-15.start-before,
+.grid.gutter-3 .cell-15.end-before {
   width: calc(93.75%  +  1.5rem);
 }
-.grid.gutter-3:not(.gutter-margin) .cell-15.start-before.end-before {
+.grid.gutter-3 .cell-15.start-before.end-before {
   width: calc(93.75%  +  3rem);
 }
-.grid.gutter-3.gutter-margin .cell-16 {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
-  width: calc(100%  -  1.5rem);
-}
-.grid.gutter-3:not(.gutter-margin) .cell-16.start-before,
-.grid.gutter-3:not(.gutter-margin) .cell-16.end-before {
+.grid.gutter-3 .cell-16.start-before,
+.grid.gutter-3 .cell-16.end-before {
   width: calc(100%  +  1.5rem);
 }
-.grid.gutter-3:not(.gutter-margin) .cell-16.start-before.end-before {
+.grid.gutter-3 .cell-16.start-before.end-before {
   width: calc(100%  +  3rem);
 }
 .grid.gutter-4 {
@@ -18255,234 +17353,145 @@ table.grid.gutter-4 {
   width: calc(1128px  + 1.7999999999999998rem);
   max-width: calc(100%  - ( 40px - 1.7999999999999998rem));
 }
-.grid.gutter-4:not(.gutter-margin) > [class*=" cell"],
-.grid.gutter-4:not(.gutter-margin) > [class^="cell"],
-.grid.gutter-4:not(.gutter-margin) > .row > [class*=" cell"],
-.grid.gutter-4:not(.gutter-margin) > .row > [class^="cell"],
-.grid.gutter-4:not(.gutter-margin) > tbody > tr > td,
-.grid.gutter-4:not(.gutter-margin) > tr > td {
-  padding-left: 0.9rem;
-  padding-right: 0.9rem;
+.grid.gutter-4 > [class*=" cell"],
+.grid.gutter-4 > [class^="cell"],
+.grid.gutter-4 > .row > [class*=" cell"],
+.grid.gutter-4 > .row > [class^="cell"],
+.grid.gutter-4 > tbody > tr > td,
+.grid.gutter-4 > tr > td {
+  border-left: 0.9rem solid transparent;
+  border-right: 0.9rem solid transparent;
 }
-.grid.gutter-4:not(.gutter-margin) > [class*=" cell"].start-before,
-.grid.gutter-4:not(.gutter-margin) > [class^="cell"].start-before,
-.grid.gutter-4:not(.gutter-margin) > .row > [class*=" cell"].start-before,
-.grid.gutter-4:not(.gutter-margin) > .row > [class^="cell"].start-before,
-.grid.gutter-4:not(.gutter-margin) > tbody > tr > td.start-before,
-.grid.gutter-4:not(.gutter-margin) > tr > td.start-before {
+.grid.gutter-4 > [class*=" cell"].start-before,
+.grid.gutter-4 > [class^="cell"].start-before,
+.grid.gutter-4 > .row > [class*=" cell"].start-before,
+.grid.gutter-4 > .row > [class^="cell"].start-before,
+.grid.gutter-4 > tbody > tr > td.start-before,
+.grid.gutter-4 > tr > td.start-before {
   margin-left: -1.8rem;
 }
-.grid.gutter-4:not(.gutter-margin) > [class*=" cell"].end-before,
-.grid.gutter-4:not(.gutter-margin) > [class^="cell"].end-before,
-.grid.gutter-4:not(.gutter-margin) > .row > [class*=" cell"].end-before,
-.grid.gutter-4:not(.gutter-margin) > .row > [class^="cell"].end-before,
-.grid.gutter-4:not(.gutter-margin) > tbody > tr > td.end-before,
-.grid.gutter-4:not(.gutter-margin) > tr > td.end-before {
+.grid.gutter-4 > [class*=" cell"].end-before,
+.grid.gutter-4 > [class^="cell"].end-before,
+.grid.gutter-4 > .row > [class*=" cell"].end-before,
+.grid.gutter-4 > .row > [class^="cell"].end-before,
+.grid.gutter-4 > tbody > tr > td.end-before,
+.grid.gutter-4 > tr > td.end-before {
   margin-right: -1.8rem;
-}
-table.grid.gutter-4.gutter-margin {
-  margin-left: -1.8rem;
-  margin-right: -1.8rem;
-}
-table.grid.gutter-4.gutter-margin > tbody > tr > td,
-table.grid.gutter-4.gutter-margin > tr > td {
-  border-left: 1.8rem solid transparent;
-  border-right: 1.8rem solid transparent;
 }
 .grid.gutter-4 > [class*="grid"].row {
-  padding-left: 0.9rem;
-  padding-right: 0.9rem;
+  border-left: 0.9rem solid transparent;
+  border-right: 0.9rem solid transparent;
 }
-.grid.gutter-4.gutter-margin .cell-1 {
-  margin-left: 0.9rem;
-  margin-right: 0.9rem;
-  width: calc(6.25%  -  1.8rem);
-}
-.grid.gutter-4:not(.gutter-margin) .cell-1.start-before,
-.grid.gutter-4:not(.gutter-margin) .cell-1.end-before {
+.grid.gutter-4 .cell-1.start-before,
+.grid.gutter-4 .cell-1.end-before {
   width: calc(6.25%  +  1.8rem);
 }
-.grid.gutter-4:not(.gutter-margin) .cell-1.start-before.end-before {
+.grid.gutter-4 .cell-1.start-before.end-before {
   width: calc(6.25%  +  3.6rem);
 }
-.grid.gutter-4.gutter-margin .cell-2 {
-  margin-left: 0.9rem;
-  margin-right: 0.9rem;
-  width: calc(12.5%  -  1.8rem);
-}
-.grid.gutter-4:not(.gutter-margin) .cell-2.start-before,
-.grid.gutter-4:not(.gutter-margin) .cell-2.end-before {
+.grid.gutter-4 .cell-2.start-before,
+.grid.gutter-4 .cell-2.end-before {
   width: calc(12.5%  +  1.8rem);
 }
-.grid.gutter-4:not(.gutter-margin) .cell-2.start-before.end-before {
+.grid.gutter-4 .cell-2.start-before.end-before {
   width: calc(12.5%  +  3.6rem);
 }
-.grid.gutter-4.gutter-margin .cell-3 {
-  margin-left: 0.9rem;
-  margin-right: 0.9rem;
-  width: calc(18.75%  -  1.8rem);
-}
-.grid.gutter-4:not(.gutter-margin) .cell-3.start-before,
-.grid.gutter-4:not(.gutter-margin) .cell-3.end-before {
+.grid.gutter-4 .cell-3.start-before,
+.grid.gutter-4 .cell-3.end-before {
   width: calc(18.75%  +  1.8rem);
 }
-.grid.gutter-4:not(.gutter-margin) .cell-3.start-before.end-before {
+.grid.gutter-4 .cell-3.start-before.end-before {
   width: calc(18.75%  +  3.6rem);
 }
-.grid.gutter-4.gutter-margin .cell-4 {
-  margin-left: 0.9rem;
-  margin-right: 0.9rem;
-  width: calc(25%  -  1.8rem);
-}
-.grid.gutter-4:not(.gutter-margin) .cell-4.start-before,
-.grid.gutter-4:not(.gutter-margin) .cell-4.end-before {
+.grid.gutter-4 .cell-4.start-before,
+.grid.gutter-4 .cell-4.end-before {
   width: calc(25%  +  1.8rem);
 }
-.grid.gutter-4:not(.gutter-margin) .cell-4.start-before.end-before {
+.grid.gutter-4 .cell-4.start-before.end-before {
   width: calc(25%  +  3.6rem);
 }
-.grid.gutter-4.gutter-margin .cell-5 {
-  margin-left: 0.9rem;
-  margin-right: 0.9rem;
-  width: calc(31.25%  -  1.8rem);
-}
-.grid.gutter-4:not(.gutter-margin) .cell-5.start-before,
-.grid.gutter-4:not(.gutter-margin) .cell-5.end-before {
+.grid.gutter-4 .cell-5.start-before,
+.grid.gutter-4 .cell-5.end-before {
   width: calc(31.25%  +  1.8rem);
 }
-.grid.gutter-4:not(.gutter-margin) .cell-5.start-before.end-before {
+.grid.gutter-4 .cell-5.start-before.end-before {
   width: calc(31.25%  +  3.6rem);
 }
-.grid.gutter-4.gutter-margin .cell-6 {
-  margin-left: 0.9rem;
-  margin-right: 0.9rem;
-  width: calc(37.5%  -  1.8rem);
-}
-.grid.gutter-4:not(.gutter-margin) .cell-6.start-before,
-.grid.gutter-4:not(.gutter-margin) .cell-6.end-before {
+.grid.gutter-4 .cell-6.start-before,
+.grid.gutter-4 .cell-6.end-before {
   width: calc(37.5%  +  1.8rem);
 }
-.grid.gutter-4:not(.gutter-margin) .cell-6.start-before.end-before {
+.grid.gutter-4 .cell-6.start-before.end-before {
   width: calc(37.5%  +  3.6rem);
 }
-.grid.gutter-4.gutter-margin .cell-7 {
-  margin-left: 0.9rem;
-  margin-right: 0.9rem;
-  width: calc(43.75%  -  1.8rem);
-}
-.grid.gutter-4:not(.gutter-margin) .cell-7.start-before,
-.grid.gutter-4:not(.gutter-margin) .cell-7.end-before {
+.grid.gutter-4 .cell-7.start-before,
+.grid.gutter-4 .cell-7.end-before {
   width: calc(43.75%  +  1.8rem);
 }
-.grid.gutter-4:not(.gutter-margin) .cell-7.start-before.end-before {
+.grid.gutter-4 .cell-7.start-before.end-before {
   width: calc(43.75%  +  3.6rem);
 }
-.grid.gutter-4.gutter-margin .cell-8 {
-  margin-left: 0.9rem;
-  margin-right: 0.9rem;
-  width: calc(50%  -  1.8rem);
-}
-.grid.gutter-4:not(.gutter-margin) .cell-8.start-before,
-.grid.gutter-4:not(.gutter-margin) .cell-8.end-before {
+.grid.gutter-4 .cell-8.start-before,
+.grid.gutter-4 .cell-8.end-before {
   width: calc(50%  +  1.8rem);
 }
-.grid.gutter-4:not(.gutter-margin) .cell-8.start-before.end-before {
+.grid.gutter-4 .cell-8.start-before.end-before {
   width: calc(50%  +  3.6rem);
 }
-.grid.gutter-4.gutter-margin .cell-9 {
-  margin-left: 0.9rem;
-  margin-right: 0.9rem;
-  width: calc(56.25%  -  1.8rem);
-}
-.grid.gutter-4:not(.gutter-margin) .cell-9.start-before,
-.grid.gutter-4:not(.gutter-margin) .cell-9.end-before {
+.grid.gutter-4 .cell-9.start-before,
+.grid.gutter-4 .cell-9.end-before {
   width: calc(56.25%  +  1.8rem);
 }
-.grid.gutter-4:not(.gutter-margin) .cell-9.start-before.end-before {
+.grid.gutter-4 .cell-9.start-before.end-before {
   width: calc(56.25%  +  3.6rem);
 }
-.grid.gutter-4.gutter-margin .cell-10 {
-  margin-left: 0.9rem;
-  margin-right: 0.9rem;
-  width: calc(62.5%  -  1.8rem);
-}
-.grid.gutter-4:not(.gutter-margin) .cell-10.start-before,
-.grid.gutter-4:not(.gutter-margin) .cell-10.end-before {
+.grid.gutter-4 .cell-10.start-before,
+.grid.gutter-4 .cell-10.end-before {
   width: calc(62.5%  +  1.8rem);
 }
-.grid.gutter-4:not(.gutter-margin) .cell-10.start-before.end-before {
+.grid.gutter-4 .cell-10.start-before.end-before {
   width: calc(62.5%  +  3.6rem);
 }
-.grid.gutter-4.gutter-margin .cell-11 {
-  margin-left: 0.9rem;
-  margin-right: 0.9rem;
-  width: calc(68.75%  -  1.8rem);
-}
-.grid.gutter-4:not(.gutter-margin) .cell-11.start-before,
-.grid.gutter-4:not(.gutter-margin) .cell-11.end-before {
+.grid.gutter-4 .cell-11.start-before,
+.grid.gutter-4 .cell-11.end-before {
   width: calc(68.75%  +  1.8rem);
 }
-.grid.gutter-4:not(.gutter-margin) .cell-11.start-before.end-before {
+.grid.gutter-4 .cell-11.start-before.end-before {
   width: calc(68.75%  +  3.6rem);
 }
-.grid.gutter-4.gutter-margin .cell-12 {
-  margin-left: 0.9rem;
-  margin-right: 0.9rem;
-  width: calc(75%  -  1.8rem);
-}
-.grid.gutter-4:not(.gutter-margin) .cell-12.start-before,
-.grid.gutter-4:not(.gutter-margin) .cell-12.end-before {
+.grid.gutter-4 .cell-12.start-before,
+.grid.gutter-4 .cell-12.end-before {
   width: calc(75%  +  1.8rem);
 }
-.grid.gutter-4:not(.gutter-margin) .cell-12.start-before.end-before {
+.grid.gutter-4 .cell-12.start-before.end-before {
   width: calc(75%  +  3.6rem);
 }
-.grid.gutter-4.gutter-margin .cell-13 {
-  margin-left: 0.9rem;
-  margin-right: 0.9rem;
-  width: calc(81.25%  -  1.8rem);
-}
-.grid.gutter-4:not(.gutter-margin) .cell-13.start-before,
-.grid.gutter-4:not(.gutter-margin) .cell-13.end-before {
+.grid.gutter-4 .cell-13.start-before,
+.grid.gutter-4 .cell-13.end-before {
   width: calc(81.25%  +  1.8rem);
 }
-.grid.gutter-4:not(.gutter-margin) .cell-13.start-before.end-before {
+.grid.gutter-4 .cell-13.start-before.end-before {
   width: calc(81.25%  +  3.6rem);
 }
-.grid.gutter-4.gutter-margin .cell-14 {
-  margin-left: 0.9rem;
-  margin-right: 0.9rem;
-  width: calc(87.5%  -  1.8rem);
-}
-.grid.gutter-4:not(.gutter-margin) .cell-14.start-before,
-.grid.gutter-4:not(.gutter-margin) .cell-14.end-before {
+.grid.gutter-4 .cell-14.start-before,
+.grid.gutter-4 .cell-14.end-before {
   width: calc(87.5%  +  1.8rem);
 }
-.grid.gutter-4:not(.gutter-margin) .cell-14.start-before.end-before {
+.grid.gutter-4 .cell-14.start-before.end-before {
   width: calc(87.5%  +  3.6rem);
 }
-.grid.gutter-4.gutter-margin .cell-15 {
-  margin-left: 0.9rem;
-  margin-right: 0.9rem;
-  width: calc(93.75%  -  1.8rem);
-}
-.grid.gutter-4:not(.gutter-margin) .cell-15.start-before,
-.grid.gutter-4:not(.gutter-margin) .cell-15.end-before {
+.grid.gutter-4 .cell-15.start-before,
+.grid.gutter-4 .cell-15.end-before {
   width: calc(93.75%  +  1.8rem);
 }
-.grid.gutter-4:not(.gutter-margin) .cell-15.start-before.end-before {
+.grid.gutter-4 .cell-15.start-before.end-before {
   width: calc(93.75%  +  3.6rem);
 }
-.grid.gutter-4.gutter-margin .cell-16 {
-  margin-left: 0.9rem;
-  margin-right: 0.9rem;
-  width: calc(100%  -  1.8rem);
-}
-.grid.gutter-4:not(.gutter-margin) .cell-16.start-before,
-.grid.gutter-4:not(.gutter-margin) .cell-16.end-before {
+.grid.gutter-4 .cell-16.start-before,
+.grid.gutter-4 .cell-16.end-before {
   width: calc(100%  +  1.8rem);
 }
-.grid.gutter-4:not(.gutter-margin) .cell-16.start-before.end-before {
+.grid.gutter-4 .cell-16.start-before.end-before {
   width: calc(100%  +  3.6rem);
 }
 .grid.space-1 {
@@ -18498,21 +17507,12 @@ table.grid.gutter-4.gutter-margin > tr > td {
 .grid.space-1:not(.space-margin) > .row > [class^="cell"],
 .grid.space-1:not(.space-margin) > tbody > tr > td,
 .grid.space-1:not(.space-margin) > tr > td {
-  padding-top: 0.45rem;
-  padding-bottom: 0.45rem;
-}
-table.grid.space-1.space-margin {
-  margin-top: -0.9rem;
-  margin-bottom: -0.9rem;
-}
-table.grid.space-1.space-margin > tbody > tr > td,
-table.grid.space-1.space-margin > tr > td {
-  border-top: 0.9rem solid transparent;
-  border-bottom: 0.9rem solid transparent;
+  border-top: 0.45rem solid transparent;
+  border-bottom: 0.45rem solid transparent;
 }
 .grid.space-1 > [class*="grid"].row {
-  padding-top: 0.45rem;
-  padding-bottom: 0.45rem;
+  border-top: 0.45rem solid transparent;
+  border-bottom: 0.45rem solid transparent;
 }
 .grid[class*="space-1"].space-margin .cell-1 {
   margin-top: 0.45rem;
@@ -18591,21 +17591,12 @@ table.grid.space-1.space-margin > tr > td {
 .grid.space-2:not(.space-margin) > .row > [class^="cell"],
 .grid.space-2:not(.space-margin) > tbody > tr > td,
 .grid.space-2:not(.space-margin) > tr > td {
-  padding-top: 0.6rem;
-  padding-bottom: 0.6rem;
-}
-table.grid.space-2.space-margin {
-  margin-top: -1.2rem;
-  margin-bottom: -1.2rem;
-}
-table.grid.space-2.space-margin > tbody > tr > td,
-table.grid.space-2.space-margin > tr > td {
-  border-top: 1.2rem solid transparent;
-  border-bottom: 1.2rem solid transparent;
+  border-top: 0.6rem solid transparent;
+  border-bottom: 0.6rem solid transparent;
 }
 .grid.space-2 > [class*="grid"].row {
-  padding-top: 0.6rem;
-  padding-bottom: 0.6rem;
+  border-top: 0.6rem solid transparent;
+  border-bottom: 0.6rem solid transparent;
 }
 .grid[class*="space-2"].space-margin .cell-1 {
   margin-top: 0.6rem;
@@ -18684,21 +17675,12 @@ table.grid.space-2.space-margin > tr > td {
 .grid.space-3:not(.space-margin) > .row > [class^="cell"],
 .grid.space-3:not(.space-margin) > tbody > tr > td,
 .grid.space-3:not(.space-margin) > tr > td {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-table.grid.space-3.space-margin {
-  margin-top: -1.5rem;
-  margin-bottom: -1.5rem;
-}
-table.grid.space-3.space-margin > tbody > tr > td,
-table.grid.space-3.space-margin > tr > td {
-  border-top: 1.5rem solid transparent;
-  border-bottom: 1.5rem solid transparent;
+  border-top: 0.75rem solid transparent;
+  border-bottom: 0.75rem solid transparent;
 }
 .grid.space-3 > [class*="grid"].row {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+  border-top: 0.75rem solid transparent;
+  border-bottom: 0.75rem solid transparent;
 }
 .grid[class*="space-3"].space-margin .cell-1 {
   margin-top: 0.75rem;
@@ -18777,21 +17759,12 @@ table.grid.space-3.space-margin > tr > td {
 .grid.space-4:not(.space-margin) > .row > [class^="cell"],
 .grid.space-4:not(.space-margin) > tbody > tr > td,
 .grid.space-4:not(.space-margin) > tr > td {
-  padding-top: 0.9rem;
-  padding-bottom: 0.9rem;
-}
-table.grid.space-4.space-margin {
-  margin-top: -1.8rem;
-  margin-bottom: -1.8rem;
-}
-table.grid.space-4.space-margin > tbody > tr > td,
-table.grid.space-4.space-margin > tr > td {
-  border-top: 1.8rem solid transparent;
-  border-bottom: 1.8rem solid transparent;
+  border-top: 0.9rem solid transparent;
+  border-bottom: 0.9rem solid transparent;
 }
 .grid.space-4 > [class*="grid"].row {
-  padding-top: 0.9rem;
-  padding-bottom: 0.9rem;
+  border-top: 0.9rem solid transparent;
+  border-bottom: 0.9rem solid transparent;
 }
 .grid[class*="space-4"].space-margin .cell-1 {
   margin-top: 0.9rem;
@@ -19155,7 +18128,7 @@ table.grid [class*=" cell"]:first-child,
 .grid.table [class*=" cell"]:first-child,
 table.grid [class^="cell"]:first-child,
 .grid.table [class^="cell"]:first-child {
-  padding-left: 0;
+  border-left: 0;
 }
 table.grid td:last-child,
 .grid.table td:last-child,
@@ -19163,7 +18136,7 @@ table.grid [class*=" cell"]:last-child,
 .grid.table [class*=" cell"]:last-child,
 table.grid [class^="cell"]:last-child,
 .grid.table [class^="cell"]:last-child {
-  padding-left: 0;
+  border-left: 0;
 }
 form.grid.column.release,
 .grid.form.column.release {
@@ -19310,48 +18283,13 @@ form.grid [class*=" cell"] textarea,
 .grid.form [class*=" cell"] textarea,
 form.grid [class^="cell"] textarea,
 .grid.form [class^="cell"] textarea {
+  resize: vertical;
   min-height: calc(1.7em  +  0.7rem);
 }
-form.grid [class*=" cell"] input[type="date"],
-.grid.form [class*=" cell"] input[type="date"],
-form.grid [class^="cell"] input[type="date"],
-.grid.form [class^="cell"] input[type="date"],
-form.grid [class*=" cell"] input[type="datetime-local"],
-.grid.form [class*=" cell"] input[type="datetime-local"],
-form.grid [class^="cell"] input[type="datetime-local"],
-.grid.form [class^="cell"] input[type="datetime-local"],
-form.grid [class*=" cell"] input[type="email"],
-.grid.form [class*=" cell"] input[type="email"],
-form.grid [class^="cell"] input[type="email"],
-.grid.form [class^="cell"] input[type="email"],
-form.grid [class*=" cell"] input[type="number"],
-.grid.form [class*=" cell"] input[type="number"],
-form.grid [class^="cell"] input[type="number"],
-.grid.form [class^="cell"] input[type="number"],
-form.grid [class*=" cell"] input[type="password"],
-.grid.form [class*=" cell"] input[type="password"],
-form.grid [class^="cell"] input[type="password"],
-.grid.form [class^="cell"] input[type="password"],
-form.grid [class*=" cell"] input[type="search"],
-.grid.form [class*=" cell"] input[type="search"],
-form.grid [class^="cell"] input[type="search"],
-.grid.form [class^="cell"] input[type="search"],
-form.grid [class*=" cell"] input[type="tel"],
-.grid.form [class*=" cell"] input[type="tel"],
-form.grid [class^="cell"] input[type="tel"],
-.grid.form [class^="cell"] input[type="tel"],
-form.grid [class*=" cell"] input[type="time"],
-.grid.form [class*=" cell"] input[type="time"],
-form.grid [class^="cell"] input[type="time"],
-.grid.form [class^="cell"] input[type="time"],
-form.grid [class*=" cell"] input[type="text"],
-.grid.form [class*=" cell"] input[type="text"],
-form.grid [class^="cell"] input[type="text"],
-.grid.form [class^="cell"] input[type="text"],
-form.grid [class*=" cell"] input[type="url"],
-.grid.form [class*=" cell"] input[type="url"],
-form.grid [class^="cell"] input[type="url"],
-.grid.form [class^="cell"] input[type="url"] {
+form.grid [class*=" cell"] input:not([type="checkbox"]):not([type="radio"]),
+.grid.form [class*=" cell"] input:not([type="checkbox"]):not([type="radio"]),
+form.grid [class^="cell"] input:not([type="checkbox"]):not([type="radio"]),
+.grid.form [class^="cell"] input:not([type="checkbox"]):not([type="radio"]) {
   width: 100%;
   max-width: 100%;
   min-width: 100%;
@@ -19370,11 +18308,22 @@ form.grid [class^="cell"] textarea,
 form.grid [class*=" cell"] .select,
 .grid.form [class*=" cell"] .select,
 form.grid [class^="cell"] .select,
-.grid.form [class^="cell"] .select {
+.grid.form [class^="cell"] .select,
+form.grid [class*=" cell"] .input,
+.grid.form [class*=" cell"] .input,
+form.grid [class^="cell"] .input,
+.grid.form [class^="cell"] .input,
+form.grid [class*=" cell"] output,
+.grid.form [class*=" cell"] output,
+form.grid [class^="cell"] output,
+.grid.form [class^="cell"] output,
+form.grid [class*=" cell"] datalist,
+.grid.form [class*=" cell"] datalist,
+form.grid [class^="cell"] datalist,
+.grid.form [class^="cell"] datalist {
   width: 100%;
   max-width: 100%;
   min-width: 100%;
-  resize: vertical;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;

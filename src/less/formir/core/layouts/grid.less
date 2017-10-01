@@ -22,31 +22,19 @@
       width: calc(@content-max-width ~" + @{gutter}");
       max-width: calc(100% ~" - ( @{margin} - @{gutter})");
     }
-    &:not(.@{gutter-margin}) {
-      > [class*=" @{cell}"], > [class^="@{cell}"], > .@{row} > [class*=" @{cell}"], > .@{row} > [class^="@{cell}"], > tbody > tr > td, > tr > td {
-        padding-left: unit(@value/2, @unit);
-        padding-right: unit(@value/2, @unit);
-        &.@{start-before} {
-          margin-left: unit(-@value, @unit);
-        }
-        &.@{end-before} {
-          margin-right: unit(-@value, @unit);
-        }
-      }
-    }
-    &.@{gutter-margin} {
-      table& {
+    > [class*=" @{cell}"], > [class^="@{cell}"], > .@{row} > [class*=" @{cell}"], > .@{row} > [class^="@{cell}"], > tbody > tr > td, > tr > td {
+      border-left: unit(@value/2, @unit) solid transparent;
+      border-right: unit(@value/2, @unit) solid transparent;
+      &.@{start-before} {
         margin-left: unit(-@value, @unit);
+      }
+      &.@{end-before} {
         margin-right: unit(-@value, @unit);
-        > tbody > tr > td, > tr > td {
-          border-left: unit(@value, @unit) solid transparent;
-          border-right: unit(@value, @unit) solid transparent;
-        }
       }
     }
     > [class*="@{grid}"].@{row} {
-      padding-left: unit(@value/2, @unit);
-      padding-right: unit(@value/2, @unit);
+      border-left: unit(@value/2, @unit) solid transparent;
+      border-right: unit(@value/2, @unit) solid transparent;
     }
   }
 
@@ -56,21 +44,12 @@
 
 .grid-gutter(@n, @grid-space, @value, @unit, @i: 1) when (@i =< @n) {
   &.@{gutter}-@{grid-space} {
-    &.@{gutter-margin} {
-      .@{cell}-@{i} {
-        margin-left: unit(@value/2, @unit);
-        margin-right: unit(@value/2, @unit);
-        width: calc(unit((100 / @n) * @i, %) ~" - " unit(@value, @unit));
+    .@{cell}-@{i} {
+      &.@{start-before}, &.@{end-before} {
+        width: calc(unit((100 / @n) * @i, %) ~" + " unit(@value, @unit));
       }
-    }
-    &:not(.@{gutter-margin}) {
-      .@{cell}-@{i} {
-        &.@{start-before}, &.@{end-before} {
-          width: calc(unit((100 / @n) * @i, %) ~" + " unit(@value, @unit));
-        }
-        &.@{start-before}.@{end-before} {
-          width: calc(unit((100 / @n) * @i, %) ~" + " unit(@value*2, @unit));
-        }
+      &.@{start-before}.@{end-before} {
+        width: calc(unit((100 / @n) * @i, %) ~" + " unit(@value*2, @unit));
       }
     }
   }
@@ -88,23 +67,14 @@
     }
     &:not(.@{space-margin}) {
       > [class*=" @{cell}"], > [class^="@{cell}"], > .@{row} > [class*=" @{cell}"], > .@{row} > [class^="@{cell}"], > tbody > tr > td, > tr > td {
-        padding-top: unit(@value/2, @unit);
-        padding-bottom: unit(@value/2, @unit);
+        border-top: unit(@value/2, @unit) solid transparent;
+        border-bottom: unit(@value/2, @unit) solid transparent;
       }
     }
-    &.@{space-margin} {
-      table& {
-        margin-top: unit(-@value, @unit);
-        margin-bottom: unit(-@value, @unit);
-        > tbody > tr > td, > tr > td {
-          border-top: unit(@value, @unit) solid transparent;
-          border-bottom: unit(@value, @unit) solid transparent;
-        }
-      }
-    }
+
     > [class*="@{grid}"].@{row} {
-      padding-top: unit(@value/2, @unit);
-      padding-bottom: unit(@value/2, @unit);
+      border-top: unit(@value/2, @unit) solid transparent;
+      border-bottom: unit(@value/2, @unit) solid transparent;
     }
   }
   .grid-space(@grid-steps, @i, @value, @unit);
@@ -554,10 +524,10 @@
     td, [class*=" @{cell}"], [class^="@{cell}"] {
       display: table-cell;
       &:first-child {
-        padding-left: 0;
+        border-left: 0;
       }
       &:last-child {
-        padding-left: 0;
+        border-left: 0;
       }
     }
   }
@@ -650,21 +620,21 @@
     }
     [class*=" @{cell}"], [class^="@{cell}"] {
       textarea {
+        resize: vertical;
         min-height: calc(1.7em ~" + " (@input-default-padding-vertical * 2 ));
       }
       input {
-        &[type="date"], &[type="datetime-local"], &[type="email"], &[type="number"], &[type="password"], &[type="search"], &[type="tel"], &[type="time"], &[type="text"], &[type="url"] {
+        &:not([type="checkbox"]):not([type="radio"]) {
           width: 100%;
           max-width: 100%;
           min-width: 100%;
           .box-sizing(border-box);
         }
       }
-      select, textarea, .@{select} {
+      select, textarea, .@{select}, .@{input}, output, datalist {
         width: 100%;
         max-width: 100%;
         min-width: 100%;
-        resize: vertical;
         .box-sizing(border-box);
       }
     }

@@ -101,12 +101,12 @@
 }
 
 input {
-  &[type="date"], &[type="datetime-local"], &[type="email"], &[type="number"], &[type="password"], &[type="search"], &[type="tel"], &[type="time"], &[type="text"], &[type="url"] {
+  &:not([type="checkbox"]):not([type="radio"]) {
     .input-style;
   }
 }
 
-textarea, select, .@{input} {
+select, textarea, .@{input}, output, datalist {
   .input-style;
 }
 
@@ -448,7 +448,7 @@ select:not([multiple]) {
         right: auto;
         text-align: left;
       }
-      input, select, textarea {
+      input:not([type="checkbox"]):not([type="radio"]), select, textarea {
         padding-left: @input-icon-font-size*3 + @input-default-padding-horizontal;
         padding-right: @input-default-padding-horizontal;
       }
@@ -494,7 +494,7 @@ select:not([multiple]) {
         }
         &, &.@{input-inverse}.@{input-transparent} {
           input {
-            &[type="date"], &[type="datetime-local"], &[type="email"], &[type="number"], &[type="password"], &[type="search"], &[type="tel"], &[type="time"], &[type="text"], &[type="url"] {
+            &:not([type="checkbox"]):not([type="radio"]) {
               & when (@form-state-change-text-color = true) {
                 color: ~"@{input-color-@{name}}";
               }
@@ -506,7 +506,7 @@ select:not([multiple]) {
               }
             }
           }
-          select, textarea {
+          select, textarea, output, data-list, .@{input} {
             & when (@form-state-change-text-color = true) {
               color: ~"@{input-color-@{name}}";
             }
@@ -551,7 +551,7 @@ select:not([multiple]) {
           }
         }
         &.@{input-inverse} {
-          select, textarea, input {
+          select, textarea, output, data-list, .@{input}, input {
             & when (@form-state-change-background = true) {
               background-color: ~"@{input-border-@{name}}";
             }
