@@ -20,6 +20,34 @@
 
 }
 
+.side-open-style() {
+  border-radius: 100%;
+  margin: 0.4rem;
+  .box-shadow(0 0 3px rgba(0, 0, 0, 0.2));
+  background-color: @color-primary;
+  i {
+    color: @color-white;
+  }
+}
+
+.side-open-left-style() {
+  bottom: 0;
+  right: 0;
+  margin: 0 1.4rem 0.7rem 0;
+}
+.side-open-right-style() {
+  top: 0;
+  right: 0;
+}
+.side-open-top-style() {
+  top: 0;
+  left: 0;
+}
+.side-open-bottom-style() {
+  bottom: 0;
+  left: 0;
+}
+
 & when(@include-core-layout-side = true) {
   .@{side-backdrop} {
     background-color: @side-backdrop-color;
