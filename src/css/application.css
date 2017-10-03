@@ -13353,6 +13353,12 @@ section.full-height {
 .background-danger.hoverable:hover {
   background-color: #ffffff;
 }
+.background-white {
+  background-color: #fff;
+}
+.background-white.hoverable:hover {
+  background-color: #fff;
+}
 .text-primary {
   color: #281e2b;
 }
