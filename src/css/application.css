@@ -13360,34 +13360,34 @@ section.full-height {
   background-color: #fff;
 }
 .text-primary {
-  color: #281e2b;
+  color: #281e2b !important;
 }
 .text-alternative {
-  color: #187782;
+  color: #187782 !important;
 }
 .text-link {
-  color: #653a9a;
+  color: #653a9a !important;
 }
 .text-mute {
-  color: #3e3e3e;
+  color: #3e3e3e !important;
 }
 .text-cancel {
-  color: #919191;
+  color: #919191 !important;
 }
 .text-success {
-  color: #5f8200;
+  color: #5f8200 !important;
 }
 .text-info {
-  color: #007f91;
+  color: #007f91 !important;
 }
 .text-warning {
-  color: #d36a16;
+  color: #d36a16 !important;
 }
 .text-danger {
-  color: #b02c2c;
+  color: #b02c2c !important;
 }
 .border-primary {
-  color: #281e2b;
+  border-color: #281e2b;
 }
 .border-alternative {
   border-color: #209ead;
