@@ -23,8 +23,10 @@
 .tab-nav(@n, @i: 1) when (@i =< @n) {
   &:nth-child(@{i}) {
     ~ .tab-navs {
-      > label[for]:nth-child(@{i}) {
-        .tab-nav-active;
+      .tab-labels {
+        > label[for]:nth-child(@{i}) {
+          .tab-nav-active;
+        }
       }
     }
   }
@@ -40,53 +42,16 @@
       .tab-nav(10);
     }
   }
-  
+
   .@{tab-navs} {
-    font-size: 0;
-    > label[for] {
-      display: inline-block;
-      font-size: @body-font-size;
-    }  
+    .tab-labels {
+      > label[for] {
+      }
+    }
   }
   .@{tab-pages} {
     > div {
       display: none;
-    }
-  }
-  
-  .@{tab-navs} {
-    &.@{table} {
-      display: table;
-      width: 100%;
-      > label[for] {
-        display: table-cell;
-        text-align: center;
-      }
-      ~ .@{tab-pages} {
-        display: block;
-      }
-    }
-    &.@{flex} {
-      display: flex;
-      flex-wrap: nowrap;
-      width: 100%;
-      &.@{tab-space-around} {
-        justify-content: space-around;
-      }
-      &.@{tab-space-between} {
-        justify-content: space-between;
-      }
-      &:not([class*="@{tab-space}-"]) {
-        > label[for] {
-          flex: 1 1 auto;
-        }
-      }
-      > label[for] {
-        text-align: center;
-      }
-      ~ .@{tab-pages} {
-        display: block;
-      }
     }
   }
 }

@@ -54,18 +54,20 @@
 @popup-border-width: 0;
 @popup-border-color: rgba(60, 60, 60, 1);
 @popup-border: @popup-border-width solid @popup-border-color;
-@popup-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+@popup-shadow: none;
 @popup-text-color: #000;
-@popup-padding: 0;
-@popup-max-width: calc(100vh ~"-" 2 * @content-min-margin);
-@popup-min-width: 250px;
-@popup-width: auto;
-@popup-border-radius: 0;
+@popup-padding-horizontal: 0;
+@popup-padding-vertical: 0;
+@popup-padding: @popup-padding-vertical @popup-padding-horizontal;
+@popup-max-width: calc(100vw ~"-" @popup-padding-horizontal * 2 ~"-" @content-min-margin * 4);
+@popup-min-width: 0;
+@popup-width: max-content;
+@popup-border-radius: 0px;
 @popup-arrow-color: #000;
-@popup-arrow-height: 0;
+@popup-arrow-height: 0px;
 @popup-arrow-width: @popup-arrow-height;
 @popup-arrow-offset: 20px;
-@popup-offset: 0;
+@popup-offset: 0px;
 @popup-distance: 0px;
 //// Popup inner
 @popup-content-padding: 15px 20px;
@@ -228,12 +230,19 @@
 @menu-item-background-color-hover: lighten(@color-primary, 60);
 @menu-item-color: #000;
 @menu-item-color-hover: #000;
+@menu-item-color-active: @color-primary;
 @menu-item-padding: 0;
 @menu-item-anchor-decoration: none;
 @menu-item-anchor-decoration-hover: none;
 @menu-item-anchor-padding: 7px 10px;
 @menu-item-anchor-border: 1px solid rgba(0, 0, 0, 0.1);
 @menu-inside-item-anchor-padding: 5px 10px 5px 10px;
+
+// Menu anchor link
+@menu-item-anchor-color: @link-color;
+@menu-item-anchor-hover-color: @link-hover-color;
+@menu-item-anchor-decoration: @link-decoration;
+@menu-item-anchor-hover-decoration: @link-hover-decoration;
 
 @mobile-menu-item-button-radius: 0;
 
@@ -389,6 +398,7 @@
 @link-hover-color: @color-hover-link;
 @link-decoration: none;
 @link-hover-decoration: underline;
+
 
 // Buttons
 @button-border-style: solid;

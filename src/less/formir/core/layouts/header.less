@@ -32,13 +32,14 @@
 
 @{header} {
   .display-flex;
+  height: @header-height;
+  z-index: @header-zindex;
+  position: relative;
   &.@{header-fixed} {
     position: fixed;
     left: 0;
     right: 0;
     top: 0;
-    height: @header-height;
-    z-index: @header-zindex;
     + * {
       margin-top: @header-height;
     }
@@ -52,7 +53,7 @@
     .flex(1 1 auto);
     padding: @header-horizontal-padding @header-vertical-padding;
     nav {
-      a {
+      @{menu-item-anchor} {
         vertical-align: middle;
         &:not(.button) {
           color: inherit;

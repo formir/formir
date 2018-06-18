@@ -143,6 +143,7 @@
   background: @popup-background;
   padding: @popup-padding;
   color: @popup-text-color;
+  width: @popup-width;
   max-width: @popup-max-width;
   min-width: @popup-min-width;
   & when (@popup-min-width = max-content) {
@@ -160,6 +161,14 @@
   & when (@popup-max-width = min-content) {
     max-width: -webkit-min-conent;
     max-width: -moz-min-content;
+  }
+  & when (@popup-width = max-content) {
+    width: -webkit-max-conent;
+    width: -moz-max-content;
+  }
+  & when (@popup-width = min-content) {
+    width: -webkit-min-conent;
+    width: -moz-min-content;
   }
   border-radius: @popup-border-radius;
   & when (@popup-distance > 0) {
@@ -316,7 +325,12 @@
   }
   &.@{popup-bottom} {
     bottom: auto;
-    top: calc(100% ~"+" @popup-distance);
+    & when (@popup-distance > 0) {
+      top: calc(100% ~"+" @popup-distance);
+    }
+    & when (@popup-distance = 0) {
+      top: 100%;
+    }
     margin-top: @popup-arrow-height;
     left: -@popup-offset;
     & when (@popup-arrow-height > 0) {
@@ -333,7 +347,12 @@
       &:before {
         .popup-arrow-bottom-left(@popup-border-color);
         top: auto;
-        bottom: calc(100% ~"+" @popup-border-width);
+        & when (@popup-border-width > 0) {
+          bottom: calc(100% ~"+" @popup-border-width);
+        }
+        & when (@popup-border-width = 0) {
+          bottom: 100%;
+        }
         left: 0;
         margin-top: -@popup-arrow-height;
         margin-bottom: auto;
@@ -342,7 +361,12 @@
   }
   &.@{popup-bottom-right} {
     bottom: auto;
-    top: calc(100% ~"+" @popup-distance);
+    & when (@popup-distance > 0) {
+      top: calc(100% ~"+" @popup-distance);
+    }
+    & when (@popup-distance = 0) {
+      top: 100%;
+    }
     right: -@popup-offset;
     left: auto;
     margin-top: @popup-arrow-height;
@@ -372,7 +396,12 @@
     left: 50%;
     transform: translate(-50%, 0);
     bottom: auto;
-    top: calc(100% ~"+" @popup-distance);
+    & when (@popup-distance > 0) {
+      top: calc(100% ~"+" @popup-distance);
+    }
+    & when (@popup-distance = 0) {
+      top: 100%;
+    }
     margin-top: @popup-arrow-height;
     & when (@popup-arrow-height > 0) {
       &:after {
@@ -396,7 +425,12 @@
   &.@{popup-right-middle} {
     top: 50%;
     bottom: auto;
-    left: calc(100% ~"+" @popup-distance);
+    & when (@popup-distance > 0) {
+      left: calc(100% ~"+" @popup-distance);
+    }
+    & when (@popup-distance = 0) {
+      left: 100%;
+    }
     transform: translate(0, -50%);
     margin-left: @popup-arrow-height;
     & when (@popup-arrow-height > 0) {
@@ -415,7 +449,12 @@
   &.@{popup-left-middle} {
     top: 50%;
     bottom: auto;
-    right: calc(100% ~"+" @popup-distance);
+    & when (@popup-distance > 0) {
+      right: calc(100% ~"+" @popup-distance);
+    }
+    & when (@popup-distance = 0) {
+      right: 100%;
+    }
     left: auto;
     transform: translate(0, -50%);
     margin-right: @popup-arrow-height;
@@ -440,7 +479,12 @@
   &.@{popup-right-top} {
     top: -@popup-offset - @popup-arrow-height/2;
     bottom: auto;
-    left: calc(100% ~"+" @popup-distance);
+    & when (@popup-distance > 0) {
+      left: calc(100% ~"+" @popup-distance);
+    }
+    & when (@popup-distance = 0) {
+      left: 100%;
+    }
     margin-left: @popup-arrow-height;
     & when (@popup-arrow-height > 0) {
       &:after {
@@ -462,7 +506,12 @@
   &.@{popup-right-bottom} {
     top: auto;
     bottom: -@popup-offset - @popup-arrow-height/2;
-    left: calc(100% ~"+" @popup-distance);
+    & when (@popup-distance > 0) {
+      left: calc(100% ~"+" @popup-distance);
+    }
+    & when (@popup-distance = 0) {
+      left: 100%;
+    }
     margin-left: @popup-arrow-height;
     margin-bottom: 0;
     & when (@popup-arrow-height > 0) {
@@ -485,7 +534,12 @@
   &.@{popup-left-top} {
     top: -@popup-offset - @popup-arrow-height/2;
     bottom: auto;
-    right: calc(100% ~"+" @popup-distance);
+    & when (@popup-distance > 0) {
+      right: calc(100% ~"+" @popup-distance);
+    }
+    & when (@popup-distance = 0) {
+      right: 100%;
+    }
     left: auto;
     margin-right: @popup-arrow-height;
     & when (@popup-arrow-height > 0) {
@@ -512,7 +566,12 @@
   &.@{popup-left-bottom} {
     top: auto;
     bottom: -@popup-offset - @popup-arrow-height/2;
-    right: calc(100% ~"+" @popup-distance);
+    & when (@popup-distance > 0) {
+      right: calc(100% ~"+" @popup-distance);
+    }
+    & when (@popup-distance = 0) {
+      right: 100%;
+    }
     left: auto;
     margin-right: @popup-arrow-height;
     margin-bottom: 0;

@@ -117,7 +117,24 @@ select {
   .select-style;
 }
 
-input, select, textarea {
+input {
+  &:not([type="checkbox"]):not([type="radio"]) {
+    &.@{input} {
+      .for(@input-sizes); .-each(@name) {
+        &-@{name} {
+          font-size: ~"@{input-@{name}-font-size}";
+          line-height: ~"@{input-@{name}-line-height}";
+          padding: ~"@{input-@{name}-padding-vertical}" ~"@{input-@{name}-padding-horizontal}";
+          border-radius: ~"@{input-@{name}-border-radius}";
+          border-width: ~"@{input-@{name}-border-width}";
+          outline-width: ~"@{input-@{name}-outline}";
+          box-shadow: ~"@{input-@{name}-shadow}";
+        }
+      }
+    }
+  }
+}
+select, textarea {
   &.@{input} {
     .for(@input-sizes); .-each(@name) {
       &-@{name} {

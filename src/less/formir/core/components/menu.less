@@ -35,10 +35,11 @@
     }
   }
   @{menu-item-anchor} {
+    cursor: pointer;
     &:hover {
-      .menu-item-anchor-hover();
       ~ @{menu-inside} {
         display: block;
+        .menu-inside-hover();
       }
     }
     ~ @{menu-inside} {
@@ -60,6 +61,32 @@
 
 @{menu} {
   .menu;
+  @{menu-item} {
+    &.@{active} {
+      .menu-item-active-block;
+    }
+    &:hover {
+      .menu-item-hover-block;
+    }
+  }
+}
+
+@media (min-width: @mobile-menu-max-width) {
+  .@{menu-mobile} {
+    @{menu-item} {
+      @{menu-item-anchor} {
+        cursor: pointer;
+        color: @menu-item-anchor-color;
+        text-decoration: @menu-item-anchor-decoration;
+      }
+      &.@{active} {
+        .menu-item-active-inline;
+      }
+      &:hover {
+        .menu-item-hover-inline;
+      }
+    }
+  }
 }
 
 @media (max-width: @mobile-menu-max-width) {
@@ -72,12 +99,29 @@
       display: block;
       margin: 0;
     }
+    @{menu-item} {
+      &.@{active} {
+        .menu-item-active-block;
+      }
+      &:hover {
+        .menu-item-hover-block;
+      }
+    }
   }
   ul.@{items}.@{menu-mobile} {
     display: block;
     margin: 0;
-    > li {
+    li, @{menu-item-anchor}, .@{has-popup}.@{popup-hoverable}:hover > .@{popup}, .@{has-popup} > input:checked + .@{popup} {
       display: block;
+      width: auto;
+    }
+    @{menu-item-anchor} {
+      overflow-x: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .@{popup} {
+      position: static;
     }
   }
 }
