@@ -1,0 +1,27 @@
+{
+  "name": "formir",
+  "version": "0.1.0",
+  "description": "Pure CSS / HTML Framework",
+  "main": "js/formir.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/konrad-k/formir.git"
+  },
+  "keywords": [
+    "formir",
+    "less",
+    "pure css framework",
+  ],
+  "author": "Konrad Kubrak <konrad@kubrak.eu> (http://formir.kubrak.eu)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/konrad-k/formir/issues"
+  },
+  "homepage": "https://github.com/konrad-k/formir#readme"
+}

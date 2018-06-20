@@ -1,7 +1,7 @@
 {
   "name": "formir",
-  "main": "dist/formir.css",
-  "description" : "Pure CSS/HTML framework",
+  "main": "less/formir.less",
+  "description" : "Pure CSS / HTML framework",
   "homepage"    : "http://konrad-k.github.io/formir/",
   "author": {
     "name" : "Konrad Kubrak",

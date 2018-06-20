@@ -9789,8 +9789,8 @@ ul.menu .item:hover .anchor {
 }
 @font-face {
   font-family: 'icons';
-  src: url("../fonts/icons.eot?19400623");
-  src: url("../fonts/icons.eot?19400623#iefix") format('embedded-opentype'), url("../fonts/icons.woff2?19400623") format('woff2'), url("../fonts/icons.woff?19400623") format('woff'), url("../fonts/icons.ttf?19400623") format('truetype'), url("../fonts/icons.svg?19400623#icons") format('svg');
+  src: url("fonts/icons.eot?19400623");
+  src: url("fonts/icons.eot?19400623#iefix") format('embedded-opentype'), url("fonts/icons.woff2?19400623") format('woff2'), url("fonts/icons.woff?19400623") format('woff'), url("fonts/icons.ttf?19400623") format('truetype'), url("fonts/icons.svg?19400623#icons") format('svg');
   font-weight: normal;
   font-style: normal;
 }
