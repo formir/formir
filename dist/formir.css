@@ -5745,20 +5745,18 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   display: inline-block;
 }
 .button {
-  font-size: 1rem;
-  line-height: 1.35rem;
-  padding: 0.35rem 0.7rem;
-  border-radius: 3px;
-  outline: none;
-  box-shadow: none;
-  color: #111111;
-  background: #fff;
-  border: 1px solid;
   display: inline-block;
   *display: inline;
   *zoom: 1;
   overflow-wrap: break-word;
   word-wrap: break-word;
+  font-size: 1rem;
+  line-height: 1.35rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 3px;
+  border: 1px solid;
+  color: #111111;
+  background: #fff;
   text-align: center;
   cursor: pointer;
   max-width: 100%;

@@ -1,21 +1,22 @@
 .@{button} {
-  @name: default;
-  font-size: ~"@{button-@{name}-font-size}";
-  line-height: ~"@{button-@{name}-line-height}";
-  padding: ~"@{button-@{name}-padding-vertical} @{button-@{name}-padding-horizontal}";
-  border-radius: ~"@{button-@{name}-border-radius}";
-  border: ~"@{button-@{name}-border}";
-  outline: ~"@{button-@{name}-outline}";
-  box-shadow: ~"@{button-@{name}-shadow}";
-  color: ~"@{button-@{name}-text}";
-  & when not (@button-set-transparent = true) {
-    background: ~"@{button-@{name}-background}";
-  }
-  border: ~"@{button-@{name}-border}";
-
   .inline-block;
   overflow-wrap: break-word;
   word-wrap: break-word;
+  font-size: @button-default-font-size;
+  line-height: @button-default-line-height;
+  padding: @button-default-padding-vertical @button-default-padding-horizontal;
+  border-radius: @button-default-border-radius;
+  border: @button-default-border;
+  color: @button-default-text;
+  & when not (@button-default-outline = none) {
+    outline: @button-default-outline;
+  }
+  & when not (@button-default-shadow = none) {
+    box-shadow: @button-default-shadow;
+  }
+  & when not (@button-set-transparent = true) {
+    background: @button-default-background;
+  }
   &:hover, &.@{button-hover} {
     border: @button-hover-border;
     outline: @button-hover-outline;
