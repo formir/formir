@@ -101,7 +101,7 @@
 }
 
 input {
-  &:not([type="checkbox"]):not([type="radio"]) {
+  &:not([type="checkbox"]):not([type="radio"]):not([type="submit"]) {
     .input-style;
   }
 }
@@ -118,7 +118,7 @@ select {
 }
 
 input {
-  &:not([type="checkbox"]):not([type="radio"]) {
+  &:not([type="checkbox"]):not([type="radio"]):not([type="submit"]) {
     &.@{input} {
       .for(@input-sizes); .-each(@name) {
         &-@{name} {
@@ -465,7 +465,7 @@ select:not([multiple]) {
         right: auto;
         text-align: left;
       }
-      input:not([type="checkbox"]):not([type="radio"]), select, textarea {
+      input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), select, textarea {
         padding-left: @input-icon-font-size*3 + @input-default-padding-horizontal;
         padding-right: @input-default-padding-horizontal;
       }
@@ -511,7 +511,7 @@ select:not([multiple]) {
         }
         &, &.@{input-inverse}.@{input-transparent} {
           input {
-            &:not([type="checkbox"]):not([type="radio"]) {
+            &:not([type="checkbox"]):not([type="radio"]):not([type="submit"]) {
               & when (@form-state-change-text-color = true) {
                 color: ~"@{input-color-@{name}}";
               }

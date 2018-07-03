@@ -1,5 +1,5 @@
 /*!
- *  Formir 0.1.0 by @konrad-k - https://github.com/konrad-k/formir - http://konrad-k.github.io/formir
+ *  Formir 0.1.1 by @konrad-k - https://github.com/konrad-k/formir - http://formir.kubrak.eu
  *  MIT License
  */
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700&subset=latin-ext');
@@ -10,7 +10,7 @@
   height: 0;
   clear: both;
 }
-input:not([type="checkbox"]):not([type="radio"]) {
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]) {
   border-color: #ccc;
   border-style: solid;
   border-width: 1px;
@@ -29,34 +29,34 @@ input:not([type="checkbox"]):not([type="radio"]) {
   box-shadow: none;
   text-overflow: ellipsis;
 }
-input:not([type="checkbox"]):not([type="radio"]):hover,
-input:not([type="checkbox"]):not([type="radio"]).hover {
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):hover,
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]).hover {
   border-color: #ccc;
   border-style: solid;
   outline: none;
   box-shadow: none;
   background-color: #fff;
 }
-input:not([type="checkbox"]):not([type="radio"]):focus,
-input:not([type="checkbox"]):not([type="radio"]).focus {
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus,
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]).focus {
   border-color: #ccc;
   border-style: solid;
   outline: none;
   box-shadow: none;
   background-color: #fff;
 }
-input:not([type="checkbox"]):not([type="radio"]):disabled,
-input:not([type="checkbox"]):not([type="radio"])[disabled] {
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):disabled,
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"])[disabled] {
   pointer-events: none;
   cursor: normal;
   opacity: 0.7;
 }
-input:not([type="checkbox"]):not([type="radio"]).inverse {
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]).inverse {
   background-color: #ccc;
   border-color: #fff;
   color: #fff;
 }
-input:not([type="checkbox"]):not([type="radio"]).transparent {
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]).transparent {
   background-color: transparent;
 }
 select,
@@ -152,7 +152,7 @@ select option {
   padding: 0.35rem 0.5rem;
   border: none;
 }
-input:not([type="checkbox"]):not([type="radio"]).input-s {
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]).input-s {
   font-size: 0.85rem;
   line-height: 1.1475rem;
   padding: 0.2975rem 0.425rem;
@@ -161,7 +161,7 @@ input:not([type="checkbox"]):not([type="radio"]).input-s {
   outline-width: none;
   box-shadow: none;
 }
-input:not([type="checkbox"]):not([type="radio"]).input-m {
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]).input-m {
   font-size: 1.15rem;
   line-height: 1.5525rem;
   padding: 0.40249999999999997rem 0.575rem;
@@ -170,7 +170,7 @@ input:not([type="checkbox"]):not([type="radio"]).input-m {
   outline-width: none;
   box-shadow: none;
 }
-input:not([type="checkbox"]):not([type="radio"]).input-l {
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]).input-l {
   font-size: 1.5rem;
   line-height: 2.0250000000000004rem;
   padding: 0.5249999999999999rem 0.75rem;
@@ -714,9 +714,9 @@ form.validate .select-arrow select:not(:focus).touched.valid + span:after {
   right: auto;
   text-align: left;
 }
-.control[data-addon].left-addon input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"][data-addon].left-addon input:not([type="checkbox"]):not([type="radio"]),
-.control-group[data-addon].left-addon input:not([type="checkbox"]):not([type="radio"]),
+.control[data-addon].left-addon input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"][data-addon].left-addon input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group[data-addon].left-addon input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
 .control[data-addon].left-addon select,
 [class*="cell"][data-addon].left-addon select,
 .control-group[data-addon].left-addon select,
@@ -811,38 +811,38 @@ form.has-success .control-group.inverse.transparent.select-arrow select + span:a
 .control-group.has-success .control-group.inverse.transparent.select-arrow select + span:after {
   color: #84b500;
 }
-form.has-success input:not([type="checkbox"]):not([type="radio"]),
-.control.has-success input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-success input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-success input:not([type="checkbox"]):not([type="radio"]),
-form.has-success .control input:not([type="checkbox"]):not([type="radio"]),
-.control.has-success .control input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-success .control input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-success .control input:not([type="checkbox"]):not([type="radio"]),
-form.has-success [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
-.control.has-success [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-success [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-success [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
-form.has-success .control-group input:not([type="checkbox"]):not([type="radio"]),
-.control.has-success .control-group input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-success .control-group input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-success .control-group input:not([type="checkbox"]):not([type="radio"]),
-form.has-success.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control.has-success.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-success.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-success.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-form.has-success .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control.has-success .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-success .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-success .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-form.has-success [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control.has-success [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-success [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-success [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-form.has-success .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control.has-success .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-success .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-success .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]) {
+form.has-success input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-success input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-success input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-success input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+form.has-success .control input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-success .control input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-success .control input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-success .control input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+form.has-success [class*="cell"] input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-success [class*="cell"] input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-success [class*="cell"] input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-success [class*="cell"] input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+form.has-success .control-group input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-success .control-group input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-success .control-group input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-success .control-group input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+form.has-success.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-success.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-success.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-success.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+form.has-success .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-success .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-success .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-success .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+form.has-success [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-success [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-success [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-success [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+form.has-success .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-success .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-success .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-success .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]) {
   color: #84b500;
   background-color: #ffffff;
   border-color: #84b500;
@@ -1529,38 +1529,38 @@ form.has-info .control-group.inverse.transparent.select-arrow select + span:afte
 .control-group.has-info .control-group.inverse.transparent.select-arrow select + span:after {
   color: #00abc4;
 }
-form.has-info input:not([type="checkbox"]):not([type="radio"]),
-.control.has-info input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-info input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-info input:not([type="checkbox"]):not([type="radio"]),
-form.has-info .control input:not([type="checkbox"]):not([type="radio"]),
-.control.has-info .control input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-info .control input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-info .control input:not([type="checkbox"]):not([type="radio"]),
-form.has-info [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
-.control.has-info [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-info [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-info [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
-form.has-info .control-group input:not([type="checkbox"]):not([type="radio"]),
-.control.has-info .control-group input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-info .control-group input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-info .control-group input:not([type="checkbox"]):not([type="radio"]),
-form.has-info.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control.has-info.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-info.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-info.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-form.has-info .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control.has-info .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-info .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-info .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-form.has-info [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control.has-info [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-info [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-info [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-form.has-info .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control.has-info .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-info .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-info .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]) {
+form.has-info input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-info input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-info input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-info input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+form.has-info .control input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-info .control input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-info .control input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-info .control input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+form.has-info [class*="cell"] input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-info [class*="cell"] input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-info [class*="cell"] input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-info [class*="cell"] input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+form.has-info .control-group input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-info .control-group input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-info .control-group input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-info .control-group input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+form.has-info.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-info.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-info.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-info.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+form.has-info .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-info .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-info .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-info .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+form.has-info [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-info [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-info [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-info [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+form.has-info .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-info .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-info .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-info .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]) {
   color: #00abc4;
   background-color: #ffffff;
   border-color: #00abc4;
@@ -2247,38 +2247,38 @@ form.has-error .control-group.inverse.transparent.select-arrow select + span:aft
 .control-group.has-error .control-group.inverse.transparent.select-arrow select + span:after {
   color: #cf4040;
 }
-form.has-error input:not([type="checkbox"]):not([type="radio"]),
-.control.has-error input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-error input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-error input:not([type="checkbox"]):not([type="radio"]),
-form.has-error .control input:not([type="checkbox"]):not([type="radio"]),
-.control.has-error .control input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-error .control input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-error .control input:not([type="checkbox"]):not([type="radio"]),
-form.has-error [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
-.control.has-error [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-error [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-error [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
-form.has-error .control-group input:not([type="checkbox"]):not([type="radio"]),
-.control.has-error .control-group input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-error .control-group input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-error .control-group input:not([type="checkbox"]):not([type="radio"]),
-form.has-error.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control.has-error.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-error.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-error.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-form.has-error .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control.has-error .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-error .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-error .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-form.has-error [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control.has-error [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-error [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-error [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-form.has-error .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control.has-error .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-error .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-error .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]) {
+form.has-error input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-error input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-error input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-error input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+form.has-error .control input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-error .control input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-error .control input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-error .control input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+form.has-error [class*="cell"] input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-error [class*="cell"] input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-error [class*="cell"] input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-error [class*="cell"] input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+form.has-error .control-group input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-error .control-group input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-error .control-group input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-error .control-group input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+form.has-error.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-error.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-error.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-error.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+form.has-error .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-error .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-error .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-error .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+form.has-error [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-error [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-error [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-error [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+form.has-error .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-error .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-error .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-error .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]) {
   color: #cf4040;
   background-color: #ffffff;
   border-color: #cf4040;
@@ -2965,38 +2965,38 @@ form.has-warning .control-group.inverse.transparent.select-arrow select + span:a
 .control-group.has-warning .control-group.inverse.transparent.select-arrow select + span:after {
   color: #ea8432;
 }
-form.has-warning input:not([type="checkbox"]):not([type="radio"]),
-.control.has-warning input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-warning input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-warning input:not([type="checkbox"]):not([type="radio"]),
-form.has-warning .control input:not([type="checkbox"]):not([type="radio"]),
-.control.has-warning .control input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-warning .control input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-warning .control input:not([type="checkbox"]):not([type="radio"]),
-form.has-warning [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
-.control.has-warning [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-warning [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-warning [class*="cell"] input:not([type="checkbox"]):not([type="radio"]),
-form.has-warning .control-group input:not([type="checkbox"]):not([type="radio"]),
-.control.has-warning .control-group input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-warning .control-group input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-warning .control-group input:not([type="checkbox"]):not([type="radio"]),
-form.has-warning.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control.has-warning.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-warning.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-warning.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-form.has-warning .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control.has-warning .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-warning .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-warning .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-form.has-warning [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control.has-warning [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-warning [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-warning [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-form.has-warning .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control.has-warning .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-[class*="cell"].has-warning .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]),
-.control-group.has-warning .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]) {
+form.has-warning input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-warning input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-warning input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-warning input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+form.has-warning .control input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-warning .control input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-warning .control input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-warning .control input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+form.has-warning [class*="cell"] input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-warning [class*="cell"] input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-warning [class*="cell"] input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-warning [class*="cell"] input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+form.has-warning .control-group input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-warning .control-group input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-warning .control-group input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-warning .control-group input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+form.has-warning.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-warning.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-warning.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-warning.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+form.has-warning .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-warning .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-warning .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-warning .control.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+form.has-warning [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-warning [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-warning [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-warning [class*="cell"].inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+form.has-warning .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control.has-warning .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+[class*="cell"].has-warning .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+.control-group.has-warning .control-group.inverse.transparent input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]) {
   color: #ea8432;
   background-color: #ffffff;
   border-color: #ea8432;
@@ -9787,8 +9787,8 @@ ul.menu .item:hover .anchor {
 }
 @font-face {
   font-family: 'icons';
-  src: url("fonts/icons.eot?19400623");
-  src: url("fonts/icons.eot?19400623#iefix") format('embedded-opentype'), url("fonts/icons.woff2?19400623") format('woff2'), url("fonts/icons.woff?19400623") format('woff'), url("fonts/icons.ttf?19400623") format('truetype'), url("fonts/icons.svg?19400623#icons") format('svg');
+  src: url("../../fonts/icons.eot?19400623");
+  src: url("../../fonts/icons.eot?19400623#iefix") format('embedded-opentype'), url("../../fonts/icons.woff2?19400623") format('woff2'), url("../../fonts/icons.woff?19400623") format('woff'), url("../../fonts/icons.ttf?19400623") format('truetype'), url("../../fonts/icons.svg?19400623#icons") format('svg');
   font-weight: normal;
   font-style: normal;
 }
