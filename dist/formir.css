@@ -1,5 +1,5 @@
 /*!
- *  Formir 0.1.1 by @konrad-k - https://github.com/konrad-k/formir - http://formir.kubrak.eu
+ *  Formir 0.1.3 by @konrad-k - https://github.com/konrad-k/formir - http://formir.kubrak.eu
  *  MIT License
  */
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700&subset=latin-ext');
@@ -210,7 +210,7 @@ textarea.input-l {
   box-shadow: none;
 }
 .select.input-s {
-  min-height: calc(1.1475rem + 0.2975rem * 2  - 1px * 2);
+  min-height: calc(1.1475rem + 0.2975rem * 2  + 1px * 2);
 }
 .select.input-s .select-content {
   border-radius: 2px;
@@ -225,7 +225,7 @@ textarea.input-l {
   padding: 0.2975rem 0.425rem;
 }
 .select.input-m {
-  min-height: calc(1.5525rem + 0.40249999999999997rem * 2  - 1px * 2);
+  min-height: calc(1.5525rem + 0.40249999999999997rem * 2  + 1px * 2);
 }
 .select.input-m .select-content {
   border-radius: 5px;
@@ -240,7 +240,7 @@ textarea.input-l {
   padding: 0.40249999999999997rem 0.575rem;
 }
 .select.input-l {
-  min-height: calc(2.0250000000000004rem + 0.5249999999999999rem * 2  - 1px * 2);
+  min-height: calc(2.0250000000000004rem + 0.5249999999999999rem * 2  + 1px * 2);
 }
 .select.input-l .select-content {
   border-radius: 4px;
@@ -3714,7 +3714,7 @@ form.has-warning .control-group.select-arrow select + span:after,
   outline: 0 none;
   position: relative;
   max-width: 100%;
-  min-height: calc(1.35rem + 0.7rem - 2px);
+  min-height: calc(1.35rem + 0.7rem + 2px);
 }
 .select > input {
   position: absolute;
@@ -3787,7 +3787,7 @@ form.has-warning .control-group.select-arrow select + span:after,
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  min-height: calc(1.35rem + 0.7rem - 2px);
+  min-height: calc(1.35rem + 0.7rem + 2px);
   padding-right: 0.5rem;
 }
 .select.hoverable:not(:hover) .select-content:only-child label,
@@ -3849,7 +3849,7 @@ form.has-warning .control-group.select-arrow select + span:after,
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  min-height: calc(1.35rem + 0.7rem - 2px);
+  min-height: calc(1.35rem + 0.7rem + 2px);
   padding-right: 0.5rem;
 }
 .select > input:not(:checked) + .select-content label,

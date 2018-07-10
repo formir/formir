@@ -153,7 +153,7 @@ select, textarea {
   &.@{input} {
     .for(@input-sizes); .-each(@name) {
       &-@{name} {
-        min-height: calc( ~"@{input-@{name}-line-height}" ~"+" ~"@{input-@{name}-padding-vertical} * 2" ~" -" ~"@{input-@{name}-border-width} * 2" );
+        min-height: calc( ~"@{input-@{name}-line-height}" ~"+" ~"@{input-@{name}-padding-vertical} * 2" ~" +" ~"@{input-@{name}-border-width} * 2" );
         .@{select-content} {
           border-radius: ~"@{input-@{name}-border-radius}";
           border-width: ~"@{input-@{name}-border-width}";
