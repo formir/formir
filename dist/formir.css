@@ -3787,7 +3787,7 @@ form.has-warning .control-group.select-arrow select + span:after,
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  min-height: calc(1.35rem + 0.7rem + 2px);
+  min-height: inherit;
   padding-right: 0.5rem;
 }
 .select.hoverable:not(:hover) .select-content:only-child label,
@@ -3849,7 +3849,7 @@ form.has-warning .control-group.select-arrow select + span:after,
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  min-height: calc(1.35rem + 0.7rem + 2px);
+  min-height: inherit;
   padding-right: 0.5rem;
 }
 .select > input:not(:checked) + .select-content label,
@@ -14860,6 +14860,7 @@ a {
   -ms-flex-align: stretch;
   -webkit-align-items: stretch;
   align-items: stretch;
+  max-width: 100%;
 }
 table.grid .cell-1 {
   min-width: 6.25%;
@@ -18607,6 +18608,7 @@ form.grid [class^="cell"] datalist,
   display: flex;
   -webkit-flex-wrap: inherit;
   flex-wrap: inherit;
+  max-width: 100%;
 }
 .row:not([class*="grid"]) {
   -ms-flex-direction: inherit;
