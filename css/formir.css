@@ -1,5 +1,5 @@
 /*!
- *  Formir 0.1.3 by @konrad-k - https://github.com/konrad-k/formir - http://formir.kubrak.eu
+ *  Formir 0.1.5 by @konrad-k - https://github.com/konrad-k/formir - http://formir.kubrak.eu
  *  MIT License
  */
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700&subset=latin-ext');
@@ -218,11 +218,17 @@ textarea.input-l {
   outline-width: none;
   box-shadow: none;
 }
-.select.input-s .select-content > label,
-.select.input-s .select-content .placeholder {
+.select.input-s .select-content > label {
   font-size: 0.85rem;
   line-height: 1.1475rem;
   padding: 0.2975rem 0.425rem;
+}
+.select.input-s .select-content .placeholder {
+  font-size: 0.85rem;
+  line-height: 1.1475rem;
+}
+.select.input-s > input:not(:checked) + .select-content .placeholder {
+  margin: 0.2975rem 0.425rem;
 }
 .select.input-m {
   min-height: calc(1.5525rem + 0.40249999999999997rem * 2  + 1px * 2);
@@ -233,11 +239,17 @@ textarea.input-l {
   outline-width: none;
   box-shadow: none;
 }
-.select.input-m .select-content > label,
-.select.input-m .select-content .placeholder {
+.select.input-m .select-content > label {
   font-size: 1.15rem;
   line-height: 1.5525rem;
   padding: 0.40249999999999997rem 0.575rem;
+}
+.select.input-m .select-content .placeholder {
+  font-size: 1.15rem;
+  line-height: 1.5525rem;
+}
+.select.input-m > input:not(:checked) + .select-content .placeholder {
+  margin: 0.40249999999999997rem 0.575rem;
 }
 .select.input-l {
   min-height: calc(2.0250000000000004rem + 0.5249999999999999rem * 2  + 1px * 2);
@@ -248,11 +260,17 @@ textarea.input-l {
   outline-width: none;
   box-shadow: none;
 }
-.select.input-l .select-content > label,
-.select.input-l .select-content .placeholder {
+.select.input-l .select-content > label {
   font-size: 1.5rem;
   line-height: 2.0250000000000004rem;
   padding: 0.5249999999999999rem 0.75rem;
+}
+.select.input-l .select-content .placeholder {
+  font-size: 1.5rem;
+  line-height: 2.0250000000000004rem;
+}
+.select.input-l > input:not(:checked) + .select-content .placeholder {
+  margin: 0.5249999999999999rem 0.75rem;
 }
 select:not([multiple]).input-s {
   height: calc(1.1475rem + 0.2975rem * 2  + 1px * 2);
@@ -3841,7 +3859,7 @@ form.has-warning .control-group.select-arrow select + span:after,
 .select.hoverable:not(:hover) .select-content:only-child .placeholder,
 .select:not(.hoverable):not(.active):not([tabindex]):not(:focus) .select-content:only-child .placeholder,
 .select[tabindex]:not(:focus) .select-content:only-child .placeholder {
-  margin: calc(0.35rem) calc(0.5rem);
+  margin: 0.35rem 0.5rem;
 }
 .select > input:not(:checked) + .select-content {
   display: -webkit-box;
@@ -3887,7 +3905,7 @@ form.has-warning .control-group.select-arrow select + span:after,
   pointer-events: none;
 }
 .select > input:not(:checked) + .select-content .placeholder {
-  margin: calc(0.35rem) calc(0.5rem);
+  margin: 0.35rem 0.5rem;
 }
 .select .placeholder {
   -ms-flex-order: -1;

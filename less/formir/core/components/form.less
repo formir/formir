@@ -159,10 +159,21 @@ select, textarea {
           border-width: ~"@{input-@{name}-border-width}";
           outline-width: ~"@{input-@{name}-outline}";
           box-shadow: ~"@{input-@{name}-shadow}";
-          > label, .@{select-placeholder} {
+          > label {
             font-size: ~"@{input-@{name}-font-size}";
             line-height: ~"@{input-@{name}-line-height}";
             padding: ~"@{input-@{name}-padding-vertical}" ~"@{input-@{name}-padding-horizontal}";
+          }
+          .@{select-placeholder} {
+            font-size: ~"@{input-@{name}-font-size}";
+            line-height: ~"@{input-@{name}-line-height}";
+          }
+        }
+        > input:not(:checked) {
+          + .@{select-content} {
+            .@{select-placeholder} {
+              margin: ~"@{input-@{name}-padding-vertical}" ~"@{input-@{name}-padding-horizontal}";
+            }
           }
         }
       }
