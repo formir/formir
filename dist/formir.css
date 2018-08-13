@@ -1,5 +1,5 @@
 /*!
- *  Formir 0.1.3 by @konrad-k - https://github.com/konrad-k/formir - http://formir.kubrak.eu
+ *  Formir 0.1.6 by @konrad-k - https://github.com/konrad-k/formir - http://formir.kubrak.eu
  *  MIT License
  */
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700&subset=latin-ext');
@@ -14878,7 +14878,6 @@ a {
   -ms-flex-align: stretch;
   -webkit-align-items: stretch;
   align-items: stretch;
-  max-width: 100%;
 }
 table.grid .cell-1 {
   min-width: 6.25%;
@@ -17889,6 +17888,9 @@ table.grid.gutter-4 {
   margin-right: auto;
   width: 1128px;
 }
+.grid .row {
+  max-width: 100%;
+}
 .grid:not(.column) > .cell:not(.grid):not(.column),
 .grid:not(.column) > .row > .cell:not(.grid):not(.column) {
   -webkit-box-flex: 1 0 0px;
@@ -18626,7 +18628,6 @@ form.grid [class^="cell"] datalist,
   display: flex;
   -webkit-flex-wrap: inherit;
   flex-wrap: inherit;
-  max-width: 100%;
 }
 .row:not([class*="grid"]) {
   -ms-flex-direction: inherit;
