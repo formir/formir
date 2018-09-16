@@ -117,7 +117,7 @@
     + .@{select-content} {
       label {
         &:after {
-          z-index: 1;
+          z-index: (@select-zindex + 1);
           position: relative;
         }
       }
@@ -230,9 +230,8 @@
   }
   > input:checked {
     position: fixed !important;
-    z-index: 0;
+    z-index: (@select-zindex - 1);
     + .@{select-content} {
-      z-index: 1;
       .select-open-content;
       .select-open-content-core;
     }

@@ -637,6 +637,7 @@
     > input[type="checkbox"] {
       &:checked {
         position: fixed;
+        z-index: (@popup-zindex - 1);
       }
     }
   }
@@ -649,6 +650,7 @@
     top: 0;
     bottom: 0;
     opacity: 0;
+    margin: 0;
     &:checked {
       .popup-active;
       ~ .@{popup} {

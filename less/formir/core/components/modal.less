@@ -7,8 +7,10 @@
   &.@{modal-animated} {
     opacity: 1;
     pointer-events: auto;
-    transition: background-color @modal-animate-function;
-    background-color: rgba(0, 0, 0, 0.5);
+    .@{modal-backdrop} {
+      transition: background-color @modal-animate-function;
+      background-color: @modal-background-color;
+    }
     visibility: visible;
     .@{modal-window} {
       .transform(0, 0);
@@ -50,7 +52,6 @@ body.@{modal-opened} {
   right: 0;
   z-index: @modal-zindex;
   overflow-y: auto;
-  background-color: rgba(0, 0, 0, 0.5);
   display: none;
   &.@{active} {
     .modal-show;
@@ -82,8 +83,10 @@ body.@{modal-opened} {
   &.@{modal-animated} {
     opacity: 0;
     display: block;
-    transition: background-color @modal-animate-function;
-    background-color: rgba(0, 0, 0, 0);
+    .@{modal-backdrop} {
+      transition: background-color @modal-animate-function;
+      background-color: rgba(0, 0, 0, 0);
+    }
     pointer-events: none;
     visibility: hidden;
     .@{modal-window} {
@@ -101,7 +104,6 @@ body.@{modal-opened} {
   left: 0;
   right: 0;
   margin: @modal-margin auto;
-  background-color: @modal-background-color;
   z-index: @modal-zindex + 2;
   border: @modal-border;
 }
@@ -112,6 +114,7 @@ body.@{modal-opened} {
   bottom: 0;
   left: 0;
   right: 17px;
+  background-color: @modal-background-color;
   z-index: @modal-zindex - 1;
 }
 

@@ -76,12 +76,12 @@
       &.@{active} {
         .menu-item-active-block;
       }
-      &:hover {
-        background: @side-menu-item-background-color-hover;
-      }
       @{menu-item-anchor} {
         color: inherit;
         border-bottom: @side-menu-item-anchor-border;
+        &:hover {
+          background-color: @side-menu-item-background-color-hover;
+        }
       }
     }
   }

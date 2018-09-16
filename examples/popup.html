@@ -17,124 +17,132 @@
   </head>
 
   <body>
-    <div style="margin: 50px;">
-      Lorem ipsum dolor sit amet, consectetur
-      <span class="has-popup">
-      	<input type="checkbox"/>
-        <a class="button">Toggle popup</a>
-        <div class="popup left bottom hoverable">
-        	<div class="popup-header">Title of popup</div>
-        	<div class="popup-content">
-        		Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p>
-        	</div>
-        	<div class="popup-footer">footer of popup</div>
+    <div class="content-holder">
+      <h1>Popup</h1>
+      <style>
+      .has-popup {
+        text-decoration: underline;
+      }
+      </style>
+      <div style="margin: 20px 0;">
+        Lorem ipsum dolor sit amet, consectetur
+        <span class="has-popup">
+          <input type="checkbox"/>
+          <a class="button">Toggle popup</a>
+          <div class="popup left bottom hoverable">
+            <div class="popup-header">Title of popup</div>
+            <div class="popup-content">
+              Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p>
+            </div>
+            <div class="popup-footer">footer of popup</div>
+          </div>
+        </span>
+        , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit Excepteur
+        <span class="has-popup" tabindex="-1" >
+          top center
+          <div class="popup center">
+            <div class="popup-header">Title of popup</div>
+            <div class="popup-content">
+              Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p>
+            </div>
+            <div class="popup-footer">footer of popup</div>
+          </div>
+        </span>
+        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <span class="has-popup hoverable" tabindex="-1" >
+          top right
+          <div class="popup right">Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p></div>
+        </span>
+      </div>
+      <div style="margin: 20px 0;">
+        Lorem ipsum dolor sit amet, consectetur
+        <span class="has-popup">
+          bottom left
+          <input type="checkbox"/>
+          <div class="popup bottom tabs">
+          <input type="radio" name="tab-3" id="tab-3-1" checked="true"/>
+          <input type="radio" name="tab-3" id="tab-3-2"/>
+          <input type="radio" name="tab-3" id="tab-3-3"/>
+          <input type="radio" name="tab-3" id="tab-3-4"/>
+          <input type="radio" name="tab-3" id="tab-3-5"/>
+          <div class="popup-header tab-navs flex">
+            <label for="tab-3-1" onClick="window.location.href='#'+this.attributes.for.value">Tab 1</label>
+            <label for="tab-3-2" onClick="window.location.href='#'+this.attributes.for.value">Tab 2</label>
+            <label for="tab-3-3" onClick="window.location.href='#'+this.attributes.for.value">Tab 3</label>
+            <label for="tab-3-4" onClick="window.location.href='#'+this.attributes.for.value">Tab 4</label>
+            <label for="tab-3-5" onClick="window.location.href='#'+this.attributes.for.value">Tab 5</label>
+          </div>
+          <div class="popup-content tab-pages">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+          </div>
         </div>
-      </span>
-      , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit Excepteur
-      <span class="has-popup" tabindex="-1" >
-        top center
-        <div class="popup center">
-        	<div class="popup-header">Title of popup</div>
-        	<div class="popup-content">
-        		Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p>
-        	</div>
-        	<div class="popup-footer">footer of popup</div>
-        </div>
-      </span>
-      sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      <span class="has-popup" tabindex="-1" >
-        top right
-        <div class="popup right hoverable">Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p></div>
-      </span>
-    </div>
-    <div style="margin: 50px;">
-      Lorem ipsum dolor sit amet, consectetur
-      <span class="has-popup">
-        bottom left
-        <input type="checkbox"/>
-        <div class="popup bottom tabs">
-	      <input type="radio" name="tab-3" id="tab-3-1" checked="true"/>
-	      <input type="radio" name="tab-3" id="tab-3-2"/>
-	      <input type="radio" name="tab-3" id="tab-3-3"/>
-	      <input type="radio" name="tab-3" id="tab-3-4"/>
-	      <input type="radio" name="tab-3" id="tab-3-5"/>
-	      <div class="popup-header tab-navs flex">
-	        <label for="tab-3-1" onClick="window.location.href='#'+this.attributes.for.value">Tab 1</label>
-	        <label for="tab-3-2" onClick="window.location.href='#'+this.attributes.for.value">Tab 2</label>
-	        <label for="tab-3-3" onClick="window.location.href='#'+this.attributes.for.value">Tab 3</label>
-	        <label for="tab-3-4" onClick="window.location.href='#'+this.attributes.for.value">Tab 4</label>
-	        <label for="tab-3-5" onClick="window.location.href='#'+this.attributes.for.value">Tab 5</label>
-	      </div>
-	      <div class="popup-content tab-pages">
-	        <div>1</div>
-	        <div>2</div>
-	        <div>3</div>
-	        <div>4</div>
-	        <div>5</div>
-	      </div>
-	    </div>
-      </span>
-      , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit Excepteur
-      <span class="has-popup" tabindex="-1" >
-        bottom center
-        <div class="popup bottom-center">Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p></div>
-      </span>
-      sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      <span class="has-popup" tabindex="-1" >
-        bottom right
-        <div class="popup bottom-right hoverable">Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p></div>
-      </span>
-    </div>
-    <div style="margin: 50px;">
-      Lorem ipsum dolor sit amet, consectetur
-      <span class="has-popup">
-        left middle
-        <div class="popup left-middle">Lorem ipsum <b>dolor sit </b>amet, consectetur</div>
-      </span>
-      , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit Excepteur
-      <span class="has-popup" tabindex="-1" >
-        rigth middle
-        <div class="popup right-middle hoverable">Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p></div>
-      </span>
-      sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      <span class="has-popup" tabindex="-1" >
-        top right
-        <div class="popup right">Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p></div>
-      </span>
-    </div>
-    <div style="margin: 50px;">
-      Lorem ipsum dolor sit amet, consectetur
-      <span class="has-popup">
-        right top
-        <div class="popup right-top">Lorem ipsum <b>dolor sit </b>amet, consectetur</div>
-      </span>
-      , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit Excepteur
-      <span class="has-popup" tabindex="-1" >
-        right bottom
-        <div class="popup right-bottom hoverable">Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p></div>
-      </span>
-      sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      <span class="has-popup" tabindex="-1" >
-        right top
-        <div class="popup right-top hoverable">Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p></div>
-      </span>
-    </div>
-    <div style="margin: 50px;">
-      Lorem ipsum dolor sit amet, consectetur
-      <span class="has-popup">
-        left top
-        <div class="popup left-top hoverable">Lorem ipsum <b>dolor sit </b>amet, consectetur</div>
-      </span>
-      , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit Excepteur
-      <span class="has-popup" tabindex="-1" >
-        left bottom
-        <div class="popup left-bottom hoverable">Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p></div>
-      </span>
-      sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      <span class="has-popup" tabindex="-1" >
-        left middle
-        <div class="popup left-middle">Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p></div>
-      </span>
+        </span>
+        , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit Excepteur
+        <span class="has-popup" tabindex="-1" >
+          bottom center
+          <div class="popup bottom-center">Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p></div>
+        </span>
+        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <span class="has-popup hoverable" tabindex="-1" >
+          bottom right
+          <div class="popup bottom-right">Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p></div>
+        </span>
+      </div>
+      <div style="margin: 20px 0;">
+        Lorem ipsum dolor sit amet, consectetur
+        <span class="has-popup">
+          left middle
+          <div class="popup left-middle">Lorem ipsum <b>dolor sit </b>amet, consectetur</div>
+        </span>
+        , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit Excepteur
+        <span class="has-popup hoverable" tabindex="-1" >
+          rigth middle
+          <div class="popup right-middle">Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p></div>
+        </span>
+        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <span class="has-popup" tabindex="-1" >
+          top right
+          <div class="popup right">Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p></div>
+        </span>
+      </div>
+      <div style="margin: 20px 0;">
+        Lorem ipsum dolor sit amet, consectetur
+        <span class="has-popup">
+          right top
+          <div class="popup right-top">Lorem ipsum <b>dolor sit </b>amet, consectetur</div>
+        </span>
+        , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit Excepteur
+        <span class="has-popup hoverable" tabindex="-1" >
+          right bottom
+          <div class="popup right-bottom">Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p></div>
+        </span>
+        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <span class="has-popup hoverable" tabindex="-1" >
+          right top
+          <div class="popup right-top">Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p></div>
+        </span>
+      </div>
+      <div style="margin: 20px 0;">
+        Lorem ipsum dolor sit amet, consectetur
+        <span class="has-popup hoverable">
+          left top
+          <div class="popup left-top">Lorem ipsum <b>dolor sit </b>amet, consectetur</div>
+        </span>
+        , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit Excepteur
+        <span class="has-popup hoverable" tabindex="-1" >
+          left bottom
+          <div class="popup left-bottom ">Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p></div>
+        </span>
+        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <span class="has-popup" tabindex="-1" >
+          left middle
+          <div class="popup left-middle">Lorem ipsum <b>dolor sit </b>amet, consectetur<br/><p>Lorem ipsum <b>dolor sit </b>amet, consectetur</p></div>
+        </span>
+      </div>
     </div>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

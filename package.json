@@ -1,6 +1,6 @@
 {
   "name": "formir",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Pure CSS / HTML Framework",
   "main": "js/formir.js",
   "directories": {
@@ -18,7 +18,7 @@
     "less",
     "pure css framework"
   ],
-  "author": "Konrad Kubrak <konrad@kubrak.eu> (http://formir.kubrak.eu)",
+  "author": "Konrad Kubrak <office@foreground.pl> (http://formir.foreground.pl)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/konrad-k/formir/issues"
