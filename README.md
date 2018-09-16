@@ -1,7 +1,14 @@
-<img src="http://formir.kubrak.eu/src/img/logo/formir-64.png"> formir
+<img src="http://formir.foreground.pl/img/logo/formir-64.png"> formir
 ======
 
-[Formir](http://formir.kubrak.eu) is pure CSS / HTML Framework, [see our page](http://formir.kubrak.eu).
+[Formir](http://formir.foreground.pl) is pure CSS / HTML Framework, [see our page](http://formir.foreground.pl).
+
+get formir:
+```console
+$ npm install formir
+```
+
+======
 
 <img src="http://www.browserstack.com/images/layout/browserstack-logo-600x315.png" width="280"/>
 
