@@ -24,9 +24,9 @@
 @header-horizontal-padding: 0;
 
 // Tabs
-@tab-nav-active-background: #222;
+@tab-nav-active-background: @color-primary;
 @tab-nav-active-color: #fff;
-@tab-nav-active-border: 0 none;
+@tab-nav-active-border: 1px solid darken(@color-primary, 10%);
 @tab-nav-active-shadow: none;
 
 // Tooltips
@@ -425,7 +425,7 @@
 @button-default-padding-horizontal: 0.7rem;
 @button-default-padding-vertical: 0.35rem;
 @button-default-border-radius: 3px;
-@button-default-border: 1px solid;
+@button-default-border: 1px solid currentColor;
 @button-default-outline: none;
 @button-default-shadow: none;
 
