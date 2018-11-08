@@ -316,7 +316,7 @@
   &:not(:checked) {
     + @{side} {
       & when (@device-width-side-collapse > 0) {
-        @media (min-width: @device-width-side-collapse) {
+        @media (min-width: (@device-width-side-collapse + 1px)) {
           .side-collapse-off;
         }
         @media (max-width: @device-width-side-collapse) {
@@ -341,7 +341,7 @@
     }
     + @{side} {
       & when (@device-width-side-collapse > 0) {
-        @media (min-width: @device-width-side-collapse) {
+        @media (min-width: (@device-width-side-collapse + 1px)) {
           .side-collapse-on;
         }
         @media (max-width: @device-width-side-collapse) {
@@ -382,7 +382,7 @@
     }
     + @{side} {
       & when (@device-width-side-show-full > 0) {
-        @media (min-width: @device-width-side-show-full) {
+        @media (min-width: (@device-width-side-show-full + 1px)) {
           .side-collapse-off;
         }
       }

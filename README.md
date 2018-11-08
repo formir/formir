@@ -1,14 +1,60 @@
-<img src="http://formir.foreground.pl/img/logo/formir-64.png"> formir
+<img src="http://formir.foreground.pl/img/logo/formir-64.png" width=30 height=30 valign=middle/> formir
 ======
 
-[Formir](http://formir.foreground.pl) is pure CSS / HTML Framework, [see our page](http://formir.foreground.pl).
+[Formir](http://formir.foreground.pl) is Open Source Pure CSS / HTML Framework that not require any JS code to fully work.
+All of logic are based on CSS and `<input/>` tag elements, thats are required.
 
-get formir:
+I invite you to support and develop the project. Become a Contributor - [write at konrad@kubrak.eu](mailto:konrad@kubrak.eu) or just commit.
+
+## Install formir
 ```console
 $ npm install formir
 ```
+## Status
+[![npm version](https://img.shields.io/npm/v/formir.svg)](https://www.npmjs.com/package/formir)
 
-======
+## Documentation
+See at [documentation](http://formir.foreground.pl/docs.html).
+
+## Componetns & helpers
+### Components
+- Accordion
+- Button
+- Chart
+- Description list
+- Form
+- Icons
+- Image
+- Menu
+- Modal
+- Popup
+- Select box / Multi select box
+- Tab
+- Tooltip
+### Helpers
+- Align
+- Display
+- Items
+- Toggle
+### Layouts
+- Clear
+- Content
+- Dimensions
+- Footer
+- Grid
+- Header
+- Side
+- Window
+### Typography
+- Article
+- Color
+- Fonts
+- Heading
+- Link
+- List
+- Section
+
+
 
 <img src="http://www.browserstack.com/images/layout/browserstack-logo-600x315.png" width="280"/>
 

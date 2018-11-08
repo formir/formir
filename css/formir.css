@@ -1,5 +1,5 @@
 /*!
- *  Formir 0.1.7 by @konrad-k - https://github.com/konrad-k/formir - http://formir.kubrak.eu
+ *  Formir 0.1.8 by @konrad-k - https://github.com/konrad-k/formir - http://formir.foreground.pl - office@foreground.pl
  *  MIT License
  */
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700&subset=latin-ext');
@@ -2450,62 +2450,62 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   display: block;
 }
 .tabs > input[type="radio"]:checked:nth-child(1) ~ .tab-navs .tab-labels > label[for]:nth-child(1) {
-  background: #222;
-  border: 0 none;
+  background: #443349;
+  border: 1px solid #281e2b;
   color: #fff;
   box-shadow: none;
 }
 .tabs > input[type="radio"]:checked:nth-child(2) ~ .tab-navs .tab-labels > label[for]:nth-child(2) {
-  background: #222;
-  border: 0 none;
+  background: #443349;
+  border: 1px solid #281e2b;
   color: #fff;
   box-shadow: none;
 }
 .tabs > input[type="radio"]:checked:nth-child(3) ~ .tab-navs .tab-labels > label[for]:nth-child(3) {
-  background: #222;
-  border: 0 none;
+  background: #443349;
+  border: 1px solid #281e2b;
   color: #fff;
   box-shadow: none;
 }
 .tabs > input[type="radio"]:checked:nth-child(4) ~ .tab-navs .tab-labels > label[for]:nth-child(4) {
-  background: #222;
-  border: 0 none;
+  background: #443349;
+  border: 1px solid #281e2b;
   color: #fff;
   box-shadow: none;
 }
 .tabs > input[type="radio"]:checked:nth-child(5) ~ .tab-navs .tab-labels > label[for]:nth-child(5) {
-  background: #222;
-  border: 0 none;
+  background: #443349;
+  border: 1px solid #281e2b;
   color: #fff;
   box-shadow: none;
 }
 .tabs > input[type="radio"]:checked:nth-child(6) ~ .tab-navs .tab-labels > label[for]:nth-child(6) {
-  background: #222;
-  border: 0 none;
+  background: #443349;
+  border: 1px solid #281e2b;
   color: #fff;
   box-shadow: none;
 }
 .tabs > input[type="radio"]:checked:nth-child(7) ~ .tab-navs .tab-labels > label[for]:nth-child(7) {
-  background: #222;
-  border: 0 none;
+  background: #443349;
+  border: 1px solid #281e2b;
   color: #fff;
   box-shadow: none;
 }
 .tabs > input[type="radio"]:checked:nth-child(8) ~ .tab-navs .tab-labels > label[for]:nth-child(8) {
-  background: #222;
-  border: 0 none;
+  background: #443349;
+  border: 1px solid #281e2b;
   color: #fff;
   box-shadow: none;
 }
 .tabs > input[type="radio"]:checked:nth-child(9) ~ .tab-navs .tab-labels > label[for]:nth-child(9) {
-  background: #222;
-  border: 0 none;
+  background: #443349;
+  border: 1px solid #281e2b;
   color: #fff;
   box-shadow: none;
 }
 .tabs > input[type="radio"]:checked:nth-child(10) ~ .tab-navs .tab-labels > label[for]:nth-child(10) {
-  background: #222;
-  border: 0 none;
+  background: #443349;
+  border: 1px solid #281e2b;
   color: #fff;
   box-shadow: none;
 }
@@ -2554,8 +2554,8 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
 }
 .accordion.hoverable:hover > label,
 .accordion.hoverable:hover .label {
-  background: #222;
-  border: 0 none;
+  background: #443349;
+  border: 1px solid #281e2b;
   color: #fff;
   box-shadow: none;
 }
@@ -2608,8 +2608,8 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
 }
 .accordion.focusable > label:focus,
 .accordion.focusable .label:focus {
-  background: #222;
-  border: 0 none;
+  background: #443349;
+  border: 1px solid #281e2b;
   color: #fff;
   box-shadow: none;
 }
@@ -2626,8 +2626,8 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
 }
 .accordion.focusable > input:focus ~ label,
 .accordion.focusable > input:focus ~ .label {
-  background: #222;
-  border: 0 none;
+  background: #443349;
+  border: 1px solid #281e2b;
   color: #fff;
   box-shadow: none;
 }
@@ -2650,8 +2650,8 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
 }
 .accordion.focusable:focus > label,
 .accordion.focusable:focus .label {
-  background: #222;
-  border: 0 none;
+  background: #443349;
+  border: 1px solid #281e2b;
   color: #fff;
   box-shadow: none;
 }
@@ -2811,8 +2811,8 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
 }
 .accordion > input:checked ~ label,
 .accordion > input:checked ~ .label {
-  background: #222;
-  border: 0 none;
+  background: #443349;
+  border: 1px solid #281e2b;
   color: #fff;
   box-shadow: none;
 }
@@ -2834,8 +2834,8 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
 }
 .accordion.active > label,
 .accordion.active .label {
-  background: #222;
-  border: 0 none;
+  background: #443349;
+  border: 1px solid #281e2b;
   color: #fff;
   box-shadow: none;
 }
@@ -3901,7 +3901,7 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
   line-height: 1.35rem;
   padding: 0.35rem 0.7rem;
   border-radius: 3px;
-  border: 1px solid;
+  border: 1px solid currentColor;
   color: #111111;
   background: #fff;
   text-align: center;
@@ -3910,19 +3910,19 @@ input.modal-open:checked + .modal.centered .modal-wrapper:before {
 }
 .button:hover,
 .button.hover {
-  border: 1px solid;
+  border: 1px solid currentColor;
   outline: none;
   box-shadow: none;
 }
 .button:focus,
 .button.focus {
-  border: 1px solid;
+  border: 1px solid currentColor;
   outline: none;
   box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
 }
 .button:active,
 .button.active {
-  border: 1px solid;
+  border: 1px solid currentColor;
   outline: none;
   box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1) inset;
 }
@@ -3974,25 +3974,25 @@ button.button.ellipsis > * {
   box-shadow: none;
 }
 .button.inverse {
-  border: 1px solid;
+  border: 1px solid currentColor;
   outline: none;
   box-shadow: none;
 }
 .button.inverse:hover,
 .button.inverse.hover {
-  border: 1px solid;
+  border: 1px solid currentColor;
   outline: none;
   box-shadow: none;
 }
 .button.inverse:focus,
 .button.inverse.focus {
-  border: 1px solid;
+  border: 1px solid currentColor;
   outline: none;
   box-shadow: none;
 }
 .button.inverse:active,
 .button.inverse.active {
-  border: 1px solid;
+  border: 1px solid currentColor;
   outline: none;
   box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1) inset;
 }
@@ -7818,65 +7818,65 @@ dl.horizontally.collapse dt {
     margin-bottom: 5px;
   }
 }
-ul.menu {
+.menu {
   display: block;
 }
-ul.menu,
-ul.menu ul,
-ul.menu li {
+.menu,
+.menu ul,
+.menu li {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-ul.menu.menu-absolute .item,
-ul.menu.menu-fixed .item {
+.menu.menu-absolute .item,
+.menu.menu-fixed .item {
   position: relative;
 }
-ul.menu.menu-absolute menu-inside,
-ul.menu.menu-fixed menu-inside {
+.menu.menu-absolute menu-inside,
+.menu.menu-fixed menu-inside {
   z-index: 1;
 }
-ul.menu.menu-absolute menu-inside {
+.menu.menu-absolute menu-inside {
   position: absolute;
   left: 0;
 }
-ul.menu.menu-fixed menu-inside {
+.menu.menu-fixed menu-inside {
   position: fixed;
 }
-ul.menu menu-inside {
+.menu menu-inside {
   list-style: none;
   display: none;
 }
-ul.menu menu-inside:hover {
+.menu menu-inside:hover {
   background-color: #1A1A1A;
 }
-ul.menu .anchor {
+.menu .anchor {
   cursor: pointer;
 }
-ul.menu .anchor:hover ~ menu-inside {
+.menu .anchor:hover ~ menu-inside {
   display: block;
   background-color: #1A1A1A;
 }
-ul.menu .anchor ~ menu-inside:hover {
+.menu .anchor ~ menu-inside:hover {
   display: block;
 }
-ul.menu .item {
+.menu .item {
   display: block;
 }
-ul.menu .item:last-child {
+.menu .item:last-child {
   border-bottom: 0;
 }
-ul.menu .item .anchor {
+.menu .item .anchor {
   display: block;
 }
-ul.menu .item.active .anchor {
+.menu .item.active .anchor {
   background-color: rgba(46, 143, 239, 0.5);
 }
-ul.menu .item:hover .anchor {
+.menu .item:hover .anchor {
   background-color: #dbd0de;
   color: #000;
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .menu-mobile .item .anchor {
     cursor: pointer;
     color: #7e4bbc;
@@ -7976,14 +7976,14 @@ ul.menu .item:hover .anchor {
     position: static;
   }
 }
-.side ul.menu.menu-fixed {
+.side .menu.menu-fixed {
   width: inherit;
 }
-.side ul.menu.menu-fixed menu-inside,
-.side ul.menu.menu-fixed .item {
+.side .menu.menu-fixed menu-inside,
+.side .menu.menu-fixed .item {
   width: inherit;
 }
-.side ul.menu.menu-absolute menu-inside {
+.side .menu.menu-absolute menu-inside {
   right: 0;
 }
 @font-face {
@@ -11643,11 +11643,11 @@ section.full-height {
 .border-danger {
   border-color: #cf4040;
 }
-a.link {
+.link {
   color: #7e4bbc;
   text-decoration: none;
 }
-a.link:hover {
+.link:hover {
   color: #b395d8;
   text-decoration: underline;
 }
@@ -16672,9 +16672,9 @@ table.grid [class^="cell"]:last-child,
 .width-1.uncover-focus.focusable:focus.left ~ .body-content {
   margin-left: 141px;
 }
-.width-1.uncover-hover.hoverable:hover.left ~ .body-content header.header.fixed,
-.width-1:not(.cover).left ~ .body-content header.header.fixed,
-.width-1.uncover-focus.focusable:focus.left ~ .body-content header.header.fixed {
+.width-1.uncover-hover.hoverable:hover.left ~ .body-content .header.fixed,
+.width-1:not(.cover).left ~ .body-content .header.fixed,
+.width-1.uncover-focus.focusable:focus.left ~ .body-content .header.fixed {
   left: 141px;
 }
 .width-1.uncover-hover.hoverable:hover.right ~ .body-content,
@@ -16682,9 +16682,9 @@ table.grid [class^="cell"]:last-child,
 .width-1.uncover-focus.focusable:focus.right ~ .body-content {
   margin-right: 141px;
 }
-.width-1.uncover-hover.hoverable:hover.right ~ .body-content header.header.fixed,
-.width-1:not(.cover).right ~ .body-content header.header.fixed,
-.width-1.uncover-focus.focusable:focus.right ~ .body-content header.header.fixed {
+.width-1.uncover-hover.hoverable:hover.right ~ .body-content .header.fixed,
+.width-1:not(.cover).right ~ .body-content .header.fixed,
+.width-1.uncover-focus.focusable:focus.right ~ .body-content .header.fixed {
   right: 141px;
 }
 .max-width-1 {
@@ -16701,9 +16701,9 @@ table.grid [class^="cell"]:last-child,
 .width-2.uncover-focus.focusable:focus.left ~ .body-content {
   margin-left: 282px;
 }
-.width-2.uncover-hover.hoverable:hover.left ~ .body-content header.header.fixed,
-.width-2:not(.cover).left ~ .body-content header.header.fixed,
-.width-2.uncover-focus.focusable:focus.left ~ .body-content header.header.fixed {
+.width-2.uncover-hover.hoverable:hover.left ~ .body-content .header.fixed,
+.width-2:not(.cover).left ~ .body-content .header.fixed,
+.width-2.uncover-focus.focusable:focus.left ~ .body-content .header.fixed {
   left: 282px;
 }
 .width-2.uncover-hover.hoverable:hover.right ~ .body-content,
@@ -16711,9 +16711,9 @@ table.grid [class^="cell"]:last-child,
 .width-2.uncover-focus.focusable:focus.right ~ .body-content {
   margin-right: 282px;
 }
-.width-2.uncover-hover.hoverable:hover.right ~ .body-content header.header.fixed,
-.width-2:not(.cover).right ~ .body-content header.header.fixed,
-.width-2.uncover-focus.focusable:focus.right ~ .body-content header.header.fixed {
+.width-2.uncover-hover.hoverable:hover.right ~ .body-content .header.fixed,
+.width-2:not(.cover).right ~ .body-content .header.fixed,
+.width-2.uncover-focus.focusable:focus.right ~ .body-content .header.fixed {
   right: 282px;
 }
 .max-width-2 {
@@ -16730,9 +16730,9 @@ table.grid [class^="cell"]:last-child,
 .width-3.uncover-focus.focusable:focus.left ~ .body-content {
   margin-left: 423px;
 }
-.width-3.uncover-hover.hoverable:hover.left ~ .body-content header.header.fixed,
-.width-3:not(.cover).left ~ .body-content header.header.fixed,
-.width-3.uncover-focus.focusable:focus.left ~ .body-content header.header.fixed {
+.width-3.uncover-hover.hoverable:hover.left ~ .body-content .header.fixed,
+.width-3:not(.cover).left ~ .body-content .header.fixed,
+.width-3.uncover-focus.focusable:focus.left ~ .body-content .header.fixed {
   left: 423px;
 }
 .width-3.uncover-hover.hoverable:hover.right ~ .body-content,
@@ -16740,9 +16740,9 @@ table.grid [class^="cell"]:last-child,
 .width-3.uncover-focus.focusable:focus.right ~ .body-content {
   margin-right: 423px;
 }
-.width-3.uncover-hover.hoverable:hover.right ~ .body-content header.header.fixed,
-.width-3:not(.cover).right ~ .body-content header.header.fixed,
-.width-3.uncover-focus.focusable:focus.right ~ .body-content header.header.fixed {
+.width-3.uncover-hover.hoverable:hover.right ~ .body-content .header.fixed,
+.width-3:not(.cover).right ~ .body-content .header.fixed,
+.width-3.uncover-focus.focusable:focus.right ~ .body-content .header.fixed {
   right: 423px;
 }
 .max-width-3 {
@@ -16759,9 +16759,9 @@ table.grid [class^="cell"]:last-child,
 .width-4.uncover-focus.focusable:focus.left ~ .body-content {
   margin-left: 564px;
 }
-.width-4.uncover-hover.hoverable:hover.left ~ .body-content header.header.fixed,
-.width-4:not(.cover).left ~ .body-content header.header.fixed,
-.width-4.uncover-focus.focusable:focus.left ~ .body-content header.header.fixed {
+.width-4.uncover-hover.hoverable:hover.left ~ .body-content .header.fixed,
+.width-4:not(.cover).left ~ .body-content .header.fixed,
+.width-4.uncover-focus.focusable:focus.left ~ .body-content .header.fixed {
   left: 564px;
 }
 .width-4.uncover-hover.hoverable:hover.right ~ .body-content,
@@ -16769,9 +16769,9 @@ table.grid [class^="cell"]:last-child,
 .width-4.uncover-focus.focusable:focus.right ~ .body-content {
   margin-right: 564px;
 }
-.width-4.uncover-hover.hoverable:hover.right ~ .body-content header.header.fixed,
-.width-4:not(.cover).right ~ .body-content header.header.fixed,
-.width-4.uncover-focus.focusable:focus.right ~ .body-content header.header.fixed {
+.width-4.uncover-hover.hoverable:hover.right ~ .body-content .header.fixed,
+.width-4:not(.cover).right ~ .body-content .header.fixed,
+.width-4.uncover-focus.focusable:focus.right ~ .body-content .header.fixed {
   right: 564px;
 }
 .max-width-4 {
@@ -16788,9 +16788,9 @@ table.grid [class^="cell"]:last-child,
 .width-5.uncover-focus.focusable:focus.left ~ .body-content {
   margin-left: 705px;
 }
-.width-5.uncover-hover.hoverable:hover.left ~ .body-content header.header.fixed,
-.width-5:not(.cover).left ~ .body-content header.header.fixed,
-.width-5.uncover-focus.focusable:focus.left ~ .body-content header.header.fixed {
+.width-5.uncover-hover.hoverable:hover.left ~ .body-content .header.fixed,
+.width-5:not(.cover).left ~ .body-content .header.fixed,
+.width-5.uncover-focus.focusable:focus.left ~ .body-content .header.fixed {
   left: 705px;
 }
 .width-5.uncover-hover.hoverable:hover.right ~ .body-content,
@@ -16798,9 +16798,9 @@ table.grid [class^="cell"]:last-child,
 .width-5.uncover-focus.focusable:focus.right ~ .body-content {
   margin-right: 705px;
 }
-.width-5.uncover-hover.hoverable:hover.right ~ .body-content header.header.fixed,
-.width-5:not(.cover).right ~ .body-content header.header.fixed,
-.width-5.uncover-focus.focusable:focus.right ~ .body-content header.header.fixed {
+.width-5.uncover-hover.hoverable:hover.right ~ .body-content .header.fixed,
+.width-5:not(.cover).right ~ .body-content .header.fixed,
+.width-5.uncover-focus.focusable:focus.right ~ .body-content .header.fixed {
   right: 705px;
 }
 .max-width-5 {
@@ -16817,9 +16817,9 @@ table.grid [class^="cell"]:last-child,
 .width-6.uncover-focus.focusable:focus.left ~ .body-content {
   margin-left: 846px;
 }
-.width-6.uncover-hover.hoverable:hover.left ~ .body-content header.header.fixed,
-.width-6:not(.cover).left ~ .body-content header.header.fixed,
-.width-6.uncover-focus.focusable:focus.left ~ .body-content header.header.fixed {
+.width-6.uncover-hover.hoverable:hover.left ~ .body-content .header.fixed,
+.width-6:not(.cover).left ~ .body-content .header.fixed,
+.width-6.uncover-focus.focusable:focus.left ~ .body-content .header.fixed {
   left: 846px;
 }
 .width-6.uncover-hover.hoverable:hover.right ~ .body-content,
@@ -16827,9 +16827,9 @@ table.grid [class^="cell"]:last-child,
 .width-6.uncover-focus.focusable:focus.right ~ .body-content {
   margin-right: 846px;
 }
-.width-6.uncover-hover.hoverable:hover.right ~ .body-content header.header.fixed,
-.width-6:not(.cover).right ~ .body-content header.header.fixed,
-.width-6.uncover-focus.focusable:focus.right ~ .body-content header.header.fixed {
+.width-6.uncover-hover.hoverable:hover.right ~ .body-content .header.fixed,
+.width-6:not(.cover).right ~ .body-content .header.fixed,
+.width-6.uncover-focus.focusable:focus.right ~ .body-content .header.fixed {
   right: 846px;
 }
 .max-width-6 {
@@ -16846,9 +16846,9 @@ table.grid [class^="cell"]:last-child,
 .width-7.uncover-focus.focusable:focus.left ~ .body-content {
   margin-left: 987px;
 }
-.width-7.uncover-hover.hoverable:hover.left ~ .body-content header.header.fixed,
-.width-7:not(.cover).left ~ .body-content header.header.fixed,
-.width-7.uncover-focus.focusable:focus.left ~ .body-content header.header.fixed {
+.width-7.uncover-hover.hoverable:hover.left ~ .body-content .header.fixed,
+.width-7:not(.cover).left ~ .body-content .header.fixed,
+.width-7.uncover-focus.focusable:focus.left ~ .body-content .header.fixed {
   left: 987px;
 }
 .width-7.uncover-hover.hoverable:hover.right ~ .body-content,
@@ -16856,9 +16856,9 @@ table.grid [class^="cell"]:last-child,
 .width-7.uncover-focus.focusable:focus.right ~ .body-content {
   margin-right: 987px;
 }
-.width-7.uncover-hover.hoverable:hover.right ~ .body-content header.header.fixed,
-.width-7:not(.cover).right ~ .body-content header.header.fixed,
-.width-7.uncover-focus.focusable:focus.right ~ .body-content header.header.fixed {
+.width-7.uncover-hover.hoverable:hover.right ~ .body-content .header.fixed,
+.width-7:not(.cover).right ~ .body-content .header.fixed,
+.width-7.uncover-focus.focusable:focus.right ~ .body-content .header.fixed {
   right: 987px;
 }
 .max-width-7 {
@@ -16875,9 +16875,9 @@ table.grid [class^="cell"]:last-child,
 .width-8.uncover-focus.focusable:focus.left ~ .body-content {
   margin-left: 1128px;
 }
-.width-8.uncover-hover.hoverable:hover.left ~ .body-content header.header.fixed,
-.width-8:not(.cover).left ~ .body-content header.header.fixed,
-.width-8.uncover-focus.focusable:focus.left ~ .body-content header.header.fixed {
+.width-8.uncover-hover.hoverable:hover.left ~ .body-content .header.fixed,
+.width-8:not(.cover).left ~ .body-content .header.fixed,
+.width-8.uncover-focus.focusable:focus.left ~ .body-content .header.fixed {
   left: 1128px;
 }
 .width-8.uncover-hover.hoverable:hover.right ~ .body-content,
@@ -16885,9 +16885,9 @@ table.grid [class^="cell"]:last-child,
 .width-8.uncover-focus.focusable:focus.right ~ .body-content {
   margin-right: 1128px;
 }
-.width-8.uncover-hover.hoverable:hover.right ~ .body-content header.header.fixed,
-.width-8:not(.cover).right ~ .body-content header.header.fixed,
-.width-8.uncover-focus.focusable:focus.right ~ .body-content header.header.fixed {
+.width-8.uncover-hover.hoverable:hover.right ~ .body-content .header.fixed,
+.width-8:not(.cover).right ~ .body-content .header.fixed,
+.width-8.uncover-focus.focusable:focus.right ~ .body-content .header.fixed {
   right: 1128px;
 }
 .max-width-8 {
@@ -16902,7 +16902,7 @@ table.grid [class^="cell"]:last-child,
 .height-1 {
   height: 75px;
 }
-header.header.height-1.fixed + * {
+.header.height-1.fixed + * {
   margin-top: 75px;
 }
 .height-1.uncover-hover.hoverable:hover.top ~ .body-content,
@@ -16910,9 +16910,9 @@ header.header.height-1.fixed + * {
 .height-1.uncover-focus.focusable:focus.top ~ .body-content {
   margin-top: 75px;
 }
-.height-1.uncover-hover.hoverable:hover.top ~ .body-content header.header.fixed,
-.height-1:not(.cover).top ~ .body-content header.header.fixed,
-.height-1.uncover-focus.focusable:focus.top ~ .body-content header.header.fixed {
+.height-1.uncover-hover.hoverable:hover.top ~ .body-content .header.fixed,
+.height-1:not(.cover).top ~ .body-content .header.fixed,
+.height-1.uncover-focus.focusable:focus.top ~ .body-content .header.fixed {
   top: 75px;
 }
 .height-1.uncover-hover.hoverable:hover.bottom ~ .body-content,
@@ -16920,15 +16920,15 @@ header.header.height-1.fixed + * {
 .height-1.uncover-focus.focusable:focus.bottom ~ .body-content {
   margin-bottom: 75px;
 }
-.height-1.uncover-hover.hoverable:hover.bottom ~ .body-content header.header.fixed,
-.height-1:not(.cover).bottom ~ .body-content header.header.fixed,
-.height-1.uncover-focus.focusable:focus.bottom ~ .body-content header.header.fixed {
+.height-1.uncover-hover.hoverable:hover.bottom ~ .body-content .header.fixed,
+.height-1:not(.cover).bottom ~ .body-content .header.fixed,
+.height-1.uncover-focus.focusable:focus.bottom ~ .body-content .header.fixed {
   bottom: 75px;
 }
 .height-2 {
   height: 150px;
 }
-header.header.height-2.fixed + * {
+.header.height-2.fixed + * {
   margin-top: 150px;
 }
 .height-2.uncover-hover.hoverable:hover.top ~ .body-content,
@@ -16936,9 +16936,9 @@ header.header.height-2.fixed + * {
 .height-2.uncover-focus.focusable:focus.top ~ .body-content {
   margin-top: 150px;
 }
-.height-2.uncover-hover.hoverable:hover.top ~ .body-content header.header.fixed,
-.height-2:not(.cover).top ~ .body-content header.header.fixed,
-.height-2.uncover-focus.focusable:focus.top ~ .body-content header.header.fixed {
+.height-2.uncover-hover.hoverable:hover.top ~ .body-content .header.fixed,
+.height-2:not(.cover).top ~ .body-content .header.fixed,
+.height-2.uncover-focus.focusable:focus.top ~ .body-content .header.fixed {
   top: 150px;
 }
 .height-2.uncover-hover.hoverable:hover.bottom ~ .body-content,
@@ -16946,15 +16946,15 @@ header.header.height-2.fixed + * {
 .height-2.uncover-focus.focusable:focus.bottom ~ .body-content {
   margin-bottom: 150px;
 }
-.height-2.uncover-hover.hoverable:hover.bottom ~ .body-content header.header.fixed,
-.height-2:not(.cover).bottom ~ .body-content header.header.fixed,
-.height-2.uncover-focus.focusable:focus.bottom ~ .body-content header.header.fixed {
+.height-2.uncover-hover.hoverable:hover.bottom ~ .body-content .header.fixed,
+.height-2:not(.cover).bottom ~ .body-content .header.fixed,
+.height-2.uncover-focus.focusable:focus.bottom ~ .body-content .header.fixed {
   bottom: 150px;
 }
 .height-3 {
   height: 225px;
 }
-header.header.height-3.fixed + * {
+.header.height-3.fixed + * {
   margin-top: 225px;
 }
 .height-3.uncover-hover.hoverable:hover.top ~ .body-content,
@@ -16962,9 +16962,9 @@ header.header.height-3.fixed + * {
 .height-3.uncover-focus.focusable:focus.top ~ .body-content {
   margin-top: 225px;
 }
-.height-3.uncover-hover.hoverable:hover.top ~ .body-content header.header.fixed,
-.height-3:not(.cover).top ~ .body-content header.header.fixed,
-.height-3.uncover-focus.focusable:focus.top ~ .body-content header.header.fixed {
+.height-3.uncover-hover.hoverable:hover.top ~ .body-content .header.fixed,
+.height-3:not(.cover).top ~ .body-content .header.fixed,
+.height-3.uncover-focus.focusable:focus.top ~ .body-content .header.fixed {
   top: 225px;
 }
 .height-3.uncover-hover.hoverable:hover.bottom ~ .body-content,
@@ -16972,15 +16972,15 @@ header.header.height-3.fixed + * {
 .height-3.uncover-focus.focusable:focus.bottom ~ .body-content {
   margin-bottom: 225px;
 }
-.height-3.uncover-hover.hoverable:hover.bottom ~ .body-content header.header.fixed,
-.height-3:not(.cover).bottom ~ .body-content header.header.fixed,
-.height-3.uncover-focus.focusable:focus.bottom ~ .body-content header.header.fixed {
+.height-3.uncover-hover.hoverable:hover.bottom ~ .body-content .header.fixed,
+.height-3:not(.cover).bottom ~ .body-content .header.fixed,
+.height-3.uncover-focus.focusable:focus.bottom ~ .body-content .header.fixed {
   bottom: 225px;
 }
 .height-4 {
   height: 300px;
 }
-header.header.height-4.fixed + * {
+.header.height-4.fixed + * {
   margin-top: 300px;
 }
 .height-4.uncover-hover.hoverable:hover.top ~ .body-content,
@@ -16988,9 +16988,9 @@ header.header.height-4.fixed + * {
 .height-4.uncover-focus.focusable:focus.top ~ .body-content {
   margin-top: 300px;
 }
-.height-4.uncover-hover.hoverable:hover.top ~ .body-content header.header.fixed,
-.height-4:not(.cover).top ~ .body-content header.header.fixed,
-.height-4.uncover-focus.focusable:focus.top ~ .body-content header.header.fixed {
+.height-4.uncover-hover.hoverable:hover.top ~ .body-content .header.fixed,
+.height-4:not(.cover).top ~ .body-content .header.fixed,
+.height-4.uncover-focus.focusable:focus.top ~ .body-content .header.fixed {
   top: 300px;
 }
 .height-4.uncover-hover.hoverable:hover.bottom ~ .body-content,
@@ -16998,15 +16998,15 @@ header.header.height-4.fixed + * {
 .height-4.uncover-focus.focusable:focus.bottom ~ .body-content {
   margin-bottom: 300px;
 }
-.height-4.uncover-hover.hoverable:hover.bottom ~ .body-content header.header.fixed,
-.height-4:not(.cover).bottom ~ .body-content header.header.fixed,
-.height-4.uncover-focus.focusable:focus.bottom ~ .body-content header.header.fixed {
+.height-4.uncover-hover.hoverable:hover.bottom ~ .body-content .header.fixed,
+.height-4:not(.cover).bottom ~ .body-content .header.fixed,
+.height-4.uncover-focus.focusable:focus.bottom ~ .body-content .header.fixed {
   bottom: 300px;
 }
 .height-5 {
   height: 375px;
 }
-header.header.height-5.fixed + * {
+.header.height-5.fixed + * {
   margin-top: 375px;
 }
 .height-5.uncover-hover.hoverable:hover.top ~ .body-content,
@@ -17014,9 +17014,9 @@ header.header.height-5.fixed + * {
 .height-5.uncover-focus.focusable:focus.top ~ .body-content {
   margin-top: 375px;
 }
-.height-5.uncover-hover.hoverable:hover.top ~ .body-content header.header.fixed,
-.height-5:not(.cover).top ~ .body-content header.header.fixed,
-.height-5.uncover-focus.focusable:focus.top ~ .body-content header.header.fixed {
+.height-5.uncover-hover.hoverable:hover.top ~ .body-content .header.fixed,
+.height-5:not(.cover).top ~ .body-content .header.fixed,
+.height-5.uncover-focus.focusable:focus.top ~ .body-content .header.fixed {
   top: 375px;
 }
 .height-5.uncover-hover.hoverable:hover.bottom ~ .body-content,
@@ -17024,15 +17024,15 @@ header.header.height-5.fixed + * {
 .height-5.uncover-focus.focusable:focus.bottom ~ .body-content {
   margin-bottom: 375px;
 }
-.height-5.uncover-hover.hoverable:hover.bottom ~ .body-content header.header.fixed,
-.height-5:not(.cover).bottom ~ .body-content header.header.fixed,
-.height-5.uncover-focus.focusable:focus.bottom ~ .body-content header.header.fixed {
+.height-5.uncover-hover.hoverable:hover.bottom ~ .body-content .header.fixed,
+.height-5:not(.cover).bottom ~ .body-content .header.fixed,
+.height-5.uncover-focus.focusable:focus.bottom ~ .body-content .header.fixed {
   bottom: 375px;
 }
 .height-6 {
   height: 450px;
 }
-header.header.height-6.fixed + * {
+.header.height-6.fixed + * {
   margin-top: 450px;
 }
 .height-6.uncover-hover.hoverable:hover.top ~ .body-content,
@@ -17040,9 +17040,9 @@ header.header.height-6.fixed + * {
 .height-6.uncover-focus.focusable:focus.top ~ .body-content {
   margin-top: 450px;
 }
-.height-6.uncover-hover.hoverable:hover.top ~ .body-content header.header.fixed,
-.height-6:not(.cover).top ~ .body-content header.header.fixed,
-.height-6.uncover-focus.focusable:focus.top ~ .body-content header.header.fixed {
+.height-6.uncover-hover.hoverable:hover.top ~ .body-content .header.fixed,
+.height-6:not(.cover).top ~ .body-content .header.fixed,
+.height-6.uncover-focus.focusable:focus.top ~ .body-content .header.fixed {
   top: 450px;
 }
 .height-6.uncover-hover.hoverable:hover.bottom ~ .body-content,
@@ -17050,15 +17050,15 @@ header.header.height-6.fixed + * {
 .height-6.uncover-focus.focusable:focus.bottom ~ .body-content {
   margin-bottom: 450px;
 }
-.height-6.uncover-hover.hoverable:hover.bottom ~ .body-content header.header.fixed,
-.height-6:not(.cover).bottom ~ .body-content header.header.fixed,
-.height-6.uncover-focus.focusable:focus.bottom ~ .body-content header.header.fixed {
+.height-6.uncover-hover.hoverable:hover.bottom ~ .body-content .header.fixed,
+.height-6:not(.cover).bottom ~ .body-content .header.fixed,
+.height-6.uncover-focus.focusable:focus.bottom ~ .body-content .header.fixed {
   bottom: 450px;
 }
 .height-7 {
   height: 525px;
 }
-header.header.height-7.fixed + * {
+.header.height-7.fixed + * {
   margin-top: 525px;
 }
 .height-7.uncover-hover.hoverable:hover.top ~ .body-content,
@@ -17066,9 +17066,9 @@ header.header.height-7.fixed + * {
 .height-7.uncover-focus.focusable:focus.top ~ .body-content {
   margin-top: 525px;
 }
-.height-7.uncover-hover.hoverable:hover.top ~ .body-content header.header.fixed,
-.height-7:not(.cover).top ~ .body-content header.header.fixed,
-.height-7.uncover-focus.focusable:focus.top ~ .body-content header.header.fixed {
+.height-7.uncover-hover.hoverable:hover.top ~ .body-content .header.fixed,
+.height-7:not(.cover).top ~ .body-content .header.fixed,
+.height-7.uncover-focus.focusable:focus.top ~ .body-content .header.fixed {
   top: 525px;
 }
 .height-7.uncover-hover.hoverable:hover.bottom ~ .body-content,
@@ -17076,15 +17076,15 @@ header.header.height-7.fixed + * {
 .height-7.uncover-focus.focusable:focus.bottom ~ .body-content {
   margin-bottom: 525px;
 }
-.height-7.uncover-hover.hoverable:hover.bottom ~ .body-content header.header.fixed,
-.height-7:not(.cover).bottom ~ .body-content header.header.fixed,
-.height-7.uncover-focus.focusable:focus.bottom ~ .body-content header.header.fixed {
+.height-7.uncover-hover.hoverable:hover.bottom ~ .body-content .header.fixed,
+.height-7:not(.cover).bottom ~ .body-content .header.fixed,
+.height-7.uncover-focus.focusable:focus.bottom ~ .body-content .header.fixed {
   bottom: 525px;
 }
 .height-8 {
   height: 600px;
 }
-header.header.height-8.fixed + * {
+.header.height-8.fixed + * {
   margin-top: 600px;
 }
 .height-8.uncover-hover.hoverable:hover.top ~ .body-content,
@@ -17092,9 +17092,9 @@ header.header.height-8.fixed + * {
 .height-8.uncover-focus.focusable:focus.top ~ .body-content {
   margin-top: 600px;
 }
-.height-8.uncover-hover.hoverable:hover.top ~ .body-content header.header.fixed,
-.height-8:not(.cover).top ~ .body-content header.header.fixed,
-.height-8.uncover-focus.focusable:focus.top ~ .body-content header.header.fixed {
+.height-8.uncover-hover.hoverable:hover.top ~ .body-content .header.fixed,
+.height-8:not(.cover).top ~ .body-content .header.fixed,
+.height-8.uncover-focus.focusable:focus.top ~ .body-content .header.fixed {
   top: 600px;
 }
 .height-8.uncover-hover.hoverable:hover.bottom ~ .body-content,
@@ -17102,9 +17102,9 @@ header.header.height-8.fixed + * {
 .height-8.uncover-focus.focusable:focus.bottom ~ .body-content {
   margin-bottom: 600px;
 }
-.height-8.uncover-hover.hoverable:hover.bottom ~ .body-content header.header.fixed,
-.height-8:not(.cover).bottom ~ .body-content header.header.fixed,
-.height-8.uncover-focus.focusable:focus.bottom ~ .body-content header.header.fixed {
+.height-8.uncover-hover.hoverable:hover.bottom ~ .body-content .header.fixed,
+.height-8:not(.cover).bottom ~ .body-content .header.fixed,
+.height-8.uncover-focus.focusable:focus.bottom ~ .body-content .header.fixed {
   bottom: 600px;
 }
 .width-geo-0 {
@@ -17115,9 +17115,9 @@ header.header.height-8.fixed + * {
 .width-geo-0.uncover-focus.focusable:focus.left ~ .body-content {
   margin-left: 0px;
 }
-.width-geo-0.uncover-hover.hoverable:hover.left ~ .body-content header.header.fixed,
-.width-geo-0:not(.cover).left ~ .body-content header.header.fixed,
-.width-geo-0.uncover-focus.focusable:focus.left ~ .body-content header.header.fixed {
+.width-geo-0.uncover-hover.hoverable:hover.left ~ .body-content .header.fixed,
+.width-geo-0:not(.cover).left ~ .body-content .header.fixed,
+.width-geo-0.uncover-focus.focusable:focus.left ~ .body-content .header.fixed {
   left: 0px;
 }
 .width-geo-0.uncover-hover.hoverable:hover.right ~ .body-content,
@@ -17125,9 +17125,9 @@ header.header.height-8.fixed + * {
 .width-geo-0.uncover-focus.focusable:focus.right ~ .body-content {
   margin-right: 0px;
 }
-.width-geo-0.uncover-hover.hoverable:hover.right ~ .body-content header.header.fixed,
-.width-geo-0:not(.cover).right ~ .body-content header.header.fixed,
-.width-geo-0.uncover-focus.focusable:focus.right ~ .body-content header.header.fixed {
+.width-geo-0.uncover-hover.hoverable:hover.right ~ .body-content .header.fixed,
+.width-geo-0:not(.cover).right ~ .body-content .header.fixed,
+.width-geo-0.uncover-focus.focusable:focus.right ~ .body-content .header.fixed {
   right: 0px;
 }
 .width-geo-1 {
@@ -17138,9 +17138,9 @@ header.header.height-8.fixed + * {
 .width-geo-1.uncover-focus.focusable:focus.left ~ .body-content {
   margin-left: 11.28px;
 }
-.width-geo-1.uncover-hover.hoverable:hover.left ~ .body-content header.header.fixed,
-.width-geo-1:not(.cover).left ~ .body-content header.header.fixed,
-.width-geo-1.uncover-focus.focusable:focus.left ~ .body-content header.header.fixed {
+.width-geo-1.uncover-hover.hoverable:hover.left ~ .body-content .header.fixed,
+.width-geo-1:not(.cover).left ~ .body-content .header.fixed,
+.width-geo-1.uncover-focus.focusable:focus.left ~ .body-content .header.fixed {
   left: 11.28px;
 }
 .width-geo-1.uncover-hover.hoverable:hover.right ~ .body-content,
@@ -17148,9 +17148,9 @@ header.header.height-8.fixed + * {
 .width-geo-1.uncover-focus.focusable:focus.right ~ .body-content {
   margin-right: 11.28px;
 }
-.width-geo-1.uncover-hover.hoverable:hover.right ~ .body-content header.header.fixed,
-.width-geo-1:not(.cover).right ~ .body-content header.header.fixed,
-.width-geo-1.uncover-focus.focusable:focus.right ~ .body-content header.header.fixed {
+.width-geo-1.uncover-hover.hoverable:hover.right ~ .body-content .header.fixed,
+.width-geo-1:not(.cover).right ~ .body-content .header.fixed,
+.width-geo-1.uncover-focus.focusable:focus.right ~ .body-content .header.fixed {
   right: 11.28px;
 }
 .width-geo-2 {
@@ -17161,9 +17161,9 @@ header.header.height-8.fixed + * {
 .width-geo-2.uncover-focus.focusable:focus.left ~ .body-content {
   margin-left: 25.38px;
 }
-.width-geo-2.uncover-hover.hoverable:hover.left ~ .body-content header.header.fixed,
-.width-geo-2:not(.cover).left ~ .body-content header.header.fixed,
-.width-geo-2.uncover-focus.focusable:focus.left ~ .body-content header.header.fixed {
+.width-geo-2.uncover-hover.hoverable:hover.left ~ .body-content .header.fixed,
+.width-geo-2:not(.cover).left ~ .body-content .header.fixed,
+.width-geo-2.uncover-focus.focusable:focus.left ~ .body-content .header.fixed {
   left: 25.38px;
 }
 .width-geo-2.uncover-hover.hoverable:hover.right ~ .body-content,
@@ -17171,9 +17171,9 @@ header.header.height-8.fixed + * {
 .width-geo-2.uncover-focus.focusable:focus.right ~ .body-content {
   margin-right: 25.38px;
 }
-.width-geo-2.uncover-hover.hoverable:hover.right ~ .body-content header.header.fixed,
-.width-geo-2:not(.cover).right ~ .body-content header.header.fixed,
-.width-geo-2.uncover-focus.focusable:focus.right ~ .body-content header.header.fixed {
+.width-geo-2.uncover-hover.hoverable:hover.right ~ .body-content .header.fixed,
+.width-geo-2:not(.cover).right ~ .body-content .header.fixed,
+.width-geo-2.uncover-focus.focusable:focus.right ~ .body-content .header.fixed {
   right: 25.38px;
 }
 .width-geo-3 {
@@ -17184,9 +17184,9 @@ header.header.height-8.fixed + * {
 .width-geo-3.uncover-focus.focusable:focus.left ~ .body-content {
   margin-left: 43.50857143px;
 }
-.width-geo-3.uncover-hover.hoverable:hover.left ~ .body-content header.header.fixed,
-.width-geo-3:not(.cover).left ~ .body-content header.header.fixed,
-.width-geo-3.uncover-focus.focusable:focus.left ~ .body-content header.header.fixed {
+.width-geo-3.uncover-hover.hoverable:hover.left ~ .body-content .header.fixed,
+.width-geo-3:not(.cover).left ~ .body-content .header.fixed,
+.width-geo-3.uncover-focus.focusable:focus.left ~ .body-content .header.fixed {
   left: 43.50857143px;
 }
 .width-geo-3.uncover-hover.hoverable:hover.right ~ .body-content,
@@ -17194,9 +17194,9 @@ header.header.height-8.fixed + * {
 .width-geo-3.uncover-focus.focusable:focus.right ~ .body-content {
   margin-right: 43.50857143px;
 }
-.width-geo-3.uncover-hover.hoverable:hover.right ~ .body-content header.header.fixed,
-.width-geo-3:not(.cover).right ~ .body-content header.header.fixed,
-.width-geo-3.uncover-focus.focusable:focus.right ~ .body-content header.header.fixed {
+.width-geo-3.uncover-hover.hoverable:hover.right ~ .body-content .header.fixed,
+.width-geo-3:not(.cover).right ~ .body-content .header.fixed,
+.width-geo-3.uncover-focus.focusable:focus.right ~ .body-content .header.fixed {
   right: 43.50857143px;
 }
 .width-geo-4 {
@@ -17207,9 +17207,9 @@ header.header.height-8.fixed + * {
 .width-geo-4.uncover-focus.focusable:focus.left ~ .body-content {
   margin-left: 67.68px;
 }
-.width-geo-4.uncover-hover.hoverable:hover.left ~ .body-content header.header.fixed,
-.width-geo-4:not(.cover).left ~ .body-content header.header.fixed,
-.width-geo-4.uncover-focus.focusable:focus.left ~ .body-content header.header.fixed {
+.width-geo-4.uncover-hover.hoverable:hover.left ~ .body-content .header.fixed,
+.width-geo-4:not(.cover).left ~ .body-content .header.fixed,
+.width-geo-4.uncover-focus.focusable:focus.left ~ .body-content .header.fixed {
   left: 67.68px;
 }
 .width-geo-4.uncover-hover.hoverable:hover.right ~ .body-content,
@@ -17217,9 +17217,9 @@ header.header.height-8.fixed + * {
 .width-geo-4.uncover-focus.focusable:focus.right ~ .body-content {
   margin-right: 67.68px;
 }
-.width-geo-4.uncover-hover.hoverable:hover.right ~ .body-content header.header.fixed,
-.width-geo-4:not(.cover).right ~ .body-content header.header.fixed,
-.width-geo-4.uncover-focus.focusable:focus.right ~ .body-content header.header.fixed {
+.width-geo-4.uncover-hover.hoverable:hover.right ~ .body-content .header.fixed,
+.width-geo-4:not(.cover).right ~ .body-content .header.fixed,
+.width-geo-4.uncover-focus.focusable:focus.right ~ .body-content .header.fixed {
   right: 67.68px;
 }
 .width-geo-5 {
@@ -17230,9 +17230,9 @@ header.header.height-8.fixed + * {
 .width-geo-5.uncover-focus.focusable:focus.left ~ .body-content {
   margin-left: 101.52px;
 }
-.width-geo-5.uncover-hover.hoverable:hover.left ~ .body-content header.header.fixed,
-.width-geo-5:not(.cover).left ~ .body-content header.header.fixed,
-.width-geo-5.uncover-focus.focusable:focus.left ~ .body-content header.header.fixed {
+.width-geo-5.uncover-hover.hoverable:hover.left ~ .body-content .header.fixed,
+.width-geo-5:not(.cover).left ~ .body-content .header.fixed,
+.width-geo-5.uncover-focus.focusable:focus.left ~ .body-content .header.fixed {
   left: 101.52px;
 }
 .width-geo-5.uncover-hover.hoverable:hover.right ~ .body-content,
@@ -17240,9 +17240,9 @@ header.header.height-8.fixed + * {
 .width-geo-5.uncover-focus.focusable:focus.right ~ .body-content {
   margin-right: 101.52px;
 }
-.width-geo-5.uncover-hover.hoverable:hover.right ~ .body-content header.header.fixed,
-.width-geo-5:not(.cover).right ~ .body-content header.header.fixed,
-.width-geo-5.uncover-focus.focusable:focus.right ~ .body-content header.header.fixed {
+.width-geo-5.uncover-hover.hoverable:hover.right ~ .body-content .header.fixed,
+.width-geo-5:not(.cover).right ~ .body-content .header.fixed,
+.width-geo-5.uncover-focus.focusable:focus.right ~ .body-content .header.fixed {
   right: 101.52px;
 }
 .width-geo-6 {
@@ -17253,9 +17253,9 @@ header.header.height-8.fixed + * {
 .width-geo-6.uncover-focus.focusable:focus.left ~ .body-content {
   margin-left: 152.28px;
 }
-.width-geo-6.uncover-hover.hoverable:hover.left ~ .body-content header.header.fixed,
-.width-geo-6:not(.cover).left ~ .body-content header.header.fixed,
-.width-geo-6.uncover-focus.focusable:focus.left ~ .body-content header.header.fixed {
+.width-geo-6.uncover-hover.hoverable:hover.left ~ .body-content .header.fixed,
+.width-geo-6:not(.cover).left ~ .body-content .header.fixed,
+.width-geo-6.uncover-focus.focusable:focus.left ~ .body-content .header.fixed {
   left: 152.28px;
 }
 .width-geo-6.uncover-hover.hoverable:hover.right ~ .body-content,
@@ -17263,9 +17263,9 @@ header.header.height-8.fixed + * {
 .width-geo-6.uncover-focus.focusable:focus.right ~ .body-content {
   margin-right: 152.28px;
 }
-.width-geo-6.uncover-hover.hoverable:hover.right ~ .body-content header.header.fixed,
-.width-geo-6:not(.cover).right ~ .body-content header.header.fixed,
-.width-geo-6.uncover-focus.focusable:focus.right ~ .body-content header.header.fixed {
+.width-geo-6.uncover-hover.hoverable:hover.right ~ .body-content .header.fixed,
+.width-geo-6:not(.cover).right ~ .body-content .header.fixed,
+.width-geo-6.uncover-focus.focusable:focus.right ~ .body-content .header.fixed {
   right: 152.28px;
 }
 .width-geo-7 {
@@ -17276,9 +17276,9 @@ header.header.height-8.fixed + * {
 .width-geo-7.uncover-focus.focusable:focus.left ~ .body-content {
   margin-left: 236.88px;
 }
-.width-geo-7.uncover-hover.hoverable:hover.left ~ .body-content header.header.fixed,
-.width-geo-7:not(.cover).left ~ .body-content header.header.fixed,
-.width-geo-7.uncover-focus.focusable:focus.left ~ .body-content header.header.fixed {
+.width-geo-7.uncover-hover.hoverable:hover.left ~ .body-content .header.fixed,
+.width-geo-7:not(.cover).left ~ .body-content .header.fixed,
+.width-geo-7.uncover-focus.focusable:focus.left ~ .body-content .header.fixed {
   left: 236.88px;
 }
 .width-geo-7.uncover-hover.hoverable:hover.right ~ .body-content,
@@ -17286,9 +17286,9 @@ header.header.height-8.fixed + * {
 .width-geo-7.uncover-focus.focusable:focus.right ~ .body-content {
   margin-right: 236.88px;
 }
-.width-geo-7.uncover-hover.hoverable:hover.right ~ .body-content header.header.fixed,
-.width-geo-7:not(.cover).right ~ .body-content header.header.fixed,
-.width-geo-7.uncover-focus.focusable:focus.right ~ .body-content header.header.fixed {
+.width-geo-7.uncover-hover.hoverable:hover.right ~ .body-content .header.fixed,
+.width-geo-7:not(.cover).right ~ .body-content .header.fixed,
+.width-geo-7.uncover-focus.focusable:focus.right ~ .body-content .header.fixed {
   right: 236.88px;
 }
 .width-geo-8 {
@@ -17299,9 +17299,9 @@ header.header.height-8.fixed + * {
 .width-geo-8.uncover-focus.focusable:focus.left ~ .body-content {
   margin-left: 406.08px;
 }
-.width-geo-8.uncover-hover.hoverable:hover.left ~ .body-content header.header.fixed,
-.width-geo-8:not(.cover).left ~ .body-content header.header.fixed,
-.width-geo-8.uncover-focus.focusable:focus.left ~ .body-content header.header.fixed {
+.width-geo-8.uncover-hover.hoverable:hover.left ~ .body-content .header.fixed,
+.width-geo-8:not(.cover).left ~ .body-content .header.fixed,
+.width-geo-8.uncover-focus.focusable:focus.left ~ .body-content .header.fixed {
   left: 406.08px;
 }
 .width-geo-8.uncover-hover.hoverable:hover.right ~ .body-content,
@@ -17309,15 +17309,15 @@ header.header.height-8.fixed + * {
 .width-geo-8.uncover-focus.focusable:focus.right ~ .body-content {
   margin-right: 406.08px;
 }
-.width-geo-8.uncover-hover.hoverable:hover.right ~ .body-content header.header.fixed,
-.width-geo-8:not(.cover).right ~ .body-content header.header.fixed,
-.width-geo-8.uncover-focus.focusable:focus.right ~ .body-content header.header.fixed {
+.width-geo-8.uncover-hover.hoverable:hover.right ~ .body-content .header.fixed,
+.width-geo-8:not(.cover).right ~ .body-content .header.fixed,
+.width-geo-8.uncover-focus.focusable:focus.right ~ .body-content .header.fixed {
   right: 406.08px;
 }
 .height-geo-0 {
   height: 0px;
 }
-header.header.height-geo-0.fixed + * {
+.header.height-geo-0.fixed + * {
   margin-top: 0px;
 }
 .height-geo-0.uncover-hover.hoverable:hover.top ~ .body-content,
@@ -17325,9 +17325,9 @@ header.header.height-geo-0.fixed + * {
 .height-geo-0.uncover-focus.focusable:focus.top ~ .body-content {
   margin-top: 0px;
 }
-.height-geo-0.uncover-hover.hoverable:hover.top ~ .body-content header.header.fixed,
-.height-geo-0:not(.cover).top ~ .body-content header.header.fixed,
-.height-geo-0.uncover-focus.focusable:focus.top ~ .body-content header.header.fixed {
+.height-geo-0.uncover-hover.hoverable:hover.top ~ .body-content .header.fixed,
+.height-geo-0:not(.cover).top ~ .body-content .header.fixed,
+.height-geo-0.uncover-focus.focusable:focus.top ~ .body-content .header.fixed {
   top: 0px;
 }
 .height-geo-0.uncover-hover.hoverable:hover.bottom ~ .body-content,
@@ -17335,15 +17335,15 @@ header.header.height-geo-0.fixed + * {
 .height-geo-0.uncover-focus.focusable:focus.bottom ~ .body-content {
   margin-bottom: 0px;
 }
-.height-geo-0.uncover-hover.hoverable:hover.bottom ~ .body-content header.header.fixed,
-.height-geo-0:not(.cover).bottom ~ .body-content header.header.fixed,
-.height-geo-0.uncover-focus.focusable:focus.bottom ~ .body-content header.header.fixed {
+.height-geo-0.uncover-hover.hoverable:hover.bottom ~ .body-content .header.fixed,
+.height-geo-0:not(.cover).bottom ~ .body-content .header.fixed,
+.height-geo-0.uncover-focus.focusable:focus.bottom ~ .body-content .header.fixed {
   bottom: 0px;
 }
 .height-geo-1 {
   height: 6px;
 }
-header.header.height-geo-1.fixed + * {
+.header.height-geo-1.fixed + * {
   margin-top: 6px;
 }
 .height-geo-1.uncover-hover.hoverable:hover.top ~ .body-content,
@@ -17351,9 +17351,9 @@ header.header.height-geo-1.fixed + * {
 .height-geo-1.uncover-focus.focusable:focus.top ~ .body-content {
   margin-top: 6px;
 }
-.height-geo-1.uncover-hover.hoverable:hover.top ~ .body-content header.header.fixed,
-.height-geo-1:not(.cover).top ~ .body-content header.header.fixed,
-.height-geo-1.uncover-focus.focusable:focus.top ~ .body-content header.header.fixed {
+.height-geo-1.uncover-hover.hoverable:hover.top ~ .body-content .header.fixed,
+.height-geo-1:not(.cover).top ~ .body-content .header.fixed,
+.height-geo-1.uncover-focus.focusable:focus.top ~ .body-content .header.fixed {
   top: 6px;
 }
 .height-geo-1.uncover-hover.hoverable:hover.bottom ~ .body-content,
@@ -17361,15 +17361,15 @@ header.header.height-geo-1.fixed + * {
 .height-geo-1.uncover-focus.focusable:focus.bottom ~ .body-content {
   margin-bottom: 6px;
 }
-.height-geo-1.uncover-hover.hoverable:hover.bottom ~ .body-content header.header.fixed,
-.height-geo-1:not(.cover).bottom ~ .body-content header.header.fixed,
-.height-geo-1.uncover-focus.focusable:focus.bottom ~ .body-content header.header.fixed {
+.height-geo-1.uncover-hover.hoverable:hover.bottom ~ .body-content .header.fixed,
+.height-geo-1:not(.cover).bottom ~ .body-content .header.fixed,
+.height-geo-1.uncover-focus.focusable:focus.bottom ~ .body-content .header.fixed {
   bottom: 6px;
 }
 .height-geo-2 {
   height: 13.5px;
 }
-header.header.height-geo-2.fixed + * {
+.header.height-geo-2.fixed + * {
   margin-top: 13.5px;
 }
 .height-geo-2.uncover-hover.hoverable:hover.top ~ .body-content,
@@ -17377,9 +17377,9 @@ header.header.height-geo-2.fixed + * {
 .height-geo-2.uncover-focus.focusable:focus.top ~ .body-content {
   margin-top: 13.5px;
 }
-.height-geo-2.uncover-hover.hoverable:hover.top ~ .body-content header.header.fixed,
-.height-geo-2:not(.cover).top ~ .body-content header.header.fixed,
-.height-geo-2.uncover-focus.focusable:focus.top ~ .body-content header.header.fixed {
+.height-geo-2.uncover-hover.hoverable:hover.top ~ .body-content .header.fixed,
+.height-geo-2:not(.cover).top ~ .body-content .header.fixed,
+.height-geo-2.uncover-focus.focusable:focus.top ~ .body-content .header.fixed {
   top: 13.5px;
 }
 .height-geo-2.uncover-hover.hoverable:hover.bottom ~ .body-content,
@@ -17387,15 +17387,15 @@ header.header.height-geo-2.fixed + * {
 .height-geo-2.uncover-focus.focusable:focus.bottom ~ .body-content {
   margin-bottom: 13.5px;
 }
-.height-geo-2.uncover-hover.hoverable:hover.bottom ~ .body-content header.header.fixed,
-.height-geo-2:not(.cover).bottom ~ .body-content header.header.fixed,
-.height-geo-2.uncover-focus.focusable:focus.bottom ~ .body-content header.header.fixed {
+.height-geo-2.uncover-hover.hoverable:hover.bottom ~ .body-content .header.fixed,
+.height-geo-2:not(.cover).bottom ~ .body-content .header.fixed,
+.height-geo-2.uncover-focus.focusable:focus.bottom ~ .body-content .header.fixed {
   bottom: 13.5px;
 }
 .height-geo-3 {
   height: 23.14285714px;
 }
-header.header.height-geo-3.fixed + * {
+.header.height-geo-3.fixed + * {
   margin-top: 23.14285714px;
 }
 .height-geo-3.uncover-hover.hoverable:hover.top ~ .body-content,
@@ -17403,9 +17403,9 @@ header.header.height-geo-3.fixed + * {
 .height-geo-3.uncover-focus.focusable:focus.top ~ .body-content {
   margin-top: 23.14285714px;
 }
-.height-geo-3.uncover-hover.hoverable:hover.top ~ .body-content header.header.fixed,
-.height-geo-3:not(.cover).top ~ .body-content header.header.fixed,
-.height-geo-3.uncover-focus.focusable:focus.top ~ .body-content header.header.fixed {
+.height-geo-3.uncover-hover.hoverable:hover.top ~ .body-content .header.fixed,
+.height-geo-3:not(.cover).top ~ .body-content .header.fixed,
+.height-geo-3.uncover-focus.focusable:focus.top ~ .body-content .header.fixed {
   top: 23.14285714px;
 }
 .height-geo-3.uncover-hover.hoverable:hover.bottom ~ .body-content,
@@ -17413,15 +17413,15 @@ header.header.height-geo-3.fixed + * {
 .height-geo-3.uncover-focus.focusable:focus.bottom ~ .body-content {
   margin-bottom: 23.14285714px;
 }
-.height-geo-3.uncover-hover.hoverable:hover.bottom ~ .body-content header.header.fixed,
-.height-geo-3:not(.cover).bottom ~ .body-content header.header.fixed,
-.height-geo-3.uncover-focus.focusable:focus.bottom ~ .body-content header.header.fixed {
+.height-geo-3.uncover-hover.hoverable:hover.bottom ~ .body-content .header.fixed,
+.height-geo-3:not(.cover).bottom ~ .body-content .header.fixed,
+.height-geo-3.uncover-focus.focusable:focus.bottom ~ .body-content .header.fixed {
   bottom: 23.14285714px;
 }
 .height-geo-4 {
   height: 36px;
 }
-header.header.height-geo-4.fixed + * {
+.header.height-geo-4.fixed + * {
   margin-top: 36px;
 }
 .height-geo-4.uncover-hover.hoverable:hover.top ~ .body-content,
@@ -17429,9 +17429,9 @@ header.header.height-geo-4.fixed + * {
 .height-geo-4.uncover-focus.focusable:focus.top ~ .body-content {
   margin-top: 36px;
 }
-.height-geo-4.uncover-hover.hoverable:hover.top ~ .body-content header.header.fixed,
-.height-geo-4:not(.cover).top ~ .body-content header.header.fixed,
-.height-geo-4.uncover-focus.focusable:focus.top ~ .body-content header.header.fixed {
+.height-geo-4.uncover-hover.hoverable:hover.top ~ .body-content .header.fixed,
+.height-geo-4:not(.cover).top ~ .body-content .header.fixed,
+.height-geo-4.uncover-focus.focusable:focus.top ~ .body-content .header.fixed {
   top: 36px;
 }
 .height-geo-4.uncover-hover.hoverable:hover.bottom ~ .body-content,
@@ -17439,15 +17439,15 @@ header.header.height-geo-4.fixed + * {
 .height-geo-4.uncover-focus.focusable:focus.bottom ~ .body-content {
   margin-bottom: 36px;
 }
-.height-geo-4.uncover-hover.hoverable:hover.bottom ~ .body-content header.header.fixed,
-.height-geo-4:not(.cover).bottom ~ .body-content header.header.fixed,
-.height-geo-4.uncover-focus.focusable:focus.bottom ~ .body-content header.header.fixed {
+.height-geo-4.uncover-hover.hoverable:hover.bottom ~ .body-content .header.fixed,
+.height-geo-4:not(.cover).bottom ~ .body-content .header.fixed,
+.height-geo-4.uncover-focus.focusable:focus.bottom ~ .body-content .header.fixed {
   bottom: 36px;
 }
 .height-geo-5 {
   height: 54px;
 }
-header.header.height-geo-5.fixed + * {
+.header.height-geo-5.fixed + * {
   margin-top: 54px;
 }
 .height-geo-5.uncover-hover.hoverable:hover.top ~ .body-content,
@@ -17455,9 +17455,9 @@ header.header.height-geo-5.fixed + * {
 .height-geo-5.uncover-focus.focusable:focus.top ~ .body-content {
   margin-top: 54px;
 }
-.height-geo-5.uncover-hover.hoverable:hover.top ~ .body-content header.header.fixed,
-.height-geo-5:not(.cover).top ~ .body-content header.header.fixed,
-.height-geo-5.uncover-focus.focusable:focus.top ~ .body-content header.header.fixed {
+.height-geo-5.uncover-hover.hoverable:hover.top ~ .body-content .header.fixed,
+.height-geo-5:not(.cover).top ~ .body-content .header.fixed,
+.height-geo-5.uncover-focus.focusable:focus.top ~ .body-content .header.fixed {
   top: 54px;
 }
 .height-geo-5.uncover-hover.hoverable:hover.bottom ~ .body-content,
@@ -17465,15 +17465,15 @@ header.header.height-geo-5.fixed + * {
 .height-geo-5.uncover-focus.focusable:focus.bottom ~ .body-content {
   margin-bottom: 54px;
 }
-.height-geo-5.uncover-hover.hoverable:hover.bottom ~ .body-content header.header.fixed,
-.height-geo-5:not(.cover).bottom ~ .body-content header.header.fixed,
-.height-geo-5.uncover-focus.focusable:focus.bottom ~ .body-content header.header.fixed {
+.height-geo-5.uncover-hover.hoverable:hover.bottom ~ .body-content .header.fixed,
+.height-geo-5:not(.cover).bottom ~ .body-content .header.fixed,
+.height-geo-5.uncover-focus.focusable:focus.bottom ~ .body-content .header.fixed {
   bottom: 54px;
 }
 .height-geo-6 {
   height: 81px;
 }
-header.header.height-geo-6.fixed + * {
+.header.height-geo-6.fixed + * {
   margin-top: 81px;
 }
 .height-geo-6.uncover-hover.hoverable:hover.top ~ .body-content,
@@ -17481,9 +17481,9 @@ header.header.height-geo-6.fixed + * {
 .height-geo-6.uncover-focus.focusable:focus.top ~ .body-content {
   margin-top: 81px;
 }
-.height-geo-6.uncover-hover.hoverable:hover.top ~ .body-content header.header.fixed,
-.height-geo-6:not(.cover).top ~ .body-content header.header.fixed,
-.height-geo-6.uncover-focus.focusable:focus.top ~ .body-content header.header.fixed {
+.height-geo-6.uncover-hover.hoverable:hover.top ~ .body-content .header.fixed,
+.height-geo-6:not(.cover).top ~ .body-content .header.fixed,
+.height-geo-6.uncover-focus.focusable:focus.top ~ .body-content .header.fixed {
   top: 81px;
 }
 .height-geo-6.uncover-hover.hoverable:hover.bottom ~ .body-content,
@@ -17491,15 +17491,15 @@ header.header.height-geo-6.fixed + * {
 .height-geo-6.uncover-focus.focusable:focus.bottom ~ .body-content {
   margin-bottom: 81px;
 }
-.height-geo-6.uncover-hover.hoverable:hover.bottom ~ .body-content header.header.fixed,
-.height-geo-6:not(.cover).bottom ~ .body-content header.header.fixed,
-.height-geo-6.uncover-focus.focusable:focus.bottom ~ .body-content header.header.fixed {
+.height-geo-6.uncover-hover.hoverable:hover.bottom ~ .body-content .header.fixed,
+.height-geo-6:not(.cover).bottom ~ .body-content .header.fixed,
+.height-geo-6.uncover-focus.focusable:focus.bottom ~ .body-content .header.fixed {
   bottom: 81px;
 }
 .height-geo-7 {
   height: 126px;
 }
-header.header.height-geo-7.fixed + * {
+.header.height-geo-7.fixed + * {
   margin-top: 126px;
 }
 .height-geo-7.uncover-hover.hoverable:hover.top ~ .body-content,
@@ -17507,9 +17507,9 @@ header.header.height-geo-7.fixed + * {
 .height-geo-7.uncover-focus.focusable:focus.top ~ .body-content {
   margin-top: 126px;
 }
-.height-geo-7.uncover-hover.hoverable:hover.top ~ .body-content header.header.fixed,
-.height-geo-7:not(.cover).top ~ .body-content header.header.fixed,
-.height-geo-7.uncover-focus.focusable:focus.top ~ .body-content header.header.fixed {
+.height-geo-7.uncover-hover.hoverable:hover.top ~ .body-content .header.fixed,
+.height-geo-7:not(.cover).top ~ .body-content .header.fixed,
+.height-geo-7.uncover-focus.focusable:focus.top ~ .body-content .header.fixed {
   top: 126px;
 }
 .height-geo-7.uncover-hover.hoverable:hover.bottom ~ .body-content,
@@ -17517,15 +17517,15 @@ header.header.height-geo-7.fixed + * {
 .height-geo-7.uncover-focus.focusable:focus.bottom ~ .body-content {
   margin-bottom: 126px;
 }
-.height-geo-7.uncover-hover.hoverable:hover.bottom ~ .body-content header.header.fixed,
-.height-geo-7:not(.cover).bottom ~ .body-content header.header.fixed,
-.height-geo-7.uncover-focus.focusable:focus.bottom ~ .body-content header.header.fixed {
+.height-geo-7.uncover-hover.hoverable:hover.bottom ~ .body-content .header.fixed,
+.height-geo-7:not(.cover).bottom ~ .body-content .header.fixed,
+.height-geo-7.uncover-focus.focusable:focus.bottom ~ .body-content .header.fixed {
   bottom: 126px;
 }
 .height-geo-8 {
   height: 216px;
 }
-header.header.height-geo-8.fixed + * {
+.header.height-geo-8.fixed + * {
   margin-top: 216px;
 }
 .height-geo-8.uncover-hover.hoverable:hover.top ~ .body-content,
@@ -17533,9 +17533,9 @@ header.header.height-geo-8.fixed + * {
 .height-geo-8.uncover-focus.focusable:focus.top ~ .body-content {
   margin-top: 216px;
 }
-.height-geo-8.uncover-hover.hoverable:hover.top ~ .body-content header.header.fixed,
-.height-geo-8:not(.cover).top ~ .body-content header.header.fixed,
-.height-geo-8.uncover-focus.focusable:focus.top ~ .body-content header.header.fixed {
+.height-geo-8.uncover-hover.hoverable:hover.top ~ .body-content .header.fixed,
+.height-geo-8:not(.cover).top ~ .body-content .header.fixed,
+.height-geo-8.uncover-focus.focusable:focus.top ~ .body-content .header.fixed {
   top: 216px;
 }
 .height-geo-8.uncover-hover.hoverable:hover.bottom ~ .body-content,
@@ -17543,9 +17543,9 @@ header.header.height-geo-8.fixed + * {
 .height-geo-8.uncover-focus.focusable:focus.bottom ~ .body-content {
   margin-bottom: 216px;
 }
-.height-geo-8.uncover-hover.hoverable:hover.bottom ~ .body-content header.header.fixed,
-.height-geo-8:not(.cover).bottom ~ .body-content header.header.fixed,
-.height-geo-8.uncover-focus.focusable:focus.bottom ~ .body-content header.header.fixed {
+.height-geo-8.uncover-hover.hoverable:hover.bottom ~ .body-content .header.fixed,
+.height-geo-8:not(.cover).bottom ~ .body-content .header.fixed,
+.height-geo-8.uncover-focus.focusable:focus.bottom ~ .body-content .header.fixed {
   bottom: 216px;
 }
 .margin-0 {
@@ -18720,19 +18720,19 @@ header.header.height-geo-8.fixed + * {
 .side-show-full:not(.cover).left ~ .body-content {
   margin-left: 90%;
 }
-.side-show-full:not(.cover).left ~ .body-content header.header.fixed {
+.side-show-full:not(.cover).left ~ .body-content .header.fixed {
   left: 90%;
 }
 .side-show-full:not(.cover).right ~ .body-content {
   margin-right: 90%;
 }
-.side-show-full:not(.cover).right ~ .body-content header.header.fixed {
+.side-show-full:not(.cover).right ~ .body-content .header.fixed {
   right: 90%;
 }
 .side-show-full.cover ~ .body-content {
   margin-left: 0;
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .side-collapse:not(:checked) + .side .expanded-hide {
     display: none;
   }
@@ -18787,25 +18787,25 @@ header.header.height-geo-8.fixed + * {
   .side-collapse:not(:checked) + .side:not(cover).left ~ .body-content {
     margin-left: 50px;
   }
-  .side-collapse:not(:checked) + .side:not(cover).left ~ .body-content header.header.fixed {
+  .side-collapse:not(:checked) + .side:not(cover).left ~ .body-content .header.fixed {
     left: 50px;
   }
   .side-collapse:not(:checked) + .side:not(cover).right ~ .body-content {
     margin-right: 50px;
   }
-  .side-collapse:not(:checked) + .side:not(cover).right ~ .body-content header.header.fixed {
+  .side-collapse:not(:checked) + .side:not(cover).right ~ .body-content .header.fixed {
     right: 50px;
   }
   .side-collapse:not(:checked) + .side:not(cover).top ~ .body-content {
     margin-top: 37.5px;
   }
-  .side-collapse:not(:checked) + .side:not(cover).top ~ .body-content header.header.fixed {
+  .side-collapse:not(:checked) + .side:not(cover).top ~ .body-content .header.fixed {
     top: 37.5px;
   }
   .side-collapse:not(:checked) + .side:not(cover).bottom ~ .body-content {
     margin-bottom: 37.5px;
   }
-  .side-collapse:not(:checked) + .side:not(cover).bottom ~ .body-content header.header.fixed {
+  .side-collapse:not(:checked) + .side:not(cover).bottom ~ .body-content .header.fixed {
     bottom: 37.5px;
   }
   .side-collapse:not(:checked) + .side.left,
@@ -18935,10 +18935,10 @@ header.header.height-geo-8.fixed + * {
     opacity: 0;
     overflow-y: hidden;
   }
-  .side-collapse:not(:checked) + .side:not(.cover).left ~ .body-content header.header.fixed,
-  .side-collapse:not(:checked) + .side .cover.left ~ .body-content header.header.fixed,
-  .side-collapse:not(:checked) + .side:not(.cover).right ~ .body-content header.header.fixed,
-  .side-collapse:not(:checked) + .side .cover.right ~ .body-content header.header.fixed {
+  .side-collapse:not(:checked) + .side:not(.cover).left ~ .body-content .header.fixed,
+  .side-collapse:not(:checked) + .side .cover.left ~ .body-content .header.fixed,
+  .side-collapse:not(:checked) + .side:not(.cover).right ~ .body-content .header.fixed,
+  .side-collapse:not(:checked) + .side .cover.right ~ .body-content .header.fixed {
     left: 0;
     right: 0;
   }
@@ -19005,7 +19005,7 @@ header.header.height-geo-8.fixed + * {
     height: 100%;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .side-collapse:checked + .side {
     overflow-y: hidden;
   }
@@ -19032,25 +19032,25 @@ header.header.height-geo-8.fixed + * {
   .side-collapse:checked + .side:not(cover).left ~ .body-content {
     margin-left: 50px;
   }
-  .side-collapse:checked + .side:not(cover).left ~ .body-content header.header.fixed {
+  .side-collapse:checked + .side:not(cover).left ~ .body-content .header.fixed {
     left: 50px;
   }
   .side-collapse:checked + .side:not(cover).right ~ .body-content {
     margin-right: 50px;
   }
-  .side-collapse:checked + .side:not(cover).right ~ .body-content header.header.fixed {
+  .side-collapse:checked + .side:not(cover).right ~ .body-content .header.fixed {
     right: 50px;
   }
   .side-collapse:checked + .side:not(cover).top ~ .body-content {
     margin-top: 37.5px;
   }
-  .side-collapse:checked + .side:not(cover).top ~ .body-content header.header.fixed {
+  .side-collapse:checked + .side:not(cover).top ~ .body-content .header.fixed {
     top: 37.5px;
   }
   .side-collapse:checked + .side:not(cover).bottom ~ .body-content {
     margin-bottom: 37.5px;
   }
-  .side-collapse:checked + .side:not(cover).bottom ~ .body-content header.header.fixed {
+  .side-collapse:checked + .side:not(cover).bottom ~ .body-content .header.fixed {
     bottom: 37.5px;
   }
   .side-collapse:checked + .side.left,
@@ -19217,16 +19217,16 @@ header.header.height-geo-8.fixed + * {
   .side-collapse:checked + .side.right:not(.cover).left ~ .body-content {
     margin-left: 90%;
   }
-  .side-collapse:checked + .side.left:not(.cover).left ~ .body-content header.header.fixed,
-  .side-collapse:checked + .side.right:not(.cover).left ~ .body-content header.header.fixed {
+  .side-collapse:checked + .side.left:not(.cover).left ~ .body-content .header.fixed,
+  .side-collapse:checked + .side.right:not(.cover).left ~ .body-content .header.fixed {
     left: 90%;
   }
   .side-collapse:checked + .side.left:not(.cover).right ~ .body-content,
   .side-collapse:checked + .side.right:not(.cover).right ~ .body-content {
     margin-right: 90%;
   }
-  .side-collapse:checked + .side.left:not(.cover).right ~ .body-content header.header.fixed,
-  .side-collapse:checked + .side.right:not(.cover).right ~ .body-content header.header.fixed {
+  .side-collapse:checked + .side.left:not(.cover).right ~ .body-content .header.fixed,
+  .side-collapse:checked + .side.right:not(.cover).right ~ .body-content .header.fixed {
     right: 90%;
   }
   .side-collapse:checked + .side.left.cover ~ .body-content,
@@ -19260,25 +19260,25 @@ header.header.height-geo-8.fixed + * {
 .side-expand:not(:checked) + .side:not(cover).left ~ .body-content {
   margin-left: 50px;
 }
-.side-expand:not(:checked) + .side:not(cover).left ~ .body-content header.header.fixed {
+.side-expand:not(:checked) + .side:not(cover).left ~ .body-content .header.fixed {
   left: 50px;
 }
 .side-expand:not(:checked) + .side:not(cover).right ~ .body-content {
   margin-right: 50px;
 }
-.side-expand:not(:checked) + .side:not(cover).right ~ .body-content header.header.fixed {
+.side-expand:not(:checked) + .side:not(cover).right ~ .body-content .header.fixed {
   right: 50px;
 }
 .side-expand:not(:checked) + .side:not(cover).top ~ .body-content {
   margin-top: 37.5px;
 }
-.side-expand:not(:checked) + .side:not(cover).top ~ .body-content header.header.fixed {
+.side-expand:not(:checked) + .side:not(cover).top ~ .body-content .header.fixed {
   top: 37.5px;
 }
 .side-expand:not(:checked) + .side:not(cover).bottom ~ .body-content {
   margin-bottom: 37.5px;
 }
-.side-expand:not(:checked) + .side:not(cover).bottom ~ .body-content header.header.fixed {
+.side-expand:not(:checked) + .side:not(cover).bottom ~ .body-content .header.fixed {
   bottom: 37.5px;
 }
 .side-expand:not(:checked) + .side.left,
@@ -19407,10 +19407,10 @@ header.header.height-geo-8.fixed + * {
     opacity: 0;
     overflow-y: hidden;
   }
-  .side-expand:not(:checked) + .side:not(.cover).left ~ .body-content header.header.fixed,
-  .side-expand:not(:checked) + .side .cover.left ~ .body-content header.header.fixed,
-  .side-expand:not(:checked) + .side:not(.cover).right ~ .body-content header.header.fixed,
-  .side-expand:not(:checked) + .side .cover.right ~ .body-content header.header.fixed {
+  .side-expand:not(:checked) + .side:not(.cover).left ~ .body-content .header.fixed,
+  .side-expand:not(:checked) + .side .cover.left ~ .body-content .header.fixed,
+  .side-expand:not(:checked) + .side:not(.cover).right ~ .body-content .header.fixed,
+  .side-expand:not(:checked) + .side .cover.right ~ .body-content .header.fixed {
     left: 0;
     right: 0;
   }
@@ -19477,7 +19477,7 @@ header.header.height-geo-8.fixed + * {
     height: 100%;
   }
 }
-@media (min-width: 568px) {
+@media (min-width: 569px) {
   .side-expand:checked + .side .expanded-hide {
     display: none;
   }
@@ -19530,16 +19530,16 @@ header.header.height-geo-8.fixed + * {
   .side-expand:checked + .side.right:not(.cover).left ~ .body-content {
     margin-left: 90%;
   }
-  .side-expand:checked + .side.left:not(.cover).left ~ .body-content header.header.fixed,
-  .side-expand:checked + .side.right:not(.cover).left ~ .body-content header.header.fixed {
+  .side-expand:checked + .side.left:not(.cover).left ~ .body-content .header.fixed,
+  .side-expand:checked + .side.right:not(.cover).left ~ .body-content .header.fixed {
     left: 90%;
   }
   .side-expand:checked + .side.left:not(.cover).right ~ .body-content,
   .side-expand:checked + .side.right:not(.cover).right ~ .body-content {
     margin-right: 90%;
   }
-  .side-expand:checked + .side.left:not(.cover).right ~ .body-content header.header.fixed,
-  .side-expand:checked + .side.right:not(.cover).right ~ .body-content header.header.fixed {
+  .side-expand:checked + .side.left:not(.cover).right ~ .body-content .header.fixed,
+  .side-expand:checked + .side.right:not(.cover).right ~ .body-content .header.fixed {
     right: 90%;
   }
   .side-expand:checked + .side.left.cover ~ .body-content,
@@ -19576,10 +19576,10 @@ header.header.height-geo-8.fixed + * {
   opacity: 0;
   overflow-y: hidden;
 }
-.side-hide:checked + .side:not(.cover).left ~ .body-content header.header.fixed,
-.side-hide:checked + .side .cover.left ~ .body-content header.header.fixed,
-.side-hide:checked + .side:not(.cover).right ~ .body-content header.header.fixed,
-.side-hide:checked + .side .cover.right ~ .body-content header.header.fixed {
+.side-hide:checked + .side:not(.cover).left ~ .body-content .header.fixed,
+.side-hide:checked + .side .cover.left ~ .body-content .header.fixed,
+.side-hide:checked + .side:not(.cover).right ~ .body-content .header.fixed,
+.side-hide:checked + .side .cover.right ~ .body-content .header.fixed {
   left: 0;
   right: 0;
 }
@@ -19656,16 +19656,16 @@ header.header.height-geo-8.fixed + * {
   .side-hide:checked + .side.right:not(.cover).left ~ .body-content {
     margin-left: 90%;
   }
-  .side-hide:checked + .side.left:not(.cover).left ~ .body-content header.header.fixed,
-  .side-hide:checked + .side.right:not(.cover).left ~ .body-content header.header.fixed {
+  .side-hide:checked + .side.left:not(.cover).left ~ .body-content .header.fixed,
+  .side-hide:checked + .side.right:not(.cover).left ~ .body-content .header.fixed {
     left: 90%;
   }
   .side-hide:checked + .side.left:not(.cover).right ~ .body-content,
   .side-hide:checked + .side.right:not(.cover).right ~ .body-content {
     margin-right: 90%;
   }
-  .side-hide:checked + .side.left:not(.cover).right ~ .body-content header.header.fixed,
-  .side-hide:checked + .side.right:not(.cover).right ~ .body-content header.header.fixed {
+  .side-hide:checked + .side.left:not(.cover).right ~ .body-content .header.fixed,
+  .side-hide:checked + .side.right:not(.cover).right ~ .body-content .header.fixed {
     right: 90%;
   }
   .side-hide:checked + .side.left.cover ~ .body-content,
@@ -19689,10 +19689,10 @@ header.header.height-geo-8.fixed + * {
     opacity: 0;
     overflow-y: hidden;
   }
-  .side-hide:not(:checked) + .side:not(.cover).left ~ .body-content header.header.fixed,
-  .side-hide:not(:checked) + .side .cover.left ~ .body-content header.header.fixed,
-  .side-hide:not(:checked) + .side:not(.cover).right ~ .body-content header.header.fixed,
-  .side-hide:not(:checked) + .side .cover.right ~ .body-content header.header.fixed {
+  .side-hide:not(:checked) + .side:not(.cover).left ~ .body-content .header.fixed,
+  .side-hide:not(:checked) + .side .cover.left ~ .body-content .header.fixed,
+  .side-hide:not(:checked) + .side:not(.cover).right ~ .body-content .header.fixed,
+  .side-hide:not(:checked) + .side .cover.right ~ .body-content .header.fixed {
     left: 0;
     right: 0;
   }
@@ -19760,10 +19760,10 @@ header.header.height-geo-8.fixed + * {
   opacity: 0;
   overflow-y: hidden;
 }
-.side-hide-expand:not(:checked) + .side:not(.cover).left ~ .body-content header.header.fixed,
-.side-hide-expand:not(:checked) + .side .cover.left ~ .body-content header.header.fixed,
-.side-hide-expand:not(:checked) + .side:not(.cover).right ~ .body-content header.header.fixed,
-.side-hide-expand:not(:checked) + .side .cover.right ~ .body-content header.header.fixed {
+.side-hide-expand:not(:checked) + .side:not(.cover).left ~ .body-content .header.fixed,
+.side-hide-expand:not(:checked) + .side .cover.left ~ .body-content .header.fixed,
+.side-hide-expand:not(:checked) + .side:not(.cover).right ~ .body-content .header.fixed,
+.side-hide-expand:not(:checked) + .side .cover.right ~ .body-content .header.fixed {
   left: 0;
   right: 0;
 }
@@ -19831,10 +19831,10 @@ header.header.height-geo-8.fixed + * {
     opacity: 0;
     overflow-y: hidden;
   }
-  .side-hide-expand:checked + .side:not(.cover).left ~ .body-content header.header.fixed,
-  .side-hide-expand:checked + .side .cover.left ~ .body-content header.header.fixed,
-  .side-hide-expand:checked + .side:not(.cover).right ~ .body-content header.header.fixed,
-  .side-hide-expand:checked + .side .cover.right ~ .body-content header.header.fixed {
+  .side-hide-expand:checked + .side:not(.cover).left ~ .body-content .header.fixed,
+  .side-hide-expand:checked + .side .cover.left ~ .body-content .header.fixed,
+  .side-hide-expand:checked + .side:not(.cover).right ~ .body-content .header.fixed,
+  .side-hide-expand:checked + .side .cover.right ~ .body-content .header.fixed {
     left: 0;
     right: 0;
   }
@@ -19912,16 +19912,16 @@ header.header.height-geo-8.fixed + * {
   .side-hide-expand:checked + .side.right:not(.cover).left ~ .body-content {
     margin-left: 90%;
   }
-  .side-hide-expand:checked + .side.left:not(.cover).left ~ .body-content header.header.fixed,
-  .side-hide-expand:checked + .side.right:not(.cover).left ~ .body-content header.header.fixed {
+  .side-hide-expand:checked + .side.left:not(.cover).left ~ .body-content .header.fixed,
+  .side-hide-expand:checked + .side.right:not(.cover).left ~ .body-content .header.fixed {
     left: 90%;
   }
   .side-hide-expand:checked + .side.left:not(.cover).right ~ .body-content,
   .side-hide-expand:checked + .side.right:not(.cover).right ~ .body-content {
     margin-right: 90%;
   }
-  .side-hide-expand:checked + .side.left:not(.cover).right ~ .body-content header.header.fixed,
-  .side-hide-expand:checked + .side.right:not(.cover).right ~ .body-content header.header.fixed {
+  .side-hide-expand:checked + .side.left:not(.cover).right ~ .body-content .header.fixed,
+  .side-hide-expand:checked + .side.right:not(.cover).right ~ .body-content .header.fixed {
     right: 90%;
   }
   .side-hide-expand:checked + .side.left.cover ~ .body-content,
@@ -20109,7 +20109,7 @@ header.header.height-geo-8.fixed + * {
 .side-open i {
   color: #fff;
 }
-header.header {
+.header {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -20119,16 +20119,16 @@ header.header {
   z-index: 10000;
   position: relative;
 }
-header.header.fixed {
+.header.fixed {
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
 }
-header.header.fixed + * {
+.header.fixed + * {
   margin-top: 65px;
 }
-header.header .header-content {
+.header .header-content {
   background: #281e2b;
   color: #ffffff;
   display: -webkit-box;
@@ -20150,21 +20150,21 @@ header.header .header-content {
   flex: 1 1 auto;
   padding: 0 20px;
 }
-header.header .header-content nav .anchor {
+.header .header-content nav .anchor {
   vertical-align: middle;
 }
-header.header .header-content nav .anchor:not(.button) {
+.header .header-content nav .anchor:not(.button) {
   color: inherit;
 }
-header.header .header-content nav.items {
+.header .header-content nav.items {
   margin-top: 0;
   display: block;
 }
-header.header .header-content nav.items > * {
+.header .header-content nav.items > * {
   margin-top: 0;
 }
 @media (max-width: 768px) {
-  header.header .menu-mobile {
+  .header .menu-mobile {
     display: none;
     position: fixed;
     top: 65px;
@@ -20174,10 +20174,10 @@ header.header .header-content nav.items > * {
     overflow-y: auto;
     overflow-x: hidden;
   }
-  header.header input.toggle {
+  .header input.toggle {
     display: none;
   }
-  header.header input:checked + .menu-mobile {
+  .header input:checked + .menu-mobile {
     display: block;
   }
 }
@@ -20307,25 +20307,25 @@ header.header .header-content nav.items > * {
 .popup.tabs .popup-header {
   padding: 0;
 }
-ul.menu .item {
+.menu .item {
   color: #000;
   padding: 0;
   background-color: #f2eef3;
 }
-ul.menu .item:hover {
+.menu .item:hover {
   color: #000;
   background-color: #dbd0de;
 }
-ul.menu .item .anchor:not(.button) {
+.menu .item .anchor:not(.button) {
   color: inherit;
   padding: 7px 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   text-decoration: none;
 }
-ul.menu .item .anchor:not(.button):hover {
+.menu .item .anchor:not(.button):hover {
   text-decoration: none;
 }
-ul.menu menu-inside .item .anchor {
+.menu menu-inside .item .anchor {
   padding: 5px 10px 5px 10px;
 }
 @media (max-width: 768px) {
@@ -20351,18 +20351,18 @@ ul.menu menu-inside .item .anchor {
     padding: 5px 10px 5px 10px;
   }
 }
-.side ul.menu .item {
+.side .menu .item {
   color: #fff;
   background-color: transparent;
 }
-.side ul.menu .item.active .anchor {
+.side .menu .item.active .anchor {
   background-color: rgba(46, 143, 239, 0.5);
 }
-.side ul.menu .item .anchor {
+.side .menu .item .anchor {
   color: inherit;
   border-bottom: 0 none;
 }
-.side ul.menu .item .anchor:hover {
+.side .menu .item .anchor:hover {
   background-color: #1a141c;
 }
 fieldset {
@@ -20396,3 +20396,4 @@ fieldset .legend:after {
   margin-left: 10px;
   border-bottom: 1px solid;
 }
+/*# sourceMappingURL=formir.css.map */
