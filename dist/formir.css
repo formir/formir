@@ -2176,7 +2176,7 @@ form.has-warning.select-arrow select + span:after,
   z-index: 10000;
   max-height: 50vh;
   overflow-y: auto;
-  position: relative;
+  position: absolute;
   width: 100%;
   -ms-flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
@@ -2240,7 +2240,7 @@ form.has-warning.select-arrow select + span:after,
   z-index: 10000;
   max-height: 50vh;
   overflow-y: auto;
-  position: relative;
+  position: absolute;
   width: 100%;
   -ms-flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
