@@ -69,6 +69,7 @@
 @popup-arrow-offset: 20px;
 @popup-offset: 0px;
 @popup-distance: 0px;
+
 //// Popup inner
 @popup-content-padding: 15px 20px;
 @popup-footer-padding: @popup-content-padding;
@@ -85,7 +86,8 @@
 // Side
 @side-full-width: 90%;
 @side-animate-time: 1s;
-@side-hoverable-offset: 5px;
+@side-hoverable-offset-width: 5px;
+@side-hoverable-offset-height: 5px;
 @side-backdrop-color: rgba(0, 0, 0, 1);
 @side-backdrop-opacity: 0.5;
 @side-width-default: 200px;
@@ -286,6 +288,9 @@
 @list-margin: 0 0 0 1.5rem;
 @list-item-space: 0.2rem;
 
+// Colors
+
+@color-body: #000;
 @color-primary: #443349;
 @color-alternative: #209ead;
 @color-link: #7e4bbc;
@@ -297,9 +302,10 @@
 @color-danger: #cf4040;
 @color-white: #fff;
 @color-color-1: #000;
-@color-color-2: #000;
-@color-color-3: #000;
+@color-color-2: #fff;
+@color-color-3: #222;
 
+@color-body-contrast: #ffffff;
 @color-primary-contrast: #ffffff;
 @color-alternative-contrast: #ffffff;
 @color-link-contrast: #ffffff;
@@ -311,11 +317,12 @@
 @color-danger-contrast: #ffffff;
 @color-white-contrast: #111111;
 @color-color-1-contrast: #fff;
-@color-color-2-contrast: #fff;
-@color-color-3-contrast: #fff;
+@color-color-2-contrast: #000;
+@color-color-3-contrast: #eee;
 
 @color-hover-lighten: 20%;
 
+@color-hover-body: lighten(@color-body, @color-hover-lighten);
 @color-hover-primary: lighten(@color-primary, @color-hover-lighten);
 @color-hover-alternative: lighten(@color-alternative, @color-hover-lighten);
 @color-hover-link: lighten(@color-link, @color-hover-lighten);
@@ -329,11 +336,14 @@
 @color-hover-color-2: lighten(@color-color-2, @color-hover-lighten);
 @color-hover-color-3: lighten(@color-color-3, @color-hover-lighten);
 
+// Colors modifier
 @background-lighten: 50%;
 @background-dark: 30%;
 @text-darken: 10%;
 @border-darken: 0%;
 
+// Backgrounds
+@background-color-body: lighten(@color-body, @background-lighten);
 @background-color-primary: lighten(@color-primary, @background-lighten);
 @background-color-alternative: lighten(@color-alternative, @background-lighten);
 @background-color-link: lighten(@color-link, @background-lighten);
@@ -346,8 +356,8 @@
 @background-color-color-1: lighten(@color-color-1, @background-lighten);
 @background-color-color-2: lighten(@color-color-2, @background-lighten);
 @background-color-color-3: lighten(@color-color-3, @background-lighten);
-@background-color-white: @color-white;
 
+@background-dark-color-body: darken(@color-body, @background-dark);
 @background-dark-color-primary: darken(@color-primary, @background-dark);
 @background-dark-color-alternative: darken(@color-alternative, @background-dark);
 @background-dark-color-link: darken(@color-link, @background-dark);
@@ -361,6 +371,7 @@
 @background-dark-color-color-2: darken(@color-color-2, @background-dark);
 @background-dark-color-color-3: darken(@color-color-3, @background-dark);
 
+@background-color-hover-body: lighten(@background-color-body, @color-hover-lighten);
 @background-color-hover-primary: lighten(@background-color-primary, @color-hover-lighten);
 @background-color-hover-alternative: lighten(@background-color-alternative, @color-hover-lighten);
 @background-color-hover-link: lighten(@background-color-link, @color-hover-lighten);
@@ -370,8 +381,13 @@
 @background-color-hover-info: lighten(@background-color-info, @color-hover-lighten);
 @background-color-hover-warning: lighten(@background-color-warning, @color-hover-lighten);
 @background-color-hover-danger: lighten(@background-color-danger, @color-hover-lighten);
-@background-color-hover-white: @color-white;
+@background-color-hover-color-1: lighten(@background-color-color-1, @color-hover-lighten);
+@background-color-hover-color-2: lighten(@background-color-color-2, @color-hover-lighten);
+@background-color-hover-color-3: lighten(@background-color-color-3, @color-hover-lighten);
 
+
+// Text colors
+@text-color-body: darken(@color-body, @text-darken);
 @text-color-primary: darken(@color-primary, @text-darken);
 @text-color-alternative: darken(@color-alternative, @text-darken);
 @text-color-link: darken(@color-link, @text-darken);
@@ -381,7 +397,12 @@
 @text-color-info: darken(@color-info, @text-darken);
 @text-color-warning: darken(@color-warning, @text-darken);
 @text-color-danger: darken(@color-danger, @text-darken);
+@text-color-color-1: darken(@color-color-1, @text-darken);
+@text-color-color-2: darken(@color-color-2, @text-darken);
+@text-color-color-3: darken(@color-color-3, @text-darken);
 
+// Borders colors
+@border-color-body: darken(@color-body, @border-darken);
 @border-color-primary: darken(@color-primary, @border-darken);
 @border-color-alternative: darken(@color-alternative, @border-darken);
 @border-color-link: darken(@color-link, @border-darken);
@@ -391,14 +412,15 @@
 @border-color-info: darken(@color-info, @border-darken);
 @border-color-warning: darken(@color-warning, @border-darken);
 @border-color-danger: darken(@color-danger, @border-darken);
-
+@border-color-color-1: darken(@color-color-1, @border-darken);
+@border-color-color-2: darken(@color-color-2, @border-darken);
+@border-color-color-3: darken(@color-color-3, @border-darken);
 
 // Links
 @link-color: @color-link;
 @link-hover-color: @color-hover-link;
 @link-decoration: none;
 @link-hover-decoration: underline;
-
 
 // Buttons
 @button-border-style: solid;
@@ -506,8 +528,9 @@
 @button-inverse-focus-outline: @button-inverse-outline;
 @button-inverse-focus-shadow: @button-inverse-shadow;
 
-
+// Buttons colors
 // Use variables name as: button-color-<color-name>... or button-color-...-<color-name>.. on @colors array
+@button-color-body: lighten(@color-body, @button-lighten);
 @button-color-primary: lighten(@color-primary, @button-lighten);
 @button-color-alternative: lighten(@color-alternative, @button-lighten);
 @button-color-link: lighten(@color-link, @button-lighten);
@@ -521,6 +544,7 @@
 @button-color-color-2: lighten(@color-color-2, @button-lighten);
 @button-color-color-3: lighten(@color-color-3, @button-lighten);
 
+@button-color-2-body: lighten(@color-body, @button-lighten-2);
 @button-color-2-primary: lighten(@color-primary, @button-lighten-2);
 @button-color-2-alternative: lighten(@color-alternative, @button-lighten-2);
 @button-color-2-link: lighten(@color-link, @button-lighten-2);
@@ -534,6 +558,7 @@
 @button-color-2-color-2: lighten(@color-color-2, @button-lighten-2);
 @button-color-2-color-3: lighten(@color-color-3, @button-lighten-2);
 
+@button-color-hover-body: lighten(@button-color-body, @button-hover-lighten);
 @button-color-hover-primary: lighten(@button-color-primary, @button-hover-lighten);
 @button-color-hover-alternative: lighten(@button-color-alternative, @button-hover-lighten);
 @button-color-hover-link: lighten(@button-color-link, @button-hover-lighten);
@@ -547,7 +572,7 @@
 @button-color-hover-color-2: lighten(@button-color-color-2, @button-hover-lighten);
 @button-color-hover-color-3: lighten(@button-color-color-3, @button-hover-lighten);
 
-
+@button-color-2-hover-body: lighten(@button-color-body, @button-hover-lighten-2);
 @button-color-2-hover-primary: lighten(@button-color-primary, @button-hover-lighten-2);
 @button-color-2-hover-alternative: lighten(@button-color-alternative, @button-hover-lighten-2);
 @button-color-2-hover-link: lighten(@button-color-link, @button-hover-lighten-2);
@@ -561,6 +586,7 @@
 @button-color-2-hover-color-2: lighten(@button-color-2-color-2, @button-hover-lighten-2);
 @button-color-2-hover-color-3: lighten(@button-color-color-3, @button-hover-lighten-2);
 
+@button-color-focus-body: lighten(@button-color-body, @button-focus-lighten);
 @button-color-focus-primary: lighten(@button-color-primary, @button-focus-lighten);
 @button-color-focus-alternative: lighten(@button-color-alternative, @button-focus-lighten);
 @button-color-focus-link: lighten(@button-color-link, @button-focus-lighten);
@@ -574,6 +600,7 @@
 @button-color-focus-color-2: lighten(@button-color-color-2, @button-focus-lighten);
 @button-color-focus-color-3: lighten(@button-color-color-3, @button-focus-lighten);
 
+@button-color-2-focus-body: lighten(@button-color-body, @button-focus-lighten-2);
 @button-color-2-focus-primary: lighten(@button-color-primary, @button-focus-lighten-2);
 @button-color-2-focus-alternative: lighten(@button-color-alternative, @button-focus-lighten-2);
 @button-color-2-focus-link: lighten(@button-color-link, @button-focus-lighten-2);
@@ -587,6 +614,7 @@
 @button-color-2-focus-color-2: lighten(@button-color-color-2, @button-focus-lighten-2);
 @button-color-2-focus-color-3: lighten(@button-color-color-3, @button-focus-lighten-2);
 
+@button-color-active-body: lighten(@button-color-body, @button-active-lighten);
 @button-color-active-primary: lighten(@button-color-primary, @button-active-lighten);
 @button-color-active-alternative: lighten(@button-color-alternative, @button-active-lighten);
 @button-color-active-link: lighten(@button-color-link, @button-active-lighten);
@@ -600,6 +628,7 @@
 @button-color-active-color-2: lighten(@button-color-color-2, @button-active-lighten);
 @button-color-active-color-3: lighten(@button-color-color-3, @button-active-lighten);
 
+@button-color-2-active-body: lighten(@button-color-body, @button-active-lighten-2);
 @button-color-2-active-primary: lighten(@button-color-primary, @button-active-lighten-2);
 @button-color-2-active-alternative: lighten(@button-color-alternative, @button-active-lighten-2);
 @button-color-2-active-link: lighten(@button-color-link, @button-active-lighten-2);

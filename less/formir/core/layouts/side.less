@@ -58,7 +58,7 @@
   }
   &:not([class*="height-"]) {
     &.@{side-top}, &.@{side-bottom} {
-      width: @side-height-default;
+      height: @side-height-default;
     }
   }
   &.@{side-cover} {
@@ -236,12 +236,12 @@
     display: block;
     &:not(:hover) {
       &.@{side-left}, &.@{side-right} {
-        width: @side-hoverable-offset;
+        width: @side-hoverable-offset-width;
         opacity: 0;
         overflow-x: hidden;
       }
       &.@{side-top}, &.@{side-bottom} {
-        height: @side-hoverable-offset;
+        height: @side-hoverable-offset-height;
         opacity: 0;
         overflow-y: hidden;
       }
@@ -295,7 +295,7 @@
   }
   &:not([class*="height-"]) {
     &.@{side-top}, &.@{side-bottom} {
-      width: @side-height-default;
+      height: @side-height-default;
     }
   }
   &[class*="height-"] {
