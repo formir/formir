@@ -111,17 +111,18 @@
   ul.@{items}.@{menu-mobile} {
     display: block;
     margin: 0;
-    li, @{menu-item-anchor}, .@{has-popup}.@{popup-hoverable}:hover > .@{popup}, .@{has-popup} > input:checked + .@{popup} {
+    li, @{menu-item-anchor} {
       display: block;
       width: auto;
+    }
+    .@{has-popup}.@{popup-hoverable}:hover > .@{popup}, .@{has-popup} > input:checked ~ .@{popup} {
+      display: block;
+      width: 100%;
     }
     @{menu-item-anchor} {
       overflow-x: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-    }
-    .@{popup} {
-      position: static;
     }
   }
 }

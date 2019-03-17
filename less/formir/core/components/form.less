@@ -149,37 +149,6 @@ select, textarea {
     }
   }
 }
-.@{select} {
-  &.@{input} {
-    .for(@input-sizes); .-each(@name) {
-      &-@{name} {
-        min-height: calc( ~"@{input-@{name}-line-height}" ~"+" ~"@{input-@{name}-padding-vertical} * 2" ~" +" ~"@{input-@{name}-border-width} * 2" );
-        .@{select-content} {
-          border-radius: ~"@{input-@{name}-border-radius}";
-          border-width: ~"@{input-@{name}-border-width}";
-          outline-width: ~"@{input-@{name}-outline}";
-          box-shadow: ~"@{input-@{name}-shadow}";
-          > label {
-            font-size: ~"@{input-@{name}-font-size}";
-            line-height: ~"@{input-@{name}-line-height}";
-            padding: ~"@{input-@{name}-padding-vertical}" ~"@{input-@{name}-padding-horizontal}";
-          }
-          .@{select-placeholder} {
-            font-size: ~"@{input-@{name}-font-size}";
-            line-height: ~"@{input-@{name}-line-height}";
-          }
-        }
-        > input:not(:checked) {
-          + .@{select-content} {
-            .@{select-placeholder} {
-              margin: ~"@{input-@{name}-padding-vertical}" ~"@{input-@{name}-padding-horizontal}";
-            }
-          }
-        }
-      }
-    }
-  }
-}
 select:not([multiple]) {
   &.@{input} {
     .for(@input-sizes); .-each(@name) {
@@ -726,7 +695,7 @@ select:not([multiple]) {
         .box-sizing(border-box);
       }
     }
-    select, textarea, .@{select}, .@{input}, output, datalist {
+    select, textarea, .@{select}, .@{input}, output, datalist, .@{button}.@{button-block} {
       width: 100%;
       max-width: 100%;
       min-width: 100%;

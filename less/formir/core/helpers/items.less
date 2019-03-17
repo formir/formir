@@ -1,18 +1,19 @@
 .@{items} {
-  margin-top: -15px;
-  margin-left: -15px;
+  margin-top: @items-gutter * -1;
+  margin-left: @items-gutter * -1;
   .display-flex;
   .justify-content(flex-start);
+  .flex-wrap(wrap);
   > * {
-    margin-top: 15px;
-    margin-left: 15px;
+    margin-top: @items-gutter;
+    margin-left: @items-gutter;
   }
   &.@{items-end} {
-    margin-right: -15px;
+    margin-right: @items-gutter * -1;
     margin-left: 0;
     .justify-content(flex-end);
     > * {
-      margin-right: 15px;
+      margin-right: @items-gutter;
       margin-left: 0;
     }
   }

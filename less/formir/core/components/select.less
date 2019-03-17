@@ -66,9 +66,6 @@
       }
     }
   }
-  .placeholder {
-    margin: @input-default-padding-vertical @input-default-padding-horizontal;
-  }
 }
 
 .select-close-count() {
@@ -117,7 +114,6 @@
     + .@{select-content} {
       label {
         &:after {
-          z-index: (@select-zindex + 1);
           position: relative;
         }
       }
@@ -159,6 +155,7 @@
     }
   }
   .@{select-placeholder} {
+    margin: @input-default-padding-vertical @input-default-padding-horizontal;
     .order(-1);
     &:after {
       content: attr(data-placeholder);
@@ -243,6 +240,41 @@
           + label {
             &:after {
               display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.@{select} {
+  &.@{input} {
+    .for(@input-sizes); .-each(@name) {
+      &-@{name} {
+        min-height: calc( ~"@{input-@{name}-line-height}" ~"+" ~"@{input-@{name}-padding-vertical} * 2" ~" +" ~"@{input-@{name}-border-width} * 2" );
+        .@{select-content} {
+          border-radius: ~"@{input-@{name}-border-radius}";
+          border-width: ~"@{input-@{name}-border-width}";
+          outline-width: ~"@{input-@{name}-outline}";
+          box-shadow: ~"@{input-@{name}-shadow}";
+          > label {
+            font-size: ~"@{input-@{name}-font-size}";
+            line-height: ~"@{input-@{name}-line-height}";
+            padding: ~"@{input-@{name}-padding-vertical}" ~"@{input-@{name}-padding-horizontal}";
+          }
+          .@{select-placeholder} {
+            font-size: ~"@{input-@{name}-font-size}";
+            line-height: ~"@{input-@{name}-line-height}";
+            margin: ~"@{input-@{name}-padding-vertical}" ~"@{input-@{name}-padding-horizontal}";
+          }
+        }
+        > input:not(:checked), &.@{select-hoverable}:not(:hover), &:not(.@{select-hoverable}):not(.@{select-active}):not([tabindex]):not(:focus), &[tabindex]:not(:focus) {
+          + .@{select-content} {
+            > input[type="checkbox"] {
+              + label {
+                margin: calc( ~"@{input-@{name}-padding-vertical}" ~"-" ~"@{input-@{name}-border-width}" ) 0 calc( ~"@{input-@{name}-padding-vertical}" ~"-" ~"@{input-@{name}-border-width}" ) calc( ~"@{input-@{name}-padding-horizontal}" ~"-" ~"@{input-@{name}-border-width}");
+              }
             }
           }
         }
