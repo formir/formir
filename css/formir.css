@@ -1779,7 +1779,9 @@ form.has-warning.select-arrow select + span:after,
 .grid-form [class*=" cell"] output,
 .grid-form [class^="cell"] output,
 .grid-form [class*=" cell"] datalist,
-.grid-form [class^="cell"] datalist {
+.grid-form [class^="cell"] datalist,
+.grid-form [class*=" cell"] .button.block,
+.grid-form [class^="cell"] .button.block {
   width: 100%;
   max-width: 100%;
   min-width: 100%;
@@ -10947,7 +10949,7 @@ dl.horizontally.collapse dt {
     display: block !important;
   }
 }
-@media (min-width: 320px) {
+@media (min-width: 321px) {
   .mp-under-show {
     display: none !important;
   }
@@ -10964,7 +10966,7 @@ dl.horizontally.collapse dt {
     display: block !important;
   }
 }
-@media (min-width: 568px) {
+@media (min-width: 569px) {
   .m-under-show {
     display: none !important;
   }
@@ -10981,7 +10983,7 @@ dl.horizontally.collapse dt {
     display: block !important;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .tp-under-show {
     display: none !important;
   }
@@ -10998,7 +11000,7 @@ dl.horizontally.collapse dt {
     display: block !important;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .t-under-show {
     display: none !important;
   }
