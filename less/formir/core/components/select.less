@@ -20,7 +20,7 @@
     }
   }
   &:after {
-    display: none;
+    display: none !important;
   }
   input {
     &:checked {
@@ -111,7 +111,7 @@
     bottom: 0;
     opacity: 0;
     margin: 0;
-    + .@{select-content} {
+    ~ .@{select-content} {
       label {
         &:after {
           position: relative;
@@ -132,7 +132,7 @@
     }
   }
   .@{select-content} {
-    input {
+    > input {
       position: fixed;
       left: -100000px;
     }
@@ -149,7 +149,7 @@
     }
   }
   > input:not(:checked) {
-    + .@{select-content} {
+    ~ .@{select-content} {
       .select-close-content;
       .select-close-content-core;
     }
@@ -168,6 +168,7 @@
     .flex-wrap(wrap);
     .input-style;
     padding: 0;
+    
     > label {
       display: block;
       white-space: nowrap;
@@ -183,6 +184,13 @@
       display: none;
     }
   }
+  &:not(.@{select-count-selected}) {
+    .@{select-content} {
+      > input[id] {
+        display: none;
+      }
+    }
+  }
   &.@{select-count-selected} {
     counter-reset: selected;
     &.@{select-hoverable}:not(:hover), &:not(.@{select-hoverable}):not(.@{select-active}), &[tabindex]:not(:focus) {
@@ -191,7 +199,7 @@
       }
     }
     > input:not(:checked) {
-      + .@{select-content} {
+      ~ .@{select-content} {
         .select-close-count;
       }
     }
@@ -215,7 +223,7 @@
     }
   }
   &.hide-selected {
-     > input:checked  + .@{select-content} {
+     > input:checked  ~ .@{select-content} {
       input {
         &:checked {
           + label {
@@ -228,7 +236,7 @@
   > input:checked {
     position: fixed !important;
     z-index: (@select-zindex - 1);
-    + .@{select-content} {
+    ~ .@{select-content} {
       .select-open-content;
       .select-open-content-core;
     }
@@ -270,7 +278,7 @@
           }
         }
         > input:not(:checked), &.@{select-hoverable}:not(:hover), &:not(.@{select-hoverable}):not(.@{select-active}):not([tabindex]):not(:focus), &[tabindex]:not(:focus) {
-          + .@{select-content} {
+          ~ .@{select-content} {
             > input[type="checkbox"] {
               + label {
                 margin: calc( ~"@{input-@{name}-padding-vertical}" ~"-" ~"@{input-@{name}-border-width}" ) 0 calc( ~"@{input-@{name}-padding-vertical}" ~"-" ~"@{input-@{name}-border-width}" ) calc( ~"@{input-@{name}-padding-horizontal}" ~"-" ~"@{input-@{name}-border-width}");

@@ -1,10 +1,10 @@
-<img src="http://formir.foreground.pl/img/logo/formir-64.png" width=30 height=30 valign=middle/> formir
+<img src="http://formir.io/img/logo/formir-64.png" width=30 height=30 valign=middle/> formir
 ======
 
-[Formir](http://formir.foreground.pl) is Open Source Pure CSS / HTML Framework that not require any JS code to fully work.
+[Formir](http://formir.io) is Open Source Pure CSS / HTML Framework that not require any JS code to fully work.
 All of logic are based on CSS and `<input/>` tag elements, thats are required.
 
-I invite you to support and develop the project. Become a Contributor - [write at konrad@kubrak.eu](mailto:konrad@kubrak.eu) or just commit.
+I invite you to support and develop the project. Become a Contributor - [write at support@formir.io](mailto:support@formir.io) or just commit.
 
 ## Install formir
 ```console
@@ -14,7 +14,7 @@ $ npm install formir
 [![npm version](https://img.shields.io/npm/v/formir.svg)](https://www.npmjs.com/package/formir)
 
 ## Documentation
-See at [documentation](http://formir.foreground.pl/docs.html).
+See at [documentation](http://formir.io/docs/index.html).
 
 ## Componetns & helpers
 ### Components
@@ -45,6 +45,7 @@ See at [documentation](http://formir.foreground.pl/docs.html).
 - Header
 - Side
 - Window
+- Table
 ### Typography
 - Article
 - Color

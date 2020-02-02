@@ -1,0 +1,441 @@
+table, .@{table} {
+  width: 100%;
+}
+
+.@{table-header-sticky} {
+  thead, .@{thead} {
+    th, .@{th} {
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+table, .@{table}, .@{inline-table} {
+  border-spacing: 0;
+  background: @table-background;
+  &.@{table-borders-horizontal} {
+    border-bottom: @table-border;
+    .@{td}, td, .@{th}, th {
+      border-top: @table-border;
+    }
+  }
+
+  &.@{table-borders-vertical} {
+    border-right: @table-border;
+    .@{td}, td, .@{th}, th {
+      border-left: @table-border;
+    }
+  }
+
+  &.@{table-borders} {
+    border-right: @table-border;
+    border-bottom: @table-border;
+    .@{td}, td, .@{th}, th {
+      border-left: @table-border;
+      border-top: @table-border;
+    }
+  }
+  &.@{table-borders-outside} {
+    border: @table-border;
+  }
+
+  @media (min-width: @table-mobile-max-width + 1px) {
+    &.@{table-hoverable-td} {
+      tbody, .@{tbody} {
+        td, .@{td} {
+          &:not(.un-hover) {
+            &:hover, &.hover {
+              background-color: @table-td-bgcolor-hover !important;
+              color: @table-td-color-hover !important;
+              .@{on-hover} {
+                visibility: visible;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.@{table-hoverable-tr} {
+      tbody, .@{tbody} {
+        tr, .@{tr} {
+          &:not(.un-hover) {
+            &:hover, &.hover {
+              td, .@{td} {
+                .td-hover;
+                .@{on-hover} {
+                  visibility: visible;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    &.@{table-hoverable-col} {
+      overflow: hidden;
+      col, .@{col}, td, .@{td}, th, .@{th} {
+        position: relative;
+        span {
+          position: relative;
+          z-index: 3;
+        }
+        &:hover, &.hover {
+          &:after {
+            background-color: @table-col-bgcolor-hover;
+            content: '\00a0'; 
+            height: 300vh;  
+            left: 0;
+            position: absolute;  
+            top: -100vh;
+            width: 100%;
+            z-index: 1;
+            pointer-events: none;
+          }
+        }
+      }
+    }
+  }
+
+  &.@{table-zebra-odd} {
+    .@{tbody}, tbody {
+      .@{tr}, tr {
+        &:nth-child(odd) {
+          td, .@{td} {
+            background-color: @table-zebra-bgcolor;
+          }
+        }
+      }
+    }
+  }
+
+  &.@{table-zebra-even} {
+    .@{tbody}, tbody {
+      .@{tr}, tr {
+        &:nth-child(even) {
+          td, .@{td} {
+            background-color: @table-zebra-bgcolor;
+          }
+        }
+      }
+    }
+  }
+
+  .@{table-on-hover} {
+    visibility: hidden;
+  }
+  tfoot, .@{tfoot}, tbody, .@{tbody} {
+    font-size: @table-font-size;
+    color: @table-color;
+  }
+  tbody, .@{tbody} {
+    a.@{tr}, a.@{td} {
+      color: inherit;
+    }
+    td:not(.@{actions}) a:not(.@{button}) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    td, .@{td} {
+      a {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+td, .@{td} {
+  .td-style;
+  &.@{disabled} {
+    .td-disabled;
+  }
+}
+th, .@{th} {
+  .th-style;
+}
+tr, .@{tr} {
+  &.@{disabled} {
+    .@{td}, td {
+      .td-disabled;
+    }
+  }
+}
+.@{table-scroll} {
+  overflow-y: auto;
+  width: 100%;
+}
+.@{table} {
+  display: table;
+}
+.@{inline-table} {
+  display: inline-table;
+}
+.@{table}, .@{inline-table} {
+  .@{tbody} {
+    display: table-row-group;
+  }
+  .@{tfoot} {
+    display: table-footer-group;
+  }
+  .@{thead} {
+    display: table-header-group;
+  }
+  .@{tr} {
+    display: table-row;
+  }
+  .@{td}, .@{th} {
+    display: table-cell;
+  }
+  .@{colgroup} {
+    display: table-column-group;
+  }
+  .@{col} {
+    display: table-column;
+  }
+}
+
+
+@media (max-width: @table-mobile-max-width) {
+  .@{table-mobile} {
+    display: block !important;
+    width: 100%;
+    overflow-x: hidden;
+    &.@{table-borders-vertical} {
+      td, .@{td}, th, .@{th} {
+        &[data-th]:before {
+          border-left: @table-border;
+          border-right: @table-mobile-td-border;
+        }
+      }
+    }
+    &.@{table-borders}, &.@{table-borders-horizontal} {
+      tr, .@{tr} {
+        border-top: @table-border;
+      }
+      th, td, .@{th}, .@{td} {
+        &:not(:first-child) {
+          border-top: @table-mobile-td-border;
+        }
+      }
+    }
+
+    tbody, .@{tbody}, tfoot, .@{tfoot}, tr, .@{tr} {
+      display: block;
+      width: 100%;
+    }
+    .@{thead}, thead {
+      display: none;
+    }
+    tr, .@{tr} {
+      .@{td}, td {
+        display: table;
+        table-layout: fixed;
+        padding: 0 !important;
+        border: 0 none;
+        width: 100%;
+        &[data-th] {
+          &:before {
+            content: attr(data-th);
+            width: @table-mobile-th-width;
+            max-width: @table-mobile-th-width;
+            display: table-cell;
+            .box-sizing(border-box);
+            text-align: left;
+            vertical-align: middle;
+            padding: @table-mobile-th-padding;
+            .th-style;
+          }
+        }
+        .@{on-hover} {
+          visibility: visible;
+        }
+        > span {
+          padding: @table-mobile-td-padding;
+          display: table-cell;
+          width: @table-mobile-td-width;
+          .box-sizing(border-box);
+          text-align: left;
+          vertical-align: middle;
+          ~ span {
+            width: auto !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.@{tr}, .@{tbody}, .@{tfoot}, .@{thead}, tr, tbody, tfoot, thead {
+  &.@{expandable} {
+    display: none;
+  }
+}
+
+.@{expandable} {
+  &.@{active} {
+    tr&, &.@{tr} {
+      display: table-row;
+    }
+    thead&, &.@{thead} {
+      display: table-header-group;
+    }
+    tfoot&, &.@{tfoot} {
+      display: table-footer-group;
+    }
+    tbody&, &.@{tbody} {
+      display: table-row-group;
+    }
+  }
+}
+
+.@{expandable-toggler} {
+  display: none !important;
+  &:checked {
+    + .@{expandable-trigger} {
+      .@{toggle-show} {
+        display: inline-block;
+      }
+      .@{toggle-hide} {
+        display: none;
+      }
+    }
+  }
+}
+
+.@{expandable-trigger} {
+  .@{toggle-show} {
+    display: none;
+  }
+  .@{toggle-hide} {
+    display: inline-block;
+  }
+}
+
+.@{expandable-toggler} {
+  &:checked {
+    + tr, + .@{tr} {
+      &.@{expandable} {
+        display: table-row;
+      }
+      &.@{expandable-trigger} {
+        &, + .@{expandable-toggler} {
+          + tr, + .@{tr} {
+            display: table-row;
+          }
+        }
+      }
+    }
+    + thead, + .@{thead} {
+      &.@{expandable} {
+        display: table-header-group;
+      }
+      &.@{expandable-trigger} {
+        &, + .@{expandable-toggler} {
+          + thead, + .@{thead} {
+            display: table-header-group;
+          }
+        }
+      }
+    }
+    + tfoot, + .@{tfoot} {
+      &.@{expandable} {
+        display: table-footer-group;
+      }
+      &.@{expandable-trigger} {
+        &, + .@{expandable-toggler} {
+          + tfoot, + .@{tfoot} {
+            display: table-footer-group;
+          }
+        }
+      }
+    }
+    + tbody, + .@{tbody} {
+      &.@{expandable} {
+        display: table-row-group;
+      }
+      &.@{expandable-trigger} {
+        &, + .@{expandable-toggler} {
+          + tbody, + .@{tbody} {
+            display: table-row-group;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: @table-mobile-max-width) {
+  .@{table-mobile} {
+    .@{expandable} {
+      &.@{active} {
+        tr&, &.@{tr} {
+          display: block;
+        }
+        thead&, &.@{thead} {
+          display: block;
+        }
+        tfoot&, &.@{tfoot} {
+          display: block;
+        }
+        tbody&, &.@{tbody} {
+          display: block;
+        }
+      }
+    }
+    .@{expandable-toggler} {
+      &:checked {
+        + tr, + .@{tr} {
+          &.@{expandable} {
+            display: block;
+          }
+          &.@{expandable-trigger} {
+            &, + .@{expandable-toggler} {
+              + tr, + .@{tr} {
+                display: block;
+              }
+            }
+          }
+        }
+        + thead, + .@{thead} {
+          &.@{expandable} {
+            display: block;
+          }
+          &.@{expandable-trigger} {
+            &, + .@{expandable-toggler} {
+              + thead, + .@{thead} {
+                display: block;
+              }
+            }
+          }
+        }
+        + tfoot, + .@{tfoot} {
+          &.@{expandable} {
+            display: block;
+          }
+          &.@{expandable-trigger} {
+            &, + .@{expandable-toggler} {
+              + tfoot, + .@{tfoot} {
+                display: block;
+              }
+            }
+          }
+        }
+        + tbody, + .@{tbody} {
+          &.@{expandable} {
+            display: block;
+          }
+          &.@{expandable-trigger} {
+            &, + .@{expandable-toggler} {
+              + tbody, + .@{tbody} {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,10 +1,10 @@
 .chart-value(@n, @i: 0) when (@i =< @n) {
-  &.value-@{i}, &[data-value="@{i}"], &[value="@{i}"] {
-    &.value {
+  &.@{chart-value}-@{i}, &[data-value="@{i}"], &[value="@{i}"] {
+    &.@{chart-value} {
       &:before {
         content: "@{i}%";
       }
-      &.value-colored:before {
+      &.@{chart-value-colored}:before {
         color: mix(@chart-color, @chart-background, unit(@i, %));
       }
     } 
@@ -23,11 +23,11 @@
 
 .chart-control-value(@n, @i: 0) when (@i =< @n) {
   &[value="@{i}"] ~ .chart {
-    &.value {
+    &.@{chart-value} {
       &:before {
         content: "@{i}%";
       }
-      &.value-colored:before {
+      &.@{chart-value-colored}:before {
         color: mix(@chart-color, @chart-background, unit(@i, %));
       }
     }
@@ -50,7 +50,7 @@
   background: inherit;
   vertical-align: middle;
   .chart-value(100);
-  &.ring {
+  &.@{chart-ring} {
     &:after {
       content: "";
       background: inherit;
@@ -63,7 +63,7 @@
       border-radius: 50%;
     }
   }
-  &.value {
+  &.@{chart-value} {
     &:before {
       position: absolute;
       left: 0;
@@ -94,6 +94,6 @@
   }
 }
 
-input.chart-control {
+input.@{chart-control} {
   .chart-control-value(100);
 }

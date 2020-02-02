@@ -1,15 +1,15 @@
-.@{background-colors} {
+.@{background-color} {
   .for(@colors); .-each(@name) {
     &-@{name} {
-      &.@{background-colors-hoverable}:hover {
-        background-color: ~"@{background-color-hover-@{name}}";
+      &.@{background-color-hoverable}:hover {
+        background-color: ~"@{background-color-hover-@{name}}" !important;
       }
-      background-color: ~"@{background-color-@{name}}";
+      background-color: ~"@{background-color-@{name}}" !important;
     }
   }
 }
 
-.@{text-colors} {
+.@{text-color} {
   .for(@colors); .-each(@name) {
     &-@{name} {
       color: ~"@{text-color-@{name}}" !important; 
@@ -17,7 +17,7 @@
   }
 }
 
-.@{border-colors} {
+.@{border-color} {
   .for(@colors); .-each(@name) {
     &-@{name} {
       border-color: ~"@{border-color-@{name}}" !important; 

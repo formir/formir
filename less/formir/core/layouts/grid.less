@@ -311,11 +311,15 @@
 .@{cell}-fill {
   .flex(1 1 auto);
   width: auto;
+  min-width: 0;
+  min-height: 0;
 }
 
 .@{cell}-auto {
   .flex(0 0 auto);
   width: auto;
+  min-width: 0;
+  min-height: 0;
 }
 
 @media (min-width: @desktop-min-width) {
@@ -616,6 +620,7 @@
 [class^="@{cell}-"], [class*=" @{cell}-"], .@{cell} {
   .box-sizing(border-box);
   min-width: 0;
+  min-height: 0;
   &.@{vertical-center} {
     .align-self(center);
   }
@@ -623,7 +628,7 @@
     .display-flex;
     .align-items(center);
   }
-  &.@{vertical-items-streach} {
+  &.@{vertical-items-stretch} {
     .display-flex;
     .align-items(stretch);
   }
@@ -639,9 +644,9 @@
     .display-flex;
     .justify-content(center);
   }
-  &.@{items-streach} {
+  &.@{items-stretch} {
     .display-flex;
-    .justify-content(streach);
+    .justify-content(stretch);
   }
   &.@{items-end} {
     .display-flex;
@@ -657,6 +662,8 @@
   .flex(1 1 100%);
   .display-flex;
   .flex-wrap(inherit);
+  min-width: 0;
+  min-height: 0;
   &:not([class*="@{grid}"]) {
     .flex-direction(inherit);
   }

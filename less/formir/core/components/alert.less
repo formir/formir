@@ -1,0 +1,41 @@
+.@{alerts} {
+  .alerts-style;
+  .@{alert} {
+    .alerts-alert-style;
+  }
+}
+
+input.@{alert-trigger} {
+  display: none;
+  &:checked + .@{alert} {
+    display: none;
+  }
+  + .@{alert} {
+    .alert-close;
+  }
+}
+
+.@{alert} {
+  padding: @alert-padding;
+  position: relative;
+  display: block;
+  .alert-style();
+  &.@{alert-light} {
+    border: @alert-light-border;
+  }
+  .for(@alert-states); .-each(@name) {
+    &.@{name} {
+      background-color: ~"@{alert-color-@{name}}";
+      color: ~"@{alert-color-contrast-@{name}}";
+      &.@{alert-light} {
+        color: ~"@{alert-color-@{name}}";
+        background-color: ~"@{alert-color-contrast-@{name}}";
+        border-color: currentColor;
+      }
+    }
+  }
+}
+
+input + .@{alert} {
+  display: block;
+}

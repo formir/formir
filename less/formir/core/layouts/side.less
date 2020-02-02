@@ -182,6 +182,11 @@
   ~ .@{body-content} {
     > * {
       width: 100vw !important;
+      max-width: none;
+    }
+    > .@{content-holder} {
+      margin-left: @content-min-margin;
+      margin-right: @content-min-margin;
     }
   }
   + .@{side-backdrop} {
@@ -494,11 +499,13 @@
       &.@{side-left} {
         ~ .@{body-content} {
           margin-left: @side-width-default;
+          .header-position(@side-width-default);
         }
       }
       &.@{side-right} {
         ~ .@{body-content} {
           margin-right: @side-width-default;
+          .header-position(false, @side-width-default);
         }
       }
     }

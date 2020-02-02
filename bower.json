@@ -1,11 +1,11 @@
 {
   "name": "formir",
   "main": "less/formir.less",
-  "description" : "Pure CSS / HTML framework",
-  "homepage"    : "http://konrad-k.github.io/formir/",
+  "description" : "Pure CSS / HTML Framework",
+  "homepage"    : "formir.io",
   "author": {
     "name" : "Konrad Kubrak",
-    "email"  : "konrad@kubrak.eu"
+    "email"  : "support@formir.io"
 	},
   "ignore": [
     "examples"

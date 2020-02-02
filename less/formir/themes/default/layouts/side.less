@@ -1,8 +1,11 @@
 .side-collapsed() {
   @{menu-item} {
-    i + span {
-      display: none;
-    }
+    i {
+      margin-right: 0;
+      + span {
+        display: none;
+      }
+    } 
   }
   overflow-y: hidden;
 }
@@ -32,12 +35,13 @@
 
 .side-open-left-style() {
   bottom: 0;
-  right: 0;
-  margin: 0 1.4rem 0.7rem 0;
+  left: 0;
+  margin: 0 0 1rem 1rem;
 }
 .side-open-right-style() {
   top: 0;
   right: 0;
+  margin: 0 1rem 1rem 0;
 }
 .side-open-top-style() {
   top: 0;
@@ -55,8 +59,10 @@
   }
   .@{side-close} {
     position: absolute;
-    top: 1rem;
+    top: 1.5rem;
     left: 1rem;
+    font-size: 1.4rem;
+    cursor: pointer;
   }
 
   @{side} {
@@ -64,8 +70,9 @@
     color: #fff;
     @{menu-item} {
       i {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         margin-right: 0.5em;
+        margin-left: 0.1em;
       }
     }
   }

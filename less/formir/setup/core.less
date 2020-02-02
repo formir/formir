@@ -3,13 +3,13 @@
 @font-dir: "fonts";
 @image-dir: "img";
 
-  //// Icons path
-  @font-icon-url-eot: url("@{font-dir}/icons.eot");
-  @font-icon-url-embedded: url("@{font-dir}/icons.eot");
-  @font-icon-url-woff2: url("@{font-dir}/icons.woff2");
-  @font-icon-url-woff: url("@{font-dir}/icons.woff");
-  @font-icon-url-ttf: url("@{font-dir}/icons.ttf");
-  @font-icon-url-svg: url("@{font-dir}/icons.svg");
+//// Icons path
+@font-icon-url-eot: url("@{font-dir}/icons.eot");
+@font-icon-url-embedded: url("@{font-dir}/icons.eot");
+@font-icon-url-woff2: url("@{font-dir}/icons.woff2");
+@font-icon-url-woff: url("@{font-dir}/icons.woff");
+@font-icon-url-ttf: url("@{font-dir}/icons.ttf");
+@font-icon-url-svg: url("@{font-dir}/icons.svg");
 
 // Base Unit
 @base-unit: rem;
@@ -17,22 +17,7 @@
 @base-geometric-step: 3;
 @colors: body, primary, alternative, link, mute, cancel, success, info, warning, danger, color-1, color-2, color-3;
 
-// Forms
-
-@form-states: has-success, has-info, has-error, has-warning;
-@form-state-invalid: has-error;
-@form-state-valid: has-success;
-
-@form-state-change-label: false;
-@form-state-change-text-color: true;
-@form-state-change-border: true;
-@form-state-change-background: true;
-@form-state-change-hint: true;
-@form-state-change-tooltip: true;
-@form-tooltip-position: right;  // left / center / right
-@form-tooltip-input-show-on: focus;  // focus / not_focus / hover
-
-
+// Sizes
 @sizes: xs, s, m, l, xl, xxl; // can be set for ex. xs, s, m, l etc.. change name of variables for buttons input etc.
 @size-xs: 0.6;
 @size-s: 0.85;
@@ -41,8 +26,6 @@
 @size-xl: 1.75;
 @size-xxl: 2;
 @input-sizes: s, m, l;
-
-
 
 // Layout Unit
 @layout-unit: px;
@@ -53,17 +36,24 @@
 @layout-height: @content-max-height;
 
 // Rensponsive Web Design
+
+// Break points
 @desktop-min-width: 1280px;
 @tablet-max-width: 1024px;
 @tablet-portrait-max-width: 768px;
 @mobile-max-width: 568px;
 @mobile-portrait-max-width: 320px;
 
+// Break point on mobile menu
 @mobile-menu-max-width: @tablet-portrait-max-width;
 
+
+// Side break points
 @device-width-side-collapse: @tablet-portrait-max-width; // in that device width sidebar will be automatic collapsed, set 0 to off
 @device-width-side-hide: @mobile-max-width; // in that device width sidebar (side-hide) will automatic hide, set 0 to off
 @device-width-side-show-full: @device-width-side-hide;
+
+@table-mobile-max-width: @tablet-portrait-max-width;
 
 // Z-index
   //// Modals
@@ -88,6 +78,25 @@
 @content-max-width: unit(1128, @layout-unit);
 @content-min-margin: unit(20, @layout-unit);
 @content-max-height: unit(600, @layout-unit);
+
+
+// Forms
+@form-states: has-success, has-info, has-error, has-warning;
+@form-state-invalid: has-error;
+@form-state-valid: has-success;
+
+@form-state-change-label: false;
+@form-state-change-text-color: true;
+@form-state-change-border: true;
+@form-state-change-background: true;
+@form-state-change-hint: true;
+@form-state-change-tooltip: true;
+@form-tooltip-position: right;  // left / center / right
+@form-tooltip-input-show-on: focus;  // focus / not_focus / hover
+
+
+// Alert
+@alert-states: success, info, error, warning;
 
 // Grid
 @grid-steps: 16;
@@ -115,7 +124,6 @@
 @typography-font-size-3: unit(1.7, @typography-unit);
 @typography-line-height-3: unit(1.35, em);
 
-
 @typography-font-size-4: unit(1.3, @typography-unit);
 @typography-line-height-4: unit(1.35, em);
 
@@ -135,7 +143,10 @@
 // Items
 @items-gutter: 15px;
 
-//// Includes variables do not change this - just commnet include on formir.less file ////
+// Tabs
+@tabs-pages: 10;
+
+//// Includes - DO NOT CHANGE BELOW ////
 @include-core-layout-header: null;
 @include-core-layout-side: null;
 

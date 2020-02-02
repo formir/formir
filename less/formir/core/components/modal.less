@@ -51,7 +51,7 @@ body.@{modal-opened} {
   left: 0;
   right: 0;
   z-index: @modal-zindex;
-  overflow-y: auto;
+  overflow-y: scroll;
   display: none;
   &.@{active} {
     .modal-show;
@@ -76,6 +76,9 @@ body.@{modal-opened} {
         vertical-align: middle;
         font-size: 1rem;
         letter-spacing: normal;
+        &.@{window} {
+          .display-inline-flex;
+        }
       }
     }
   }
@@ -106,6 +109,19 @@ body.@{modal-opened} {
   margin: @modal-margin auto;
   z-index: @modal-zindex + 2;
   border: @modal-border;
+  &.@{modal-window-s} {
+    width: @modal-s-width;
+  }
+  &.@{modal-window-l} {
+    width: @modal-l-width;
+  }
+  &.@{modal-window-xl} {
+    width: @modal-xl-width;
+  }
+  &.@{modal-window-fullscreen} {
+    width: @modal-fullscreen-width;
+    min-height: calc(100% ~'-' @modal-margin * 2);
+  }
 }
 
 .@{modal-backdrop} {

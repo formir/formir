@@ -12,18 +12,28 @@
 }
 
 .header-position(@left: false; @right: false; @top: false; @bottom: false) {
-  @{header} {
+  @{header}, &@{header} {
     &.@{header-fixed} {
       & when not(@left = false) {
+        margin-left: 0;
         left: @left;
+        .@{menu-mobile} {
+          left: @left;
+        }
       }
       & when not(@right = false) {
+        margin-right: 0;
         right: @right;
+        .@{menu-mobile} {
+          right: @right;
+        }
       }
       & when not(@top = false) {
+        margin-top: 0;
         top: @top;
       }
       & when not(@bottom = false) {
+        margin-bottom: 0;
         bottom: @bottom;
       }
     }
@@ -41,7 +51,7 @@
     right: 0;
     top: 0;
     + * {
-      margin-top: @header-height;
+      border-top: @header-height solid transparent;
     }
   }
   .@{header-content} {

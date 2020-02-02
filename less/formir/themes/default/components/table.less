@@ -1,0 +1,48 @@
+.td-style() {
+  padding: @table-td-padding;
+  text-align: left;
+  vertical-align: middle;
+  word-wrap: break-word;
+  &.@{table-number} {
+    text-align: right;
+    padding-right: 2rem;
+    white-space: nowrap !important;
+  }
+  &.@{table-bold} {
+    font-weight: bold;
+  }
+  &.@{actions} {
+    text-align: right;
+    vertical-align: middle;
+    white-space: nowrap;
+    > a, > label {
+      display: inline-block;
+      cursor: pointer;
+      i {
+        vertical-align: middle;
+      }
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.th-style() {
+  color: @color-mute;
+  text-transform: uppercase;
+  padding: @table-th-padding;
+  font-size: @table-th-font-size;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.td-disabled() {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.td-hover() {
+  background-color: @table-tr-bgcolor-hover;
+  color: @table-tr-color-hover;
+}

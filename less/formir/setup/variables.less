@@ -1,8 +1,27 @@
 // Body
+@html-font-size: 13px;
+
 @body-font-family: "Roboto";
-@body-font-size: 14px;
+@body-font-size: 1rem;
 @body-line-height: 1.35em;
 @font-family: "Roboto", Arial;
+
+
+// Window
+@window-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+@window-content-background: #fff;
+@window-content-padding: 10px 10px;
+@window-header-background: #fff;
+@window-header-padding: 10px 10px;
+@window-header-color: @color-body;
+@window-header-font-size: 1.3rem;
+@window-header-border-bottom: 1px solid lighten(@color-mute, 60%);
+@window-border: 0 none;
+@window-border-radius: 0;
+@window-footer-background: #fff;
+@window-footer-padding: 10px 10px;
+@window-footer-color: @color-body;
+@window-footer-border-top: 1px solid lighten(@color-mute, 60%);
 
 // Modals
 @modal-width: 650px;
@@ -15,6 +34,11 @@
 @modal-animate-function: 0.4s ease;
 @modal-animate-transform-x: 0;
 @modal-animate-transform-y: -100vh; // x, y
+
+@modal-s-width: 450px;
+@modal-l-width: 70%;
+@modal-xl-width: 80%;
+@modal-fullscreen-width: 100%;
 
 // Header
 @header-height: 65px;
@@ -55,7 +79,7 @@
 @popup-border-color: rgba(60, 60, 60, 1);
 @popup-border: @popup-border-width solid @popup-border-color;
 @popup-shadow: none;
-@popup-text-color: #000;
+@popup-text-color: @color-body;
 @popup-padding-horizontal: 0;
 @popup-padding-vertical: 0;
 @popup-padding: @popup-padding-vertical @popup-padding-horizontal;
@@ -63,7 +87,7 @@
 @popup-min-width: 0;
 @popup-width: max-content;
 @popup-border-radius: 0px;
-@popup-arrow-color: #000;
+@popup-arrow-color: @color-body;
 @popup-arrow-height: 0px;
 @popup-arrow-width: @popup-arrow-height;
 @popup-arrow-offset: 20px;
@@ -74,7 +98,7 @@
 @popup-content-padding: 15px 20px;
 @popup-footer-padding: @popup-content-padding;
 @popup-header-padding: @popup-footer-padding;
-@popup-header-bg: #000;
+@popup-header-bg: @color-body;
 @popup-header-text-color: #fff;
 @popup-footer-bg: transparent;
 @popup-footer-text-color: inherit;
@@ -115,7 +139,7 @@
 @input-default-font-size: 1rem;
 @input-default-line-height: 1.35rem;
 @input-font-weight: normal;
-@input-text-color: #000;
+@input-text-color: @color-body;
 @input-default-outline: none;
 @input-default-shadow: none;
 
@@ -162,13 +186,13 @@
 @label-line-height: 1.35rem;
 @label-font-weight: normal;
 @label-text-transform: none;
-@label-text-color: #000;
+@label-text-color: @color-body;
 
 @hint-font-size: 1rem;
 @hint-line-height: 1.35rem;
 @hint-font-weight: normal;
 @hint-text-transform: none;
-@hint-text-color: #000;
+@hint-text-color: @color-body;
 
 @input-icon-text-color: @input-text-color;
 @input-icon-font-size: 1em;
@@ -230,13 +254,13 @@
 
 @menu-item-background-color: lighten(@color-primary, 70);
 @menu-item-background-color-hover: lighten(@color-primary, 60);
-@menu-item-color: #000;
-@menu-item-color-hover: #000;
+@menu-item-color: @color-body;
+@menu-item-color-hover: @color-body;
 @menu-item-color-active: @color-primary;
 @menu-item-padding: 0;
 @menu-item-anchor-decoration: none;
 @menu-item-anchor-decoration-hover: none;
-@menu-item-anchor-padding: 7px 10px;
+@menu-item-anchor-padding: 8px 10px;
 @menu-item-anchor-border: 1px solid rgba(0, 0, 0, 0.1);
 @menu-inside-item-anchor-padding: 5px 10px 5px 10px;
 
@@ -285,15 +309,19 @@
 @h6-margin: @h-margin * @size-xs 0;
 
 @article-p-margin: @p-margin;
+
+// ul, ol
 @list-margin: 0 0 0 1.5rem;
+@list-padding: 0;
+@list-item-margin: 0;
+@list-item-padding: 0;
 @list-item-space: 0.2rem;
 
 // Colors
-
-@color-body: #000;
+@color-body: #2a2a2a;
 @color-primary: #443349;
-@color-alternative: #209ead;
-@color-link: #7e4bbc;
+@color-alternative: #6253f9;
+@color-link: #5386f9;
 @color-mute: #575757;
 @color-cancel: #aaaaaa;
 @color-success: #84b500;
@@ -337,8 +365,8 @@
 @color-hover-color-3: lighten(@color-color-3, @color-hover-lighten);
 
 // Colors modifier
-@background-lighten: 50%;
-@background-dark: 30%;
+@background-lighten: 30%;
+@background-dark: 20%;
 @text-darken: 10%;
 @border-darken: 0%;
 
@@ -641,3 +669,52 @@
 @button-color-2-active-color-1: lighten(@button-color-color-1, @button-active-lighten-2);
 @button-color-2-active-color-2: lighten(@button-color-color-2, @button-active-lighten-2);
 @button-color-2-active-color-3: lighten(@button-color-color-3, @button-active-lighten-2);
+
+// Table
+@table-font-size: 1rem;
+@table-td-padding: 1rem 0.5rem;
+@table-th-padding: 0.7rem 0.5rem;
+@table-th-font-size: 1rem;
+@table-color: @color-body;
+@table-tr-bgcolor-hover: lighten(@color-hover-primary, 30%);
+@table-tr-color-hover: #fff;
+@table-td-bgcolor-hover: @color-hover-primary;
+@table-td-color-hover: #fff;
+@table-col-bgcolor-hover: fade(@color-hover-alternative, 40%);
+@table-border: 1px solid lighten(@color-mute, 60%);
+@table-background: #fff;
+@table-zebra-bgcolor: lighten(@color-mute, 60%);
+
+@table-mobile-th-width: 30%;
+@table-mobile-td-width: 70%;
+@table-mobile-td-padding: 0.2rem 0.5rem 0.2rem 1.5rem;
+@table-mobile-th-padding: 0.2rem 1.5rem 0.2rem 0.5rem;
+@table-mobile-td-border: 1px solid lighten(@color-mute, 50%);
+
+// Section
+
+@section-radius: 4px;
+@section-header-padding: 1.5rem 1rem; //with .with-padding class
+@section-footer-padding: 1.5rem 1rem;  //with .with-padding class
+@section-content-padding: 1.5rem 1rem; //with .with-padding class
+
+@section-table-padding-left: 1rem;
+@section-table-padding-right: 1rem;
+@section-shadow: 0 0 4px rgba(21, 16, 60, 0.22);
+@section-border: 1px solid lighten(@color-mute, 60%);
+@section-background: #fff;
+@section-margin: @h-margin * @size-l 0;
+
+// Alert
+
+@alert-color-success: @color-success;
+@alert-color-contrast-success: @color-success-contrast;
+@alert-color-warning: @color-warning;
+@alert-color-contrast-warning: #fff;
+@alert-color-error: @color-danger;
+@alert-color-contrast-error: @color-danger-contrast;
+@alert-color-info: @color-info;
+@alert-color-contrast-info: @color-info-contrast;
+
+@alert-padding: 1.5rem 4.5rem 1.5rem 2rem; //for animation
+@alert-light-border: 1px solid currentColor;

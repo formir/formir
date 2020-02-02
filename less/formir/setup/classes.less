@@ -1,3 +1,6 @@
+// Formir variables:
+
+// Buttons
 @button: button;
 @buttons: buttons;
 @button-focus: focus;
@@ -18,8 +21,8 @@
 @button-reverse: reverse;
 @button-gradient: gradient;
 
-
-// Helper visible
+// Helpers
+//// Visible
 @display-none: display-none;
 @hide: hide;
 @display-block: display-block;
@@ -48,15 +51,36 @@
 
 @right: right;
 @left: left;
-
-@addon-left: left-addon;
-@icon-left: left-icon;
-
-@select-arrow: select-arrow;
-
 @size: size;
 
-// Helper align
+//// Dimentions
+
+@width: width;
+@height: height;
+
+@width-geo: width-geo;
+@height-geo: height-geo;
+
+@margin: margin;
+@margin-top: margin-top;
+@margin-bottom: margin-bottom;
+@margin-left: margin-left;
+@margin-right: margin-right;
+@margin-horizontal: margin-horizontal;
+@margin-vertical: margin-vertical;
+
+@padding: padding;
+@padding-top: padding-top;
+@padding-bottom: padding-bottom;
+@padding-left: padding-left;
+@padding-right: padding-right;
+@padding-horizontal: padding-horizontal;
+@padding-vertical: padding-vertical;
+
+@active: active;
+@disabled: disabled;
+
+//// Align
 @text-center: text-center;
 @text-right: text-right;
 @text-left: text-left;
@@ -65,7 +89,7 @@
 @float-right: float-right;
 @float-left: float-left;
 
-// Helper toggle
+//// Toggle
 @toggle: toggle;
 @toggle-label: toggle-label;
 @toggle-show: toggle-show;
@@ -82,7 +106,16 @@
 @mobile-toggle-hide: mobile-toggle-hide;
 @mobile-toggle-show: mobile-toggle-show;
 
-// Grid:
+// Rensposive dimention
+@m: m;
+@mp: mp;
+@t: t;
+@tp: tp;
+@d: d;
+
+@under: under;
+
+// Grid system
 @grid: grid;
 @cell: cell;
 
@@ -117,61 +150,33 @@
 @vertical-end: vertical-end;
 
 @vertical-items-center: vertical-items-center;
-@vertical-items-streach: vertical-items-streach;
+@vertical-items-stretch: vertical-items-stretch;
 @vertical-items-start: vertical-items-start;
 @vertical-items-end: vertical-items-end;
 
-@items-center: items-center;
-@items-streach:items-streach;
-@items-start: items-start;
-@items-end: items-end;
 
 @offset: offset; //set offset on left from cell
 @offset-left: offset-left; //set offset on left from cell
 @offset-right: offset-right; //set offset on right from cell
 
-// Items
-
+//// Items
 @items: items;
 
-
-// Rensposive dimention
-@m: m;
-@mp: mp;
-@t: t;
-@tp: tp;
-@d: d;
-
-@under: under;
+@items-center: items-center;
+@items-stretch: items-stretch;
+@items-start: items-start;
+@items-end: items-end;
 
 
-
-
-@width: width;
-@height: height;
-
-@width-geo: width-geo;
-@height-geo: height-geo;
-
-@margin: margin;
-@margin-top: margin-top;
-@margin-bottom: margin-bottom;
-@margin-left: margin-left;
-@margin-right: margin-right;
-@margin-horizontal: margin-horizontal;
-@margin-vertical: margin-vertical;
-
-@padding: padding;
-@padding-top: padding-top;
-@padding-bottom: padding-bottom;
-@padding-left: padding-left;
-@padding-right: padding-right;
-@padding-horizontal: padding-horizontal;
-@padding-vertical: padding-vertical;
-
-@active: active;
-
+// Chart
 @chart: chart;
+@chart-value: value;
+@chart-ring: ring;
+@chart-control: chart-control;
+@chart-value-colored: value-colored;
+
+// Dropdown
+
 @dropdown: dropdown;
 @dropdown-content: dropdown-content;
 @dropdown-focusable: focusable;
@@ -181,7 +186,7 @@
 
 // Forms:
 @form: form;
-@label: label.label;
+@label: .label;
 @control: control;
 @control-group: control-group; // in grid use cell classes
 @hint: hint;
@@ -203,10 +208,67 @@
 @input-valid: valid;
 @input-invalid: invalid;
 
+///// Addon
+@addon-position: after;
+@addon-left: left-addon;
+@icon-left: left-icon;
+
+///// Select
+@select: select;
+@select-content: select-content;
+@select-hide-selected: hide-selected;
+@select-hoverable: hoverable;
+@select-placeholder: placeholder;
+@select-active: active;
+@select-disabled: disabled;
+@select-readonly: readonly;
+@select-count-selected: count-selected;
+
+@select-arrow: select-arrow;
+
+// Table
 @table: table;
+@inline-table: inline-table;
+@table-scroll: table-scroll;
+@table-mobile: table-mobile;
+@table-header-sticky: header-sticky;
+@table-borders-horizontal: borders-horizontal;
+@table-borders-vertical: borders-vertical;
+@table-borders: borders;
+@table-borders-outside: borders-outside;
+@table-hoverable-td: hoverable-td;
+@table-hoverable-tr: hoverable-tr;
+@table-hoverable-col: hoverable-col;
+@table-zebra-odd: zebra-odd;
+@table-zebra-even: zebra-even;
+@table-on-hover: on-hover;
+@table-number: number;
+@table-bold: bold;
+@tbody: tbody;
+@thead: thead;
+@tfoot: tfoot;
+@th: th;
+@tr: tr;
+@td: td;
+@col: col;
+@colgroup: colgroup;
+@actions: actions;
+@on-hover: on-hover;
+@expandable: expandable;
+@expandable-toggler: expandable-toggler;
+@expandable-trigger: expandable-trigger;
+@toggle-show: toggle-show;
+@toggle-hide: toggle-hide;
+
 @flex: flex;
 
-// Modal:
+// Window
+@window: window;
+@window-content: window-content;
+@window-header: window-header;
+@window-footer: window-footer;
+
+// Modal
 @modal: modal;
 @modal-wrapper: modal-wrapper;
 @modal-window: modal-window;
@@ -220,17 +282,22 @@
 @modal-opened: modal-opened;
 @modal-centered: centered;
 
-// Tabs:
+@modal-window-s: modal-widnow-s;
+@modal-window-l: modal-window-l;
+@modal-window-xl: modal-window-xl;
+@modal-window-fullscreen: modal-window-fullscreen;
+
+// Tabs
 @tabs: tabs;
 @tab: tab;
 @tab-navs: tab-navs;
 @tab-pages: tab-pages;
-@tab-space: space;
-@tab-space-around: space-around;
-@tab-space-between: space-between;
-@tabs-as-table: as-table;
+@tab-navs: tab-navs;
+@tab-labels: tab-labels;
+@tab-addons: tab-addons;
 
-// Accordion:
+
+// Accordion
 @accordions: accordions;
 @accordion: accordion;
 @accordion-label: label;
@@ -243,7 +310,7 @@
 @accordion-hoverable: hoverable;
 @accordion-arrow: arrow;
 
-// Tooltip:
+// Tooltip
 @tooltip: tooltip;
 @has-tooltip: has-tooltip;
 @tooltip-bottom: bottom;
@@ -264,7 +331,7 @@
 @tooltip-absolute: absolute;
 @tooltip-fixed: fixed;
 
-// Popup:
+// Popup
 @popup: popup;
 @has-popup: has-popup;
 @popup-bottom: bottom;
@@ -289,7 +356,7 @@
 @popup-footer: popup-footer;
 @popup-content: popup-content;
 
-// Side:
+// Side
 @side: .side; // tag 'aside' or class or both
 @side-top: top;
 @side-bottom: bottom;
@@ -328,15 +395,15 @@
 @center-vertically: center-vertically;
 @horizontally: horizontally;
 
-// Layout Header:
+//// Header
 @header: .header; // tag 'header' or class or both
 @header-content: header-content;
 @header-fixed: fixed;
 
-// Layout Footer:
+//// Footer
 @footer: footer; // tag 'header' or class or both
 
-// Description list:
+// Description list
 @dd: dd; // tag 'dd' or class or both
 @dt: dt; // tag 'dt' or class or both
 @dl: dl; // tag 'dl' or class or both
@@ -347,13 +414,10 @@
 @dl-size: size;
 @dl-space: space;
 
-// Layout Window
-@window: window;
-@window-content: window-content;
-@window-header: window-header;
-
 // Menu
 @menu: .menu; // tag 'ul' or class or both
+@menu-horizontal: horizontal;
+@menu-auto-width: auto-width;
 @menu-inside: menu-inside;
 @menu-item: .item; // tag 'li' or class or both
 @menu-item-anchor: .anchor; // tag 'a' or class and tag
@@ -366,8 +430,6 @@
 @icon: icon;
 @icon-position: before; // before or after
 
-// Form
-@addon-position: after;
 
 // Typography
 //// Heading
@@ -386,50 +448,41 @@
 @h-actions: actions; // class of actions in heading
 @h-mute: small; // class or tag alternative text
 
+// Link
+@link: .link;
 
-/// Colors
-@background-colors: background;
-@background-colors-hoverable: hoverable;
+//// Colors
+@background-color: background;
+@background-color-hoverable: hoverable;
+@text-color: text;
+@border-color: boder;
 
-@text-colors: text;
-
-@border-colors: boder;
-
-/// List
+//// List
 @ul: ul;
 @ol: ol;
 @li: li;
+@list-clear: clear;
 
-// Article
+//// Article
 @article: article;
 @article-p: p;
 
 // Section
-@section: section;
+@section: section;  //without . (dot for class)
 @section-full-height: full-height;
-@section-primary: primary;
-@section-alternative: alternative;
-@section-link: link;
-@section-mute: mute;
-@section-cancel: cancel;
-@section-success: success;
-@section-info: info;
-@section-warning: warning;
-@section-danger: danger;
-@section-color-1: color-1;
-@section-color-2: color-2;
-@section-color-3: color-3;
 
-// Select
-@select: select;
-@select-content: select-content;
-@select-hide-selected: hide-selected;
-@select-hoverable: hoverable;
-@select-placeholder: placeholder;
-@select-active: active;
-@select-disabled: disabled;
-@select-readonly: readonly;
-@select-count-selected: count-selected;
+@section-header: section-header;
+@section-footer: section-footer;
+@section-content: section-content;
+@section-expandable: section-expandable;
+@with-padding: with-padding;
+@with-table: with-table;
+@with-border: with-border;
+@overflow-hidden: overflow-hidden;
 
-// Link
-@link: .link;
+
+// Alerts
+@alerts: alerts;
+@alert: alert;
+@alert-light: light;
+@alert-trigger: alert-trigger;
