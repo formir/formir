@@ -3,6 +3,10 @@
     color: @menu-item-color;
     padding: @menu-item-padding;
     background-color: @menu-item-background-color;
+    .small {
+      font-size: 0.8rem;
+      padding: @menu-item-padding/2 @menu-item-padding;
+    }
     &:hover {
       color: @menu-item-color-hover;
       background-color: @menu-item-background-color-hover;
@@ -22,28 +26,6 @@
         &:not(.@{button}) {
           border-top: @menu-item-anchor-border;
         }
-      }
-    }
-  }
-  &.@{menu-horizontal} {
-    @{menu-item} {
-      @{menu-item-anchor} {
-        &:not(.@{button}) {
-          border-top: 0 none;
-        }
-      }
-      + @{menu-item} {
-        @{menu-item-anchor} {
-          &:not(.@{button}) {
-            border-left: @menu-item-anchor-border;
-          }
-        }
-      }
-    }
-    &.@{menu-auto-width} {
-      @{menu-item} {
-        width: auto;
-        .flex(auto);
       }
     }
   }

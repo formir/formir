@@ -31,6 +31,7 @@ See at [documentation](http://formir.io/docs/index.html).
 - Select box / Multi select box
 - Tab
 - Tooltip
+- Alert
 ### Helpers
 - Align
 - Display

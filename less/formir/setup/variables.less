@@ -64,7 +64,7 @@
 @tooltip-line-height: 1.35em;
 @tooltip-padding-vertical: 0.45rem;
 @tooltip-padding-horizontal: 0.65rem;
-@tooltip-max-width: calc(100vw ~"-" @tooltip-padding-horizontal * 2 ~"-" @content-min-margin * 4); // Try not change this configuration
+@tooltip-max-width: 30rem;
 @tooltip-width: max-content;  // Try not change this configuration
 @tooltip-border-radius: 5px;
 @tooltip-arrow-height: 5px;
@@ -83,7 +83,7 @@
 @popup-padding-horizontal: 0;
 @popup-padding-vertical: 0;
 @popup-padding: @popup-padding-vertical @popup-padding-horizontal;
-@popup-max-width: calc(100vw ~"-" @popup-padding-horizontal * 2 ~"-" @content-min-margin * 4);
+@popup-max-width: 30rem;
 @popup-min-width: 0;
 @popup-width: max-content;
 @popup-border-radius: 0px;
@@ -235,10 +235,11 @@
 @input-border-has-warning: lighten(@color-warning,@input-border-lighten);
 @input-border-has-error: lighten(@color-danger, @input-border-lighten);
 
-@select-arrow-icon-down: '\e855';
-@select-arrow-icon-up: '\e856';
+@select-arrow-icon-down: "\f0d7";
+@select-arrow-icon-up: "\f0d8";
 @select-max-height: 50vh;
 
+@icon-close: "\f00d";
 
 // Description List
 @dd-gutter: 20px;
@@ -687,9 +688,9 @@
 
 @table-mobile-th-width: 30%;
 @table-mobile-td-width: 70%;
-@table-mobile-td-padding: 0.2rem 0.5rem 0.2rem 1.5rem;
-@table-mobile-th-padding: 0.2rem 1.5rem 0.2rem 0.5rem;
-@table-mobile-td-border: 1px solid lighten(@color-mute, 50%);
+@table-mobile-td-padding: 0.7rem 1rem 0.7rem 1.5rem;
+@table-mobile-th-padding: 0.7rem 1.5rem 0.7rem 1rem;
+@table-mobile-td-border: 1px solid lighten(@color-mute, 60%);
 
 // Section
 

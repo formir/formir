@@ -167,7 +167,7 @@ select:not([multiple]) {
   .for(@input-sizes); .-each(@name) {
     &-@{name} {
       &, &[class*="@{cell}"] {
-        .@{input}, input, select, textarea {
+        .@{input}, input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), select, textarea {
           font-size: ~"@{input-@{name}-font-size}";
           line-height: ~"@{input-@{name}-line-height}";
           padding: ~"@{input-@{name}-padding-vertical}" ~"@{input-@{name}-padding-horizontal}";

@@ -46,3 +46,23 @@
   background-color: @table-tr-bgcolor-hover;
   color: @table-tr-color-hover;
 }
+
+table, .@{table}, .@{inline-table} {
+  &.@{text-center} {
+    .@{td}, td, .@{th}, th {
+      text-align: center !important;
+      > span {
+        text-align: center !important;
+      }
+    }
+  }
+
+  &.@{text-right} {
+    .@{td}, td, .@{th}, th {
+      text-align: right !important;
+      > span {
+        text-align: right !important;
+      }
+    }
+  }
+}

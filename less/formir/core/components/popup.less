@@ -229,28 +229,14 @@
   }
 }
 
-.popup-active-on() {
-  display: inline-block;
-}
-
-.popup-content() {
-  padding: @popup-content-padding;
-}
-
-.popup-header() {
-  padding: @popup-header-padding;
-  background: @popup-header-bg;
-  color: @popup-header-text-color;
-}
-
-.popup-footer() {
-  padding: @popup-footer-padding;
-  background: @popup-footer-bg;
-  color: @popup-footer-text-color;
-}
-
 .@{popup} {
   .popup-core;
+  &.@{popup-with-menu} {
+    min-width: 100%;
+    .@{menu} {
+      min-width: 100%;
+    }
+  }
   .@{popup-content} {
     .popup-content();
   }

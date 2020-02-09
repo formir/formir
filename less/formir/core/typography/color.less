@@ -1,10 +1,15 @@
 .@{background-color} {
   .for(@colors); .-each(@name) {
     &-@{name} {
-      &.@{background-color-hoverable}:hover {
-        background-color: ~"@{background-color-hover-@{name}}" !important;
-      }
       background-color: ~"@{background-color-@{name}}" !important;
+    }
+  }
+}
+
+.@{background-color-hoverable} {
+  .for(@colors); .-each(@name) {
+    &-@{name}:hover {
+      background-color: ~"@{background-color-hover-@{name}}" !important;
     }
   }
 }

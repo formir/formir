@@ -38,4 +38,20 @@
   -webkit-transform: translate(@x, @y);
   transform: translate(@x, @y);
 }
+
+.ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: auto;
+  max-width: 100%;
+}
+
+.ellipsis-row(@row) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-inline-box;
+  -webkit-line-clamp: @row;
+  -webkit-box-orient: vertical;
+}
   

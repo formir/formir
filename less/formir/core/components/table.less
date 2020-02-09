@@ -202,7 +202,6 @@ tr, .@{tr} {
   .@{table-mobile} {
     display: block !important;
     width: 100%;
-    overflow-x: hidden;
     &.@{table-borders-vertical} {
       td, .@{td}, th, .@{th} {
         &[data-th]:before {
@@ -239,14 +238,14 @@ tr, .@{tr} {
         &[data-th] {
           &:before {
             content: attr(data-th);
-            width: @table-mobile-th-width;
-            max-width: @table-mobile-th-width;
             display: table-cell;
             .box-sizing(border-box);
             text-align: left;
             vertical-align: middle;
-            padding: @table-mobile-th-padding;
             .th-style;
+            width: @table-mobile-th-width;
+            max-width: @table-mobile-th-width;
+            padding: @table-mobile-th-padding;
           }
         }
         .@{on-hover} {

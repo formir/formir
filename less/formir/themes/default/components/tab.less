@@ -3,6 +3,15 @@
   border: @tab-nav-active-border;
   color: @tab-nav-active-color;
   box-shadow: @tab-nav-active-shadow;
+  &:hover {
+    background: lighten(@tab-nav-active-background, 10%);
+    border-color: lighten(@tab-nav-active-background, 10%);
+    @{menu-item-anchor}:not(.@{button}) {
+      color: inherit;
+      background-color: inherit;
+      border-color: inherit;
+    }
+  }
 }
 
 .@{tabs} {

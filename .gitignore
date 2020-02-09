@@ -1,5 +1,5 @@
 .project
 .ftpconfig
 bower_components
-*-dev.*
 examples/dev
+node_modules/

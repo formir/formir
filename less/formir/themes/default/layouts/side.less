@@ -68,6 +68,11 @@
   @{side} {
     background-color: darken(@color-primary, 10);
     color: #fff;
+    &.@{side-top}, &.@{side-bottom} {
+      .@{side-close} {
+        top: 0.85rem;
+      }
+    }
     @{menu-item} {
       i {
         font-size: 1.4rem;
