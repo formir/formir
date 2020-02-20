@@ -1,3 +1,5 @@
+@include-core-componnet-table: true;
+
 table, .@{table} {
   width: 100%;
 }
@@ -7,6 +9,8 @@ table, .@{table} {
     th, .@{th} {
       top: 0;
       left: 0;
+      position: -webkit-sticky;
+      position: sticky;
     }
   }
 }

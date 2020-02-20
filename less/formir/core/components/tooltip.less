@@ -462,6 +462,9 @@
 
 .@{tooltip} {
   .tooltip-core;
+  &.@{show} {
+    display: table !important;
+  }
   &.@{tooltip-top}, &:not(.@{tooltip-bottom}) {
     left: -@tooltip-offset;
     & when (@tooltip-arrow-height > 0) {
@@ -573,7 +576,7 @@
     &:after {
       .tooltip-core;
       content: attr(data-tooltip);
-      display: block;
+      display: table;
     }
     &.@{tooltip-top}, &:not(.@{tooltip-bottom}) {
       &:after {
@@ -787,7 +790,7 @@
 
   &:hover, &[tabindex]:focus, &.@{tooltip-hovered} {
     > .@{tooltip} {
-      display: block;
+      display: table;
     }
   }
 }
