@@ -75,7 +75,7 @@
 
 // Popups
 @popup-background: rgba(255, 255, 255, 1);
-@popup-border-width: 0;
+@popup-border-width: 1px;
 @popup-border-color: rgba(60, 60, 60, 1);
 @popup-border: @popup-border-width solid @popup-border-color;
 @popup-shadow: none;
@@ -129,6 +129,7 @@
 @chart-parent-background: inherit;
 
 // Form
+@focus-shadow: 0 0 2px 1px @color-alternative;
 @input-default-padding-vertical: 0.35rem;
 @input-default-padding-horizontal: 0.5rem;
 @input-border-style: solid;
@@ -176,11 +177,11 @@
 @input-hover-shadow: none;
 @input-hover-background-color: @input-background-color;
 
-@input-focus-border-style: @input-border-style;
-@input-focus-border-color: @input-border-color;
+@input-focus-border-style: none;
+@input-focus-border-color: none;
 @input-focus-outline: none;
-@input-focus-shadow: none;
-@input-focus-background-color: @input-background-color;
+@input-focus-shadow: @focus-shadow;
+@input-focus-background-color: none;
 
 @label-font-size: 1rem;
 @label-line-height: 1.35rem;
@@ -529,17 +530,17 @@
 @button-xxl-outline-width: none;
 @button-xxl-shadow: none;
 
-@button-hover-border: @button-default-border;
-@button-hover-outline: @button-default-outline;
-@button-hover-shadow: @button-default-shadow;
+@button-hover-border: none;
+@button-hover-outline: none;
+@button-hover-shadow: none;
 
-@button-active-border: @button-default-border;
-@button-active-outline: @button-default-outline;
-@button-active-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1) inset;
+@button-active-border: none;
+@button-active-outline: none;
+@button-active-shadow: @focus-shadow inset;
 
-@button-focus-border: @button-default-border;
-@button-focus-outline: @button-default-outline;
-@button-focus-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
+@button-focus-border: none;
+@button-focus-outline: none;
+@button-focus-shadow: @focus-shadow;
 
 @button-inverse-border: @button-default-border;
 @button-inverse-outline: @button-default-outline;

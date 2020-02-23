@@ -24,8 +24,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-[class^="@{icon}-"]:before, [class*=" @{icon}-"]:before {
-  .font-icon;
+[class^="@{icon}-"], [class*=" @{icon}-"] {
+  display: inline-block;
+  vertical-align: middle;
+  &:before {
+    .font-icon;
+  }
 }
 
 .@{icon}-asterisk:before {
