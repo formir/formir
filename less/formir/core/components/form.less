@@ -43,18 +43,11 @@
     border-color: ~"@{input-border-@{form-state-valid}}";
   }
 }
-
-.input-style() {
+.input-base-style() {
   border-color: @input-border-color;
   border-style: @input-border-style;
   border-width: @input-default-border-width;
   border-radius: @input-default-border-radius;
-  padding: @input-default-padding-vertical @input-default-padding-horizontal;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-appearance: none;
-  text-overflow: ellipsis;
   font-size: @input-default-font-size;
   line-height: @input-default-line-height;
   font-weight: @input-font-weight;
@@ -62,33 +55,61 @@
   background-color: @input-background-color;
   outline: @input-default-outline;
   box-shadow: @input-default-shadow;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.input-style() {
+  .input-base-style();
+  padding: @input-default-padding-vertical @input-default-padding-horizontal;
+  -webkit-appearance: none;
   text-overflow: ellipsis;
   &:hover, &.@{input-hover} {
-    border-color: @input-hover-border-color;
-    border-style: @input-hover-border-style;
-    outline: @input-hover-outline;
-    box-shadow: @input-hover-shadow;
-    background-color: @input-hover-background-color;
+    & when not (@input-hover-border-color = none) { 
+      border-color: @input-hover-border-color !important;
+    }
+    & when not (@input-hover-border-style = none) { 
+      border-style: @input-hover-border-style !important;
+    }
+    & when not (@input-hover-outline = none) { 
+      outline: @input-hover-outline !important;
+    }
+    & when not (@input-hover-shadow = none) { 
+      box-shadow: @input-hover-shadow !important;
+    }
+    & when not (@input-hover-background-color = none) { 
+      background-color: @input-hover-background-color !important;
+    }
   }
   &:focus, &.@{input-focus} {
-    border-color: @input-focus-border-color;
-    border-style: @input-focus-border-style;
-    outline: @input-focus-outline;
-    box-shadow: @input-focus-shadow;
-    background-color: @input-focus-background-color;
+    & when not (@input-focus-border-color = none) { 
+      border-color: @input-focus-border-color !important;
+    }
+    & when not (@input-focus-border-style = none) { 
+      border-style: @input-focus-border-style !important;
+    }
+    & when not (@input-focus-outline = none) { 
+      outline: @input-focus-outline !important;
+    }
+    & when not (@input-focus-shadow = none) { 
+      box-shadow: @input-focus-shadow !important;
+    }
+    & when not (@input-focus-background-color = none) { 
+      background-color: @input-focus-background-color !important;
+    }
   }
   &:disabled, &[disabled] {
     pointer-events: none;
     cursor: normal;
-    .input-disabled;
+    .input-disabled !important;
   }
   &.@{input-inverse} {
-    background-color: @input-border-color;
-    border-color: @input-background-color;
-    color: @input-background-color;
+    background-color: @input-border-color !important;
+    border-color: @input-background-color !important;
+    color: @input-background-color !important;
   }
   &.@{input-transparent} {
-    background-color: transparent;
+    background-color: transparent !important;
   }
 }
 
@@ -219,7 +240,7 @@ select:not([multiple]) {
         z-index: auto;
         min-height: calc(@tooltip-padding-vertical  ~"*" 2  ~"+" @tooltip-line-height);
         .@{tooltip} {
-          display: block;
+          display: table;
         }
       }
       .@{tooltip} {
@@ -242,21 +263,21 @@ select:not([multiple]) {
             & when (@form-tooltip-input-show-on = focus) {
               &:focus {
                 ~ .@{tooltip} {
-                  display: block !important;
+                  display: table !important;
                 }
               }
             }
             & when (@form-tooltip-input-show-on = hover) {
               &:hover {
                 ~ .@{tooltip} {
-                  display: block !important;
+                  display: table !important;
                 }
               }
             }
             & when (@form-tooltip-input-show-on = not_focus) {
               &:not(:focus) {
                 ~ .@{tooltip} {
-                  display: block !important;
+                  display: table !important;
                 }
               }
             }

@@ -7,7 +7,23 @@
       }
     } 
   }
-  overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: transparent; 
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &:hover {
+    scrollbar-color: fade(@color-white, 50%) transparent;
+    &::-webkit-scrollbar-thumb {
+      background: fade(@color-white, 50%); 
+    }
+  }
 }
 
 .side-expanded() {

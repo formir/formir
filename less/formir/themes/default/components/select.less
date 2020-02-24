@@ -1,4 +1,9 @@
 .select-open-content() {
+  & when not (@input-focus-border-color = none) { border-color: @input-focus-border-color !important; }
+  & when not (@input-focus-border-style = none) { border-style: @input-focus-border-style !important; }
+  & when not (@input-focus-outline = none) { outline: @input-focus-outline !important; }
+  & when not (@input-focus-shadow = none) { box-shadow: @input-focus-shadow !important; }
+  & when not (@input-focus-background-color = none) { background-color: @input-focus-background-color !important; }
 }
 
 .select-disabled-content() {
@@ -47,6 +52,9 @@
 .select-option() {
   background-color: @color-white;
   color: @color-white-contrast;
+  [class^="@{icon}-"], [class*=" @{icon}-"] {
+    margin-right: 0.3em;
+  }
 }
 
 .select-option-hovered() {

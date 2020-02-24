@@ -494,6 +494,8 @@
   z-index: @side-zindex;
   overflow: auto;
   .box-sizing(border-box);
+  -webkit-overflow-scrolling: touch;
+  outline: none;
   &.@{side-uncover-hover}.@{side-hoverable}:hover, &:not(.@{side-cover}), &.@{side-uncover-focus}.@{side-focusable}:focus {
     &:not([class*="width-"]) {
       &.@{side-left} {

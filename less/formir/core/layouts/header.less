@@ -6,6 +6,15 @@
     &.@{header-fixed} {
       + * {
         margin-top: @height;
+        & when(@include-core-component-table = true) {
+          .@{table-header-sticky} {
+            thead, .@{thead} {
+              th, .@{th} {
+                top: @height;
+              }
+            }
+          }
+        }
       }
     }
   }

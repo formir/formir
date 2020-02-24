@@ -82,20 +82,34 @@
   pointer-events: none;
 }
 
-.opacity-3 {
+.@{opacity}-0 {
+  opacity: 0;
+}
+
+.@{opacity}-3 {
   opacity: 0.3;
 }
 
-.opacity-5 {
+.@{opacity}-5 {
   opacity: 0.5;
 }
 
-.opacity-7 {
+.@{opacity}-7 {
   opacity: 0.7;
 }
 
 .@{overflow-hidden} {
   overflow: hidden;
+}
+
+.@{overflow-auto} {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.@{overflow-scroll} {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 @media print {
