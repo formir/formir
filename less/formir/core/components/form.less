@@ -65,18 +65,38 @@
   -webkit-appearance: none;
   text-overflow: ellipsis;
   &:hover, &.@{input-hover} {
-    & when not (@input-hover-border-color = none) { border-color: @input-hover-border-color !important; }
-    & when not (@input-hover-border-style = none) { border-style: @input-hover-border-style !important; }
-    & when not (@input-hover-outline = none) { outline: @input-hover-outline !important; }
-    & when not (@input-hover-shadow = none) { box-shadow: @input-hover-shadow !important; }
-    & when not (@input-hover-background-color = none) { background-color: @input-hover-background-color !important; }
+    & when not (@input-hover-border-color = none) { 
+      border-color: @input-hover-border-color !important;
+    }
+    & when not (@input-hover-border-style = none) { 
+      border-style: @input-hover-border-style !important;
+    }
+    & when not (@input-hover-outline = none) { 
+      outline: @input-hover-outline !important;
+    }
+    & when not (@input-hover-shadow = none) { 
+      box-shadow: @input-hover-shadow !important;
+    }
+    & when not (@input-hover-background-color = none) { 
+      background-color: @input-hover-background-color !important;
+    }
   }
   &:focus, &.@{input-focus} {
-    & when not (@input-focus-border-color = none) { border-color: @input-focus-border-color !important; }
-    & when not (@input-focus-border-style = none) { border-style: @input-focus-border-style !important; }
-    & when not (@input-focus-outline = none) { outline: @input-focus-outline !important; }
-    & when not (@input-focus-shadow = none) { box-shadow: @input-focus-shadow !important; }
-    & when not (@input-focus-background-color = none) { background-color: @input-focus-background-color !important; }
+    & when not (@input-focus-border-color = none) { 
+      border-color: @input-focus-border-color !important;
+    }
+    & when not (@input-focus-border-style = none) { 
+      border-style: @input-focus-border-style !important;
+    }
+    & when not (@input-focus-outline = none) { 
+      outline: @input-focus-outline !important;
+    }
+    & when not (@input-focus-shadow = none) { 
+      box-shadow: @input-focus-shadow !important;
+    }
+    & when not (@input-focus-background-color = none) { 
+      background-color: @input-focus-background-color !important;
+    }
   }
   &:disabled, &[disabled] {
     pointer-events: none;

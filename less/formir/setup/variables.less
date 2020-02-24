@@ -129,7 +129,8 @@
 @chart-parent-background: inherit;
 
 // Form
-@focus-shadow: 0 0 2px 1px @color-alternative;
+@focus-shadow: 1px 1px 0 @color-focus inset, -1px -1px 0 @color-focus inset;
+
 @input-default-padding-vertical: 0.35rem;
 @input-default-padding-horizontal: 0.5rem;
 @input-border-style: solid;
@@ -258,7 +259,7 @@
 @menu-item-background-color-hover: lighten(@color-primary, 60);
 @menu-item-color: @color-body;
 @menu-item-color-hover: @color-body;
-@menu-item-color-active: @color-primary;
+@menu-item-color-active: @color-alternative;
 @menu-item-padding: 0;
 @menu-item-anchor-decoration: none;
 @menu-item-anchor-decoration-hover: none;
@@ -350,6 +351,7 @@
 @color-color-2-contrast: #000;
 @color-color-3-contrast: #eee;
 
+@color-focus: @color-alternative;
 @color-hover-lighten: 20%;
 
 @color-hover-body: lighten(@color-body, @color-hover-lighten);

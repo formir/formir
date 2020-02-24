@@ -19,23 +19,41 @@
     background: @button-default-background;
   }
   &:hover, &.@{button-hover} {
-    & when not (@button-hover-border = none) { border: @button-hover-border; }
-    & when not (@button-hover-outline = none) { outline: @button-hover-outline; }
-    & when not (@button-hover-shadow = none) { box-shadow: @button-hover-shadow; }
+    & when not (@button-hover-border = none) {
+      border: @button-hover-border;
+    }
+    & when not (@button-hover-outline = none) {
+      outline: @button-hover-outline;
+    }
+    & when not (@button-hover-shadow = none) {
+      box-shadow: @button-hover-shadow;
+    }
     .button-hover;
   }
   & when (@button-set-focus = true) {
     &:focus, &.@{button-focus} {
-      & when not (@button-focus-border = none) { border: @button-focus-border; }
-      & when not (@button-focus-outline = none) { outline: @button-focus-outline; }
-      & when not (@button-focus-shadow = none) { box-shadow: @button-focus-shadow; }
+      & when not (@button-focus-border = none) {
+        border: @button-focus-border;
+      }
+      & when not (@button-focus-outline = none) {
+        outline: @button-focus-outline;
+      }
+      & when not (@button-focus-shadow = none) {
+        box-shadow: @button-focus-shadow;
+      }
       .button-focus;
     }
   }
   &:active, &.@{button-active} {
-    & when not (@button-active-border = none) { border: @button-active-border; }
-    & when not (@button-active-outline = none) { outline: @button-active-outline; }
-    & when not (@button-active-shadow = none) { box-shadow: @button-active-shadow; }
+    & when not (@button-active-border = none) {
+      border: @button-active-border;
+    }
+    & when not (@button-active-outline = none) {
+      outline: @button-active-outline;
+    }
+    & when not (@button-active-shadow = none) {
+      box-shadow: @button-active-shadow;
+    }
     .button-active;
   }
   &:disabled, &.@{button-disabled} {
@@ -90,27 +108,48 @@
       outline: none;
       box-shadow: none;
     }
+    &:focus {
+      .menu-item-anchor-focus-inline();
+    }
   }
   &.@{button-inverse} {
     border: @button-inverse-border;
     outline: @button-inverse-outline;
     box-shadow: @button-inverse-shadow;
     &:hover, &.@{button-hover} {
-      & when not (@button-inverse-hover-border = none) { border: @button-inverse-hover-border; }
-      & when not (@button-inverse-hover-outline = none) { outline: @button-inverse-hover-outline; }
-      & when not (@button-inverse-hover-shadow = none) { box-shadow: @button-hover-shadow; }
+      & when not (@button-inverse-hover-border = none) {
+        border: @button-inverse-hover-border;
+      }
+      & when not (@button-inverse-hover-outline = none) {
+        outline: @button-inverse-hover-outline;
+      }
+      & when not (@button-inverse-hover-shadow = none) {
+        box-shadow: @button-hover-shadow;
+      }
     }
     & when (@button-set-focus = true) {
       &:focus, &.@{button-focus} {
-        & when not (@button-inverse-focus-border = none) { border: @button-inverse-focus-border; }
-        & when not (@button-inverse-focus-outline = none) { outline: @button-inverse-focus-outline; }
-        & when not (@button-inverse-focus-shadow = none) { box-shadow: @button-inverse-focus-shadow; } 
+        & when not (@button-inverse-focus-border = none) {
+          border: @button-inverse-focus-border;
+        }
+        & when not (@button-inverse-focus-outline = none) {
+          outline: @button-inverse-focus-outline;
+        }
+        & when not (@button-inverse-focus-shadow = none) {
+          box-shadow: @button-inverse-focus-shadow;
+        } 
       }
     }
     &:active, &.@{button-active} {
-      & when not (@button-inverse-active-border = none) { border: @button-inverse-active-border; }
-      & when not (@button-inverse-active-outline = none) { outline: @button-inverse-active-outline; }
-      & when not (@button-inverse-active-shadow = none) { box-shadow: @button-inverse-focus-shadow; } 
+      & when not (@button-inverse-active-border = none) {
+        border: @button-inverse-active-border;
+      }
+      & when not (@button-inverse-active-outline = none) {
+        outline: @button-inverse-active-outline;
+      }
+      & when not (@button-inverse-active-shadow = none) {
+        box-shadow: @button-inverse-focus-shadow;
+      } 
     }
 
     .button-inverse;

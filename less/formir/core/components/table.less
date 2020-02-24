@@ -8,9 +8,34 @@ table, .@{table} {
   thead, .@{thead} {
     th, .@{th} {
       top: 0;
+      position: -webkit-sticky;
+      position: sticky;
+      .th-sticky;
+    }
+  }
+  &.@{table-borders-horizontal}, &.@{table-borders} {
+    thead, .@{thead} {
+      .@{th}, th {
+        border-bottom: @table-border;
+      }
+    }
+  }
+}
+
+.@{table-body-sticky} {
+  tbody, .@{tbody} {
+    th, .@{th} {
       left: 0;
       position: -webkit-sticky;
       position: sticky;
+      .th-sticky;
+    }
+  }
+  &.@{table-borders-horizontal}, &.@{table-borders} {
+    tbody, .@{tbody} {
+      .@{th}, th {
+        border-right: @table-border;
+      }
     }
   }
 }
