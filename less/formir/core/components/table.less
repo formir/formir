@@ -8,15 +8,40 @@ table, .@{table} {
   thead, .@{thead} {
     th, .@{th} {
       top: 0;
-      position: -webkit-sticky;
-      position: sticky;
+      .position-sticky !important;
       .th-sticky;
     }
   }
-  &.@{table-borders-horizontal}, &.@{table-borders} {
+  &.@{table-borders-horizontal}, &.@{table-borders}, .@{table-borders-horizontal}, .@{table-borders} {
     thead, .@{thead} {
       .@{th}, th {
         border-bottom: @table-border;
+      }
+    }
+    tbody, .@{tbody} {
+      tr, .@{tr} {
+        &:first-child {
+          .@{th}, th, .@{td}, td {
+            border-top: 0 none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.@{table-footer-sticky} {
+  tfoot, .@{tfoot} {
+    .@{th}, th, .@{td}, td {
+      bottom: 0;
+      .position-sticky !important;
+      .td-sticky;
+    }
+  }
+  &.@{table-borders-horizontal}, &.@{table-borders}, .@{table-borders-horizontal}, .@{table-borders} {
+    tfoot, .@{tfoot} {
+      .@{th}, th, .@{td}, td {
+        border-top: @table-border;
       }
     }
   }
@@ -26,8 +51,7 @@ table, .@{table} {
   tbody, .@{tbody} {
     th, .@{th} {
       left: 0;
-      position: -webkit-sticky;
-      position: sticky;
+      .position-sticky !important;
       .th-sticky;
     }
   }
@@ -43,6 +67,8 @@ table, .@{table} {
 table, .@{table}, .@{inline-table} {
   border-spacing: 0;
   background: @table-background;
+  text-align: @table-text-align;
+
   &.@{table-borders-horizontal} {
     border-bottom: @table-border;
     .@{td}, td, .@{th}, th {
@@ -69,15 +95,28 @@ table, .@{table}, .@{inline-table} {
     border: @table-border;
   }
 
+  &.@{table-fixed} {
+    table-layout: fixed;
+  }
+
+  &.@{table-ellipsis} {
+    table-layout: fixed;
+    .@{td}, td, .@{th}, th {
+      white-space: nowrap;
+      overflow-x: hidden;
+      overflow-y: visible;
+      text-overflow: ellipsis;
+    }
+  }
   @media (min-width: @table-mobile-max-width + 1px) {
     &.@{table-hoverable-td} {
       tbody, .@{tbody} {
         td, .@{td} {
-          &:not(.un-hover) {
+          &:not(.@{table-un-hover}) {
             &:hover, &.hover {
               background-color: @table-td-bgcolor-hover !important;
               color: @table-td-color-hover !important;
-              .@{on-hover} {
+              .@{table-on-hover} {
                 visibility: visible;
               }
             }
@@ -89,11 +128,11 @@ table, .@{table}, .@{inline-table} {
     &.@{table-hoverable-tr} {
       tbody, .@{tbody} {
         tr, .@{tr} {
-          &:not(.un-hover) {
+          &:not(.@{table-un-hover}) {
             &:hover, &.hover {
               td, .@{td} {
                 .td-hover;
-                .@{on-hover} {
+                .@{table-on-hover} {
                   visibility: visible;
                 }
               }
@@ -120,7 +159,7 @@ table, .@{table}, .@{inline-table} {
             position: absolute;  
             top: -100vh;
             width: 100%;
-            z-index: 1;
+            z-index: 10;
             pointer-events: none;
           }
         }
@@ -176,10 +215,30 @@ table, .@{table}, .@{inline-table} {
   }
 }
 
+.@{overflow-auto}, .@{overflow-scroll} {
+  table, .@{table}, .@{inline-table} {
+    &.@{table-hoverable-col} {
+      overflow: visible;
+      col, .@{col}, td, .@{td}, th, .@{th} {
+        &:hover, &.hover {
+          &:after {
+            height: 100vh;  
+          }
+        }
+      }
+    }
+  }
+}
 td, .@{td} {
   .td-style;
   &.@{disabled} {
     .td-disabled;
+  }
+  &.@{table-td-ellipsis} {
+    white-space: nowrap;
+    overflow-x: hidden;
+    overflow-y: visible;
+    text-overflow: ellipsis;
   }
 }
 th, .@{th} {
@@ -226,6 +285,11 @@ tr, .@{tr} {
   }
 }
 
+each(@table-td-width-vw-sizes, {
+  .@{width}-@{value}-vw {
+    width: 10vw;
+  }
+});
 
 @media (max-width: @table-mobile-max-width) {
   .@{table-mobile} {
@@ -258,6 +322,7 @@ tr, .@{tr} {
       display: none;
     }
     tr, .@{tr} {
+      .table-mobile-tr;
       .@{td}, td {
         display: table;
         table-layout: fixed;
@@ -277,7 +342,7 @@ tr, .@{tr} {
             padding: @table-mobile-th-padding;
           }
         }
-        .@{on-hover} {
+        .@{table-on-hover} {
           visibility: visible;
         }
         > span {
@@ -296,171 +361,52 @@ tr, .@{tr} {
   }
 }
 
-.@{tr}, .@{tbody}, .@{tfoot}, .@{thead}, tr, tbody, tfoot, thead {
-  &.@{expandable} {
-    display: none;
+.@{table}, .@{inline-table} {
+  .@{expandable-trigger} {
+    .@{toggle-show} {
+      display: none;
+    }
+    .@{toggle-hide} {
+      display: inline-block;
+    }
   }
-}
 
-.@{expandable} {
-  &.@{active} {
-    tr&, &.@{tr} {
-      display: table-row;
-    }
-    thead&, &.@{thead} {
-      display: table-header-group;
-    }
-    tfoot&, &.@{tfoot} {
-      display: table-footer-group;
-    }
-    tbody&, &.@{tbody} {
-      display: table-row-group;
+  .@{expandable-toggler} {
+    display: none !important;
+    &:checked {
+      + .@{expandable-trigger} {
+        .@{toggle-show} {
+          display: inline-block;
+        }
+        .@{toggle-hide} {
+          display: none;
+        }
+      }
     }
   }
-}
 
-.@{expandable-toggler} {
-  display: none !important;
-  &:checked {
-    + .@{expandable-trigger} {
-      .@{toggle-show} {
-        display: inline-block;
-      }
-      .@{toggle-hide} {
-        display: none;
-      }
-    }
-  }
-}
-
-.@{expandable-trigger} {
-  .@{toggle-show} {
-    display: none;
-  }
-  .@{toggle-hide} {
-    display: inline-block;
-  }
-}
-
-.@{expandable-toggler} {
-  &:checked {
-    + tr, + .@{tr} {
-      &.@{expandable} {
-        display: table-row;
-      }
-      &.@{expandable-trigger} {
-        &, + .@{expandable-toggler} {
-          + tr, + .@{tr} {
-            display: table-row;
+  .@{expandable-toggler} {
+    &:not(:checked) {
+      + * {
+        &.@{expandable} {
+          display: none !important;
+        }
+        &.@{expandable-trigger} {
+          + .@{expandable} {
+            display: none !important;
           }
         }
       }
     }
-    + thead, + .@{thead} {
-      &.@{expandable} {
-        display: table-header-group;
-      }
-      &.@{expandable-trigger} {
-        &, + .@{expandable-toggler} {
-          + thead, + .@{thead} {
-            display: table-header-group;
-          }
+    &:checked {
+      + * {
+        &.@{expandable} {
+          .table-expanded;
         }
-      }
-    }
-    + tfoot, + .@{tfoot} {
-      &.@{expandable} {
-        display: table-footer-group;
-      }
-      &.@{expandable-trigger} {
-        &, + .@{expandable-toggler} {
-          + tfoot, + .@{tfoot} {
-            display: table-footer-group;
-          }
-        }
-      }
-    }
-    + tbody, + .@{tbody} {
-      &.@{expandable} {
-        display: table-row-group;
-      }
-      &.@{expandable-trigger} {
-        &, + .@{expandable-toggler} {
-          + tbody, + .@{tbody} {
-            display: table-row-group;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: @table-mobile-max-width) {
-  .@{table-mobile} {
-    .@{expandable} {
-      &.@{active} {
-        tr&, &.@{tr} {
-          display: block;
-        }
-        thead&, &.@{thead} {
-          display: block;
-        }
-        tfoot&, &.@{tfoot} {
-          display: block;
-        }
-        tbody&, &.@{tbody} {
-          display: block;
-        }
-      }
-    }
-    .@{expandable-toggler} {
-      &:checked {
-        + tr, + .@{tr} {
-          &.@{expandable} {
-            display: block;
-          }
-          &.@{expandable-trigger} {
-            &, + .@{expandable-toggler} {
-              + tr, + .@{tr} {
-                display: block;
-              }
-            }
-          }
-        }
-        + thead, + .@{thead} {
-          &.@{expandable} {
-            display: block;
-          }
-          &.@{expandable-trigger} {
-            &, + .@{expandable-toggler} {
-              + thead, + .@{thead} {
-                display: block;
-              }
-            }
-          }
-        }
-        + tfoot, + .@{tfoot} {
-          &.@{expandable} {
-            display: block;
-          }
-          &.@{expandable-trigger} {
-            &, + .@{expandable-toggler} {
-              + tfoot, + .@{tfoot} {
-                display: block;
-              }
-            }
-          }
-        }
-        + tbody, + .@{tbody} {
-          &.@{expandable} {
-            display: block;
-          }
-          &.@{expandable-trigger} {
-            &, + .@{expandable-toggler} {
-              + tbody, + .@{tbody} {
-                display: block;
-              }
-            }
+        &.@{expandable-trigger} {
+          .table-expanded-trigger;
+          + .@{expandable} {
+            .table-expanded;
           }
         }
       }

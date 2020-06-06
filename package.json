@@ -1,6 +1,6 @@
 {
   "name": "formir",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Pure CSS / HTML Framework",
   "main": "js/formir.js",
   "directories": {

@@ -7,7 +7,7 @@
   &.@{modal-animated} {
     opacity: 1;
     pointer-events: auto;
-    .@{modal-backdrop} {
+    .@{modal-backdrop}:after {
       transition: background-color @modal-animate-function;
       background-color: @modal-background-color;
     }
@@ -126,13 +126,24 @@ body.@{modal-opened} {
 }
 
 .@{modal-backdrop} {
-  position: fixed;
+  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
-  right: 17px;
-  background-color: @modal-background-color;
+  right: calc(100vw ~"-" 100%);
   z-index: @modal-zindex - 1;
+  &:after {
+    right: inherit;
+    content: '';
+    position: fixed;
+    background-color: @modal-background-color;
+    right: inherit;
+    display: block;
+    height: 100vh;
+    left: 0;
+    pointer-events: none;
+  }
+  
 }
 
 .@{modal-close} {

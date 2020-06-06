@@ -1,5 +1,5 @@
 /*!
- *  Formir 0.2.2 by @formir - https://github.com/formir/formir - http://formir.io - support@formir.io
+ *  Formir 0.3.0 by @formir - https://github.com/formir/formir - http://formir.io - support@formir.io
  *  MIT License
  */
 .clearfix:after {
@@ -2294,7 +2294,7 @@ body.modal-opened {
   pointer-events: auto;
   visibility: visible;
 }
-.modal.active.animated .modal-backdrop {
+.modal.active.animated .modal-backdrop:after {
   transition: background-color 0.4s ease;
   background-color: rgba(0, 0, 0, 0.7);
 }
@@ -2380,13 +2380,22 @@ body.modal-opened {
   min-height: calc(100% - 5vh * 2);
 }
 .modal-backdrop {
-  position: fixed;
+  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
-  right: 17px;
-  background-color: rgba(0, 0, 0, 0.7);
+  right: calc(100vw - 100%);
   z-index: 9999;
+}
+.modal-backdrop:after {
+  content: '';
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  right: inherit;
+  display: block;
+  height: 100vh;
+  left: 0;
+  pointer-events: none;
 }
 .modal-close {
   cursor: pointer;
@@ -2400,7 +2409,7 @@ input.modal-open:checked + .modal.animated {
   pointer-events: auto;
   visibility: visible;
 }
-input.modal-open:checked + .modal.animated .modal-backdrop {
+input.modal-open:checked + .modal.animated .modal-backdrop:after {
   transition: background-color 0.4s ease;
   background-color: rgba(0, 0, 0, 0.7);
 }
@@ -8116,7 +8125,7 @@ dl.horizontally.collapse dt {
   list-style: none;
   display: none;
 }
-.menu menu-inside:hover {
+.menu menu-inside:hover .anchor {
   background-color: #1A1A1A;
 }
 .menu .anchor {
@@ -8129,6 +8138,8 @@ dl.horizontally.collapse dt {
 }
 .menu .anchor:hover ~ menu-inside {
   display: block;
+}
+.menu .anchor:hover ~ menu-inside .anchor {
   background-color: #1A1A1A;
 }
 .menu .anchor ~ menu-inside:hover {
@@ -8143,10 +8154,13 @@ dl.horizontally.collapse dt {
 .menu .item .anchor {
   display: block;
 }
+.menu.popup {
+  border: 0 none;
+}
 .menu .item.active .anchor {
   background-color: #6253f9;
 }
-.menu .item:hover .anchor {
+.menu .item:hover .anchor .anchor {
   background-color: #dbd0de;
   color: #2a2a2a;
 }
@@ -8255,7 +8269,7 @@ dl.horizontally.collapse dt {
     text-decoration: none;
     border-color: currentColor;
   }
-  .menu-mobile .item:hover .anchor {
+  .menu-mobile .item:hover .anchor .anchor {
     color: #b6cbfc;
     text-decoration: underline;
   }
@@ -8304,7 +8318,7 @@ dl.horizontally.collapse dt {
     list-style: none;
     display: none;
   }
-  .menu-mobile menu-inside:hover {
+  .menu-mobile menu-inside:hover .anchor {
     background-color: #1A1A1A;
   }
   .menu-mobile .anchor {
@@ -8317,6 +8331,8 @@ dl.horizontally.collapse dt {
   }
   .menu-mobile .anchor:hover ~ menu-inside {
     display: block;
+  }
+  .menu-mobile .anchor:hover ~ menu-inside .anchor {
     background-color: #1A1A1A;
   }
   .menu-mobile .anchor ~ menu-inside:hover {
@@ -8341,7 +8357,7 @@ dl.horizontally.collapse dt {
   .menu-mobile .item.active .anchor {
     background-color: #6253f9;
   }
-  .menu-mobile .item:hover .anchor {
+  .menu-mobile .item:hover .anchor .anchor {
     background-color: #dbd0de;
     color: #2a2a2a;
   }
@@ -8361,6 +8377,7 @@ dl.horizontally.collapse dt {
   ul.items.menu-mobile .has-popup > input:checked ~ .popup {
     display: block;
     width: 100%;
+    max-width: none;
   }
   ul.items.menu-mobile .anchor {
     overflow-x: hidden;
@@ -10778,28 +10795,161 @@ table,
 .header-sticky thead .th,
 .header-sticky .thead .th {
   top: 0;
-  position: -webkit-sticky;
-  position: sticky;
+  position: -webkit-sticky !important;
+  position: -moz-sticky !important;
+  position: -ms-sticky !important;
+  position: -o-sticky !important;
+  position: sticky !important;
   background: #fff;
+  z-index: 9;
 }
 .header-sticky.borders-horizontal thead .th,
 .header-sticky.borders thead .th,
+.header-sticky .borders-horizontal thead .th,
+.header-sticky .borders thead .th,
 .header-sticky.borders-horizontal .thead .th,
 .header-sticky.borders .thead .th,
+.header-sticky .borders-horizontal .thead .th,
+.header-sticky .borders .thead .th,
 .header-sticky.borders-horizontal thead th,
 .header-sticky.borders thead th,
+.header-sticky .borders-horizontal thead th,
+.header-sticky .borders thead th,
 .header-sticky.borders-horizontal .thead th,
-.header-sticky.borders .thead th {
+.header-sticky.borders .thead th,
+.header-sticky .borders-horizontal .thead th,
+.header-sticky .borders .thead th {
   border-bottom: 1px solid #f0f0f0;
+}
+.header-sticky.borders-horizontal tbody tr:first-child .th,
+.header-sticky.borders tbody tr:first-child .th,
+.header-sticky .borders-horizontal tbody tr:first-child .th,
+.header-sticky .borders tbody tr:first-child .th,
+.header-sticky.borders-horizontal .tbody tr:first-child .th,
+.header-sticky.borders .tbody tr:first-child .th,
+.header-sticky .borders-horizontal .tbody tr:first-child .th,
+.header-sticky .borders .tbody tr:first-child .th,
+.header-sticky.borders-horizontal tbody .tr:first-child .th,
+.header-sticky.borders tbody .tr:first-child .th,
+.header-sticky .borders-horizontal tbody .tr:first-child .th,
+.header-sticky .borders tbody .tr:first-child .th,
+.header-sticky.borders-horizontal .tbody .tr:first-child .th,
+.header-sticky.borders .tbody .tr:first-child .th,
+.header-sticky .borders-horizontal .tbody .tr:first-child .th,
+.header-sticky .borders .tbody .tr:first-child .th,
+.header-sticky.borders-horizontal tbody tr:first-child th,
+.header-sticky.borders tbody tr:first-child th,
+.header-sticky .borders-horizontal tbody tr:first-child th,
+.header-sticky .borders tbody tr:first-child th,
+.header-sticky.borders-horizontal .tbody tr:first-child th,
+.header-sticky.borders .tbody tr:first-child th,
+.header-sticky .borders-horizontal .tbody tr:first-child th,
+.header-sticky .borders .tbody tr:first-child th,
+.header-sticky.borders-horizontal tbody .tr:first-child th,
+.header-sticky.borders tbody .tr:first-child th,
+.header-sticky .borders-horizontal tbody .tr:first-child th,
+.header-sticky .borders tbody .tr:first-child th,
+.header-sticky.borders-horizontal .tbody .tr:first-child th,
+.header-sticky.borders .tbody .tr:first-child th,
+.header-sticky .borders-horizontal .tbody .tr:first-child th,
+.header-sticky .borders .tbody .tr:first-child th,
+.header-sticky.borders-horizontal tbody tr:first-child .td,
+.header-sticky.borders tbody tr:first-child .td,
+.header-sticky .borders-horizontal tbody tr:first-child .td,
+.header-sticky .borders tbody tr:first-child .td,
+.header-sticky.borders-horizontal .tbody tr:first-child .td,
+.header-sticky.borders .tbody tr:first-child .td,
+.header-sticky .borders-horizontal .tbody tr:first-child .td,
+.header-sticky .borders .tbody tr:first-child .td,
+.header-sticky.borders-horizontal tbody .tr:first-child .td,
+.header-sticky.borders tbody .tr:first-child .td,
+.header-sticky .borders-horizontal tbody .tr:first-child .td,
+.header-sticky .borders tbody .tr:first-child .td,
+.header-sticky.borders-horizontal .tbody .tr:first-child .td,
+.header-sticky.borders .tbody .tr:first-child .td,
+.header-sticky .borders-horizontal .tbody .tr:first-child .td,
+.header-sticky .borders .tbody .tr:first-child .td,
+.header-sticky.borders-horizontal tbody tr:first-child td,
+.header-sticky.borders tbody tr:first-child td,
+.header-sticky .borders-horizontal tbody tr:first-child td,
+.header-sticky .borders tbody tr:first-child td,
+.header-sticky.borders-horizontal .tbody tr:first-child td,
+.header-sticky.borders .tbody tr:first-child td,
+.header-sticky .borders-horizontal .tbody tr:first-child td,
+.header-sticky .borders .tbody tr:first-child td,
+.header-sticky.borders-horizontal tbody .tr:first-child td,
+.header-sticky.borders tbody .tr:first-child td,
+.header-sticky .borders-horizontal tbody .tr:first-child td,
+.header-sticky .borders tbody .tr:first-child td,
+.header-sticky.borders-horizontal .tbody .tr:first-child td,
+.header-sticky.borders .tbody .tr:first-child td,
+.header-sticky .borders-horizontal .tbody .tr:first-child td,
+.header-sticky .borders .tbody .tr:first-child td {
+  border-top: 0 none;
+}
+.footer-sticky tfoot .th,
+.footer-sticky .tfoot .th,
+.footer-sticky tfoot th,
+.footer-sticky .tfoot th,
+.footer-sticky tfoot .td,
+.footer-sticky .tfoot .td,
+.footer-sticky tfoot td,
+.footer-sticky .tfoot td {
+  bottom: 0;
+  position: -webkit-sticky !important;
+  position: -moz-sticky !important;
+  position: -ms-sticky !important;
+  position: -o-sticky !important;
+  position: sticky !important;
+  background: #fff;
+  z-index: 9;
+}
+.footer-sticky.borders-horizontal tfoot .th,
+.footer-sticky.borders tfoot .th,
+.footer-sticky .borders-horizontal tfoot .th,
+.footer-sticky .borders tfoot .th,
+.footer-sticky.borders-horizontal .tfoot .th,
+.footer-sticky.borders .tfoot .th,
+.footer-sticky .borders-horizontal .tfoot .th,
+.footer-sticky .borders .tfoot .th,
+.footer-sticky.borders-horizontal tfoot th,
+.footer-sticky.borders tfoot th,
+.footer-sticky .borders-horizontal tfoot th,
+.footer-sticky .borders tfoot th,
+.footer-sticky.borders-horizontal .tfoot th,
+.footer-sticky.borders .tfoot th,
+.footer-sticky .borders-horizontal .tfoot th,
+.footer-sticky .borders .tfoot th,
+.footer-sticky.borders-horizontal tfoot .td,
+.footer-sticky.borders tfoot .td,
+.footer-sticky .borders-horizontal tfoot .td,
+.footer-sticky .borders tfoot .td,
+.footer-sticky.borders-horizontal .tfoot .td,
+.footer-sticky.borders .tfoot .td,
+.footer-sticky .borders-horizontal .tfoot .td,
+.footer-sticky .borders .tfoot .td,
+.footer-sticky.borders-horizontal tfoot td,
+.footer-sticky.borders tfoot td,
+.footer-sticky .borders-horizontal tfoot td,
+.footer-sticky .borders tfoot td,
+.footer-sticky.borders-horizontal .tfoot td,
+.footer-sticky.borders .tfoot td,
+.footer-sticky .borders-horizontal .tfoot td,
+.footer-sticky .borders .tfoot td {
+  border-top: 1px solid #f0f0f0;
 }
 .body-sticky tbody th,
 .body-sticky .tbody th,
 .body-sticky tbody .th,
 .body-sticky .tbody .th {
   left: 0;
-  position: -webkit-sticky;
-  position: sticky;
+  position: -webkit-sticky !important;
+  position: -moz-sticky !important;
+  position: -ms-sticky !important;
+  position: -o-sticky !important;
+  position: sticky !important;
   background: #fff;
+  z-index: 9;
 }
 .body-sticky.borders-horizontal tbody .th,
 .body-sticky.borders tbody .th,
@@ -10816,6 +10966,7 @@ table,
 .inline-table {
   border-spacing: 0;
   background: #fff;
+  text-align: left;
 }
 table.borders-horizontal,
 .table.borders-horizontal,
@@ -10881,6 +11032,33 @@ table.borders-outside,
 .inline-table.borders-outside {
   border: 1px solid #f0f0f0;
 }
+table.table-fixed,
+.table.table-fixed,
+.inline-table.table-fixed {
+  table-layout: fixed;
+}
+table.table-ellipsis,
+.table.table-ellipsis,
+.inline-table.table-ellipsis {
+  table-layout: fixed;
+}
+table.table-ellipsis .td,
+.table.table-ellipsis .td,
+.inline-table.table-ellipsis .td,
+table.table-ellipsis td,
+.table.table-ellipsis td,
+.inline-table.table-ellipsis td,
+table.table-ellipsis .th,
+.table.table-ellipsis .th,
+.inline-table.table-ellipsis .th,
+table.table-ellipsis th,
+.table.table-ellipsis th,
+.inline-table.table-ellipsis th {
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: visible;
+  text-overflow: ellipsis;
+}
 @media (min-width: 769px) {
   table.hoverable-td tbody td:not(.un-hover):hover,
   .table.hoverable-td tbody td:not(.un-hover):hover,
@@ -10906,7 +11084,7 @@ table.borders-outside,
   table.hoverable-td .tbody .td:not(.un-hover).hover,
   .table.hoverable-td .tbody .td:not(.un-hover).hover,
   .inline-table.hoverable-td .tbody .td:not(.un-hover).hover {
-    background-color: #7c5d85 !important;
+    background-color: #8f84fb !important;
     color: #fff !important;
   }
   table.hoverable-td tbody td:not(.un-hover):hover .on-hover,
@@ -10983,7 +11161,7 @@ table.borders-outside,
   table.hoverable-tr .tbody .tr:not(.un-hover).hover .td,
   .table.hoverable-tr .tbody .tr:not(.un-hover).hover .td,
   .inline-table.hoverable-tr .tbody .tr:not(.un-hover).hover .td {
-    background-color: #c4b2c9;
+    background-color: #aea7fc;
     color: #fff;
   }
   table.hoverable-tr tbody tr:not(.un-hover):hover td .on-hover,
@@ -11118,14 +11296,14 @@ table.borders-outside,
   table.hoverable-col .th.hover:after,
   .table.hoverable-col .th.hover:after,
   .inline-table.hoverable-col .th.hover:after {
-    background-color: rgba(188, 182, 252, 0.4);
+    background-color: rgba(143, 132, 251, 0.15);
     content: '\00a0';
     height: 300vh;
     left: 0;
     position: absolute;
     top: -100vh;
     width: 100%;
-    z-index: 1;
+    z-index: 10;
     pointer-events: none;
   }
 }
@@ -11237,6 +11415,88 @@ table .tbody .td a,
 .inline-table .tbody .td a {
   cursor: pointer;
 }
+.overflow-auto table.hoverable-col,
+.overflow-scroll table.hoverable-col,
+.overflow-auto .table.hoverable-col,
+.overflow-scroll .table.hoverable-col,
+.overflow-auto .inline-table.hoverable-col,
+.overflow-scroll .inline-table.hoverable-col {
+  overflow: visible;
+}
+.overflow-auto table.hoverable-col col:hover:after,
+.overflow-scroll table.hoverable-col col:hover:after,
+.overflow-auto .table.hoverable-col col:hover:after,
+.overflow-scroll .table.hoverable-col col:hover:after,
+.overflow-auto .inline-table.hoverable-col col:hover:after,
+.overflow-scroll .inline-table.hoverable-col col:hover:after,
+.overflow-auto table.hoverable-col .col:hover:after,
+.overflow-scroll table.hoverable-col .col:hover:after,
+.overflow-auto .table.hoverable-col .col:hover:after,
+.overflow-scroll .table.hoverable-col .col:hover:after,
+.overflow-auto .inline-table.hoverable-col .col:hover:after,
+.overflow-scroll .inline-table.hoverable-col .col:hover:after,
+.overflow-auto table.hoverable-col td:hover:after,
+.overflow-scroll table.hoverable-col td:hover:after,
+.overflow-auto .table.hoverable-col td:hover:after,
+.overflow-scroll .table.hoverable-col td:hover:after,
+.overflow-auto .inline-table.hoverable-col td:hover:after,
+.overflow-scroll .inline-table.hoverable-col td:hover:after,
+.overflow-auto table.hoverable-col .td:hover:after,
+.overflow-scroll table.hoverable-col .td:hover:after,
+.overflow-auto .table.hoverable-col .td:hover:after,
+.overflow-scroll .table.hoverable-col .td:hover:after,
+.overflow-auto .inline-table.hoverable-col .td:hover:after,
+.overflow-scroll .inline-table.hoverable-col .td:hover:after,
+.overflow-auto table.hoverable-col th:hover:after,
+.overflow-scroll table.hoverable-col th:hover:after,
+.overflow-auto .table.hoverable-col th:hover:after,
+.overflow-scroll .table.hoverable-col th:hover:after,
+.overflow-auto .inline-table.hoverable-col th:hover:after,
+.overflow-scroll .inline-table.hoverable-col th:hover:after,
+.overflow-auto table.hoverable-col .th:hover:after,
+.overflow-scroll table.hoverable-col .th:hover:after,
+.overflow-auto .table.hoverable-col .th:hover:after,
+.overflow-scroll .table.hoverable-col .th:hover:after,
+.overflow-auto .inline-table.hoverable-col .th:hover:after,
+.overflow-scroll .inline-table.hoverable-col .th:hover:after,
+.overflow-auto table.hoverable-col col.hover:after,
+.overflow-scroll table.hoverable-col col.hover:after,
+.overflow-auto .table.hoverable-col col.hover:after,
+.overflow-scroll .table.hoverable-col col.hover:after,
+.overflow-auto .inline-table.hoverable-col col.hover:after,
+.overflow-scroll .inline-table.hoverable-col col.hover:after,
+.overflow-auto table.hoverable-col .col.hover:after,
+.overflow-scroll table.hoverable-col .col.hover:after,
+.overflow-auto .table.hoverable-col .col.hover:after,
+.overflow-scroll .table.hoverable-col .col.hover:after,
+.overflow-auto .inline-table.hoverable-col .col.hover:after,
+.overflow-scroll .inline-table.hoverable-col .col.hover:after,
+.overflow-auto table.hoverable-col td.hover:after,
+.overflow-scroll table.hoverable-col td.hover:after,
+.overflow-auto .table.hoverable-col td.hover:after,
+.overflow-scroll .table.hoverable-col td.hover:after,
+.overflow-auto .inline-table.hoverable-col td.hover:after,
+.overflow-scroll .inline-table.hoverable-col td.hover:after,
+.overflow-auto table.hoverable-col .td.hover:after,
+.overflow-scroll table.hoverable-col .td.hover:after,
+.overflow-auto .table.hoverable-col .td.hover:after,
+.overflow-scroll .table.hoverable-col .td.hover:after,
+.overflow-auto .inline-table.hoverable-col .td.hover:after,
+.overflow-scroll .inline-table.hoverable-col .td.hover:after,
+.overflow-auto table.hoverable-col th.hover:after,
+.overflow-scroll table.hoverable-col th.hover:after,
+.overflow-auto .table.hoverable-col th.hover:after,
+.overflow-scroll .table.hoverable-col th.hover:after,
+.overflow-auto .inline-table.hoverable-col th.hover:after,
+.overflow-scroll .inline-table.hoverable-col th.hover:after,
+.overflow-auto table.hoverable-col .th.hover:after,
+.overflow-scroll table.hoverable-col .th.hover:after,
+.overflow-auto .table.hoverable-col .th.hover:after,
+.overflow-scroll .table.hoverable-col .th.hover:after,
+.overflow-auto .inline-table.hoverable-col .th.hover:after,
+.overflow-scroll .inline-table.hoverable-col .th.hover:after {
+  height: 100vh;
+}
 td,
 .td {
   padding: 1rem 0.5rem;
@@ -11284,14 +11544,32 @@ td.disabled,
   opacity: 0.3;
   pointer-events: none;
 }
+td.td-ellipsis,
+.td.td-ellipsis {
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: visible;
+  text-overflow: ellipsis;
+}
 th,
 .th {
   color: #575757;
   text-transform: uppercase;
   padding: 0.7rem 0.5rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
+}
+th.number,
+.th.number {
+  text-align: right;
+  padding-right: 2rem;
+}
+th.bold,
+.th.bold {
   font-weight: bold;
-  white-space: nowrap;
+}
+th.actions,
+.th.actions {
+  text-align: right;
 }
 tr.disabled .td,
 .tr.disabled .td,
@@ -11339,6 +11617,33 @@ tr.disabled td,
 .table .col,
 .inline-table .col {
   display: table-column;
+}
+.width-10-vw {
+  width: 10vw;
+}
+.width-20-vw {
+  width: 10vw;
+}
+.width-30-vw {
+  width: 10vw;
+}
+.width-40-vw {
+  width: 10vw;
+}
+.width-50-vw {
+  width: 10vw;
+}
+.width-60-vw {
+  width: 10vw;
+}
+.width-70-vw {
+  width: 10vw;
+}
+.width-80-vw {
+  width: 10vw;
+}
+.width-90-vw {
+  width: 10vw;
 }
 @media (max-width: 768px) {
   .table-mobile {
@@ -11405,12 +11710,29 @@ tr.disabled td,
     color: #575757;
     text-transform: uppercase;
     padding: 0.7rem 0.5rem;
-    font-size: 1rem;
-    font-weight: bold;
-    white-space: nowrap;
+    font-size: 0.8rem;
     width: 30%;
     max-width: 30%;
     padding: 0.7rem 1.5rem 0.7rem 1rem;
+  }
+  .table-mobile tr .td[data-th]:before.number,
+  .table-mobile .tr .td[data-th]:before.number,
+  .table-mobile tr td[data-th]:before.number,
+  .table-mobile .tr td[data-th]:before.number {
+    text-align: right;
+    padding-right: 2rem;
+  }
+  .table-mobile tr .td[data-th]:before.bold,
+  .table-mobile .tr .td[data-th]:before.bold,
+  .table-mobile tr td[data-th]:before.bold,
+  .table-mobile .tr td[data-th]:before.bold {
+    font-weight: bold;
+  }
+  .table-mobile tr .td[data-th]:before.actions,
+  .table-mobile .tr .td[data-th]:before.actions,
+  .table-mobile tr td[data-th]:before.actions,
+  .table-mobile .tr td[data-th]:before.actions {
+    text-align: right;
   }
   .table-mobile tr .td .on-hover,
   .table-mobile .tr .td .on-hover,
@@ -11438,176 +11760,135 @@ tr.disabled td,
     width: auto !important;
   }
 }
-.tr.expandable,
-.tbody.expandable,
-.tfoot.expandable,
-.thead.expandable,
-tr.expandable,
-tbody.expandable,
-tfoot.expandable,
-thead.expandable {
+.table .expandable-trigger .toggle-show,
+.inline-table .expandable-trigger .toggle-show {
   display: none;
 }
-tr.expandable.active,
-.expandable.active.tr {
-  display: table-row;
+.table .expandable-trigger .toggle-hide,
+.inline-table .expandable-trigger .toggle-hide {
+  display: inline-block;
 }
-thead.expandable.active,
-.expandable.active.thead {
-  display: table-header-group;
-}
-tfoot.expandable.active,
-.expandable.active.tfoot {
-  display: table-footer-group;
-}
-tbody.expandable.active,
-.expandable.active.tbody {
-  display: table-row-group;
-}
-.expandable-toggler {
+.table .expandable-toggler,
+.inline-table .expandable-toggler {
   display: none !important;
 }
-.expandable-toggler:checked + .expandable-trigger .toggle-show {
+.table .expandable-toggler:checked + .expandable-trigger .toggle-show,
+.inline-table .expandable-toggler:checked + .expandable-trigger .toggle-show {
   display: inline-block;
 }
-.expandable-toggler:checked + .expandable-trigger .toggle-hide {
+.table .expandable-toggler:checked + .expandable-trigger .toggle-hide,
+.inline-table .expandable-toggler:checked + .expandable-trigger .toggle-hide {
   display: none;
 }
-.expandable-trigger .toggle-show {
-  display: none;
+.table .expandable-toggler:not(:checked) + *.expandable,
+.inline-table .expandable-toggler:not(:checked) + *.expandable {
+  display: none !important;
 }
-.expandable-trigger .toggle-hide {
-  display: inline-block;
+.table .expandable-toggler:not(:checked) + *.expandable-trigger + .expandable,
+.inline-table .expandable-toggler:not(:checked) + *.expandable-trigger + .expandable {
+  display: none !important;
 }
-.expandable-toggler:checked + tr.expandable,
-.expandable-toggler:checked + .tr.expandable {
-  display: table-row;
+.table .expandable-toggler:checked + *.expandable .td,
+.inline-table .expandable-toggler:checked + *.expandable .td,
+.table .expandable-toggler:checked + *.expandable td,
+.inline-table .expandable-toggler:checked + *.expandable td,
+.table .expandable-toggler:checked + *.expandable .th,
+.inline-table .expandable-toggler:checked + *.expandable .th,
+.table .expandable-toggler:checked + *.expandable th,
+.inline-table .expandable-toggler:checked + *.expandable th {
+  background-color: #e6e6e6;
 }
-.expandable-toggler:checked + tr.expandable-trigger + tr,
-.expandable-toggler:checked + .tr.expandable-trigger + tr,
-.expandable-toggler:checked + tr.expandable-trigger + .expandable-toggler + tr,
-.expandable-toggler:checked + .tr.expandable-trigger + .expandable-toggler + tr,
-.expandable-toggler:checked + tr.expandable-trigger + .tr,
-.expandable-toggler:checked + .tr.expandable-trigger + .tr,
-.expandable-toggler:checked + tr.expandable-trigger + .expandable-toggler + .tr,
-.expandable-toggler:checked + .tr.expandable-trigger + .expandable-toggler + .tr {
-  display: table-row;
+.table .expandable-toggler:checked + *.expandable .td + .td,
+.inline-table .expandable-toggler:checked + *.expandable .td + .td,
+.table .expandable-toggler:checked + *.expandable td + .td,
+.inline-table .expandable-toggler:checked + *.expandable td + .td,
+.table .expandable-toggler:checked + *.expandable .th + .td,
+.inline-table .expandable-toggler:checked + *.expandable .th + .td,
+.table .expandable-toggler:checked + *.expandable th + .td,
+.inline-table .expandable-toggler:checked + *.expandable th + .td,
+.table .expandable-toggler:checked + *.expandable .td + td,
+.inline-table .expandable-toggler:checked + *.expandable .td + td,
+.table .expandable-toggler:checked + *.expandable td + td,
+.inline-table .expandable-toggler:checked + *.expandable td + td,
+.table .expandable-toggler:checked + *.expandable .th + td,
+.inline-table .expandable-toggler:checked + *.expandable .th + td,
+.table .expandable-toggler:checked + *.expandable th + td,
+.inline-table .expandable-toggler:checked + *.expandable th + td,
+.table .expandable-toggler:checked + *.expandable .td + .th,
+.inline-table .expandable-toggler:checked + *.expandable .td + .th,
+.table .expandable-toggler:checked + *.expandable td + .th,
+.inline-table .expandable-toggler:checked + *.expandable td + .th,
+.table .expandable-toggler:checked + *.expandable .th + .th,
+.inline-table .expandable-toggler:checked + *.expandable .th + .th,
+.table .expandable-toggler:checked + *.expandable th + .th,
+.inline-table .expandable-toggler:checked + *.expandable th + .th,
+.table .expandable-toggler:checked + *.expandable .td + th,
+.inline-table .expandable-toggler:checked + *.expandable .td + th,
+.table .expandable-toggler:checked + *.expandable td + th,
+.inline-table .expandable-toggler:checked + *.expandable td + th,
+.table .expandable-toggler:checked + *.expandable .th + th,
+.inline-table .expandable-toggler:checked + *.expandable .th + th,
+.table .expandable-toggler:checked + *.expandable th + th,
+.inline-table .expandable-toggler:checked + *.expandable th + th {
+  border-left-color: #ebebeb;
 }
-.expandable-toggler:checked + thead.expandable,
-.expandable-toggler:checked + .thead.expandable {
-  display: table-header-group;
+.table .expandable-toggler:checked + *.expandable-trigger,
+.inline-table .expandable-toggler:checked + *.expandable-trigger {
+  background-color: #f2f2f2;
 }
-.expandable-toggler:checked + thead.expandable-trigger + thead,
-.expandable-toggler:checked + .thead.expandable-trigger + thead,
-.expandable-toggler:checked + thead.expandable-trigger + .expandable-toggler + thead,
-.expandable-toggler:checked + .thead.expandable-trigger + .expandable-toggler + thead,
-.expandable-toggler:checked + thead.expandable-trigger + .thead,
-.expandable-toggler:checked + .thead.expandable-trigger + .thead,
-.expandable-toggler:checked + thead.expandable-trigger + .expandable-toggler + .thead,
-.expandable-toggler:checked + .thead.expandable-trigger + .expandable-toggler + .thead {
-  display: table-header-group;
+.table .expandable-toggler:checked + *.expandable-trigger + .td,
+.inline-table .expandable-toggler:checked + *.expandable-trigger + .td,
+.table .expandable-toggler:checked + *.expandable-trigger + td,
+.inline-table .expandable-toggler:checked + *.expandable-trigger + td,
+.table .expandable-toggler:checked + *.expandable-trigger + .th,
+.inline-table .expandable-toggler:checked + *.expandable-trigger + .th,
+.table .expandable-toggler:checked + *.expandable-trigger + th,
+.inline-table .expandable-toggler:checked + *.expandable-trigger + th {
+  border-left-color: #f5f5f5;
 }
-.expandable-toggler:checked + tfoot.expandable,
-.expandable-toggler:checked + .tfoot.expandable {
-  display: table-footer-group;
+.table .expandable-toggler:checked + *.expandable-trigger + .expandable .td,
+.inline-table .expandable-toggler:checked + *.expandable-trigger + .expandable .td,
+.table .expandable-toggler:checked + *.expandable-trigger + .expandable td,
+.inline-table .expandable-toggler:checked + *.expandable-trigger + .expandable td,
+.table .expandable-toggler:checked + *.expandable-trigger + .expandable .th,
+.inline-table .expandable-toggler:checked + *.expandable-trigger + .expandable .th,
+.table .expandable-toggler:checked + *.expandable-trigger + .expandable th,
+.inline-table .expandable-toggler:checked + *.expandable-trigger + .expandable th {
+  background-color: #e6e6e6;
 }
-.expandable-toggler:checked + tfoot.expandable-trigger + tfoot,
-.expandable-toggler:checked + .tfoot.expandable-trigger + tfoot,
-.expandable-toggler:checked + tfoot.expandable-trigger + .expandable-toggler + tfoot,
-.expandable-toggler:checked + .tfoot.expandable-trigger + .expandable-toggler + tfoot,
-.expandable-toggler:checked + tfoot.expandable-trigger + .tfoot,
-.expandable-toggler:checked + .tfoot.expandable-trigger + .tfoot,
-.expandable-toggler:checked + tfoot.expandable-trigger + .expandable-toggler + .tfoot,
-.expandable-toggler:checked + .tfoot.expandable-trigger + .expandable-toggler + .tfoot {
-  display: table-footer-group;
-}
-.expandable-toggler:checked + tbody.expandable,
-.expandable-toggler:checked + .tbody.expandable {
-  display: table-row-group;
-}
-.expandable-toggler:checked + tbody.expandable-trigger + tbody,
-.expandable-toggler:checked + .tbody.expandable-trigger + tbody,
-.expandable-toggler:checked + tbody.expandable-trigger + .expandable-toggler + tbody,
-.expandable-toggler:checked + .tbody.expandable-trigger + .expandable-toggler + tbody,
-.expandable-toggler:checked + tbody.expandable-trigger + .tbody,
-.expandable-toggler:checked + .tbody.expandable-trigger + .tbody,
-.expandable-toggler:checked + tbody.expandable-trigger + .expandable-toggler + .tbody,
-.expandable-toggler:checked + .tbody.expandable-trigger + .expandable-toggler + .tbody {
-  display: table-row-group;
-}
-@media (max-width: 768px) {
-  tr.table-mobile .expandable.active,
-  .table-mobile .expandable.active.tr {
-    display: block;
-  }
-  thead.table-mobile .expandable.active,
-  .table-mobile .expandable.active.thead {
-    display: block;
-  }
-  tfoot.table-mobile .expandable.active,
-  .table-mobile .expandable.active.tfoot {
-    display: block;
-  }
-  tbody.table-mobile .expandable.active,
-  .table-mobile .expandable.active.tbody {
-    display: block;
-  }
-  .table-mobile .expandable-toggler:checked + tr.expandable,
-  .table-mobile .expandable-toggler:checked + .tr.expandable {
-    display: block;
-  }
-  .table-mobile .expandable-toggler:checked + tr.expandable-trigger + tr,
-  .table-mobile .expandable-toggler:checked + .tr.expandable-trigger + tr,
-  .table-mobile .expandable-toggler:checked + tr.expandable-trigger + .expandable-toggler + tr,
-  .table-mobile .expandable-toggler:checked + .tr.expandable-trigger + .expandable-toggler + tr,
-  .table-mobile .expandable-toggler:checked + tr.expandable-trigger + .tr,
-  .table-mobile .expandable-toggler:checked + .tr.expandable-trigger + .tr,
-  .table-mobile .expandable-toggler:checked + tr.expandable-trigger + .expandable-toggler + .tr,
-  .table-mobile .expandable-toggler:checked + .tr.expandable-trigger + .expandable-toggler + .tr {
-    display: block;
-  }
-  .table-mobile .expandable-toggler:checked + thead.expandable,
-  .table-mobile .expandable-toggler:checked + .thead.expandable {
-    display: block;
-  }
-  .table-mobile .expandable-toggler:checked + thead.expandable-trigger + thead,
-  .table-mobile .expandable-toggler:checked + .thead.expandable-trigger + thead,
-  .table-mobile .expandable-toggler:checked + thead.expandable-trigger + .expandable-toggler + thead,
-  .table-mobile .expandable-toggler:checked + .thead.expandable-trigger + .expandable-toggler + thead,
-  .table-mobile .expandable-toggler:checked + thead.expandable-trigger + .thead,
-  .table-mobile .expandable-toggler:checked + .thead.expandable-trigger + .thead,
-  .table-mobile .expandable-toggler:checked + thead.expandable-trigger + .expandable-toggler + .thead,
-  .table-mobile .expandable-toggler:checked + .thead.expandable-trigger + .expandable-toggler + .thead {
-    display: block;
-  }
-  .table-mobile .expandable-toggler:checked + tfoot.expandable,
-  .table-mobile .expandable-toggler:checked + .tfoot.expandable {
-    display: block;
-  }
-  .table-mobile .expandable-toggler:checked + tfoot.expandable-trigger + tfoot,
-  .table-mobile .expandable-toggler:checked + .tfoot.expandable-trigger + tfoot,
-  .table-mobile .expandable-toggler:checked + tfoot.expandable-trigger + .expandable-toggler + tfoot,
-  .table-mobile .expandable-toggler:checked + .tfoot.expandable-trigger + .expandable-toggler + tfoot,
-  .table-mobile .expandable-toggler:checked + tfoot.expandable-trigger + .tfoot,
-  .table-mobile .expandable-toggler:checked + .tfoot.expandable-trigger + .tfoot,
-  .table-mobile .expandable-toggler:checked + tfoot.expandable-trigger + .expandable-toggler + .tfoot,
-  .table-mobile .expandable-toggler:checked + .tfoot.expandable-trigger + .expandable-toggler + .tfoot {
-    display: block;
-  }
-  .table-mobile .expandable-toggler:checked + tbody.expandable,
-  .table-mobile .expandable-toggler:checked + .tbody.expandable {
-    display: block;
-  }
-  .table-mobile .expandable-toggler:checked + tbody.expandable-trigger + tbody,
-  .table-mobile .expandable-toggler:checked + .tbody.expandable-trigger + tbody,
-  .table-mobile .expandable-toggler:checked + tbody.expandable-trigger + .expandable-toggler + tbody,
-  .table-mobile .expandable-toggler:checked + .tbody.expandable-trigger + .expandable-toggler + tbody,
-  .table-mobile .expandable-toggler:checked + tbody.expandable-trigger + .tbody,
-  .table-mobile .expandable-toggler:checked + .tbody.expandable-trigger + .tbody,
-  .table-mobile .expandable-toggler:checked + tbody.expandable-trigger + .expandable-toggler + .tbody,
-  .table-mobile .expandable-toggler:checked + .tbody.expandable-trigger + .expandable-toggler + .tbody {
-    display: block;
-  }
+.table .expandable-toggler:checked + *.expandable-trigger + .expandable .td + .td,
+.inline-table .expandable-toggler:checked + *.expandable-trigger + .expandable .td + .td,
+.table .expandable-toggler:checked + *.expandable-trigger + .expandable td + .td,
+.inline-table .expandable-toggler:checked + *.expandable-trigger + .expandable td + .td,
+.table .expandable-toggler:checked + *.expandable-trigger + .expandable .th + .td,
+.inline-table .expandable-toggler:checked + *.expandable-trigger + .expandable .th + .td,
+.table .expandable-toggler:checked + *.expandable-trigger + .expandable th + .td,
+.inline-table .expandable-toggler:checked + *.expandable-trigger + .expandable th + .td,
+.table .expandable-toggler:checked + *.expandable-trigger + .expandable .td + td,
+.inline-table .expandable-toggler:checked + *.expandable-trigger + .expandable .td + td,
+.table .expandable-toggler:checked + *.expandable-trigger + .expandable td + td,
+.inline-table .expandable-toggler:checked + *.expandable-trigger + .expandable td + td,
+.table .expandable-toggler:checked + *.expandable-trigger + .expandable .th + td,
+.inline-table .expandable-toggler:checked + *.expandable-trigger + .expandable .th + td,
+.table .expandable-toggler:checked + *.expandable-trigger + .expandable th + td,
+.inline-table .expandable-toggler:checked + *.expandable-trigger + .expandable th + td,
+.table .expandable-toggler:checked + *.expandable-trigger + .expandable .td + .th,
+.inline-table .expandable-toggler:checked + *.expandable-trigger + .expandable .td + .th,
+.table .expandable-toggler:checked + *.expandable-trigger + .expandable td + .th,
+.inline-table .expandable-toggler:checked + *.expandable-trigger + .expandable td + .th,
+.table .expandable-toggler:checked + *.expandable-trigger + .expandable .th + .th,
+.inline-table .expandable-toggler:checked + *.expandable-trigger + .expandable .th + .th,
+.table .expandable-toggler:checked + *.expandable-trigger + .expandable th + .th,
+.inline-table .expandable-toggler:checked + *.expandable-trigger + .expandable th + .th,
+.table .expandable-toggler:checked + *.expandable-trigger + .expandable .td + th,
+.inline-table .expandable-toggler:checked + *.expandable-trigger + .expandable .td + th,
+.table .expandable-toggler:checked + *.expandable-trigger + .expandable td + th,
+.inline-table .expandable-toggler:checked + *.expandable-trigger + .expandable td + th,
+.table .expandable-toggler:checked + *.expandable-trigger + .expandable .th + th,
+.inline-table .expandable-toggler:checked + *.expandable-trigger + .expandable .th + th,
+.table .expandable-toggler:checked + *.expandable-trigger + .expandable th + th,
+.inline-table .expandable-toggler:checked + *.expandable-trigger + .expandable th + th {
+  border-left-color: #ebebeb;
 }
 .section {
   border-radius: 4px;

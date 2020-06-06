@@ -40,7 +40,9 @@
     list-style: none;
     display: none;
     &:hover {
-      .menu-inside-hover();
+      @{menu-item-anchor} {
+        .menu-inside-hover();
+      }
     }
   }
   @{menu-item-anchor} {
@@ -49,7 +51,9 @@
     &:hover {
       ~ @{menu-inside} {
         display: block;
-        .menu-inside-hover();
+        @{menu-item-anchor} {
+          .menu-inside-hover();
+        }
       }
     }
     ~ @{menu-inside} {
@@ -71,12 +75,17 @@
 
 @{menu} {
   .menu;
+  &.@{popup} {
+    border: 0 none;
+  }
   @{menu-item} {
     &.@{active} {
       .menu-item-active-block;
     }
     &:hover {
-      .menu-item-hover-block;
+      @{menu-item-anchor} {
+        .menu-item-hover-block;
+      }
     }
   }
   @{menu-item-anchor} {
@@ -152,7 +161,9 @@
         .menu-item-active-inline;
       }
       &:hover {
-        .menu-item-hover-inline;
+        @{menu-item-anchor} {
+          .menu-item-hover-inline;
+        }
       }
     }
   }
@@ -173,7 +184,9 @@
         .menu-item-active-block;
       }
       &:hover {
-        .menu-item-hover-block;
+        @{menu-item-anchor} {
+          .menu-item-hover-block;
+        }
       }
       @{menu-item-anchor} {
         &:focus {
@@ -192,6 +205,7 @@
     .@{has-popup}.@{popup-hoverable}:hover > .@{popup}, .@{has-popup} > input:checked ~ .@{popup} {
       display: block;
       width: 100%;
+      max-width: none;
     }
     @{menu-item-anchor} {
       overflow-x: hidden;

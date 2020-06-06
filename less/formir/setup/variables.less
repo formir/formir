@@ -675,25 +675,33 @@
 @button-color-2-active-color-3: lighten(@button-color-color-3, @button-active-lighten-2);
 
 // Table
+@table-color: @color-body; // table text color
+@table-base-color: @color-alternative; // table base thema color
+@table-base-color-hover: lighten(@table-base-color, 10%); 
+@table-base-color-contrast: #fff;
+@table-base-color-border: @color-mute;
+
 @table-font-size: 1rem;
 @table-td-padding: 1rem 0.5rem;
 @table-th-padding: 0.7rem 0.5rem;
-@table-th-font-size: 1rem;
-@table-color: @color-body;
-@table-tr-bgcolor-hover: lighten(@color-hover-primary, 30%);
-@table-tr-color-hover: #fff;
-@table-td-bgcolor-hover: @color-hover-primary;
-@table-td-color-hover: #fff;
-@table-col-bgcolor-hover: fade(@color-hover-alternative, 40%);
-@table-border: 1px solid lighten(@color-mute, 60%);
-@table-background: #fff;
-@table-zebra-bgcolor: lighten(@color-mute, 60%);
+@table-th-font-size: 0.8rem;
+@table-text-align: left;
 
+@table-tr-bgcolor-hover: lighten(@table-base-color-hover, 7%);
+@table-tr-color-hover: @table-base-color-contrast;
+@table-td-bgcolor-hover: @table-base-color-hover;
+@table-td-color-hover: @table-base-color-contrast;
+@table-col-bgcolor-hover: fade(@table-base-color-hover, 15%);
+@table-border: 1px solid lighten(@table-base-color-border, 60%);
+@table-background: @table-base-color-contrast;
+@table-zebra-bgcolor: lighten(@table-base-color-border, 60%);
+
+@table-mobile-td-border: 1px solid lighten(@table-base-color-border, 60%);
 @table-mobile-th-width: 30%;
 @table-mobile-td-width: 70%;
 @table-mobile-td-padding: 0.7rem 1rem 0.7rem 1.5rem;
 @table-mobile-th-padding: 0.7rem 1.5rem 0.7rem 1rem;
-@table-mobile-td-border: 1px solid lighten(@color-mute, 60%);
+@table-td-width-vw-sizes: 10, 20, 30, 40, 50, 60, 70, 80, 90;
 
 // Section
 
