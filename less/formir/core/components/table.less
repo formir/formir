@@ -2,6 +2,7 @@
 
 table, .@{table} {
   width: 100%;
+  .box-sizing(border-box);
 }
 
 .@{table-header-sticky} {
@@ -103,8 +104,7 @@ table, .@{table}, .@{inline-table} {
     table-layout: fixed;
     .@{td}, td, .@{th}, th {
       white-space: nowrap;
-      overflow-x: hidden;
-      overflow-y: visible;
+      overflow: hidden;
       text-overflow: ellipsis;
     }
   }
@@ -409,6 +409,27 @@ each(@table-td-width-vw-sizes, {
             .table-expanded;
           }
         }
+      }
+    }
+  }
+
+  .@{selectable-trigger} {
+    
+  }
+
+  .@{selectable-toggler} {
+    display: none !important;
+  }
+
+  .@{selectable-toggler} {
+    &:not(:checked) {
+      + * {
+        .table-selectable-not-checked();
+      }
+    }
+    &:checked {
+      + * {
+        .table-selectable-checked();
       }
     }
   }
