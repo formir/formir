@@ -1,4 +1,4 @@
-@include-core-componnet-table: true;
+@include-core-component-table: true;
 
 table, .@{table} {
   width: 100%;
@@ -409,27 +409,6 @@ each(@table-td-width-vw-sizes, {
             .table-expanded;
           }
         }
-      }
-    }
-  }
-
-  .@{selectable-trigger} {
-    
-  }
-
-  .@{selectable-toggler} {
-    display: none !important;
-  }
-
-  .@{selectable-toggler} {
-    &:not(:checked) {
-      + * {
-        .table-selectable-not-checked();
-      }
-    }
-    &:checked {
-      + * {
-        .table-selectable-checked();
       }
     }
   }

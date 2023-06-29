@@ -1,6 +1,6 @@
 {
   "name": "formir",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Pure CSS / HTML Framework",
   "main": "js/formir.js",
   "directories": {
@@ -26,5 +26,11 @@
   "homepage": "http://formir.io",
   "dependencies": {
     "less": ">=3.7.0 <=3.13.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-less": "^5.0.0",
+    "gulp-sourcemaps": "^3.0.0"
   }
 }
