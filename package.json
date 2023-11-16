@@ -1,11 +1,8 @@
 {
   "name": "formir",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Pure CSS / HTML Framework",
-  "main": "js/formir.js",
-  "directories": {
-    "example": "examples"
-  },
+  "main": "src/less/formir.less",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,7 +13,18 @@
   "keywords": [
     "formir",
     "less",
-    "pure css framework"
+    "pure css framework",
+    "css",
+    "css framework",
+    "framework",
+    "grid system",
+    "typography",
+    "buttons",
+    "forms",
+    "navigation",
+    "components",
+    "utilities",
+    "ui"
   ],
   "author": "Konrad Kubrak <support@formir.io> (http://formir.io)",
   "license": "MIT",
@@ -28,9 +36,15 @@
     "less": ">=3.7.0 <=3.13.1"
   },
   "devDependencies": {
+    "fs": "^0.0.1-security",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
     "gulp-less": "^5.0.0",
-    "gulp-sourcemaps": "^3.0.0"
-  }
+    "gulp-replace": "^1.1.4",
+    "gulp-sourcemaps": "^3.0.0",
+    "less-plugin-autoprefix": "^2.0.0"
+  },
+  "browserslist": [
+    "since 2017"
+  ]
 }

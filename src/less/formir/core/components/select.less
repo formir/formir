@@ -1,0 +1,293 @@
+.select-open-content-core() {
+  z-index: @select-zindex;
+  max-height: @select-max-height;
+  overflow-y: auto;
+  position: absolute;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  .flex-wrap(wrap);
+  .display-flex;
+  .@{select-placeholder} {
+    display: none;
+  }
+  label {
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    .flex(1 1 100%);
+    .select-option;
+    &:hover {
+      .select-option-hovered;
+    }
+  }
+  &:after {
+    display: none !important;
+  }
+  input {
+    &:checked {
+      + label {
+        .select-option-selected;
+        &:hover {
+          .select-option-selected-hovered;
+        }
+      }
+    }
+  }
+}
+
+.select-close-content-core() {
+  .display-flex;
+  min-height: inherit;
+  padding-right: @input-default-padding-horizontal;
+  input {
+    &[type="checkbox"] {
+      + label {
+        margin: calc(@input-default-padding-vertical ~"-" @input-default-border-width) 0 calc(@input-default-padding-vertical ~"-" @input-default-border-width) calc(@input-default-padding-horizontal ~"-" @input-default-border-width);
+        .select-multi-selected-item;
+        &:after {
+          .select-multi-selected-item-close;
+          pointer-events: auto;
+        }
+      }
+    }
+    &:checked {
+      ~ .@{select-placeholder} {
+        display: none;
+      }
+      ~ input:checked {
+        &.select-all + label {
+          display: none;
+        }
+      }
+      + label {
+        .order(-1);
+        width: auto;
+        display: inline-block;
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.select-close-count() {
+  label[for] {
+    display: none;
+  }
+  input {
+    &:checked {
+      counter-increment: selected;
+      ~ .@{select-placeholder} {
+        display: block;
+        &:after {
+          content: "1 " attr(data-selected);
+        }
+      }
+      ~ input:checked {
+        ~ .@{select-placeholder} {
+          display: block;
+          &:after {
+            content: counter(selected) " " attr(data-selected);
+          }
+        }
+      }
+    }
+  }
+}
+
+.@{select} {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  outline: 0 none;
+  position: relative;
+  max-width: 100%;
+  min-height: calc( @input-default-line-height ~"+" @input-default-padding-vertical * 2 ~"+" @input-default-border-width * 2 );
+  > input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    margin: 0;
+    ~ .@{select-content} {
+      label {
+        &:after {
+          position: relative;
+        }
+      }
+    }
+  }
+  &.@{select-disabled} {
+    pointer-events: none;
+    .@{select-content} {
+      .select-disabled-content;
+    }
+  }
+  &.@{select-readonly} {
+    pointer-events: none;
+    .@{select-content} {
+      .select-readonly-content;
+    }
+  }
+  .@{select-content} {
+    > input {
+      position: fixed;
+      left: -100000px;
+    }
+    &:after {
+      .select-arrow;
+      right: @input-default-font-size/1.2;
+    }
+  }
+
+  &.@{select-hoverable}:not(:hover), &:not(.@{select-hoverable}):not(.@{select-active}):not([tabindex]):not(:focus), &[tabindex]:not(:focus) {
+    .@{select-content}:only-child {
+      .select-close-content;
+      .select-close-content-core;
+    }
+  }
+  > input:not(:checked) {
+    ~ .@{select-content} {
+      .select-close-content;
+      .select-close-content-core;
+    }
+  }
+  .@{select-placeholder} {
+    margin: @input-default-padding-vertical @input-default-padding-horizontal;
+    .order(-1);
+    &:after {
+      content: attr(data-placeholder);
+    }
+  }
+
+  .@{select-content} {
+    background-color: #fff;
+    .flex-direction(row);
+    .flex-wrap(wrap);
+    .input-base-style;
+    padding: 0;
+    
+    > label {
+      display: block;
+      white-space: nowrap;
+      text-align: left;
+      width: 100%;
+      text-overflow: ellipsis;
+      box-sizing: border-box;
+      line-height: @input-default-line-height;
+      padding: @input-default-padding-vertical @input-default-padding-horizontal;
+    }
+    label {
+      cursor: pointer;
+      display: none;
+    }
+  }
+  &:not(.@{select-count-selected}) {
+    .@{select-content} {
+      > input[id] {
+        display: none;
+      }
+    }
+  }
+  &.@{select-count-selected} {
+    counter-reset: selected;
+    &.@{select-hoverable}:not(:hover), &:not(.@{select-hoverable}):not(.@{select-active}), &[tabindex]:not(:focus) {
+      .@{select-content}:only-child {
+        .select-close-count;
+      }
+    }
+    > input:not(:checked) {
+      ~ .@{select-content} {
+        .select-close-count;
+      }
+    }
+  }
+
+  &.@{select-hoverable}:hover, &.@{select-active}, &[tabindex]:focus {
+    &.@{select-hide-selected} {
+      .@{select-content} {
+        input {
+          &:checked {
+            + label {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    .@{select-content} {
+      .select-open-content;
+      .select-open-content-core;
+    }
+  }
+  &.hide-selected {
+     > input:checked  ~ .@{select-content} {
+      input {
+        &:checked {
+          + label {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  > input:checked {
+    position: fixed !important;
+    z-index: (@select-zindex - 1);
+    ~ .@{select-content} {
+      .select-open-content;
+      .select-open-content-core;
+    }
+  }
+  &[tabindex], &.@{select-hoverable} {
+    .@{select-content} {
+      input {
+        &[type="checkbox"] {
+          + label {
+            &:after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.@{select} {
+  &.@{input} {
+    .for(@input-sizes); .-each(@name) {
+      &-@{name} {
+        min-height: calc( ~"@{input-@{name}-line-height}" ~"+" ~"@{input-@{name}-padding-vertical} * 2" ~" +" ~"@{input-@{name}-border-width} * 2" );
+        .@{select-content} {
+          border-radius: ~"@{input-@{name}-border-radius}";
+          border-width: ~"@{input-@{name}-border-width}";
+          outline-width: ~"@{input-@{name}-outline}";
+          box-shadow: ~"@{input-@{name}-shadow}";
+          > label {
+            font-size: ~"@{input-@{name}-font-size}";
+            line-height: ~"@{input-@{name}-line-height}";
+            padding: ~"@{input-@{name}-padding-vertical}" ~"@{input-@{name}-padding-horizontal}";
+          }
+          .@{select-placeholder} {
+            font-size: ~"@{input-@{name}-font-size}";
+            line-height: ~"@{input-@{name}-line-height}";
+            margin: ~"@{input-@{name}-padding-vertical}" ~"@{input-@{name}-padding-horizontal}";
+          }
+        }
+        > input:not(:checked), &.@{select-hoverable}:not(:hover), &:not(.@{select-hoverable}):not(.@{select-active}):not([tabindex]):not(:focus), &[tabindex]:not(:focus) {
+          ~ .@{select-content} {
+            > input[type="checkbox"] {
+              + label {
+                margin: calc( ~"@{input-@{name}-padding-vertical}" ~"-" ~"@{input-@{name}-border-width}" ) 0 calc( ~"@{input-@{name}-padding-vertical}" ~"-" ~"@{input-@{name}-border-width}" ) calc( ~"@{input-@{name}-padding-horizontal}" ~"-" ~"@{input-@{name}-border-width}");
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
