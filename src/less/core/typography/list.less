@@ -1,0 +1,30 @@
+@{ol}, @{ul} {
+  padding: @list-padding;
+  margin: @list-margin;
+  &.@{list-clear} {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style: none;
+    }
+  }
+  @{li} {
+    margin: @list-item-margin;
+    padding: @list-item-padding;
+    + @{li} {
+      margin-top: @list-item-space;
+    }
+  }
+}
+
+@{ul} {
+  @{li} {
+
+  }
+}
+
+@{ol} {
+  @{li} {
+
+  }
+}

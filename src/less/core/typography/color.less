@@ -1,0 +1,31 @@
+.@{background-color} {
+  .for(@colors); .-each(@name) {
+    &-@{name} {
+      background-color: ~"@{background-color-@{name}}" !important;
+    }
+  }
+}
+
+.@{background-color-hoverable} {
+  .for(@colors); .-each(@name) {
+    &-@{name}:hover {
+      background-color: ~"@{background-color-hover-@{name}}" !important;
+    }
+  }
+}
+
+.@{text-color} {
+  .for(@colors); .-each(@name) {
+    &-@{name} {
+      color: ~"@{text-color-@{name}}" !important; 
+    }
+  }
+}
+
+.@{border-color} {
+  .for(@colors); .-each(@name) {
+    &-@{name} {
+      border-color: ~"@{border-color-@{name}}" !important; 
+    }
+  }
+}

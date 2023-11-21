@@ -1,0 +1,254 @@
+.width-repeat(@n, @i: 1) when (@i =< @n) {
+  @width-repeat: unit(((@layout-width/@layout-steps)*@i), @layout-unit);
+  .@{width}-@{i} {
+    width: @width-repeat !important;
+    & when(@include-core-layout-side = true) {
+      .side-width(@width-repeat);
+    }
+  }
+  .max-@{width}-@{i} {
+    max-width: @width-repeat !important;
+  }
+  .min-@{width}-@{i} {
+    min-width: @width-repeat !important;
+  }
+  .width-repeat(@n, (@i + 1));
+}
+
+.and-width(@n, @i: 1) when (@i =< @n) {
+  &.@{width}-@{i} {
+    width: unit(((@layout-width/@layout-steps)*@i), @layout-unit);
+  }
+  .and-width(@n, (@i + 1));
+}
+
+.width-geo-repeat(@n, @i: 1) when (@i =< @n + 1) {
+  @j: @i - 1;
+  .@{width-geo}-@{j} {
+    @width-geo-repeat: unit(((((1-(@layout-steps - @i)/((@layout-steps - @i) + @layout-geometric-step)))*@layout-width)-(((1-(@layout-steps - 1)/((@layout-steps - 1) + @layout-geometric-step)))*@layout-width))*@layout-factor, @layout-unit);
+    width: @width-geo-repeat !important;
+    & when(@include-core-layout-side = true) {
+      .side-width(@width-geo-repeat);
+    }
+  }
+  .width-geo-repeat(@n, (@i + 1));
+}
+
+.rwd-width-repeat(@n, @i: 1) when (@i =< @n) {
+  @width-repeat: unit(((@layout-width/@layout-steps)*@i), @layout-unit);
+  @media (min-width: @desktop-min-width) {
+    .@{d}-@{width}-@{i} {
+      width: @width-repeat !important;
+    }
+  }
+  @media (max-width: @tablet-max-width) {
+    .@{t}-@{width}-@{i} {
+      width: @width-repeat !important;
+    }
+  }
+  @media (max-width: @tablet-portrait-max-width) {
+    .@{tp}-@{width}-@{i} {
+      width: @width-repeat !important;
+    }
+  }
+  @media (max-width: @mobile-max-width) {
+    .@{m}-@{width}-@{i} {
+      width: @width-repeat !important;
+    }
+  }
+  @media (max-width: @mobile-portrait-max-width) {
+    .@{mp}-@{width}-@{i} {
+      width: @width-repeat !important;
+    }
+  }
+  .rwd-width-repeat(@n, (@i + 1));
+}
+
+.height-repeat(@n, @i: 1) when (@i =< @n) {
+  .@{height}-@{i} {
+    @height-repeat: unit(((@layout-height/@layout-steps)*@i), @layout-unit);
+    height: @height-repeat !important;
+    & when(@include-core-layout-header = true) {
+      .header-height(@height-repeat);
+    }
+    & when(@include-core-layout-side = true) {
+      .side-height(@height-repeat);
+    }
+  }
+  .height-repeat(@n, (@i + 1));
+}
+
+.height-geo-repeat(@n, @i: 1) when (@i =< @n + 1) {
+  @j: @i - 1;
+  @height-geo-repeat: unit(((((1-(@layout-steps - @i)/((@layout-steps - @i) + @layout-geometric-step)))*@layout-height)-(((1-(@layout-steps - 1)/((@layout-steps - 1) + @layout-geometric-step)))*@layout-height))*@layout-factor, @layout-unit);
+  .@{height-geo}-@{j} {
+    height: @height-geo-repeat !important;
+    & when(@include-core-layout-header = true) {
+      .header-height(@height-geo-repeat);
+    }
+    & when(@include-core-layout-side = true) {
+      .side-height(@height-geo-repeat);
+    }
+  }
+  .height-geo-repeat(@n, (@i + 1));
+}
+
+.and-height(@n, @i: 1) when (@i =< @n) {
+  &.@{height}-@{i} {
+    height: unit(((@layout-height/@layout-steps)*@i), @layout-unit);
+  }
+  .and-height(@n, (@i + 1));
+}
+
+// Margin
+
+.margin-repeat(@n, @i: 1) when (@i =< @n + 1) {
+  @j: @i - 1;
+  @margin-h: unit(((((1-(@layout-steps - @i)/((@layout-steps - @i) + @layout-geometric-step)))*@layout-height)-(((1-(@layout-steps - 1)/((@layout-steps - 1) + @layout-geometric-step)))*@layout-height))*@layout-factor, @layout-unit);
+  @margin-v: unit(((((1-(@layout-steps - @i)/((@layout-steps - @i) + @layout-geometric-step)))*@layout-width)-(((1-(@layout-steps - 1)/((@layout-steps - 1) + @layout-geometric-step)))*@layout-width))*@layout-factor, @layout-unit);
+  .@{margin}-@{j} {
+    margin: @margin-h @margin-v !important;
+  }
+
+  .@{margin-horizontal}-@{j} {
+    margin-top: @margin-h !important;
+    margin-bottom: @margin-h !important;
+  }
+
+  .@{margin-vertical}-@{j} {
+    margin-left: @margin-v !important;
+    margin-right: @margin-v !important;
+  }
+
+  .@{margin-top}-@{j} {
+    margin-top: @margin-h !important;
+  }
+  .@{margin-bottom}-@{j} {
+    margin-bottom: @margin-h !important;
+  }
+  .@{margin-left}-@{j} {
+    margin-left: @margin-v !important;
+  }
+  .@{margin-right}-@{j} {
+    margin-right: @margin-v !important;
+  }
+
+  .margin-repeat(@n, (@i + 1));
+}
+
+.rwd-margin-vertical-repeat(@n, @i: 1) when (@i =< @n + 1) {
+  @media (min-width: @desktop-min-width) {
+    .@{d}-@{margin-vertical}-@{j} {
+      margin-left: @margin-v !important;
+      margin-right: @margin-v !important;
+    }
+  }
+  @media (max-width: @tablet-max-width) {
+    .@{t}-@{margin-vertical}-@{j} {
+      margin-left: @margin-v !important;
+      margin-right: @margin-v !important;
+    }
+  }
+  @media (max-width: @tablet-portrait-max-width) {
+    .@{tp}-@{margin-vertical}-@{j} {
+      margin-left: @margin-v !important;
+      margin-right: @margin-v !important;
+    }
+  }
+  @media (max-width: @mobile-max-width) {
+    .@{m}-@{margin-vertical}-@{j} {
+      margin-left: @margin-v !important;
+      margin-right: @margin-v !important;
+    }
+  }
+  @media (max-width: @mobile-portrait-max-width) {
+    .@{mp}-@{margin-vertical}-@{j} {
+      margin-left: @margin-v !important;
+      margin-right: @margin-v !important;
+    }
+  }
+  .rwd-margin-vertical-repeat(@n, (@i + 1));
+}
+
+// Padding
+
+.padding-repeat(@n, @i: 1) when (@i =< @n + 1) {
+  @j: @i - 1;
+  @padding-h: unit(((((1-(@layout-steps - @i)/((@layout-steps - @i) + @layout-geometric-step)))*@layout-height)-(((1-(@layout-steps - 1)/((@layout-steps - 1) + @layout-geometric-step)))*@layout-height))*@layout-factor, @layout-unit);
+  @padding-v: unit(((((1-(@layout-steps - @i)/((@layout-steps - @i) + @layout-geometric-step)))*@layout-width)-(((1-(@layout-steps - 1)/((@layout-steps - 1) + @layout-geometric-step)))*@layout-width))*@layout-factor, @layout-unit);
+  .@{padding}-@{j} {
+    padding: @padding-h @padding-v !important;
+  }
+  .@{padding-horizontal}-@{j} {
+    padding-top: @padding-h !important;
+    padding-bottom: @padding-h !important;
+  }
+  .@{padding-vertical}-@{j} {
+    padding-left: unit(((((1-(@layout-steps - @i)/((@layout-steps - @i) + @layout-geometric-step)))*@layout-width)-(((1-(@layout-steps - 1)/((@layout-steps - 1) + @layout-geometric-step)))*@layout-width))*@layout-factor, @layout-unit);
+    padding-right: @padding-v !important;
+  }
+  .@{padding-top}-@{j} {
+    padding-top: @padding-h !important;
+  }
+  .@{padding-bottom}-@{j} {
+    padding-bottom: @padding-h !important;
+  }
+  .@{padding-left}-@{j} {
+    padding-left: @padding-v !important;
+  }
+  .@{padding-right}-@{j} {
+    padding-right: @padding-v !important;
+  }
+  .padding-repeat(@n, (@i + 1));
+}
+
+.rwd-padding-vertical-repeat(@n, @i: 1) when (@i =< @n + 1) {
+  @j: @i - 1;
+  @media (min-width: @desktop-min-width) {
+    .@{t}-@{padding-vertical}-@{j} {
+      padding-left: @padding-v !important;
+      padding-right: @padding-v !important;
+    }
+  }
+  @media (max-width: @tablet-max-width) {
+    .@{t}-@{padding-vertical}-@{j} {
+      padding-left: @padding-v !important;
+      padding-right: @padding-v !important;
+    }
+  }
+  @media (max-width: @tablet-portrait-max-width) {
+    .@{tp}-@{padding-vertical}-@{j} {
+      padding-left: @padding-v !important;
+      padding-right: @padding-v !important;
+    }
+  }
+  @media (max-width: @mobile-max-width) {
+    .@{m}-@{padding-vertical}-@{j} {
+      padding-left: @padding-v !important;
+      padding-right: @padding-v !important;
+    }
+  }
+  @media (max-width: @mobile-portrait-max-width) {
+    .@{mp}-@{padding-vertical}-@{j} {
+      padding-left: @padding-v !important;
+      padding-right: @padding-v !important;
+    }
+  }
+  .rwd-padding-vertical-repeat(@n, (@i + 1));
+}
+
+.width-repeat(@layout-steps);
+.max-@{width}-100 {
+  max-width: 100% !important;
+}
+.height-repeat(@layout-steps);
+.width-geo-repeat(@layout-steps);
+.height-geo-repeat(@layout-steps);
+
+.margin-repeat(@layout-steps);
+.padding-repeat(@layout-steps);
+
+//RWD
+.rwd-width-repeat(@layout-steps);
+.rwd-margin-vertical-repeat(@layout-steps);
+.rwd-padding-vertical-repeat(@layout-steps);

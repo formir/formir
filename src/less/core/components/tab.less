@@ -1,0 +1,74 @@
+.tab-page(@n, @i: 1) when (@i =< @n) {
+  &:nth-child(@{i}) {
+    ~ .tab-pages {
+      > *:nth-child(@{i}) {
+        display: block;
+      }
+    }
+  }
+  .tab-page(@n, (@i + 1));
+}
+
+.tab-page-table(@n, @i: 1) when (@i =< @n) {
+  &:nth-child(@{i}) {
+    ~ .tab-pages {
+      > *:nth-child(@{i}) {
+        display: table-group;
+      }
+    }
+  }
+  .tab-page-table(@n, (@i + 1));
+}
+
+.tab-nav(@n, @i: 1) when (@i =< @n) {
+  &:nth-child(@{i}) {
+    ~ .@{tab-navs} {
+      .@{tab-labels} {
+        > *:nth-child(@{i}) {
+          .tab-nav-active;
+        }
+      }
+      .@{tab-addons} {
+        > *:nth-child(@{i}) {
+          display: block;
+        }
+      }
+    }
+  }
+  .tab-nav(@n, (@i + 1));
+}
+
+
+.@{tabs} {
+  > input[type="radio"] {
+    display: none;
+    &:checked {
+      .tab-page(@tabs-pages);
+      .tab-nav(@tabs-pages);
+    }
+  }
+
+  .@{tab-pages} {
+    > * {
+      display: none;
+      &.@{active} {
+        display: block;
+      }
+    }
+  }
+  .@{tab-navs} {
+    .@{tab-labels} {
+      > .@{active} {
+        .tab-nav-active;
+      }
+    }
+    .@{tab-addons} {
+      > * {
+        display: none;
+        &.@{active} {
+          display: block;
+        }
+      }
+    }
+  }
+}

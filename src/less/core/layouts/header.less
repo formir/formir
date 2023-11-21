@@ -1,0 +1,114 @@
+/// NO NOT change this ///
+@include-core-layout-header: true;
+
+.header-height(@height) {
+  @{header}& {
+    &.@{header-fixed} {
+      + * {
+        margin-top: @height;
+        & when(@include-core-component-table = true) {
+          .@{table-header-sticky} {
+            thead, .@{thead} {
+              th, .@{th} {
+                top: @height;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.header-position(@left: false; @right: false; @top: false; @bottom: false) {
+  @{header}, &@{header} {
+    &.@{header-fixed} {
+      & when not(@left = false) {
+        margin-left: 0;
+        left: @left;
+        .@{menu-mobile} {
+          left: @left;
+        }
+      }
+      & when not(@right = false) {
+        margin-right: 0;
+        right: @right;
+        .@{menu-mobile} {
+          right: @right;
+        }
+      }
+      & when not(@top = false) {
+        margin-top: 0;
+        top: @top;
+      }
+      & when not(@bottom = false) {
+        margin-bottom: 0;
+        bottom: @bottom;
+      }
+    }
+  }
+}
+
+@{header} {
+  .display-flex;
+  height: @header-height;
+  z-index: @header-zindex;
+  position: relative;
+  &.@{header-fixed} {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    + * {
+      border-top: @header-height solid transparent;
+    }
+  }
+  .@{header-content} {
+    background: @header-background;
+    color: @header-color;
+    .display-flex;
+    .justify-content(space-between);
+    .align-items(center);
+    .flex(1 1 auto);
+    padding: @header-horizontal-padding @header-vertical-padding;
+    nav {
+      @{menu-item-anchor} {
+        vertical-align: middle;
+        &:not(.button) {
+          color: inherit;
+        }
+      }
+      &.@{items} {
+        margin-top: 0;
+        display: block;
+        > * {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+  & when(@include-core-component-menu = true) {
+    @media (max-width: @mobile-menu-max-width) {
+      .@{menu-mobile} {
+        display: none;
+        position: fixed;
+        top: @header-height;
+        left: 0;
+        right: 0;
+        max-height: calc(100vh ~" - " @header-height);
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+      input {
+        &.@{toggle} {
+          display: none;
+        }
+        &:checked {
+          + .@{menu-mobile} {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

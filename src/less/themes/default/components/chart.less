@@ -1,0 +1,25 @@
+.@{chart} {
+  width: @chart-height;
+  height: @chart-height;
+  background-color: @chart-parent-background;
+  &.ring {
+    &:after {
+      width: @chart-height - @chart-ring-width;
+      height: @chart-height - @chart-ring-width;
+    }
+  }
+  &.value {
+    &:before {
+      font-size: @chart-value-font-size;
+      font-weight: bold;
+      height: @chart-value-font-size;
+      line-height: @chart-value-font-size;
+      color: @chart-value-color;
+    }
+  }
+  
+  > *:first-child {
+    background-color: @chart-background;
+    color: @chart-color;
+  }
+}

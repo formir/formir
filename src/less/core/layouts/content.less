@@ -1,0 +1,17 @@
+.@{content-holder} {
+  margin-left: auto;
+  margin-right: auto;
+  width: @content-max-width;
+  max-width: calc(100% ~" - " 2 * @content-min-margin);
+}
+
+.@{center-vertically} {
+  .display-flex;
+  height: 100%;
+  &.@{horizontally} {
+    justify-content: center;
+  }
+  > * {
+    align-self: center;
+  }
+}

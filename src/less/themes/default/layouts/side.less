@@ -1,0 +1,100 @@
+.side-collapsed() {
+  @{menu-item} {
+    i {
+      margin-right: 0;
+      + span {
+        display: none;
+      }
+    } 
+  }
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: transparent; 
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &:hover {
+    scrollbar-color: fade(@color-white, 50%) transparent;
+    &::-webkit-scrollbar-thumb {
+      background: fade(@color-white, 50%); 
+    }
+  }
+}
+
+.side-expanded() {
+}
+
+.side-expanded-full() {
+}
+
+.side-hovered() {
+}
+
+.side-focused() {
+
+}
+
+.side-open-style() {
+  border-radius: 100%;
+  margin: 0.4rem;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  background-color: @color-primary;
+  i {
+    color: @color-white;
+  }
+}
+
+.side-open-left-style() {
+  bottom: 0;
+  left: 0;
+  margin: 0 0 1rem 1rem;
+}
+.side-open-right-style() {
+  top: 0;
+  right: 0;
+  margin: 0 1rem 1rem 0;
+}
+.side-open-top-style() {
+  top: 0;
+  left: 0;
+}
+.side-open-bottom-style() {
+  bottom: 0;
+  left: 0;
+}
+
+& when(@include-core-layout-side = true) {
+  .@{side-backdrop} {
+    background-color: @side-backdrop-color;
+    opacity: @side-backdrop-opacity;
+  }
+  .@{side-close} {
+    position: absolute;
+    top: 1.5rem;
+    left: 1rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
+
+  @{side} {
+    background-color: darken(@color-primary, 10);
+    color: #fff;
+    &.@{side-top}, &.@{side-bottom} {
+      .@{side-close} {
+        top: 0.85rem;
+      }
+    }
+    @{menu-item} {
+      i {
+        font-size: 1.4rem;
+        margin-right: 0.5em;
+        margin-left: 0.1em;
+      }
+    }
+  }
+}

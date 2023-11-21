@@ -7,11 +7,33 @@ I invite you to support and develop the project. Become a Contributor - [write a
 
 ## Install formir
 
+### npm
+
 ```console
-$ npm install formir
+$ npm install --save-dev formir
 ```
 
-## Status
+### yarn
+
+```console
+$ npm install -D formir
+```
+
+## Use in
+
+### JS
+
+```javascript
+import "formir";
+```
+
+### LESS
+
+```less
+@import "formir";
+```
+
+## Current version
 
 [![npm version](https://img.shields.io/npm/v/formir.svg)](https://www.npmjs.com/package/formir)
 

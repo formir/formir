@@ -1,0 +1,36 @@
+.alert-close() {
+  &:after {
+    .font-icon();
+    content: @icon-close;
+    cursor: pointer;
+    font-size: 1.8rem;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    margin-left: 1rem;
+    vertical-align: middle;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+}
+
+.alert-style() {
+  font-size: 1.2rem;
+  line-height: 1.35em;
+  i {
+    font-size: 1.8rem;
+    margin-right: 0.7rem;
+    color: inherit;
+  }
+}
+
+.alerts-style() {
+  position: fixed;
+  z-index: 1000000;
+  top: 2rem;
+  right: 2rem;
+}
+
+.alerts-alert-style() {
+  max-width: 250px;
+}

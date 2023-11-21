@@ -1,0 +1,191 @@
+.display-flex() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.display-inline-flex() {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+}
+
+.align-self(@align) {
+  -webkit-align-self: @align;
+  align-self: @align;
+}
+
+.justify-self(@justify) {
+  -webkit-justify-self: @justify;
+  justify-self: @justify;
+}
+
+.justify-content(@justify) {
+  .ms-flex-justify-content(@justify);
+  -webkit-justify-content: @justify;
+  justify-content: @justify;
+}
+
+.align-items(@align) {
+  .ms-flex-align-items(@align);
+  -webkit-align-items: @align;
+  align-items: @align;
+}
+
+.align-content(@align) {
+  .ms-flex-align-content(@align);
+  -webkit-align-content: @align;
+  align-content: @align;
+}
+
+.flex-flow(@flow) {
+  .webkit-flex-flow(@flow);
+  -webkit-flex-flow: @flow;
+  flex-flow: @flow;
+}
+
+.flex-shrink(@shrink) {
+  -webkit-flex-shrink: @shrink;
+  flex-shrink: @shrink;
+}
+
+.flex-grow(@grow) {
+  -webkit-flex-grow: @grow;
+  flex-grow: @grow;
+}
+
+.flex-basis(@basis) {
+  -webkit-flex-basis: @basis;
+  flex-basis: @basis;
+}
+
+.flex-wrap(@wrap) {
+  .ms-flex-wrap(@wrap);
+  -webkit-flex-wrap: @wrap;
+  flex-wrap: @wrap;
+}
+
+.flex-direction(@direction) {
+  .webkit-flex-direction(@direction);
+  -ms-flex-direction: @direction;
+  -webkit-flex-direction: @direction;
+  flex-direction: @direction;
+}
+
+.flex(@flex) {
+  -webkit-box-flex: @flex;
+  -moz-box-flex: @flex;
+  -webkit-flex: @flex;
+  -ms-flex: @flex;
+  flex: @flex;
+}
+
+.order(@order) {
+  -ms-flex-order: @order;
+  -webkit-box-ordinal-group: @order;
+  -webkit-order: @order;
+  order: @order;
+}
+
+.ms-flex-wrap(@wrap) when (@wrap = nowrap) {
+  -ms-flex-wrap: none;
+}
+
+.ms-flex-wrap(@wrap) when (@wrap = wrap), (@wrap = wrap-reverse) {
+  -ms-flex-wrap: @wrap;
+}
+
+.ms-flex-justify-content(@justify) when (@justify = space-between) {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+}
+
+.ms-flex-justify-content(@justify) when (@justify = space-around) {
+  -ms-flex-pack: distribute;
+}
+
+.ms-flex-justify-content(@justify) when (@justify = flex-start) {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+}
+
+.ms-flex-justify-content(@justify) when (@justify = flex-end) {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+}
+
+.ms-flex-justify-content(@justify) when (@justify = center) {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+}
+
+.ms-flex-align-content(@align) when (@align = space-between) {
+  -ms-flex-line-pack: justify;
+}
+
+.ms-flex-align-content(@align) when (@align = space-around) {
+  -ms-flex-line-pack: distribute;
+}
+
+.ms-flex-align-content(@align) when (@align = flex-start) {
+  -webkit-box-align: start;
+  -ms-flex-line-pack: start;
+}
+
+.ms-flex-align-content(@align) when (@align = flex-end) {
+  -webkit-box-align: end;
+  -ms-flex-line-pack: end;
+}
+
+.ms-flex-align-content(@align) when (@align = center), (@align = stretch), (@align = baseline) {
+  -webkit-box-align: @align;
+  -ms-flex-line-pack: @align;
+}
+
+.ms-flex-align-items(@align) when (@align = flex-start) {
+  -ms-flex-align: start;
+}
+
+.ms-flex-align-items(@align) when (@align = flex-end) {
+  -ms-flex-align: end;
+}
+
+.ms-flex-align-items(@align) when (@align = center), (@align = stretch), (@align = baseline) {
+  -ms-flex-align: @align;
+}
+
+.webkit-flex-direction(@direction) when (@direction = row-reverse) {
+  -webkit-box-direction: reverse;
+  -moz-box-orient: horizontal;
+  -webkit-box-orient: horizontal;
+}
+.webkit-flex-direction(@direction) when (@direction = column-reverse) {
+  -webkit-box-direction: reverse;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+}
+.webkit-flex-direction(@direction) when (@direction = row), (@direction = column) {
+  .webkit-flex-flow(@direction);
+}
+.webkit-flex-flow(@flow) when (@flow = row) {
+  -moz-box-orient: horizontal;
+  -webkit-box-orient: horizontal;
+}
+.webkit-flex-flow(@flow) when (@flow = column) {
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+}
+.webkit-flex-flow(@flow) when (@flow = row-reverse) {
+  -webkit-box-direction: reverse;
+  -moz-box-orient: horizontal;
+  -webkit-box-orient: horizontal;
+}
+.webkit-flex-flow(@flow) when (@flow = column-reverse) {
+  -webkit-box-direction: reverse;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+}

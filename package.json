@@ -1,8 +1,10 @@
 {
   "name": "formir",
-  "version": "0.3.5",
+  "version": "1.0.0",
   "description": "Pure CSS / HTML Framework",
-  "main": "src/less/formir.less",
+  "main": "src/index.js",
+  "style": "dist/css/formir.css",
+  "less": "src/less/formir.less",
   "scripts": {
     "build": "gulp"
   },
@@ -38,14 +40,24 @@
     "src/img/**/*.{png,jpg,jpeg,gif,svg}"
   ],
   "homepage": "http://formir.io",
+  "dependencies": {
+    "less": ">=3.7.0 <=3.13.1"
+  },
+  "peerDependencies": {
+    "less": ">=3.7.0 <=3.13.1"
+  },
+  "peerDependenciesMeta": {
+    "less": {
+      "strict": true
+    }
+  },
   "devDependencies": {
-    "autoprefixer": "^10.4.16",
+    "autoprefixer": "^10",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
     "gulp-less": "^5.0.0",
     "gulp-postcss": "^9.0.1",
-    "gulp-sourcemaps": "^3.0.0",
-    "less": ">=3.7.0 <=3.13.1"
+    "gulp-sourcemaps": "^3.0.0"
   },
   "browserslist": [
     "since 2017"

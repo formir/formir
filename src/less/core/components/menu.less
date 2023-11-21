@@ -1,0 +1,236 @@
+/// DO NO NOT change this ///
+@include-core-component-menu: true;
+
+.menu() {
+  display: block;
+  &.@{menu-horizontal} {
+    .display-flex;
+    width: 100%;
+  }
+  &, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  &.@{menu-inside-absolute}, &.@{menu-inside-fixed} {
+    @{menu-item} {
+      position: relative;
+    }
+    @{menu-inside} {
+      z-index: 1;
+    }
+  }
+  &.@{menu-inside-absolute} {
+    @{menu-inside} {
+      position: absolute;
+      left: 0;
+    }
+  }
+  &.@{menu-inside-fixed} {
+    @{menu-inside} {
+      position: fixed;
+    }
+  }
+  &.@{text-center} {
+    @{menu-item-anchor} {
+      .justify-content(center);
+    }
+  }
+  @{menu-inside} {
+    list-style: none;
+    display: none;
+    &:hover {
+      @{menu-item-anchor} {
+        .menu-inside-hover();
+      }
+    }
+  }
+  @{menu-item-anchor} {
+    cursor: pointer;
+    .ellipsis;
+    &:hover {
+      ~ @{menu-inside} {
+        display: block;
+        @{menu-item-anchor} {
+          .menu-inside-hover();
+        }
+      }
+    }
+    ~ @{menu-inside} {
+      &:hover {
+        display: block;
+      }
+    }
+  }
+  @{menu-item} {
+    display: block;
+    &:last-child {
+      border-bottom: 0;
+    }
+    @{menu-item-anchor} {
+      display: block;
+    }
+  }
+}
+
+@{menu} {
+  .menu;
+  &.@{popup} {
+    border: 0 none;
+  }
+  @{menu-item} {
+    &.@{active} {
+      .menu-item-active-block;
+    }
+    &:hover {
+      @{menu-item-anchor} {
+        .menu-item-hover-block;
+      }
+    }
+  }
+  @{menu-item-anchor} {
+    &:focus {
+      .menu-item-anchor-focus-block;
+    }
+  }
+  &.@{menu-horizontal} {
+    .display-flex;
+    &.@{menu-wrap} {
+      .flex-wrap(wrap);
+    }
+    &:not(.@{menu-wrap}) {
+      @{menu-item} {
+        .display-flex;
+        .flex(1 1 auto);
+        min-width: 0;
+      }
+    }
+    @{menu-item-anchor} {
+      &:focus {
+        .menu-item-anchor-focus-block;
+      }
+    }
+    @{menu-item} {
+      @{menu-item-anchor} {
+        .display-flex;
+        .flex(1 1 auto);
+        .align-items(center);
+        min-width: 0;
+        [class^="@{icon}-"], [class*=" @{icon}-"] {
+          .flex(0 0 auto);
+          min-width: 0;
+        }
+        span {
+          .flex(1 1 auto);
+          min-width: 0;
+          .ellipsis; 
+        }
+        &:not(.@{button}) {
+          border-top: 0 none;
+        }
+      }
+      + @{menu-item} {
+        @{menu-item-anchor} {
+          &:not(.@{button}) {
+            border-left: @menu-item-anchor-border;
+          }
+        }
+      }
+    }
+    &.@{menu-auto-width} {
+      @{menu-item} {
+        width: auto;
+        .flex(0 0 auto);
+      }
+    }
+  }
+}
+
+@media (min-width: (@mobile-menu-max-width + 1px)) {
+  .@{menu-mobile} {
+    @{menu-item} {
+      @{menu-item-anchor} {
+        cursor: pointer;
+        color: @menu-item-anchor-color;
+        text-decoration: @menu-item-anchor-decoration;
+        &:focus {
+          .menu-item-anchor-focus-inline;
+        }
+      }
+      &.@{active} {
+        .menu-item-active-inline;
+      }
+      &:hover {
+        @{menu-item-anchor} {
+          .menu-item-hover-inline;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: @mobile-menu-max-width) {
+  .@{menu-mobile} {
+    .menu;
+    .@{button} {
+      border-radius: @mobile-menu-item-button-radius;
+    }
+    &.@{items} {
+      display: block;
+      margin: 0;
+    }
+    @{menu-item} {
+      &.@{active} {
+        .menu-item-active-block;
+      }
+      &:hover {
+        @{menu-item-anchor} {
+          .menu-item-hover-block;
+        }
+      }
+      @{menu-item-anchor} {
+        &:focus {
+          .menu-item-anchor-focus-block;
+        }
+      }
+    }
+  }
+  ul.@{items}.@{menu-mobile} {
+    display: block;
+    margin: 0;
+    li, @{menu-item-anchor} {
+      display: block;
+      width: auto;
+    }
+    .@{has-popup}.@{popup-hoverable}:hover > .@{popup}, .@{has-popup} > input:checked ~ .@{popup} {
+      display: block;
+      width: 100%;
+      max-width: none;
+    }
+    @{menu-item-anchor} {
+      overflow-x: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
+
+// Side style
+
+& when(@include-core-layout-side = true) {
+  @{side} {
+    @{menu} {
+      &.@{menu-inside-fixed} {
+        width: inherit;
+        @{menu-inside}, @{menu-item} {
+          width: inherit;
+        }
+      }
+      &.@{menu-inside-absolute} {
+        @{menu-inside} {
+          right: 0;
+        }
+      }
+    }
+  }
+}
