@@ -34,10 +34,8 @@
     "url": "https://github.com/formir/formir/issues"
   },
   "files": [
-    "dist/css/**/*.{css,map}",
-    "src/less/**/*.{less}",
-    "src/fonts/**/*.{ttf,woff,woff2}",
-    "src/img/**/*.{png,jpg,jpeg,gif,svg}"
+    "dist",
+    "src"
   ],
   "homepage": "http://formir.io",
   "dependencies": {
