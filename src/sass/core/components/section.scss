@@ -1,0 +1,137 @@
+.#{$section} {
+  border-radius: $section-radius;
+  background-color: $section-background;
+  margin: $section-margin;
+  box-shadow: $section-shadow;
+  &.#{$with-border} {
+    border: $section-border;
+    .#{$section-header} ~ .#{$section-content} {
+      border-top: $section-border;
+    }
+    .#{$section-content} ~ .#{$section-footer} {
+      border-top: $section-border;
+    }
+  }
+  .#{$section-header}, .#{$section-content}, .#{$section-footer} {
+    &.#{$with-border} {
+      border-top: $section-border;
+    }
+  }
+  &.#{$with-padding} {
+    .#{$section-header} {
+      padding: $section-header-padding;
+    }
+    .#{$section-content} {
+      padding: $section-content-padding;
+      &.#{$with-table} {
+        padding: 0;
+      }
+    }
+    .#{$section-footer} {
+      padding: $section-footer-padding;
+    }
+  }
+  .#{$with-table}, &.#{$with-table} {
+    padding: 0;
+    .#{$section-header}, .#{$section-footer} {
+      padding-left: $section-table-padding-left;
+      padding-right: $section-table-padding-right;
+    }
+    table, .#{$table} {
+      background: transparent;
+      th, td, .#{$th}, .#{$td} {
+        &:first-child {
+          padding-left: $section-table-padding-left;
+        }
+        &:last-child {
+          padding-right: $section-table-padding-right;
+        }
+      }
+    }
+  }
+  &.#{$section-expandable} {
+    > input[type="checkbox"] {
+      display: none;
+      &:not(:checked) {
+        ~ .#{$section-content}, ~ .#{$section-footer} {
+          display: none;
+        }
+      }
+    }
+    > input[type="checkbox"] {
+      &:checked {
+        ~ .#{$section-content} {
+          display: block;
+        }
+        ~ .#{$section-footer} {
+          @include display-flex;
+        }
+      }
+    }
+  }
+}
+.#{$section-header}, .#{$section-footer} {
+  &.#{$with-tabs} {
+    padding: 0;
+    &.#{$section-header} {
+      border-radius: $section-radius $section-radius 0 0;
+      .#{$tab-labels} {
+        border-radius: $section-radius $section-radius 0 0;
+        overflow: hidden;
+        &#{$menu} {
+          &.#{$menu-horizontal} {
+            #{$menu-item}:last-child #{$menu-item-anchor} {
+              border-right: 0 none;
+            }
+          }
+        }
+      }
+    }
+  }
+  &:not(th) {
+    @include display-flex;
+    @include flex-wrap(wrap);
+    @include justify-content(space-between);
+  }
+}
+.#{$section-footer} {
+  &.#{$with-padding}, .#{$with-padding} {
+    padding: $section-footer-padding;
+  }
+}
+.#{$section-content} {
+  &.#{$with-padding}, .#{$with-padding} {
+    padding: $section-content-padding;
+  }
+}
+.#{$section-header} {
+  &.#{$with-padding}, .#{$with-padding} {
+    padding: $section-header-padding;
+  }
+  &.#{$tab-labels} {
+    @include justify-content(flex-start);
+    @include flex-wrap(wrap-reverse);
+    @media (max-width: #{$tablet-portrait-max-width}) {
+      @include flex-direction(column);
+    }
+    .#{$tab-addons} {
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
+}
+
+section, .#{$section} {
+  @each $name in $colors {
+    &.#{$name}, &.#{$section}-#{$name}, .#{$section}-#{$name} {
+      background: map-get($background-colors, $name);
+    }
+    &.#{$name}-dark, &.#{$section}-#{$name}-dark, .#{$section}-#{$name}-dark {
+      background: map-get($background-dark-colors, $name);
+      color: map-get($color-contrast, $name);
+    }
+  }
+  &.#{$section-full-height}, .#{$section-full-height} {
+    min-height: 100vh;
+  }
+}

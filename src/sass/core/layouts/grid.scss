@@ -1,0 +1,709 @@
+@mixin grid-table-cell-repeat($n, $i: 1) {
+  @if ($i <= $n) {
+    &:first-child:nth-last-child(#{$i}), &:first-child:nth-last-child(#{$i})  *:not([class*="#{$cell}-"]):not([colspan]) {
+      width: 100% / $i;
+    }
+    @include grid-table-cell-repeat($n, ($i + 1));
+  }
+}
+
+@mixin grid-gutter-repeat($n, $grid-steps, $unit, $start, $step, $i: 1) {
+  @if ($i <= $n) {
+    $value: ($start * $step) + $i * $step;
+    &.#{$gutter}-#{$i} {
+      margin-left: -$value/2 + $unit;
+      margin-right: -$value/2 + $unit;
+      &:not([class*="cell-"]):not(table):not(.#{$content-holder}) {
+        width: auto;
+      }
+      @at-root table#{&} {
+        width: calc(100% + #{$value} + #{$unit});
+      }
+      &.#{$content-holder} {
+        $margin: calc(#{$content-min-margin + $layout-unit} * 2);
+        $gutter: $value + $unit;
+        width: calc(#{$content-max-width} + #{$gutter}) + $layout-unit;
+        max-width: calc(100% - ( #{$margin} - #{$gutter} ));
+      }
+      > [class*=" #{$cell}"], > [class^="#{$cell}"], > .#{$row} > [class*=" #{$cell}"], > .#{$row} > [class^="#{$cell}"], > tbody > tr > td, > tr > td {
+        border-left: $value/2 + $unit solid transparent;
+        border-right: $value/2 + $unit solid transparent;
+        &.#{$start-before} {
+          margin-left: -$value + $unit;
+        }
+        &.#{$end-before} {
+          margin-right: -$value + $unit;
+        }
+      }
+      > [class*="#{$grid}"].#{$row} {
+        border-left: $value/2 + $unit solid transparent;
+        border-right: $value/2 + $unit solid transparent;
+      }
+    }
+
+    @include grid-gutter($grid-steps, $i, $value, $unit);
+    @include grid-gutter-repeat($n, $grid-steps, $unit, $start, $step, ($i + 1));
+  }
+}
+
+@mixin grid-gutter($n, $grid-space, $value, $unit, $i: 1) {
+  @if ($i <= $n) {
+    &.#{$gutter}-#{$grid-space} {
+      .#{$cell}-#{$i} {
+        &.#{$start-before}, &.#{$end-before} {
+          width: calc((100 / #{$n}) * #{$i * 1%} + #{$value + $unit});
+        }
+        &.#{$start-before}.#{$end-before} {
+          width: calc((100 / #{$n}) * #{$i * 1%} + #{($value * 2) + $unit});
+        }
+      }
+    }
+    @include grid-gutter($n, $grid-space, $value, $unit, ($i + 1));
+  }
+}
+
+
+@mixin grid-space-repeat($n, $grid-steps, $unit, $start, $step, $i: 1) {
+  @if ($i <= $n) {
+    $value: ($start * $step) + $i * $step;
+    &.#{$space}-#{$i} {
+      margin-top: -$value/2 + $unit;
+      margin-bottom: -$value/2 + $unit;
+      &:not(.#{$grid}) {
+        width: auto;
+      }
+      &:not(.#{$space-margin}) {
+        > [class*=" #{$cell}"], > [class^="#{$cell}"], > .#{$row} > [class*=" #{$cell}"], > .#{$row} > [class^="#{$cell}"], > tbody > tr > td, > tr > td {
+          border-top: $value/2 + $unit solid transparent;
+          border-bottom: $value/2 + $unit solid transparent;
+        }
+      }
+
+      > [class*="#{$grid}"].#{$row} {
+        border-top: $value/2 + $unit solid transparent;
+        border-bottom: $value/2 + $unit solid transparent;
+      }
+    }
+    @include grid-space($grid-steps, $i, $value, $unit);
+    @include grid-space-repeat($n, $grid-steps, $unit, $start, $step, ($i + 1));
+  }
+}
+
+@mixin grid-space($n, $grid-space, $value, $unit, $i: 1) {
+  @if ($i <= $n) {
+    &[class*="#{$space}-#{$grid-space}"] {
+      &.#{$space-margin} {
+        .#{$cell}-#{$i} {
+          margin-top: $value/2 + $unit;
+          margin-bottom: $value/2 + $unit;
+        }
+      }
+    }
+    @include grid-space($n, $grid-space, $value, $unit, ($i + 1));
+  }
+}
+
+@mixin grid-cell($n, $i: 1) {
+  @if ($i <= $n) {
+    .#{$cell}-#{$i} {
+      width: (100 / $n) * $i * 1%;
+    }
+    @if ($grid-step-fractions == true) {
+      .#{$cell}-#{$i}-9 {
+        width: (100 / $n) * $i + (100 / $n / (10/9)) * 1%;
+      }
+      .#{$cell}-#{$i}-8 {
+        width: (100 / $n) * $i + (100 / $n / (10/8)) * 1%;
+      }
+      .#{$cell}-#{$i}-7 {
+        width: (100 / $n) * $i + (100 / $n / (10/7)) * 1%;
+      }
+      .#{$cell}-#{$i}-6 {
+        width: (100 / $n) * $i + (100 / $n / (10/6)) * 1%;
+      }
+      .#{$cell}-#{$i}-5 {
+        width: (100 / $n) * $i + (100 / $n / (10/5)) * 1%;
+      }
+      .#{$cell}-#{$i}-4 {
+        width: (100 / $n) * $i + (100 / $n / (10/3)) * 1%;
+      }
+      .#{$cell}-#{$i}-3 {
+        width: (100 / $n) * $i + (100 / $n / (10/3)) * 1%;
+      }
+      .#{$cell}-#{$i}-2 {
+        width: (100 / $n) * $i + (100 / $n / (10/2)) * 1%;
+      }
+      .#{$cell}-#{$i}-1 {
+        width: (100 / $n) * $i + (100 / $n / (10/1)) * 1%;
+      }
+    }
+
+    @include grid-cell($n, ($i + 1));
+  }
+}
+
+@mixin grid-cell-mobile($mobile-class, $mobile-name, $n, $i: 1) {
+  @if ($i <= $n) {
+    @if ($mobile-name == desktop) {
+      @media (min-width: #{$desktop-min-width}) {
+        .#{$mobile-class}-#{$cell}-#{$i} {
+          width: (100 / $n) * $i * 1%;
+          flex: 0 0 auto !important;
+        }
+      }
+    }
+    @if not ($mobile-name == desktop) {
+      @media (max-width: #{map-get($breakpoints, $mobile-name + '-max-width')}) {
+        .#{$mobile-class}-#{$cell}-#{$i} {
+          width: (100 / $n) * $i * 1%;
+          flex: 0 0 auto !important;
+        }
+      }
+    }
+    @include grid-cell-mobile($mobile-class, $mobile-name, $n, ($i + 1));
+  }
+}
+
+@mixin grid-cell-extend($n, $i: 1) {
+  @if ($i <= $n) {
+    @at-root table#{&} .#{$cell}-#{$i} {
+      min-width: (100 / $n) * $i * 1%;
+      max-width: (100 / $n) * $i * 1%;
+      width: (100 / $n) * $i * 1%;
+    }
+    &.#{$column} {
+      > .#{$cell}-#{$i}, > .row > .#{$cell}-#{$i} {
+        width: auto;
+        flex: 1 1 (100 / $n) * $i * 1%;
+      }
+      .#{$width}-#{$i} {
+        width: (100 / $n) * $i * 1%;
+      }
+    }
+    @include grid-cell-extend($n, ($i + 1));
+  }
+}
+
+@mixin grid-offset($n, $i: 0) {
+  @if ($i < $n) {
+    [class*="#{$cell}"], &[class*="#{$width}-"] {
+      &.#{$offset-left}-#{$i}, &.#{$offset}-#{$i} {
+        margin-left: (100 / $n) * $i * 1% !important;
+      }
+      &.#{$offset-right}-#{$i} {
+        margin-right: (100 / $n) * $i * 1% !important;
+      }
+    }
+    &.#{$offset-left}-#{$i}, &.#{$offset}-#{$i}, .#{$row}.#{$offset-left}-#{$i}, .#{$row}.#{$offset}-#{$i} {
+      [class*="#{$cell}"]:first-child {
+        margin-left: (100 / $n) * $i * 1%;
+      }
+    }
+    &.#{$offset-right}-#{$i}, .#{$row}.#{$offset-right}-#{$i} {
+      [class*="#{$cell}"]:last-child {
+        margin-right: (100 / $n) * $i * 1%;
+      }
+    }
+    @include grid-offset($n, ($i + 1));
+  }
+}
+
+@mixin grid-offset-mobile($n, $i: 0) {
+  @if ($i < $n) {
+    @media (min-width: #{$desktop-min-width}) {
+      .#{$d}-#{$offset}-#{$i}, .#{$d}-#{$offset-left}-#{$i} {
+        &[class*="#{$cell}"], &[class*="#{$width}-"] {
+          margin-left: (100 / $n) * $i * 1% !important;
+        }
+      }
+      &.#{$d}-#{$offset}-#{$i}, &.#{$d}-#{$offset-left}-#{$i} {
+        [class*="#{$cell}"]:first-child {
+          margin-left: (100 / $n) * $i * 1%;
+        }
+      }
+      .#{$d}-#{$offset-right}-#{$i} {
+        &[class*="#{$cell}"], &[class*="#{$width}-"] {
+          margin-right: (100 / $n) * $i * 1% !important;
+        }
+      }
+      &.#{$d}-#{$offset-right}-#{$i} {
+        [class*="#{$cell}"]:last-child {
+          margin-right: (100 / $n) * $i * 1%;
+        }
+      }
+    }
+
+    @media (max-width: #{$tablet-max-width}) {
+      .#{$t}-#{$offset}-#{$i}, .#{$t}-#{$offset-left}-#{$i} {
+        &[class*="#{$cell}"], &[class*="#{$width}-"] {
+          margin-left: (100 / $n) * $i * 1% !important;
+        }
+      }
+      &.#{$t}-#{$offset}-#{$i}, &.#{$t}-#{$offset-left}-#{$i} {
+        [class*="#{$cell}"]:first-child {
+          margin-left: (100 / $n) * $i * 1%;
+        }
+      }
+      .#{$t}-#{$offset-right}-#{$i} {
+        &[class*="#{$cell}"], &[class*="#{$width}-"] {
+          margin-right: (100 / $n) * $i * 1% !important;
+        }
+      }
+      &.#{$t}-#{$offset-right}-#{$i} {
+        [class*="#{$cell}"]:last-child {
+          margin-right: (100 / $n) * $i * 1%;
+        }
+      }
+    }
+
+    @media (max-width: #{$tablet-portrait-max-width}) {
+      .#{$tp}-#{$offset}-#{$i}, .#{$tp}-#{$offset-left}-#{$i} {
+        &[class*="#{$cell}"], &[class*="#{$width}-"] {
+          margin-left: (100 / $n) * $i * 1% !important;
+        }
+      }
+      &.#{$tp}-#{$offset}-#{$i}, &.#{$tp}-#{$offset-left}-#{$i} {
+        [class*="#{$cell}"]:first-child {
+          margin-left: (100 / $n) * $i * 1%;
+        }
+      }
+      .#{$tp}-#{$offset-right}-#{$i} {
+        &[class*="#{$cell}"], &[class*="#{$width}-"] {
+          margin-right: (100 / $n) * $i * 1% !important;
+        }
+      }
+      &.#{$tp}-#{$offset-right}-#{$i} {
+        [class*="#{$cell}"]:last-child {
+          margin-right: (100 / $n) * $i * 1%;
+        }
+      }
+    }
+    @media (max-width: #{$mobile-max-width}) {
+      .#{$m}-#{$offset}-#{$i}, .#{$m}-#{$offset-left}-#{$i} {
+        &[class*="#{$cell}"], &[class*="#{$width}-"] {
+          margin-left: (100 / $n) * $i * 1% !important;
+        }
+      }
+      &.#{$m}-#{$offset}-#{$i}, &.#{$m}-#{$offset-left}-#{$i} {
+        [class*="#{$cell}"]:first-child {
+          margin-left: (100 / $n) * $i * 1%;
+        }
+      }
+      .#{$m}-#{$offset-right}-#{$i} {
+        &[class*="#{$cell}"], &[class*="#{$width}-"]  {
+          margin-right: (100 / $n) * $i * 1% !important;
+        }
+      }
+      &.#{$m}-#{$offset-right}-#{$i} {
+        [class*="#{$cell}"]:last-child {
+          margin-right: (100 / $n) * $i * 1%;
+        }
+      }
+    }
+
+    @media (max-width: #{$mobile-portrait-max-width}) {
+      .#{$mp}-#{$offset}-#{$i}, .#{$mp}-#{$offset-left}-#{$i} {
+        &[class*="#{$cell}"], &[class*="#{$width}-"] {
+          margin-left: (100 / $n) * $i * 1% !important;
+        }
+      }
+      &.#{$mp}-#{$offset}-#{$i}, &.#{$mp}-#{$offset-left}-#{$i} {
+        [class*="#{$cell}"]:first-child {
+          margin-left: (100 / $n) * $i * 1%;
+        }
+      }
+      .#{$mp}-#{$offset-right}-#{$i} {
+        &[class*="#{$cell}"], &[class*="#{$width}-"] {
+          margin-right: (100 / $n) * $i * 1% !important;
+        }
+      }
+      &.#{$mp}-#{$offset-right}-#{$i} {
+        [class*="#{$cell}"]:last-child {
+          margin-right: (100 / $n) * $i * 1%;
+        }
+      }
+    }
+
+    @include grid-offset-mobile($n, ($i + 1));
+  }
+}
+
+.#{$cell}-fill {
+  @include flex(1 1 auto);
+  width: auto;
+  min-width: 0;
+  min-height: 0;
+}
+
+.#{$cell}-auto {
+  @include flex(0 0 auto);
+  width: auto;
+  min-width: 0;
+  min-height: 0;
+}
+
+@media (min-width: #{$desktop-min-width}) {
+  .#{$d}-#{$cell}-fill {
+    @include flex(1 1 auto);
+    width: auto;
+  }
+
+  .#{$d}-#{$cell}-auto {
+    @include flex(0 0 auto);
+    width: auto;
+  }
+}
+@media (max-width: #{$tablet-max-width}) {
+  .#{$t}-#{$cell}-fill {
+    @include flex(1 1 auto);
+    width: auto;
+  }
+
+  .#{$t}-#{$cell}-auto {
+    @include flex(0 0 auto);
+    width: auto;
+  }
+}
+@media (max-width: #{$tablet-portrait-max-width}) {
+  .#{$tp}-#{$cell}-fill {
+    @include flex(1 1 auto);
+    width: auto;
+  }
+
+  .#{$tp}-#{$cell}-auto {
+    @include flex(0 0 auto);
+    width: auto;
+  }
+}
+@media (max-width: #{$mobile-max-width}) {
+  .#{$m}-#{$cell}-fill {
+    @include flex(1 1 auto);
+    width: auto;
+  }
+
+  .#{$m}-#{$cell}-auto {
+    @include flex(0 0 auto);
+    width: auto;
+  }
+}
+@media (max-width: #{$mobile-portrait-max-width}) {
+  .#{$mp}-#{$cell}-fill {
+    @include flex(1 1 auto);
+    width: auto;
+  }
+
+  .#{$mp}-#{$cell}-auto {
+    @include flex(0 0 auto);
+    width: auto;
+  }
+}
+
+@include grid-cell($grid-steps);
+@include grid-cell-mobile(d, desktop, $grid-steps);
+@include grid-cell-mobile(t, tablet, $grid-steps);
+@include grid-cell-mobile(tp, tablet-portrait, $grid-steps);
+@include grid-cell-mobile(m, mobile, $grid-steps);
+@include grid-cell-mobile(mp, mobile-portrait, $grid-steps);
+
+.#{$grid} {
+  @include grid-cell-extend($grid-steps);
+  @if ($grid-offset == true) {
+    @include grid-offset($grid-steps);
+    @include grid-offset-mobile($grid-steps);
+  }
+  @if ($grid-gutter == true) {
+    @include grid-gutter-repeat($grid-gutter-steps, $grid-steps, $grid-gutter-unit, $grid-gutter-start, $grid-gutter-step);
+  }
+  @if ($grid-space == true) {
+    @include grid-space-repeat($grid-space-steps, $grid-steps, $grid-space-unit, $grid-space-start, $grid-space-step);
+  }
+
+  @include display-flex;
+  @include flex-wrap(wrap);
+  @include flex-direction(row);
+  @include align-items(stretch);
+  &.#{$content-holder} {
+    margin-left: auto;
+    margin-right: auto;
+    width: $content-max-width + $layout-unit;
+  }
+  .#{$row} {
+    max-width: 100%;
+  }
+  &:not(.#{$column}) {
+    > .#{$cell}:not(.#{$grid}):not(.#{$column}), > .#{$row} > .#{$cell}:not(.#{$grid}):not(.#{$column}) {
+      @include flex(1 0 0px);
+      &:only-child {
+        width: 100%;
+      }
+    }
+    > .#{$cell}.#{$grid}.#{$column}, > .#{$row} > .#{$cell}.#{$grid}.#{$column} {
+      @include flex(1 0 100%);
+    }
+    @at-root table#{&} {
+      td, th {
+        &:not([class*="#{$cell}-"]):not([colspan]) {
+          @include grid-table-cell-repeat($grid-steps);
+        }
+      }
+    }
+  }
+  &.#{$reverse} {
+    @include flex-direction(row-reverse);
+  }
+  &.#{$nowrap} {
+    @include flex-flow(row nowrap);
+  }
+  &.#{$column} {
+    @include flex-flow(column nowrap);
+    @include flex-direction(column);
+    > .#{$row} {
+      @include flex-flow(column nowrap);
+      @include flex-direction(column);
+    }
+  }
+  &.#{$column-force} {
+    @include flex-flow(column nowrap);
+    @include flex-direction(column);
+    > .#{$row} {
+      @include flex-flow(column nowrap);
+      @include flex-direction(column);
+      @include flex(none);
+    }
+    > [class*=" #{$cell}"], > [class^="#{$cell}"], > .#{$row} > [class*=" #{$cell}"], > .#{$row} > [class^="#{$cell}"], tbody > .#{$row} > [class*=" #{$cell}"], tbody > .#{$row} > [class^="#{$cell}"] {
+      @include flex(none);
+    }
+  }
+  &.#{$column-force} {
+    height: 100%;
+  }
+  &.#{$column-wrap} {
+    @include flex-flow(column wrap);
+    height: 100%;
+  }
+  &.#{$justify-center} {
+    @include justify-content(center);
+  }
+  &.#{$justify-between} {
+    @include justify-content(space-between);
+  }
+  &.#{$justify-around} {
+    @include justify-content(space-between);
+  }
+  &.#{$justify-end} {
+    @include justify-content(flex-end);
+  }
+  &.#{$vertical-center} {
+    @include align-items(center);
+  }
+  &.#{$vertical-start} {
+    @include align-items(flex-start);
+  }
+  &.#{$vertical-end} {
+    @include align-items(flex-end);
+  }
+  &.#{$text-center} {
+    [class^="#{$cell}"], [class*=" #{$cell}"] {
+      text-align: center;
+      @include justify-content(center);
+    }
+  }
+  &.#{$text-right} {
+    [class^="#{$cell}"], [class*=" #{$cell}"] {
+      text-align: right;
+    }
+  }
+  &.#{$text-left} {
+    [class^="#{$cell}"], [class*=" #{$cell}"] {
+      text-align: left;
+    }
+  }
+  &.#{$floating} {
+    display: block;
+    &.#{$reverse} {
+      [class^="#{$cell}"], [class*=" #{$cell}"] {
+        float: right;
+      }
+    }
+    [class^="#{$cell}"], [class*=" #{$cell}"] {
+      float: left;
+    }
+    .#{$row} {
+      display: block;
+      &:after, &:before {
+        content: "";
+        display: block;
+        clear: both;
+      }
+    }
+  }
+
+  @at-root table#{&}, &.#{$table} {
+    display: table;
+    border: 0;
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+    tr, .#{$row} {
+      display: table-row;
+    }
+    td, [class*=" #{$cell}"], [class^="#{$cell}"] {
+      &:first-child {
+        border-left: 0;
+      }
+      &:last-child {
+        border-left: 0;
+      }
+    }
+  }
+
+  &.#{$column-force} {
+    [class*=" #{$cell}"], [class^="#{$cell}"] {
+      width: 100% !important;
+      flex: 0 0 auto !important;
+    }
+  }
+  @media (min-width: #{$desktop-min-width}) {
+    &.#{$d}-#{$column-force} {
+      [class*=" #{$cell}"], [class^="#{$cell}"] {
+        width: 100% !important;
+        flex: 0 0 auto !important;
+      }
+    }
+    &.#{$d}-#{$column} {
+      > [class*=" #{$cell}"], > .#{$row} > [class*=" #{$cell}"], > [class^="#{$cell}"], > .#{$row} > [class^="#{$cell}"] {
+        width: 100% !important;
+        flex: 0 0 auto !important;
+      }
+    }
+  }
+  @media (max-width: #{$tablet-max-width}) {
+    &.#{$t}-#{$column-force} {
+      [class*=" #{$cell}"], [class^="#{$cell}"] {
+        width: 100% !important;
+        flex: 0 0 auto !important;
+      }
+    }
+    &.#{$t}-#{$column} {
+      > [class*=" #{$cell}"], > .#{$row} > [class*=" #{$cell}"], > [class^="#{$cell}"], > .#{$row} > [class^="#{$cell}"] {
+        width: 100% !important;
+        flex: 0 0 auto !important;
+      }
+    }
+  }
+  @media (max-width: #{$tablet-portrait-max-width}) {
+    &.#{$tp}-#{$column-force} {
+      [class*=" #{$cell}"], [class^="#{$cell}"] {
+        width: 100% !important;
+        flex: 0 0 auto !important;
+      }
+    }
+    &.#{$tp}-#{$column} {
+      > [class*=" #{$cell}"], > .#{$row} > [class*=" #{$cell}"], > [class^="#{$cell}"], > .#{$row} > [class^="#{$cell}"] {
+        width: 100% !important;
+        flex: 0 0 auto !important;
+      }
+    }
+  }
+  @media (max-width: #{$mobile-max-width}) {
+    &.#{$m}-#{$column-force} {
+      [class*=" #{$cell}"], [class^="#{$cell}"] {
+        width: 100% !important;
+        flex: 0 0 auto !important;
+      }
+    }
+    &.#{$m}-#{$column} {
+      > [class*=" #{$cell}"], > .#{$row} > [class*=" #{$cell}"], > [class^="#{$cell}"], > .#{$row} > [class^="#{$cell}"] {
+        width: 100% !important;
+        flex: 0 0 auto !important;
+      }
+    }
+  }
+  @media (max-width: #{$mobile-portrait-max-width}) {
+    &.#{$mp}-#{$column-force} {
+      [class*=" #{$cell}"], [class^="#{$cell}"] {
+        width: 100% !important;
+        flex: 0 0 auto !important;
+      }
+    }
+    &.#{$mp}-#{$column} {
+      > [class*=" #{$cell}"], > .#{$row} > [class*=" #{$cell}"], > [class^="#{$cell}"], > .#{$row} > [class^="#{$cell}"] {
+        width: 100% !important;
+        flex: 0 0 auto !important;
+      }
+    }
+  }
+}
+
+[class^="#{$cell}-"], [class*=" #{$cell}-"], .#{$cell} {
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  &.#{$vertical-center} {
+    @include align-self(center);
+  }
+  &.#{$vertical-items-center} {
+    @include display-flex;
+    @include align-items(center);
+  }
+  &.#{$vertical-items-stretch} {
+    @include display-flex;
+    @include align-items(stretch);
+  }
+  &.#{$vertical-items-end} {
+    @include display-flex;
+    @include align-items(flex-end);
+  }
+  &.#{$vertical-items-start} {
+    @include display-flex;
+    @include align-items(flex-start);
+  }
+  &.#{$items-center} {
+    @include display-flex;
+    @include justify-content(center);
+  }
+  &.#{$items-stretch} {
+    @include display-flex;
+    @include justify-content(stretch);
+  }
+  &.#{$items-end} {
+    @include display-flex;
+    @include justify-content(flex-end);
+  }
+  &.#{$items-start} {
+    @include display-flex;
+    @include justify-content(flex-start);
+  }
+}
+
+.#{$row} {
+  @include flex(1 1 100%);
+  @include display-flex;
+  @include flex-wrap(inherit);
+  min-width: 0;
+  min-height: 0;
+  &:not([class*="#{$grid}"]) {
+    @include flex-direction(inherit);
+  }
+  &.#{$vertical-center} {
+    [class^="#{$cell}"], [class*=" #{$cell}"] {
+      @include align-self(center);
+    }
+  }
+  &.#{$text-center} {
+    [class^="#{$cell}"], [class*=" #{$cell}"] {
+      text-align: center;
+    }
+  }
+  &.#{$text-right} {
+    [class^="#{$cell}"], [class*=" #{$cell}"] {
+      text-align: right;
+    }
+  }
+  &.#{$text-left} {
+    [class^="#{$cell}"], [class*=" #{$cell}"] {
+      text-align: left;
+    }
+  }
+}

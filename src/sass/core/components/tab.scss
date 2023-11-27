@@ -1,0 +1,79 @@
+@mixin tab-page($n, $i: 1) {
+  @if $i <= $n {
+    &:nth-child(#{$i}) {
+      ~ .tab-pages {
+        > *:nth-child(#{$i}) {
+          display: block;
+        }
+      }
+    }
+    @include tab-page($n, ($i + 1));
+  }
+}
+
+@mixin tab-page-table($n, $i: 1) {
+  @if $i <= $n {
+    &:nth-child(#{$i}) {
+      ~ .tab-pages {
+        > *:nth-child(#{$i}) {
+          display: table-group;
+        }
+      }
+    }
+    @include tab-page-table($n, ($i + 1));
+  }
+}
+
+@mixin tab-nav($n, $i: 1) {
+  @if $i <= $n {
+    &:nth-child(#{$i}) {
+      ~ .#{$tab-navs} {
+        .#{$tab-labels} {
+          > *:nth-child(#{$i}) {
+            @include tab-nav-active;
+          }
+        }
+        .#{$tab-addons} {
+          > *:nth-child(#{$i}) {
+            display: block;
+          }
+        }
+      }
+    }
+    @include tab-nav($n, ($i + 1));
+  }
+}
+
+.#{$tabs} {
+  > input[type="radio"] {
+    display: none;
+    &:checked {
+      @include tab-page($tabs-pages);
+      @include tab-nav($tabs-pages);
+    }
+  }
+
+  .#{$tab-pages} {
+    > * {
+      display: none;
+      &.#{$active} {
+        display: block;
+      }
+    }
+  }
+  .#{$tab-navs} {
+    .#{$tab-labels} {
+      > .#{$active} {
+        @include tab-nav-active;
+      }
+    }
+    .#{$tab-addons} {
+      > * {
+        display: none;
+        &.#{$active} {
+          display: block;
+        }
+      }
+    }
+  }
+}

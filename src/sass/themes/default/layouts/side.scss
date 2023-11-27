@@ -1,0 +1,102 @@
+@mixin side-collapsed {
+  #{$menu-item} {
+    i {
+      margin-right: 0;
+      + span {
+        display: none;
+      }
+    } 
+  }
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: transparent; 
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &:hover {
+    scrollbar-color: fade-in($color-white, 0.5) transparent;
+    &::-webkit-scrollbar-thumb {
+      background: fade-in($color-white, 0.5); 
+    }
+  }
+}
+
+@mixin side-expanded {
+}
+
+@mixin side-expanded-full {
+}
+
+@mixin side-hovered {
+}
+
+@mixin side-focused {
+}
+
+@mixin side-open-style {
+  width: calc(#{$side-collapse-width} * 0.66666);
+  height: calc(#{$side-collapse-width} * 0.66666);
+  line-height: calc(#{$side-collapse-width} * 0.66666);
+  text-align: center;
+  cursor: pointer;
+  border-radius: 100%;
+  margin: 0.4rem;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  background-color: $color-primary;
+  i {
+    color: $color-white;
+  }
+}
+
+@mixin side-open-left-style {
+  bottom: 0;
+  left: 0;
+  margin: 0 0 1rem 1rem;
+}
+@mixin side-open-right-style {
+  top: 0;
+  right: 0;
+  margin: 0 1rem 1rem 0;
+}
+@mixin side-open-top-style {
+  top: 0;
+  left: 0;
+}
+@mixin side-open-bottom-style {
+  bottom: 0;
+  left: 0;
+}
+
+.#{$side-backdrop} {
+  background-color: $side-backdrop-color;
+  opacity: $side-backdrop-opacity;
+}
+.#{$side-close} {
+  position: absolute;
+  top: 1.5rem;
+  left: 1rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+#{$side} {
+  background-color: darken($color-primary, 10);
+  color: #fff;
+  &.#{$side-top}, &.#{$side-bottom} {
+    .#{$side-close} {
+      top: 0.85rem;
+    }
+  }
+  #{$menu-item} {
+    i {
+      font-size: 1.4rem;
+      margin-right: 0.5em;
+      margin-left: 0.1em;
+    }
+  }
+}

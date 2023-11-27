@@ -1,5 +1,5 @@
 .input-disabled() {
-  opacity: 0.7;
+  opacity: @input-disabled-opacity;
 }
 
 .select-arrow() {
@@ -386,11 +386,11 @@ select:not([multiple]) {
     position: relative;
     &.@{icon-left} {
       &:before {
-        left: @input-icon-font-size/2 + @input-default-padding-horizontal;
+        left: calc((@input-icon-font-size/2) ~"+" @input-default-padding-horizontal);
         right: auto;
       }
       input , select, textarea {
-        padding-left: @input-icon-font-size*2 + @input-default-padding-horizontal;
+        padding-left:calc(( @input-icon-font-size*2) ~"+" @input-default-padding-horizontal);
       }
     }
     &.@{input-inverse} {
@@ -404,14 +404,14 @@ select:not([multiple]) {
       bottom: 0;
       margin: auto;
       font-size: @input-icon-font-size;
-      right: @input-icon-font-size/2 + @input-default-padding-horizontal;
+      right: calc((@input-icon-font-size/2) ~"+" @input-default-padding-horizontal);
       color: @input-icon-text-color;
       z-index: 2;
       pointer-events: none;
       height: 1em;
     }
     input , select, textarea {
-      padding-right: @input-icon-font-size*2 + @input-default-padding-horizontal;
+      padding-right:calc((@input-icon-font-size*2) ~"+" @input-default-padding-horizontal);
     }
     select {
       appearance: none;
@@ -421,7 +421,7 @@ select:not([multiple]) {
     position: relative;
     select {
       appearance: none;
-      padding-right: @input-icon-font-size*2 + @input-default-padding-horizontal;
+      padding-right:calc((@input-icon-font-size*2) ~"+" @input-default-padding-horizontal);
       &.@{input-inverse} {
         + span:after {
           color: @input-background-color;
@@ -429,7 +429,7 @@ select:not([multiple]) {
       }
       + span:after {
         .select-arrow;
-        right: @input-default-font-size/1.2 + @input-default-padding-horizontal;
+        right: calc((@input-default-font-size/1.2) ~"+" @input-default-padding-horizontal);
       }
       &:focus {
         + span:after {
@@ -455,7 +455,7 @@ select:not([multiple]) {
     position: relative;
     &.@{addon-left} {
       &:after {
-        left: @input-icon-font-size/2 + @input-default-padding-horizontal;
+        left: calc((@input-icon-font-size/2) ~"+" @input-default-padding-horizontal);
         right: auto;
         text-align: left;
       }
@@ -476,7 +476,7 @@ select:not([multiple]) {
       margin: auto;
       font-size: @input-addon-font-size;
       text-transform: @input-addon-font-weight;
-      right: @input-icon-font-size/2 + @input-default-padding-horizontal;
+      right: calc((@input-icon-font-size/2) ~"+" @input-default-padding-horizontal);
       color: @input-addon-text-color;
       text-transform: @input-addon-text-transform;
       z-index: 2;
@@ -487,7 +487,7 @@ select:not([multiple]) {
       text-align: right;
     }
     input, select, textarea {
-      padding-right: @input-icon-font-size*3 + @input-default-padding-horizontal;
+      padding-right: calc(@input-icon-font-size*3 ~"+" @input-default-padding-horizontal);
     }
   }
 }

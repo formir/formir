@@ -1,0 +1,17 @@
+.#{$content-holder} {
+  margin-left: auto;
+  margin-right: auto;
+  width: $content-max-width + $layout-unit;
+  max-width: calc(100% - 2 * #{$content-min-margin + $layout-unit});
+}
+
+.#{$center-vertically} {
+  @include display-flex;
+  height: 100%;
+  &.#{horizontally} {
+    justify-content: center;
+  }
+  > * {
+    align-self: center;
+  }
+}
