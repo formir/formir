@@ -1,0 +1,406 @@
+@import "../../core/functions/map-deep-get";
+
+.#{$button} {
+  display: inline-block;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  font-size: $button-default-font-size;
+  line-height: $button-default-line-height;
+  padding: $button-default-padding-vertical $button-default-padding-horizontal;
+  border-radius: $button-default-border-radius;
+  border: $button-default-border;
+  color: $button-default-text;
+
+  @at-root input#{&} {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  @if not ($button-default-outline == none) {
+    outline: $button-default-outline;
+  }
+  @if not ($button-default-shadow == none) {
+    box-shadow: $button-default-shadow;
+  }
+  @if not ($button-set-transparent == true) {
+    background: $button-default-background;
+  }
+  &:hover, &.#{$button-hover} {
+    @if not ($button-hover-border == none) {
+      border: $button-hover-border;
+    }
+    @if not ($button-hover-outline == none) {
+      outline: $button-hover-outline;
+    }
+    @if not ($button-hover-shadow == none) {
+      box-shadow: $button-hover-shadow;
+    }
+    @include button-hover;
+  }
+  @if ($button-set-focus == true) {
+    &:focus, &.#{$button-focus} {
+      @if not ($button-focus-border == none) {
+        border: $button-focus-border;
+      }
+      @if not ($button-focus-outline == none) {
+        outline: $button-focus-outline;
+      }
+      @if not ($button-focus-shadow == none) {
+        box-shadow: $button-focus-shadow;
+      }
+      @include button-focus;
+    }
+  }
+  &:active, &.#{$button-active} {
+    @if not ($button-active-border == none) {
+      border: $button-active-border;
+    }
+    @if not ($button-active-outline == none) {
+      outline: $button-active-outline;
+    }
+    @if not ($button-active-shadow == none) {
+      box-shadow: $button-active-shadow;
+    }
+    @include button-active;
+  }
+  &:disabled, &.#{$button-disabled} {
+    pointer-events: none;
+    cursor: normal;
+    @include button-disabled;
+  }
+  &.#{$button-inactive} {
+    cursor: normal;
+    @include button-inactive;
+  }
+  &.#{$button-ellipsis} {
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-wrap: normal;
+    @at-root button#{&} {
+      > * {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow-wrap: normal;
+        word-wrap: normal;
+      }
+    } 
+  }
+  &.#{$button-circle} {
+    border-radius: 1000px;
+  }
+  &.#{$button-block} {
+    display: block;
+  }
+  @if not ($button-set-transparent == true) {
+    &.#{$button-transparent} {
+      background-color: transparent !important;
+    }
+  }
+  @if ($button-set-transparent == true) {
+    background-color: transparent;
+  }
+  &.#{$button-as-link} {
+    border-color: transparent;
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    color: $color-link;
+    &:hover {
+      color: $color-hover-link;
+      text-decoration: underline;
+      border-color: transparent;
+      background: transparent;
+      outline: none;
+      box-shadow: none;
+    }
+    &:focus {
+      @include menu-item-anchor-focus-inline();
+    }
+  }
+  &.#{$button-inverse} {
+    border: $button-inverse-border;
+    outline: $button-inverse-outline;
+    box-shadow: $button-inverse-shadow;
+    &:hover, &.#{$button-hover} {
+      @if not ($button-inverse-hover-border == none) {
+        border: $button-inverse-hover-border;
+      }
+      @if not ($button-inverse-hover-outline == none) {
+        outline: $button-inverse-hover-outline;
+      }
+      @if not ($button-inverse-hover-shadow == none) {
+        box-shadow: $button-hover-shadow;
+      }
+    }
+    @if ($button-set-focus == true) {
+      &:focus, &.#{$button-focus} {
+        @if not ($button-inverse-focus-border == none) {
+          border: $button-inverse-focus-border;
+        }
+        @if not ($button-inverse-focus-outline == none) {
+          outline: $button-inverse-focus-outline;
+        }
+        @if not ($button-inverse-focus-shadow == none) {
+          box-shadow: $button-inverse-focus-shadow;
+        } 
+      }
+    }
+    &:active, &.#{$button-active} {
+      @if not ($button-inverse-active-border == none) {
+        border: $button-inverse-active-border;
+      }
+      @if not ($button-inverse-active-outline == none) {
+        outline: $button-inverse-active-outline;
+      }
+      @if not ($button-inverse-active-shadow == none) {
+        box-shadow: $button-inverse-focus-shadow;
+      } 
+    }
+
+    @include button-inverse;
+  }
+  @include button-common;
+}
+
+.#{$button} {
+  @each $name in $sizes {
+    &-#{$name} {
+      font-size: map-deep-get($button-sizes, $name, 'font-size');
+      line-height: map-deep-get($button-sizes, $name, 'line-height');
+      padding: map-deep-get($button-sizes, $name, 'padding');
+      border-radius: map-deep-get($button-sizes, $name, 'border-radius');
+      border-width: map-deep-get($button-sizes, $name, 'border-width');
+      outline-width: map-deep-get($button-sizes, $name, 'outline-width');
+      box-shadow: map-deep-get($button-sizes, $name, 'shadow');
+      @at-root input#{&} {
+        font-size: map-deep-get($button-sizes, $name, 'font-size') !important;
+        line-height: map-deep-get($button-sizes, $name, 'line-height') !important;
+        padding: map-deep-get($button-sizes, $name, 'padding') !important;
+        border-radius: map-deep-get($button-sizes, $name, 'border-radius') !important;
+        border-width: map-deep-get($button-sizes, $name, 'border-width') !important;
+        outline-width: map-deep-get($button-sizes, $name, 'outline-width') !important;
+        box-shadow: map-deep-get($button-sizes, $name, 'shadow') !important;
+      }
+    }
+  }
+}
+
+.#{$buttons}, .#{$size} {
+  @each $name in $sizes {
+    &-#{$name} {
+      .#{$button} {
+        font-size: map-deep-get($button-sizes, $name, 'font-size');
+        line-height: map-deep-get($button-sizes, $name, 'line-height');
+        padding: map-deep-get($button-sizes, $name, 'padding');
+        border-radius: map-deep-get($button-sizes, $name, 'border-radius');
+        border-width: map-deep-get($button-sizes, $name, 'border-width');
+        outline-width: map-deep-get($button-sizes, $name, 'outline-width');
+        box-shadow: map-deep-get($button-sizes, $name, 'shadow');
+      }
+    }
+  }
+}
+
+.#{$button} {
+  @each $name in $colors {
+    &-#{$name} {
+      @if not ($button-set-inverse == true) {
+        @if not ($button-set-transparent == true) {
+          background: map-deep-get($button-colors, 'color', $name);
+        }
+        color: map-get($color-contrast, $name);
+        border-color: map-deep-get($button-colors, 'color', $name);
+        @if ($button-set-gradient == true) {
+          &.#{$button-gradient} {
+            @include gradient(map-deep-get($button-colors, 'color', $name), map-deep-get($button-colors, 'color-2', $name));
+          }
+        }
+        @if ($button-set-gradient == default) {
+          @include gradient(map-deep-get($button-colors, 'color', $name), map-deep-get($button-colors, 'color-2', $name));
+        }
+        &:hover, &.#{$button-hover} {
+          @if not ($button-set-transparent == true) {
+            background: map-deep-get($button-colors, 'color-hover', $name);
+          }
+          border-color: map-deep-get($button-colors, 'color-hover', $name);
+          @if ($button-set-gradient == true) {
+            &.#{$button-gradient} {
+              @include gradient(map-deep-get($button-colors, 'color-hover', $name), map-deep-get($button-colors, 'color-2-hover', $name));
+            }
+          }
+          @if ($button-set-gradient == default) {
+            @include gradient(map-deep-get($button-colors, 'color-hover', $name), map-deep-get($button-colors, 'color-2-hover', $name));
+          }
+        }
+        @if ($button-set-color-focus == true) {
+          &:focus, &.#{$button-focus} {
+            @if not ($button-set-transparent == true) {
+              background: map-deep-get($button-colors, 'color-focus', $name);
+            }
+            border-color: map-deep-get($button-colors, 'color-focus', $name);
+            @if ($button-gradient == true) {
+              &.#{$button-set-gradient} {
+                @include gradient(map-deep-get($button-colors, 'color-focus', $name), map-deep-get($button-colors, 'color-2-focus', $name));
+              }
+            }
+            @if ($button-set-gradient == default) {
+              @include gradient(map-deep-get($button-colors, 'color-focus', $name), map-deep-get($button-colors, 'color-2-focus', $name));
+            }
+          }
+        }
+        &:active, &.#{$button-active} {
+          @if not ($button-set-transparent == true) {
+            background: map-deep-get($button-colors, 'button-color-active', $name);
+          }
+          border-color: map-deep-get($button-colors, 'button-color-active', $name);
+          @if ($button-set-gradient == true) {
+            &.#{$button-gradient} {
+              @include gradient(map-deep-get($button-colors, 'button-color-active', $name), map-deep-get($button-colors, 'color-2-active', $name));
+            }
+          }
+          @if ($button-set-gradient == default) {
+            @include gradient(map-deep-get($button-colors, 'button-color-active', $name), map-deep-get($button-colors, 'color-2-active', $name));
+          }
+        }
+        &.#{$button-inverse} {
+          @if not ($button-set-transparent == true) {
+            background: map-get($color-contrast, $name);
+          }
+          color: map-deep-get($button-colors, 'color', $name);
+          border-color: map-deep-get($button-colors, 'color', $name);
+          outline-color: map-deep-get($button-colors, 'color', $name);
+          &:hover, &.#{$button-hover} {
+            color: map-deep-get($button-colors, 'color-hover', $name);
+          }
+          @if ($button-set-color-focus == true) {
+            &:focus, &.#{$button-focus} {
+              color: map-deep-get($button-colors, 'color-focus', $name);
+            }
+          }
+          &:active, &.#{$button-active} {
+            color: map-deep-get($button-colors, 'button-color-active', $name);
+          }
+        }
+      }
+      @if ($button-set-inverse == true) {
+        @if not ($button-set-transparent == true) {
+          background: map-get($color-contrast, $name);
+        }
+        color: map-deep-get($button-colors, 'color', $name);
+        border-color: map-deep-get($button-colors, 'color', $name);
+        outline-color: map-deep-get($button-colors, 'color', $name);
+        &:hover, &.#{$button-hover} {
+          color: map-deep-get($button-colors, 'color-hover', $name);
+        }
+        @if ($button-set-color-focus == true) {
+          &:focus, &.#{$button-focus} {
+            color: map-deep-get($button-colors, 'color-focus', $name);
+          }
+        }
+        &:active, &.#{$button-active} {
+          color: map-deep-get($button-colors, 'button-color-active', $name);
+        }
+        &.#{$button-inverse} {
+          background: map-deep-get($button-colors, 'color', $name);
+          color: map-get($color-contrast, $name);
+          &:hover, &.#{$button-hover} {
+            background: map-deep-get($button-colors, 'color-hover', $name);
+            border-color: map-deep-get($button-colors, 'color-hover', $name);
+            @if ($button-set-gradient == true) {
+              &.#{$button-gradient} {
+                @include gradient(map-deep-get($button-colors, 'color-hover', $name), map-deep-get($button-colors, 'color-2-hover', $name));
+              }
+            }
+            @if ($button-set-gradient == default) {
+              @include gradient(map-deep-get($button-colors, 'color-hover', $name), map-deep-get($button-colors, 'color-2-hover', $name));
+            }
+          }
+          @if ($button-set-color-focus == true) {
+            &:focus, &.#{$button-focus} {
+              background: map-deep-get($button-colors, 'color-focus', $name);
+              border-color: map-deep-get($button-colors, 'color-focus', $name);
+              @if ($button-gradient == true) {
+                &.#{$button-set-gradient} {
+                  @include gradient(map-deep-get($button-colors, 'color-focus', $name), map-deep-get($button-colors, 'color-2-focus', $name));
+                }
+              }
+              @if ($button-set-gradient == default) {
+                @include gradient(map-deep-get($button-colors, 'color-focus', $name), map-deep-get($button-colors, 'color-2-focus', $name));
+              }
+            }
+          }
+          &:active, &.#{$button-active} {
+            background: map-deep-get($button-colors, 'button-color-active', $name);
+            border-color: map-deep-get($button-colors, 'button-color-active', $name);
+            @if ($button-set-gradient == true) {
+              &.#{$button-gradient} {
+                @include gradient(map-deep-get($button-colors, 'button-color-active', $name), map-deep-get($button-colors, 'color-2-active', $name));
+              }
+            }
+            @if ($button-set-gradient == default) {
+              @include gradient(map-deep-get($button-colors, 'button-color-active', $name), map-deep-get($button-colors, 'color-2-active', $name));
+            }
+          }
+        }
+      }
+      &.#{$button-border-contrast} {
+        &, &:focus, &:hover, &:active, &.#{$button-hover},  &.#{$button-active}, &.#{$button-focus} {
+          border-color: map-get($color-contrast, $name);
+        }
+      }
+    }
+  }
+}
+
+.#{$button-group} {
+  @include display-inline-flex;
+  @include flex-wrap(nowrap);
+  &.#{$button-reverse} {
+    @include flex-direction(row-reverse);
+  }
+  .#{$button} {
+    ~ * {
+      &, &:hover, &:focus, &:active, &.#{$button-hover}, &.#{$button-focus}, &.#{$button-active} {
+        border-left: 0 none;
+      }
+    }
+    &:first-child, &:first-of-type {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      ~ *:not(:last-child):not(:last-of-type) {
+        border-radius: 0;
+      }
+    }
+    &:last-child, &:last-of-type {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+}
+
+.#{$button-group-horizontal} {
+  @include display-inline-flex;
+  @include flex-direction(column);
+  &.#{$button-reverse} {
+    @include flex-direction(column-reverse);
+  }
+  .#{$button} {
+    ~ * {
+      &, &:hover, &:focus, &:active, &.#{$button-hover}, &.#{$button-focus}, &.#{$button-active} {
+        border-top: 0 none;
+      }
+    }
+    &:first-child, &:first-of-type {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      ~ *:not(:last-child):not(:last-of-type) {
+        border-radius: 0;
+      }
+    }
+    &:last-child, &:last-of-type {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+}

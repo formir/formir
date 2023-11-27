@@ -1,0 +1,25 @@
+@mixin button-common {
+  text-align: $button-text-align;
+  cursor: $button-cursor;
+  max-width: 100%;
+}
+
+@mixin button-hover {
+}
+
+@mixin button-focus {
+}
+
+@mixin button-active {
+}
+
+@mixin button-disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+@mixin button-inactive {
+}
+
+@mixin button-inverse {
+}

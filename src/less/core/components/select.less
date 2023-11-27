@@ -55,7 +55,7 @@
         display: none;
       }
       ~ input:checked {
-        &.select-all + label {
+        &.@{select-all} + label {
           display: none;
         }
       }
@@ -164,7 +164,7 @@
   }
 
   .@{select-content} {
-    background-color: #fff;
+    background-color: @input-background-color;
     .flex-direction(row);
     .flex-wrap(wrap);
     .input-base-style;

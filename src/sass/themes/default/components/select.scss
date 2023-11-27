@@ -1,0 +1,63 @@
+@mixin select-open-content {
+  @if not ($input-focus-border-color == none) { border-color: $input-focus-border-color !important; }
+  @if not ($input-focus-border-style == none) { border-style: $input-focus-border-style !important; }
+  @if not ($input-focus-outline == none) { outline: $input-focus-outline !important; }
+  @if not ($input-focus-shadow == none) { box-shadow: $input-focus-shadow !important; }
+  @if not ($input-focus-background-color == none) { background-color: $input-focus-background-color !important; }
+}
+
+@mixin select-disabled-content() {
+  &::after {
+    opacity: 0.5;
+  }
+  > * {
+    opacity: 0.5;
+  }
+}
+
+@mixin select-readonly-content() {
+}
+
+@mixin select-close-content() {
+  label, .#{$select-placeholder} {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+@mixin select-multi-selected-item() {
+  border: $input-default-border-width solid gray;
+  border-radius: $input-default-border-radius - 2px;
+  padding: 0 0.3em;
+}
+
+@mixin select-multi-selected-item-close() {
+  content: "×";
+  font-size: 0.8em;
+  margin-left: 0.3em;
+  vertical-align: text-top;
+}
+
+@mixin select-option-selected() {
+  background-color: $color-primary;
+  color: $color-primary-contrast;
+}
+
+@mixin select-option-selected-hovered() {
+  background-color: darken($color-primary, 15%);
+  color: $color-primary-contrast;
+}
+
+@mixin select-option() {
+  background-color: $color-white;
+  color: $color-white-contrast;
+  [class^="#{$icon}-"], [class*=" #{$icon}-"] {
+    margin-right: 0.3em;
+  }
+}
+
+@mixin select-option-hovered() {
+  background-color: $color-alternative;
+  color: $color-alternative-contrast;
+}

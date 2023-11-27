@@ -1,0 +1,42 @@
+.#{$alerts} {
+  @include alerts-style;
+  .#{$alert} {
+    @include alerts-alert-style;
+  }
+}
+
+input.#{$alert-trigger} {
+  display: none;
+  &:checked + .#{$alert} {
+    display: none;
+  }
+  + .#{$alert} {
+    @include alert-close;
+  }
+}
+
+.#{$alert} {
+  padding: $alert-padding;
+  position: relative;
+  display: block;
+  @include alert-style;
+  &.#{$alert-light} {
+    border: $alert-light-border;
+  }
+  
+  @each $name in $alert-states {
+    &.#{$name} {
+      background-color: map-get($alert-color, $name);
+      color: map-get($alert-color-contrast, $name);
+      &.#{$alert-light} {
+        color: map-get($alert-color, $name);
+        background-color: map-get($alert-color-contrast, $name);
+        border-color: currentColor;
+      }
+    }
+  }
+}
+
+input + .#{$alert} {
+  display: block;
+}

@@ -1,0 +1,25 @@
+@mixin popup-active() {
+}
+
+@mixin popup-active-on() {
+  display: inline-block;
+}
+
+@mixin popup-content() {
+  padding: $popup-content-padding;
+}
+
+@mixin popup-header() {
+  padding: $popup-header-padding;
+  background: $popup-header-bg;
+  color: $popup-header-text-color;
+}
+
+@mixin popup-footer() {
+  padding: $popup-footer-padding;
+  background: $popup-footer-bg;
+  color: $popup-footer-text-color;
+}
+
+.#{$popup} {
+}

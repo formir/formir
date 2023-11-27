@@ -16,18 +16,18 @@
     @{menu-item} {
       position: relative;
     }
-    @{menu-inside} {
+    .@{menu-inside} {
       z-index: 1;
     }
   }
   &.@{menu-inside-absolute} {
-    @{menu-inside} {
+    .@{menu-inside} {
       position: absolute;
       left: 0;
     }
   }
   &.@{menu-inside-fixed} {
-    @{menu-inside} {
+    .@{menu-inside} {
       position: fixed;
     }
   }
@@ -36,7 +36,7 @@
       .justify-content(center);
     }
   }
-  @{menu-inside} {
+  .@{menu-inside} {
     list-style: none;
     display: none;
     &:hover {
@@ -49,14 +49,14 @@
     cursor: pointer;
     .ellipsis;
     &:hover {
-      ~ @{menu-inside} {
+      ~ .@{menu-inside} {
         display: block;
         @{menu-item-anchor} {
           .menu-inside-hover();
         }
       }
     }
-    ~ @{menu-inside} {
+    ~ .@{menu-inside} {
       &:hover {
         display: block;
       }
@@ -222,12 +222,12 @@
     @{menu} {
       &.@{menu-inside-fixed} {
         width: inherit;
-        @{menu-inside}, @{menu-item} {
+        .@{menu-inside}, @{menu-item} {
           width: inherit;
         }
       }
       &.@{menu-inside-absolute} {
-        @{menu-inside} {
+        .@{menu-inside} {
           right: 0;
         }
       }

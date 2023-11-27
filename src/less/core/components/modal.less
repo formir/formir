@@ -87,9 +87,8 @@ body.@{modal-opened} {
   &.@{modal-animated} {
     opacity: 0;
     display: block;
-    .@{modal-backdrop} {
+    .@{modal-backdrop}:after {
       transition: background-color @modal-animate-function;
-      background-color: rgba(0, 0, 0, 0);
     }
     pointer-events: none;
     visibility: hidden;

@@ -1,0 +1,723 @@
+@import "../../core/functions/map-deep-get";
+
+@mixin input-disabled() {
+  opacity: $input-disabled-opacity !important;
+}
+
+@mixin select-arrow() {
+  @include font-icon;
+  content: $select-arrow-icon-down;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  color: $input-border-color;
+  z-index: 2;
+  pointer-events: none;
+  text-align: right;
+  vertical-align: middle;
+  width: $input-default-font-size;
+  font-size: $input-default-font-size;
+  height: $input-default-font-size;
+  line-height: $input-default-font-size;
+}
+
+@mixin input-invalid() {
+  @if ($form-state-change-text-color == true) {
+    color: map-get($input-color, $form-state-invalid);
+  }
+  @if ($form-state-change-background == true) {
+    background-color: map-get($input-background, $form-state-invalid);
+  }
+  @if ($form-state-change-border == true) {
+    border-color: map-get($input-border, $form-state-invalid);
+  }
+}
+
+@mixin input-valid() {
+  @if ($form-state-change-text-color == true) {
+    color: map-get($input-color, $form-state-valid);
+  }
+  @if ($form-state-change-background == true) {
+    background-color: map-get($input-background, $form-state-valid);
+  }
+  @if ($form-state-change-border == true) {
+    border-color: map-get($input-border, $form-state-valid);
+  }
+}
+
+@mixin input-base-style() {
+  border-color: $input-border-color;
+  border-style: $input-border-style;
+  border-width: $input-default-border-width;
+  border-radius: $input-default-border-radius;
+  font-size: $input-default-font-size;
+  line-height: $input-default-line-height;
+  font-weight: $input-font-weight;
+  color: $input-text-color;
+  background-color: $input-background-color;
+  outline: $input-default-outline;
+  box-shadow: $input-default-shadow;
+  box-sizing: border-box;
+}
+@mixin input-style() {
+  @include input-base-style;
+  padding: $input-default-padding-vertical $input-default-padding-horizontal;
+  text-overflow: ellipsis;
+  &:hover, &.#{$input-hover} {
+    @if not ($input-hover-border-color == none) { 
+      border-color: $input-hover-border-color !important;
+    }
+    @if not ($input-hover-border-style == none) { 
+      border-style: $input-hover-border-style !important;
+    }
+    @if not ($input-hover-outline == none) { 
+      outline: $input-hover-outline !important;
+    }
+    @if not ($input-hover-shadow == none) { 
+      box-shadow: $input-hover-shadow !important;
+    }
+    @if not ($input-hover-background-color == none) { 
+      background-color: $input-hover-background-color !important;
+    }
+  }
+  &:focus, &.#{$input-focus} {
+    @if not ($input-focus-border-color == none) { 
+      border-color: $input-focus-border-color !important;
+    }
+    @if not ($input-focus-border-style == none) { 
+      border-style: $input-focus-border-style !important;
+    }
+    @if not ($input-focus-outline == none) { 
+      outline: $input-focus-outline !important;
+    }
+    @if not ($input-focus-shadow == none) { 
+      box-shadow: $input-focus-shadow !important;
+    }
+    @if not ($input-focus-background-color == none) { 
+      background-color: $input-focus-background-color !important;
+    }
+  }
+  &:disabled, &[disabled] {
+    pointer-events: none;
+    cursor: normal;
+    @include input-disabled;
+  }
+  &.#{$input-inverse} {
+    background-color: $input-border-color !important;
+    border-color: $input-background-color !important;
+    color: $input-background-color !important;
+  }
+  &.#{$input-transparent} {
+    background-color: transparent !important;
+  }
+}
+
+@mixin select-style() {
+  option {
+    height: $input-default-line-height;
+    padding: $input-default-padding-vertical $input-default-padding-horizontal;
+    border: none;
+  }
+}
+
+input {
+  &:not([type="checkbox"]):not([type="radio"]):not([type="submit"]) {
+    @include input-style;
+  }
+}
+
+select, textarea, .#{$input}, output, datalist {
+  @include input-style;
+}
+
+select {
+  &:not([multiple]) {
+    height: calc(#{$input-default-line-height} + (#{$input-default-padding-vertical} * 2) + (#{$input-default-border-width} * 2) );
+  }
+  @include select-style;
+}
+
+input {
+  &:not([type="checkbox"]):not([type="radio"]):not([type="submit"]) {
+    &.#{$input} {
+      @each $name in $input-sizes {
+        &-#{$name} {
+          font-size: map-deep-get($input-size-props, $name, 'font-size');
+          line-height: map-deep-get($input-size-props, $name, 'line-height');
+          padding: map-deep-get($input-size-props, $name, 'padding-vertical') map-deep-get($input-size-props, $name, 'padding-horizontal');
+          border-radius: map-deep-get($input-size-props, $name, 'border-radius');
+          border-width: map-deep-get($input-size-props, $name, 'border-width');
+          outline-width: map-deep-get($input-size-props, $name, 'outline');
+          box-shadow: map-deep-get($input-size-props, $name, 'shadow');
+        }
+      }
+    }
+  }
+}
+select, textarea {
+  &.#{$input} {
+    @each $name in $input-sizes {
+      &-#{$name} {
+        font-size: map-deep-get($input-size-props, $name, 'font-size');
+        line-height: map-deep-get($input-size-props, $name, 'line-height');
+        padding: map-deep-get($input-size-props, $name, 'padding-vertical') map-deep-get($input-size-props, $name, 'padding-horizontal');
+        border-radius: map-deep-get($input-size-props, $name, 'border-radius');
+        border-width: map-deep-get($input-size-props, $name, 'border-width');
+        outline-width: map-deep-get($input-size-props, $name, 'outline');
+        box-shadow: map-deep-get($input-size-props, $name, 'shadow');
+      }
+    }
+  }
+}
+select:not([multiple]) {
+  &.#{$input} {
+    @each $name in $input-sizes {
+      &-#{$name} {
+        height: calc(#{map-deep-get($input-size-props, $name, 'line-height')} + #{map-deep-get($input-size-props, $name, 'padding-vertical')} * 2 + #{map-deep-get($input-size-props, $name, 'border-width')} * 2 );
+        option {
+          line-height: map-deep-get($input-size-props, $name, 'line-height');
+          padding: map-deep-get($input-size-props, $name, 'padding-vertical') map-deep-get($input-size-props, $name, 'padding-horizontal');
+        }
+      }
+    }
+  }
+}
+
+.#{$inputs}, .#{$size} {
+  @each $name in $input-sizes {
+    &-#{$name} {
+      &, &[class*="#{$cell}"] {
+        .#{$input}, input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), select, textarea {
+          font-size: map-deep-get($input-size-props, $name, 'font-size');
+          line-height: map-deep-get($input-size-props, $name, 'line-height');
+          padding: map-deep-get($input-size-props, $name, 'padding-vertical') map-deep-get($input-size-props, $name, 'padding-horizontal');
+          border-radius: map-deep-get($input-size-props, $name, 'border-radius');
+          border-width: map-deep-get($input-size-props, $name, 'border-width');
+          outline: map-deep-get($input-size-props, $name, 'outline');
+          box-shadow: map-deep-get($input-size-props, $name, 'shadow');
+        }
+        .#{$select} {
+          min-height: calc( #{map-deep-get($input-size-props, $name, 'line-height')} + #{map-deep-get($input-size-props, $name, 'padding-vertical')} * 2  + #{map-deep-get($input-size-props, $name, 'border-width')} * 2 );
+        }
+        .#{$select-content} {
+          border-radius: map-deep-get($input-size-props, $name, 'border-radius');
+          border-width: map-deep-get($input-size-props, $name, 'border-width');
+          outline: map-deep-get($input-size-props, $name, 'outline');
+          box-shadow: map-deep-get($input-size-props, $name, 'shadow');
+        }
+        select:not([multiple]) {
+          height: calc( #{map-deep-get($input-size-props, $name, 'line-height')} + #{map-deep-get($input-size-props, $name, 'padding-vertical')} * 2 + #{map-deep-get($input-size-props, $name, 'border-width')} * 2 );
+          option {
+            line-height: map-deep-get($input-size-props, $name, 'line-height');
+            padding: map-deep-get($input-size-props, $name, 'padding-vertical') map-deep-get($input-size-props, $name, 'padding-horizontal');
+          }
+        }
+      }
+    }
+  }
+}
+
+#{$form} {
+  #{$label} {
+    text-transform: $label-text-transform;
+    font-size: $label-font-size;
+    line-height: $label-line-height;
+    font-weight: $label-font-weight;
+    color: $label-text-color;
+    min-height: $label-line-height;
+    display: block;
+  }
+
+  .#{$hint} {
+    text-transform: $hint-text-transform;
+    font-size: $hint-font-size;
+    line-height: $hint-line-height;
+    font-weight: $hint-font-weight;
+    color: $hint-text-color;
+    @if ($include-core-component-tooltip == true) {
+      &.#{$has-tooltip} {
+        z-index: auto;
+        min-height: calc(#{$tooltip-padding-vertical} * 2 + #{$tooltip-line-height});
+        .#{$tooltip} {
+          display: table;
+        }
+      }
+      .#{$tooltip} {
+        top: $tooltip-distance !important;
+        @if ($form-tooltip-position == left) {
+          left: 0 !important;
+        }
+        @if ($form-tooltip-position == right) {
+          right: 0 !important;
+        }
+      }
+    }
+  }
+
+  &.#{$form-validate} {
+    @if ($include-core-component-tooltip == true) {
+      .#{$has-tooltip} {
+        input, select, textarea {
+          &.#{$form-input-touched} {
+            &:invalid, &.#{$input-invalid} {
+              @if ($form-tooltip-input-show-on == focus) {
+                &:focus {
+                  .#{$tooltip} {
+                    display: table !important;
+                  }
+                }
+              }
+              @if ($form-tooltip-input-show-on == hover) {
+                &:hover {
+                  .#{$tooltip} {
+                    display: table !important;
+                  }
+                }
+              }
+              @if ($form-tooltip-input-show-on == not_focus) {
+                &:not(:focus) {
+                  .#{$tooltip} {
+                    display: table !important;
+                  }
+                }
+              }
+            }
+          }
+
+          .#{$tooltip} {
+            display: none !important;
+            background-color: #{$input-tooltip-has-error};
+            color: #{$input-tooltip-contrast-has-error};
+            @if ($form-tooltip-position == left) {
+              left: 0 !important;
+            }
+            @if ($form-tooltip-position == right) {
+              right: 0 !important;
+            }
+            @if ($form-tooltip-position == left) {
+              @include tooltip-bottom(#{$input-tooltip-has-error});
+            }
+            @if ($form-tooltip-position == center) {
+              @include tooltip-bottom-center(#{$input-tooltip-has-error});
+            }
+            @if ($form-tooltip-position == right) {
+              @include tooltip-bottom-right(#{$input-tooltip-has-error});
+            }
+          }
+        }
+      }
+    }
+    input, select, textarea {
+      &:not(:focus).#{$form-input-touched} {
+        &:invalid, &.#{$input-invalid} {
+          @include input-invalid;
+        }
+        &:valid, &.#{$input-valid} {
+          @include input-valid;
+        }
+      }
+    }
+    .#{$select-arrow} select {
+      &:not(:focus).#{$form-input-touched} {
+        &:invalid, &.#{$input-invalid} {
+          + span:after {
+            color: map-get($input-color, $form-state-invalid);
+          }
+        }
+        &:valid, &.#{$input-valid} {
+          + span:after {
+            color: map-get($input-color, $form-state-valid);
+          }
+        }
+      }
+    }
+  }
+}
+
+.#{$control}, .#{$control-group} {
+  position: relative;
+  @if ($include-core-component-tooltip == true) {
+    &.#{$has-tooltip} {
+      z-index: auto;
+      @if not ($form-tooltip-input-show-on == hover) {
+        &:hover {
+          .#{$tooltip} {
+            display: none;
+          }
+        }
+      }
+      input, select, textarea {
+        @if ($form-tooltip-input-show-on == focus) {
+          &:focus {
+             .#{$tooltip} {
+              display: block;
+            }
+          }
+        }
+        @if ($form-tooltip-input-show-on == not_focus) {
+          &:not(:focus) {
+             .#{$tooltip} {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+    .#{$tooltip} {
+      @if ($form-tooltip-position == left) {
+        left: 0 !important;
+      }
+      @if ($form-tooltip-position == right) {
+        right: 0 !important;
+      }
+    }
+  }
+}
+
+.#{$control}, [class*="#{$cell}"], .#{$control-group} {
+  &.#{$input-inverse} {
+    input, select, textarea {
+      background-color: $input-border-color;
+      border-color: $input-background-color;
+      color: $input-background-color;
+    }
+  }
+  &.#{$input-transparent} {
+    input, select, textarea {
+      background-color: transparent;
+    }
+  }
+  &[class*="#{$icon}-"] {
+    position: relative;
+    &.#{$icon-left} {
+      &:before {
+        left: calc(#{($input-icon-font-size / 2)} + #{$input-default-padding-horizontal});
+        right: auto;
+      }
+      input , select, textarea {
+        padding-left: calc(#{($input-icon-font-size * 2)} + #{$input-default-padding-horizontal});
+      }
+    }
+    &.#{$input-inverse} {
+      &:before {
+        color: $input-background-color;
+      }
+    }
+    &:before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      font-size: $input-icon-font-size;
+      right: calc(#{($input-icon-font-size / 2)} + #{$input-default-padding-horizontal});
+      color: $input-icon-text-color;
+      z-index: 2;
+      pointer-events: none;
+      height: 1em;
+    }
+    input , select, textarea {
+      padding-right: calc(#{($input-icon-font-size * 2)} + #{$input-default-padding-horizontal});
+    }
+    select {
+      appearance: none;
+    }
+  }
+  &.#{$select-arrow} {
+    position: relative;
+    select {
+      appearance: none;
+      padding-right: calc(#{($input-icon-font-size * 2)} + #{$input-default-padding-horizontal});
+      &.#{$input-inverse} {
+        + span:after {
+          color: $input-background-color;
+        }
+      }
+      + span:after {
+        @include select-arrow;
+        right: calc(#{($input-icon-font-size / 1.2)} + #{$input-default-padding-horizontal});
+      }
+      &:focus {
+        + span:after {
+          content: $select-arrow-icon-up;
+          color: $input-focus-border-color;
+        }
+      }
+      &:hover {
+        + span:after {
+          color: $input-hover-border-color;
+        }
+      }
+    }
+    &.#{$input-inverse} {
+      select {
+        + span:after {
+          color: $input-background-color;
+        }
+      }
+    }
+  }
+  &[data-addon] {
+    position: relative;
+    &.#{$addon-left} {
+      &:after {
+        left: calc(#{($input-icon-font-size * 2)} + #{$input-default-padding-horizontal});
+        right: auto;
+        text-align: left;
+      }
+      input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), select, textarea {
+        padding-left: calc(#{($input-icon-font-size * 3)} + #{$input-default-padding-horizontal});
+        padding-right: $input-default-padding-horizontal;
+      }
+    }
+    &.#{$input-inverse} {
+      &:after {
+        color: $input-background-color;
+      }
+    }
+    &:after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      font-size: $input-addon-font-size;
+      text-transform: $input-addon-font-weight;
+      right: calc(#{($input-icon-font-size / 2)} + #{$input-default-padding-horizontal});
+      color: $input-addon-text-color;
+      text-transform: $input-addon-text-transform;
+      z-index: 2;
+      content: attr(data-addon);
+      pointer-events: none;
+      height: $input-default-line-height;
+      white-space: nowrap;
+      text-align: right;
+    }
+    input, select, textarea {
+      padding-right: calc(#{($input-icon-font-size * 3)} + #{$input-default-padding-horizontal});
+    }
+  }
+}
+
+#{$form}, .#{$control}, [class*="#{$cell}"], .#{$control-group} {
+  @each $name in $form-states {
+    &.#{$name} {
+      & {
+        @if ($form-state-change-text-color == true) {
+          &.#{$input-inverse}.#{$input-transparent} {
+             &[class*="#{$icon}-"]:before, &[data-addon]:after, &.#{$select-arrow} select + span:after {
+              color: map-get($input-color, $name);
+            }
+          }
+        }
+        &, &.#{$input-inverse}.#{$input-transparent} {
+          input {
+            &:not([type="checkbox"]):not([type="radio"]):not([type="submit"]) {
+              @if ($form-state-change-text-color == true) {
+                color: map-get($input-color, $name);
+              }
+              @if ($form-state-change-background == true) {
+                background-color: map-get($input-background, $name);
+              }
+              @if ($form-state-change-border == true) {
+                border-color: map-get($input-border, $name);
+              }
+            }
+          }
+          select, textarea, output, data-list, .#{$input} {
+            @if ($form-state-change-text-color == true) {
+              color: map-get($input-color, $name);
+            }
+            @if ($form-state-change-background == true) {
+              background-color: map-get($input-background, $name);
+              color: map-get($input-background-contrast, $name);
+            }
+            @if ($form-state-change-border == true) {
+              border-color: map-get($input-border, $name);
+            }
+          }
+          @if ($form-state-change-label == true) {
+            #{$label} {
+              @if ($form-state-change-text-color == true) {
+                color: map-get($input-color, $name);
+              }
+            }
+          }
+          @if ($form-state-change-hint == true) {
+            .#{$hint} {
+              @if ($form-state-change-text-color == true) {
+                color: map-get($input-color, $name);
+              }
+            }
+          }
+          @if ($include-core-component-tooltip == true) {
+            @if ($form-state-change-tooltip == true) {
+              .#{$tooltip} {
+                background-color: map-get($input-tooltip, $name);
+                color: map-get($input-tooltip-contrast, $name);
+                @if ($form-tooltip-position == left) {
+                  @include tooltip-bottom(map-get($input-tooltip, $name));
+                }
+                @if ($form-tooltip-position == center) {
+                  @include tooltip-bottom-center(map-get($input-tooltip, $name));
+                }
+                @if ($form-tooltip-position == right) {
+                  @include tooltip-bottom-right(map-get($input-tooltip, $name));
+                }
+              }
+            }
+          }
+        }
+        &.#{$input-inverse} {
+          select, textarea, output, data-list, .#{$input}, input {
+            @if ($form-state-change-background == true) {
+              background-color: map-get($input-border, $name);
+            }
+            @if ($form-state-change-border == true) {
+              border-color: map-get($input-background, $name);
+            }
+            @if ($form-state-change-text-color == true) {
+              color: map-get($input-background, $name);
+            }
+          }
+          @if ($form-state-change-text-color == true) {
+            &, .#{$control}, [class*="#{$cell}"], .#{$control-group} {
+              &[class*="#{$icon}-"]:before, &[data-addon]:after, &.#{$select-arrow} select + span:after {
+                color: map-get($input-background, $name);
+              }
+            }
+          }
+        }
+        @if ($form-state-change-text-color == true) {
+          &[class*="#{$icon}-"]:before, &[data-addon]:after, &.#{$select-arrow} select + span:after {
+            color: map-get($input-color, $name);
+          }
+        }
+      }
+    }
+  }
+}
+
+.#{$inputs}, .#{$size} {
+  @each $name in $input-sizes {
+    &-#{$name} {
+      #{$label}, .#{$select} .#{$select-content} > label, .#{$select} .#{$select-placeholder} {
+        font-size: map-deep-get($input-size-props, $name, 'font-size');
+        line-height: map-deep-get($input-size-props, $name, 'line-height');
+        padding-top: map-deep-get($input-size-props, $name, 'padding-vertical');
+        padding-bottom: map-deep-get($input-size-props, $name, 'padding-vertical');
+      }
+      #{$label}, &.#{$control}[class*="#{$icon}-"]:before, .#{$control}[class*="#{$icon}-"]:before, &[data-addon]:after, [data-addon]:after, &.#{$select-arrow} select + span:after {
+        font-size: map-deep-get($input-size-props, $name, 'font-size');
+      }
+    }
+  }
+}
+
+.#{$grid-form} {
+  &.#{$column}.#{$release} {
+    height: auto;
+  }
+  &.#{$label}-center, .#{$row}.#{$label}-center {
+    label[class*="#{$cell}"], .#{$label}[class*="#{$cell}"] {
+      @include align-self(center);
+    }
+  }
+  &.#{$label}-right, .#{$row}.#{$label}-right {
+    label[class*="#{$cell}"], .#{$label}[class*="#{$cell}"] {
+      @include justify-content(flex-end);
+    }
+  }
+  &.#{$label}-left, .#{$row}.#{$label}-left {
+    label[class*="#{$cell}"], .#{$label}[class*="#{$cell}"] {
+      @include justify-content(flex-start);
+    }
+  }
+
+  &.#{$control}-center, .#{$row}.#{$control}-center {
+    .#{$control}[class*="#{$cell}"] {
+      @include align-self(center);
+    }
+  }
+  &.#{$control}-right, .#{$row}.#{$control}-right {
+    .#{$control}[class*="#{$cell}"] {
+      @include justify-content(flex-end);
+    }
+  }
+  &.#{$control}-left, .#{$row}.#{$control}-left {
+    .#{$control}[class*="#{$cell}"] {
+      @include justify-content(flex-start);
+    }
+  }
+
+  &.#{$hint}-center, .#{$row}.#{$hint}-center {
+    .#{$control}[class*="#{$cell}"] {
+      @include align-self(center);
+    }
+  }
+  &.#{$hint}-right, .#{$row}.#{$hint}-right {
+    .#{$control}[class*="#{$cell}"] {
+      @include justify-content(flex-end);
+    }
+  }
+  &.#{$hint}-left, .#{$row}.#{$hint}-left {
+    .#{$control}[class*="#{$cell}"] {
+      @include justify-content(flex-start);
+    }
+  }
+
+  &.#{$text-center}, .#{$row}.#{$text-center} {
+    [class*="#{$cell}"] {
+      &.#{$keep-flex} {
+        @include justify-content(center);
+      }
+    }
+  }
+  &.#{$text-right}, .#{$row}.#{$text-right} {
+    [class*="#{$cell}"] {
+      &.#{$keep-flex} {
+        @include justify-content(flex-end);
+      }
+    }
+  }
+  &.#{$text-left}, .#{$row}.#{$text-left} {
+    [class*="#{$cell}"] {
+      &.#{$keep-flex} {
+        @include justify-content(flex-start);
+      }
+    }
+  }
+  &.#{$keep-flex} [class*="#{$cell}"] {
+    &.#{$keep-flex} {
+      @include display-flex;
+      textarea {
+        @include flex(1 1 100%);
+        width: 100% !important;
+        max-width: 100%;
+        min-width: 100%;
+        &[rows="1"] {
+          height: calc(1.7em + (#{$input-default-padding-vertical} * 2 ));
+        }
+      }
+    }
+  }
+  [class*="#{$cell}"], [class^="#{$cell}"] {
+    textarea {
+      resize: vertical;
+      min-height: calc(1.7em + (#{$input-default-padding-vertical} * 2 ));
+    }
+    input {
+      &:not([type="checkbox"]):not([type="radio"]) {
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+        box-sizing: border-box;
+      }
+    }
+    select, textarea, .#{$select}, .#{$input}, output, datalist, .#{$button}.#{$button-block} {
+      width: 100%;
+      max-width: 100%;
+      min-width: 100%;
+      box-sizing: border-box;
+    }
+  }
+}

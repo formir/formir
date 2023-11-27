@@ -1,0 +1,293 @@
+@mixin select-open-content-core() {
+  z-index: $select-zindex;
+  max-height: $select-max-height;
+  overflow-y: auto;
+  position: absolute;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  @include flex-wrap(wrap);
+  @include display-flex;
+  &.#{$select-placeholder} {
+    display: none;
+  }
+  label {
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    @include flex(1 1 100%);
+    @include select-option;
+    &:hover {
+      @include select-option-hovered;
+    }
+  }
+  &:after {
+    display: none !important;
+  }
+  input {
+    &:checked {
+      + label {
+        @include select-option-selected;
+        &:hover {
+          @include select-option-selected-hovered;
+        }
+      }
+    }
+  }
+}
+
+@mixin select-close-content-core() {
+  @include display-flex;
+  min-height: inherit;
+  padding-right: $input-default-padding-horizontal;
+  input {
+    &[type="checkbox"] {
+      + label {
+        margin: calc(#{$input-default-padding-vertical} - #{$input-default-border-width}) 0 calc(#{$input-default-padding-vertical} - #{$input-default-border-width}) calc(#{$input-default-padding-horizontal} - #{$input-default-border-width});
+        @include select-multi-selected-item;
+        &:after {
+          @include select-multi-selected-item-close;
+          pointer-events: auto;
+        }
+      }
+    }
+    &:checked {
+      ~ .#{$select-placeholder} {
+        display: none;
+      }
+      ~ input:checked {
+        &.#{$select-all} + label {
+          display: none;
+        }
+      }
+      + label {
+        @include order(-1);
+        width: auto;
+        display: inline-block;
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+@mixin select-close-count() {
+  label[for] {
+    display: none;
+  }
+  input {
+    &:checked {
+      counter-increment: selected;
+      ~ .#{$select-placeholder} {
+        display: block;
+        &:after {
+          content: "1 " attr(data-selected);
+        }
+      }
+      ~ input:checked {
+        ~ .#{$select-placeholder} {
+          display: block;
+          &:after {
+            content: counter(selected) " " attr(data-selected);
+          }
+        }
+      }
+    }
+  }
+}
+
+.#{$select} {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  outline: 0 none;
+  position: relative;
+  max-width: 100%;
+  min-height: calc( #{$input-default-line-height} + #{$input-default-padding-vertical} * 2 + #{$input-default-border-width} * 2 );
+  > input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    margin: 0;
+    ~ .#{$select-content} {
+      label {
+        &:after {
+          position: relative;
+        }
+      }
+    }
+  }
+  &.#{$select-disabled} {
+    pointer-events: none;
+    .#{$select-content} {
+      @include select-disabled-content;
+    }
+  }
+  &.#{$select-readonly} {
+    pointer-events: none;
+    .#{$select-content} {
+      @include select-readonly-content;
+    }
+  }
+  .#{$select-content} {
+    > input {
+      position: fixed;
+      left: -100000px;
+    }
+    &:after {
+      @include select-arrow;
+      right: $input-default-font-size/1.2;
+    }
+  }
+
+  &.#{$select-hoverable}:not(:hover), &:not(.#{$select-hoverable}):not(.#{$select-active}):not([tabindex]):not(:focus), &[tabindex]:not(:focus) {
+    .#{$select-content}:only-child {
+      @include select-close-content;
+      @include select-close-content-core;
+    }
+  }
+  > input:not(:checked) {
+    ~ .#{$select-content} {
+      @include select-close-content;
+      @include select-close-content-core;
+    }
+  }
+  .#{$select-placeholder} {
+    margin: $input-default-padding-vertical $input-default-padding-horizontal;
+    @include order(-1);
+    &:after {
+      content: attr(data-placeholder);
+    }
+  }
+
+  .#{$select-content} {
+    background-color: $input-background-color;
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include input-base-style;
+    padding: 0;
+    
+    > label {
+      display: block;
+      white-space: nowrap;
+      text-align: left;
+      width: 100%;
+      text-overflow: ellipsis;
+      box-sizing: border-box;
+      line-height: $input-default-line-height;
+      padding: $input-default-padding-vertical $input-default-padding-horizontal;
+    }
+    label {
+      cursor: pointer;
+      display: none;
+    }
+  }
+  &:not(.#{$select-count-selected}) {
+    .#{$select-content} {
+      > input[id] {
+        display: none;
+      }
+    }
+  }
+  &.#{$select-count-selected} {
+    counter-reset: selected;
+    &.#{$select-hoverable}:not(:hover), &:not(.#{$select-hoverable}):not(.#{$select-active}), &[tabindex]:not(:focus) {
+      .#{$select-content}:only-child {
+        @include select-close-count;
+      }
+    }
+    > input:not(:checked) {
+      ~ .#{$select-content} {
+        @include select-close-count;
+      }
+    }
+  }
+
+  &.#{$select-hoverable}:hover, &.#{$select-active}, &[tabindex]:focus {
+    &.#{$select-hide-selected} {
+      .#{$select-content} {
+        input {
+          &:checked {
+            + label {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    .#{$select-content} {
+      @include select-open-content;
+      @include select-open-content-core;
+    }
+  }
+  &.hide-selected {
+     > input:checked  ~ .#{$select-content} {
+      input {
+        &:checked {
+          + label {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  > input:checked {
+    position: fixed !important;
+    z-index: ($select-zindex - 1);
+    ~ .#{$select-content} {
+      @include select-open-content;
+      @include select-open-content-core;
+    }
+  }
+  &[tabindex], &.#{$select-hoverable} {
+    .#{$select-content} {
+      input {
+        &[type="checkbox"] {
+          + label {
+            &:after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.#{$select} {
+  &.#{$input} {
+    @each $name in $input-sizes {
+      &-#{$name} {
+        min-height: calc(#{map-deep-get($input-size-props, $name, 'line-height')} + #{map-deep-get($input-size-props, $name, 'padding-vertical')} * 2 + #{map-deep-get($input-size-props, $name, 'border-width')} * 2 );
+        .#{$select-content} {
+          border-radius: map-deep-get($input-size-props, $name, 'border-radius');
+          border-width: map-deep-get($input-size-props, $name, 'border-width');
+          outline-width: map-deep-get($input-size-props, $name, 'outline');
+          box-shadow: map-deep-get($input-size-props, $name, 'shadow');
+          > label {
+            font-size: map-deep-get($input-size-props, $name, 'font-size');
+            line-height: map-deep-get($input-size-props, $name, 'line-height');
+            padding: map-deep-get($input-size-props, $name, 'padding-vertical') map-deep-get($input-size-props, $name, 'padding-horizontal');
+          }
+          .#{$select-placeholder} {
+            font-size: map-deep-get($input-size-props, $name, 'font-size');
+            line-height: map-deep-get($input-size-props, $name, 'line-height');
+            margin: map-deep-get($input-size-props, $name, 'padding-vertical') map-deep-get($input-size-props, $name, 'padding-horizontal');
+          }
+        }
+        > input:not(:checked), &.#{$select-hoverable}:not(:hover), &:not(.#{$select-hoverable}):not(.#{$select-active}):not([tabindex]):not(:focus), &[tabindex]:not(:focus) {
+          ~ .#{$select-content} {
+            > input[type="checkbox"] {
+              + label {
+                margin: calc( #{map-deep-get($input-size-props, $name, 'padding-vertical')} - #{map-deep-get($input-size-props, $name, 'border-width')} ) 0 calc(#{map-deep-get($input-size-props, $name, 'padding-vertical')} - #{map-deep-get($input-size-props, $name, 'border-width')} ) calc(#{map-deep-get($input-size-props, $name, 'padding-horizontal')} - #{map-deep-get($input-size-props, $name, 'border-width')});
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

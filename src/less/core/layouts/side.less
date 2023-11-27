@@ -105,7 +105,7 @@
       transition: margin @side-animate-time;
     }
   }
-  &:not(@{side-cover}) {
+  &:not(.@{side-cover}) {
     &.@{side-left} {
       ~ .@{body-content} {
         margin-left: @side-collapse-width;
@@ -641,10 +641,5 @@
   position: fixed;
   z-index: @side-zindex;
   display: none;
-  width: @side-collapse-width*0.66666;
-  height: @side-collapse-width*0.66666;
-  line-height: @side-collapse-width*0.66666;
-  text-align: center;
-  cursor: pointer;
   .side-open-style();
 }

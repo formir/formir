@@ -1,0 +1,116 @@
+@mixin dl-horizontally-collapse {
+  display: block;
+  #{dd} {
+    width: auto;
+    margin-left: 0;
+  }
+  #{dt} {
+    width: auto;
+    margin-bottom: $dd-title-space-default;
+  }
+}
+
+.#{$dl-horizontally-collapse} {
+  @include dl-horizontally-collapse;
+}
+
+@mixin dl-space-repeat($n, $i: 1) {
+  @if ($i <= $n) {
+    $j: $i - 1;
+    $space-value: ((((1-($layout-steps - $i)/(($layout-steps - $i) + $layout-geometric-step)))*$layout-height)-(((1-($layout-steps - 1)/(($layout-steps - 1) + $layout-geometric-step)))*$layout-height))*$layout-factor + $layout-unit;
+    &.#{$dl-space}-#{$j} {
+      &.#{$dl-horizontally} {
+        #{dt} {
+          margin-bottom: $space-value;
+        }
+      }
+      #{dd} {
+        margin-bottom: $space-value;
+      }
+    }
+    @include dl-space-repeat($n, ($i + 1));
+  }
+}
+
+@mixin dl-width-repeat($n, $i: 1) {
+  @if ($i <= $n) {
+    &.#{$dl-size}-#{$i} {
+      #{dt} {
+        width: (($layout-width/$layout-steps)*$i) + $layout-unit;
+      }
+      #{dd} {
+        width: calc(100% - #{(($layout-width/$layout-steps)*$i + $dd-gutter)});
+        margin-left: $dd-gutter;
+      }
+    }
+    @if $dl-size-default == $i {
+      #{dt} {
+        width: (($layout-width/$layout-steps)*$i) + $layout-unit;
+      }
+      #{dd} {
+        width: calc(100% - #{(($layout-width/$layout-steps)*$i + $dd-gutter)});
+        margin-left: $dd-gutter;
+      }
+    }
+    @include dl-width-repeat($n, ($i + 1));
+  }
+}
+
+.#{$dl} {
+  @include dl-space-repeat($dl-steps);
+  #{dd} {
+    margin-bottom: $dd-space-default;
+  }
+  #{dt} {
+    margin-bottom: $dd-title-space-default;
+    &:last-of-type {
+      &, + #{&} {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &.#{$dl-title-colon} {
+    #{dt} {
+      &:after {
+        content: ":";
+      }
+    }
+  }
+  &.#{$dl-horizontally} {
+    @include display-flex;
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include dl-width-repeat($layout-steps);
+    #{dt} {
+      margin-bottom: $dd-space-default;
+    }
+    &.#{$dl-horizontally-collapse} {
+      @include dl-horizontally-collapse;
+    }
+    @media (min-width: #{$desktop-min-width})  {
+      &.#{$d}-#{$dl-horizontally-collapse} {
+        @include dl-horizontally-collapse;
+      }
+    }
+    @media (max-width: #{$tablet-max-width}) {
+      &.#{$t}-#{$dl-horizontally-collapse} {
+        @include dl-horizontally-collapse;
+      }
+    }
+    @media (max-width: #{$tablet-portrait-max-width}) {
+      &.#{$tp}-#{$dl-horizontally-collapse} {
+        @include dl-horizontally-collapse;
+      }
+    }
+    @media (max-width: #{$mobile-max-width}) {
+      &.#{$m}-#{$dl-horizontally-collapse} {
+        @include dl-horizontally-collapse;
+      }
+    }
+    @media (max-width: #{$mobile-portrait-max-width}) {
+      &.#{$mp}-#{$dl-horizontally-collapse} {
+        @include dl-horizontally-collapse;
+      }
+    }
+  }
+}

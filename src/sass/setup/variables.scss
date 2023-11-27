@@ -1,0 +1,834 @@
+@import "../core/functions/map-deep-get";
+
+// Body
+$html-font-size: 16px;
+
+$body-font-family: "Roboto";
+$body-font-size: 1rem;
+$body-line-height: 1.35em;
+$font-family: "Roboto", Arial, Helvetica, sans-serif;
+
+
+// Colors
+$color-body: #2a2a2a;
+$color-primary: #443349;
+$color-alternative: #6253f9;
+$color-link: #5386f9;
+$color-mute: #575757;
+$color-cancel: #aaaaaa;
+$color-success: #84b500;
+$color-info: #00abc4;
+$color-warning: #ea8432;
+$color-danger: #cf4040;
+$color-white: #fff;
+$color-color-1: #000;
+$color-color-2: #fff;
+$color-color-3: #222;
+
+$color-body-contrast: #ffffff;
+$color-primary-contrast: #ffffff;
+$color-alternative-contrast: #ffffff;
+$color-link-contrast: #ffffff;
+$color-mute-contrast: #ffffff;
+$color-cancel-contrast: #111111;
+$color-success-contrast: #ffffff;
+$color-info-contrast: #ffffff;
+$color-warning-contrast: #111111;
+$color-danger-contrast: #ffffff;
+$color-white-contrast: #111111;
+$color-color-1-contrast: #fff;
+$color-color-2-contrast: #000;
+$color-color-3-contrast: #eee;
+
+$color-contrast: (
+  "body": $color-body-contrast,
+  "primary": $color-primary-contrast,
+  "alternative": $color-alternative-contrast,
+  "link": $color-link-contrast,
+  "mute": $color-mute-contrast,
+  "cancel": $color-cancel-contrast,
+  "success": $color-success-contrast,
+  "info": $color-info-contrast,
+  "warning": $color-warning-contrast,
+  "danger": $color-danger-contrast,
+  "white": $color-white-contrast,
+  "color-1": $color-color-1-contrast,
+  "color-2": $color-color-2-contrast,
+  "color-3": $color-color-3-contrast
+);
+
+$color-focus: $color-alternative;
+$color-hover-lighten: 20%;
+
+$color-hover-body: lighten($color-body, $color-hover-lighten);
+$color-hover-primary: lighten($color-primary, $color-hover-lighten);
+$color-hover-alternative: lighten($color-alternative, $color-hover-lighten);
+$color-hover-link: lighten($color-link, $color-hover-lighten);
+$color-hover-mute: lighten($color-mute, $color-hover-lighten);
+$color-hover-cancel: lighten($color-cancel, $color-hover-lighten);
+$color-hover-success: lighten($color-success, $color-hover-lighten);
+$color-hover-info: lighten($color-info, $color-hover-lighten);
+$color-hover-warning: lighten($color-warning, $color-hover-lighten);
+$color-hover-danger: lighten($color-danger, $color-hover-lighten);
+$color-hover-color-1: lighten($color-color-1, $color-hover-lighten);
+$color-hover-color-2: lighten($color-color-2, $color-hover-lighten);
+$color-hover-color-3: lighten($color-color-3, $color-hover-lighten);
+
+// Links
+$link-color: $color-link;
+$link-hover-color: $color-hover-link;
+$link-decoration: none;
+$link-hover-decoration: underline;
+
+// Window
+$window-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+$window-content-background: #fff;
+$window-content-padding: 10px 10px;
+$window-header-background: #fff;
+$window-header-padding: 10px 10px;
+$window-header-color: $color-body;
+$window-header-font-size: 1.3rem;
+$window-header-border-bottom: 1px solid lighten($color-mute, 60%);
+$window-border: 0 none;
+$window-border-radius: 0;
+$window-footer-background: #fff;
+$window-footer-padding: 10px 10px;
+$window-footer-color: $color-body;
+$window-footer-border-top: 1px solid lighten($color-mute, 60%);
+
+// Modals
+$modal-width: 650px;
+$modal-margin: 5vh;
+$modal-min-height: 300px;
+$modal-max-width: calc(100% - (#{$content-min-margin + $layout-unit} * 2));
+$modal-background-color: rgba(0, 0, 0, 0.7);
+$modal-border: 0 none;
+$modal-header-background: transparent;
+$modal-animate-function: 0.4s ease;
+$modal-animate-transform-x: 0;
+$modal-animate-transform-y: -100vh;
+
+$modal-s-width: 450px;
+$modal-l-width: 70%;
+$modal-xl-width: 80%;
+$modal-fullscreen-width: 100%;
+
+// Header
+$header-height: 65px;
+$header-background: darken($color-primary, 10%);
+$header-color: $color-primary-contrast;
+$header-vertical-padding: $content-min-margin + $layout-unit;
+$header-horizontal-padding: 0;
+
+// Tabs
+$tab-nav-active-background: $color-primary;
+$tab-nav-active-color: #fff;
+$tab-nav-active-border: 1px solid darken($color-primary, 10%);
+$tab-nav-active-shadow: none;
+
+// Tooltips
+$tooltip-background: darken($color-primary, 20%);
+$tooltip-border-width: 0;
+$tooltip-border-color: rgba(60, 60, 60, 1);
+$tooltip-border: $tooltip-border-width solid $tooltip-border-color;
+$tooltip-shadow: 0;
+$tooltip-text-color: #fff;
+$tooltip-font-size: 0.8rem;
+$tooltip-line-height: 1.35em;
+$tooltip-padding-vertical: 0.45rem;
+$tooltip-padding-horizontal: 0.65rem;
+$tooltip-max-width: 30rem;
+$tooltip-width: max-content;  // Try not change this configuration
+$tooltip-border-radius: 5px;
+$tooltip-arrow-height: 5px;
+$tooltip-arrow-width: $tooltip-arrow-height;
+$tooltip-arrow-offset: 10px;
+$tooltip-offset: $tooltip-arrow-offset;
+$tooltip-distance: 5px;
+
+// Popups
+$popup-background: rgba(255, 255, 255, 1);
+$popup-border-width: 1px;
+$popup-border-color: rgba(60, 60, 60, 1);
+$popup-border: $popup-border-width solid $popup-border-color;
+$popup-shadow: none;
+$popup-text-color: $color-body;
+$popup-padding-horizontal: 0;
+$popup-padding-vertical: 0;
+$popup-padding: $popup-padding-vertical $popup-padding-horizontal;
+$popup-max-width: 30rem;
+$popup-min-width: 0;
+$popup-width: max-content;
+$popup-border-radius: 0;
+$popup-arrow-color: $color-body;
+$popup-arrow-height: 0;
+$popup-arrow-width: $popup-arrow-height;
+$popup-arrow-offset: 20px;
+$popup-offset: 0;
+$popup-distance: 0;
+
+//// Popup inner
+$popup-content-padding: 15px 20px;
+$popup-footer-padding: $popup-content-padding;
+$popup-header-padding: $popup-footer-padding;
+$popup-header-bg: $color-body;
+$popup-header-text-color: #fff;
+$popup-footer-bg: transparent;
+$popup-footer-text-color: inherit;
+
+// Accordion
+$accordion-animated-max-height: 200vh;
+$accordion-animated-time: 1s;
+
+// Side
+$side-full-width: 90%;
+$side-animate-time: 1s;
+$side-hoverable-offset-width: 5px;
+$side-hoverable-offset-height: 5px;
+$side-backdrop-color: rgba(0, 0, 0, 1);
+$side-backdrop-opacity: 0.5;
+$side-width-default: 200px;
+$side-height-default: 150px;
+$side-collapse-width: 50px;
+$side-collapse-height: $content-max-height/$base-steps + $layout-unit;
+
+// Chart
+$chart-height: 100px;
+$chart-ring-width: 10px;
+$chart-color: green;
+$chart-background: red;
+$chart-value-font-size: 20px;
+$chart-value-color: $chart-background;
+$chart-parent-background: inherit;
+
+// Form
+$focus-shadow: 1px 1px 0 $color-focus inset, -1px -1px 0 $color-focus inset;
+
+$input-default-padding-vertical: 0.35rem;
+$input-default-padding-horizontal: 0.5rem;
+$input-border-style: solid;
+$input-default-border-width: 1px;
+$input-border-color: #ccc;
+$input-default-border-radius: 3px;
+$input-background-color: #fff;
+$input-default-font-size: 1rem;
+$input-default-line-height: 1.35rem;
+$input-font-weight: normal;
+$input-text-color: $color-body;
+$input-default-outline: none;
+$input-default-shadow: none;
+
+$input-size-props: (
+  s: (
+    padding-vertical: $input-default-padding-vertical * $size-s,
+    padding-horizontal: $input-default-padding-horizontal * $size-s,
+    border-width: $input-default-border-width,
+    border-radius: $input-default-border-radius - 1px,
+    font-size: $input-default-font-size * $size-s,
+    line-height: $input-default-line-height * $size-s,
+    outline: $input-default-outline,
+    shadow: $input-default-shadow
+  ),
+  m: (
+    padding-vertical: $input-default-padding-vertical * $size-m,
+    padding-horizontal: $input-default-padding-horizontal * $size-m,
+    border-width: $input-default-border-width,
+    border-radius: $input-default-border-radius + 2px,
+    font-size: $input-default-font-size * $size-m,
+    line-height: $input-default-line-height * $size-m,
+    outline: $input-default-outline,
+    shadow: $input-default-shadow
+  ),
+  l: (
+    padding-vertical: $input-default-padding-vertical * $size-l,
+    padding-horizontal: $input-default-padding-horizontal * $size-l,
+    border-width: $input-default-border-width,
+    border-radius: $input-default-border-radius + 1px,
+    font-size: $input-default-font-size * $size-l,
+    line-height: $input-default-line-height * $size-l,
+    outline: $input-default-outline,
+    shadow: $input-default-shadow
+  )
+);
+
+$input-hover-border-style: $input-border-style;
+$input-hover-border-color: $input-border-color;
+$input-hover-outline: none;
+$input-hover-shadow: none;
+$input-hover-background-color: $input-background-color;
+
+$input-focus-border-style: none;
+$input-focus-border-color: none;
+$input-focus-outline: none;
+$input-focus-shadow: $focus-shadow;
+$input-focus-background-color: none;
+
+$label-font-size: 1rem;
+$label-line-height: 1.35rem;
+$label-font-weight: normal;
+$label-text-transform: none;
+$label-text-color: $color-body;
+
+$hint-font-size: 1rem;
+$hint-line-height: 1.35rem;
+$hint-font-weight: normal;
+$hint-text-transform: none;
+$hint-text-color: $color-body;
+
+$input-disabled-opacity: 0.7;
+$input-icon-text-color: $input-text-color;
+$input-icon-font-size: 1em;
+$input-addon-text-color: $input-text-color;
+$input-addon-text-transform: uppercase;
+$input-addon-font-size: 0.8em;
+$input-addon-font-weight: normal;
+
+$input-lighten: 0%;
+$input-background-lighten: 80%;
+$input-border-lighten: 0%;
+
+$input-color: (
+  has-success: lighten($color-success, $input-lighten),
+  has-info: lighten($color-info, $input-lighten),
+  has-warning: lighten($color-warning, $input-lighten),
+  has-error: lighten($color-danger, $input-lighten)
+);
+
+$input-background: (
+  has-success: lighten($color-success, $input-background-lighten),
+  has-info: lighten($color-info, $input-background-lighten),
+  has-warning: lighten($color-warning, $input-background-lighten),
+  has-error: lighten($color-danger, $input-background-lighten)
+);
+
+$input-background-contrast: (
+  has-success: $input-text-color,
+  has-info: $input-text-color,
+  has-warning: $input-text-color,
+  has-error: $input-text-color
+);
+
+$input-tooltip: (
+  has-success: $color-success,
+  has-info: $color-info,
+  has-warning: $color-warning,
+  has-error: $color-danger
+);
+
+$input-tooltip-contrast: (
+  has-success: $color-success-contrast,
+  has-info: $color-info-contrast,
+  has-warning: $color-warning-contrast,
+  has-error: $color-danger-contrast
+);
+
+$input-border: (
+  has-success: lighten($color-success, $input-border-lighten),
+  has-info: lighten($color-info, $input-border-lighten),
+  has-warning: lighten($color-warning, $input-border-lighten),
+  has-error: lighten($color-danger, $input-border-lighten)
+);
+
+$select-arrow-icon-down: "\f0d7";
+$select-arrow-icon-up: "\f0d8";
+$select-max-height: 50vh;
+
+$icon-close: "\f00d";
+
+// Description List
+$dd-gutter: 20px;
+$dd-space-default: 20px;
+$dd-title-space-default: 5px;
+$dl-size-default: 3;
+
+// Menu
+
+$input-tooltip-contrast: (
+  has-success: $color-success-contrast,
+  has-info: $color-info-contrast,
+  has-warning: $color-warning-contrast,
+  has-error: $color-danger-contrast
+);
+
+$input-border: (
+  has-success: lighten($color-success, $input-border-lighten),
+  has-info: lighten($color-info, $input-border-lighten),
+  has-warning: lighten($color-warning, $input-border-lighten),
+  has-error: lighten($color-danger, $input-border-lighten)
+);
+
+$select-arrow-icon-down: "\f0d7";
+$select-arrow-icon-up: "\f0d8";
+$select-max-height: 50vh;
+
+$icon-close: "\f00d";
+
+// Description List
+$dd-gutter: 20px;
+$dd-space-default: 20px;
+$dd-title-space-default: 5px;
+$dl-size-default: 3;
+
+// Menu
+$side-menu-item-color: #fff;
+$side-menu-item-background-color: transparent;
+$side-menu-item-background-color-hover: darken($color-primary, 15);
+$side-menu-item-anchor-border: 0 none;
+
+$menu-item-background-color: lighten($color-primary, 70);
+$menu-item-background-color-hover: lighten($color-primary, 60);
+$menu-item-color: $color-body;
+$menu-item-color-hover: $color-body;
+$menu-item-color-active: $color-alternative;
+$menu-item-padding: 0;
+$menu-item-anchor-decoration: none;
+$menu-item-anchor-decoration-hover: none;
+$menu-item-anchor-padding: 8px 10px;
+$menu-item-anchor-border: 1px solid rgba(0, 0, 0, 0.1);
+$menu-inside-item-anchor-padding: 5px 10px 5px 10px;
+
+// Menu anchor link
+$menu-item-anchor-color: $link-color;
+$menu-item-anchor-hover-color: $link-hover-color;
+$menu-item-anchor-decoration: $link-decoration;
+$menu-item-anchor-hover-decoration: $link-hover-decoration;
+
+$mobile-menu-item-button-radius: 0;
+
+// Typography
+//// Heading
+$h-font-weight: 500;
+$h-margin: 1rem;
+$p-margin: 2rem 0;
+
+$h1-font-size: $typography-font-size-1;
+$h1-line-height: $typography-line-height-1;
+$h1-font-weight: $h-font-weight;
+$h1-margin: $h-margin * $size-xxl 0;
+
+$h2-font-size: $typography-font-size-2;
+$h2-line-height: $typography-line-height-2;
+$h2-font-weight: $h-font-weight;
+$h2-margin: $h-margin * $size-xl 0;
+
+$h3-font-size: $typography-font-size-3;
+$h3-line-height: $typography-line-height-3;
+$h3-font-weight: $h-font-weight;
+$h3-margin: $h-margin * $size-l 0;
+
+$h4-font-size: $typography-font-size-4;
+$h4-line-height: $typography-line-height-4;
+$h4-font-weight: $h-font-weight;
+$h4-margin: $h-margin * $size-m 0;
+
+$h5-font-size: $typography-font-size-5;
+$h5-line-height: $typography-line-height-5;
+$h5-font-weight: $h-font-weight;
+$h5-margin: $h-margin * $size-s 0;
+
+$h6-font-size: $typography-font-size-6;
+$h6-line-height: $typography-line-height-6;
+$h6-font-weight: $h-font-weight;
+$h6-margin: $h-margin * $size-xs 0;
+
+$article-p-margin: $p-margin;
+
+// ul, ol
+$list-margin: 0 0 0 1.5rem;
+$list-padding: 0;
+$list-item-margin: 0;
+$list-item-padding: 0;
+$list-item-space: 0.2rem;
+
+
+// Colors modifier
+$background-lighten: 30%;
+$background-dark: 20%;
+$text-darken: 10%;
+$border-darken: 0%;
+
+// Backgrounds
+$background-colors: (
+  "body": lighten($color-body, $background-lighten),
+  "primary": lighten($color-primary, $background-lighten),
+  "alternative": lighten($color-alternative, $background-lighten),
+  "link": lighten($color-link, $background-lighten),
+  "mute": lighten($color-mute, $background-lighten),
+  "cancel": lighten($color-cancel, $background-lighten),
+  "success": lighten($color-success, $background-lighten),
+  "info": lighten($color-info, $background-lighten),
+  "warning": lighten($color-warning, $background-lighten),
+  "danger": lighten($color-danger, $background-lighten),
+  "color-1": lighten($color-color-1, $background-lighten),
+  "color-2": lighten($color-color-2, $background-lighten),
+  "color-3": lighten($color-color-3, $background-lighten)
+);
+
+$background-dark-colors: (
+  "body": darken($color-body, $background-dark),
+  "primary": darken($color-primary, $background-dark),
+  "alternative": darken($color-alternative, $background-dark),
+  "link": darken($color-link, $background-dark),
+  "mute": darken($color-mute, $background-dark),
+  "cancel": darken($color-cancel, $background-dark),
+  "success": darken($color-success, $background-dark),
+  "info": darken($color-info, $background-dark),
+  "warning": darken($color-warning, $background-dark),
+  "danger": darken($color-danger, $background-dark),
+  "color-1": darken($color-color-1, $background-dark),
+  "color-2": darken($color-color-2, $background-dark),
+  "color-3": darken($color-color-3, $background-dark)
+);
+
+$background-colors-hover: (
+  "body": lighten(map-get($background-colors, "body"), $color-hover-lighten),
+  "primary": lighten(map-get($background-colors, "primary"), $color-hover-lighten),
+  "alternative": lighten(map-get($background-colors, "alternative"), $color-hover-lighten),
+  "link": lighten(map-get($background-colors, "link"), $color-hover-lighten),
+  "mute": lighten(map-get($background-colors, "mute"), $color-hover-lighten),
+  "cancel": lighten(map-get($background-colors, "cancel"), $color-hover-lighten),
+  "success": lighten(map-get($background-colors, "success"), $color-hover-lighten),
+  "info": lighten(map-get($background-colors, "info"), $color-hover-lighten),
+  "warning": lighten(map-get($background-colors, "warning"), $color-hover-lighten),
+  "danger": lighten(map-get($background-colors, "danger"), $color-hover-lighten),
+  "color-1": lighten(map-get($background-colors, "color-1"), $color-hover-lighten),
+  "color-2": lighten(map-get($background-colors, "color-2"), $color-hover-lighten),
+  "color-3": lighten(map-get($background-colors, "color-3"), $color-hover-lighten)
+);
+
+// Text colors
+$text-colors: (
+  "body": darken($color-body, $text-darken),
+  "primary": darken($color-primary, $text-darken),
+  "alternative": darken($color-alternative, $text-darken),
+  "link": darken($color-link, $text-darken),
+  "mute": darken($color-mute, $text-darken),
+  "cancel": darken($color-cancel, $text-darken),
+  "success": darken($color-success, $text-darken),
+  "info": darken($color-info, $text-darken),
+  "warning": darken($color-warning, $text-darken),
+  "danger": darken($color-danger, $text-darken),
+  "color-1": darken($color-color-1, $text-darken),
+  "color-2": darken($color-color-2, $text-darken),
+  "color-3": darken($color-color-3, $text-darken)
+);
+
+$border-colors: (
+  "body": darken($color-body, $border-darken),
+  "primary": darken($color-primary, $border-darken),
+  "alternative": darken($color-alternative, $border-darken),
+  "link": darken($color-link, $border-darken),
+  "mute": darken($color-mute, $border-darken),
+  "cancel": darken($color-cancel, $border-darken),
+  "success": darken($color-success, $border-darken),
+  "info": darken($color-info, $border-darken),
+  "warning": darken($color-warning, $border-darken),
+  "danger": darken($color-danger, $border-darken),
+  "color-1": darken($color-color-1, $border-darken),
+  "color-2": darken($color-color-2, $border-darken),
+  "color-3": darken($color-color-3, $border-darken)
+);
+
+// Buttons
+$button-border-style: solid;
+$button-text-align: center;
+$button-cursor: pointer;
+
+$button-lighten: 0%;
+$button-lighten-2: 0%;
+
+$button-hover-lighten: 10%;
+$button-hover-lighten-2: 20%;
+
+$button-focus-lighten: 8%;
+$button-focus-lighten-2: 18%;
+
+$button-active-lighten: 8%;
+$button-active-lighten-2: 18%;
+
+$button-default-text: $color-white-contrast;
+$button-default-background: $color-white;
+
+$button-default-font-size: 1rem;
+$button-default-line-height: 1.35rem;
+$button-default-padding-horizontal: 0.7rem;
+$button-default-padding-vertical: 0.35rem;
+$button-default-border-radius: 3px;
+$button-default-border: 1px solid currentColor;
+$button-default-outline: none;
+$button-default-shadow: none;
+
+// Use variables name as: button-<size-name>-... on $sizes array
+$button-sizes: (
+  xs: (
+    font-size: $button-default-font-size * $size-xs,
+    line-height: $button-default-line-height * $size-xs,
+    padding: $button-default-padding-vertical * $size-xs $button-default-padding-horizontal * $size-xs,
+    border-radius: $button-default-border-radius - 1px,
+    border-width: none,
+    outline-width: none,
+    shadow: none
+  ),
+  s: (
+    font-size: $button-default-font-size * $size-s,
+    line-height: $button-default-line-height * $size-s,
+    padding: $button-default-padding-vertical * $size-s $button-default-padding-horizontal * $size-s,
+    border-radius: $button-default-border-radius - 1px,
+    border-width: none,
+    outline-width: none,
+    shadow: none
+  ),
+  m: (
+    font-size: $button-default-font-size * $size-m,
+    line-height: $button-default-line-height * $size-m,
+    padding: $button-default-padding-vertical * $size-m $button-default-padding-horizontal * $size-m,
+    border-radius: $button-default-border-radius + 2px,
+    border-width: none,
+    outline-width: none,
+    shadow: none
+  ),
+  l: (
+    font-size: $button-default-font-size * $size-l,
+    line-height: $button-default-line-height * $size-l,
+    padding: $button-default-padding-vertical * $size-l $button-default-padding-horizontal * $size-l,
+    border-radius: $button-default-border-radius + 1px,
+    border-width: none,
+    outline-width: none,
+    shadow: none
+  ),
+  xl: (
+    font-size: $button-default-font-size * $size-xl,
+    line-height: $button-default-line-height * $size-xl,
+    padding: $button-default-padding-vertical * $size-xl $button-default-padding-horizontal * $size-xl,
+    border-radius: $button-default-border-radius + 2px,
+    border-width: none,
+    outline-width: none,
+    shadow: none
+  ),
+  xxl: (
+    font-size: $button-default-font-size * $size-xxl,
+    line-height: $button-default-line-height * $size-xxl,
+    padding: $button-default-padding-vertical * $size-xxl $button-default-padding-horizontal * $size-xxl,
+    border-radius: $button-default-border-radius + 3px,
+    border-width: none,
+    outline-width: none,
+    shadow: none
+  )
+);
+
+$button-hover-border: none;
+$button-hover-outline: none;
+$button-hover-shadow: none;
+
+$button-active-border: none;
+$button-active-outline: none;
+$button-active-shadow: $focus-shadow inset;
+
+$button-focus-border: none;
+$button-focus-outline: none;
+$button-focus-shadow: $focus-shadow;
+
+$button-inverse-border: $button-default-border;
+$button-inverse-outline: $button-default-outline;
+$button-inverse-shadow: $button-default-shadow;
+
+$button-inverse-hover-border: $button-inverse-border;
+$button-inverse-hover-outline: $button-inverse-outline;
+$button-inverse-hover-shadow: $button-inverse-shadow;
+$button-inverse-active-border: $button-inverse-border;
+$button-inverse-active-outline: $button-inverse-outline;
+$button-inverse-active-shadow: $button-active-shadow;
+
+$button-inverse-focus-border: $button-inverse-border;
+$button-inverse-focus-outline: $button-inverse-outline;
+$button-inverse-focus-shadow: $button-inverse-shadow;
+
+// Buttons colors
+// Use variables name as: button-color-<color-name>... or button-color-...-<color-name>.. on $colors array
+$button-colors: (
+  color: (
+    "body": lighten($color-body, $button-lighten),
+    "primary": lighten($color-primary, $button-lighten),
+    "alternative": lighten($color-alternative, $button-lighten),
+    "link": lighten($color-link, $button-lighten),
+    "mute": lighten($color-mute, $button-lighten),
+    "cancel": lighten($color-cancel, $button-lighten),
+    "success": lighten($color-success, $button-lighten),
+    "info": lighten($color-info, $button-lighten),
+    "warning": lighten($color-warning, $button-lighten),
+    "danger": lighten($color-danger, $button-lighten),
+    "color-1": lighten($color-color-1, $button-lighten),
+    "color-2": lighten($color-color-2, $button-lighten),
+    "color-3": lighten($color-color-3, $button-lighten)
+  ),
+  color-2: (
+    "body": lighten($color-body, $button-lighten-2),
+    "primary": lighten($color-primary, $button-lighten-2),
+    "alternative": lighten($color-alternative, $button-lighten-2),
+    "link": lighten($color-link, $button-lighten-2),
+    "mute": lighten($color-mute, $button-lighten-2),
+    "cancel": lighten($color-cancel, $button-lighten-2),
+    "success": lighten($color-success, $button-lighten-2),
+    "info": lighten($color-info, $button-lighten-2),
+    "warning": lighten($color-warning, $button-lighten-2),
+    "danger": lighten($color-danger, $button-lighten-2),
+    "color-1": lighten($color-color-1, $button-lighten-2),
+    "color-2": lighten($color-color-2, $button-lighten-2),
+    "color-3": lighten($color-color-3, $button-lighten-2)
+  )
+);
+$button-colors: (
+  color: map-get($button-colors, "color"),
+  color-hover: (
+    "body": lighten(map-deep-get($button-colors, "color", "body"), $button-hover-lighten),
+    "primary": lighten(map-deep-get($button-colors, "color", "primary"), $button-hover-lighten),
+    "alternative": lighten(map-deep-get($button-colors, "color", "alternative"), $button-hover-lighten),
+    "link": lighten(map-deep-get($button-colors, "color", "link"), $button-hover-lighten),
+    "mute": lighten(map-deep-get($button-colors, "color", "mute"), $button-hover-lighten),
+    "cancel": lighten(map-deep-get($button-colors, "color", "cancel"), $button-hover-lighten),
+    "success": lighten(map-deep-get($button-colors, "color", "success"), $button-hover-lighten),
+    "info": lighten(map-deep-get($button-colors, "color", "info"), $button-hover-lighten),
+    "warning": lighten(map-deep-get($button-colors, "color", "warning"), $button-hover-lighten),
+    "danger": lighten(map-deep-get($button-colors, "color", "danger"), $button-hover-lighten),
+    "color-1": lighten(map-deep-get($button-colors, "color", "color-1"), $button-hover-lighten),
+    "color-2": lighten(map-deep-get($button-colors, "color", "color-2"), $button-hover-lighten),
+    "color-3": lighten(map-deep-get($button-colors, "color", "color-3"), $button-hover-lighten)
+  ),
+  color-2: map-get($button-colors, "color-2"),
+  color-2-hover: (
+    "body": lighten(map-deep-get($button-colors, "color-2", "body"), $button-hover-lighten-2),
+    "primary": lighten(map-deep-get($button-colors, "color-2", "primary"), $button-hover-lighten-2),
+    "alternative": lighten(map-deep-get($button-colors, "color-2", "alternative"), $button-hover-lighten-2),
+    "link": lighten(map-deep-get($button-colors, "color-2", "link"), $button-hover-lighten-2),
+    "mute": lighten(map-deep-get($button-colors, "color-2", "mute"), $button-hover-lighten-2),
+    "cancel": lighten(map-deep-get($button-colors, "color-2", "cancel"), $button-hover-lighten-2),
+    "success": lighten(map-deep-get($button-colors, "color-2", "success"), $button-hover-lighten-2),
+    "info": lighten(map-deep-get($button-colors, "color-2", "info"), $button-hover-lighten-2),
+    "warning": lighten(map-deep-get($button-colors, "color-2", "warning"), $button-hover-lighten-2),
+    "danger": lighten(map-deep-get($button-colors, "color-2", "danger"), $button-hover-lighten-2),
+    "color-1": lighten(map-deep-get($button-colors, "color-2", "color-1"), $button-hover-lighten-2),
+    "color-2": lighten(map-deep-get($button-colors, "color-2", "color-2"), $button-hover-lighten-2),
+    "color-3": lighten(map-deep-get($button-colors, "color-2", "color-3"), $button-hover-lighten-2)
+  ),
+  color-focus: (
+    "body": lighten(map-deep-get($button-colors, "color", "body"), $button-focus-lighten),
+    "primary": lighten(map-deep-get($button-colors, "color", "primary"), $button-focus-lighten),
+    "alternative": lighten(map-deep-get($button-colors, "color", "alternative"), $button-focus-lighten),
+    "link": lighten(map-deep-get($button-colors, "color", "link"), $button-focus-lighten),
+    "mute": lighten(map-deep-get($button-colors, "color", "mute"), $button-focus-lighten),
+    "cancel": lighten(map-deep-get($button-colors, "color", "cancel"), $button-focus-lighten),
+    "success": lighten(map-deep-get($button-colors, "color", "success"), $button-focus-lighten),
+    "info": lighten(map-deep-get($button-colors, "color", "info"), $button-focus-lighten),
+    "warning": lighten(map-deep-get($button-colors, "color", "warning"), $button-focus-lighten),
+    "danger": lighten(map-deep-get($button-colors, "color", "danger"), $button-focus-lighten),
+    "color-1": lighten(map-deep-get($button-colors, "color", "color-1"), $button-focus-lighten),
+    "color-2": lighten(map-deep-get($button-colors, "color", "color-2"), $button-focus-lighten),
+    "color-3": lighten(map-deep-get($button-colors, "color", "color-3"), $button-focus-lighten)
+  ),
+  color-2-focus: (
+    "body": lighten(map-deep-get($button-colors, "color", "body"), $button-focus-lighten-2),
+    "primary": lighten(map-deep-get($button-colors, "color", "primary"), $button-focus-lighten-2),
+    "alternative": lighten(map-deep-get($button-colors, "color", "alternative"), $button-focus-lighten-2),
+    "link": lighten(map-deep-get($button-colors, "color", "link"), $button-focus-lighten-2),
+    "mute": lighten(map-deep-get($button-colors, "color", "mute"), $button-focus-lighten-2),
+    "cancel": lighten(map-deep-get($button-colors, "color", "cancel"), $button-focus-lighten-2),
+    "success": lighten(map-deep-get($button-colors, "color", "success"), $button-focus-lighten-2),
+    "info": lighten(map-deep-get($button-colors, "color", "info"), $button-focus-lighten-2),
+    "warning": lighten(map-deep-get($button-colors, "color", "warning"), $button-focus-lighten-2),
+    "danger": lighten(map-deep-get($button-colors, "color", "danger"), $button-focus-lighten-2),
+    "color-1": lighten(map-deep-get($button-colors, "color", "color-1"), $button-focus-lighten-2),
+    "color-2": lighten(map-deep-get($button-colors, "color", "color-2"), $button-focus-lighten-2),
+    "color-3": lighten(map-deep-get($button-colors, "color", "color-3"), $button-focus-lighten-2)
+  ),
+  color-active: (
+    "body": lighten(map-deep-get($button-colors, "color", "body"), $button-active-lighten),
+    "primary": lighten(map-deep-get($button-colors, "color", "primary"), $button-active-lighten),
+    "alternative": lighten(map-deep-get($button-colors, "color", "alternative"), $button-active-lighten),
+    "link": lighten(map-deep-get($button-colors, "color", "link"), $button-active-lighten),
+    "mute": lighten(map-deep-get($button-colors, "color", "mute"), $button-active-lighten),
+    "cancel": lighten(map-deep-get($button-colors, "color", "cancel"), $button-active-lighten),
+    "success": lighten(map-deep-get($button-colors, "color", "success"), $button-active-lighten),
+    "info": lighten(map-deep-get($button-colors, "color", "info"), $button-active-lighten),
+    "warning": lighten(map-deep-get($button-colors, "color", "warning"), $button-active-lighten),
+    "danger": lighten(map-deep-get($button-colors, "color", "danger"), $button-active-lighten),
+    "color-1": lighten(map-deep-get($button-colors, "color", "color-1"), $button-active-lighten),
+    "color-2": lighten(map-deep-get($button-colors, "color", "color-2"), $button-active-lighten),
+    "color-3": lighten(map-deep-get($button-colors, "color", "color-3"), $button-active-lighten)
+  ),
+  color-2-active: (
+    "body": lighten(map-deep-get($button-colors, "color", "body"), $button-active-lighten-2),
+    "primary": lighten(map-deep-get($button-colors, "color", "primary"), $button-active-lighten-2),
+    "alternative": lighten(map-deep-get($button-colors, "color", "alternative"), $button-active-lighten-2),
+    "link": lighten(map-deep-get($button-colors, "color", "link"), $button-active-lighten-2),
+    "mute": lighten(map-deep-get($button-colors, "color", "mute"), $button-active-lighten-2),
+    "cancel": lighten(map-deep-get($button-colors, "color", "cancel"), $button-active-lighten-2),
+    "success": lighten(map-deep-get($button-colors, "color", "success"), $button-active-lighten-2),
+    "info": lighten(map-deep-get($button-colors, "color", "info"), $button-active-lighten-2),
+    "warning": lighten(map-deep-get($button-colors, "color", "warning"), $button-active-lighten-2),
+    "danger": lighten(map-deep-get($button-colors, "color", "danger"), $button-active-lighten-2),
+    "color-1": lighten(map-deep-get($button-colors, "color", "color-1"), $button-active-lighten),
+    "color-2": lighten(map-deep-get($button-colors, "color", "color-2"), $button-active-lighten-2),
+    "color-3": lighten(map-deep-get($button-colors, "color", "color-3"), $button-active-lighten-2)
+  )
+);
+
+// Table
+$table-color: $color-body; // table text color
+$table-base-color: $color-alternative; // table base thema color
+$table-base-color-hover: lighten($table-base-color, 10%); 
+$table-base-color-contrast: #fff;
+$table-base-color-border: $color-mute;
+
+$table-font-size: 1rem;
+$table-td-padding: 1rem 0.5rem;
+$table-th-padding: 0.7rem 0.5rem;
+$table-th-font-size: 0.8rem;
+$table-text-align: left;
+
+$table-tr-bgcolor-hover: lighten($table-base-color-hover, 7%);
+$table-tr-color-hover: $table-base-color-contrast;
+$table-td-bgcolor-hover: $table-base-color-hover;
+$table-td-color-hover: $table-base-color-contrast;
+$table-col-bgcolor-hover: fade-in($table-base-color-hover, 0.15);
+$table-border: 1px solid lighten($table-base-color-border, 60%);
+$table-background: $table-base-color-contrast;
+$table-zebra-bgcolor: lighten($table-base-color-border, 60%);
+
+$table-mobile-td-border: 1px solid lighten($table-base-color-border, 60%);
+$table-mobile-th-width: 30%;
+$table-mobile-td-width: 70%;
+$table-mobile-td-padding: 0.7rem 1rem 0.7rem 1.5rem;
+$table-mobile-th-padding: 0.7rem 1.5rem 0.7rem 1rem;
+$table-td-width-vw-sizes: 10, 20, 30, 40, 50, 60, 70, 80, 90;
+
+// Section
+
+$section-radius: 4px;
+$section-header-padding: 1.5rem 1rem; //with .with-padding class
+$section-footer-padding: 1.5rem 1rem;  //with .with-padding class
+$section-content-padding: 1.5rem 1rem; //with .with-padding class
+
+$section-table-padding-left: 1rem;
+$section-table-padding-right: 1rem;
+$section-shadow: 0 0 4px rgba(21, 16, 60, 0.22);
+$section-border: 1px solid lighten($color-mute, 60%);
+$section-background: #fff;
+$section-margin: $h-margin * $size-l 0;
+
+// Alert
+
+$alert-color: (
+  "success": $color-success,
+  "warning": $color-warning,
+  "error": $color-danger,
+  "info": $color-info,
+);
+
+$alert-color-contrast: (
+  "success": $color-success-contrast,
+  "warning": #fff,
+  "error": $color-danger-contrast,
+  "info": $color-info-contrast
+);
+$alert-padding: 1.5rem 4.5rem 1.5rem 2rem; //for animation
+$alert-light-border: 1px solid currentColor;

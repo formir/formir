@@ -1,0 +1,645 @@
+/// DO NO NOT change this ///
+$include-core-layout-side: true;
+
+@mixin side-width($width) {
+  &.#{$side-uncover-hover}.#{$side-hoverable}:hover, &:not(.#{$side-cover}), &.#{$side-uncover-focus}.#{$side-focusable}:focus {
+    &.#{$side-left} {
+      ~ .#{$body-content} {
+        margin-left: $width;
+        @if ($include-core-layout-header == true) {
+          @include header-position($width);
+        }
+      }
+    }
+    &.#{$side-right} {
+      ~ .#{$body-content} {
+        margin-right: $width;
+        @if ($include-core-layout-header == true) {
+          @include header-position(false, $width);
+        }
+      }
+    }
+  }
+}
+
+@mixin side-height($height) {
+  &.#{$side-uncover-hover}.#{$side-hoverable}:hover, &:not(.#{$side-cover}), &.#{$side-uncover-focus}.#{$side-focusable}:focus {
+    &.#{$side-top} {
+      ~ .#{$body-content} {
+        margin-top: $height;
+        @if ($include-core-layout-header == true) {
+          @include header-position(false, false, $height);
+        }
+      }
+    }
+    &.#{$side-bottom} {
+      ~ .#{$body-content} {
+        margin-bottom: $height;
+        @if ($include-core-layout-header == true) {
+          @include header-position(false, false, false, $height);
+        }
+      }
+    }
+  }
+}
+
+@mixin side-collapse-off() {
+  @include side-expanded;
+  .#{$side-expanded-hide} {
+    display: none;
+  }
+  .#{$side-expanded-show} {
+    display: block;
+  }
+  &:not([class*="width-"]) {
+    &.#{$side-left}, &.#{$side-right} {
+      width: $side-width-default;
+    }
+  }
+  &:not([class*="height-"]) {
+    &.#{$side-top}, &.#{$side-bottom} {
+      height: $side-height-default;
+    }
+  }
+  &.#{$side-cover} {
+    &.#{$side-left} {
+      ~ .#{$body-content} {
+        margin-left: $side-collapse-width;
+      }
+    }
+    &.#{$side-right} {
+      ~ .#{$body-content} {
+        margin-right: $side-collapse-width;
+      }
+    }
+    &.#{$side-top} {
+      ~ .#{$body-content} {
+        margin-top: $side-collapse-height;
+      }
+    }
+    &.#{$side-bottom} {
+      ~ .#{$body-content} {
+        margin-bottom: $side-collapse-height;
+      }
+    }
+  }
+}
+
+@mixin side-collapse-on() {
+  @include side-collapsed;
+  .#{$side-collapsed-hide} {
+    display: none;
+  }
+  .#{$side-collapsed-show} {
+    display: block;
+  }
+  &.#{$side-animated} {
+    &.#{$side-left}, &.#{$side-right} {
+      transition: width $side-animate-time;
+    }
+    &.#{$side-top}, &.#{$side-bottom} {
+      transition: height $side-animate-time;
+    }
+
+    ~ .#{$body-content} {
+      transition: margin $side-animate-time;
+    }
+  }
+  &:not(.#{$side-cover}) {
+    &.#{$side-left} {
+      ~ .#{$body-content} {
+        margin-left: $side-collapse-width;
+        @if ($include-core-layout-header == true) {
+          @include header-position($side-collapse-width);
+        }
+      }
+    }
+    &.#{$side-right} {
+      ~ .#{$body-content} {
+        margin-right: $side-collapse-width;
+        @if ($include-core-layout-header == true) {
+          @include header-position(false, $side-collapse-width);
+        }
+      }
+    }
+    &.#{$side-top} {
+      ~ .#{$body-content} {
+        margin-top: $side-collapse-height;
+        @if ($include-core-layout-header == true) {
+          @include header-position(false, false, $side-collapse-height);
+        }
+      }
+    }
+    &.#{$side-bottom} {
+      ~ .#{$body-content} {
+        margin-bottom: $side-collapse-height;
+        @if ($include-core-layout-header == true) {
+          @include header-position(false, false, false, $side-collapse-height);
+        }
+      }
+    }
+  }
+
+  &.#{$side-left}, &.#{$side-right} {
+    width: $side-collapse-width;
+  }
+
+  &.#{$side-top}, &.#{$side-bottom} {
+    height: $side-collapse-height;
+  }
+  &.#{$side-hoverable}:hover {
+    @include side-hovered;
+  }
+  &.#{$side-focusable}:focus {
+    @include side-focused;
+  }
+  &.#{$side-hoverable}:hover, &.#{$side-focusable}:focus {
+    &.#{$side-left}, &.#{$side-right} {
+      @include and-width($layout-steps);
+    }
+
+    &.#{$side-top}, &.#{$side-bottom} {
+      @include and-height($layout-steps);
+    }
+  }
+  &.#{$side-focusable}.#{$side-focus-backdrop}:focus {
+    + .#{$side-backdrop} {
+      display: block;
+    }
+  }
+  &.#{$side-hoverable}.#{$side-hover-backdrop}:hover {
+    + .#{$side-backdrop} {
+      display: block;
+    }
+  }
+}
+
+@mixin side-show-full {
+  @include side-expanded;
+  @include side-expanded-full;
+  width: $side-full-width !important;
+  display: block !important;
+  ~ .#{$body-content} {
+    > * {
+      width: 100vw !important;
+      max-width: none;
+    }
+    > .#{$content-holder} {
+      margin-left: $content-min-margin + $layout-unit;
+      margin-right: $content-min-margin + $layout-unit;
+    }
+  }
+  + .#{$side-backdrop} {
+    display: block;
+  }
+  &:not(.#{$side-cover}) {
+    &.#{$side-left}, &.#{$side-right} {
+      ~ .#{$body-content} {
+        width: calc(100% - #{$side-full-width});
+        overflow: hidden;
+      }
+    }
+    &.#{$side-left} {
+      ~ .#{$body-content} {
+        margin-left: $side-full-width;
+        @if ($include-core-layout-header == true) {
+          @include header-position($side-full-width);
+        }
+      }
+    }
+    &.#{$side-right} {
+      ~ .#{$body-content} {
+        margin-right: $side-full-width;
+        @if ($include-core-layout-header == true) {
+          @include header-position(false, $side-full-width);
+        }
+      }
+    }
+  }
+  &.#{$side-cover} {
+    ~ .#{$body-content} {
+      margin-left: 0;
+    }
+  }
+}
+
+@mixin side-input-backdrop() {
+  display: block !important;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $side-zindex - 2;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin side-hide-on() {
+  &.#{$side-hoverable} {
+    display: block;
+    &:not(:hover) {
+      &.#{$side-left}, &.#{$side-right} {
+        width: $side-hoverable-offset-width;
+        opacity: 0;
+        overflow-x: hidden;
+      }
+      &.#{$side-top}, &.#{$side-bottom} {
+        height: $side-hoverable-offset-height;
+        opacity: 0;
+        overflow-y: hidden;
+      }
+    }
+    &:hover {
+      @include side-hovered();
+    }
+  }
+  &:not(.#{$side-cover}), .#{$side-cover} {
+    &.#{$side-left}, &.#{$side-right} {
+      ~ .#{$body-content} {
+        @if ($include-core-layout-header == true) {
+          @include header-position(0, 0);
+        }
+      }
+    }
+  }
+  &:not(.#{$side-hoverable}), &.#{$side-hoverable}:not(:hover) {
+    display: none;
+    & ~ .#{$side-open} {
+      display: block;
+    }
+    &.#{$side-animated} {
+      display: block;
+      &.#{$side-left}, &.#{$side-right} {
+        width: 0;
+        overflow-x: hidden;
+      }
+      &.#{$side-top}, &.#{$side-bottom} {
+        height: 0;
+        overflow-y: hidden;
+      }
+    }
+  }
+  &:not([class*="width-"]) {
+    &.#{$side-left}, &.#{$side-right} {
+      width: $side-width-default;
+    }
+  }
+  &[class*="width-"], &:not([class*="width-"]) {
+    &.#{$side-left} {
+      ~ .#{$body-content} {
+        margin-left: 0;
+      }
+    }
+    &.#{$side-right} {
+      ~ .#{$body-content} {
+        margin-right: 0;
+      }
+    }
+  }
+  &:not([class*="height-"]) {
+    &.#{$side-top}, &.#{$side-bottom} {
+      height: $side-height-default;
+    }
+  }
+  &[class*="height-"] {
+    &.#{$side-top} {
+      ~ .#{$body-content} {
+        margin-top: 0;
+      }
+    }
+    &.#{$side-bottom} {
+      ~ .#{$body-content} {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.#{$side-collapse} {
+  &:not(:checked) {
+    + #{$side} {
+      @if not ($device-width-side-collapse == 0) {
+        @media (min-width: ($device-width-side-collapse + 1px)) {
+          @include side-collapse-off;
+        }
+        @media (max-width: $device-width-side-collapse) {
+          @include side-collapse-on;
+        }
+      }
+      @if ($device-width-side-collapse == 0) {
+        @include side-collapse-off;
+      }
+      @if not ($device-width-side-hide == 0) {
+        @media (max-width: $device-width-side-hide) {
+          @include side-hide-on;
+        }
+      }
+    }
+  }
+  &:checked {
+    @if not ($device-width-side-show-full == 0) {
+      @media (max-width: $device-width-side-show-full) {
+        @include side-input-backdrop
+      }
+    }
+    + #{$side} {
+      @if not ($device-width-side-collapse == 0) {
+        @media (min-width: ($device-width-side-collapse + 1px)) {
+          @include side-collapse-on;
+        }
+        @media (max-width: $device-width-side-collapse) {
+          @include side-collapse-off;
+        }
+      }
+      @if not ($device-width-side-show-full == 0) {
+        &.#{$side-left}, &.#{$side-right} {
+          @media (max-width: $device-width-side-show-full) {
+            @include side-show-full;
+          }
+        }
+      }
+      @if ($device-width-side-collapse == 0) {
+        @include side-collapse-on;
+      }
+    }
+  }
+}
+
+.#{$side-expand} {
+  &:not(:checked) {
+    + #{$side} {
+      @include side-collapse-on;
+
+      @if not ($device-width-side-hide == 0) {
+        @media (max-width: $device-width-side-hide) {
+          @include side-hide-on;
+        }
+      }
+    }
+  }
+  &:checked {
+    @if not ($device-width-side-show-full == 0) {
+      @media (max-width: $device-width-side-show-full) {
+        @include side-input-backdrop
+      }
+    }
+    + #{$side} {
+      @if not ($device-width-side-show-full == 0) {
+        @media (min-width: ($device-width-side-show-full + 1px)) {
+          @include side-collapse-off;
+        }
+      }
+      @if ($device-width-side-show-full == 0) {
+        @include side-collapse-off;
+      }
+      @if not ($device-width-side-show-full == 0) {
+        &.#{$side-left}, &.#{$side-right} {
+          @media (max-width: $device-width-side-show-full) {
+            @include side-show-full;
+          }
+        }
+      }
+    }
+  }
+}
+
+.#{$side-hide} {  //collapse
+  &:checked {
+    @if not ($device-width-side-show-full == 0) {
+      @media (max-width: $device-width-side-show-full) {
+        @include side-input-backdrop
+      }
+    }
+    + #{$side} {
+      @include side-hide-on;
+
+      @if not ($device-width-side-show-full == 0) {
+        &.#{$side-left}, &.#{$side-right} {
+          @media (max-width: $device-width-side-show-full) {
+            @include side-show-full;
+          }
+        }
+      }
+    }
+  }
+  @if not ($device-width-side-hide == 0) {
+    &:not(:checked) {
+      + #{$side} {
+        @media (max-width: $device-width-side-collapse) {
+          @include side-hide-on;
+        }
+      }
+    }
+  }
+}
+
+.#{$side-hide-expand} {
+  &:not(:checked) {
+    + #{$side} {
+      @include side-hide-on;
+    }
+  }
+
+  &:checked {
+    + #{$side} {
+      @if not ($device-width-side-hide == 0) {
+        @media (max-width: $device-width-side-hide) {
+          @include side-hide-on;
+        }
+      }
+      @if not ($device-width-side-show-full == 0) {
+        &.#{$side-left}, &.#{$side-right} {
+          @media (max-width: $device-width-side-show-full) {
+            @include side-show-full;
+          }
+        }
+      }
+    }
+  }
+}
+
+.#{$side-collapse}, .#{$side-expand}, .#{$side-hide}, .#{$side-hide-expand} {
+  display: none;
+  @if not ($device-width-side-show-full == 0) {
+    &:checked {
+      + #{$side} {
+        &.#{$side-left}, &.#{$side-right} {
+          + .#{$side-backdrop} {
+            @media (max-width: $device-width-side-show-full) {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.#{$side-expand}, .#{$side-hide-expand} {
+  &:checked {
+    + #{$side} + .#{$side-backdrop} {
+      display: block;
+    }
+  }
+}
+
+.#{$side-full-height} {
+  position: relative;
+}
+
+#{$side} {
+  position: fixed;
+  z-index: $side-zindex;
+  overflow: auto;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+  outline: none;
+  &.#{$side-uncover-hover}.#{$side-hoverable}:hover, &:not(.#{$side-cover}), &.#{$side-uncover-focus}.#{$side-focusable}:focus {
+    &:not([class*="width-"]) {
+      &.#{$side-left} {
+        ~ .#{$body-content} {
+          margin-left: $side-width-default;
+          @include header-position($side-width-default);
+        }
+      }
+      &.#{$side-right} {
+        ~ .#{$body-content} {
+          margin-right: $side-width-default;
+          @include header-position(false, $side-width-default);
+        }
+      }
+    }
+    &:not([class*="height-"]) {
+      &.#{$side-top} {
+        ~ .#{$body-content} {
+          margin-top: $side-height-default;
+        }
+      }
+      &.#{$side-bottom} {
+        ~ .#{$body-content} {
+          margin-bottom: $side-height-default;
+        }
+      }
+    }
+  }
+
+  &.#{$side-left}, &.#{$side-right} {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  &.#{$side-top}, &.#{$side-bottom} {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  &.#{$side-animated} {
+    &.#{$side-left}, &.#{$side-right} {
+      transition: width $side-animate-time;
+    }
+    &.#{$side-top}, &.#{$side-bottom} {
+      transition: height $side-animate-time;
+    }
+    ~ .#{$body-content} {
+      transition: margin $side-animate-time;
+    }
+  }
+
+  &.#{$side-absolute} {
+    &.#{$side-left}, &.#{$side-right} {
+      position: absolute;
+      top: 0;
+      bottom: auto;
+      height: auto;
+      min-height: 100%;
+      max-height: 100%;
+    }
+  }
+
+  &.#{$side-float} {
+    &.#{$side-right} {
+      float: right;
+    }
+    &.#{$side-left} {
+      float: left;
+    }
+  }
+
+  &.#{$side-relative} {
+    position: relative;
+    
+    &.#{$side-right} {
+      float: right;
+    }
+    &.#{$side-left} {
+      float: left;
+    }
+  }
+  &.#{$side-static} {
+    position: static;
+  }
+
+  &.#{$side-left}, &.#{$side-right} {
+    top: 0;
+    bottom: 0;
+    max-height: 100%;
+    height: 100%;
+    will-change: width;
+  }
+
+  &.#{$side-left} {
+    left: 0;
+    right: auto;
+    ~ .#{$side-open} {
+      @include side-open-left-style;
+    }
+  }
+
+  &.#{$side-right} {
+    right: 0;
+    left: auto;
+    ~ .#{$side-open} {
+      @include side-open-right-style;
+    }
+  }
+
+  &.#{$side-top}, &.#{$side-bottom} {
+    left: 0;
+    right: 0;
+    will-change: height;
+  }
+
+  &.#{$side-top} {
+    top: 0;
+    bottom: auto;
+    ~ .#{$side-open} {
+      @include side-open-top-style;
+    }
+  }
+
+  &.#{$side-bottom} {
+    bottom: 0;
+    top: auto;
+    ~ .#{$side-open} {
+      @include side-open-bottom-style;
+    }
+  }
+}
+
+.#{$side-backdrop} {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: $side-zindex - 1;
+  display: none;
+}
+
+.#{$side-open} {
+  position: fixed;
+  z-index: $side-zindex;
+  display: none;
+  @include side-open-style();
+}

@@ -1,0 +1,31 @@
+.#{$background-color} {
+  @each $name in $colors {
+    &-#{$name} {
+      background-color: map-get($background-colors, $name) !important;
+    }
+  }
+}
+
+.#{$background-color-hoverable} {
+  @each $name in $colors {
+    &-#{$name}:hover {
+      background-color: map-get($background-colors-hover, $name) !important;
+    }
+  }
+}
+
+.#{$text-color} {
+  @each $name in $colors {
+    &-#{$name} {
+      color: map-get($text-colors, $name) !important; 
+    }
+  }
+}
+
+.#{$border-color} {
+  @each $name in $colors {
+    &-#{$name} {
+      border-color: map-get($border-colors, $name) !important; 
+    }
+  }
+}

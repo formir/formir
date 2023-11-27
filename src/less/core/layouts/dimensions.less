@@ -137,6 +137,10 @@
 }
 
 .rwd-margin-vertical-repeat(@n, @i: 1) when (@i =< @n + 1) {
+  @j: @i - 1;
+  @margin-h: unit(((((1-(@layout-steps - @i)/((@layout-steps - @i) + @layout-geometric-step)))*@layout-height)-(((1-(@layout-steps - 1)/((@layout-steps - 1) + @layout-geometric-step)))*@layout-height))*@layout-factor, @layout-unit);
+  @margin-v: unit(((((1-(@layout-steps - @i)/((@layout-steps - @i) + @layout-geometric-step)))*@layout-width)-(((1-(@layout-steps - 1)/((@layout-steps - 1) + @layout-geometric-step)))*@layout-width))*@layout-factor, @layout-unit);
+
   @media (min-width: @desktop-min-width) {
     .@{d}-@{margin-vertical}-@{j} {
       margin-left: @margin-v !important;
@@ -204,6 +208,9 @@
 
 .rwd-padding-vertical-repeat(@n, @i: 1) when (@i =< @n + 1) {
   @j: @i - 1;
+  @padding-h: unit(((((1-(@layout-steps - @i)/((@layout-steps - @i) + @layout-geometric-step)))*@layout-height)-(((1-(@layout-steps - 1)/((@layout-steps - 1) + @layout-geometric-step)))*@layout-height))*@layout-factor, @layout-unit);
+  @padding-v: unit(((((1-(@layout-steps - @i)/((@layout-steps - @i) + @layout-geometric-step)))*@layout-width)-(((1-(@layout-steps - 1)/((@layout-steps - 1) + @layout-geometric-step)))*@layout-width))*@layout-factor, @layout-unit);
+
   @media (min-width: @desktop-min-width) {
     .@{t}-@{padding-vertical}-@{j} {
       padding-left: @padding-v !important;
