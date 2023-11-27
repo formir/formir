@@ -3,6 +3,8 @@
 [Formir](http://formir.io) is Open Source Pure CSS / HTML Framework that not require any JS code to fully work.
 All of logic are based on CSS and `<input/>` tag elements, thats are required.
 
+Support LESS and SASS preprocesor.
+
 I invite you to support and develop the project. Become a Contributor - [write at support@formir.io](mailto:support@formir.io) or just commit.
 
 ## Install formir
@@ -27,7 +29,7 @@ $ npm install -D formir
 import "formir";
 ```
 
-### LESS
+### LESS / SASS
 
 ```less
 @import "formir";
