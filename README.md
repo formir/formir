@@ -23,13 +23,19 @@ $ npm install -D formir
 
 ## Use in
 
-### JS
+### JS with SASS
 
 ```javascript
 import "formir";
 ```
 
-### LESS / SASS
+### JS with LESS
+
+```javascript
+import "formir/less";
+```
+
+### LESS or SASS
 
 ```less
 @import "formir";

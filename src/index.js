@@ -1,1 +1,1 @@
-import "./less/formir.less";
+import "./scss/formir.scss";
