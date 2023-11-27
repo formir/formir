@@ -15,18 +15,18 @@ gulp.task('less', function () {
     .pipe(gulp.dest('dist/css'));
 });
 
-// Sass compile
 // var sass = require('gulp-sass')(require('sass'));
 // sass.compiler = require('node-sass');
 
 // gulp.task('sass', function () {
-//   return gulp.src('./src/sass/formir.scss')
+//   return gulp.src('./src/scss/formir.scss')
 //     .pipe(sourcemaps.init())
 //     .pipe(sass().on('error', sass.logError))
 //     .pipe(postcss([autoprefixer()]))
 //     .pipe(cleanCSS())
 //     .pipe(sourcemaps.write('.'))
-//    .pipe(gulp.dest('./dist/css-sass'));});
+//     .pipe(gulp.dest('./dist/css-sass'));
+// });
 
 gulp.task('assets', function () {
   return gulp.src('src/fonts/**/*')

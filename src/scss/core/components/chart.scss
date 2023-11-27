@@ -8,7 +8,7 @@
           content: "#{$i}%";
         }
         &.#{$chart-value-colored}:before {
-          color: mix($chart-color, $chart-background, $i);
+          color: mix($chart-color, $chart-background, $i * 1%);
         }
       }
       > *:first-child:before {
@@ -33,7 +33,7 @@
           content: "#{$i}%";
         }
         &.#{$chart-value-colored}:before {
-          color: mix($chart-color, $chart-background, $i);
+          color: mix($chart-color, $chart-background, $i * 1%);
         }
       }
       > *:first-child:before {

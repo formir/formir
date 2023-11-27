@@ -392,7 +392,7 @@ select:not([multiple]) {
     position: relative;
     &.#{$icon-left} {
       &:before {
-        left: calc(#{($input-icon-font-size / 2)} + #{$input-default-padding-horizontal});
+        left: calc(#{$input-icon-font-size/2} + #{$input-default-padding-horizontal});
         right: auto;
       }
       input , select, textarea {
@@ -410,7 +410,7 @@ select:not([multiple]) {
       bottom: 0;
       margin: auto;
       font-size: $input-icon-font-size;
-      right: calc(#{($input-icon-font-size / 2)} + #{$input-default-padding-horizontal});
+      right: calc(#{$input-icon-font-size/2} + #{$input-default-padding-horizontal});
       color: $input-icon-text-color;
       z-index: 2;
       pointer-events: none;
@@ -435,7 +435,7 @@ select:not([multiple]) {
       }
       + span:after {
         @include select-arrow;
-        right: calc(#{($input-icon-font-size / 1.2)} + #{$input-default-padding-horizontal});
+        right: calc(#{$input-icon-font-size/1.2} + #{$input-default-padding-horizontal});
       }
       &:focus {
         + span:after {
@@ -482,7 +482,7 @@ select:not([multiple]) {
       margin: auto;
       font-size: $input-addon-font-size;
       text-transform: $input-addon-font-weight;
-      right: calc(#{($input-icon-font-size / 2)} + #{$input-default-padding-horizontal});
+      right: calc(#{$input-icon-font-size/2} + #{$input-default-padding-horizontal});
       color: $input-addon-text-color;
       text-transform: $input-addon-text-transform;
       z-index: 2;

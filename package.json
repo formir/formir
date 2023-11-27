@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "style": "dist/css/formir.css",
   "less": "src/less/formir.less",
-  "sass": "src/sass/formir.scss",
+  "sass": "src/scss/formir.scss",
   "scripts": {
     "build": "gulp"
   },
@@ -45,9 +45,6 @@
     "src"
   ],
   "homepage": "http://formir.io",
-  "dependencies": {
-    "less": ">=3.7.0 <=3.13.1"
-  },
   "peerDependencies": {
     "less": ">=3.7.0 <=3.13.1"
   },

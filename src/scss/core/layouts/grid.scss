@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @mixin grid-table-cell-repeat($n, $i: 1) {
   @if ($i <= $n) {
     &:first-child:nth-last-child(#{$i}), &:first-child:nth-last-child(#{$i})  *:not([class*="#{$cell}-"]):not([colspan]) {
