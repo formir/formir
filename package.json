@@ -1,6 +1,6 @@
 {
   "name": "formir",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Pure CSS / HTML Framework",
   "main": "src/index.js",
   "style": "dist/css/formir.css",
@@ -42,7 +42,8 @@
   },
   "files": [
     "dist",
-    "src"
+    "src",
+    "less"
   ],
   "homepage": "http://formir.io",
   "peerDependencies": {
