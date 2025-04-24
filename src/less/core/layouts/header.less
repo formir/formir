@@ -71,6 +71,10 @@
     .align-items(center);
     .flex(1 1 auto);
     padding: @header-horizontal-padding @header-vertical-padding;
+    min-width: 0;
+    .@{content-holder} {
+      max-width: 100%;
+    }
     nav {
       @{menu-item-anchor} {
         vertical-align: middle;

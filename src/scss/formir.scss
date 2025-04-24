@@ -1,5 +1,5 @@
 /*!
- *  Formir 1.1.0 by @formir - https://github.com/formir/formir - http://formir.io - support@formir.io
+ *  Formir 1.1.3 by @formir - https://github.com/formir/formir - http://formir.io - support@formir.io
  *  MIT License
  */
 
@@ -8,78 +8,78 @@
 @import "setup/core";
 @import "setup/variables";
 
-  //// THEME SETUP
-  @import "themes/default/setup/classes";
-  @import "themes/default/setup/core";
-  @import "themes/default/setup/variables";
+//// THEME SETUP
+@import "themes/default/setup/classes";
+@import "themes/default/setup/core";
+@import "themes/default/setup/variables";
 
 // CORE
-  //// MIXINS
-  @import "core/mixins/display";
-  @import "core/mixins/flex";
-  @import "core/mixins/functions";
+//// MIXINS
+@import "core/mixins/display";
+@import "core/mixins/flex";
+@import "core/mixins/functions";
 
 
- // THEMES
-  //// DEFAULT
-    ////// LAYOUTS
-    @import "themes/default/layouts/side";
+// THEMES
+//// DEFAULT
+////// LAYOUTS
+@import "themes/default/layouts/side";
 
-    ////// COMPONENTS
-    @import "themes/default/components/modal";
-    @import "themes/default/components/tab";
-    @import "themes/default/components/tooltip";
-    @import "themes/default/components/chart";
-    @import "themes/default/components/accordion";
-    @import "themes/default/components/popup";
-    @import "themes/default/components/menu";
-    @import "themes/default/components/select";
-    @import "themes/default/components/button";
-    @import "themes/default/components/form";
-    @import "themes/default/components/table";
-    @import "themes/default/components/alert";
+////// COMPONENTS
+@import "themes/default/components/modal";
+@import "themes/default/components/tab";
+@import "themes/default/components/tooltip";
+@import "themes/default/components/chart";
+@import "themes/default/components/accordion";
+@import "themes/default/components/popup";
+@import "themes/default/components/menu";
+@import "themes/default/components/select";
+@import "themes/default/components/button";
+@import "themes/default/components/form";
+@import "themes/default/components/table";
+@import "themes/default/components/alert";
 
-    ////// TYPOGRAPHY
-    @import "themes/default/typography/heading";
-    @import "themes/default/typography/article";
+////// TYPOGRAPHY
+@import "themes/default/typography/heading";
+@import "themes/default/typography/article";
 
 
-  //// COMPONENTS
-  @import "core/components/icons";
-  @import "core/components/form";
-  @import "core/components/select";
-  @import "core/components/modal";
-  @import "core/components/tab";
-  @import "core/components/accordion";
-  @import "core/components/button";
-  @import "core/components/chart";
-  @import "core/components/description-list";
-  @import "core/components/menu";
-  @import "core/components/table";
-  @import "core/components/tooltip";
-  @import "core/components/popup";
-  @import "core/components/section";
-  @import "core/components/alert";
+//// COMPONENTS
+@import "core/components/icons";
+@import "core/components/form";
+@import "core/components/select";
+@import "core/components/modal";
+@import "core/components/tab";
+@import "core/components/accordion";
+@import "core/components/button";
+@import "core/components/chart";
+@import "core/components/description-list";
+@import "core/components/menu";
+@import "core/components/table";
+@import "core/components/tooltip";
+@import "core/components/popup";
+@import "core/components/section";
+@import "core/components/alert";
 
-  //// HELPER
-  @import "core/helpers/align";
-  @import "core/helpers/display";
-  @import "core/helpers/items";
-  @import "core/helpers/toggle";
+//// HELPER
+@import "core/helpers/align";
+@import "core/helpers/display";
+@import "core/helpers/items";
+@import "core/helpers/toggle";
 
-  //// Typography
-  @import "core/typography/fonts";
-  @import "core/typography/heading";
-  @import "core/typography/list";
-  @import "core/typography/article";
-  @import "core/typography/color";
-  @import "core/typography/link";
+//// Typography
+@import "core/typography/fonts";
+@import "core/typography/heading";
+@import "core/typography/list";
+@import "core/typography/article";
+@import "core/typography/color";
+@import "core/typography/link";
 
-  //// LAYOUTS
-  @import "core/layouts/clear";
-  @import "core/layouts/grid";
-  @import "core/layouts/content";
-  @import "core/layouts/header";
-  @import "core/layouts/side";
-  @import "core/layouts/window";
-  @import "core/layouts/dimensions"; // width, height, margin, padding etc.
+//// LAYOUTS
+@import "core/layouts/clear";
+@import "core/layouts/grid";
+@import "core/layouts/content";
+@import "core/layouts/header";
+@import "core/layouts/side";
+@import "core/layouts/window";
+@import "core/layouts/dimensions"; // width, height, margin, padding etc.

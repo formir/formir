@@ -70,7 +70,11 @@ $include-core-layout-header: true;
     @include justify-content(space-between);
     @include align-items(center);
     @include flex(1 1 auto);
+    min-width: 0;
     padding: $header-horizontal-padding $header-vertical-padding;
+    .#{$content-holder} {
+      max-width: 100%;
+    }
     nav {
       #{$menu-item-anchor} {
         vertical-align: middle;

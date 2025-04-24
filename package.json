@@ -1,6 +1,6 @@
 {
   "name": "formir",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Pure CSS / HTML Framework",
   "main": "src/index.js",
   "style": "dist/css/formir.css",
@@ -56,13 +56,13 @@
   },
   "devDependencies": {
     "autoprefixer": "^10",
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-less": "^5.0.0",
     "gulp-postcss": "^9.0.1",
     "gulp-sass": "^5.1.0",
-    "gulp-sourcemaps": "^3.0.0",
+    "gulp-sourcemaps": "^2.6.5",
     "node-sass": "^9.0.0",
     "sass": "^1.69.5"
   },
