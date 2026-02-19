@@ -1,56 +1,56 @@
 @use 'sass:math';
 
 // Path and dirs
-$font-dir: "../fonts";
+$font-dir: "../fonts" !default;
 
 //// Icons path
-$font-icon-url-eot: url("#{$font-dir}/icons.eot");
-$font-icon-url-embedded: url("#{$font-dir}/icons.eot");
-$font-icon-url-woff: url("#{$font-dir}/icons.woff");
-$font-icon-url-ttf: url("#{$font-dir}/icons.ttf");
-$font-icon-url-svg: url("#{$font-dir}/icons.svg");
+$font-icon-url-eot: url("#{$font-dir}/icons.eot") !default;
+$font-icon-url-embedded: url("#{$font-dir}/icons.eot") !default;
+$font-icon-url-woff: url("#{$font-dir}/icons.woff") !default;
+$font-icon-url-ttf: url("#{$font-dir}/icons.ttf") !default;
+$font-icon-url-svg: url("#{$font-dir}/icons.svg") !default;
 
 // Base Unit
-$base-unit: rem;
-$base-steps: 16;
-$base-geometric-step: 3;
-$colors: body, primary, alternative, link, mute, cancel, success, info, warning, danger, color-1, color-2, color-3;
+$base-unit: rem !default;
+$base-steps: 16 !default;
+$base-geometric-step: 3 !default;
+$colors: body, primary, alternative, link, mute, cancel, success, info, warning, danger, color-1, color-2, color-3 !default;
 
 // Sizes
-$sizes: xs, s, m, l, xl, xxl; // can be set for ex. xs, s, m, l etc.. change name of variables for buttons input etc.
-$size-xs: 0.6;
-$size-s: 0.85;
-$size-m: 1.15;
-$size-l: 1.5;
-$size-xl: 1.75;
-$size-xxl: 2;
-$input-sizes: s, m, l;
+$sizes: xs, s, m, l, xl, xxl !default; // can be set for ex. xs, s, m, l etc.. change name of variables for buttons input etc.
+$size-xs: 0.6 !default;
+$size-s: 0.85 !default;
+$size-m: 1.15 !default;
+$size-l: 1.5 !default;
+$size-xl: 1.75 !default;
+$size-xxl: 2 !default;
+$input-sizes: s, m, l !default;
 
 // Layout Unit
-$layout-unit: px;
-$layout-steps: 8;
-$layout-factor: 0.3;
-$layout-geometric-step: $base-geometric-step;
+$layout-unit: px !default;
+$layout-steps: 8 !default;
+$layout-factor: 0.3 !default;
+$layout-geometric-step: $base-geometric-step !default;
 
 // Content
-$content-max-width: 1128;
-$content-min-margin: 20;
-$content-max-height: 600;
+$content-max-width: 1128 !default;
+$content-min-margin: 20 !default;
+$content-max-height: 600 !default;
 
-$layout-width: $content-max-width;
-$layout-height: $content-max-height;
+$layout-width: $content-max-width !default;
+$layout-height: $content-max-height !default;
 
 // Description list
-$dl-steps: $layout-steps;
+$dl-steps: $layout-steps !default;
 
 // Responsive Web Design
 
 // Break points
-$desktop-min-width: 1280px;
-$tablet-max-width: 1024px;
-$tablet-portrait-max-width: 768px;
-$mobile-max-width: 568px;
-$mobile-portrait-max-width: 320px;
+$desktop-min-width: 1280px !default;
+$tablet-max-width: 1024px !default;
+$tablet-portrait-max-width: 768px !default;
+$mobile-max-width: 568px !default;
+$mobile-portrait-max-width: 320px !default;
 
 $breakpoints: (
   desktop-min-width: $desktop-min-width,
@@ -58,111 +58,122 @@ $breakpoints: (
   tablet-portrait-max-width: $tablet-portrait-max-width,
   mobile-max-width: $mobile-max-width,
   mobile-portrait-max-width: $mobile-portrait-max-width,
-);
+  ) !default;
 
 // Break point on mobile menu
-$mobile-menu-max-width: $tablet-portrait-max-width;
+$mobile-menu-max-width: $tablet-portrait-max-width !default;
 
 
 // Side break points
-$device-width-side-collapse: $tablet-portrait-max-width; // in that device width sidebar will be automatic collapsed, set 0 to off
-$device-width-side-hide: $mobile-max-width; // in that device width sidebar (side-hide) will automatic hide, set 0 to off
-$device-width-side-show-full: $device-width-side-hide;
+$device-width-side-collapse: $tablet-portrait-max-width !default; // in that device width sidebar will be automatic collapsed, set 0 to off
+$device-width-side-hide: $mobile-max-width !default; // in that device width sidebar (side-hide) will automatic hide, set 0 to off
+$device-width-side-show-full: $device-width-side-hide !default;
 
-$table-mobile-max-width: $tablet-portrait-max-width;
+$table-mobile-max-width: $tablet-portrait-max-width !default;
 
 // Z-index
-  //// Modals
-  $modal-zindex: 10000;
+//// Modals
+$modal-zindex: 10000 !default;
 
-  //// Side
-  $side-zindex: 10000;
-  //// Tooltips
-  $tooltip-zindex: 10000;
-  $tooltip-arrow-zindex: 1;
-  //// Popups
-  $popup-zindex: 10000;
-  $popup-arrow-zindex: 1;
-  //// Select
-  $select-zindex: 10000;
+//// Side
+$side-zindex: 10000 !default;
+//// Tooltips
+$tooltip-zindex: 10000 !default;
+$tooltip-arrow-zindex: 1 !default;
+//// Popups
+$popup-zindex: 10000 !default;
+$popup-arrow-zindex: 1 !default;
+//// Select
+$select-zindex: 10000 !default;
 
-  // Header
-  $header-zindex: 10000;
+// Header
+$header-zindex: 10000 !default;
 
 
 
 
 // Forms
-$form-states: has-success, has-info, has-error, has-warning;
-$form-state-invalid: has-error;
-$form-state-valid: has-success;
+$form-states: has-success,
+  has-info,
+  has-error,
+  has-warning !default;
+$form-state-invalid: has-error !default;
+$form-state-valid: has-success !default;
 
-$form-state-change-label: false;
-$form-state-change-text-color: true;
-$form-state-change-border: true;
-$form-state-change-background: true;
-$form-state-change-hint: true;
-$form-state-change-tooltip: true;
-$form-tooltip-position: right;  // left / center / right
-$form-tooltip-input-show-on: focus;  // focus / not_focus / hover
+$form-state-change-label: false !default;
+$form-state-change-text-color: true !default;
+$form-state-change-border: true !default;
+$form-state-change-background: true !default;
+$form-state-change-hint: true !default;
+$form-state-change-tooltip: true !default;
+$form-tooltip-position: right !default; // left / center / right
+$form-tooltip-input-show-on: focus !default; // focus / not_focus / hover
 
 
 // Alert
-$alert-states: success, info, error, warning;
+$alert-states: success,
+  info,
+  error,
+  warning !default;
 
 // Grid
-$grid-steps: 16;
-$grid-step-fractions: true;  // set true if you will be using fractions of grid step otherwise false to reduce weight
-$grid-gutter: true; // set true if you will be using grid gutter otherwise false to reduce weight
-$grid-space: true; // set true if you will be using grid space otherwise false to reduce weight
-$grid-offset: true; // set true if you will be using grid offset otherwise false to reduce weight
-$grid-gutter-start: 2;
-$grid-gutter-steps: $layout-steps/2;
-$grid-gutter-unit: $base-unit;
-$grid-gutter-step: 0.3;
-$grid-space-start: 2;
-$grid-space-steps: $layout-steps/2;
-$grid-space-unit: $base-unit;
-$grid-space-step: 0.3;
+$grid-steps: 16 !default;
+$grid-step-fractions: true !default; // set true if you will be using fractions of grid step otherwise false to reduce weight
+$grid-gutter: true !default; // set true if you will be using grid gutter otherwise false to reduce weight
+$grid-space: true !default; // set true if you will be using grid space otherwise false to reduce weight
+$grid-offset: true !default; // set true if you will be using grid offset otherwise false to reduce weight
+$grid-gutter-start: 2 !default;
+$grid-gutter-steps: $layout-steps/2 !default;
+$grid-gutter-unit: $base-unit !default;
+$grid-gutter-step: 0.3 !default;
+$grid-space-start: 2 !default;
+$grid-space-steps: $layout-steps/2 !default;
+$grid-space-unit: $base-unit !default;
+$grid-space-step: 0.3 !default;
 
 // Typography
-$typography-unit: $base-unit;
-$typography-font-size-1: 2.5 + $typography-unit;
-$typography-line-height-1: 1.35 + em;
+$typography-unit: $base-unit !default;
+$typography-font-size-1: 2.5 + $typography-unit !default;
+$typography-line-height-1: 1.35 + em !default;
 
-$typography-font-size-2: 2, $typography-unit;
-$typography-line-height-2: 1.35 + em;
+$typography-font-size-2: 2,
+  $typography-unit !default;
+$typography-line-height-2: 1.35 + em !default;
 
-$typography-font-size-3: 1.7, $typography-unit;
-$typography-line-height-3: 1.35 + em;
+$typography-font-size-3: 1.7,
+  $typography-unit !default;
+$typography-line-height-3: 1.35 + em !default;
 
-$typography-font-size-4: 1.3, $typography-unit;
-$typography-line-height-4: 1.35 + em;
+$typography-font-size-4: 1.3,
+  $typography-unit !default;
+$typography-line-height-4: 1.35 + em !default;
 
-$typography-font-size-5: 1, $typography-unit;
-$typography-line-height-5: 1.35 + em;
+$typography-font-size-5: 1,
+  $typography-unit !default;
+$typography-line-height-5: 1.35 + em !default;
 
-$typography-font-size-6: 0.8, $typography-unit;
-$typography-line-height-6: 1.35 + em;
+$typography-font-size-6: 0.8,
+  $typography-unit !default;
+$typography-line-height-6: 1.35 + em !default;
 
 // Buttons
-$button-set-gradient: true; // 'default' to use gradient button as default, true like option, false not use
-$button-set-focus: true; // true if you will be use focus state on any buttons
-$button-set-color-focus: false; // true to use focus state on color change
-$button-set-inverse: false;  // true to set buttons inverse as default
-$button-set-transparent: false; // true to set buttons background transparent as default
+$button-set-gradient: true !default; // 'default' to use gradient button as default, true like option, false not use
+$button-set-focus: true !default; // true if you will be use focus state on any buttons
+$button-set-color-focus: false !default; // true to use focus state on color change
+$button-set-inverse: false !default; // true to set buttons inverse as default
+$button-set-transparent: false !default; // true to set buttons background transparent as default
 
 // Items
-$items-gutter: 15px;
+$items-gutter: 15px !default;
 
 // Tabs
-$tabs-pages: 10;
+$tabs-pages: 10 !default;
 
 //// Includes - DO NOT CHANGE BELOW ////
-$include-core-layout-header: null;
-$include-core-layout-side: null;
+$include-core-layout-header: null !default;
+$include-core-layout-side: null !default;
 
-$include-core-component-modal: null;
-$include-core-component-tooltip: null;
-$include-core-component-menu: null;
-$include-core-component-table: null;
+$include-core-component-modal: null !default;
+$include-core-component-tooltip: null !default;
+$include-core-component-menu: null !default;
+$include-core-component-table: null !default;

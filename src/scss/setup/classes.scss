@@ -1,503 +1,503 @@
 // Formir variables:
 
 // Buttons
-$button: button;
-$buttons: buttons;
-$button-focus: focus;
-$button-active: active;
-$button-hover: hover;
-$button-disabled: disabled;
-$button-circle: circle;
-$button-inverse: inverse;
-$button-as-link: as-link;
-$button-inactive: inactive;
-$button-ellipsis: ellipsis;
-$button-block: block;
-$button-border-contrast: border-contrast;
-$button-transparent: transparent;
+$button: button !default;
+$buttons: buttons !default;
+$button-focus: focus !default;
+$button-active: active !default;
+$button-hover: hover !default;
+$button-disabled: disabled !default;
+$button-circle: circle !default;
+$button-inverse: inverse !default;
+$button-as-link: as-link !default;
+$button-inactive: inactive !default;
+$button-ellipsis: ellipsis !default;
+$button-block: block !default;
+$button-border-contrast: border-contrast !default;
+$button-transparent: transparent !default;
 
-$button-group: button-group;
-$button-group-horizontal: button-group-horizontal;
-$button-reverse: reverse;
-$button-gradient: gradient;
+$button-group: button-group !default;
+$button-group-horizontal: button-group-horizontal !default;
+$button-reverse: reverse !default;
+$button-gradient: gradient !default;
 
 // Helpers
 //// Visible
-$display-none: display-none;
-$hide: hide;
-$display-block: display-block;
-$show: show;
-$display-inline-block: display-inline-block;
-$display-inline: display-inline;
-$display-table: display-table;
-$display-table-cell: display-table-cell;
-$display-flex: display-flex;
-$display-inline-flex: display-inline-flex;
-$hidden: hidden;
-$visible: visible;
-$text-hide: text-hide;
-$none-events: none-events;
+$display-none: display-none !default;
+$hide: hide !default;
+$display-block: display-block !default;
+$show: show !default;
+$display-inline-block: display-inline-block !default;
+$display-inline: display-inline !default;
+$display-table: display-table !default;
+$display-table-cell: display-table-cell !default;
+$display-flex: display-flex !default;
+$display-inline-flex: display-inline-flex !default;
+$hidden: hidden !default;
+$visible: visible !default;
+$text-hide: text-hide !default;
+$none-events: none-events !default;
 
-$print-hide: print-hide;
-$print-show: print-show;
-$not-screen-hide: not-screenhide;
-$not-screen-show: not-screenshow;
-$braille-hide: braille-hide;
-$braille-show: braille-show;
-$speech-hide: speech-hide;
-$speech-show: speech-show;
-$tv-hide: tv-hide;
-$tv-show: tv-show;
+$print-hide: print-hide !default;
+$print-show: print-show !default;
+$not-screen-hide: not-screenhide !default;
+$not-screen-show: not-screenshow !default;
+$braille-hide: braille-hide !default;
+$braille-show: braille-show !default;
+$speech-hide: speech-hide !default;
+$speech-show: speech-show !default;
+$tv-hide: tv-hide !default;
+$tv-show: tv-show !default;
 
-$right: right;
-$left: left;
-$size: size;
+$right: right !default;
+$left: left !default;
+$size: size !default;
 
 //// Dimensions
 
-$width: width;
-$height: height;
+$width: width !default;
+$height: height !default;
 
-$width-geo: width-geo;
-$height-geo: height-geo;
+$width-geo: width-geo !default;
+$height-geo: height-geo !default;
 
-$margin: margin;
-$margin-top: margin-top;
-$margin-bottom: margin-bottom;
-$margin-left: margin-left;
-$margin-right: margin-right;
-$margin-horizontal: margin-horizontal;
-$margin-vertical: margin-vertical;
+$margin: margin !default;
+$margin-top: margin-top !default;
+$margin-bottom: margin-bottom !default;
+$margin-left: margin-left !default;
+$margin-right: margin-right !default;
+$margin-horizontal: margin-horizontal !default;
+$margin-vertical: margin-vertical !default;
 
-$padding: padding;
-$padding-top: padding-top;
-$padding-bottom: padding-bottom;
-$padding-left: padding-left;
-$padding-right: padding-right;
-$padding-horizontal: padding-horizontal;
-$padding-vertical: padding-vertical;
+$padding: padding !default;
+$padding-top: padding-top !default;
+$padding-bottom: padding-bottom !default;
+$padding-left: padding-left !default;
+$padding-right: padding-right !default;
+$padding-horizontal: padding-horizontal !default;
+$padding-vertical: padding-vertical !default;
 
-$active: active;
-$disabled: disabled;
-$opacity: opacity;
+$active: active !default;
+$disabled: disabled !default;
+$opacity: opacity !default;
 
 //// Align
-$text-center: text-center;
-$text-right: text-right;
-$text-left: text-left;
-$text-justify: text-justify;
+$text-center: text-center !default;
+$text-right: text-right !default;
+$text-left: text-left !default;
+$text-justify: text-justify !default;
 
-$float-right: float-right;
-$float-left: float-left;
+$float-right: float-right !default;
+$float-left: float-left !default;
 
-$horizontal-center: horizontal-center;
+$horizontal-center: horizontal-center !default;
 
 //// Toggle
-$toggle: toggle;
-$toggle-label: toggle-label;
-$toggle-show: toggle-show;
-$toggle-block: toggle-block;
-$toggle-show: toggle-show;
-$toggle-flex: toggle-flex;
-$toggle-inline: toggle-inline;
-$toggle-inline-block: toggle-inline-block;
-$toggle-none: toggle-none;
-$toggle-hide: toggle-hide;
+$toggle: toggle !default;
+$toggle-label: toggle-label !default;
+$toggle-show: toggle-show !default;
+$toggle-block: toggle-block !default;
+$toggle-show: toggle-show !default;
+$toggle-flex: toggle-flex !default;
+$toggle-inline: toggle-inline !default;
+$toggle-inline-block: toggle-inline-block !default;
+$toggle-none: toggle-none !default;
+$toggle-hide: toggle-hide !default;
 
-$mobile-toggle: mobile-toggle;
-$mobile-toggle-label: mobile-toggle-label;
-$mobile-toggle-hide: mobile-toggle-hide;
-$mobile-toggle-show: mobile-toggle-show;
+$mobile-toggle: mobile-toggle !default;
+$mobile-toggle-label: mobile-toggle-label !default;
+$mobile-toggle-hide: mobile-toggle-hide !default;
+$mobile-toggle-show: mobile-toggle-show !default;
 
 // Responsive dimension
-$m: m;
-$mp: mp;
-$t: t;
-$tp: tp;
-$d: d;
+$m: m !default;
+$mp: mp !default;
+$t: t !default;
+$tp: tp !default;
+$d: d !default;
 
-$under: under;
+$under: under !default;
 
 // Grid system
-$grid: grid;
-$cell: cell;
+$grid: grid !default;
+$cell: cell !default;
 
-$row: row;
-$column: column; // set cell as column
-$column-force: column-force; // force set all child cell as column
-$column-wrap: column-wrap; // set row and cell as column - stay width
+$row: row !default;
+$column: column !default; // set cell as column
+$column-force: column-force !default; // force set all child cell as column
+$column-wrap: column-wrap !default; // set row and cell as column - stay width
 
-$reverse: reverse; // reverse order
-$release: release;
-$keep-flex: keep-flex;
+$reverse: reverse !default; // reverse order
+$release: release !default;
+$keep-flex: keep-flex !default;
 
-$gutter: gutter; // horizontal space between cell
-$gutter-margin: gutter-margin;
-$space: space; // vertical space between cell
-$space-margin: space-margin;
+$gutter: gutter !default; // horizontal space between cell
+$gutter-margin: gutter-margin !default;
+$space: space !default; // vertical space between cell
+$space-margin: space-margin !default;
 
-$start-before: start-before;
-$end-before: end-before;
+$start-before: start-before !default;
+$end-before: end-before !default;
 
-$nowrap: nowrap; //prevent wrapping cell
-$floating: floating; //set grid as float not flexbox
+$nowrap: nowrap !default; //prevent wrapping cell
+$floating: floating !default; //set grid as float not flexbox
 
-$justify-center: justify-center;
-$justify-around: justify-around;
-$justify-between: justify-between;
-$justify-start: justify-start;
-$justify-end: justify-end;
+$justify-center: justify-center !default;
+$justify-around: justify-around !default;
+$justify-between: justify-between !default;
+$justify-start: justify-start !default;
+$justify-end: justify-end !default;
 
-$vertical-center: vertical-center;
-$vertical-start: vertical-start;
-$vertical-end: vertical-end;
+$vertical-center: vertical-center !default;
+$vertical-start: vertical-start !default;
+$vertical-end: vertical-end !default;
 
-$vertical-items-center: vertical-items-center;
-$vertical-items-stretch: vertical-items-stretch;
-$vertical-items-start: vertical-items-start;
-$vertical-items-end: vertical-items-end;
+$vertical-items-center: vertical-items-center !default;
+$vertical-items-stretch: vertical-items-stretch !default;
+$vertical-items-start: vertical-items-start !default;
+$vertical-items-end: vertical-items-end !default;
 
 
-$offset: offset; //set offset on left from cell
-$offset-left: offset-left; //set offset on left from cell
-$offset-right: offset-right; //set offset on right from cell
+$offset: offset !default; //set offset on left from cell
+$offset-left: offset-left !default; //set offset on left from cell
+$offset-right: offset-right !default; //set offset on right from cell
 
 //// Items
-$items: items;
+$items: items !default;
 
-$items-center: items-center;
-$items-stretch: items-stretch;
-$items-start: items-start;
-$items-end: items-end;
+$items-center: items-center !default;
+$items-stretch: items-stretch !default;
+$items-start: items-start !default;
+$items-end: items-end !default;
 
 
 // Chart
-$chart: chart;
-$chart-value: value;
-$chart-ring: ring;
-$chart-control: chart-control;
-$chart-value-colored: value-colored;
+$chart: chart !default;
+$chart-value: value !default;
+$chart-ring: ring !default;
+$chart-control: chart-control !default;
+$chart-value-colored: value-colored !default;
 
 // Dropdown
 
-$dropdown: dropdown;
-$dropdown-content: dropdown-content;
-$dropdown-focusable: focusable;
-$dropdown-top: top;
-$dropdown-left: left;
-$dropdown-right: right;
+$dropdown: dropdown !default;
+$dropdown-content: dropdown-content !default;
+$dropdown-focusable: focusable !default;
+$dropdown-top: top !default;
+$dropdown-left: left !default;
+$dropdown-right: right !default;
 
 // Forms:
-$form: form;
-$label: label;
-$control: control;
-$control-group: control-group; // in grid use cell classes
-$hint: hint;
-$fieldset: fieldset; // tag or class
-$legend: legend; // class only
+$form: form !default;
+$label: label !default;
+$control: control !default;
+$control-group: control-group !default; // in grid use cell classes
+$hint: hint !default;
+$fieldset: fieldset !default; // tag or class
+$legend: legend !default; // class only
 
-$grid-form: grid-form;
+$grid-form: grid-form !default;
 
-$form-validate: validate;
-$form-input-touched: touched;
+$form-validate: validate !default;
+$form-input-touched: touched !default;
 
-$input: input;
-$inputs: inputs;
-$input-inverse: inverse;
-$input-transparent: transparent;
-$input-hover: hover;
-$input-focus: focus;
+$input: input !default;
+$inputs: inputs !default;
+$input-inverse: inverse !default;
+$input-transparent: transparent !default;
+$input-hover: hover !default;
+$input-focus: focus !default;
 
-$input-valid: valid;
-$input-invalid: invalid;
+$input-valid: valid !default;
+$input-invalid: invalid !default;
 
 ///// Addon
-$addon-position: after;
-$addon-left: left-addon;
-$icon-left: left-icon;
+$addon-position: after !default;
+$addon-left: left-addon !default;
+$icon-left: left-icon !default;
 
 ///// Select
-$select: select;
-$select-content: select-content;
-$select-hide-selected: hide-selected;
-$select-hoverable: hoverable;
-$select-placeholder: placeholder;
-$select-active: active;
-$select-disabled: disabled;
-$select-readonly: readonly;
-$select-count-selected: count-selected;
-$select-all: select-all;
+$select: select !default;
+$select-content: select-content !default;
+$select-hide-selected: hide-selected !default;
+$select-hoverable: hoverable !default;
+$select-placeholder: placeholder !default;
+$select-active: active !default;
+$select-disabled: disabled !default;
+$select-readonly: readonly !default;
+$select-count-selected: count-selected !default;
+$select-all: select-all !default;
 
-$select-arrow: select-arrow;
+$select-arrow: select-arrow !default;
 
 // Table
-$table: table;
-$inline-table: inline-table;
-$tbody: tbody;
-$thead: thead;
-$tfoot: tfoot;
-$th: th;
-$tr: tr;
-$td: td;
-$col: col;
-$colgroup: colgroup;
+$table: table !default;
+$inline-table: inline-table !default;
+$tbody: tbody !default;
+$thead: thead !default;
+$tfoot: tfoot !default;
+$th: th !default;
+$tr: tr !default;
+$td: td !default;
+$col: col !default;
+$colgroup: colgroup !default;
 
-$table-scroll: table-scroll;
-$table-mobile: table-mobile;
-$table-fixed: table-fixed;
-$table-ellipsis: table-ellipsis;
-$table-td-ellipsis: td-ellipsis;
-$table-header-sticky: header-sticky;
-$table-body-sticky: body-sticky;
-$table-footer-sticky: footer-sticky;
-$table-borders-horizontal: borders-horizontal;
-$table-borders-vertical: borders-vertical;
-$table-borders: borders;
-$table-borders-outside: borders-outside;
-$table-hoverable-td: hoverable-td;
-$table-hoverable-tr: hoverable-tr;
-$table-hoverable-col: hoverable-col;
-$table-zebra-odd: zebra-odd;
-$table-zebra-even: zebra-even;
-$table-on-hover: on-hover;
-$table-un-hover: un-hover;
-$table-number: number;
-$table-bold: bold;
-$actions: actions;
-$expandable: expandable;
-$expandable-toggler: expandable-toggler;
-$expandable-trigger: expandable-trigger;
-$toggle-show: toggle-show;
-$toggle-hide: toggle-hide;
+$table-scroll: table-scroll !default;
+$table-mobile: table-mobile !default;
+$table-fixed: table-fixed !default;
+$table-ellipsis: table-ellipsis !default;
+$table-td-ellipsis: td-ellipsis !default;
+$table-header-sticky: header-sticky !default;
+$table-body-sticky: body-sticky !default;
+$table-footer-sticky: footer-sticky !default;
+$table-borders-horizontal: borders-horizontal !default;
+$table-borders-vertical: borders-vertical !default;
+$table-borders: borders !default;
+$table-borders-outside: borders-outside !default;
+$table-hoverable-td: hoverable-td !default;
+$table-hoverable-tr: hoverable-tr !default;
+$table-hoverable-col: hoverable-col !default;
+$table-zebra-odd: zebra-odd !default;
+$table-zebra-even: zebra-even !default;
+$table-on-hover: on-hover !default;
+$table-un-hover: un-hover !default;
+$table-number: number !default;
+$table-bold: bold !default;
+$actions: actions !default;
+$expandable: expandable !default;
+$expandable-toggler: expandable-toggler !default;
+$expandable-trigger: expandable-trigger !default;
+$toggle-show: toggle-show !default;
+$toggle-hide: toggle-hide !default;
 
-$flex: flex;
+$flex: flex !default;
 
 // Window
-$window: window;
-$window-content: window-content;
-$window-header: window-header;
-$window-footer: window-footer;
+$window: window !default;
+$window-content: window-content !default;
+$window-header: window-header !default;
+$window-footer: window-footer !default;
 
 // Modal
-$modal: modal;
-$modal-wrapper: modal-wrapper;
-$modal-window: modal-window;
-$modal-footer: modal-footer;
-$modal-header: modal-header;
-$modal-content: modal-content;
-$modal-close: modal-close;
-$modal-backdrop: modal-backdrop;
-$modal-animated: animated;
-$modal-open: modal-open;
-$modal-opened: modal-opened;
-$modal-centered: centered;
+$modal: modal !default;
+$modal-wrapper: modal-wrapper !default;
+$modal-window: modal-window !default;
+$modal-footer: modal-footer !default;
+$modal-header: modal-header !default;
+$modal-content: modal-content !default;
+$modal-close: modal-close !default;
+$modal-backdrop: modal-backdrop !default;
+$modal-animated: animated !default;
+$modal-open: modal-open !default;
+$modal-opened: modal-opened !default;
+$modal-centered: centered !default;
 
-$modal-window-s: modal-window-s;
-$modal-window-l: modal-window-l;
-$modal-window-xl: modal-window-xl;
-$modal-window-fullscreen: modal-window-fullscreen;
+$modal-window-s: modal-window-s !default;
+$modal-window-l: modal-window-l !default;
+$modal-window-xl: modal-window-xl !default;
+$modal-window-fullscreen: modal-window-fullscreen !default;
 
 // Tabs
-$tabs: tabs;
-$tab: tab;
-$tab-navs: tab-navs;
-$tab-pages: tab-pages;
-$tab-navs: tab-navs;
-$tab-labels: tab-labels;
-$tab-addons: tab-addons;
+$tabs: tabs !default;
+$tab: tab !default;
+$tab-navs: tab-navs !default;
+$tab-pages: tab-pages !default;
+$tab-navs: tab-navs !default;
+$tab-labels: tab-labels !default;
+$tab-addons: tab-addons !default;
 
 
 // Accordion
-$accordions: accordions;
-$accordion: accordion;
-$accordion-label: label;
-$accordion-content: content;
-$accordion-collapsible: accordion-collapsible;
-$accordion-label-hide: label-hide;
-$accordion-horizontal: horizontal;
-$accordion-focusable: focusable;
-$accordion-animated: animated;
-$accordion-hoverable: hoverable;
-$accordion-arrow: arrow;
+$accordions: accordions !default;
+$accordion: accordion !default;
+$accordion-label: label !default;
+$accordion-content: content !default;
+$accordion-collapsible: accordion-collapsible !default;
+$accordion-label-hide: label-hide !default;
+$accordion-horizontal: horizontal !default;
+$accordion-focusable: focusable !default;
+$accordion-animated: animated !default;
+$accordion-hoverable: hoverable !default;
+$accordion-arrow: arrow !default;
 
 // Tooltip
-$tooltip: tooltip;
-$has-tooltip: has-tooltip;
-$tooltip-bottom: bottom;
-$tooltip-bottom-right: bottom-right;
-$tooltip-bottom-center: bottom-center;
-$tooltip-top: top;
-$tooltip-top-right: right;
-$tooltip-center: center;
-$tooltip-right: right;
-$tooltip-right-middle: right-middle;
-$tooltip-left-middle: left-middle;
-$tooltip-right-top: right-top;
-$tooltip-right-bottom: right-bottom;
-$tooltip-left-top: left-top;
-$tooltip-left-bottom: left-bottom;
-$tooltip-hoverable: hoverable; // tooltip not hide when try hover on it (arrow will be not work with data-tooltip)
-$tooltip-hovered: hovered; // simulate :hover state to active tooltip manually
-$tooltip-absolute: absolute;
-$tooltip-fixed: fixed;
+$tooltip: tooltip !default;
+$has-tooltip: has-tooltip !default;
+$tooltip-bottom: bottom !default;
+$tooltip-bottom-right: bottom-right !default;
+$tooltip-bottom-center: bottom-center !default;
+$tooltip-top: top !default;
+$tooltip-top-right: right !default;
+$tooltip-center: center !default;
+$tooltip-right: right !default;
+$tooltip-right-middle: right-middle !default;
+$tooltip-left-middle: left-middle !default;
+$tooltip-right-top: right-top !default;
+$tooltip-right-bottom: right-bottom !default;
+$tooltip-left-top: left-top !default;
+$tooltip-left-bottom: left-bottom !default;
+$tooltip-hoverable: hoverable !default; // tooltip not hide when try hover on it (arrow will be not work with data-tooltip)
+$tooltip-hovered: hovered !default; // simulate :hover state to active tooltip manually
+$tooltip-absolute: absolute !default;
+$tooltip-fixed: fixed !default;
 
 // Popup
-$popup: popup;
-$has-popup: has-popup;
-$popup-with-menu: with-menu;
-$popup-bottom: bottom;
-$popup-bottom-right: bottom-right;
-$popup-bottom-center: bottom-center;
-$popup-top: top;
-$popup-top-right: right;
-$popup-center: center;
-$popup-right: right;
-$popup-right-middle: right-middle;
-$popup-left-middle: left-middle;
-$popup-right-top: right-top;
-$popup-right-bottom: right-bottom;
-$popup-left-top: left-top;
-$popup-left-bottom: left-bottom;
-$popup-hoverable: hoverable;
-$popup-active: active;
-$popup-absolute: absolute;
-$popup-fixed: fixed;
-$popup-manual: manual;
-$popup-header: popup-header;
-$popup-footer: popup-footer;
-$popup-content: popup-content;
+$popup: popup !default;
+$has-popup: has-popup !default;
+$popup-with-menu: with-menu !default;
+$popup-bottom: bottom !default;
+$popup-bottom-right: bottom-right !default;
+$popup-bottom-center: bottom-center !default;
+$popup-top: top !default;
+$popup-top-right: right !default;
+$popup-center: center !default;
+$popup-right: right !default;
+$popup-right-middle: right-middle !default;
+$popup-left-middle: left-middle !default;
+$popup-right-top: right-top !default;
+$popup-right-bottom: right-bottom !default;
+$popup-left-top: left-top !default;
+$popup-left-bottom: left-bottom !default;
+$popup-hoverable: hoverable !default;
+$popup-active: active !default;
+$popup-absolute: absolute !default;
+$popup-fixed: fixed !default;
+$popup-manual: manual !default;
+$popup-header: popup-header !default;
+$popup-footer: popup-footer !default;
+$popup-content: popup-content !default;
 
 // Side
-$side: ".side"; // tag 'aside' or class or both
-$side-top: top;
-$side-bottom: bottom;
-$side-left: left;
-$side-right: right;
-$side-collapse: side-collapse; // sidebar will be collapsed - set expand on ready (unchecked)
-$side-expand: side-expand; // sidebar will be expand - set collapse on ready (unchecked)
-$side-hide: side-hide; // sidebar will be hide - set expand on ready (unchecked)
-$side-hide-expand: side-hide-expand; // sidebar will be expand - set hide on ready (unchecked)
-$side-backdrop: side-backdrop;
-$side-close: side-close;
-$side-open: side-open; // element for open sidebar (label) when is collapse and not visible;
-$side-animated: animated;
-$side-hoverable: hoverable;
-$side-hover-backdrop: hover-backdrop;
-$side-focusable: focusable;
-$side-focus-backdrop: focus-backdrop;
-$side-cover: cover;
-$side-uncover-hover: uncover-hover;
-$side-uncover-focus: uncover-focus;
-$side-overflow: overflow;
-$side-absolute: absolute;
-$side-relative: relative;
-$side-static: static;
-$side-float: float;
-$side-full-height: side-full-height;
-$side-expanded-hide: expanded-hide;
-$side-expanded-show: expanded-show;
-$side-collapsed-hide: collapsed-hide;
-$side-collapsed-show: collapsed-show;
+$side: ".side" !default; // tag 'aside' or class or both
+$side-top: top !default;
+$side-bottom: bottom !default;
+$side-left: left !default;
+$side-right: right !default;
+$side-collapse: side-collapse !default; // sidebar will be collapsed - set expand on ready (unchecked)
+$side-expand: side-expand !default; // sidebar will be expand - set collapse on ready (unchecked)
+$side-hide: side-hide !default; // sidebar will be hide - set expand on ready (unchecked)
+$side-hide-expand: side-hide-expand !default; // sidebar will be expand - set hide on ready (unchecked)
+$side-backdrop: side-backdrop !default;
+$side-close: side-close !default;
+$side-open: side-open !default; // element for open sidebar (label) when is collapse and not visible !default;
+$side-animated: animated !default;
+$side-hoverable: hoverable !default;
+$side-hover-backdrop: hover-backdrop !default;
+$side-focusable: focusable !default;
+$side-focus-backdrop: focus-backdrop !default;
+$side-cover: cover !default;
+$side-uncover-hover: uncover-hover !default;
+$side-uncover-focus: uncover-focus !default;
+$side-overflow: overflow !default;
+$side-absolute: absolute !default;
+$side-relative: relative !default;
+$side-static: static !default;
+$side-float: float !default;
+$side-full-height: side-full-height !default;
+$side-expanded-hide: expanded-hide !default;
+$side-expanded-show: expanded-show !default;
+$side-collapsed-hide: collapsed-hide !default;
+$side-collapsed-show: collapsed-show !default;
 
 // Layout
-$content-holder: content-holder;
-$body-content: body-content;
+$content-holder: content-holder !default;
+$body-content: body-content !default;
 
-$center-vertically: center-vertically;
-$horizontally: horizontally;
+$center-vertically: center-vertically !default;
+$horizontally: horizontally !default;
 
 //// Header
-$header: ".header"; // tag 'header' or class or both
-$header-content: header-content;
-$header-fixed: fixed;
+$header: ".header" !default; // tag 'header' or class or both
+$header-content: header-content !default;
+$header-fixed: fixed !default;
 
 //// Footer
-$footer: footer; // tag 'header' or class or both
+$footer: footer !default; // tag 'header' or class or both
 
 // Description list
-$dd: dd; // tag 'dd' or class or both
-$dt: dt; // tag 'dt' or class or both
-$dl: dl; // tag 'dl' or class or both
+$dd: dd !default; // tag 'dd' or class or both
+$dt: dt !default; // tag 'dt' or class or both
+$dl: dl !default; // tag 'dl' or class or both
 
-$dl-horizontally: horizontally;
-$dl-horizontally-collapse: collapse;
-$dl-title-colon: title-colon;
-$dl-size: size;
-$dl-space: space;
+$dl-horizontally: horizontally !default;
+$dl-horizontally-collapse: collapse !default;
+$dl-title-colon: title-colon !default;
+$dl-size: size !default;
+$dl-space: space !default;
 
 // Menu
-$menu: ".menu"; // tag or class and tag
-$menu-horizontal: horizontal;
-$menu-wrap: wrap;
-$menu-auto-width: auto-width;
-$menu-inside: menu-inside;
-$menu-item: ".item"; // tag or class and tag
-$menu-item-anchor: ".anchor"; // tag 'a' or class and tag
-$menu-inside-absolute: menu-absolute;
-$menu-inside-fixed: menu-fixed;
+$menu: ".menu" !default; // tag or class and tag
+$menu-horizontal: horizontal !default;
+$menu-wrap: wrap !default;
+$menu-auto-width: auto-width !default;
+$menu-inside: menu-inside !default;
+$menu-item: ".item" !default; // tag or class and tag
+$menu-item-anchor: ".anchor" !default; // tag 'a' or class and tag
+$menu-inside-absolute: menu-absolute !default;
+$menu-inside-fixed: menu-fixed !default;
 
-$menu-mobile: menu-mobile;
+$menu-mobile: menu-mobile !default;
 
 // Icons
-$icon: icon;
-$icon-position: before; // before or after
+$icon: icon !default;
+$icon-position: before !default; // before or after
 
 
 // Typography
 //// Heading
-$h1: h1;
-$h2: h2;
-$h3: h3;
-$h4: h4;
-$h5: h5;
-$h6: h6;
-$h1-class: $h1;
-$h2-class: $h2;
-$h3-class: $h3;
-$h4-class: $h4;
-$h5-class: $h5;
-$h6-class: $h6;
-$h-actions: actions; // class of actions in heading
-$h-mute: small; // class or tag alternative text
+$h1: h1 !default;
+$h2: h2 !default;
+$h3: h3 !default;
+$h4: h4 !default;
+$h5: h5 !default;
+$h6: h6 !default;
+$h1-class: $h1 !default;
+$h2-class: $h2 !default;
+$h3-class: $h3 !default;
+$h4-class: $h4 !default;
+$h5-class: $h5 !default;
+$h6-class: $h6 !default;
+$h-actions: actions !default; // class of actions in heading
+$h-mute: small !default; // class or tag alternative text
 
 // Link
-$link: ".link"; // tag or class and tag
+$link: ".link" !default; // tag or class and tag
 
 //// Colors
-$background-color: background;
-$background-color-hoverable: hoverable;
-$text-color: text;
-$border-color: border;
+$background-color: background !default;
+$background-color-hoverable: hoverable !default;
+$text-color: text !default;
+$border-color: border !default;
 
 //// List
-$ul: ul;
-$ol: ol;
-$li: li;
-$list-clear: clear;
+$ul: ul !default;
+$ol: ol !default;
+$li: li !default;
+$list-clear: clear !default;
 
 //// Article
-$article: article;
-$article-p: p;
+$article: article !default;
+$article-p: p !default;
 
 // Section
-$section: section; // tag or class and tag
-$section-full-height: full-height;
+$section: section !default; // tag or class and tag
+$section-full-height: full-height !default;
 
-$section-header: section-header;
-$section-footer: section-footer;
-$section-content: section-content;
-$section-expandable: section-expandable;
-$with-padding: with-padding;
-$with-table: with-table;
-$with-tabs: with-tabs;
-$with-border: with-border;
-$overflow-hidden: overflow-hidden;
-$overflow-auto: overflow-auto;
-$overflow-scroll: overflow-scroll;
+$section-header: section-header !default;
+$section-footer: section-footer !default;
+$section-content: section-content !default;
+$section-expandable: section-expandable !default;
+$with-padding: with-padding !default;
+$with-table: with-table !default;
+$with-tabs: with-tabs !default;
+$with-border: with-border !default;
+$overflow-hidden: overflow-hidden !default;
+$overflow-auto: overflow-auto !default;
+$overflow-scroll: overflow-scroll !default;
 
 
 // Alerts
-$alerts: alerts;
-$alert: alert;
-$alert-light: light;
-$alert-trigger: alert-trigger;
+$alerts: alerts !default;
+$alert: alert !default;
+$alert-light: light !default;
+$alert-trigger: alert-trigger !default;

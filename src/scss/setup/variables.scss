@@ -1,44 +1,44 @@
 @import "../core/functions/map-deep-get";
 
 // Body
-$html-font-size: 16px;
+$html-font-size: 16px !default;
 
-$body-font-family: "Roboto";
-$body-font-size: 1rem;
-$body-line-height: 1.35em;
-$font-family: "Roboto", Arial, Helvetica, sans-serif;
+$body-font-family: "Roboto" !default;
+$body-font-size: 1rem !default;
+$body-line-height: 1.35em !default;
+$font-family: "Roboto", Arial, Helvetica, sans-serif !default;
 
 
 // Colors
-$color-body: #2a2a2a;
-$color-primary: #443349;
-$color-alternative: #6253f9;
-$color-link: #5386f9;
-$color-mute: #575757;
-$color-cancel: #aaaaaa;
-$color-success: #84b500;
-$color-info: #00abc4;
-$color-warning: #ea8432;
-$color-danger: #cf4040;
-$color-white: #fff;
-$color-color-1: #000;
-$color-color-2: #fff;
-$color-color-3: #222;
+$color-body: #2a2a2a !default;
+$color-primary: #443349 !default;
+$color-alternative: #6253f9 !default;
+$color-link: #5386f9 !default;
+$color-mute: #575757 !default;
+$color-cancel: #aaaaaa !default;
+$color-success: #84b500 !default;
+$color-info: #00abc4 !default;
+$color-warning: #ea8432 !default;
+$color-danger: #cf4040 !default;
+$color-white: #fff !default;
+$color-color-1: #000 !default;
+$color-color-2: #fff !default;
+$color-color-3: #222 !default;
 
-$color-body-contrast: #ffffff;
-$color-primary-contrast: #ffffff;
-$color-alternative-contrast: #ffffff;
-$color-link-contrast: #ffffff;
-$color-mute-contrast: #ffffff;
-$color-cancel-contrast: #111111;
-$color-success-contrast: #ffffff;
-$color-info-contrast: #ffffff;
-$color-warning-contrast: #111111;
-$color-danger-contrast: #ffffff;
-$color-white-contrast: #111111;
-$color-color-1-contrast: #fff;
-$color-color-2-contrast: #000;
-$color-color-3-contrast: #eee;
+$color-body-contrast: #ffffff !default;
+$color-primary-contrast: #ffffff !default;
+$color-alternative-contrast: #ffffff !default;
+$color-link-contrast: #ffffff !default;
+$color-mute-contrast: #ffffff !default;
+$color-cancel-contrast: #111111 !default;
+$color-success-contrast: #ffffff !default;
+$color-info-contrast: #ffffff !default;
+$color-warning-contrast: #111111 !default;
+$color-danger-contrast: #ffffff !default;
+$color-white-contrast: #111111 !default;
+$color-color-1-contrast: #fff !default;
+$color-color-2-contrast: #000 !default;
+$color-color-3-contrast: #eee !default;
 
 $color-contrast: (
   "body": $color-body-contrast,
@@ -54,292 +54,279 @@ $color-contrast: (
   "white": $color-white-contrast,
   "color-1": $color-color-1-contrast,
   "color-2": $color-color-2-contrast,
-  "color-3": $color-color-3-contrast
-);
+  "color-3": $color-color-3-contrast) !default;
 
-$color-focus: $color-alternative;
-$color-hover-lighten: 20%;
+$color-focus: $color-alternative !default;
+$color-hover-lighten: 20% !default;
 
-$color-hover-body: lighten($color-body, $color-hover-lighten);
-$color-hover-primary: lighten($color-primary, $color-hover-lighten);
-$color-hover-alternative: lighten($color-alternative, $color-hover-lighten);
-$color-hover-link: lighten($color-link, $color-hover-lighten);
-$color-hover-mute: lighten($color-mute, $color-hover-lighten);
-$color-hover-cancel: lighten($color-cancel, $color-hover-lighten);
-$color-hover-success: lighten($color-success, $color-hover-lighten);
-$color-hover-info: lighten($color-info, $color-hover-lighten);
-$color-hover-warning: lighten($color-warning, $color-hover-lighten);
-$color-hover-danger: lighten($color-danger, $color-hover-lighten);
-$color-hover-color-1: lighten($color-color-1, $color-hover-lighten);
-$color-hover-color-2: lighten($color-color-2, $color-hover-lighten);
-$color-hover-color-3: lighten($color-color-3, $color-hover-lighten);
+$color-hover-body: lighten($color-body, $color-hover-lighten) !default;
+$color-hover-primary: lighten($color-primary, $color-hover-lighten) !default;
+$color-hover-alternative: lighten($color-alternative, $color-hover-lighten) !default;
+$color-hover-link: lighten($color-link, $color-hover-lighten) !default;
+$color-hover-mute: lighten($color-mute, $color-hover-lighten) !default;
+$color-hover-cancel: lighten($color-cancel, $color-hover-lighten) !default;
+$color-hover-success: lighten($color-success, $color-hover-lighten) !default;
+$color-hover-info: lighten($color-info, $color-hover-lighten) !default;
+$color-hover-warning: lighten($color-warning, $color-hover-lighten) !default;
+$color-hover-danger: lighten($color-danger, $color-hover-lighten) !default;
+$color-hover-color-1: lighten($color-color-1, $color-hover-lighten) !default;
+$color-hover-color-2: lighten($color-color-2, $color-hover-lighten) !default;
+$color-hover-color-3: lighten($color-color-3, $color-hover-lighten) !default;
 
 // Links
-$link-color: $color-link;
-$link-hover-color: $color-hover-link;
-$link-decoration: none;
-$link-hover-decoration: underline;
+$link-color: $color-link !default;
+$link-hover-color: $color-hover-link !default;
+$link-decoration: none !default;
+$link-hover-decoration: underline !default;
 
 // Window
-$window-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-$window-content-background: #fff;
-$window-content-padding: 10px 10px;
-$window-header-background: #fff;
-$window-header-padding: 10px 10px;
-$window-header-color: $color-body;
-$window-header-font-size: 1.3rem;
-$window-header-border-bottom: 1px solid lighten($color-mute, 60%);
-$window-border: 0 none;
-$window-border-radius: 0;
-$window-footer-background: #fff;
-$window-footer-padding: 10px 10px;
-$window-footer-color: $color-body;
-$window-footer-border-top: 1px solid lighten($color-mute, 60%);
+$window-shadow: 0 0 5px rgba(0, 0, 0, 0.5) !default;
+$window-content-background: #fff !default;
+$window-content-padding: 10px 10px !default;
+$window-header-background: #fff !default;
+$window-header-padding: 10px 10px !default;
+$window-header-color: $color-body !default;
+$window-header-font-size: 1.3rem !default;
+$window-header-border-bottom: 1px solid lighten($color-mute, 60%) !default;
+$window-border: 0 none !default;
+$window-border-radius: 0 !default;
+$window-footer-background: #fff !default;
+$window-footer-padding: 10px 10px !default;
+$window-footer-color: $color-body !default;
+$window-footer-border-top: 1px solid lighten($color-mute, 60%) !default;
 
 // Modals
-$modal-width: 650px;
-$modal-margin: 5vh;
-$modal-min-height: 300px;
-$modal-max-width: calc(100% - (#{$content-min-margin + $layout-unit} * 2));
-$modal-background-color: rgba(0, 0, 0, 0.7);
-$modal-border: 0 none;
-$modal-header-background: transparent;
-$modal-animate-function: 0.4s ease;
-$modal-animate-transform-x: 0;
-$modal-animate-transform-y: -100vh;
+$modal-width: 650px !default;
+$modal-margin: 5vh !default;
+$modal-min-height: 300px !default;
+$modal-max-width: calc(100% - (#{$content-min-margin + $layout-unit} * 2)) !default;
+$modal-background-color: rgba(0, 0, 0, 0.7) !default;
+$modal-border: 0 none !default;
+$modal-header-background: transparent !default;
+$modal-animate-function: 0.4s ease !default;
+$modal-animate-transform-x: 0 !default;
+$modal-animate-transform-y: -100vh !default;
 
-$modal-s-width: 450px;
-$modal-l-width: 70%;
-$modal-xl-width: 80%;
-$modal-fullscreen-width: 100%;
+$modal-s-width: 450px !default;
+$modal-l-width: 70% !default;
+$modal-xl-width: 80% !default;
+$modal-fullscreen-width: 100% !default;
 
 // Header
-$header-height: 65px;
-$header-background: darken($color-primary, 10%);
-$header-color: $color-primary-contrast;
-$header-vertical-padding: $content-min-margin + $layout-unit;
-$header-horizontal-padding: 0;
+$header-height: 65px !default;
+$header-background: darken($color-primary, 10%) !default;
+$header-color: $color-primary-contrast !default;
+$header-vertical-padding: $content-min-margin + $layout-unit !default;
+$header-horizontal-padding: 0 !default;
 
 // Tabs
-$tab-nav-active-background: $color-primary;
-$tab-nav-active-color: #fff;
-$tab-nav-active-border: 1px solid darken($color-primary, 10%);
-$tab-nav-active-shadow: none;
+$tab-nav-active-background: $color-primary !default;
+$tab-nav-active-color: #fff !default;
+$tab-nav-active-border: 1px solid darken($color-primary, 10%) !default;
+$tab-nav-active-shadow: none !default;
 
 // Tooltips
-$tooltip-background: darken($color-primary, 20%);
-$tooltip-border-width: 0;
-$tooltip-border-color: rgba(60, 60, 60, 1);
-$tooltip-border: $tooltip-border-width solid $tooltip-border-color;
-$tooltip-shadow: 0;
-$tooltip-text-color: #fff;
-$tooltip-font-size: 0.8rem;
-$tooltip-line-height: 1.35em;
-$tooltip-padding-vertical: 0.45rem;
-$tooltip-padding-horizontal: 0.65rem;
-$tooltip-max-width: 30rem;
-$tooltip-width: max-content;  // Try not change this configuration
-$tooltip-border-radius: 5px;
-$tooltip-arrow-height: 5px;
-$tooltip-arrow-width: $tooltip-arrow-height;
-$tooltip-arrow-offset: 10px;
-$tooltip-offset: $tooltip-arrow-offset;
-$tooltip-distance: 5px;
+$tooltip-background: darken($color-primary, 20%) !default;
+$tooltip-border-width: 0 !default;
+$tooltip-border-color: rgba(60, 60, 60, 1) !default;
+$tooltip-border: $tooltip-border-width solid $tooltip-border-color !default;
+$tooltip-shadow: 0 !default;
+$tooltip-text-color: #fff !default;
+$tooltip-font-size: 0.8rem !default;
+$tooltip-line-height: 1.35em !default;
+$tooltip-padding-vertical: 0.45rem !default;
+$tooltip-padding-horizontal: 0.65rem !default;
+$tooltip-max-width: 30rem !default;
+$tooltip-width: max-content !default; // Try not change this configuration
+$tooltip-border-radius: 5px !default;
+$tooltip-arrow-height: 5px !default;
+$tooltip-arrow-width: $tooltip-arrow-height !default;
+$tooltip-arrow-offset: 10px !default;
+$tooltip-offset: $tooltip-arrow-offset !default;
+$tooltip-distance: 5px !default;
 
 // Popups
-$popup-background: rgba(255, 255, 255, 1);
-$popup-border-width: 1px;
-$popup-border-color: rgba(60, 60, 60, 1);
-$popup-border: $popup-border-width solid $popup-border-color;
-$popup-shadow: none;
-$popup-text-color: $color-body;
-$popup-padding-horizontal: 0;
-$popup-padding-vertical: 0;
-$popup-padding: $popup-padding-vertical $popup-padding-horizontal;
-$popup-max-width: 30rem;
-$popup-min-width: 0;
-$popup-width: max-content;
-$popup-border-radius: 0;
-$popup-arrow-color: $color-body;
-$popup-arrow-height: 0;
-$popup-arrow-width: $popup-arrow-height;
-$popup-arrow-offset: 20px;
-$popup-offset: 0;
-$popup-distance: 0;
+$popup-background: rgba(255, 255, 255, 1) !default;
+$popup-border-width: 1px !default;
+$popup-border-color: rgba(60, 60, 60, 1) !default;
+$popup-border: $popup-border-width solid $popup-border-color !default;
+$popup-shadow: none !default;
+$popup-text-color: $color-body !default;
+$popup-padding-horizontal: 0 !default;
+$popup-padding-vertical: 0 !default;
+$popup-padding: $popup-padding-vertical $popup-padding-horizontal !default;
+$popup-max-width: 30rem !default;
+$popup-min-width: 0 !default;
+$popup-width: max-content !default;
+$popup-border-radius: 0 !default;
+$popup-arrow-color: $color-body !default;
+$popup-arrow-height: 0 !default;
+$popup-arrow-width: $popup-arrow-height !default;
+$popup-arrow-offset: 20px !default;
+$popup-offset: 0 !default;
+$popup-distance: 0 !default;
 
 //// Popup inner
-$popup-content-padding: 15px 20px;
-$popup-footer-padding: $popup-content-padding;
-$popup-header-padding: $popup-footer-padding;
-$popup-header-bg: $color-body;
-$popup-header-text-color: #fff;
-$popup-footer-bg: transparent;
-$popup-footer-text-color: inherit;
+$popup-content-padding: 15px 20px !default;
+$popup-footer-padding: $popup-content-padding !default;
+$popup-header-padding: $popup-footer-padding !default;
+$popup-header-bg: $color-body !default;
+$popup-header-text-color: #fff !default;
+$popup-footer-bg: transparent !default;
+$popup-footer-text-color: inherit !default;
 
 // Accordion
-$accordion-animated-max-height: 200vh;
-$accordion-animated-time: 1s;
+$accordion-animated-max-height: 200vh !default;
+$accordion-animated-time: 1s !default;
 
 // Side
-$side-full-width: 90%;
-$side-animate-time: 1s;
-$side-hoverable-offset-width: 5px;
-$side-hoverable-offset-height: 5px;
-$side-backdrop-color: rgba(0, 0, 0, 1);
-$side-backdrop-opacity: 0.5;
-$side-width-default: 200px;
-$side-height-default: 150px;
-$side-collapse-width: 50px;
-$side-collapse-height: $content-max-height/$base-steps + $layout-unit;
+$side-full-width: 90% !default;
+$side-animate-time: 1s !default;
+$side-hoverable-offset-width: 5px !default;
+$side-hoverable-offset-height: 5px !default;
+$side-backdrop-color: rgba(0, 0, 0, 1) !default;
+$side-backdrop-opacity: 0.5 !default;
+$side-width-default: 200px !default;
+$side-height-default: 150px !default;
+$side-collapse-width: 50px !default;
+$side-collapse-height: $content-max-height/$base-steps + $layout-unit !default;
 
 // Chart
-$chart-height: 100px;
-$chart-ring-width: 10px;
-$chart-color: green;
-$chart-background: red;
-$chart-value-font-size: 20px;
-$chart-value-color: $chart-background;
-$chart-parent-background: inherit;
+$chart-height: 100px !default;
+$chart-ring-width: 10px !default;
+$chart-color: green !default;
+$chart-background: red !default;
+$chart-value-font-size: 20px !default;
+$chart-value-color: $chart-background !default;
+$chart-parent-background: inherit !default;
 
 // Form
-$focus-shadow: 1px 1px 0 $color-focus inset, -1px -1px 0 $color-focus inset;
+$focus-shadow: 1px 1px 0 $color-focus inset,
+  -1px -1px 0 $color-focus inset !default;
 
-$input-default-padding-vertical: 0.35rem;
-$input-default-padding-horizontal: 0.5rem;
-$input-border-style: solid;
-$input-default-border-width: 1px;
-$input-border-color: #ccc;
-$input-default-border-radius: 3px;
-$input-background-color: #fff;
-$input-default-font-size: 1rem;
-$input-default-line-height: 1.35rem;
-$input-font-weight: normal;
-$input-text-color: $color-body;
-$input-default-outline: none;
-$input-default-shadow: none;
+$input-default-padding-vertical: 0.35rem !default;
+$input-default-padding-horizontal: 0.5rem !default;
+$input-border-style: solid !default;
+$input-default-border-width: 1px !default;
+$input-border-color: #ccc !default;
+$input-default-border-radius: 3px !default;
+$input-background-color: #fff !default;
+$input-default-font-size: 1rem !default;
+$input-default-line-height: 1.35rem !default;
+$input-font-weight: normal !default;
+$input-text-color: $color-body !default;
+$input-default-outline: none !default;
+$input-default-shadow: none !default;
 
 $input-size-props: (
-  s: (
-    padding-vertical: $input-default-padding-vertical * $size-s,
+  s: (padding-vertical: $input-default-padding-vertical * $size-s,
     padding-horizontal: $input-default-padding-horizontal * $size-s,
     border-width: $input-default-border-width,
     border-radius: $input-default-border-radius - 1px,
     font-size: $input-default-font-size * $size-s,
     line-height: $input-default-line-height * $size-s,
     outline: $input-default-outline,
-    shadow: $input-default-shadow
-  ),
-  m: (
-    padding-vertical: $input-default-padding-vertical * $size-m,
+    shadow: $input-default-shadow ),
+  m: (padding-vertical: $input-default-padding-vertical * $size-m,
     padding-horizontal: $input-default-padding-horizontal * $size-m,
     border-width: $input-default-border-width,
     border-radius: $input-default-border-radius + 2px,
     font-size: $input-default-font-size * $size-m,
     line-height: $input-default-line-height * $size-m,
     outline: $input-default-outline,
-    shadow: $input-default-shadow
-  ),
-  l: (
-    padding-vertical: $input-default-padding-vertical * $size-l,
+    shadow: $input-default-shadow ),
+  l: (padding-vertical: $input-default-padding-vertical * $size-l,
     padding-horizontal: $input-default-padding-horizontal * $size-l,
     border-width: $input-default-border-width,
     border-radius: $input-default-border-radius + 1px,
     font-size: $input-default-font-size * $size-l,
     line-height: $input-default-line-height * $size-l,
     outline: $input-default-outline,
-    shadow: $input-default-shadow
-  )
-);
+    shadow: $input-default-shadow )) !default;
 
-$input-hover-border-style: $input-border-style;
-$input-hover-border-color: $input-border-color;
-$input-hover-outline: none;
-$input-hover-shadow: none;
-$input-hover-background-color: $input-background-color;
+$input-hover-border-style: $input-border-style !default;
+$input-hover-border-color: $input-border-color !default;
+$input-hover-outline: none !default;
+$input-hover-shadow: none !default;
+$input-hover-background-color: $input-background-color !default;
 
-$input-focus-border-style: none;
-$input-focus-border-color: none;
-$input-focus-outline: none;
-$input-focus-shadow: $focus-shadow;
-$input-focus-background-color: none;
+$input-focus-border-style: none !default;
+$input-focus-border-color: none !default;
+$input-focus-outline: none !default;
+$input-focus-shadow: $focus-shadow !default;
+$input-focus-background-color: none !default;
 
-$label-font-size: 1rem;
-$label-line-height: 1.35rem;
-$label-font-weight: normal;
-$label-text-transform: none;
-$label-text-color: $color-body;
+$label-font-size: 1rem !default;
+$label-line-height: 1.35rem !default;
+$label-font-weight: normal !default;
+$label-text-transform: none !default;
+$label-text-color: $color-body !default;
 
-$hint-font-size: 1rem;
-$hint-line-height: 1.35rem;
-$hint-font-weight: normal;
-$hint-text-transform: none;
-$hint-text-color: $color-body;
+$hint-font-size: 1rem !default;
+$hint-line-height: 1.35rem !default;
+$hint-font-weight: normal !default;
+$hint-text-transform: none !default;
+$hint-text-color: $color-body !default;
 
-$input-disabled-opacity: 0.7;
-$input-icon-text-color: $input-text-color;
-$input-icon-font-size: 1em;
-$input-addon-text-color: $input-text-color;
-$input-addon-text-transform: uppercase;
-$input-addon-font-size: 0.8em;
-$input-addon-font-weight: normal;
+$input-disabled-opacity: 0.7 !default;
+$input-icon-text-color: $input-text-color !default;
+$input-icon-font-size: 1em !default;
+$input-addon-text-color: $input-text-color !default;
+$input-addon-text-transform: uppercase !default;
+$input-addon-font-size: 0.8em !default;
+$input-addon-font-weight: normal !default;
 
-$input-lighten: 0%;
-$input-background-lighten: 80%;
-$input-border-lighten: 0%;
+$input-lighten: 0% !default;
+$input-background-lighten: 80% !default;
+$input-border-lighten: 0% !default;
 
 $input-color: (
   has-success: lighten($color-success, $input-lighten),
   has-info: lighten($color-info, $input-lighten),
   has-warning: lighten($color-warning, $input-lighten),
-  has-error: lighten($color-danger, $input-lighten)
-);
+  has-error: lighten($color-danger, $input-lighten)) !default;
 
 $input-background: (
   has-success: lighten($color-success, $input-background-lighten),
   has-info: lighten($color-info, $input-background-lighten),
   has-warning: lighten($color-warning, $input-background-lighten),
-  has-error: lighten($color-danger, $input-background-lighten)
-);
+  has-error: lighten($color-danger, $input-background-lighten)) !default;
 
 $input-background-contrast: (
   has-success: $input-text-color,
   has-info: $input-text-color,
   has-warning: $input-text-color,
-  has-error: $input-text-color
-);
+  has-error: $input-text-color) !default;
 
 $input-tooltip: (
   has-success: $color-success,
   has-info: $color-info,
   has-warning: $color-warning,
-  has-error: $color-danger
-);
+  has-error: $color-danger) !default;
 
 $input-tooltip-contrast: (
   has-success: $color-success-contrast,
   has-info: $color-info-contrast,
   has-warning: $color-warning-contrast,
-  has-error: $color-danger-contrast
-);
+  has-error: $color-danger-contrast) !default;
 
 $input-border: (
   has-success: lighten($color-success, $input-border-lighten),
   has-info: lighten($color-info, $input-border-lighten),
   has-warning: lighten($color-warning, $input-border-lighten),
-  has-error: lighten($color-danger, $input-border-lighten)
-);
+  has-error: lighten($color-danger, $input-border-lighten)) !default;
 
-$select-arrow-icon-down: "\f0d7";
-$select-arrow-icon-up: "\f0d8";
-$select-max-height: 50vh;
+$select-arrow-icon-down: "\f0d7" !default;
+$select-arrow-icon-up: "\f0d8" !default;
+$select-max-height: 50vh !default;
 
-$icon-close: "\f00d";
+$icon-close: "\f00d" !default;
 
 // Description List
-$dd-gutter: 20px;
-$dd-space-default: 20px;
-$dd-title-space-default: 5px;
-$dl-size-default: 3;
+$dd-gutter: 20px !default;
+$dd-space-default: 20px !default;
+$dd-title-space-default: 5px !default;
+$dl-size-default: 3 !default;
 
 // Menu
 
@@ -347,105 +334,103 @@ $input-tooltip-contrast: (
   has-success: $color-success-contrast,
   has-info: $color-info-contrast,
   has-warning: $color-warning-contrast,
-  has-error: $color-danger-contrast
-);
+  has-error: $color-danger-contrast) !default;
 
 $input-border: (
   has-success: lighten($color-success, $input-border-lighten),
   has-info: lighten($color-info, $input-border-lighten),
   has-warning: lighten($color-warning, $input-border-lighten),
-  has-error: lighten($color-danger, $input-border-lighten)
-);
+  has-error: lighten($color-danger, $input-border-lighten)) !default;
 
-$select-arrow-icon-down: "\f0d7";
-$select-arrow-icon-up: "\f0d8";
-$select-max-height: 50vh;
+$select-arrow-icon-down: "\f0d7" !default;
+$select-arrow-icon-up: "\f0d8" !default;
+$select-max-height: 50vh !default;
 
-$icon-close: "\f00d";
+$icon-close: "\f00d" !default;
 
 // Description List
-$dd-gutter: 20px;
-$dd-space-default: 20px;
-$dd-title-space-default: 5px;
-$dl-size-default: 3;
+$dd-gutter: 20px !default;
+$dd-space-default: 20px !default;
+$dd-title-space-default: 5px !default;
+$dl-size-default: 3 !default;
 
 // Menu
-$side-menu-item-color: #fff;
-$side-menu-item-background-color: transparent;
-$side-menu-item-background-color-hover: darken($color-primary, 15);
-$side-menu-item-anchor-border: 0 none;
+$side-menu-item-color: #fff !default;
+$side-menu-item-background-color: transparent !default;
+$side-menu-item-background-color-hover: darken($color-primary, 15) !default;
+$side-menu-item-anchor-border: 0 none !default;
 
-$menu-item-background-color: lighten($color-primary, 70);
-$menu-item-background-color-hover: lighten($color-primary, 60);
-$menu-item-color: $color-body;
-$menu-item-color-hover: $color-body;
-$menu-item-color-active: $color-alternative;
-$menu-item-padding: 0;
-$menu-item-anchor-decoration: none;
-$menu-item-anchor-decoration-hover: none;
-$menu-item-anchor-padding: 8px 10px;
-$menu-item-anchor-border: 1px solid rgba(0, 0, 0, 0.1);
-$menu-inside-item-anchor-padding: 5px 10px 5px 10px;
+$menu-item-background-color: lighten($color-primary, 70) !default;
+$menu-item-background-color-hover: lighten($color-primary, 60) !default;
+$menu-item-color: $color-body !default;
+$menu-item-color-hover: $color-body !default;
+$menu-item-color-active: $color-alternative !default;
+$menu-item-padding: 0 !default;
+$menu-item-anchor-decoration: none !default;
+$menu-item-anchor-decoration-hover: none !default;
+$menu-item-anchor-padding: 8px 10px !default;
+$menu-item-anchor-border: 1px solid rgba(0, 0, 0, 0.1) !default;
+$menu-inside-item-anchor-padding: 5px 10px 5px 10px !default;
 
 // Menu anchor link
-$menu-item-anchor-color: $link-color;
-$menu-item-anchor-hover-color: $link-hover-color;
-$menu-item-anchor-decoration: $link-decoration;
-$menu-item-anchor-hover-decoration: $link-hover-decoration;
+$menu-item-anchor-color: $link-color !default;
+$menu-item-anchor-hover-color: $link-hover-color !default;
+$menu-item-anchor-decoration: $link-decoration !default;
+$menu-item-anchor-hover-decoration: $link-hover-decoration !default;
 
-$mobile-menu-item-button-radius: 0;
+$mobile-menu-item-button-radius: 0 !default;
 
 // Typography
 //// Heading
-$h-font-weight: 500;
-$h-margin: 1rem;
-$p-margin: 2rem 0;
+$h-font-weight: 500 !default;
+$h-margin: 1rem !default;
+$p-margin: 2rem 0 !default;
 
-$h1-font-size: $typography-font-size-1;
-$h1-line-height: $typography-line-height-1;
-$h1-font-weight: $h-font-weight;
-$h1-margin: $h-margin * $size-xxl 0;
+$h1-font-size: $typography-font-size-1 !default;
+$h1-line-height: $typography-line-height-1 !default;
+$h1-font-weight: $h-font-weight !default;
+$h1-margin: $h-margin * $size-xxl 0 !default;
 
-$h2-font-size: $typography-font-size-2;
-$h2-line-height: $typography-line-height-2;
-$h2-font-weight: $h-font-weight;
-$h2-margin: $h-margin * $size-xl 0;
+$h2-font-size: $typography-font-size-2 !default;
+$h2-line-height: $typography-line-height-2 !default;
+$h2-font-weight: $h-font-weight !default;
+$h2-margin: $h-margin * $size-xl 0 !default;
 
-$h3-font-size: $typography-font-size-3;
-$h3-line-height: $typography-line-height-3;
-$h3-font-weight: $h-font-weight;
-$h3-margin: $h-margin * $size-l 0;
+$h3-font-size: $typography-font-size-3 !default;
+$h3-line-height: $typography-line-height-3 !default;
+$h3-font-weight: $h-font-weight !default;
+$h3-margin: $h-margin * $size-l 0 !default;
 
-$h4-font-size: $typography-font-size-4;
-$h4-line-height: $typography-line-height-4;
-$h4-font-weight: $h-font-weight;
-$h4-margin: $h-margin * $size-m 0;
+$h4-font-size: $typography-font-size-4 !default;
+$h4-line-height: $typography-line-height-4 !default;
+$h4-font-weight: $h-font-weight !default;
+$h4-margin: $h-margin * $size-m 0 !default;
 
-$h5-font-size: $typography-font-size-5;
-$h5-line-height: $typography-line-height-5;
-$h5-font-weight: $h-font-weight;
-$h5-margin: $h-margin * $size-s 0;
+$h5-font-size: $typography-font-size-5 !default;
+$h5-line-height: $typography-line-height-5 !default;
+$h5-font-weight: $h-font-weight !default;
+$h5-margin: $h-margin * $size-s 0 !default;
 
-$h6-font-size: $typography-font-size-6;
-$h6-line-height: $typography-line-height-6;
-$h6-font-weight: $h-font-weight;
-$h6-margin: $h-margin * $size-xs 0;
+$h6-font-size: $typography-font-size-6 !default;
+$h6-line-height: $typography-line-height-6 !default;
+$h6-font-weight: $h-font-weight !default;
+$h6-margin: $h-margin * $size-xs 0 !default;
 
-$article-p-margin: $p-margin;
+$article-p-margin: $p-margin !default;
 
 // ul, ol
-$list-margin: 0 0 0 1.5rem;
-$list-padding: 0;
-$list-item-margin: 0;
-$list-item-padding: 0;
-$list-item-space: 0.2rem;
+$list-margin: 0 0 0 1.5rem !default;
+$list-padding: 0 !default;
+$list-item-margin: 0 !default;
+$list-item-padding: 0 !default;
+$list-item-space: 0.2rem !default;
 
 
 // Colors modifier
-$background-lighten: 30%;
-$background-dark: 20%;
-$text-darken: 10%;
-$border-darken: 0%;
+$background-lighten: 30% !default;
+$background-dark: 20% !default;
+$text-darken: 10% !default;
+$border-darken: 0% !default;
 
 // Backgrounds
 $background-colors: (
@@ -461,8 +446,7 @@ $background-colors: (
   "danger": lighten($color-danger, $background-lighten),
   "color-1": lighten($color-color-1, $background-lighten),
   "color-2": lighten($color-color-2, $background-lighten),
-  "color-3": lighten($color-color-3, $background-lighten)
-);
+  "color-3": lighten($color-color-3, $background-lighten)) !default;
 
 $background-dark-colors: (
   "body": darken($color-body, $background-dark),
@@ -477,8 +461,7 @@ $background-dark-colors: (
   "danger": darken($color-danger, $background-dark),
   "color-1": darken($color-color-1, $background-dark),
   "color-2": darken($color-color-2, $background-dark),
-  "color-3": darken($color-color-3, $background-dark)
-);
+  "color-3": darken($color-color-3, $background-dark)) !default;
 
 $background-colors-hover: (
   "body": lighten(map-get($background-colors, "body"), $color-hover-lighten),
@@ -493,8 +476,7 @@ $background-colors-hover: (
   "danger": lighten(map-get($background-colors, "danger"), $color-hover-lighten),
   "color-1": lighten(map-get($background-colors, "color-1"), $color-hover-lighten),
   "color-2": lighten(map-get($background-colors, "color-2"), $color-hover-lighten),
-  "color-3": lighten(map-get($background-colors, "color-3"), $color-hover-lighten)
-);
+  "color-3": lighten(map-get($background-colors, "color-3"), $color-hover-lighten)) !default;
 
 // Text colors
 $text-colors: (
@@ -510,8 +492,7 @@ $text-colors: (
   "danger": darken($color-danger, $text-darken),
   "color-1": darken($color-color-1, $text-darken),
   "color-2": darken($color-color-2, $text-darken),
-  "color-3": darken($color-color-3, $text-darken)
-);
+  "color-3": darken($color-color-3, $text-darken)) !default;
 
 $border-colors: (
   "body": darken($color-body, $border-darken),
@@ -526,128 +507,113 @@ $border-colors: (
   "danger": darken($color-danger, $border-darken),
   "color-1": darken($color-color-1, $border-darken),
   "color-2": darken($color-color-2, $border-darken),
-  "color-3": darken($color-color-3, $border-darken)
-);
+  "color-3": darken($color-color-3, $border-darken)) !default;
 
 // Buttons
-$button-border-style: solid;
-$button-text-align: center;
-$button-cursor: pointer;
+$button-border-style: solid !default;
+$button-text-align: center !default;
+$button-cursor: pointer !default;
 
-$button-lighten: 0%;
-$button-lighten-2: 0%;
+$button-lighten: 0% !default;
+$button-lighten-2: 0% !default;
 
-$button-hover-lighten: 10%;
-$button-hover-lighten-2: 20%;
+$button-hover-lighten: 10% !default;
+$button-hover-lighten-2: 20% !default;
 
-$button-focus-lighten: 8%;
-$button-focus-lighten-2: 18%;
+$button-focus-lighten: 8% !default;
+$button-focus-lighten-2: 18% !default;
 
-$button-active-lighten: 8%;
-$button-active-lighten-2: 18%;
+$button-active-lighten: 8% !default;
+$button-active-lighten-2: 18% !default;
 
-$button-default-text: $color-white-contrast;
-$button-default-background: $color-white;
+$button-default-text: $color-white-contrast !default;
+$button-default-background: $color-white !default;
 
-$button-default-font-size: 1rem;
-$button-default-line-height: 1.35rem;
-$button-default-padding-horizontal: 0.7rem;
-$button-default-padding-vertical: 0.35rem;
-$button-default-border-radius: 3px;
-$button-default-border: 1px solid currentColor;
-$button-default-outline: none;
-$button-default-shadow: none;
+$button-default-font-size: 1rem !default;
+$button-default-line-height: 1.35rem !default;
+$button-default-padding-horizontal: 0.7rem !default;
+$button-default-padding-vertical: 0.35rem !default;
+$button-default-border-radius: 3px !default;
+$button-default-border: 1px solid currentColor !default;
+$button-default-outline: none !default;
+$button-default-shadow: none !default;
 
 // Use variables name as: button-<size-name>-... on $sizes array
 $button-sizes: (
-  xs: (
-    font-size: $button-default-font-size * $size-xs,
+  xs: (font-size: $button-default-font-size * $size-xs,
     line-height: $button-default-line-height * $size-xs,
     padding: $button-default-padding-vertical * $size-xs $button-default-padding-horizontal * $size-xs,
     border-radius: $button-default-border-radius - 1px,
     border-width: none,
     outline-width: none,
-    shadow: none
-  ),
-  s: (
-    font-size: $button-default-font-size * $size-s,
+    shadow: none),
+  s: (font-size: $button-default-font-size * $size-s,
     line-height: $button-default-line-height * $size-s,
     padding: $button-default-padding-vertical * $size-s $button-default-padding-horizontal * $size-s,
     border-radius: $button-default-border-radius - 1px,
     border-width: none,
     outline-width: none,
-    shadow: none
-  ),
-  m: (
-    font-size: $button-default-font-size * $size-m,
+    shadow: none),
+  m: (font-size: $button-default-font-size * $size-m,
     line-height: $button-default-line-height * $size-m,
     padding: $button-default-padding-vertical * $size-m $button-default-padding-horizontal * $size-m,
     border-radius: $button-default-border-radius + 2px,
     border-width: none,
     outline-width: none,
-    shadow: none
-  ),
-  l: (
-    font-size: $button-default-font-size * $size-l,
+    shadow: none),
+  l: (font-size: $button-default-font-size * $size-l,
     line-height: $button-default-line-height * $size-l,
     padding: $button-default-padding-vertical * $size-l $button-default-padding-horizontal * $size-l,
     border-radius: $button-default-border-radius + 1px,
     border-width: none,
     outline-width: none,
-    shadow: none
-  ),
-  xl: (
-    font-size: $button-default-font-size * $size-xl,
+    shadow: none),
+  xl: (font-size: $button-default-font-size * $size-xl,
     line-height: $button-default-line-height * $size-xl,
     padding: $button-default-padding-vertical * $size-xl $button-default-padding-horizontal * $size-xl,
     border-radius: $button-default-border-radius + 2px,
     border-width: none,
     outline-width: none,
-    shadow: none
-  ),
-  xxl: (
-    font-size: $button-default-font-size * $size-xxl,
+    shadow: none),
+  xxl: (font-size: $button-default-font-size * $size-xxl,
     line-height: $button-default-line-height * $size-xxl,
     padding: $button-default-padding-vertical * $size-xxl $button-default-padding-horizontal * $size-xxl,
     border-radius: $button-default-border-radius + 3px,
     border-width: none,
     outline-width: none,
-    shadow: none
-  )
-);
+    shadow: none)) !default;
 
-$button-hover-border: none;
-$button-hover-outline: none;
-$button-hover-shadow: none;
+$button-hover-border: none !default;
+$button-hover-outline: none !default;
+$button-hover-shadow: none !default;
 
-$button-active-border: none;
-$button-active-outline: none;
-$button-active-shadow: $focus-shadow inset;
+$button-active-border: none !default;
+$button-active-outline: none !default;
+$button-active-shadow: $focus-shadow inset !default;
 
-$button-focus-border: none;
-$button-focus-outline: none;
-$button-focus-shadow: $focus-shadow;
+$button-focus-border: none !default;
+$button-focus-outline: none !default;
+$button-focus-shadow: $focus-shadow !default;
 
-$button-inverse-border: $button-default-border;
-$button-inverse-outline: $button-default-outline;
-$button-inverse-shadow: $button-default-shadow;
+$button-inverse-border: $button-default-border !default;
+$button-inverse-outline: $button-default-outline !default;
+$button-inverse-shadow: $button-default-shadow !default;
 
-$button-inverse-hover-border: $button-inverse-border;
-$button-inverse-hover-outline: $button-inverse-outline;
-$button-inverse-hover-shadow: $button-inverse-shadow;
-$button-inverse-active-border: $button-inverse-border;
-$button-inverse-active-outline: $button-inverse-outline;
-$button-inverse-active-shadow: $button-active-shadow;
+$button-inverse-hover-border: $button-inverse-border !default;
+$button-inverse-hover-outline: $button-inverse-outline !default;
+$button-inverse-hover-shadow: $button-inverse-shadow !default;
+$button-inverse-active-border: $button-inverse-border !default;
+$button-inverse-active-outline: $button-inverse-outline !default;
+$button-inverse-active-shadow: $button-active-shadow !default;
 
-$button-inverse-focus-border: $button-inverse-border;
-$button-inverse-focus-outline: $button-inverse-outline;
-$button-inverse-focus-shadow: $button-inverse-shadow;
+$button-inverse-focus-border: $button-inverse-border !default;
+$button-inverse-focus-outline: $button-inverse-outline !default;
+$button-inverse-focus-shadow: $button-inverse-shadow !default;
 
 // Buttons colors
 // Use variables name as: button-color-<color-name>... or button-color-...-<color-name>.. on $colors array
 $button-colors: (
-  color: (
-    "body": lighten($color-body, $button-lighten),
+  color: ("body": lighten($color-body, $button-lighten),
     "primary": lighten($color-primary, $button-lighten),
     "alternative": lighten($color-alternative, $button-lighten),
     "link": lighten($color-link, $button-lighten),
@@ -659,10 +625,8 @@ $button-colors: (
     "danger": lighten($color-danger, $button-lighten),
     "color-1": lighten($color-color-1, $button-lighten),
     "color-2": lighten($color-color-2, $button-lighten),
-    "color-3": lighten($color-color-3, $button-lighten)
-  ),
-  color-2: (
-    "body": lighten($color-body, $button-lighten-2),
+    "color-3": lighten($color-color-3, $button-lighten)),
+  color-2: ("body": lighten($color-body, $button-lighten-2),
     "primary": lighten($color-primary, $button-lighten-2),
     "alternative": lighten($color-alternative, $button-lighten-2),
     "link": lighten($color-link, $button-lighten-2),
@@ -674,13 +638,10 @@ $button-colors: (
     "danger": lighten($color-danger, $button-lighten-2),
     "color-1": lighten($color-color-1, $button-lighten-2),
     "color-2": lighten($color-color-2, $button-lighten-2),
-    "color-3": lighten($color-color-3, $button-lighten-2)
-  )
-);
+    "color-3": lighten($color-color-3, $button-lighten-2))) !default;
 $button-colors: (
   color: map-get($button-colors, "color"),
-  color-hover: (
-    "body": lighten(map-deep-get($button-colors, "color", "body"), $button-hover-lighten),
+  color-hover: ("body": lighten(map-deep-get($button-colors, "color", "body"), $button-hover-lighten),
     "primary": lighten(map-deep-get($button-colors, "color", "primary"), $button-hover-lighten),
     "alternative": lighten(map-deep-get($button-colors, "color", "alternative"), $button-hover-lighten),
     "link": lighten(map-deep-get($button-colors, "color", "link"), $button-hover-lighten),
@@ -692,11 +653,9 @@ $button-colors: (
     "danger": lighten(map-deep-get($button-colors, "color", "danger"), $button-hover-lighten),
     "color-1": lighten(map-deep-get($button-colors, "color", "color-1"), $button-hover-lighten),
     "color-2": lighten(map-deep-get($button-colors, "color", "color-2"), $button-hover-lighten),
-    "color-3": lighten(map-deep-get($button-colors, "color", "color-3"), $button-hover-lighten)
-  ),
+    "color-3": lighten(map-deep-get($button-colors, "color", "color-3"), $button-hover-lighten)),
   color-2: map-get($button-colors, "color-2"),
-  color-2-hover: (
-    "body": lighten(map-deep-get($button-colors, "color-2", "body"), $button-hover-lighten-2),
+  color-2-hover: ("body": lighten(map-deep-get($button-colors, "color-2", "body"), $button-hover-lighten-2),
     "primary": lighten(map-deep-get($button-colors, "color-2", "primary"), $button-hover-lighten-2),
     "alternative": lighten(map-deep-get($button-colors, "color-2", "alternative"), $button-hover-lighten-2),
     "link": lighten(map-deep-get($button-colors, "color-2", "link"), $button-hover-lighten-2),
@@ -708,10 +667,8 @@ $button-colors: (
     "danger": lighten(map-deep-get($button-colors, "color-2", "danger"), $button-hover-lighten-2),
     "color-1": lighten(map-deep-get($button-colors, "color-2", "color-1"), $button-hover-lighten-2),
     "color-2": lighten(map-deep-get($button-colors, "color-2", "color-2"), $button-hover-lighten-2),
-    "color-3": lighten(map-deep-get($button-colors, "color-2", "color-3"), $button-hover-lighten-2)
-  ),
-  color-focus: (
-    "body": lighten(map-deep-get($button-colors, "color", "body"), $button-focus-lighten),
+    "color-3": lighten(map-deep-get($button-colors, "color-2", "color-3"), $button-hover-lighten-2)),
+  color-focus: ("body": lighten(map-deep-get($button-colors, "color", "body"), $button-focus-lighten),
     "primary": lighten(map-deep-get($button-colors, "color", "primary"), $button-focus-lighten),
     "alternative": lighten(map-deep-get($button-colors, "color", "alternative"), $button-focus-lighten),
     "link": lighten(map-deep-get($button-colors, "color", "link"), $button-focus-lighten),
@@ -723,10 +680,8 @@ $button-colors: (
     "danger": lighten(map-deep-get($button-colors, "color", "danger"), $button-focus-lighten),
     "color-1": lighten(map-deep-get($button-colors, "color", "color-1"), $button-focus-lighten),
     "color-2": lighten(map-deep-get($button-colors, "color", "color-2"), $button-focus-lighten),
-    "color-3": lighten(map-deep-get($button-colors, "color", "color-3"), $button-focus-lighten)
-  ),
-  color-2-focus: (
-    "body": lighten(map-deep-get($button-colors, "color", "body"), $button-focus-lighten-2),
+    "color-3": lighten(map-deep-get($button-colors, "color", "color-3"), $button-focus-lighten)),
+  color-2-focus: ("body": lighten(map-deep-get($button-colors, "color", "body"), $button-focus-lighten-2),
     "primary": lighten(map-deep-get($button-colors, "color", "primary"), $button-focus-lighten-2),
     "alternative": lighten(map-deep-get($button-colors, "color", "alternative"), $button-focus-lighten-2),
     "link": lighten(map-deep-get($button-colors, "color", "link"), $button-focus-lighten-2),
@@ -738,10 +693,8 @@ $button-colors: (
     "danger": lighten(map-deep-get($button-colors, "color", "danger"), $button-focus-lighten-2),
     "color-1": lighten(map-deep-get($button-colors, "color", "color-1"), $button-focus-lighten-2),
     "color-2": lighten(map-deep-get($button-colors, "color", "color-2"), $button-focus-lighten-2),
-    "color-3": lighten(map-deep-get($button-colors, "color", "color-3"), $button-focus-lighten-2)
-  ),
-  color-active: (
-    "body": lighten(map-deep-get($button-colors, "color", "body"), $button-active-lighten),
+    "color-3": lighten(map-deep-get($button-colors, "color", "color-3"), $button-focus-lighten-2)),
+  color-active: ("body": lighten(map-deep-get($button-colors, "color", "body"), $button-active-lighten),
     "primary": lighten(map-deep-get($button-colors, "color", "primary"), $button-active-lighten),
     "alternative": lighten(map-deep-get($button-colors, "color", "alternative"), $button-active-lighten),
     "link": lighten(map-deep-get($button-colors, "color", "link"), $button-active-lighten),
@@ -753,10 +706,8 @@ $button-colors: (
     "danger": lighten(map-deep-get($button-colors, "color", "danger"), $button-active-lighten),
     "color-1": lighten(map-deep-get($button-colors, "color", "color-1"), $button-active-lighten),
     "color-2": lighten(map-deep-get($button-colors, "color", "color-2"), $button-active-lighten),
-    "color-3": lighten(map-deep-get($button-colors, "color", "color-3"), $button-active-lighten)
-  ),
-  color-2-active: (
-    "body": lighten(map-deep-get($button-colors, "color", "body"), $button-active-lighten-2),
+    "color-3": lighten(map-deep-get($button-colors, "color", "color-3"), $button-active-lighten)),
+  color-2-active: ("body": lighten(map-deep-get($button-colors, "color", "body"), $button-active-lighten-2),
     "primary": lighten(map-deep-get($button-colors, "color", "primary"), $button-active-lighten-2),
     "alternative": lighten(map-deep-get($button-colors, "color", "alternative"), $button-active-lighten-2),
     "link": lighten(map-deep-get($button-colors, "color", "link"), $button-active-lighten-2),
@@ -768,52 +719,58 @@ $button-colors: (
     "danger": lighten(map-deep-get($button-colors, "color", "danger"), $button-active-lighten-2),
     "color-1": lighten(map-deep-get($button-colors, "color", "color-1"), $button-active-lighten),
     "color-2": lighten(map-deep-get($button-colors, "color", "color-2"), $button-active-lighten-2),
-    "color-3": lighten(map-deep-get($button-colors, "color", "color-3"), $button-active-lighten-2)
-  )
-);
+    "color-3": lighten(map-deep-get($button-colors, "color", "color-3"), $button-active-lighten-2))) !default;
 
 // Table
-$table-color: $color-body; // table text color
-$table-base-color: $color-alternative; // table base thema color
-$table-base-color-hover: lighten($table-base-color, 10%); 
-$table-base-color-contrast: #fff;
-$table-base-color-border: $color-mute;
+$table-color: $color-body !default; // table text color
+$table-base-color: $color-alternative !default; // table base thema color
+$table-base-color-hover: lighten($table-base-color, 10%) !default;
+$table-base-color-contrast: #fff !default;
+$table-base-color-border: $color-mute !default;
 
-$table-font-size: 1rem;
-$table-td-padding: 1rem 0.5rem;
-$table-th-padding: 0.7rem 0.5rem;
-$table-th-font-size: 0.8rem;
-$table-text-align: left;
+$table-font-size: 1rem !default;
+$table-td-padding: 1rem 0.5rem !default;
+$table-th-padding: 0.7rem 0.5rem !default;
+$table-th-font-size: 0.8rem !default;
+$table-text-align: left !default;
 
-$table-tr-bgcolor-hover: lighten($table-base-color-hover, 7%);
-$table-tr-color-hover: $table-base-color-contrast;
-$table-td-bgcolor-hover: $table-base-color-hover;
-$table-td-color-hover: $table-base-color-contrast;
-$table-col-bgcolor-hover: fade-in($table-base-color-hover, 0.15);
-$table-border: 1px solid lighten($table-base-color-border, 60%);
-$table-background: $table-base-color-contrast;
-$table-zebra-bgcolor: lighten($table-base-color-border, 60%);
+$table-tr-bgcolor-hover: lighten($table-base-color-hover, 7%) !default;
+$table-tr-color-hover: $table-base-color-contrast !default;
+$table-td-bgcolor-hover: $table-base-color-hover !default;
+$table-td-color-hover: $table-base-color-contrast !default;
+$table-col-bgcolor-hover: fade-in($table-base-color-hover, 0.15) !default;
+$table-border: 1px solid lighten($table-base-color-border, 60%) !default;
+$table-background: $table-base-color-contrast !default;
+$table-zebra-bgcolor: lighten($table-base-color-border, 60%) !default;
 
-$table-mobile-td-border: 1px solid lighten($table-base-color-border, 60%);
-$table-mobile-th-width: 30%;
-$table-mobile-td-width: 70%;
-$table-mobile-td-padding: 0.7rem 1rem 0.7rem 1.5rem;
-$table-mobile-th-padding: 0.7rem 1.5rem 0.7rem 1rem;
-$table-td-width-vw-sizes: 10, 20, 30, 40, 50, 60, 70, 80, 90;
+$table-mobile-td-border: 1px solid lighten($table-base-color-border, 60%) !default;
+$table-mobile-th-width: 30% !default;
+$table-mobile-td-width: 70% !default;
+$table-mobile-td-padding: 0.7rem 1rem 0.7rem 1.5rem !default;
+$table-mobile-th-padding: 0.7rem 1.5rem 0.7rem 1rem !default;
+$table-td-width-vw-sizes: 10,
+  20,
+  30,
+  40,
+  50,
+  60,
+  70,
+  80,
+  90 !default;
 
 // Section
 
-$section-radius: 4px;
-$section-header-padding: 1.5rem 1rem; //with .with-padding class
-$section-footer-padding: 1.5rem 1rem;  //with .with-padding class
-$section-content-padding: 1.5rem 1rem; //with .with-padding class
+$section-radius: 4px !default;
+$section-header-padding: 1.5rem 1rem !default; //with .with-padding class
+$section-footer-padding: 1.5rem 1rem !default; //with .with-padding class
+$section-content-padding: 1.5rem 1rem !default; //with .with-padding class
 
-$section-table-padding-left: 1rem;
-$section-table-padding-right: 1rem;
-$section-shadow: 0 0 4px rgba(21, 16, 60, 0.22);
-$section-border: 1px solid lighten($color-mute, 60%);
-$section-background: #fff;
-$section-margin: $h-margin * $size-l 0;
+$section-table-padding-left: 1rem !default;
+$section-table-padding-right: 1rem !default;
+$section-shadow: 0 0 4px rgba(21, 16, 60, 0.22) !default;
+$section-border: 1px solid lighten($color-mute, 60%) !default;
+$section-background: #fff !default;
+$section-margin: $h-margin * $size-l 0 !default;
 
 // Alert
 
@@ -822,13 +779,12 @@ $alert-color: (
   "warning": $color-warning,
   "error": $color-danger,
   "info": $color-info,
-);
+  ) !default;
 
 $alert-color-contrast: (
   "success": $color-success-contrast,
   "warning": #fff,
   "error": $color-danger-contrast,
-  "info": $color-info-contrast
-);
-$alert-padding: 1.5rem 4.5rem 1.5rem 2rem; //for animation
-$alert-light-border: 1px solid currentColor;
+  "info": $color-info-contrast) !default;
+$alert-padding: 1.5rem 4.5rem 1.5rem 2rem !default; //for animation
+$alert-light-border: 1px solid currentColor !default;

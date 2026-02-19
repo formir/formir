@@ -3,15 +3,16 @@
  *  MIT License
  */
 
+//// THEME SETUP
+@import "themes/default/setup/classes";
+@import "themes/default/setup/core";
+@import "themes/default/setup/variables";
+
 // SETUP
 @import "setup/classes";
 @import "setup/core";
 @import "setup/variables";
 
-//// THEME SETUP
-@import "themes/default/setup/classes";
-@import "themes/default/setup/core";
-@import "themes/default/setup/variables";
 
 // CORE
 //// MIXINS
